@@ -1,8 +1,8 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "pm-claude-skills",
-  "version": "7.0.0",
-  "description": "106 Claude Skills across 15 professions — product management, engineering, legal, finance, HR, sales, design, Figma, operations, research, and more. Includes 6 new engineering skills: debugging, PR descriptions, system design, changelogs, test strategy, and runbooks.",
+  "version": "8.0.0",
+  "description": "106 Claude Skills across 22 plugin bundles plus the first agent template (PM Sprint Agent), covering 15 professions — product management, engineering, legal, finance, HR, sales, design, Figma, marketing, and more. Building blocks for the Anthropic agent template architecture.",
   "owner": {
     "name": "Mohit Aggarwal",
     "email": "mohit15856@gmail.com"
