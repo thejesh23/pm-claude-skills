@@ -2,7 +2,7 @@
 
 [![Stars](https://img.shields.io/github/stars/mohitagw15856/pm-claude-skills?style=social)](https://github.com/mohitagw15856/pm-claude-skills/stargazers)
 [![Skills](https://img.shields.io/badge/skills-106-blue)](https://github.com/mohitagw15856/pm-claude-skills)
-[![Version](https://img.shields.io/badge/version-7.0.0-brightgreen)](https://github.com/mohitagw15856/pm-claude-skills/releases)
+[![Version](https://img.shields.io/badge/version-8.0.0-brightgreen)](https://github.com/mohitagw15856/pm-claude-skills/releases)
 [![Install](https://img.shields.io/badge/Install%20in%20Claude%20Code-2%20minutes-orange)](https://github.com/mohitagw15856/pm-claude-skills#-quick-install-2-minutes)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 [![Sponsor](https://img.shields.io/badge/sponsor-❤️-ff69b4)](https://github.com/sponsors/mohitagw15856)
