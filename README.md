@@ -7,12 +7,11 @@
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 [![Sponsor](https://img.shields.io/badge/sponsor-❤️-ff69b4)](https://github.com/sponsors/mohitagw15856)
 
-> **Save 8–10 hours per week across 15 professions. Install in 2 minutes. Now with 106 skills, including 6 new engineering skills.**
+> **106 Claude Skills + 4 agent templates across 15 professions. Save 8-10 hours per week.**
 
 A community-built library of Claude Skills covering product management, engineering, marketing, data, design, Figma, leadership, legal, finance, HR, sales, operations, research, education, and more. Each skill is a structured SKILL.md file that teaches Claude how to produce professional-grade outputs for your specific workflows.
 
-**🆕 Latest release (v7.0.0):** 6 new engineering skills added — Debugging Log Analyser, PR Description Writer, System Design Interview, Changelog Generator, Test Strategy Doc, and Runbook Writer. The `pm-engineering` bundle now has 10 skills.
-
+**🆕 Latest release (v9.0.0):**: The library now includes 106 skills + 4 working agent templates following Anthropic's May 2026 agent template architecture.
 ---
 
 ## 🚀 Quick Install (2 minutes)
@@ -91,9 +90,46 @@ Examples of agent templates this library supports:
 | **Finance Board Pack Agent** | investor-update, board-deck-narrative, financial-model-narrative | NetSuite or Xero, Google Drive | KPI variance analyst |
 | **Marketing Launch Agent** | go-to-market, content-calendar, email-campaign, media-pitch | HubSpot, Notion | Channel strategist |
 
-### First template available now
 
-The first agent template built from this library — **PM Sprint Agent** — is available in the [`templates/pm-sprint-agent/`](./templates/pm-sprint-agent/) directory. It combines four skills, two connectors, and two subagents into a single workflow that handles end-to-end sprint planning.
+### Available agent templates
+
+The pm-claude-skills library now includes four working agent templates, each built from existing skills in this library combined with subagents and connectors. All four follow the architecture Anthropic introduced for [financial services agent templates](https://www.anthropic.com/news/finance-agents) on May 5, 2026.
+
+| Template | What it does | Skills used | Connectors | Time saved |
+|---|---|---|---|---|
+| **[PM Sprint Agent](./templates/pm-sprint-agent/)** | End-to-end sprint planning — pulls backlog, calculates capacity, drafts plan, scores risks | sprint-planning, sprint-brief | Linear, Jira | 90 min → 90 sec |
+| **[PM Discovery Agent](./templates/pm-discovery-agent/)** | Customer discovery synthesis — reads interview notes, finds themes, scores assumption confidence | user-interview-synthesis, job-story-mapper | Notion, Google Drive | 1 day → 5 min |
+| **[PM Stakeholder Comms Agent](./templates/pm-stakeholder-comms-agent/)** | Audience-tailored stakeholder updates — exec, investor, cross-functional, or board | executive-update, investor-update, stakeholder-update, board-deck-narrative | Linear, Jira, Google Drive | 90 min → 1 min |
+| **[PM Launch Agent](./templates/pm-launch-agent/)** | End-to-end launch coordination — content for every channel, calendar, metrics, checklist | go-to-market, content-calendar, media-pitch, email-campaign, launch-checklist | Notion (optional) | 4-6 hours → 3 min |
+
+Each template includes:
+- Working orchestration script
+- Two or more focused subagents
+- Connector configurations with documented setup
+- Working examples (input + output)
+- Smoke test for verifying installations
+
+### How to install a template
+
+All templates are part of the main library — installing the marketplace gives you all four.
+
+/plugin marketplace add mohitagw15856/pm-claude-skills
+
+
+Then navigate to the template you want and follow its README:
+
+cd templates/pm-sprint-agent      # or pm-discovery-agent, etc.
+cat README.md                       # full setup instructions
+
+
+### Building your own template
+
+If you want to build a template for a workflow not covered above — Legal Contract Review, Sales Pursuit, Finance Board Pack, HR Onboarding, Marketing Campaign — see the [template contribution guide](./templates/CONTRIBUTING.md).
+
+The pattern is consistent: pick a multi-step workflow, identify which existing skills cover the structured outputs, add connectors for data access, and define subagents for specialised analysis. The four templates above are reference implementations.
+
+
+It combines four skills, two connectors, and two subagents into a single workflow that handles end-to-end sprint planning.
 
 Documentation, working orchestration script, and example outputs are included in the template folder.
 
@@ -101,9 +137,16 @@ More templates will follow. If you want to contribute one, see the [template con
 
 ---
 
-## 🆕 What's New in v7.0.0 — Engineering Skills Expansion
+## 🆕 What's New in v9.0.0
 
-**6 new engineering skills added to `pm-engineering`:**
+**Three new agent templates added:**
+
+- **PM Discovery Agent** — synthesise customer interviews into actionable discovery reports with theme detection and confidence scoring
+- **PM Stakeholder Communications Agent** — generate audience-tailored updates (executive, investor, cross-functional, board) from your team's recent activity
+- **PM Launch Agent** — coordinate product launches end-to-end with channel-specific content, calendar, metrics, and checklist
+
+The library now includes 106 skills + 4 working agent templates following Anthropic's May 2026 agent template architecture.
+
 
 | Skill | Bundle | What It Does |
 |---|---|---|
