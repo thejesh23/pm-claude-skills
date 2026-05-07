@@ -1,0 +1,84 @@
+{
+  "connector_name": "notion",
+  "version": "1.0.0",
+  "description": "Notion connector for the PM Discovery Agent. Reads interview notes from a Notion database where each interview is a database row.",
+  
+  "configuration": {
+    "database_id": "DATABASE_ID_HERE",
+    "workspace_url": "https://www.notion.so/your-workspace",
+    "expected_properties": {
+      "title_property": "Name",
+      "date_property": "Interview Date",
+      "interviewee_property": "Interviewee",
+      "segment_property": "Segment",
+      "status_property": "Status",
+      "tags_property": "Tags"
+    },
+    "default_filters": {
+      "status_is": "Completed",
+      "exclude_archived": true
+    },
+    "default_sort": {
+      "property": "Interview Date",
+      "direction": "descending"
+    },
+    "rate_limit_requests_per_second": 3
+  },
+  
+  "credentials": {
+    "_comment": "Notion uses an integration token. Create one at https://www.notion.so/my-integrations and share your database with it.",
+    "integration_token_env_var": "NOTION_INTEGRATION_TOKEN",
+    "integration_token_placeholder": "secret_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  
+  "available_operations": [
+    {
+      "name": "list_recent_interviews",
+      "description": "Get the N most recent interviews from the configured database",
+      "filters": ["segment", "tags", "date_range", "status"],
+      "max_results": 50
+    },
+    {
+      "name": "get_interview_content",
+      "description": "Fetch the full page content of a specific interview (notes, transcript, observations)",
+      "required_input": "page_id"
+    },
+    {
+      "name": "search_interviews",
+      "description": "Search interview content by keyword",
+      "required_input": "search_query"
+    }
+  ],
+  
+  "permissions_required": [
+    "Read content",
+    "Read user information without email"
+  ],
+  
+  "_setup_instructions": [
+    "1. Create a Notion integration at https://www.notion.so/my-integrations",
+    "2. Click '+ New integration', name it 'PM Discovery Agent', leave defaults",
+    "3. After creation, copy the Internal Integration Token (starts with 'secret_')",
+    "4. Set the environment variable: export NOTION_INTEGRATION_TOKEN='secret_xxxxx...'",
+    "5. Open your interview notes database in Notion",
+    "6. Click '...' menu in top right > 'Add connections' > select your new integration",
+    "7. Find your database ID: it's the long string in the URL when viewing the database (after the workspace name and before the '?'). Example: notion.so/workspace/abc123def456 — abc123def456 is the ID",
+    "8. Update database_id in this file",
+    "9. Update expected_properties to match your actual property names (the agent expects fields named Name, Interview Date, Interviewee, Segment, Status, Tags — adjust if yours are different)",
+    "10. Save this file as 'notion.json' (without the .example)",
+    "11. Test the connection: bash orchestrate.sh --research-question 'Test' --interview-source notion --dry-run"
+  ],
+  
+  "_notion_database_setup_recommendation": [
+    "If you don't have a Notion database for interviews yet, create one with these properties:",
+    "- Name (title) — interview identifier or interviewee name",
+    "- Interview Date (date) — when the interview happened",
+    "- Interviewee (text) — who was interviewed",
+    "- Segment (select) — which user segment they belong to",
+    "- Status (select) — Scheduled / Completed / Cancelled",
+    "- Tags (multi-select) — research project, persona, or feature area",
+    "Then write your interview notes in the page body."
+  ],
+  
+  "_rate_limit_notes": "Notion's API is rate limited to 3 requests per second per integration. The agent typically uses 10-25 API calls per discovery synthesis (depending on interview count), well within rate limits."
+}

@@ -1,0 +1,45 @@
+{
+  "connector_name": "google-drive",
+  "version": "1.0.0",
+  "description": "Optional Google Drive connector for the PM Stakeholder Communications Agent. Pulls recent docs and decisions from a Drive folder for inclusion in stakeholder updates.",
+  
+  "configuration": {
+    "folder_id": "FOLDER_ID_HERE",
+    "include_subfolders": true,
+    "file_types": ["application/vnd.google-apps.document"],
+    "default_period_filter": "modifiedTime > '30 days ago'",
+    "exclude_filename_patterns": ["DRAFT", "WIP", "scratch"],
+    "rate_limit_requests_per_minute": 60
+  },
+  
+  "credentials": {
+    "auth_method": "service_account",
+    "service_account_key_path_env_var": "GOOGLE_APPLICATION_CREDENTIALS"
+  },
+  
+  "available_operations": [
+    {
+      "name": "list_recent_docs",
+      "description": "Get docs modified in the specified period",
+      "filters": ["modifiedAfter", "modifiedBefore", "name_contains"],
+      "max_results": 30
+    },
+    {
+      "name": "get_doc_summary",
+      "description": "Get a brief summary of a specific doc (title, last modified, brief content extract)",
+      "required_input": "file_id"
+    }
+  ],
+  
+  "_setup_instructions": [
+    "1. Set up a Google Cloud project and service account (see google-drive.example.json in pm-discovery-agent for full steps)",
+    "2. Set GOOGLE_APPLICATION_CREDENTIALS environment variable",
+    "3. Find the folder ID where your team's docs and decisions live",
+    "4. Share that folder with the service account email (Viewer access)",
+    "5. Update folder_id in this file",
+    "6. Save as 'google-drive.json'",
+    "7. Test: bash orchestrate.sh --audience executive --period 'last 30 days' --dry-run"
+  ],
+  
+  "_note": "This connector is optional. The agent works fine with just Linear/Jira data. Adding Google Drive enriches communications with recent docs and documented decisions, but isn't required."
+}

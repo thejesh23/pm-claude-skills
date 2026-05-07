@@ -1,0 +1,1 @@
+../../../../skills/media-pitch/SKILL.md

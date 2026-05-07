@@ -1,0 +1,1 @@
+../../../../skills/job-story-mapper/SKILL.md

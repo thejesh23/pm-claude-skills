@@ -1,0 +1,1 @@
+../../../../skills/email-campaign/SKILL.md

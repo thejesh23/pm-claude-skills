@@ -1,0 +1,39 @@
+{
+  "connector_name": "notion",
+  "version": "1.0.0",
+  "description": "Optional Notion connector for the PM Launch Agent. Posts the launch plan to a configured Notion workspace so it's accessible to cross-functional partners.",
+  
+  "configuration": {
+    "workspace_url": "https://www.notion.so/your-workspace",
+    "parent_page_id": "PARENT_PAGE_ID_HERE",
+    "default_page_template": "launch-plan-template",
+    "tags_to_apply": ["launch", "pm-launch-agent"],
+    "rate_limit_requests_per_second": 3
+  },
+  
+  "credentials": {
+    "integration_token_env_var": "NOTION_INTEGRATION_TOKEN",
+    "integration_token_placeholder": "secret_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  
+  "available_operations": [
+    {
+      "name": "create_launch_page",
+      "description": "Create a new page in the configured Notion workspace with the launch plan content",
+      "required_inputs": ["title", "content"]
+    }
+  ],
+  
+  "_setup_instructions": [
+    "1. Create a Notion integration at https://www.notion.so/my-integrations",
+    "2. Set NOTION_INTEGRATION_TOKEN environment variable",
+    "3. Create a parent page in Notion where launch plans should be posted (e.g., 'Launches' database or page)",
+    "4. Share that parent page with your integration",
+    "5. Copy the parent page ID from the URL",
+    "6. Update parent_page_id in this file",
+    "7. Save as 'notion.json'",
+    "8. Test: bash orchestrate.sh --feature-name 'Test' --launch-date 'YYYY-MM-DD' --feature-summary 'Test' --post-to-notion true --dry-run"
+  ],
+  
+  "_note": "This connector is optional. The agent works fine writing only to local files. Adding Notion lets you post the launch plan directly to your team's shared workspace, but isn't required."
+}

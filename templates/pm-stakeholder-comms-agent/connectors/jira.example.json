@@ -1,0 +1,49 @@
+{
+  "connector_name": "jira",
+  "version": "1.0.0",
+  "description": "Jira connector for the PM Stakeholder Communications Agent. Provides access to recently completed issues and current sprint progress for inclusion in stakeholder updates.",
+  
+  "configuration": {
+    "instance_url": "https://your-domain.atlassian.net",
+    "project_key": "PROJ",
+    "default_jql_for_shipped": "project = PROJ AND status = Done AND resolved >= -30d ORDER BY resolved DESC",
+    "default_jql_for_in_progress": "project = PROJ AND status in (\"In Progress\", \"In Review\") ORDER BY priority DESC",
+    "exclude_label": "internal-only",
+    "rate_limit_requests_per_minute": 100
+  },
+  
+  "credentials": {
+    "auth_email_env_var": "JIRA_EMAIL",
+    "api_token_env_var": "JIRA_API_TOKEN",
+    "auth_email_placeholder": "your-email@yourcompany.com",
+    "api_token_placeholder": "ATATT3xFfGF0..."
+  },
+  
+  "available_operations": [
+    {
+      "name": "search_recently_shipped",
+      "description": "Get all issues completed in the specified period",
+      "default_jql": "project = PROJ AND status = Done AND resolved >= -30d ORDER BY resolved DESC",
+      "max_results": 100
+    },
+    {
+      "name": "search_in_progress",
+      "description": "Get current in-progress issues for context",
+      "default_jql": "project = PROJ AND status in (\"In Progress\", \"In Review\") ORDER BY priority DESC"
+    },
+    {
+      "name": "get_issue_summary",
+      "description": "Get a brief summary of a specific issue",
+      "required_input": "issue_key"
+    }
+  ],
+  
+  "_setup_instructions": [
+    "1. Generate a Jira API token at https://id.atlassian.com/manage-profile/security/api-tokens",
+    "2. Set JIRA_EMAIL and JIRA_API_TOKEN environment variables",
+    "3. Update instance_url and project_key in this file",
+    "4. Customise the JQL filters if your team uses different statuses",
+    "5. Save as 'jira.json'",
+    "6. Test: bash orchestrate.sh --audience executive --period 'last 30 days' --dry-run"
+  ]
+}

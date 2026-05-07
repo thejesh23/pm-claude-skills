@@ -1,0 +1,1 @@
+../../../../skills/discovery-interview-guide/SKILL.md

@@ -1,0 +1,86 @@
+{
+  "connector_name": "google-drive",
+  "version": "1.0.0",
+  "description": "Google Drive connector for the PM Discovery Agent. Reads interview notes from a Google Drive folder where each interview is a Google Doc.",
+  
+  "configuration": {
+    "folder_id": "FOLDER_ID_HERE",
+    "file_type": "application/vnd.google-apps.document",
+    "include_subfolders": false,
+    "expected_naming_convention": "YYYY-MM-DD - Interviewee Name.gdoc",
+    "default_sort": {
+      "field": "modifiedTime",
+      "direction": "desc"
+    },
+    "default_filters": {
+      "exclude_trashed": true,
+      "min_word_count": 100
+    },
+    "rate_limit_requests_per_minute": 60
+  },
+  
+  "credentials": {
+    "_comment": "Google Drive uses OAuth 2.0. You'll need to create a Google Cloud project and enable the Drive API. Easiest path: use a service account with access to your folder.",
+    "auth_method": "service_account",
+    "service_account_key_path_env_var": "GOOGLE_APPLICATION_CREDENTIALS",
+    "service_account_key_placeholder": "/path/to/service-account-key.json"
+  },
+  
+  "available_operations": [
+    {
+      "name": "list_recent_documents",
+      "description": "Get the N most recent Google Docs in the configured folder",
+      "filters": ["modifiedAfter", "name_contains", "starred"],
+      "max_results": 50
+    },
+    {
+      "name": "get_document_content",
+      "description": "Fetch the full text content of a specific Google Doc",
+      "required_input": "file_id"
+    },
+    {
+      "name": "search_documents",
+      "description": "Search document content by keyword across the folder",
+      "required_input": "search_query"
+    }
+  ],
+  
+  "permissions_required": [
+    "https://www.googleapis.com/auth/drive.readonly",
+    "https://www.googleapis.com/auth/documents.readonly"
+  ],
+  
+  "_setup_instructions": [
+    "1. Go to Google Cloud Console: https://console.cloud.google.com/",
+    "2. Create a new project (or use existing) — name it something like 'PM Discovery Agent'",
+    "3. Enable the Google Drive API and Google Docs API for the project",
+    "4. Create a service account: IAM & Admin > Service Accounts > Create Service Account",
+    "5. Download the service account key as JSON",
+    "6. Save the JSON file to a secure location (e.g., ~/.config/pm-discovery-agent/service-account.json)",
+    "7. Set the environment variable: export GOOGLE_APPLICATION_CREDENTIALS='/path/to/service-account.json'",
+    "8. Find the folder ID where your interview notes live: open the folder in Google Drive, the ID is in the URL (drive.google.com/drive/folders/FOLDER_ID_HERE)",
+    "9. Share that folder with the service account email (it looks like xxx@your-project.iam.gserviceaccount.com) — give it Viewer access",
+    "10. Update folder_id in this file",
+    "11. Save this file as 'google-drive.json' (without the .example)",
+    "12. Test the connection: bash orchestrate.sh --research-question 'Test' --interview-source google-drive --dry-run"
+  ],
+  
+  "_alternative_simpler_setup": [
+    "If creating a service account feels heavy, you can use OAuth user credentials instead:",
+    "1. Go to APIs & Services > Credentials in Google Cloud Console",
+    "2. Create OAuth client ID > Desktop application",
+    "3. Download the credentials JSON",
+    "4. The first time the agent runs, it'll open a browser for you to authorise",
+    "This is simpler but requires re-authorisation if the token expires."
+  ],
+  
+  "_folder_organisation_recommendation": [
+    "If you're starting fresh, organise your interview notes folder like this:",
+    "- One folder for the discovery project",
+    "- One Google Doc per interview, named '2026-05-10 - Sarah Chen.gdoc' (date + interviewee)",
+    "- Inside each doc: structured headers for Background, Notes, Key Quotes, Observations, Follow-ups",
+    "Consistent structure makes the synthesis dramatically better."
+  ],
+  
+  "_rate_limit_notes": "Google Drive's API rate limits are generous (1000 requests per 100 seconds). The agent uses approximately 12-15 API calls per discovery synthesis."
+}

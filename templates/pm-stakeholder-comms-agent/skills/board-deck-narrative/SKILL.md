@@ -1,0 +1,1 @@
+../../../../skills/board-deck-narrative/SKILL.md
