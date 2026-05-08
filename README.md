@@ -23,16 +23,27 @@ In Claude Code, run:
 Or install by profession:
 
 claude plugin install pm-essentials@pm-claude-skills     # Core PM + Word tracked changes
+
 claude plugin install pm-delivery@pm-claude-skills       # Delivery + PowerPoint auditor
+
 claude plugin install pm-engineering@pm-claude-skills    # Engineering + DevOps (10 skills) 🆕
+
 claude plugin install pm-data@pm-claude-skills           # Data + chart data extractor
+
 claude plugin install pm-legal@pm-claude-skills          # Legal
+
 claude plugin install pm-finance@pm-claude-skills        # Finance
+
 claude plugin install pm-hr@pm-claude-skills             # HR
+
 claude plugin install pm-sales@pm-claude-skills          # Sales
+
 claude plugin install pm-operations@pm-claude-skills     # Operations
+
 claude plugin install pm-research@pm-claude-skills       # Research & Healthcare
+
 claude plugin install pm-cross@pm-claude-skills          # Cross-profession
+
 claude plugin install pm-figma@pm-claude-skills          # Figma
 
 
