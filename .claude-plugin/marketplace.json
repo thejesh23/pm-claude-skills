@@ -1,8 +1,8 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "pm-claude-skills",
-  "version": "10.0.0",
-  "description": "PM stands for Professional, not just Product Management. 114 Claude Skills + 4 agent templates across 23 bundles covering 16 professions — engineering, customer success, legal, finance, HR, sales, design, Figma, marketing, and more. Built by a PM, used by everyone. Building blocks for the Anthropic agent template architecture.",
+  "version": "11.0.0",
+  "description": "PM stands for Professional, not just Product Management. 135 Claude Skills + 4 agent templates across 23 bundles covering 16 professions — engineering, customer success, legal, finance, HR, sales, design, Figma, marketing, and more. Built by a PM, used by everyone. Building blocks for the Anthropic agent template architecture.",
   "owner": {
     "name": "Mohit Aggarwal",
     "email": "mohit15856@gmail.com"
@@ -82,8 +82,8 @@
     },
     {
       "name": "pm-engineering",
-      "description": "Engineering & tech skills: Code Review Checklist, Incident Postmortem, API Docs Writer, Architecture Decision Record, Debugging Log Analyser, PR Description Writer, System Design Interview, Changelog Generator, Test Strategy Doc, Runbook Writer, CI/CD Playbook, SLO & Error Budget, Developer Onboarding Doc, On-Call Runbook. 14 structured skills for engineering teams, SREs, and technical PMs.",
-      "version": "3.0.0",
+      "description": "Engineering & tech skills: Code Review Checklist, Incident Postmortem, API Docs Writer, Architecture Decision Record, Debugging Log Analyser, PR Description Writer, System Design Interview, Changelog Generator, Test Strategy Doc, Runbook Writer, CI/CD Playbook, SLO & Error Budget, Developer Onboarding Doc, On-Call Runbook, Security Threat Model, Performance Budget, Database Schema Design, Database Migration Plan, Technical Debt Register, RFC Writer, Capacity Planning, Load Testing Plan, Disaster Recovery Plan, Feature Flag Guide, Dependency Audit, Service Catalog Entry, Monitoring Setup Guide, Local Dev Setup, API Versioning Strategy, Infra-as-Code Review, Engineering Weekly Report, Tech Radar, Sprint Velocity Analysis, Microservices Decomposition, Engineering Hiring Rubric. 35 structured skills for engineering teams, SREs, and technical PMs.",
+      "version": "4.0.0",
       "category": "productivity",
       "source": "./plugins/pm-engineering",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"

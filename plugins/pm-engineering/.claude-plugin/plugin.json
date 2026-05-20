@@ -1,13 +1,13 @@
 {
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "pm-engineering",
-  "version": "3.0.0",
-  "description": "Engineering & tech skills: Code Review Checklist, Incident Postmortem, API Docs Writer, Architecture Decision Record, Debugging Log Analyser, PR Description Writer, System Design Interview, Changelog Generator, Test Strategy Doc, Runbook Writer, CI/CD Playbook, SLO & Error Budget, Developer Onboarding Doc, On-Call Runbook. 14 structured skills for engineering teams and technical PMs.",
+  "version": "4.0.0",
+  "description": "Engineering & tech skills: Code Review Checklist, Incident Postmortem, API Docs Writer, Architecture Decision Record, Debugging Log Analyser, PR Description Writer, System Design Interview, Changelog Generator, Test Strategy Doc, Runbook Writer, CI/CD Playbook, SLO & Error Budget, Developer Onboarding Doc, On-Call Runbook, Security Threat Model, Performance Budget, Database Schema Design, Database Migration Plan, Technical Debt Register, RFC Writer, Capacity Planning, Load Testing Plan, Disaster Recovery Plan, Feature Flag Guide, Dependency Audit, Service Catalog Entry, Monitoring Setup Guide, Local Dev Setup, API Versioning Strategy, Infra-as-Code Review, Engineering Weekly Report, Tech Radar, Sprint Velocity Analysis, Microservices Decomposition, Engineering Hiring Rubric. 35 structured skills for engineering teams, SREs, and technical PMs.",
   "author": {
     "name": "Mohit Aggarwal",
     "email": "mohit15856@gmail.com"
   },
   "homepage": "https://github.com/mohitagw15856/pm-claude-skills",
   "license": "MIT",
-  "keywords": ["product-management", "engineering", "code-review", "incident-postmortem", "api-documentation", "adr", "architecture", "debugging", "pull-request", "system-design", "changelog", "test-strategy", "runbook", "devops", "cicd", "slo", "error-budget", "onboarding", "oncall", "sre", "reliability"]
+  "keywords": ["product-management", "engineering", "code-review", "incident-postmortem", "api-documentation", "adr", "architecture", "debugging", "pull-request", "system-design", "changelog", "test-strategy", "runbook", "devops", "cicd", "slo", "error-budget", "onboarding", "oncall", "sre", "reliability", "security", "threat-model", "performance", "database", "migration", "technical-debt", "rfc", "capacity-planning", "load-testing", "disaster-recovery", "feature-flags", "dependency-audit", "service-catalog", "monitoring", "observability", "tech-radar", "microservices", "hiring", "velocity"]
 }
