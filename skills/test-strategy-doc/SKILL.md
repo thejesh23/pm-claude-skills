@@ -1,6 +1,6 @@
 ---
 name: test-strategy-doc
-description: "Write a test strategy document from a feature spec, PRD, or system description. Use when asked to create a test plan, write a test strategy, define QA approach, or plan testing for a feature or release. Produces a complete test strategy with scope, risk assessment, test types, coverage targets, and a prioritised test case outline. Optimised for Opus 4.7 and newer models."
+description: "Write a test strategy document from a feature spec, PRD, or system description. Use when asked to create a test plan, write a test strategy, define QA approach, or plan testing for a feature or release. Produces a complete test strategy with scope, risk assessment, test types, coverage targets, and a prioritised test case outline."
 ---
 
 # Test Strategy Document Skill
@@ -16,7 +16,7 @@ Ask for these if not provided:
 - **Timeline** (when does this need to ship — affects prioritisation)
 - **Team context** (who is doing the testing — developers / dedicated QA / both)
 
-## Output Structure
+## Output Format
 
 ### 1. Test Scope
 
@@ -118,10 +118,3 @@ Testing is complete when:
 - [ ] P0 test cases cover the highest-risk paths specifically
 - [ ] Each test type names a concrete tool (not "some testing framework")
 - [ ] Definition of Done is measurable (not "tests are done when QA is happy")
-
-## Example Trigger Phrases
-- "Write a test strategy for [feature]" + [paste spec or PRD]
-- "Create a test plan for [system]"
-- "How should we test [feature]?"
-- "I need a QA plan for this sprint"
-- "What tests do we need for [X]?"

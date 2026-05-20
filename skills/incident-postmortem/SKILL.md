@@ -21,7 +21,7 @@ Ask the user for these if not provided:
 - **Initial thoughts on root cause**
 - **Action items already identified** (optional)
 
-## Output Structure
+## Output Format
 
 ---
 
@@ -135,10 +135,3 @@ Rules for action items:
 - [ ] Every action item has an owner and due date
 - [ ] "What went well" section is genuine, not token
 - [ ] Executive summary is readable by non-technical leadership
-
-## Example Trigger Phrases
-
-- "Write a postmortem for the [incident name] outage"
-- "Help me write a P1 incident report"
-- "Generate an RCA document for [service] going down on [date]"
-- "Draft a blameless postmortem from these notes: [paste notes]"

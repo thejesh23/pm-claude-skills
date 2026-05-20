@@ -1,6 +1,6 @@
 ---
 name: code-review-checklist
-description: "Generate a tailored code review checklist for any pull request based on the language, type of change, and risk level. Use when asked to review code, check a PR, review a pull request, or generate a code review checklist. Produces a focused checklist with language-specific checks, risk-level-appropriate depth, and a clear approve/request-changes recommendation. Optimised for Opus 4.7 and newer models."
+description: "Generate a tailored code review checklist for any pull request based on the language, type of change, and risk level. Use when asked to review code, check a PR, review a pull request, or generate a code review checklist. Produces a focused checklist with language-specific checks, risk-level-appropriate depth, and a clear approve/request-changes recommendation."
 ---
 
 # Code Review Checklist Skill
@@ -16,10 +16,12 @@ Ask the user for these if not provided:
 - **PR description** (paste the description or link to the PR)
 - **Author context** (new starter / experienced / external contributor)
 
-## Output Structure
+## Output Format
 
-### 1. Review Summary
-**PR:** [Title or reference]
+---
+
+# Code Review: [PR Title or Reference]
+
 **Scope assessment:** [Small / Medium / Large / Too large — should be split]
 **Recommended review depth:** [Skim / Standard / Deep dive]
 **Estimated review time:** [Minutes]
@@ -94,14 +96,10 @@ Language-specific correctness checks — choose based on the language stated:
 ### 7. Common Pitfalls for This Change Type
 Based on the change type and language, flag 2-3 things reviewers typically miss for this combination.
 
+---
+
 ## Quality Checks
 - [ ] Checklist is tailored to the stated language (not generic)
 - [ ] Change-type-specific section is included
 - [ ] Risk-appropriate depth matches stated risk level
 - [ ] Decision framework is explicit
-
-## Example Trigger Phrases
-- "Generate a code review checklist for [PR description]"
-- "What should I check in this pull request?"
-- "Give me a code review checklist for a [language] [change type]"
-- "Review checklist for a high-risk PR in [language]"

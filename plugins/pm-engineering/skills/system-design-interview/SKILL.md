@@ -1,6 +1,6 @@
 ---
 name: system-design-interview
-description: "Structure a complete system design answer for interview questions or real architecture sessions. Use when asked to design a system, answer a system design interview question, or architect a solution at scale. Produces a structured answer covering requirements, capacity estimates, high-level design, component deep-dives, trade-offs, and follow-up considerations. Optimised for Opus 4.7 and newer models."
+description: "Structure a complete system design answer for interview questions or real architecture sessions. Use when asked to design a system, answer a system design interview question, or architect a solution at scale. Produces a structured answer covering requirements, capacity estimates, high-level design, component deep-dives, trade-offs, and follow-up considerations."
 ---
 
 # System Design Interview Skill
@@ -15,7 +15,7 @@ Ask for these if not provided:
 - **Scale target** (rough numbers: DAU, requests/sec, data volume — or "assume typical web scale")
 - **Constraints or priorities** (e.g. prioritise availability over consistency, minimise cost, low-latency reads)
 
-## Output Structure
+## Output Format
 
 ### 1. Clarifying Questions
 Before designing, list 4–6 questions that would change the design. Examples:
@@ -126,10 +126,3 @@ Things to tackle in production but out of scope for this design session:
 - [ ] At least 2 component deep-dives with technology choices justified
 - [ ] Trade-offs section is honest (not just benefits of chosen approach)
 - [ ] Data flow is described end-to-end for the critical path
-
-## Example Trigger Phrases
-- "Help me answer a system design interview: [question]"
-- "Design [system] for a system design interview"
-- "How would I architect [system] at scale?"
-- "I have a system design interview — the question is [X]"
-- "Design a [URL shortener / chat system / notification service / feed]"

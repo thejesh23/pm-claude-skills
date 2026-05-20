@@ -1,6 +1,6 @@
 ---
 name: debugging-log-analyser
-description: "Parse error logs, stack traces, and crash reports into a structured root cause diagnosis. Use when sharing a log, stack trace, error output, or crash dump. Produces a structured diagnosis with probable root cause, affected code path, suggested fix, and next debugging steps. Optimised for Opus 4.7 and newer models."
+description: "Parse error logs, stack traces, and crash reports into a structured root cause diagnosis. Use when sharing a log, stack trace, error output, or crash dump. Produces a structured diagnosis with probable root cause, affected code path, suggested fix, and next debugging steps."
 ---
 
 # Debugging Log Analyser Skill
@@ -16,10 +16,13 @@ Ask for these if not provided:
 - **Environment** (local dev / staging / production)
 - **What they've already tried** (if anything)
 
-## Output Structure
+## Output Format
 
-### 1. Error Classification
-**Error type:** [Runtime exception / Build error / Config error / Network error / Memory/resource error / Unknown]
+---
+
+# Debugging Report: [Service/App Name]
+
+**Error type:** [Runtime exception / Build error / Config error / Network error / Memory error / Unknown]
 **Severity:** [Fatal / Critical / Warning / Informational]
 **Recurrence pattern:** [One-off / Intermittent / Consistent / On-startup / Under load]
 
@@ -64,16 +67,11 @@ One or two concrete things that would prevent this class of error recurring:
 - Add monitoring/alerting for [condition]
 - Test that covers [scenario]
 
+---
+
 ## Quality Checks
 - [ ] Root cause is specific (not "there might be a null pointer issue")
 - [ ] At least one concrete code-level fix is suggested
 - [ ] Next steps are actionable commands, not vague advice
 - [ ] Language-specific idioms are used correctly
 - [ ] Prevention is proactive (not just "add error handling")
-
-## Example Trigger Phrases
-- "Why is this crashing?" + [paste log]
-- "Can you analyse this stack trace?"
-- "I'm getting this error, what does it mean?"
-- "Debug this log for me"
-- "What's causing this exception?"

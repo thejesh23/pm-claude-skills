@@ -1,6 +1,6 @@
 ---
 name: changelog-generator
-description: "Convert a git log, commit list, or release notes into a polished, user-facing changelog. Use when writing release notes, generating a CHANGELOG.md entry, or documenting what changed in a version. Produces a structured changelog section with version header, categorised changes, and migration notes. Optimised for Opus 4.7 and newer models."
+description: "Convert a git log, commit list, or release notes into a polished, user-facing changelog. Use when writing release notes, generating a CHANGELOG.md entry, or documenting what changed in a version. Produces a structured changelog section with version header, categorised changes, and migration notes."
 ---
 
 # Changelog Generator Skill
@@ -16,7 +16,7 @@ Ask for these if not provided:
 - **Audience** (developers using an API / end users of a product / internal team — affects language)
 - **Any breaking changes** (flag these explicitly if known)
 
-## Output Structure
+## Output Format
 
 Follow [Keep a Changelog](https://keepachangelog.com) format:
 
@@ -73,10 +73,3 @@ Follow [Keep a Changelog](https://keepachangelog.com) format:
 - [ ] Version and date header is correct
 - [ ] Empty sections are omitted
 - [ ] Tone is imperative mood throughout
-
-## Example Trigger Phrases
-- "Write a changelog for version [X]" + [paste commits]
-- "Generate release notes from these commits"
-- "Turn this git log into a CHANGELOG entry"
-- "Write the CHANGELOG.md update for this release"
-- "What changed in this release?" + [paste commit list]

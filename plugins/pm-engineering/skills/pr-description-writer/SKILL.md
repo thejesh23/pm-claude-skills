@@ -1,6 +1,6 @@
 ---
 name: pr-description-writer
-description: "Write a clear, structured pull request description from a git diff, branch summary, or commit list. Use when asked to write a PR description, draft a pull request, or document code changes. Produces a description with summary, motivation, changes made, testing steps, and reviewer guidance. Optimised for Opus 4.7 and newer models."
+description: "Write a clear, structured pull request description from a git diff, branch summary, or commit list. Use when asked to write a PR description, draft a pull request, or document code changes. Produces a description with summary, motivation, changes made, testing steps, and reviewer guidance."
 ---
 
 # PR Description Writer Skill
@@ -16,7 +16,7 @@ Ask for these if not provided:
 - **Risk level** (low / medium / high — affects how much reviewer guidance to include)
 - **PR type** (feature / bug fix / refactor / dependency upgrade / config change / hotfix)
 
-## Output Structure
+## Output Format
 
 ### Title
 A clear, imperative-mood title under 72 characters:
@@ -78,10 +78,3 @@ Flag anything that warrants extra attention:
 - [ ] Changes list describes logical changes (not file-by-file changes)
 - [ ] Testing steps are reproducible by someone unfamiliar with the code
 - [ ] Risk-appropriate reviewer guidance is included
-
-## Example Trigger Phrases
-- "Write a PR description for these changes" + [paste diff or description]
-- "Draft a pull request for [feature]"
-- "I need a PR description — here's what I changed"
-- "Summarise these commits into a PR description"
-- "Write the PR body for this branch"

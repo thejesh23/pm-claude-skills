@@ -18,7 +18,7 @@ Ask the user for these if not provided:
 - **Status** (Proposed / Accepted / Deprecated / Superseded)
 - **Author and date**
 
-## Output Structure
+## Output Format
 
 ---
 
@@ -108,10 +108,3 @@ For each option, produce:
 - [ ] Decision is stated in plain language in the Decision section
 - [ ] Risks section identifies what would invalidate this decision
 - [ ] Written for someone with no prior context on this decision
-
-## Example Trigger Phrases
-
-- "Write an ADR for using [technology]"
-- "Document our decision to [architectural choice]"
-- "Create an architecture decision record for [topic]"
-- "Help me write up why we chose [option] over [alternative]"

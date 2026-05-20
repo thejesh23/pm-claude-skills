@@ -1,6 +1,6 @@
 ---
 name: runbook-writer
-description: "Write an operational runbook for a service, incident type, or deployment procedure. Use when asked to write a runbook, create an ops guide, document an operational procedure, or prepare an incident response playbook. Produces a runbook with overview, prerequisites, step-by-step procedures, rollback steps, troubleshooting table, and escalation paths. Optimised for Opus 4.7 and newer models."
+description: "Write an operational runbook for a service, incident type, or deployment procedure. Use when asked to write a runbook, create an ops guide, document an operational procedure, or prepare an incident response playbook. Produces a runbook with overview, prerequisites, step-by-step procedures, rollback steps, troubleshooting table, and escalation paths."
 ---
 
 # Runbook Writer Skill
@@ -16,7 +16,7 @@ Ask for these if not provided:
 - **Audience** (new on-call engineers / experienced SREs / DevOps team)
 - **Tech stack** (where relevant — e.g. Kubernetes, AWS RDS, Node.js)
 
-## Output Structure
+## Output Format
 
 ---
 **Runbook:** [Runbook Title]
@@ -135,10 +135,3 @@ After completing the runbook:
 - [ ] Rollback procedure is complete and independently testable
 - [ ] Escalation paths name specific contacts, not just team names
 - [ ] Runbook can be followed by someone who has never touched this system
-
-## Example Trigger Phrases
-- "Write a runbook for [service] deployment"
-- "Create an incident response runbook for [alert type]"
-- "I need a runbook for [procedure]"
-- "Document the operational procedure for [X]"
-- "Write an ops playbook for [scenario]"
