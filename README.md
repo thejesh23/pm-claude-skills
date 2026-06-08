@@ -62,6 +62,40 @@ ln -s ~/pm-claude-skills/skills/* ~/.claude/skills/
 
 ---
 
+## 📦 Plugin Directory
+
+Not sure which plugin to install? Here's what each one covers:
+
+| Plugin | Skills | Best for |
+|---|---|---|
+| **pm-essentials** | competitive-analysis, meeting-notes, prd-template, stakeholder-update, user-research-synthesis, docx-tracked-changes | The core PM toolkit — start here if you're new. Covers the documents you write every week: PRDs, stakeholder updates, meeting notes, and competitive analysis. |
+| **pm-advanced** | ai-ethics-review, ai-product-canvas, experiment-designer, design-handoff-brief, multi-source-signal-synthesiser | For PMs working on AI products or running sophisticated experiments. Covers ethical review of AI features, AI-native product canvases, and experiment design. |
+| **pm-analytics** | data-analysis-standard, product-health-analysis, retention-analysis | Turn raw data into PM-ready narratives. Use when you need to frame an analysis, explain health metrics to leadership, or diagnose retention drop-offs. |
+| **pm-business** | board-deck-narrative, investor-update, job-application | For PMs operating at the business layer — writing board narratives, investor updates, or crafting a standout job application. |
+| **pm-cross** | executive-summary, grant-proposal, last-30-days-research, notebooklm-connector, press-release, sycophancy-challenger, teaching-lesson-plan | Cross-profession utility skills that work outside a single domain — writing executive summaries, press releases, running research, and challenging sycophantic AI output. |
+| **pm-cs** | churn-analysis, cs-escalation-brief, cs-health-scorecard, customer-success-plan, qbr-deck, renewal-playbook | For PMs or CSMs responsible for retention. Covers churn diagnosis, escalation briefs, QBR decks, health scorecards, and renewal plays. |
+| **pm-data** | chart-data-extractor, cohort-analysis, dashboard-brief, data-pipeline-spec, metrics-framework, sql-query-explainer | Data-heavy work: extracting insights from charts, building metrics frameworks, explaining SQL queries, designing dashboards, and speccing data pipelines. |
+| **pm-delivery** | ab-test-planner, go-to-market-planner, pptx-slide-auditor, product-launch-checklist, retro-analysis, sprint-brief, sprint-planning, technical-spec-template, user-story-writer | Everything you need to ship: sprint planning, user stories, launch checklists, A/B test design, retros, and PowerPoint auditing. The most-used plugin for day-to-day delivery. |
+| **pm-design** | accessibility-audit, design-critique, design-system-audit, ux-research-plan | For PMs who work closely with design. Covers accessibility audits, structured design critiques, design system reviews, and UX research planning. |
+| **pm-discovery** | assumption-mapper, customer-journey-map, discovery-interview-guide, job-story-mapper, user-interview-synthesis | The discovery toolkit: map assumptions, build journey maps, write interview guides, synthesise user interviews, and reframe features as job stories. |
+| **pm-engineering** | 37 skills across API docs, architecture, CI/CD, incident response, security, observability, and more | The largest plugin — built for PMs embedded in engineering teams. Covers technical specs, runbooks, on-call processes, architecture decisions, and engineering hiring. |
+| **pm-figma** | figma-annotation-guide, figma-component-audit, figma-design-brief, figma-design-critique-pm, figma-design-qa, figma-design-review, figma-prototype-plan, figma-spacing-system, figma-user-flow-planner, figma-variant-matrix | Purpose-built for Figma workflows. Covers design QA, component audits, spacing systems, user flow planning, variant matrices, and design briefs — all from a PM perspective. |
+| **pm-finance** | budget-variance-analysis, financial-due-diligence, financial-model-narrative, investor-pitch-deck, tax-planning-checklist | For PMs who touch financials — explaining budget variances, building investor pitch decks, narrating financial models, and running due diligence reviews. |
+| **pm-gtm** | competitor-teardown, content-calendar, email-campaign, go-to-market, media-pitch, product-positioning-doc, seo-content-brief, social-media-strategy | The go-to-market toolkit: positioning docs, competitor teardowns, GTM plans, content calendars, email campaigns, and SEO briefs. Best for PMs who own launch and demand. |
+| **pm-hr** | change-management-plan, employee-engagement-survey, job-description-writer, onboarding-plan, redundancy-consultation | People operations skills — writing job descriptions, managing change, designing onboarding, running engagement surveys, and handling redundancy consultations. |
+| **pm-legal** | compliance-checklist, contract-review, legal-brief, nda-analyser | For PMs navigating legal and compliance work: reviewing NDAs, summarising contracts, creating compliance checklists, and preparing legal briefs. |
+| **pm-operations** | email-triage, morning-intelligence, process-documentation, project-status-report, raci-matrix, risk-register, sop-writer, vendor-evaluation, workshop-facilitation-guide | Operational efficiency skills — managing your inbox, running status reports, documenting processes, evaluating vendors, writing SOPs, and facilitating workshops. |
+| **pm-people** | 360-feedback-template, hiring-rubric, performance-review, team-health-check, team-offsite-planner | For people managers and team leads: writing performance reviews, running 360 feedback, designing hiring rubrics, checking team health, and planning offsites. |
+| **pm-planning** | feature-prioritisation, okr-builder, pricing-strategy, rice-impact-matrix, rice-prioritisation, roadmap-narrative, roadmap-presentation | Strategic planning from roadmaps to OKRs — prioritising features with RICE, writing roadmap narratives, setting pricing, building OKRs, and presenting strategy to stakeholders. |
+| **pm-research** | clinical-case-summary, literature-review, patient-communication, research-protocol | For PMs in healthcare and research settings. Covers clinical case summaries, literature reviews, research protocols, and patient-facing communication. |
+| **pm-rituals** | pm-weekly-review | A single powerful skill for the PM weekly review ritual — reflecting on progress, blockers, and priorities in a structured, consistent format. |
+| **pm-sales** | account-plan, discovery-call-prep, partnership-proposal, proposal-writer, sales-battlecard, sales-forecasting-model | For PMs who work alongside sales — writing battlecards, preparing for discovery calls, building account plans, crafting partnership proposals, and forecasting. |
+| **pm-social** | community-management-playbook, influencer-brief, social-ad-campaign, social-media-audit, viral-content-framework | Social media and community skills: running ad campaigns, briefing influencers, auditing social presence, building community playbooks, and designing viral content. |
+| **pm-strategy** | ambiguity-resolver, competitive-intelligence-monitor, competitor-signal-tracker, executive-update, stakeholder-influence-mapper, strategic-narrative-generator | Senior PM and strategic work — resolving ambiguity, tracking competitive signals, mapping stakeholder influence, writing executive updates, and building strategic narratives. |
+| **pm-writers** | aeo-optimizer, instagram-post-downloader, notes-humanizer, substack-notes-scraper, thumbnail-creator | For content creators and writers using Claude: optimising for AI search engines, humanising notes, scraping research from Substack, and generating thumbnail concepts. |
+
+---
+
 ## 🎬 See It in Action
 
 **Debugging Log Analyser** — paste a stack trace or error log, get a structured root cause diagnosis with probable cause, affected code path, a specific fix, and next debugging steps.
