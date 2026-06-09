@@ -15,6 +15,18 @@ A community-built library of Claude Skills for professionals across every field 
 **🆕 Latest release (v14.0.0):** 12 new community-inspired skills across 4 bundles — a brand new Writers & Content Creators profession (Instagram downloader, AEO optimizer, thumbnail creator, Substack scraper, notes humanizer), plus decision-making, productivity, and Claude Code power tools.
 ---
 
+## Contents
+
+- [🚀 Quick Install](#-quick-install-2-minutes)
+- [🌐 Skill Playground — try any skill in your browser](#-skill-playground--try-any-skill-in-your-browser)
+- [📦 Plugin Directory](#-plugin-directory)
+- [🤖 Building Blocks for Agent Templates](#-building-blocks-for-agent-templates)
+- [🗂️ All 167 Skills](#️-all-167-skills)
+- [📋 Changelog](#-changelog)
+- [🤝 Contributing](#-contributing--add-your-skill)
+
+---
+
 ## 🚀 Quick Install (2 minutes)
 
 In Claude Code, run:
@@ -59,6 +71,26 @@ Or clone and symlink for auto-updates:
 git clone https://github.com/mohitagw15856/pm-claude-skills.git ~/pm-claude-skills
 mkdir -p ~/.claude/skills
 ln -s ~/pm-claude-skills/skills/* ~/.claude/skills/
+
+---
+
+## 🌐 Skill Playground — Try Any Skill in Your Browser
+
+Don't want to install anything yet? Run any of these skills from a **zero-backend web app** using **your own Claude API key**. Pick a skill, fill in the auto-generated form, and Claude streams the result. Your key is stored only in your browser (`localStorage`) and sent directly to the Anthropic API — nothing touches a server we own.
+
+![Skill Playground — pick a skill, fill the form, run it with your own Claude key](web/docs-assets/playground.png)
+
+**Run it locally:**
+
+```bash
+git clone https://github.com/mohitagw15856/pm-claude-skills.git
+cd pm-claude-skills
+node web/build-skills.mjs               # generate the skill index (skills.json)
+cd web && python3 -m http.server 8000   # serve over HTTP (not file://)
+# open http://localhost:8000 and paste a key from console.anthropic.com
+```
+
+It's fully static — deploy the `web/` folder to GitHub Pages, Netlify, or Vercel with no environment variables. Full details in [`web/README.md`](web/README.md).
 
 ---
 
@@ -189,7 +221,12 @@ More templates will follow. If you want to contribute one, see the [template con
 
 ---
 
-## 🆕 What's New in v14.0.0 — Writers & Content Creators + 7 Community Skills
+## 📋 Changelog
+
+<details>
+<summary><strong>Release history — v6.0.0 → v14.0.0</strong> (click to expand)</summary>
+
+### 🆕 What's New in v14.0.0 — Writers & Content Creators + 7 Community Skills
 
 **12 new community-inspired skills across 4 bundles:**
 
@@ -229,7 +266,7 @@ The library now includes **167 skills** across **18 professions** + 4 working ag
 
 ---
 
-## 🆕 What's New in v13.0.0 — Social Media Profession
+### 🆕 What's New in v13.0.0 — Social Media Profession
 
 **5 new skills — a complete Social Media profession bundle:**
 
@@ -250,7 +287,7 @@ claude plugin install pm-social@pm-claude-skills
 
 ---
 
-## 🆕 What's New in v12.0.0 — 150 Skills Milestone
+### 🆕 What's New in v12.0.0 — 150 Skills Milestone
 
 **15 new skills across 10 bundles:**
 
@@ -276,7 +313,7 @@ The library now includes **150 skills** across **16 professions** + 4 working ag
 
 ---
 
-## 🆕 What's New in v10.0.0
+### 🆕 What's New in v10.0.0
 
 **Two star milestones unlocked — 8 new skills shipped:**
 
@@ -316,7 +353,7 @@ The `pm-engineering` bundle now has **10 skills** — the most complete engineer
 
 ---
 
-## 📖 v6.0.0 — 100 Skills Milestone
+### 📖 v6.0.0 — 100 Skills Milestone
 
 **7 skills added:**
 
@@ -329,6 +366,8 @@ The `pm-engineering` bundle now has **10 skills** — the most complete engineer
 | **Workshop Facilitation Guide** | pm-operations | Complete facilitation guides with activity instructions, decision protocols, and facilitator moves |
 | **Sales Forecasting Model** | pm-sales | Pipeline-based forecast with stage model, scenario analysis, assumption log, and activity sanity check |
 | **Tax Planning Checklist** | pm-finance | Year-end tax planning review framework across income, pension, CGT, business reliefs, and ISAs |
+
+</details>
 
 ---
 
@@ -358,6 +397,11 @@ This repo was built alongside a published article series. Read the full story:
 ---
 
 ## 🗂️ All 167 Skills
+
+The [Plugin Directory](#-plugin-directory) above summarises every bundle. Expand below for the full per-skill breakdown with folder paths.
+
+<details>
+<summary><strong>Browse all 167 skills by profession</strong> (click to expand)</summary>
 
 ### 🛠️ Product Management (Skills 1–37)
 **Bundles:** `pm-essentials` · `pm-discovery` · `pm-planning` · `pm-delivery` · `pm-analytics` · `pm-strategy` · `pm-advanced` · `pm-rituals`
@@ -673,6 +717,8 @@ claude plugin install pm-writers@pm-claude-skills
 | 158 | **Thumbnail Creator** 🆕 | `skills/thumbnail-creator/` | Generates brand-aligned thumbnail candidates via Gemini API; Claude evaluates results via computer vision and returns ranked candidates with rationale |
 | 159 | **Substack Notes Scraper** 🆕 | `skills/substack-notes-scraper/` | Scrapes Substack Notes and exports likes, comments, and restacks to a formatted .xlsx with frozen headers, filters, and top-performer highlighting |
 | 160 | **Notes Humanizer** 🆕 | `skills/notes-humanizer/` | Strips AI writing patterns (em dashes, filler phrases, uniform rhythm) across 3 phases: audit, strip, inject — returns side-by-side comparison and clean final text |
+
+</details>
 
 ---
 

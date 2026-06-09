@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Playground — Product Notes</title>
+  <meta name="description" content="Run any of 170+ Claude skills from your browser with your own API key. Pick a skill tile, fill the inputs, get the output." />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.9/dist/purify.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/product-notes.jpg" alt="Product Notes" class="brand-logo" />
+      <div class="brand-text">
+        <h1>Skill Playground</h1>
+        <p class="tagline">170+ Claude skills — pick one and run it with your own key.</p>
+      </div>
+    </div>
+    <div class="key-area">
+      <div class="key-field">
+        <input id="apiKey" type="password" placeholder="sk-ant-… (your Claude API key)" autocomplete="off" spellcheck="false" />
+        <button id="keyToggle" type="button" class="show-toggle">Show</button>
+      </div>
+      <select id="model" title="Model">
+        <option value="claude-opus-4-8">Opus 4.8</option>
+        <option value="claude-sonnet-4-6" selected>Sonnet 4.6</option>
+        <option value="claude-haiku-4-5-20251001">Haiku 4.5</option>
+      </select>
+    </div>
+  </header>
+
+  <div class="key-note">
+    🔒 Your key is stored only in this browser and sent directly to api.anthropic.com — never to us.
+    Get one at <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">console.anthropic.com</a>.
+  </div>
+
+  <div class="controls" id="controls">
+    <input id="search" type="search" placeholder="Search skills…" />
+    <select id="pluginFilter"><option value="">All bundles</option></select>
+    <span id="count" class="count"></span>
+  </div>
+
+  <main class="main">
+    <!-- Tile gallery -->
+    <section id="gallery" class="gallery"></section>
+
+    <!-- Single-skill runner -->
+    <section id="runner" class="runner" hidden>
+      <button id="backBtn" class="back" type="button">← All skills</button>
+
+      <div class="skill-head">
+        <span class="bundle-tag" id="skillBundle"></span>
+        <h2 id="skillTitle"></h2>
+        <p id="skillDesc" class="skill-desc"></p>
+      </div>
+
+      <form id="inputForm" class="input-form"></form>
+
+      <div class="actions">
+        <button id="runBtn" class="primary" type="button">Run with my Claude key</button>
+        <button id="stopBtn" class="ghost" type="button" hidden>Stop</button>
+        <span id="status" class="status"></span>
+      </div>
+
+      <div class="output-wrap" id="outputWrap" hidden>
+        <div class="output-toolbar">
+          <span>Output</span>
+          <div>
+            <button id="copyBtn" class="ghost" type="button">Copy</button>
+            <button id="downloadBtn" class="ghost" type="button">Download .md</button>
+          </div>
+        </div>
+        <article id="output" class="output markdown"></article>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
