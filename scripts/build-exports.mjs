@@ -38,6 +38,17 @@ const PLATFORMS = {
     // "Description" field separate, so we emit the body only (no frontmatter).
     render: ({ body }) => `${body.trim()}\n`,
   },
+  gemini: {
+    label: 'Google Gemini — Gem instructions',
+    dir: 'exports/gemini',
+    file: 'GEM_INSTRUCTIONS.md',
+    groupByBundle: true,
+    // A Gemini Gem takes a single "Instructions" field. The skill body maps to
+    // it directly; we add a one-line role primer from the description so the Gem
+    // has framing even before the user's first message.
+    render: ({ description, body }) =>
+      `You are a specialised assistant. ${description}\n\nFollow these instructions:\n\n${body.trim()}\n`,
+  },
   // Example of how a future platform slots in (kept commented, not generated):
   // cursor: {
   //   label: 'Cursor — project rule (.mdc)',
@@ -187,7 +198,9 @@ const planned = new Map();
 for (const [key, platform] of active) {
   for (const [path, content] of planPlatform(key, platform, skills)) planned.set(path, content);
 }
-planned.set(join(exportsDir, 'README.md'), writeRootReadme(active, skills.length));
+// The root index always lists every registered platform, not just the filtered
+// subset, so `--platform x` never drops the others from the overview.
+planned.set(join(exportsDir, 'README.md'), writeRootReadme(Object.entries(PLATFORMS), skills.length));
 
 if (checkMode) {
   let drift = 0;

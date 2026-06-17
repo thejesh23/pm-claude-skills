@@ -105,6 +105,7 @@ files under [`exports/`](exports/), generated from the same source so nothing is
 maintained twice:
 
 - **ChatGPT** — copy any [`exports/chatgpt/<bundle>/<skill>/SYSTEM_PROMPT.md`](exports/chatgpt/) straight into a Custom GPT's instructions.
+- **Google Gemini** — copy any [`exports/gemini/<bundle>/<skill>/GEM_INSTRUCTIONS.md`](exports/gemini/) into a Gem's instructions.
 
 The skill body in `skills/<name>/SKILL.md` is the single source of truth. Regenerate (or
 add a new platform — it's a few lines in the `PLATFORMS` registry) with:
