@@ -1,0 +1,72 @@
+{
+  "_comment": "Workflow recipes — composite chains that run several skills in sequence, passing each output forward as context for the next. Single source of truth: consumed by the slash commands (commands/<command>.md), the MCP server (list_workflows/get_workflow), and WORKFLOWS.md. Each step names an existing skill in skills/<skill>/SKILL.md.",
+  "workflows": [
+    {
+      "id": "ship-a-feature",
+      "command": "/ship-a-feature",
+      "name": "Ship a Feature",
+      "lifecycle": "Discover → Decide → Build → Ship",
+      "summary": "Take a raw feature idea from fuzzy brief all the way to a launch plan, end to end.",
+      "steps": [
+        { "skill": "ambiguity-resolver", "produces": "a sharp problem statement and scoped boundaries", "passes": "the framed problem" },
+        { "skill": "prd-template", "produces": "a full PRD with goals, requirements, and success metrics", "passes": "the PRD scope and metrics" },
+        { "skill": "rice-prioritisation", "produces": "a RICE score positioning this work against alternatives", "passes": "the priority and confidence" },
+        { "skill": "roadmap-narrative", "produces": "where this sits on the roadmap and the story around it", "passes": "the roadmap framing" },
+        { "skill": "go-to-market", "produces": "a launch plan: audience, messaging, channels, and timeline", "passes": null }
+      ]
+    },
+    {
+      "id": "close-the-quarter",
+      "command": "/close-the-quarter",
+      "name": "Close the Quarter",
+      "lifecycle": "Measure → Communicate",
+      "summary": "Turn the quarter's raw numbers into a leadership-ready story and board deck.",
+      "steps": [
+        { "skill": "metrics-framework", "produces": "the metric tree and what actually moved", "passes": "the key metric movements" },
+        { "skill": "churn-analysis", "produces": "why customers left and what is avoidable", "passes": "the retention findings" },
+        { "skill": "executive-update", "produces": "a tight leadership briefing of the quarter", "passes": "the headline narrative" },
+        { "skill": "board-deck-narrative", "produces": "a slide-by-slide board deck storyline", "passes": null }
+      ]
+    },
+    {
+      "id": "launch-a-product",
+      "command": "/launch-a-product",
+      "name": "Launch a Product",
+      "lifecycle": "Decide → Ship",
+      "summary": "Go from competitive landscape to positioning to a fully checklisted launch and press release.",
+      "steps": [
+        { "skill": "competitor-teardown", "produces": "the competitive map and gaps to exploit", "passes": "the positioning opportunity" },
+        { "skill": "product-positioning-doc", "produces": "positioning, value props, and messaging pillars", "passes": "the approved messaging" },
+        { "skill": "go-to-market", "produces": "the GTM plan across audience and channels", "passes": "the launch plan" },
+        { "skill": "product-launch-checklist", "produces": "an owner-by-owner launch readiness checklist", "passes": "the launch date and scope" },
+        { "skill": "press-release", "produces": "the announcement press release", "passes": null }
+      ]
+    },
+    {
+      "id": "rescue-an-account",
+      "command": "/rescue-an-account",
+      "name": "Rescue an Account",
+      "lifecycle": "Measure → Communicate",
+      "summary": "Diagnose an at-risk customer and build the full save play through to renewal.",
+      "steps": [
+        { "skill": "cs-health-scorecard", "produces": "a health score with the specific risk drivers", "passes": "the risk profile" },
+        { "skill": "churn-analysis", "produces": "the root cause and whether the risk is avoidable", "passes": "the diagnosis" },
+        { "skill": "cs-escalation-brief", "produces": "an internal escalation brief for the save", "passes": "the resolution plan" },
+        { "skill": "renewal-playbook", "produces": "the renewal strategy and negotiation plan", "passes": null }
+      ]
+    },
+    {
+      "id": "run-discovery",
+      "command": "/run-discovery",
+      "name": "Run Discovery",
+      "lifecycle": "Discover → Decide",
+      "summary": "From a vague opportunity to validated insight and a prioritised next step.",
+      "steps": [
+        { "skill": "ambiguity-resolver", "produces": "a one-page problem brief from the fuzzy opportunity", "passes": "the scoped question" },
+        { "skill": "discovery-interview-guide", "produces": "a screener and discussion guide for user interviews", "passes": "the research focus" },
+        { "skill": "user-research-synthesis", "produces": "themes and insights from the research", "passes": "the validated insights" },
+        { "skill": "rice-prioritisation", "produces": "a ranked, defensible list of what to do next", "passes": null }
+      ]
+    }
+  ]
+}

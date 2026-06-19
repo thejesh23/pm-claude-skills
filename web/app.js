@@ -15,6 +15,11 @@ const TIER_META = {
   experimental: { label: 'Experimental', cls: 'tier-experimental', dot: '🟡' },
 };
 
+// Small "eval-verified" badge for skills scored by the eval harness.
+function evalBadgeText(s) {
+  return s.eval ? `✅ ${s.eval.score}/5` : '';
+}
+
 init();
 
 async function init() {
@@ -46,6 +51,10 @@ async function init() {
   el('copyGemini').addEventListener('click', () => copyPrompt('gemini'));
   el('copyClaude').addEventListener('click', () => copyPrompt('claude'));
 
+  // "Which skill do I need?" recommender + shareable links.
+  el('recommendInput').addEventListener('input', renderRecommendations);
+  el('shareBtn').addEventListener('click', shareSkill);
+
   try {
     const res = await fetch('skills.json');
     const data = await res.json();
@@ -64,6 +73,84 @@ async function init() {
     sel.appendChild(o);
   }
   renderGallery();
+  applyShareLink(); // open a skill (and prefill inputs) if the URL points to one
+}
+
+// ---------- Recommender: rank skills by a free-text task description ----------
+function scoreSkill(s, terms) {
+  const name = s.name.toLowerCase();
+  const desc = (s.description || '').toLowerCase();
+  const hay = (name + ' ' + desc + ' ' + (s.instructions || '')).toLowerCase();
+  let score = 0;
+  for (const t of terms) {
+    if (name.includes(t)) score += 5;
+    if (desc.includes(t)) score += 3;
+    else if (hay.includes(t)) score += 1;
+  }
+  return score;
+}
+
+function renderRecommendations() {
+  const box = el('recommendResults');
+  const q = el('recommendInput').value.toLowerCase().trim();
+  if (q.length < 3) { box.hidden = true; box.innerHTML = ''; return; }
+  const terms = [...new Set(q.split(/\s+/).filter((t) => t.length > 2))];
+  const ranked = SKILLS.map((s) => ({ s, score: scoreSkill(s, terms) }))
+    .filter((x) => x.score > 0)
+    .sort((a, b) => b.score - a.score || (b.s.eval?.score || 0) - (a.s.eval?.score || 0))
+    .slice(0, 4);
+  box.innerHTML = '';
+  if (!ranked.length) { box.hidden = false; box.innerHTML = '<span class="recommend-empty">No close match — try the search below.</span>'; return; }
+  const lead = document.createElement('span');
+  lead.className = 'recommend-lead';
+  lead.textContent = 'Top matches:';
+  box.appendChild(lead);
+  for (const { s } of ranked) {
+    const chip = document.createElement('button');
+    chip.className = 'recommend-chip';
+    chip.type = 'button';
+    chip.textContent = s.title + (s.eval ? `  ✅ ${s.eval.score}/5` : '');
+    chip.addEventListener('click', () => { el('recommendInput').value = ''; box.hidden = true; selectSkill(s); });
+    box.appendChild(chip);
+  }
+  box.hidden = false;
+}
+
+// ---------- Shareable links: ?skill=<name>&i=<base64 inputs> ----------
+function shareSkill() {
+  if (!current) return;
+  const fields = [...el('inputForm').querySelectorAll('input, textarea')];
+  const values = fields.map((f) => f.value);
+  const url = new URL(location.href.split('?')[0]);
+  url.searchParams.set('skill', current.name);
+  if (values.some((v) => v.trim())) {
+    try {
+      const packed = btoa(unescape(encodeURIComponent(JSON.stringify(values))));
+      if (packed.length < 1800) url.searchParams.set('i', packed); // keep links sane
+    } catch (_) { /* skip inputs if they don't encode */ }
+  }
+  const link = url.toString();
+  navigator.clipboard.writeText(link).then(
+    () => { el('shareMsg').textContent = 'Link copied — anyone who opens it lands on this skill, prefilled.'; },
+    () => { el('shareMsg').textContent = link; }
+  );
+}
+
+function applyShareLink() {
+  const params = new URLSearchParams(location.search);
+  const name = params.get('skill');
+  if (!name) return;
+  const s = SKILLS.find((x) => x.name === name);
+  if (!s) return;
+  selectSkill(s);
+  const packed = params.get('i');
+  if (packed) {
+    try {
+      const values = JSON.parse(decodeURIComponent(escape(atob(packed))));
+      const fields = [...el('inputForm').querySelectorAll('input, textarea')];
+      fields.forEach((f, i) => { if (values[i] != null) f.value = values[i]; });
+    } catch (_) { /* ignore malformed input payloads */ }
+  }
 }
 
 // ---------- Gallery (tiles) ----------
@@ -94,9 +181,16 @@ function renderGallery() {
     const card = document.createElement('button');
     card.className = 'skill-card';
     card.innerHTML =
-      `<div class="card-tags"><span class="card-bundle"></span><span class="card-tier"></span></div>` +
+      `<div class="card-tags"><span class="card-bundle"></span><span class="card-eval"></span><span class="card-tier"></span></div>` +
       `<h3 class="card-title"></h3><p class="card-summary"></p>`;
     card.querySelector('.card-bundle').textContent = s.plugin;
+    const evalEl = card.querySelector('.card-eval');
+    if (s.eval) {
+      evalEl.textContent = evalBadgeText(s);
+      evalEl.title = `Eval-scored ${s.eval.score}/5 across ${s.eval.runs} model runs`;
+    } else {
+      evalEl.remove();
+    }
     const tierEl = card.querySelector('.card-tier');
     tierEl.textContent = `${meta.dot} ${meta.label}`;
     tierEl.classList.add(meta.cls);
@@ -127,12 +221,24 @@ function selectSkill(s) {
   const tierTag = el('skillTier');
   tierTag.textContent = `${meta.dot} ${meta.label}`;
   tierTag.className = 'tier-tag ' + meta.cls;
+  const evalTag = el('skillEval');
+  if (s.eval) {
+    evalTag.textContent = `✅ Eval-scored ${s.eval.score}/5`;
+    evalTag.title = `Scored ${s.eval.score}/5 by an LLM judge across ${s.eval.runs} model runs`;
+    evalTag.hidden = false;
+  } else {
+    evalTag.hidden = true;
+  }
   el('skillTitle').textContent = s.title;
   el('skillDesc').textContent = s.description;
   el('elsewhere').open = false;
   el('copyMsg').textContent = '';
+  el('shareMsg').textContent = '';
   el('outputWrap').hidden = true;
   el('output').innerHTML = '';
+  el('output').hidden = false;
+  el('compareGrid').hidden = true;
+  el('compareGrid').innerHTML = '';
   setStatus('');
   window.scrollTo({ top: 0 });
 
@@ -160,6 +266,58 @@ function makeField(inp, i) {
   return wrap;
 }
 
+// Stream one completion from the API into a target node. Returns the full text.
+async function streamCompletion({ key, model, system, userMessage, node, signal }) {
+  const res = await fetch(API_URL, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      'x-api-key': key,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true',
+    },
+    body: JSON.stringify({
+      model,
+      max_tokens: 8192,
+      stream: true,
+      ...(system ? { system } : {}),
+      messages: [{ role: 'user', content: userMessage }],
+    }),
+    signal,
+  });
+  if (!res.ok) throw new Error(parseApiError(await res.text(), res.status));
+
+  const reader = res.body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = '';
+  let acc = '';
+  while (true) {
+    const { value, done } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+    const lines = buffer.split('\n');
+    buffer = lines.pop();
+    for (const line of lines) {
+      if (!line.startsWith('data:')) continue;
+      const payload = line.slice(5).trim();
+      if (!payload || payload === '[DONE]') continue;
+      let evt;
+      try { evt = JSON.parse(payload); } catch (_) { continue; }
+      if (evt.type === 'content_block_delta' && evt.delta && evt.delta.text) {
+        acc += evt.delta.text;
+        renderMarkdown(node, acc, true);
+      } else if (evt.type === 'error') {
+        throw new Error(evt.error ? evt.error.message : 'Stream error from the API.');
+      }
+    }
+  }
+  renderMarkdown(node, acc, false);
+  return acc;
+}
+
+const SKILL_SUFFIX =
+  '\n\n---\nThe user has provided their inputs below. Execute this skill now and produce the complete output. Do not ask follow-up questions — work with what is given and note any reasonable assumptions.';
+
 // ---------- Run ----------
 async function run() {
   const key = el('apiKey').value.trim();
@@ -171,74 +329,50 @@ async function run() {
   if (missing.length) return setStatus(`Fill in: ${missing.map((f) => f.dataset.label).join(', ')}`, true);
 
   const userMessage = buildUserMessage(fields);
-  const system = current.instructions +
-    '\n\n---\nThe user has provided their inputs below. Execute this skill now and produce the complete output. Do not ask follow-up questions — work with what is given and note any reasonable assumptions.';
+  const system = current.instructions + SKILL_SUFFIX;
+  const model = el('model').value;
+  const compare = el('compareToggle').checked;
 
-  const out = el('output');
-  out.innerHTML = '';
-  out.dataset.raw = '';
   el('outputWrap').hidden = false;
   el('runBtn').disabled = true;
   el('stopBtn').hidden = false;
-  setStatus('Running…');
-
   controller = new AbortController();
+
+  // Single mode → #output. Compare mode → two panes in #compareGrid.
+  const out = el('output');
+  const grid = el('compareGrid');
+  let withNode, plainNode;
+  if (compare) {
+    out.hidden = true;
+    grid.hidden = false;
+    grid.innerHTML =
+      '<div class="compare-pane"><div class="compare-label">✨ With the skill</div><article class="output markdown" id="paneWith"></article></div>' +
+      '<div class="compare-pane"><div class="compare-label">📄 Plain prompt (no skill)</div><article class="output markdown" id="panePlain"></article></div>';
+    withNode = el('paneWith');
+    plainNode = el('panePlain');
+  } else {
+    grid.hidden = true;
+    out.hidden = false;
+    out.innerHTML = '';
+    out.dataset.raw = '';
+  }
+
   let acc = '';
   try {
-    const res = await fetch(API_URL, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'x-api-key': key,
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true',
-      },
-      body: JSON.stringify({
-        model: el('model').value,
-        max_tokens: 8192,
-        stream: true,
-        system,
-        messages: [{ role: 'user', content: userMessage }],
-      }),
-      signal: controller.signal,
-    });
-
-    if (!res.ok) throw new Error(parseApiError(await res.text(), res.status));
-
-    const reader = res.body.getReader();
-    const decoder = new TextDecoder();
-    let buffer = '';
-    while (true) {
-      const { value, done } = await reader.read();
-      if (done) break;
-      buffer += decoder.decode(value, { stream: true });
-      const lines = buffer.split('\n');
-      buffer = lines.pop();
-      for (const line of lines) {
-        if (!line.startsWith('data:')) continue;
-        const payload = line.slice(5).trim();
-        if (!payload || payload === '[DONE]') continue;
-        let evt;
-        try {
-          evt = JSON.parse(payload);
-        } catch (_) {
-          continue; // skip an unparseable / partial SSE line
-        }
-        if (evt.type === 'content_block_delta' && evt.delta && evt.delta.text) {
-          acc += evt.delta.text;
-          renderMarkdown(out, acc, true);
-        } else if (evt.type === 'error') {
-          throw new Error(evt.error ? evt.error.message : 'Stream error from the API.');
-        }
-      }
+    setStatus(compare ? 'Running both…' : 'Running…');
+    if (compare) {
+      // Plain = the same inputs with no skill system prompt.
+      [acc] = await Promise.all([
+        streamCompletion({ key, model, system, userMessage, node: withNode, signal: controller.signal }),
+        streamCompletion({ key, model, system: '', userMessage, node: plainNode, signal: controller.signal }),
+      ]);
+    } else {
+      acc = await streamCompletion({ key, model, system, userMessage, node: out, signal: controller.signal });
     }
-    renderMarkdown(out, acc, false);
-    out.dataset.raw = acc;
+    out.dataset.raw = acc; // copy/download use the skill output, in either mode
     setStatus('Done.');
   } catch (e) {
     if (e.name === 'AbortError') {
-      out.dataset.raw = acc;
-      renderMarkdown(out, acc, false);
       setStatus('Stopped.');
     } else {
       setStatus(e.message || 'Request failed.', true);

@@ -20,6 +20,26 @@ const experimentalSet = new Set(TIERS.experimental);
 const tierFor = (name) =>
   productionSet.has(name) ? 'production' : experimentalSet.has(name) ? 'experimental' : 'stable';
 
+// --- Eval scores (from evals/results.json) ---
+// Average the per-model "overall" (a 0–5 rubric score) for each scored skill.
+// Only skills with eval cases get a score; the rest stay unscored (honest).
+const evalScores = {};
+const evalsFile = join(root, 'evals', 'results.json');
+if (existsSync(evalsFile)) {
+  try {
+    const acc = {};
+    for (const r of JSON.parse(readFileSync(evalsFile, 'utf8')).results || []) {
+      (acc[r.skill] ||= []).push(r.overall);
+    }
+    for (const [skill, arr] of Object.entries(acc)) {
+      evalScores[skill] = {
+        score: Math.round((arr.reduce((a, b) => a + b, 0) / arr.length) * 10) / 10,
+        runs: arr.length,
+      };
+    }
+  } catch { /* leave unscored on parse error */ }
+}
+
 // --- Map each skill name -> plugin bundle (for grouping/filtering) ---
 const skillToPlugin = {};
 if (existsSync(pluginsDir)) {
@@ -109,6 +129,7 @@ for (const name of readdirSync(skillsDir)) {
     summary: summarize(meta.description || ''),
     plugin: skillToPlugin[name] || 'other',
     tier: tierFor(name),
+    eval: evalScores[meta.name || name] || null,
     inputs: parseInputs(body),
     instructions: body.trim(),
   });

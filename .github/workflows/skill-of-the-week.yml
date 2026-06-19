@@ -1,0 +1,42 @@
+name: Skill of the Week
+
+# Picks a featured skill each week, composes X + LinkedIn posts, and (optionally)
+# auto-publishes via a webhook. The post text always lands in the job summary so
+# you can copy-paste even without the webhook configured.
+#
+# To auto-publish: add a repo secret POST_WEBHOOK_URL pointing at a Zapier / Make /
+# Buffer / Slack incoming webhook that takes { text, linkedin, skill, link }.
+
+on:
+  schedule:
+    - cron: '0 9 * * 1' # every Monday 09:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  feature:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Pick & compose the skill of the week
+        env:
+          POST_WEBHOOK_URL: ${{ secrets.POST_WEBHOOK_URL }}
+        run: node scripts/skill-of-the-week.mjs
+
+      - name: Commit the featured skill (if it changed)
+        run: |
+          if ! git diff --quiet -- web/skill-of-the-week.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add web/skill-of-the-week.json
+            git commit -m "chore: skill of the week"
+            git push
+          else
+            echo "No change to web/skill-of-the-week.json"
+          fi

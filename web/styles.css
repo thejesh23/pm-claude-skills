@@ -187,8 +187,65 @@ button.ghost:hover { border-color: var(--accent); }
 .cursor::after { content: "▍"; color: var(--accent); animation: blink 1s steps(2) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
+/* ---------- Recommender ---------- */
+.recommend { max-width: 1100px; margin: 18px auto 0; padding: 0 4px; }
+.recommend > input {
+  width: 100%; box-sizing: border-box; padding: 12px 14px; font-size: 14px;
+  background: var(--panel); color: var(--text);
+  border: 1px solid var(--border); border-radius: 10px;
+}
+.recommend > input:focus { outline: none; border-color: var(--accent); }
+.recommend-results {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px;
+}
+.recommend-lead { font-size: 12.5px; color: var(--muted); }
+.recommend-empty { font-size: 12.5px; color: var(--muted); }
+.recommend-chip {
+  font-size: 12.5px; padding: 6px 11px; border-radius: 99px; cursor: pointer;
+  background: rgba(217,119,87,.12); color: var(--accent-2);
+  border: 1px solid rgba(217,119,87,.35);
+}
+.recommend-chip:hover { background: rgba(217,119,87,.22); }
+
+/* ---------- Eval badges ---------- */
+.card-eval, .eval-badge {
+  font-size: 10px; font-weight: 700; letter-spacing: .02em; padding: 2px 7px;
+  border-radius: 99px; white-space: nowrap;
+  color: #6ee7b7; background: rgba(16,185,129,.12); border: 1px solid rgba(16,185,129,.35);
+}
+.eval-badge { display: inline-block; font-size: 11px; margin: 0 0 8px 6px; }
+
+/* ---------- Share button ---------- */
+.share-btn { margin-top: 10px; }
+
+/* ---------- Sample-output gallery ---------- */
+.sample-card {
+  max-width: 880px; margin: 0 auto 14px; background: var(--panel);
+  border: 1px solid var(--border); border-radius: 12px; padding: 4px 18px;
+}
+.sample-card summary {
+  cursor: pointer; padding: 12px 0; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.sample-title { font-size: 15px; font-weight: 600; }
+.sample-source { font-size: 11px; color: var(--muted); }
+.sample-run { margin-left: auto; font-size: 12.5px; color: var(--accent-2); text-decoration: none; }
+.sample-run:hover { text-decoration: underline; }
+.sample-input { font-size: 12.5px; color: var(--muted); line-height: 1.5; margin: 0 0 8px; }
+.sample-output { border-top: 1px solid var(--border); padding-top: 12px; }
+
+/* ---------- Compare mode ---------- */
+.compare-toggle { font-size: 12.5px; color: var(--muted); display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.compare-pane { min-width: 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.compare-label {
+  font-size: 12px; font-weight: 600; padding: 8px 12px;
+  background: var(--panel-2); border-bottom: 1px solid var(--border);
+}
+.compare-pane .output { padding: 12px 14px; }
+
 @media (max-width: 620px) {
   .key-field input { width: 200px; }
   .brand-text h1 { font-size: 15px; }
   .gallery { grid-template-columns: 1fr; }
+  .compare-grid { grid-template-columns: 1fr; }
 }

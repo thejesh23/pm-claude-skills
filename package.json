@@ -46,14 +46,18 @@
     "commands/",
     "output-styles/",
     "exports/",
-    "skill-tiers.json"
+    "skill-tiers.json",
+    "workflows.json"
   ],
   "scripts": {
     "new-skill": "node scripts/new-skill.mjs",
     "skillcheck": "node scripts/skillcheck.mjs",
     "build:exports": "node scripts/build-exports.mjs",
     "build:web": "node web/build-skills.mjs",
-    "check": "node scripts/skillcheck.mjs && node scripts/build-exports.mjs --check && node web/build-skills.mjs && git diff --exit-code -- web/skills.json"
+    "build:workflows": "node scripts/build-workflows.mjs",
+    "build:samples": "node scripts/build-samples.mjs",
+    "skill-of-the-week": "node scripts/skill-of-the-week.mjs",
+    "check": "node scripts/skillcheck.mjs && node scripts/build-exports.mjs --check && node scripts/build-workflows.mjs --check && node web/build-skills.mjs && node scripts/build-samples.mjs && git diff --exit-code -- web/skills.json web/samples.json"
   },
   "engines": {
     "node": ">=18"
