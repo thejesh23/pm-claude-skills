@@ -127,7 +127,15 @@ Key links:
 
 ---
 
-## 6. Ongoing distribution checklist
+## 6. Skill of the week — automated
+
+A scheduled GitHub Action (`.github/workflows/skill-of-the-week.yml`) picks a featured skill every Monday, rotating deterministically through the production-tier skills, and composes ready-to-post X + LinkedIn copy. The text always appears in the Action's **job summary** so you can copy-paste it.
+
+**To fully automate posting:** add a repo secret `POST_WEBHOOK_URL` pointing at a Zapier / Make / Buffer / Slack incoming webhook. The script POSTs `{ text, linkedin, skill, link }` to it each week — wire that webhook to publish to X/LinkedIn.
+
+Run it any time locally: `npm run skill-of-the-week`.
+
+## 7. Ongoing distribution checklist
 
 - [ ] Submit to the [skills.sh](https://skills.sh) / Claude skills directories and any "awesome-claude" lists
 - [ ] Add a `topics` set on the GitHub repo (claude, claude-code, ai-agents, prompt-engineering, productivity)

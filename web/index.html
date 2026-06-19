@@ -34,7 +34,12 @@
   <div class="key-note">
     🔒 Your key is stored only in this browser and sent directly to api.anthropic.com — never to us.
     Get one at <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">console.anthropic.com</a>.
-    · 📚 <a href="catalog.html">Catalog</a> · 🏆 <a href="leaderboard.html">Leaderboard</a>
+    · 📄 <a href="examples.html">Sample outputs</a> · 📚 <a href="catalog.html">Catalog</a> · 🏆 <a href="leaderboard.html">Leaderboard</a>
+  </div>
+
+  <div class="recommend" id="recommend">
+    <input id="recommendInput" type="text" placeholder="🧭 Not sure which skill? Describe your task — e.g. “explain a metric drop to my CEO”" />
+    <div id="recommendResults" class="recommend-results" hidden></div>
   </div>
 
   <div class="controls" id="controls">
@@ -60,8 +65,11 @@
       <div class="skill-head">
         <span class="bundle-tag" id="skillBundle"></span>
         <span class="tier-tag" id="skillTier"></span>
+        <span class="eval-badge" id="skillEval" hidden></span>
         <h2 id="skillTitle"></h2>
         <p id="skillDesc" class="skill-desc"></p>
+        <button id="shareBtn" class="ghost share-btn" type="button" title="Copy a link that opens this skill with these inputs">🔗 Share</button>
+        <span id="shareMsg" class="copy-msg"></span>
       </div>
 
       <details class="elsewhere" id="elsewhere">
@@ -80,6 +88,7 @@
       <div class="actions">
         <button id="runBtn" class="primary" type="button">Run with my Claude key</button>
         <button id="stopBtn" class="ghost" type="button" hidden>Stop</button>
+        <label class="compare-toggle" title="Run the same inputs with and without the skill, side by side"><input type="checkbox" id="compareToggle" /> ⚖️ Compare vs. plain prompt</label>
         <span id="status" class="status"></span>
       </div>
 
@@ -92,6 +101,7 @@
           </div>
         </div>
         <article id="output" class="output markdown"></article>
+        <div id="compareGrid" class="compare-grid" hidden></div>
       </div>
     </section>
   </main>

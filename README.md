@@ -53,7 +53,7 @@ A community-built library of professional skills for every field — product man
 | 🔭 [Competitor Teardown](skills/competitor-teardown) | "what are rivals up to?" | a positioning map, feature gaps & strategy |
 | 📝 [Meeting Notes](skills/meeting-notes) | a raw transcript | decisions, owners & next steps |
 
-→ Like what you see? [**Install in 2 minutes**](#-quick-install-2-minutes) · [browse all 174 skills](#️-all-174-skills) · [**⭐ star the repo**](https://github.com/mohitagw15856/pm-claude-skills/stargazers) so others find it.
+→ Want proof first? See [**real sample outputs**](https://mohitagw15856.github.io/pm-claude-skills/examples.html) from each skill. Like what you see? [**Install in 2 minutes**](#-quick-install-2-minutes) · [browse all 174 skills](#️-all-174-skills) · [**⭐ star the repo**](https://github.com/mohitagw15856/pm-claude-skills/stargazers) so others find it.
 
 ---
 
@@ -83,10 +83,52 @@ These 174 skills aren't a random catalog — they cover the **full arc of profes
 
 ---
 
+## 🧩 Workflow Recipes — chain skills into one flow
+
+Individual skills are great. **Chaining** them is the superpower. A *recipe* runs several skills in sequence and **passes each output forward as context** — so a fuzzy idea comes out the other end as a finished, joined-up set of artifacts. No other skills library chains across professions like this.
+
+```
+/ship-a-feature  "a referral program for B2B users"
+
+  ambiguity-resolver → prd-template → rice-prioritisation → roadmap-narrative → go-to-market
+   frame the problem    spec it        prioritise it        place on roadmap     launch plan
+        └──────────────── each stage's output feeds the next ────────────────┘
+```
+
+| Recipe | What it does | Lifecycle |
+|--------|--------------|-----------|
+| `/ship-a-feature` | idea → PRD → priority → roadmap → launch plan | Discover → Ship |
+| `/close-the-quarter` | metrics → churn → exec update → board deck | Measure → Communicate |
+| `/launch-a-product` | competitors → positioning → GTM → checklist → press release | Decide → Ship |
+| `/rescue-an-account` | health score → churn cause → escalation → renewal plan | Measure → Communicate |
+| `/run-discovery` | frame → interview guide → synthesis → prioritise | Discover → Decide |
+
+→ Full detail and how to add your own in [**WORKFLOWS.md**](WORKFLOWS.md). Recipes run as slash commands in Claude Code, or over MCP via the `get_workflow` tool.
+
+---
+
+## ✅ Eval-verified quality — not just quantity
+
+Most skill libraries ask you to trust the count. This one is **scored**. An [eval harness](evals/) runs each skill against a held-out test case, then an LLM judge (Opus 4.8) rates the output on four dimensions — **structure, completeness, usefulness, grounding** — averaged across two models.
+
+The flagship skills score consistently high (out of 5):
+
+| Skill | Eval score | Skill | Eval score |
+|-------|:---------:|-------|:---------:|
+| `prd-template` | 🟢 **4.9** | `cs-health-scorecard` | 🟢 **4.9** |
+| `rice-prioritisation` | 🟢 **4.9** | `sprint-planning` | 🟢 **4.8** |
+| `competitive-analysis` | 🟢 **4.5** | `executive-summary` | 🟢 **4.5** |
+
+These scores show up as badges in the [Playground](https://mohitagw15856.github.io/pm-claude-skills/) and the [🏆 leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html). Coverage is expanding — run it yourself with `node evals/run-evals.mjs` (needs an API key). *Honest note: 6 skills are eval-scored today; the rest are reviewed against the [authoring standard](SKILL-AUTHORING-STANDARD.md) but not yet auto-scored.*
+
+---
+
 ## Contents
 
 - [👋 New here? Start in 30 seconds](#-new-here-start-in-30-seconds)
 - [🔄 One library, the whole professional workflow](#-one-library-the-whole-professional-workflow)
+- [🧩 Workflow Recipes — chain skills into one flow](#-workflow-recipes--chain-skills-into-one-flow)
+- [✅ Eval-verified quality](#-eval-verified-quality--not-just-quantity)
 - [🚀 Quick Install](#-quick-install-2-minutes)
 - [🔌 Works With — Cross-Tool Compatibility](#-works-with--cross-tool-compatibility)
 - [🤖 Subagents & Slash Commands](#-subagents--slash-commands)
@@ -108,6 +150,14 @@ These 174 skills aren't a random catalog — they cover the **full arc of profes
 ```bash
 npx pm-claude-skills add --agent claude     # or: codex · cursor · hermes · openclaw
 ```
+
+**Or one-line MCP** — make all 174 skills + 5 workflow recipes available in *every* session of any MCP client (Claude Code, Claude Desktop, Cursor, Windsurf), no per-file install:
+
+```bash
+claude mcp add pm-skills -- npx -y pm-claude-skills-mcp
+```
+
+Your assistant can then *"search the skills for churn"* or *"run the ship-a-feature workflow"* on demand. Details: [mcp/README.md](mcp/README.md).
 
 **In Claude Code**, run:
 
