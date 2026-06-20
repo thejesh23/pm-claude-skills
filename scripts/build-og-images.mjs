@@ -50,7 +50,7 @@ function card(s) {
       <p>${summary}</p>
       <div class="pills">${evalLine}<span class="pill pill-tier">${dot} ${label}</span></div>
     </div>
-    <div class="foot"><span>174 open-source AI agent skills · Claude · ChatGPT · Gemini</span><span class="cta">▶ run free in your browser</span></div>
+    <div class="foot"><span>${skills.length} open-source AI agent skills · Claude · ChatGPT · Gemini</span><span class="cta">▶ run free in your browser</span></div>
   </body></html>`;
 }
 

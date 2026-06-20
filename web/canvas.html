@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-site-verification" content="osZgdSLYnqidzCKt4CxjqAxo44OqGvlKi-Bmg0UmxFQ" />
+<title>Workflow Canvas — chain skills into your own recipe</title>
+<meta name="description" content="Drag professional AI skills into a custom workflow, connect them, and run the chain — each step's output feeds the next. Build your own recipe in the browser." />
+<link rel="stylesheet" href="styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.9/dist/purify.min.js"></script>
+<style>
+  .canvas-wrap { display: grid; grid-template-columns: 300px 1fr; gap: 18px; max-width: 1200px; margin: 0 auto; padding: 16px 22px 70px; }
+  .palette { border: 1px solid var(--border); border-radius: 12px; background: var(--panel); padding: 12px; height: fit-content; position: sticky; top: 12px; max-height: 90vh; overflow: auto; }
+  .palette input { width: 100%; box-sizing: border-box; padding: 8px 10px; margin-bottom: 8px; background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; color: var(--text); }
+  .palette-item { padding: 7px 9px; border-radius: 8px; cursor: pointer; font-size: 13px; border: 1px solid transparent; }
+  .palette-item:hover { background: var(--panel-2); border-color: var(--accent); }
+  .palette-item .b { font-size: 10px; color: var(--accent-2); text-transform: uppercase; letter-spacing: .03em; }
+  .pipe { min-height: 200px; }
+  .kickoff { width: 100%; box-sizing: border-box; padding: 11px 13px; border-radius: 10px; background: var(--panel); border: 1px solid var(--border); color: var(--text); font-family: inherit; font-size: 14px; margin-bottom: 6px; }
+  .arrow { text-align: center; color: var(--muted); font-size: 18px; line-height: 1.1; }
+  .node { border: 1px solid var(--border); border-radius: 12px; background: var(--panel); padding: 12px 14px; }
+  .node-head { display: flex; align-items: center; gap: 8px; }
+  .node-num { background: var(--accent); color: #0f1115; font-weight: 700; font-size: 12px; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; }
+  .node-title { font-weight: 600; font-size: 14.5px; }
+  .node-bundle { font-size: 10px; color: var(--accent-2); text-transform: uppercase; letter-spacing:.03em; }
+  .node-ctrls { margin-left: auto; display: flex; gap: 4px; }
+  .node-ctrls button { background: var(--panel-2); border: 1px solid var(--border); color: var(--text); border-radius: 6px; cursor: pointer; padding: 2px 8px; font-size: 13px; }
+  .node-out { margin-top: 10px; border-top: 1px solid var(--border); padding-top: 8px; font-size: 13.5px; }
+  .empty-pipe { color: var(--muted); border: 2px dashed var(--border); border-radius: 12px; padding: 30px; text-align: center; }
+  .bar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
+  @media (max-width: 760px){ .canvas-wrap{ grid-template-columns: 1fr; } .palette{ position: static; max-height: none; } }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img src="assets/product-notes.jpg" alt="Product Notes" class="brand-logo" />
+    <div class="brand-text"><h1>Workflow Canvas</h1><p class="tagline">Chain skills into your own recipe — each step feeds the next.</p></div>
+  </div>
+  <div class="key-area">
+    <div class="key-field"><input id="apiKey" type="password" placeholder="sk-ant-… (your Claude key)" autocomplete="off" /><button id="keyToggle" type="button" class="show-toggle">Show</button></div>
+    <select id="model" title="Model"><option value="claude-opus-4-8">Opus 4.8</option><option value="claude-sonnet-4-6" selected>Sonnet 4.6</option><option value="claude-haiku-4-5-20251001">Haiku 4.5</option></select>
+  </div>
+</header>
+<div class="key-note">🔒 Your key stays in this browser. · ▶ <a href="index.html">Playground</a> · 📚 <a href="catalog.html">Catalog</a> · 🧩 <a href="https://github.com/mohitagw15856/pm-claude-skills/blob/main/WORKFLOWS.md">Prebuilt recipes</a></div>
+
+<div class="canvas-wrap">
+  <aside class="palette">
+    <input id="paletteSearch" type="search" placeholder="Search 174 skills to add…" />
+    <div id="paletteList"></div>
+  </aside>
+  <main>
+    <div class="bar">
+      <button id="runBtn" class="primary" type="button">▶ Run pipeline</button>
+      <button id="stopBtn" class="ghost" type="button" hidden>Stop</button>
+      <button id="clearBtn" class="ghost" type="button">Clear</button>
+      <button id="shareBtn" class="ghost" type="button">🔗 Share recipe</button>
+      <span id="status" class="status"></span>
+    </div>
+    <textarea id="kickoff" class="kickoff" rows="3" placeholder="Kickoff brief — the starting input for step 1 (e.g. 'a referral program for activated B2B users, goal +15% signups in Q3')"></textarea>
+    <div class="arrow">↓</div>
+    <div id="pipe" class="pipe"></div>
+  </main>
+</div>
+
+<script>
+const API_URL='https://api.anthropic.com/v1/messages';
+const el=(id)=>document.getElementById(id);
+let SKILLS=[], PIPE=[], controller=null;
+
+init();
+async function init(){
+  const k=localStorage.getItem('anthropic_api_key'); if(k) el('apiKey').value=k;
+  const m=localStorage.getItem('anthropic_model'); if(m) el('model').value=m;
+  el('apiKey').addEventListener('input',e=>localStorage.setItem('anthropic_api_key',e.target.value.trim()));
+  el('model').addEventListener('change',e=>localStorage.setItem('anthropic_model',e.target.value));
+  el('keyToggle').addEventListener('click',()=>{const f=el('apiKey');const s=f.type==='password';f.type=s?'text':'password';el('keyToggle').textContent=s?'Hide':'Show';});
+  el('paletteSearch').addEventListener('input',renderPalette);
+  el('runBtn').addEventListener('click',run);
+  el('stopBtn').addEventListener('click',()=>controller&&controller.abort());
+  el('clearBtn').addEventListener('click',()=>{PIPE=[];renderPipe();});
+  el('shareBtn').addEventListener('click',shareRecipe);
+  try{ SKILLS=(await (await fetch('skills.json')).json()).skills; }catch(e){ el('paletteList').innerHTML='<p class="empty-msg">Run node web/build-skills.mjs</p>'; return; }
+  el('paletteSearch').placeholder='Search '+SKILLS.length+' skills to add…';
+  loadFromUrl();
+  renderPalette(); renderPipe();
+}
+
+function renderPalette(){
+  const q=el('paletteSearch').value.toLowerCase().trim();
+  const list=SKILLS.filter(s=>!q||(s.title+' '+s.description+' '+s.name).toLowerCase().includes(q)).slice(0,60);
+  const box=el('paletteList'); box.innerHTML='';
+  for(const s of list){
+    const d=document.createElement('div'); d.className='palette-item';
+    d.innerHTML='<div class="b"></div><div class="t"></div>';
+    d.querySelector('.b').textContent=s.plugin;
+    d.querySelector('.t').textContent=s.title;
+    d.title='Add '+s.title+' to the pipeline';
+    d.addEventListener('click',()=>{PIPE.push(s.name);renderPipe();});
+    box.appendChild(d);
+  }
+}
+
+function renderPipe(){
+  const pipe=el('pipe'); pipe.innerHTML='';
+  if(!PIPE.length){ pipe.innerHTML='<div class="empty-pipe">Click skills on the left to build a pipeline. They run top-to-bottom, each step feeding the next.</div>'; return; }
+  PIPE.forEach((name,i)=>{
+    const s=SKILLS.find(x=>x.name===name)||{title:name,plugin:''};
+    const node=document.createElement('div'); node.className='node'; node.id='node-'+i;
+    node.innerHTML=`<div class="node-head"><span class="node-num">${i+1}</span><span><span class="node-bundle">${s.plugin}</span><br><span class="node-title">${esc(s.title)}</span></span>
+      <span class="node-ctrls"><button data-up>↑</button><button data-down>↓</button><button data-rm>✕</button></span></div>
+      <div class="node-out markdown" id="out-${i}" hidden></div>`;
+    node.querySelector('[data-up]').onclick=()=>{ if(i>0){[PIPE[i-1],PIPE[i]]=[PIPE[i],PIPE[i-1]];renderPipe();} };
+    node.querySelector('[data-down]').onclick=()=>{ if(i<PIPE.length-1){[PIPE[i+1],PIPE[i]]=[PIPE[i],PIPE[i+1]];renderPipe();} };
+    node.querySelector('[data-rm]').onclick=()=>{ PIPE.splice(i,1);renderPipe(); };
+    pipe.appendChild(node);
+    if(i<PIPE.length-1){ const a=document.createElement('div');a.className='arrow';a.textContent='↓';pipe.appendChild(a); }
+  });
+}
+
+async function run(){
+  const key=el('apiKey').value.trim(); if(!key) return setStatus('Enter your Claude key first.',true);
+  if(!PIPE.length) return setStatus('Add at least one skill.',true);
+  const kickoff=el('kickoff').value.trim(); if(!kickoff) return setStatus('Add a kickoff brief.',true);
+  el('runBtn').disabled=true; el('stopBtn').hidden=false; controller=new AbortController();
+  let upstream='';
+  try{
+    for(let i=0;i<PIPE.length;i++){
+      const s=SKILLS.find(x=>x.name===PIPE[i]); if(!s) continue;
+      setStatus(`Running step ${i+1}/${PIPE.length}: ${s.title}…`);
+      const out=el('out-'+i); out.hidden=false; out.innerHTML='';
+      const system=s.instructions+'\n\n---\nExecute this skill now and produce the complete output. Do not ask questions; note any assumptions.';
+      const userMsg = i===0
+        ? kickoff
+        : `Overall goal:\n${kickoff}\n\nBuild directly on the upstream work below (carry its decisions forward):\n\n${upstream}`;
+      upstream = await stream({key,model:el('model').value,system,userMsg,node:out,signal:controller.signal});
+    }
+    setStatus('Done — pipeline complete.');
+  }catch(e){ setStatus(e.name==='AbortError'?'Stopped.':(e.message||'Failed.'),true); }
+  finally{ el('runBtn').disabled=false; el('stopBtn').hidden=true; controller=null; }
+}
+
+async function stream({key,model,system,userMsg,node,signal}){
+  const res=await fetch(API_URL,{method:'POST',headers:{'content-type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+    body:JSON.stringify({model,max_tokens:4096,stream:true,system,messages:[{role:'user',content:userMsg}]}),signal});
+  if(!res.ok){ let m='API '+res.status; try{m=JSON.parse(await res.text()).error.message;}catch(_){ } throw new Error(m); }
+  const reader=res.body.getReader(); const dec=new TextDecoder(); let buf='',acc='';
+  while(true){ const {value,done}=await reader.read(); if(done)break; buf+=dec.decode(value,{stream:true});
+    const lines=buf.split('\n'); buf=lines.pop();
+    for(const line of lines){ if(!line.startsWith('data:'))continue; const p=line.slice(5).trim(); if(!p||p==='[DONE]')continue;
+      let evt; try{evt=JSON.parse(p);}catch(_){continue;}
+      if(evt.type==='content_block_delta'&&evt.delta&&evt.delta.text){ acc+=evt.delta.text; node.innerHTML=DOMPurify.sanitize(marked.parse(acc)); }
+      else if(evt.type==='error') throw new Error(evt.error?evt.error.message:'stream error'); } }
+  return acc;
+}
+
+function shareRecipe(){
+  const u=new URL(location.href.split('?')[0]);
+  if(PIPE.length) u.searchParams.set('recipe',PIPE.join(','));
+  if(el('kickoff').value.trim()) u.searchParams.set('k',btoa(unescape(encodeURIComponent(el('kickoff').value.trim()))).slice(0,1500));
+  navigator.clipboard.writeText(u.toString()).then(()=>setStatus('Recipe link copied.'),()=>setStatus(u.toString()));
+}
+function loadFromUrl(){
+  const p=new URLSearchParams(location.search);
+  const r=p.get('recipe'); if(r) PIPE=r.split(',').filter(n=>SKILLS.some(s=>s.name===n));
+  const k=p.get('k'); if(k){ try{ el('kickoff').value=decodeURIComponent(escape(atob(k))); }catch(_){} }
+}
+function setStatus(m,err){ const s=el('status'); s.textContent=m; s.className='status'+(err?' err':''); }
+function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+</script>
+</body>
+</html>
