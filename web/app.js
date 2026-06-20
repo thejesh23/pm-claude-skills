@@ -50,6 +50,23 @@ async function init() {
     localStorage.setItem(CONTEXT_STORE, e.target.value);
     updateContextStatus();
   });
+  // Ground in a real file: read it in-browser and append to context.
+  el('contextFile').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      let text = String(reader.result || '').slice(0, 100000); // cap to keep requests sane
+      const box = el('contextInput');
+      box.value = (box.value ? box.value + '\n\n' : '') + `--- Data from ${file.name} ---\n${text}`;
+      localStorage.setItem(CONTEXT_STORE, box.value);
+      updateContextStatus();
+      el('contextFileMsg').textContent = `Loaded ${file.name} (${Math.round(file.size / 1024)} KB) into your context.`;
+      el('contextBox').open = true;
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  });
   el('keyToggle').addEventListener('click', () => {
     const f = el('apiKey');
     const show = f.type === 'password';
@@ -74,6 +91,15 @@ async function init() {
   // "Which skill do I need?" recommender + shareable links.
   el('recommendInput').addEventListener('input', renderRecommendations);
   el('shareBtn').addEventListener('click', shareSkill);
+
+  // Critique mode: grade an existing draft instead of generating.
+  el('critiqueToggle').addEventListener('change', (e) => {
+    const on = e.target.checked;
+    el('critiqueWrap').hidden = !on;
+    el('inputForm').hidden = on;
+    el('compareToggle').closest('.compare-toggle').style.display = on ? 'none' : '';
+    el('runBtn').textContent = on ? 'Grade my draft' : 'Run with my Claude key';
+  });
 
   try {
     const res = await fetch('skills.json');
@@ -322,6 +348,13 @@ function selectSkill(s) {
   el('elsewhere').open = false;
   el('copyMsg').textContent = '';
   el('shareMsg').textContent = '';
+  // Reset critique mode for the newly-selected skill.
+  el('critiqueToggle').checked = false;
+  el('critiqueWrap').hidden = true;
+  el('critiqueInput').value = '';
+  el('inputForm').hidden = false;
+  el('compareToggle').closest('.compare-toggle').style.display = '';
+  el('runBtn').textContent = 'Run with my Claude key';
   el('outputWrap').hidden = true;
   el('output').innerHTML = '';
   el('output').hidden = false;
@@ -412,19 +445,36 @@ async function run() {
   if (!key) return setStatus('Enter your Claude API key first.', true);
   if (!current) return;
 
-  const fields = [...el('inputForm').querySelectorAll('input, textarea')];
-  const missing = fields.filter((f) => !f.dataset.optional && !f.value.trim());
-  if (missing.length) return setStatus(`Fill in: ${missing.map((f) => f.dataset.label).join(', ')}`, true);
-
-  const userMessage = buildUserMessage(fields);
   const ctx = getContext();
   const ctxBlock = ctx
     ? `\n\n## About the user and their context (apply this throughout — match their product, audience, and voice)\n${ctx}`
     : '';
-  const system = current.instructions + SKILL_SUFFIX + ctxBlock;
-  const plainSystem = ctx ? ctxBlock.trim() : '';
   const model = el('model').value;
-  const compare = el('compareToggle').checked;
+  const critique = el('critiqueToggle').checked;
+
+  let userMessage, system, plainSystem = '', compare = false;
+  if (critique) {
+    const draft = el('critiqueInput').value.trim();
+    if (!draft) return setStatus('Paste a draft to grade first.', true);
+    userMessage = draft;
+    system = `You are a senior reviewer. Grade the user's existing artifact against the standard a top "${current.title}" should meet${current.source ? `, grounded in the framework it follows (${current.source.replace(/\*/g, '')})` : ''}. Do NOT rewrite it from scratch — improve THEIR draft.
+
+Return, in this order:
+1. **Score** — rate 1–5 on **structure, completeness, usefulness, grounding**, one line each with why.
+2. **Top gaps** — the most important specific, actionable problems, ranked.
+3. **Redline** — concrete edits and additions to fix the biggest gaps (quote what to change).
+
+Use the following skill as the rubric for what "good" looks like:
+${current.instructions}${ctxBlock}`;
+  } else {
+    const fields = [...el('inputForm').querySelectorAll('input, textarea')];
+    const missing = fields.filter((f) => !f.dataset.optional && !f.value.trim());
+    if (missing.length) return setStatus(`Fill in: ${missing.map((f) => f.dataset.label).join(', ')}`, true);
+    userMessage = buildUserMessage(fields);
+    system = current.instructions + SKILL_SUFFIX + ctxBlock;
+    plainSystem = ctx ? ctxBlock.trim() : '';
+    compare = el('compareToggle').checked;
+  }
 
   el('outputWrap').hidden = false;
   el('runBtn').disabled = true;

@@ -50,6 +50,7 @@
     "ai-ethics-review": "NIST AI Risk Management Framework; Google PAIR",
     "raci-matrix": "RACI responsibility assignment matrix",
     "risk-register": "Risk management — PMI / PMBOK",
-    "churn-analysis": "Net revenue retention & churn cohort analysis"
+    "churn-analysis": "Net revenue retention & churn cohort analysis",
+    "red-team-review": "Pre-mortem technique — Gary Klein; red-teaming practice"
   }
 }
