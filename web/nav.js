@@ -7,6 +7,7 @@
   try { document.documentElement.dataset.theme = localStorage.getItem('pm_theme') || 'dark'; } catch (e) {}
   var TOOLS = [
     ['index.html', '▶ Playground'],
+    ['ask.html', '❓ Ask'],
     ['canvas.html', '🧩 Workflow Canvas'],
     ['agent.html', '✨ Auto-Agent'],
     ['studio.html', '🏗️ Create a skill'],
