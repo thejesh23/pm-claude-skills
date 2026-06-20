@@ -338,7 +338,7 @@ input:focus, select:focus, textarea:focus { outline: none; box-shadow: 0 0 0 3px
 
 /* ---------- Compare mode ---------- */
 .compare-toggle { font-size: 12.5px; color: var(--muted); display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
-.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
 .compare-pane { min-width: 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .compare-label {
   font-size: 12px; font-weight: 600; padding: 8px 12px;
@@ -407,3 +407,12 @@ html[data-theme="light"] .toolbar-nav .tool.active { color: #fff; }
 
 .gallery-head { grid-column: 1 / -1; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--accent-2); margin: 10px 0 2px; }
 .gallery-head:first-child { margin-top: 0; }
+
+/* ===== Save-as-image card (rendered off-screen by html2canvas) ===== */
+.img-card { position: fixed; left: -9999px; top: 0; width: 720px; padding: 30px 34px; background: #0d0f14; color: #e7ebf0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+.img-card .ic-top { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; color: #e89b82; }
+.img-card .ic-badge { font-size: 13px; color: #6ee7b7; background: rgba(16,185,129,.14); border: 1px solid rgba(16,185,129,.4); border-radius: 99px; padding: 3px 10px; margin-left: auto; }
+.img-card .ic-title { font-size: 26px; font-weight: 800; margin: 12px 0 14px; }
+.img-card .ic-body { max-height: 760px; overflow: hidden; font-size: 14.5px; line-height: 1.55; }
+.img-card .ic-body h1, .img-card .ic-body h2 { font-size: 18px; }
+.img-card .ic-foot { margin-top: 18px; padding-top: 14px; border-top: 1px solid #2a313c; font-size: 13px; color: #95a0b0; }
