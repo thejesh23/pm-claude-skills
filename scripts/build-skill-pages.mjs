@@ -160,6 +160,7 @@ for (const s of skills) writeFileSync(join(outDir, `${s.name}.html`), page(s));
 const today = new Date().toISOString().slice(0, 10);
 const urls = [
   `${BASE}/`, `${BASE}/catalog.html`, `${BASE}/examples.html`, `${BASE}/leaderboard.html`,
+  `${BASE}/canvas.html`, `${BASE}/grade.html`, `${BASE}/benchmark.html`,
   ...skills.map((s) => `${BASE}/skill/${s.name}.html`),
 ];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

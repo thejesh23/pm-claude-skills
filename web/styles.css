@@ -210,6 +210,18 @@ button.ghost:hover { border-color: var(--accent); }
 .link-btn { background: none; border: 0; color: var(--accent-2); cursor: pointer; font-size: 13px; }
 .link-btn:hover { text-decoration: underline; }
 
+/* ---------- Tools bar ---------- */
+.toolbar-nav {
+  display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+  max-width: 1100px; margin: 14px auto 0; padding: 0 4px;
+}
+.toolbar-nav .tool {
+  font-size: 13px; font-weight: 600; text-decoration: none; padding: 7px 13px; border-radius: 99px;
+  color: var(--text); background: var(--panel); border: 1px solid var(--border); white-space: nowrap;
+}
+.toolbar-nav .tool:hover { border-color: var(--accent); background: var(--panel-2); }
+.toolbar-nav .tool.active { background: rgba(217,119,87,.16); border-color: var(--accent); color: var(--accent-2); }
+
 /* ---------- Eval-scored filter ---------- */
 .eval-filter { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #6ee7b7; cursor: pointer; background: rgba(16,185,129,.10); border: 1px solid rgba(16,185,129,.30); border-radius: 8px; padding: 7px 11px; }
 
