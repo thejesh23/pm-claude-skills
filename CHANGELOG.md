@@ -9,6 +9,18 @@ each new wave of skills bumps the **major** version, extensions and fixes bump
 
 ## [Unreleased]
 
+## [22.2.0] — Skill Studio, Auto-Agent & Editor Extension — 2026-06-20
+
+Lower the bar to *create* skills, raise the ceiling on *using* them, and meet people in their editor.
+
+### Added
+- **Skill Studio** (`studio.html`) — describe a skill in the browser and generate a complete, standards-compliant `SKILL.md` (frontmatter, "work from a brief" rule, structured output, quality checks, anti-patterns), then **open a prefilled GitHub pull request in one click**. The frictionless on-ramp that feeds the eval-gated contribution flow.
+- **Auto-Agent** (`agent.html`) — give a plain-English goal; the model **plans an ordered chain of skills** from the 175-skill catalog (with reasoning) and **runs them in sequence**, each step's output feeding the next.
+- **VS Code / Cursor extension** (`vscode-extension/`) — search all 175 skills from the Command Palette and insert one as context for Copilot/Cursor chat, copy it, or open it in the Playground. Includes dev + publish docs.
+
+### Changed
+- **Shared navigation** (`web/nav.js`) — the tools bar is now a single source of truth injected into every static and generated page, eliminating per-page duplication (which had caused catalog/leaderboard to drift).
+
 ## [22.1.0] — The Skills Hub, Contribution Flow & a Redesign — 2026-06-20
 
 The library becomes a community **platform** — with a benchmark, a contributor flow, a place to gather, and a much sharper look.
