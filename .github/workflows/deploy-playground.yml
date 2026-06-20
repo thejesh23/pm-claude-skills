@@ -12,6 +12,7 @@ on:
       - 'web/**'
       - 'evals/results.json'
       - 'skill-tiers.json'
+      - 'skill-sources.json'
       - 'scripts/build-docs.mjs'
       - 'scripts/build-leaderboard.mjs'
       - 'scripts/build-skill-pages.mjs'

@@ -40,6 +40,7 @@ h1{font-size:30px;margin:.2em 0 .3em}h2{font-size:19px;margin:1.6em 0 .5em;borde
 .badge-eval{color:#6ee7b7;background:rgba(16,185,129,.12);border-color:rgba(16,185,129,.35)}
 .bundle{font-size:11px;letter-spacing:.03em;text-transform:uppercase;color:#e89b82;font-weight:600}
 .lead{font-size:17px;color:#c7cfda}
+.source{font-size:14px;color:#95a0b0;margin:6px 0 0}.source em{color:#e89b82;font-style:italic}
 .cta{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
 .btn{display:inline-block;padding:10px 16px;border-radius:9px;font-weight:600;font-size:14px}
 .btn-primary{background:#d97757;color:#0f1115}.btn-ghost{background:#1d222b;border:1px solid #2a313c;color:#e7ebf0}
@@ -122,6 +123,7 @@ function page(s) {
 <main>
   <h1>${esc(s.title)}</h1>
   <p class="lead">${esc(s.description)}</p>
+  ${s.source ? `<p class="source">📚 Based on ${esc(s.source).replace(/\*(.+?)\*/g, '<em>$1</em>')}</p>` : ''}
 
   <div class="cta">
     <a class="btn btn-primary" href="${playUrl}">▶ Run it free in the Playground</a>

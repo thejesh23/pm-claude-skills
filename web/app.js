@@ -312,6 +312,13 @@ function selectSkill(s) {
   }
   el('skillTitle').textContent = s.title;
   el('skillDesc').textContent = s.description;
+  const srcEl = el('skillSource');
+  if (s.source) {
+    srcEl.innerHTML = `📚 Based on ${escapeHtml(s.source).replace(/\*(.+?)\*/g, '<em>$1</em>')}`;
+    srcEl.hidden = false;
+  } else {
+    srcEl.hidden = true;
+  }
   el('elsewhere').open = false;
   el('copyMsg').textContent = '';
   el('shareMsg').textContent = '';

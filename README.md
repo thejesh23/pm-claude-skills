@@ -1,6 +1,6 @@
 # 🧠 PM Skills — 174 Professional Agent Skills for Claude, ChatGPT, Gemini, Cursor, Codex & Hermes
 
-> Open-source **Agent Skills** (`SKILL.md`) + subagents + slash commands for every profession — one source, every AI coding tool.
+> **Generic AI gives you filler. These give you the structure a senior pro actually uses** — PRDs, exec updates, launch plans, postmortems — as open-source `SKILL.md` files. Across **18 professions**, not just product management. One source, every AI tool.
 
 [![Stars](https://img.shields.io/github/stars/mohitagw15856/pm-claude-skills?style=social)](https://github.com/mohitagw15856/pm-claude-skills/stargazers)
 [![npm](https://img.shields.io/npm/v/pm-claude-skills?logo=npm&color=cb3837)](https://www.npmjs.com/package/pm-claude-skills)
@@ -137,7 +137,9 @@ The bot runs the skill and posts the result as a reply. `/skill list` shows usag
 
 ## ✅ Eval-verified quality — not just quantity
 
-Most skill libraries ask you to trust the count. This one is **scored**. An [eval harness](evals/) runs each skill against a held-out test case, then an LLM judge (Opus 4.8) rates the output on four dimensions — **structure, completeness, usefulness, grounding** — averaged across two models.
+**Grounded in canonical frameworks.** These aren't invented prompts — each skill encodes a proven method and cites it: RICE (Intercom), Jobs-to-be-Done (Christensen), Continuous Discovery (Teresa Torres), Porter's Five Forces, the Pyramid Principle (Minto), Google SRE, WCAG, *Obviously Awesome* (April Dunford), and more. The source shows as a **"📚 Based on"** line on every [skill page](https://mohitagw15856.github.io/pm-claude-skills/skill/rice-prioritisation.html) and in the Playground.
+
+**And measured, not just claimed.** An [eval harness](evals/) runs each skill against a held-out test case, then an LLM judge (Opus 4.8) rates the output on four dimensions — **structure, completeness, usefulness, grounding** — averaged across two models.
 
 The flagship skills score consistently high (out of 5):
 
@@ -191,6 +193,8 @@ claude mcp add pm-skills -- npx -y pm-claude-skills-mcp
 ```
 
 Your assistant can then *"search the skills for churn"* or *"run the ship-a-feature workflow"* on demand. Details: [mcp/README.md](mcp/README.md).
+
+**In [Claude Cowork](https://www.anthropic.com/claude)** — open the plugin browser → **Add from GitHub** → enter `mohitagw15856/pm-claude-skills`, then add the bundles you want. No CLI needed.
 
 **In Claude Code**, run:
 
@@ -537,243 +541,22 @@ More templates will follow. If you want to contribute one, see the [template con
 
 ## 📋 Changelog
 
-The highlights are below. For the structured, [Keep a Changelog](https://keepachangelog.com/)-format history, see **[CHANGELOG.md](CHANGELOG.md)**.
+Latest highlights below — full [Keep a Changelog](https://keepachangelog.com/)-format history in **[CHANGELOG.md](CHANGELOG.md)**.
 
-### 🆕 What's New in v21.0.0 — Workflow Recipes, Eval-Verified Quality & a Smarter Playground
+**v21.1.0 — Skill Memory, Onboarding, Social Cards & ChatOps.** Set your context once and every skill personalizes; first-visit role onboarding; a branded social card per skill; and a `/skill` GitHub-comment bot.
 
-The 174 skills become a *system*, not just a catalog.
+**v21.0.0 — Workflow Recipes, Eval-Verified Quality & a Smarter Playground.** Chain skills into recipes; real eval scores surfaced as badges; one-line MCP; and a playground with a skill recommender, with/without **Compare** mode, and shareable links.
 
-- **🧩 Workflow Recipes** — chain skills into one flow, each output feeding the next: `/ship-a-feature`, `/close-the-quarter`, `/launch-a-product`, `/rescue-an-account`, `/run-discovery`. Run as slash commands or over MCP. See [WORKFLOWS.md](WORKFLOWS.md).
-- **✅ Eval-verified quality** — real scores (structure, completeness, usefulness, grounding; judged by Opus 4.8) now show as badges in the Playground and leaderboard. Eval coverage grew from 6 → 15 skills.
-- **🔌 One-click MCP** — `claude mcp add pm-skills -- npx -y pm-claude-skills-mcp` makes every skill + recipe available in Claude Code, Claude Desktop, Cursor, and Windsurf, plus new `list_workflows`/`get_workflow` tools.
-- **🎛️ Playground upgrades** — a "which skill do I need?" recommender, a with/without **Compare** toggle, shareable deep-links that prefill inputs, and eval-score badges.
-- **📄 Sample-output gallery** — 18 real example outputs so you can see what a skill produces before running it.
-- **🗓️ Skill of the week** — a scheduled workflow that composes weekly social posts.
-
-### 🆕 What's New in v20.2.0 — Community PRs & New Skill
-
-- **New skill: YouTube Script Writer** (experimental) — retention-optimized video scripts with hook variations, a video/audio cue table, and SEO metadata. Thanks @prajwal-28 (#50). **Now 174 skills.**
-- **Feature-prioritisation helper** — a dependency-free Python script that computes RICE/ICE rankings consistently across sessions. Thanks @zeotrix (#48).
-- **Safer installs + robust parsing** — the CLI refuses system-critical install targets, and `skillcheck` tolerates CRLF/whitespace in frontmatter. Thanks @MatrixNeoKozak (#47).
-- **Catalog reconciled to 174** — the headline, badge, and skill catalog now reflect the true count, with entries added for Skill Security Auditor, Launch Readiness, and YouTube Script Writer.
-
-<details>
-<summary><strong>v20.1.0 — Star Nudges & Eval Hardening</strong> (click to expand)</summary>
-
-- **Star the repo, from anywhere you use it** — tasteful, non-spammy CTAs (no `postinstall`): after a successful `npx pm-claude-skills add`, in `--help`, in `list`, in the MCP server banner, below the README badges, and a `funding` link on npm.
-- **One-click leaderboard in CI** — the "Update Skill Leaderboard" workflow runs the evals with your `ANTHROPIC_API_KEY` secret and opens a results PR; merge it to publish real numbers.
-- **Faster, hang-proof evals** — per-request timeout + retries in the API client and concurrent eval runs, so a CI run finishes in minutes and can't stall.
-
-</details>
-
-<details>
-<summary><strong>v20.0.0 — Agentic Tooling</strong> (click to expand)</summary>
-
-The library starts *doing* the work, not just describing it:
-
-- **GitHub Action** ([`action/`](action/)) — run any skill in a repo's CI (auto PR descriptions, changelogs, release notes, reviews). `uses: mohitagw15856/pm-claude-skills/action@main`. We dogfood it to write this repo's own PR descriptions.
-- **`generate` command** — `npx pm-claude-skills generate --from <url|file>` turns your docs into a standard-compliant `SKILL.md`.
-- **Skill evals + Leaderboard** — LLM-as-judge scoring of skills across models, rendered as a public [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html).
-
-</details>
-
-<details>
-<summary><strong>v19.0.0 — Security Auditor, Personas & Catalog</strong> (click to expand)</summary>
-
-- **Skill Security Auditor** — scans every skill (and its scripts) for prompt injection, exfiltration, unsafe code, secrets, hidden text; HIGH fails CI. Plus a `skill-security-auditor` skill.
-- **4 personas** (output-styles), an [orchestration guide](ORCHESTRATION.md), a server-rendered **skill catalog**, and a public [roadmap](ROADMAP.md).
-
-</details>
-
-<details>
-<summary><strong>v18.0.0 — Windsurf, Aider & an MCP Server</strong> (click to expand)</summary>
-
-- **Two more install targets** — **Windsurf** and **Aider** (now 5 export platforms / 7 tools).
-- **MCP server** (`npx pm-claude-skills-mcp`) — search & pull skills on demand from MCP clients.
-- **Automated npm publishing** workflow; README hero demo placement.
-
-</details>
-
-<details>
-<summary><strong>v17.0.0 — Agents, Commands & the npx CLI</strong> (click to expand)</summary>
-
-The library grows past "just skills" and gets one-command, cross-platform install:
-
-- **`npx pm-claude-skills add --agent <tool>`** — a cross-platform Node installer (Windows/macOS/Linux, no bash, no git).
-- **4 Claude Code subagents** (`agents/`) and **6 slash commands** (`commands/`); `--agent claude` installs skills + agents + commands together.
-- **Cursor `.mdc` exports**, a **SkillCheck validator** + CI badge, and a **skill scaffolder** (`npm run new-skill`).
-- **One-line shell installers** plus a unified `scripts/install.sh`.
-
-</details>
-
-<details>
-<summary><strong>v16.0.0 — Multi-Platform</strong> (click to expand)</summary>
-
-The library stops being Claude-only and becomes a portable, single-source-of-truth project:
-
-- **Runs on more platforms.** Native install for **Hermes Agent** (same open `SKILL.md` standard), plus ready-to-paste **ChatGPT** and **Gemini** exports generated from every skill.
-- **One source, many targets.** `scripts/build-exports.mjs` renders per-platform files from each `SKILL.md` body — nothing maintained twice — with a `PLATFORMS` registry and a CI guard that fails on drift.
-- **Three stdlib Python helpers** for flagship skills (sprint capacity, RICE scoring, customer-health scoring).
-- **Explicit skill tiers** (`TIERS.md` + `skill-tiers.json`) and an **upgraded Skill Playground** (tier filter + "use in another tool" copy panel).
-- **Repo hygiene**: `CHANGELOG.md`, `SKILL-AUTHORING-STANDARD.md`, refreshed `SECURITY.md`, `.gitignore`, Related Projects.
-
-</details>
-
-<details>
-<summary><strong>Release history — v6.0.0 → v15.0.0</strong> (click to expand)</summary>
-
-### 🆕 What's New in v15.0.0 — Skill Playground (browser UI) 🌐
-
-Run any skill **without installing anything** — a zero-backend web app that executes skills in your browser with your own Claude API key. Tile gallery with search and bundle filter, click-to-run forms auto-generated from each skill's inputs, live streaming output with copy / download, and an auto-deploy to GitHub Pages on every push to `main`. **▶ Live: [mohitagw15856.github.io/pm-claude-skills](https://mohitagw15856.github.io/pm-claude-skills/)**
-
-### 🆕 What's New in v14.0.0 — Writers & Content Creators + 7 Community Skills
-
-**12 new community-inspired skills across 4 bundles:**
-
-### New profession: ✍️ Writers & Content Creators (`pm-writers`)
-
-| Skill | What It Does |
-|---|---|
-| **Instagram Post Downloader** 🆕 | Downloads Instagram images and carousels as high-res files; stitches carousel slides into a single PDF |
-| **AEO Optimizer** 🆕 | Restructures articles for AI citation — rewrites H2s as questions, adds 50–80 word answer capsules, audits paragraph length and trust signals |
-| **Thumbnail Creator** 🆕 | Generates brand-aligned thumbnail candidates via Gemini API from article copy; Claude evaluates results via computer vision |
-| **Substack Notes Scraper** 🆕 | Scrapes Substack Notes engagement data (likes, comments, restacks) and exports a formatted .xlsx with filters and conditional formatting |
-| **Notes Humanizer** 🆕 | Strips AI writing patterns (em dashes, filler phrases, uniform rhythm) and injects genuine human signals — opinion, varied rhythm, specific detail |
-
-### Extended: `pm-cross` (+3 skills)
-
-| Skill | What It Does |
-|---|---|
-| **Sycophancy Challenger** 🆕 | Flips Claude's default — argues the strongest case *against* your idea first, holds its position under pushback, and only backs down with new evidence |
-| **Last 30 Days Research** 🆕 | Searches Reddit, X, and the web for the last 30 days on any topic and returns a structured report: consensus, disagreements, pain points, and signal confidence |
-| **NotebookLM Connector** 🆕 | Automates NotebookLM from Claude Code via Chrome extension — create notebooks, add sources, generate mindmaps and audio overviews |
-
-### Extended: `pm-operations` (+2 skills)
-
-| Skill | What It Does |
-|---|---|
-| **Email Triage** 🆕 | Reads Gmail for a configurable window, filters out receipts/notifications, and surfaces only what needs a reply or decision — with priority, urgency, and a reply starter |
-| **Morning Intelligence** 🆕 | 15-question interview that writes a personalised master prompt for your morning news brief, ready to drop into a Cowork Scheduled Task or Claude Code Routine |
-
-### Extended: `pm-engineering` (+2 skills — for Claude Code users)
-
-| Skill | What It Does |
-|---|---|
-| **Context Mode** 🆕 | Solves Claude Code context bloat and memory loss — filters raw command output and maintains a session log so Claude resumes exactly where it left off after a reset |
-| **Claude Superpowers** 🆕 | Forces Claude Code to plan before coding, work in isolation, write tests first, and review its own work twice — from 60% first pass to 80%+ |
-
-The library now includes **167 skills** across **18 professions** + 4 working agent templates.
-
----
-
-### 🆕 What's New in v13.0.0 — Social Media Profession
-
-**5 new skills — a complete Social Media profession bundle:**
-
-| Skill | Bundle | What It Does |
-|---|---|---|
-| **Social Media Audit** 🆕 | pm-social | Scored audit across all platforms — profile completeness, content performance, competitive benchmarking, and a prioritised action plan |
-| **Influencer Brief** 🆕 | pm-social | Complete creator partnership brief with deliverables, creative guidelines, approval workflow, commercial terms, and campaign measurement |
-| **Community Management Playbook** 🆕 | pm-social | Response frameworks, moderation rules, escalation tiers, DM templates, tone-of-voice guidance, and community health metrics |
-| **Social Ad Campaign** 🆕 | pm-social | Full-funnel paid social campaign plan with audience targeting, ad set architecture, copy for every format (video, static, carousel, lead gen), budget allocation, and A/B testing plan |
-| **Viral Content Framework** 🆕 | pm-social | Psychology of sharing, 6 proven hook formulas, 5 content structures, platform-specific playbooks for LinkedIn/TikTok/Instagram/X/YouTube, and a repeatable content testing system |
-
-The library now includes **167 skills** across **18 professions** + 4 working agent templates.
-
-Install the new bundle:
-
-claude plugin install pm-social@pm-claude-skills
-
-
----
-
-### 🆕 What's New in v12.0.0 — 150 Skills Milestone
-
-**15 new skills across 10 bundles:**
-
-| Skill | Bundle | What It Does |
-|---|---|---|
-| **Cohort Analysis** 🆕 | pm-data | Retention curves, LTV projection, behavioural segmentation, and churn leading indicators — with SQL reference queries |
-| **Data Pipeline Spec** 🆕 | pm-data | ETL/ELT pipeline design with sources, transforms, SLAs, DQ rules, error handling, and security/compliance notes |
-| **Renewal Playbook** 🆕 | pm-cs | Renewal brief with health snapshot, stakeholder map, value story, commercial scenarios, objection responses, and a 16-week timeline |
-| **Customer Success Plan** 🆕 | pm-cs | Joint success plan with business goals, success metrics, milestone roadmap, mutual commitments, and escalation path |
-| **360-Degree Feedback Template** 🆕 | pm-people | Either a complete survey instrument with GWT acceptance criteria, or a structured narrative feedback report with themes and development actions |
-| **Team Health Check** 🆕 | pm-people | Spotify-model health assessment across 7 dimensions — delivery, safety, morale, speed, purpose, and collaboration — with facilitation guide |
-| **Risk Register** 🆕 | pm-operations | L×I risk scoring, RAG heat map, top-risk executive summary, and per-risk mitigation and contingency plans |
-| **RACI Matrix** 🆕 | pm-operations | Complete RACI with role definitions, decision map, anti-pattern guide, and a communication template for all involved teams |
-| **Social Media Strategy** 🆕 | pm-gtm | Audience profile, platform rationale, content pillars, posting cadence, tone of voice, KPIs, and a 4-week starter calendar |
-| **Product Positioning Doc** 🆕 | pm-gtm | April Dunford-style positioning doc with category, target customer, competitive alternatives, differentiation, proof points, messaging hierarchy, and persona messaging |
-| **Customer Journey Map** 🆕 | pm-discovery | Stage-by-stage journey from awareness to advocacy with touchpoints, emotions, pain points, an emotion curve, and prioritised opportunities |
-| **User Story Writer** 🆕 | pm-delivery | Production-ready user stories with Given/When/Then ACs, edge cases, out-of-scope, definition of done, and epic decomposition |
-| **AI Ethics Review** 🆕 | pm-advanced | Structured ethical review covering fairness, bias, transparency, privacy, safety, accountability, and societal impact — with risk tier and pre-deployment checklist |
-| **Partnership Proposal** 🆕 | pm-sales | B2B partnership proposal with mutual value, commercial model, joint GTM plan, governance, and risks |
-| **Design System Audit** 🆕 | pm-design | Component coverage audit, token consistency, documentation quality, WCAG 2.2 accessibility, adoption barriers, and a remediation roadmap |
-
-The library now includes **150 skills** across **16 professions** + 4 working agent templates.
-
----
-
-### 🆕 What's New in v10.0.0
-
-**Two star milestones unlocked — 8 new skills shipped:**
-
-**Customer Success bundle (250 ⭐ milestone):**
-
-| Skill | Bundle | What It Does |
-|---|---|---|
-| **Customer Health Scorecard** 🆕 | pm-cs | Weighted health score across adoption, engagement, outcomes, support, and commercial — with RAG status and renewal forecast |
-| **QBR Deck** 🆕 | pm-cs | Slide-by-slide quarterly business review structure with talking points, value narrative, and mutual commitments |
-| **Escalation Brief** 🆕 | pm-cs | Structured escalation brief for at-risk accounts — root cause, business impact, resolution plan, and decision required |
-| **Churn Analysis** 🆕 | pm-cs | Churn rate breakdown by category and segment, early warning signals, and prioritised interventions |
-
-**Engineering expansion (500 ⭐ milestone):**
-
-| Skill | Bundle | What It Does |
-|---|---|---|
-| **CI/CD Playbook** 🆕 | pm-engineering | Complete pipeline playbook covering every stage, rollback procedures, secrets management, and on-call responsibilities |
-| **SLO & Error Budget** 🆕 | pm-engineering | SLI definitions, SLO targets, error budget calculation, burn rate alerts, and error budget policy |
-| **Developer Onboarding Doc** 🆕 | pm-engineering | Everything a new engineer needs in their first week — architecture, local setup, testing, deployment, and key contacts |
-| **On-Call Runbook** 🆕 | pm-engineering | Per-alert response procedures, escalation matrix, diagnostic cheat sheet, and handoff template |
-
-The library now includes **114 skills** across **16 professions** + 4 working agent templates.
-
-
-| Skill | Bundle | What It Does |
-|---|---|---|
-| **Debugging Log Analyser** 🆕 | pm-engineering | Parse stack traces and error logs into a structured root cause diagnosis with a specific fix |
-| **PR Description Writer** 🆕 | pm-engineering | Write reviewer-friendly PR descriptions from a diff, commit list, or change summary |
-| **System Design Interview** 🆕 | pm-engineering | Structure complete system design answers with capacity estimates, component deep-dives, and trade-offs |
-| **Changelog Generator** 🆕 | pm-engineering | Convert git commits into a polished, user-facing changelog following Keep a Changelog format |
-| **Test Strategy Doc** 🆕 | pm-engineering | Write a complete test strategy with risk assessment, test types, coverage targets, and P0/P1 test cases |
-| **Runbook Writer** 🆕 | pm-engineering | Write operational runbooks for deployments, incidents, and maintenance with exact commands and rollback steps |
-
-The `pm-engineering` bundle now has **10 skills** — the most complete engineering toolkit in the library.
-
-**Read the full story:** [Part 14 — I Rebuilt All 93 Skills and Added 7 More: What 100 Skills Taught Me About What Makes a Great Skill](https://medium.com/product-powerhouse/a-pull-request-made-me-rebuild-all-93-of-my-claude-skills-then-i-added-7-more-16d5fe3e7f85)
-
----
-
-### 📖 v6.0.0 — 100 Skills Milestone
-
-**7 skills added:**
-
-| Skill | Bundle | What It Does |
-|---|---|---|
-| **Teaching Lesson Plan** | pm-cross | Structured lesson plans for any subject, audience, or setting — with objectives, activities, and formative assessment |
-| **SEO Content Brief** | pm-gtm | Complete SEO briefs with search intent analysis, competitor gaps, content outline, and on-page requirements |
-| **Media Pitch** | pm-gtm | Story-first journalist pitches with angle development framework and pitch rules |
-| **Change Management Plan** | pm-hr | Full change plan covering stakeholder analysis, communication strategy, training, and adoption metrics |
-| **Workshop Facilitation Guide** | pm-operations | Complete facilitation guides with activity instructions, decision protocols, and facilitator moves |
-| **Sales Forecasting Model** | pm-sales | Pipeline-based forecast with stage model, scenario analysis, assumption log, and activity sanity check |
-| **Tax Planning Checklist** | pm-finance | Year-end tax planning review framework across income, pension, CGT, business reliefs, and ISAs |
-
-</details>
+→ Earlier releases (v20 and before — the road from 6 to 174 skills) are in **[CHANGELOG.md](CHANGELOG.md)**.
 
 ---
 
 ## 📚 The Article Series
 
-This repo was built alongside a published article series. Read the full story:
+This repo was built alongside a published 16-part article series on Medium.
+
+<details>
+<summary><strong>Read the full story — 16 articles</strong> (click to expand)</summary>
 
 | Part | Title | Link |
 |---|---|---|
@@ -794,6 +577,8 @@ This repo was built alongside a published article series. Read the full story:
 | Part 15 | I’m a Product Manager. I Just Shipped 6 Engineering Skills to My Open-Source Claude Library. | [Read →](https://medium.com/product-powerhouse/im-a-product-manager-i-just-shipped-6-engineering-skills-to-my-open-source-claude-library-8745aaa2ecf9) |
 | Part 16 | Anthropic Just Released 10 Agent Templates. Here’s the First One I Built Using My 106 Skills. | [Read →](https://medium.com/product-powerhouse/anthropic-just-released-10-agent-templates-heres-the-first-one-i-built-using-my-106-skills-a6708f9bd3ea) |
 
+</details>
+
 ---
 
 ## 🏷️ Skill Tiers — Start With the Strongest
@@ -813,330 +598,30 @@ If you're new, install `pm-essentials` and try a couple of Production-Ready skil
 
 ## 🗂️ All 174 Skills
 
-The [Plugin Directory](#-plugin-directory) above summarises every bundle. Expand below for the full per-skill breakdown with folder paths.
+Every skill, grouped by profession. **[Browse the full per-skill catalog → SKILLS.md](SKILLS.md)** · **[searchable live catalog](https://mohitagw15856.github.io/pm-claude-skills/catalog.html)** · **[run any skill in the browser](https://mohitagw15856.github.io/pm-claude-skills/)**
 
-<details>
-<summary><strong>Browse all 174 skills by profession</strong> (click to expand)</summary>
-
-### 🛠️ Product Management (Skills 1–37)
-**Bundles:** `pm-essentials` · `pm-discovery` · `pm-planning` · `pm-delivery` · `pm-analytics` · `pm-strategy` · `pm-advanced` · `pm-rituals`
-
-> The original toolkit covering the full PM lifecycle — discovery, prioritisation, delivery, strategy, stakeholder comms, and weekly rituals. Now includes Word tracked changes and PowerPoint slide auditing.
-
-| # | Skill | What It Does |
-|---|---|---|
-| 1–6 | **pm-essentials** | PRD Template, Meeting Notes, Stakeholder Update, User Research Synthesis, Competitive Analysis, **Word Doc Tracked Changes** |
-| 7–11 | **pm-discovery** | Discovery Interview Guide, Job Story Mapper, User Interview Synthesis, Assumption Mapper, **Customer Journey Map** 🆕 |
-| 12–17 | **pm-planning** | OKR Builder, Feature Prioritisation (RICE/MoSCoW/Kano/ICE), Roadmap Presentation, Pricing Strategy, RICE Impact Matrix, Roadmap Narrative |
-| 18–26 | **pm-delivery** | Sprint Planning, Technical Spec, A/B Test Planner, Go-to-Market Planner, Launch Checklist, Sprint Brief, Retro, PPTX Slide Auditor, **User Story Writer** 🆕 |
-| 27–29 | **pm-analytics** | Data Analysis Standard, Retention Analysis, Product Health Analysis |
-| 30–35 | **pm-strategy** | Competitor Signal Tracker, Competitive Intelligence Monitor, Stakeholder Influence Mapper, Strategic Narrative, Executive Update, Ambiguity Resolver |
-| 36–37 | **pm-advanced** | AI Product Canvas, Multi-Source Signal Synthesiser, Experiment Designer, Design Handoff Brief, **AI Ethics Review** 🆕 |
-
-> See [Part 7 article](https://medium.com/product-powerhouse/33-claude-skills-for-pms-are-now-in-the-claude-code-marketplace-heres-how-to-install-them-7968ab6bb1e1) for full PM skills detail.
-
----
-
-### 📣 Marketing & GTM (Skills 38–45)
-**Bundle:** `pm-gtm`
-
-| # | Skill | Folder | What It Does |
+| Profession | Bundles | Skills | Try this first |
 |---|---|---|---|
-| 38 | **Go-To-Market** | `skills/go-to-market/` | Positioning statements, messaging pillars, feature/benefit mapping, role-specific use cases |
-| 39 | **Content Calendar** | `skills/content-calendar/` | Multi-channel content calendars with opening hooks, formats, and repurposing map |
-| 40 | **Competitor Teardown** | `skills/competitor-teardown/` | Full competitive analysis: positioning map, feature comparison, messaging gaps, SWOT, recommendations |
-| 41 | **Email Campaign** | `skills/email-campaign/` | Sequenced email campaigns with subject lines, preview text, body copy, and CTAs |
-| 42 | **SEO Content Brief** | `skills/seo-content-brief/` | Complete SEO briefs with search intent, competitor gap analysis, content outline, and on-page requirements |
-| 43 | **Media Pitch** | `skills/media-pitch/` | Story-first journalist pitches with angle development framework and pitch writing rules |
-| 44 | **Social Media Strategy** 🆕 | `skills/social-media-strategy/` | Audience profile, platform rationale, content pillars, posting cadence, KPIs, and a 4-week starter calendar |
-| 45 | **Product Positioning Doc** 🆕 | `skills/product-positioning-doc/` | April Dunford-style positioning with category, differentiation, proof points, messaging hierarchy, and persona messaging |
+| 🛠️ Product Management | `pm-essentials` · `pm-discovery` · `pm-planning` · `pm-delivery` · `pm-strategy` · `pm-advanced` · `pm-rituals` | 37 | `/prd` · `/rice` |
+| 📣 Marketing & GTM | `pm-gtm` | 8 | `go-to-market` |
+| 👩‍💻 Engineering & Tech | `pm-engineering` | 38 | `incident-postmortem` |
+| 🤝 Customer Success | `pm-cs` | 6 | `cs-health-scorecard` |
+| 📊 Data & Analytics | `pm-data` · `pm-analytics` | 6 | `metrics-framework` |
+| 🧑‍💼 Leadership & People | `pm-people` | 5 | `executive-update` |
+| 🎨 Design & UX | `pm-design` | 4 | `design-critique` |
+| 🏢 Business & Strategy | `pm-business` | 3 | `competitor-teardown` |
+| ⚖️ Legal | `pm-legal` | 4 | `contract-review` |
+| 💰 Finance | `pm-finance` | 5 | `investor-pitch-deck` |
+| 👥 HR | `pm-hr` | 5 | `job-description-writer` |
+| 🤝 Sales | `pm-sales` | 6 | `sales-battlecard` |
+| ⚙️ Operations | `pm-operations` | 10 | `sop-writer` |
+| 🏥 Research & Healthcare | `pm-research` | 4 | `literature-review` |
+| 🌐 Cross-Profession | `pm-cross` | 7 | `meeting-notes` |
+| 🖼️ Figma | `pm-figma` | 10 | `figma-design-review` |
+| 📱 Social Media | `pm-social` | 5 | `social-media-strategy` |
+| ✍️ Writers & Content | `pm-writers` | 6 | `aeo-optimizer` |
 
----
-
-### 👩‍💻 Engineering & Tech (Skills 46–80, 166–168)
-**Bundle:** `pm-engineering`
-
-| # | Skill | Folder | What It Does |
-|---|---|---|---|
-| 46 | **Code Review Checklist** | `skills/code-review-checklist/` | Tailored PR review checklists by language, type, and risk level |
-| 47 | **Incident Postmortem** | `skills/incident-postmortem/` | Blameless postmortems with timeline, RCA, impact, and action items |
-| 48 | **API Docs Writer** | `skills/api-docs-writer/` | Developer-facing API docs: endpoints, parameters, response schemas, code examples |
-| 49 | **Architecture Decision Record** | `skills/architecture-decision-record/` | ADRs with context, options considered, decision, consequences, and risks |
-| 50 | **Debugging Log Analyser** | `skills/debugging-log-analyser/` | Parse stack traces and error logs into a structured root cause diagnosis with a specific fix |
-| 51 | **PR Description Writer** | `skills/pr-description-writer/` | Write reviewer-friendly PR descriptions from a diff, commit list, or change summary |
-| 52 | **System Design Interview** | `skills/system-design-interview/` | Structure complete system design answers with capacity estimates, component deep-dives, and trade-offs |
-| 53 | **Changelog Generator** | `skills/changelog-generator/` | Convert git commits into a polished, user-facing changelog following Keep a Changelog format |
-| 54 | **Test Strategy Doc** | `skills/test-strategy-doc/` | Write a complete test strategy with risk assessment, test types, coverage targets, and P0/P1 test cases |
-| 55 | **Runbook Writer** | `skills/runbook-writer/` | Write operational runbooks for deployments, incidents, and maintenance with exact commands and rollback steps |
-| 56 | **CI/CD Playbook** | `skills/cicd-playbook/` | Complete pipeline playbook covering every stage, rollback procedures, secrets management, and on-call responsibilities |
-| 57 | **SLO & Error Budget** | `skills/slo-error-budget/` | SLI definitions, SLO targets, error budget calculation, burn rate alerts, and error budget policy |
-| 58 | **Developer Onboarding Doc** | `skills/developer-onboarding-doc/` | Everything a new engineer needs in their first week — architecture, local setup, testing, deployment, and key contacts |
-| 59 | **On-Call Runbook** | `skills/oncall-runbook/` | Per-alert response procedures, escalation matrix, diagnostic cheat sheet, and handoff template |
-| 60 | **Security Threat Model** 🆕 | `skills/security-threat-model/` | STRIDE-based threat model with asset register, trust boundaries, per-component threat enumeration, risk scores, and mitigations |
-| 61 | **Performance Budget** 🆕 | `skills/performance-budget/` | Performance budgets for Core Web Vitals and backend latency SLOs with CI enforcement and breach response policy |
-| 62 | **Database Schema Design** 🆕 | `skills/database-schema-design/` | Database schema documentation with ER diagram, DDL definitions, index strategy, and access pattern analysis |
-| 63 | **Database Migration Plan** 🆕 | `skills/database-migration-plan/` | Safe zero-downtime migration plan using expand-contract pattern with per-step rollback and data validation queries |
-| 64 | **Technical Debt Register** 🆕 | `skills/technical-debt-register/` | Debt inventory with business impact scoring, effort estimates, priority matrix, and quarterly resolution roadmap |
-| 65 | **RFC Writer** 🆕 | `skills/rfc-writer/` | Engineering Request for Comments covering problem, proposed solution, alternatives-with-rejection-reasons, and rollout plan |
-| 66 | **Capacity Planning** 🆕 | `skills/capacity-planning/` | Traffic forecasts, resource requirements per tier, scaling strategy, cost projections, and infrastructure action roadmap |
-| 67 | **Load Testing Plan** 🆕 | `skills/load-testing-plan/` | Load test plan with scenario definitions (baseline/stress/spike/soak), k6/Locust skeleton, thresholds, and CI gates |
-| 68 | **Disaster Recovery Plan** 🆕 | `skills/disaster-recovery-plan/` | DR plan with RPO/RTO targets, per-scenario runbooks, backup procedures, game day testing, and communication templates |
-| 69 | **Feature Flag Guide** 🆕 | `skills/feature-flag-guide/` | Feature flag lifecycle playbook — taxonomy, rollout strategy, monitoring requirements, cleanup policy, and governance |
-| 70 | **Dependency Audit** 🆕 | `skills/dependency-audit/` | Dependency audit for CVE vulnerabilities, license compliance, outdated packages, and 30-day remediation plan |
-| 71 | **Service Catalog Entry** 🆕 | `skills/service-catalog-entry/` | Microservice catalog entry with ownership, SLAs, API contract, data classification, and operational runbook links |
-| 72 | **Monitoring Setup Guide** 🆕 | `skills/monitoring-setup-guide/` | Four golden signals applied to a service, alert rules spec, structured log schema, tracing setup, and dashboard layout |
-| 73 | **Local Dev Setup** 🆕 | `skills/local-dev-setup/` | Local development setup guide — prerequisites, env vars, dependencies, test commands, and 5 common failure fixes |
-| 74 | **API Versioning Strategy** 🆕 | `skills/api-versioning-strategy/` | API versioning scheme, lifecycle policy, breaking change classification table, deprecation process, and migration guide template |
-| 75 | **Infra-as-Code Review** 🆕 | `skills/infra-as-code-review/` | IaC review for Terraform/CloudFormation/Pulumi — security, naming, state, cost, and drift risk with severity-classified findings |
-| 76 | **Engineering Weekly Report** 🆕 | `skills/engineering-weekly-report/` | Weekly engineering status in a consistent format — shipped/in-progress/blocked, metrics, decisions, risks, and next week |
-| 77 | **Tech Radar** 🆕 | `skills/tech-radar/` | ThoughtWorks-format technology radar with Adopt/Trial/Assess/Hold quadrants, per-blip rationale, and maintenance process |
-| 78 | **Sprint Velocity Analysis** 🆕 | `skills/sprint-velocity-analysis/` | Velocity trend analysis, completion rate patterns, blocker frequency, improvement recommendations, and capacity forecast |
-| 79 | **Microservices Decomposition** 🆕 | `skills/microservices-decomposition/` | Domain-driven service boundary design with bounded context map, communication patterns, data ownership, and strangler fig migration plan |
-| 80 | **Engineering Hiring Rubric** 🆕 | `skills/engineering-hiring-rubric/` | Technical interview rubric with level expectations, coding scorecard, system design guide, behavioural question bank, and debrief template |
-| 166 | **Context Mode** 🆕 | `skills/context-mode/` | Filters command output noise and maintains a session log so Claude resumes exactly where it left off after a context reset |
-| 167 | **Claude Superpowers** 🆕 | `skills/claude-superpowers/` | Forces Claude Code to plan first, work in isolation, write tests before code, and double-review its own output — consistently better first passes |
-| 168 | **Skill Security Auditor** 🆕 | `skills/skill-security-auditor/` | Audits any SKILL.md / system prompt for prompt injection, data exfiltration, code execution, secrets, and hidden text; returns a risk-rated report with an install / don't-install recommendation |
-
----
-
-### 🤝 Customer Success (Skills 76–81)
-**Bundle:** `pm-cs`
-
-> Install:
-
-claude plugin install pm-cs@pm-claude-skills
-
-
-| # | Skill | Folder | What It Does |
-|---|---|---|---|
-| 76 | **Customer Health Scorecard** | `skills/cs-health-scorecard/` | Weighted health score across adoption, engagement, outcomes, support, and commercial — RAG status and renewal forecast |
-| 77 | **QBR Deck** | `skills/qbr-deck/` | Slide-by-slide quarterly business review with talking points, value narrative, and mutual commitments |
-| 78 | **Escalation Brief** | `skills/cs-escalation-brief/` | Structured brief for at-risk accounts — root cause, business impact, resolution plan, and decision required |
-| 79 | **Churn Analysis** | `skills/churn-analysis/` | Churn breakdown by category and segment, early warning signals, and prioritised interventions |
-| 80 | **Renewal Playbook** 🆕 | `skills/renewal-playbook/` | Renewal brief with health snapshot, value story, commercial scenarios, objection responses, and 16-week execution timeline |
-| 81 | **Customer Success Plan** 🆕 | `skills/customer-success-plan/` | Joint success plan with business goals, success metrics, milestone roadmap, mutual commitments, and escalation path |
-
----
-
-### 📊 Data & Analytics (Skills 82–87)
-**Bundle:** `pm-data`
-
-| # | Skill | Folder | What It Does |
-|---|---|---|---|
-| 82 | **Metrics Framework** | `skills/metrics-framework/` | North Star + metric tree, dashboard tiers, counter-metrics |
-| 83 | **SQL Query Explainer** | `skills/sql-query-explainer/` | Explain, optimise, write, and document SQL in plain English |
-| 84 | **Dashboard Brief** | `skills/dashboard-brief/` | Complete dashboard spec: KPIs, charts, filters, layout, data requirements |
-| 85 | **Chart Data Extractor** | `skills/chart-data-extractor/` | Extract pixel-level data from chart images into structured data tables |
-| 86 | **Cohort Analysis** 🆕 | `skills/cohort-analysis/` | Retention curves, LTV projection, behavioural segmentation, churn leading indicators, and SQL reference queries |
-| 87 | **Data Pipeline Spec** 🆕 | `skills/data-pipeline-spec/` | ETL/ELT pipeline design with sources, transforms, SLAs, DQ rules, error handling, and compliance notes |
-
----
-
-### 🧑‍💼 Leadership & People (Skills 88–92)
-**Bundle:** `pm-people`
-
-| # | Skill | Folder | What It Does |
-|---|---|---|---|
-| 88 | **Performance Review** | `skills/performance-review/` | Structured reviews from bullet-point notes — self, manager, peer, and upward |
-| 89 | **Hiring Rubric** | `skills/hiring-rubric/` | Interview scorecards with competencies, behavioural questions, and panel guide |
-| 90 | **Team Offsite Planner** | `skills/team-offsite-planner/` | Full offsite agenda, session facilitation notes, and logistics checklist |
-| 91 | **360-Degree Feedback Template** 🆕 | `skills/360-feedback-template/` | Survey instrument with GWT-anchored questions, or a structured narrative report with strengths and development themes |
-| 92 | **Team Health Check** 🆕 | `skills/team-health-check/` | Spotify-model assessment across 7 dimensions — delivery, safety, morale, speed, purpose, and collaboration |
-
----
-
-### 🎨 Design & UX (Skills 93–96)
-**Bundle:** `pm-design`
-
-| # | Skill | Folder | What It Does |
-|---|---|---|---|
-| 93 | **UX Research Plan** | `skills/ux-research-plan/` | Research plans with screener, discussion guide, and synthesis framework |
-| 94 | **Design Critique** | `skills/design-critique/` | Structured feedback using JTBD, Gestalt principles, and Nielsen's heuristics |
-| 95 | **Accessibility Audit** | `skills/accessibility-audit/` | WCAG 2.2 audit with prioritised remediation and quick wins |
-| 96 | **Design System Audit** 🆕 | `skills/design-system-audit/` | Audit component coverage, token consistency, documentation quality, WCAG compliance, adoption barriers, and remediation roadmap |
-
----
-
-### 🏢 Business & Strategy (Skills 97–99)
-**Bundle:** `pm-business`
-
-| # | Skill | Folder | What It Does |
-|---|---|---|---|
-| 97 | **Investor Update** | `skills/investor-update/` | Monthly/quarterly investor updates: metrics, highlights, challenges, and asks |
-| 98 | **Board Deck Narrative** | `skills/board-deck-narrative/` | Slide-by-slide board presentation structure with narrative beats and talking points |
-| 99 | **Job Application** | `skills/job-application/` | Tailored CV summary, ATS keyword optimisation, and cover letter for any JD |
-
----
-
-### ⚖️ Legal (Skills 100–103)
-**Bundle:** `pm-legal`
-
-> ⚠️ All legal skills include a disclaimer. Not a substitute for qualified legal advice.
-
-| # | Skill | Folder | What It Does |
-|---|---|---|---|
-| 100 | **Contract Review** | `skills/contract-review/` | Structured review with key terms, flagged clauses, risk rating, and plain English summary |
-| 101 | **NDA Analyser** | `skills/nda-analyser/` | Clause-by-clause NDA analysis with risk flags and negotiation checklist |
-| 102 | **Legal Brief** | `skills/legal-brief/` | Legal memos and argument outlines in IRAC format (Issue, Rule, Application, Conclusion) |
-| 103 | **Compliance Checklist** | `skills/compliance-checklist/` | GDPR, SOC 2, ISO 27001, FCA, HIPAA compliance checklists with prioritised gap analysis |
-
----
-
-### 💰 Finance (Skills 104–108)
-**Bundle:** `pm-finance`
-
-| # | Skill | Folder | What It Does |
-|---|---|---|---|
-| 104 | **Financial Model Narrative** | `skills/financial-model-narrative/` | Turns P&L and model outputs into board-ready written narratives |
-| 105 | **Budget Variance Analysis** | `skills/budget-variance-analysis/` | Variance table with root cause commentary and management summary |
-| 106 | **Investor Pitch Deck** | `skills/investor-pitch-deck/` | Slide-by-slide pitch deck structure with what each slide must prove |
-| 107 | **Financial Due Diligence** | `skills/financial-due-diligence/` | DD document request list, analytical questions, and red flags checklist |
-| 108 | **Tax Planning Checklist** | `skills/tax-planning-checklist/` | Year-end tax planning framework across income, pension, CGT, business reliefs, and ISAs |
-
----
-
-### 👥 HR (Skills 109–113)
-**Bundle:** `pm-hr`
-
-| # | Skill | Folder | What It Does |
-|---|---|---|---|
-| 109 | **Job Description Writer** | `skills/job-description-writer/` | Inclusive, structured JDs with built-in language review and salary range nudge |
-| 110 | **Onboarding Plan** | `skills/onboarding-plan/` | 30/60/90-day plans with week-by-week structure, milestones, and manager checklist |
-| 111 | **Employee Engagement Survey** | `skills/employee-engagement-survey/` | Survey design + results analysis mode with eNPS and action planning template |
-| 112 | **Redundancy Consultation** | `skills/redundancy-consultation/` | Process timeline, at-risk letter, consultation script, and confirmation letter — UK law |
-| 113 | **Change Management Plan** | `skills/change-management-plan/` | Full change plan covering stakeholder analysis, communication strategy, training, and adoption metrics |
-
----
-
-### 🤝 Sales (Skills 114–119)
-**Bundle:** `pm-sales`
-
-| # | Skill | Folder | What It Does |
-|---|---|---|---|
-| 114 | **Sales Battlecard** | `skills/sales-battlecard/` | One-page competitive battlecard with objection responses and landmine questions |
-| 115 | **Discovery Call Prep** | `skills/discovery-call-prep/` | Call brief with research summary, hypothesis, structured questions, and success criteria |
-| 116 | **Proposal Writer** | `skills/proposal-writer/` | Commercial proposals structured around the prospect's problem, not the product |
-| 117 | **Account Plan** | `skills/account-plan/` | Strategic account plan with relationship map, whitespace analysis, risks, and 90-day actions |
-| 118 | **Sales Forecasting Model** | `skills/sales-forecasting-model/` | Pipeline-based forecast with stage model, scenario analysis, assumption log, and activity sanity check |
-| 119 | **Partnership Proposal** 🆕 | `skills/partnership-proposal/` | B2B partnership proposal with mutual value, commercial model, joint GTM plan, governance, and risk register |
-
----
-
-### ⚙️ Operations (Skills 120–126, 164–165, 169)
-**Bundle:** `pm-operations`
-
-| # | Skill | Folder | What It Does |
-|---|---|---|---|
-| 120 | **Process Documentation** | `skills/process-documentation/` | Clear process docs with steps, roles, edge cases — followable by a new starter |
-| 121 | **SOP Writer** | `skills/sop-writer/` | Formal, audit-ready SOPs with version control, quality checks, and non-conformance process |
-| 122 | **Vendor Evaluation** | `skills/vendor-evaluation/` | Weighted vendor scorecard, RFP questions, reference check template, and recommendation |
-| 123 | **Project Status Report** | `skills/project-status-report/` | RAG status reports with milestone progress, issues, risks, and decisions required |
-| 124 | **Workshop Facilitation Guide** | `skills/workshop-facilitation-guide/` | Complete facilitation guides with activity instructions, decision protocols, and facilitator moves |
-| 125 | **Risk Register** 🆕 | `skills/risk-register/` | L×I risk scoring, RAG heat map, top-risk executive summary, and per-risk mitigation and contingency plans |
-| 126 | **RACI Matrix** 🆕 | `skills/raci-matrix/` | RACI with role definitions, decision map, anti-pattern guide, and a communication template for all teams |
-| 164 | **Email Triage** 🆕 | `skills/email-triage/` | Reads Gmail for a configurable window and surfaces only what needs action — priority-ranked with urgency ratings and reply starters |
-| 165 | **Morning Intelligence** 🆕 | `skills/morning-intelligence/` | 15-question interview that writes a personalised master prompt for your daily news brief, ready for Cowork Scheduled Tasks or Claude Code Routines |
-| 169 | **Launch Readiness** 🆕 | `skills/launch-readiness/` | Cross-functional pre-launch assessment with a function-by-function readiness status, ranked blockers (owners + deadlines), a risk register, and an explicit Go / Conditional Go / No-Go recommendation |
-
----
-
-### 🏥 Research & Healthcare (Skills 127–130)
-**Bundle:** `pm-research`
-
-> ⚠️ Healthcare skills are for documentation and educational purposes only. All clinical content must be reviewed by a qualified professional.
-
-| # | Skill | Folder | What It Does |
-|---|---|---|---|
-| 127 | **Clinical Case Summary** | `skills/clinical-case-summary/` | SBAR handovers, SOAP notes, and case reports for educational and documentation use |
-| 128 | **Research Protocol** | `skills/research-protocol/` | Complete study protocols with objectives, methodology, ethics, and analysis plan |
-| 129 | **Patient Communication** | `skills/patient-communication/` | Plain English patient letters, leaflets, and results communications at Grade 6 reading level |
-| 130 | **Literature Review** | `skills/literature-review/` | Thematically organised literature reviews with synthesis, critical analysis, and gap identification |
-
----
-
-### 🌐 Cross-Profession (Skills 131–134, 161–163)
-**Bundle:** `pm-cross`
-
-| # | Skill | Folder | What It Does |
-|---|---|---|---|
-| 131 | **Press Release** | `skills/press-release/` | Journalist-ready press releases with headline rules, boilerplate, and journalist test |
-| 132 | **Grant Proposal** | `skills/grant-proposal/` | Complete grant applications aligned to funder priorities with budget narrative |
-| 133 | **Executive Summary** | `skills/executive-summary/` | Decision-ready executive summaries with bottom line upfront, adapted for any audience |
-| 134 | **Teaching Lesson Plan** | `skills/teaching-lesson-plan/` | Complete lesson plans for any subject, audience, or setting — with objectives, activities, and formative assessment |
-| 161 | **Sycophancy Challenger** 🆕 | `skills/sycophancy-challenger/` | Argues the strongest case *against* your idea first — a genuine thinking partner that holds its position under pressure |
-| 162 | **Last 30 Days Research** 🆕 | `skills/last-30-days-research/` | Searches Reddit, X, and the web for the last 30 days on any topic and returns consensus, disagreements, pain points, and signal confidence |
-| 163 | **NotebookLM Connector** 🆕 | `skills/notebooklm-connector/` | Automates NotebookLM via Chrome extension — create notebooks, add sources, generate mindmaps and audio overviews from Claude Code |
-
----
-
-### 🖼️ Figma (Skills 135–144)
-**Bundle:** `pm-figma`
-
-| # | Skill | Folder | What It Does |
-|---|---|---|---|
-| 135 | **Figma Component Audit** | `skills/figma-component-audit/` | Audit component library for naming issues, coverage gaps, and variant completeness |
-| 136 | **Figma Design Brief** | `skills/figma-design-brief/` | Convert PRDs and feature requests into structured Figma design briefs |
-| 137 | **Figma Annotation Guide** | `skills/figma-annotation-guide/` | Generate complete developer handoff annotations covering all states and edge cases |
-| 138 | **Figma Design Review** | `skills/figma-design-review/` | PM design review against requirements with explicit approval status |
-| 139 | **Figma User Flow Planner** | `skills/figma-user-flow-planner/` | Map all screens, states, and decision points before opening Figma |
-| 140 | **Figma Variant Matrix** | `skills/figma-variant-matrix/` | Define all component variants, properties, and states before building |
-| 141 | **Figma Spacing System** | `skills/figma-spacing-system/` | Design a complete spacing scale, grid, and token system |
-| 142 | **Figma Prototype Plan** | `skills/figma-prototype-plan/` | Plan prototype scope, interactions, and test task scripts for user testing |
-| 143 | **Figma Design QA** | `skills/figma-design-qa/` | Pre-handoff QA checklist covering file hygiene, states, accessibility, and handoff readiness |
-| 144 | **Figma Design Critique (PM)** | `skills/figma-design-critique-pm/` | PM-perspective design critique focused on product outcomes, not aesthetics |
-
-claude plugin install pm-figma@pm-claude-skills
-
-
----
-
-### 📅 PM Rituals (Skills 145–150)
-**Bundle:** `pm-rituals`
-
-| # | Skill | Folder | What It Does |
-|---|---|---|---|
-| 145 | **PM Weekly Review** | `skills/pm-weekly-review/` | Weekly PM review and planning ritual — metrics, shipping progress, blockers, and next week's priorities |
-
----
-
-### 📱 Social Media (Skills 151–155)
-**Bundle:** `pm-social`
-
-> Install:
-
-```
-claude plugin install pm-social@pm-claude-skills
-```
-
-| # | Skill | Folder | What It Does |
-|---|---|---|---|
-| 151 | **Social Media Audit** 🆕 | `skills/social-media-audit/` | Scored audit across all platforms — profile completeness, content performance, competitive benchmarking, and a prioritised action plan with 30-day quick wins |
-| 152 | **Influencer Brief** 🆕 | `skills/influencer-brief/` | Complete creator partnership brief with deliverables spec, creative guidelines, key messages, approval workflow, commercial terms, and campaign measurement |
-| 153 | **Community Management Playbook** 🆕 | `skills/community-management-playbook/` | Response frameworks, moderation rules, escalation tiers, DM templates, tone-of-voice guidance, platform-specific notes, and community health metrics |
-| 154 | **Social Ad Campaign** 🆕 | `skills/social-ad-campaign/` | Full-funnel paid social plan with audience targeting, ad set architecture, copy for every format (video, static, carousel, lead gen), budget allocation, bidding strategy, and A/B testing plan |
-| 155 | **Viral Content Framework** 🆕 | `skills/viral-content-framework/` | Psychology of sharing, 6 proven hook formulas, 5 content structures, platform-specific playbooks for LinkedIn/TikTok/Instagram/X/YouTube, and a repeatable content testing system |
-
----
-
-### ✍️ Writers & Content Creators (Skills 156–160, 170)
-**Bundle:** `pm-writers`
-
-> Install:
-
-```
-claude plugin install pm-writers@pm-claude-skills
-```
-
-| # | Skill | Folder | What It Does |
-|---|---|---|---|
-| 156 | **Instagram Post Downloader** 🆕 | `skills/instagram-post-downloader/` | Downloads Instagram images and full carousels as high-res files; stitches carousel slides into a single PDF. Requires `*.cdninstagram.com` on domain allowlist |
-| 157 | **AEO Optimizer** 🆕 | `skills/aeo-optimizer/` | Restructures any article for AI citation — rewrites H2s as questions, adds 50–80 word answer capsules under each, audits paragraph length, and flags trust signals |
-| 158 | **Thumbnail Creator** 🆕 | `skills/thumbnail-creator/` | Generates brand-aligned thumbnail candidates via Gemini API; Claude evaluates results via computer vision and returns ranked candidates with rationale |
-| 159 | **Substack Notes Scraper** 🆕 | `skills/substack-notes-scraper/` | Scrapes Substack Notes and exports likes, comments, and restacks to a formatted .xlsx with frozen headers, filters, and top-performer highlighting |
-| 160 | **Notes Humanizer** 🆕 | `skills/notes-humanizer/` | Strips AI writing patterns (em dashes, filler phrases, uniform rhythm) across 3 phases: audit, strip, inject — returns side-by-side comparison and clean final text |
-| 170 | **YouTube Script Writer** 🆕 | `skills/youtube-script-writer/` | Retention-optimized video scripts with 3 title/thumbnail concepts, 3 hook variations, a video/audio cue script table, and SEO metadata |
-
-</details>
+> Full per-skill detail (folder paths, descriptions, "🆕" markers) lives in **[SKILLS.md](SKILLS.md)**.
 
 ---
 
