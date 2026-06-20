@@ -139,17 +139,17 @@ The bot runs the skill and posts the result as a reply. `/skill list` shows usag
 
 **Grounded in canonical frameworks.** These aren't invented prompts — each skill encodes a proven method and cites it: RICE (Intercom), Jobs-to-be-Done (Christensen), Continuous Discovery (Teresa Torres), Porter's Five Forces, the Pyramid Principle (Minto), Google SRE, WCAG, *Obviously Awesome* (April Dunford), and more. The source shows as a **"📚 Based on"** line on every [skill page](https://mohitagw15856.github.io/pm-claude-skills/skill/rice-prioritisation.html) and in the Playground.
 
-**And measured, not just claimed.** An [eval harness](evals/) runs each skill against a held-out test case, then an LLM judge (Opus 4.8) rates the output on four dimensions — **structure, completeness, usefulness, grounding** — averaged across two models.
+**And measured, not just claimed.** An [eval harness](evals/) runs each skill against a held-out test case, then an LLM judge (Opus 4.8) rates the output on four dimensions — **structure, completeness, usefulness, grounding** — averaged across two models. **15 skills are eval-scored** today (and climbing); the rest are reviewed against the [authoring standard](SKILL-AUTHORING-STANDARD.md).
 
-The flagship skills score consistently high (out of 5):
+**The loop actually catches bad skills.** A recent run flagged three skills scoring ~2/5 because they asked for missing inputs instead of delivering. We added a "work from a brief" rule, re-ran, and they jumped to **4.75/5**:
 
-| Skill | Eval score | Skill | Eval score |
-|-------|:---------:|-------|:---------:|
-| `prd-template` | 🟢 **4.9** | `cs-health-scorecard` | 🟢 **4.9** |
-| `rice-prioritisation` | 🟢 **4.9** | `sprint-planning` | 🟢 **4.8** |
-| `competitive-analysis` | 🟢 **4.5** | `executive-summary` | 🟢 **4.5** |
+| Skill | Before | After |
+|-------|:------:|:-----:|
+| `go-to-market` | 🔴 2.0 | 🟢 **4.75** |
+| `okr-builder` | 🔴 2.25 | 🟢 **4.75** |
+| `roadmap-narrative` | 🟡 2.75 | 🟢 **4.75** |
 
-These scores show up as badges in the [Playground](https://mohitagw15856.github.io/pm-claude-skills/) and the [🏆 leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html). Coverage is expanding — run it yourself with `node evals/run-evals.mjs` (needs an API key). *Honest note: 6 skills are eval-scored today; the rest are reviewed against the [authoring standard](SKILL-AUTHORING-STANDARD.md) but not yet auto-scored.*
+That's not luck — it's a [self-improving pipeline](scripts/improve-skill.mjs) (`/improve`) that critiques and rewrites a skill, keeping the change only if the score goes up. See the [🏆 leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html) for live scores; run it yourself with `node evals/run-evals.mjs`.
 
 **See the difference for yourself.** The Playground's *Compare* toggle runs the same inputs with and without the skill, side by side — structured, shippable output on the left; generic mush on the right:
 
