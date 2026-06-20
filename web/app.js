@@ -92,6 +92,7 @@ async function init() {
   el('copyBtn').addEventListener('click', () => navigator.clipboard.writeText(el('output').dataset.raw || ''));
   el('downloadBtn').addEventListener('click', downloadOutput);
   el('shareHubBtn').addEventListener('click', shareToHub);
+  el('imgBtn').addEventListener('click', shareAsImage);
 
   // Copy the skill's instructions formatted for another assistant.
   el('copyChatgpt').addEventListener('click', () => copyPrompt('chatgpt'));
@@ -120,6 +121,7 @@ async function init() {
     el('critiqueWrap').hidden = !on;
     el('inputForm').hidden = on;
     el('compareToggle').closest('.compare-toggle').style.display = on ? 'none' : '';
+    el('modelsToggle').closest('.compare-toggle').style.display = on ? 'none' : '';
     el('runBtn').textContent = on ? 'Grade my draft' : 'Run with my Claude key';
   });
 
@@ -317,6 +319,35 @@ function shareToHub() {
   window.open(url, '_blank', 'noopener');
 }
 
+// ---------- Save output as a branded PNG card ----------
+async function shareAsImage() {
+  if (!current) return;
+  const raw = (el('output').dataset.raw || '').trim();
+  if (!raw) return setStatus('Run the skill first, then save the image.', true);
+  if (typeof html2canvas === 'undefined') return setStatus('Image library not loaded — try again.', true);
+  const card = document.createElement('div');
+  card.className = 'img-card';
+  card.innerHTML =
+    `<div class="ic-top"><span>🧠 PM Skills</span>${current.eval ? `<span class="ic-badge">✅ ${current.eval.score}/5</span>` : ''}</div>` +
+    `<div class="ic-title">${escapeHtml(current.title)}</div>` +
+    `<div class="ic-body markdown">${DOMPurify.sanitize(marked.parse(raw))}</div>` +
+    `<div class="ic-foot">Made with PM Skills · mohitagw15856.github.io/pm-claude-skills</div>`;
+  document.body.appendChild(card);
+  setStatus('Rendering image…');
+  try {
+    const canvas = await html2canvas(card, { backgroundColor: '#0d0f14', scale: 2, windowWidth: 760 });
+    const a = document.createElement('a');
+    a.href = canvas.toDataURL('image/png');
+    a.download = `${current.name}-pm-skills.png`;
+    a.click();
+    setStatus('Image saved — share it anywhere.');
+  } catch (e) {
+    setStatus('Could not render the image.', true);
+  } finally {
+    card.remove();
+  }
+}
+
 // ---------- Shareable links: ?skill=<name>&i=<base64 inputs> ----------
 function shareSkill() {
   if (!current) return;
@@ -500,6 +531,7 @@ function selectSkill(s) {
   el('critiqueInput').value = '';
   el('inputForm').hidden = false;
   el('compareToggle').closest('.compare-toggle').style.display = '';
+  el('modelsToggle').checked = false;
   el('runBtn').textContent = 'Run with my Claude key';
   el('outputWrap').hidden = true;
   el('output').innerHTML = '';
@@ -598,7 +630,7 @@ async function run() {
   const model = el('model').value;
   const critique = el('critiqueToggle').checked;
 
-  let userMessage, system, plainSystem = '', compare = false;
+  let userMessage, system, plainSystem = '', compare = false, compareModels = false;
   if (critique) {
     const draft = el('critiqueInput').value.trim();
     if (!draft) return setStatus('Paste a draft to grade first.', true);
@@ -619,7 +651,8 @@ ${current.instructions}${ctxBlock}`;
     userMessage = buildUserMessage(fields);
     system = current.instructions + SKILL_SUFFIX + ctxBlock;
     plainSystem = ctx ? ctxBlock.trim() : '';
-    compare = el('compareToggle').checked;
+    compareModels = el('modelsToggle').checked;
+    compare = !compareModels && el('compareToggle').checked;
   }
 
   el('outputWrap').hidden = false;
@@ -627,11 +660,16 @@ ${current.instructions}${ctxBlock}`;
   el('stopBtn').hidden = false;
   controller = new AbortController();
 
-  // Single mode → #output. Compare mode → two panes in #compareGrid.
+  // Single → #output. Compare-plain → 2 panes. Compare-models → one pane per model.
   const out = el('output');
   const grid = el('compareGrid');
+  const MODELS = [['claude-opus-4-8', 'Opus 4.8'], ['claude-sonnet-4-6', 'Sonnet 4.6'], ['claude-haiku-4-5-20251001', 'Haiku 4.5']];
   let withNode, plainNode;
-  if (compare) {
+  if (compareModels) {
+    out.hidden = true; grid.hidden = false;
+    grid.innerHTML = MODELS.map((m, i) =>
+      `<div class="compare-pane"><div class="compare-label">🤖 ${m[1]}</div><article class="output markdown" id="paneM${i}"></article></div>`).join('');
+  } else if (compare) {
     out.hidden = true;
     grid.hidden = false;
     grid.innerHTML =
@@ -648,8 +686,12 @@ ${current.instructions}${ctxBlock}`;
 
   let acc = '';
   try {
-    setStatus(compare ? 'Running both…' : 'Running…');
-    if (compare) {
+    setStatus(compareModels ? 'Running all 3 models…' : compare ? 'Running both…' : 'Running…');
+    if (compareModels) {
+      const outs = await Promise.all(MODELS.map((m, i) =>
+        streamCompletion({ key, model: m[0], system, userMessage, node: el('paneM' + i), signal: controller.signal })));
+      acc = outs[1] || outs[0]; // Sonnet pane for copy/download
+    } else if (compare) {
       // Plain = the same inputs with no skill system prompt.
       [acc] = await Promise.all([
         streamCompletion({ key, model, system, userMessage, node: withNode, signal: controller.signal }),

@@ -1,5 +1,11 @@
 # 🧠 PM Skills — 175 Professional Agent Skills for Claude, ChatGPT, Gemini, Cursor, Codex & Hermes
 
+<p align="center">
+  <a href="https://mohitagw15856.github.io/pm-claude-skills/">
+    <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=24&pause=900&color=D97757&center=true&vCenter=true&width=720&lines=175+eval-scored+AI+skills;PRDs%2C+roadmaps%2C+launches+%E2%80%94+done+right;Run+any+one+free+in+your+browser" alt="PM Skills" />
+  </a>
+</p>
+
 > **Generic AI gives you filler. These give you the structure a senior pro actually uses** — PRDs, exec updates, launch plans, postmortems — as open-source `SKILL.md` files. Across **18 professions**, not just product management. One source, every AI tool.
 
 [![Stars](https://img.shields.io/github/stars/mohitagw15856/pm-claude-skills?style=social)](https://github.com/mohitagw15856/pm-claude-skills/stargazers)
@@ -61,13 +67,12 @@ A community-built library of professional skills for every field — product man
 
 These 175 skills aren't a random catalog — they cover the **full arc of professional work**, end to end. Wherever you are in the loop, there's a skill for it:
 
-```
-  DISCOVER  →   DECIDE   →    BUILD    →    SHIP    →   MEASURE   →  COMMUNICATE
- ──────────   ──────────   ──────────   ──────────   ──────────   ─────────────
-  frame the    prioritise    design &     launch &     track &      report up
-  problem,     & spec the    engineer     release      analyse      & out
-  research     work          the work     the work     results
-        └────────────────────── feeds the next discovery ──────────────────────┘
+```mermaid
+flowchart LR
+    A(["🔍 Discover"]) --> B(["🎯 Decide"]) --> C(["🔨 Build"]) --> D(["🚀 Ship"]) --> E(["📊 Measure"]) --> F(["📣 Communicate"])
+    F -. "feeds the next discovery" .-> A
+    classDef s fill:#1d222b,stroke:#d97757,color:#e7ebf0;
+    class A,B,C,D,E,F s;
 ```
 
 | Phase | What you're doing | Start with these skills |
@@ -164,6 +169,23 @@ That's not luck — it's a [self-improving pipeline](scripts/improve-skill.mjs) 
 **Already have a draft?** Flip on **📝 Critique mode** in the Playground — or use the standalone [**Grade your work**](https://mohitagw15856.github.io/pm-claude-skills/grade.html) tool — to paste an existing PRD/roadmap/update and get a rubric score, ranked gaps, and a redline graded against the skill's framework. Before you ship, run [**`/red-team`**](skills/red-team-review/SKILL.md) to stress-test the plan against a room of hostile expert personas.
 
 This whole thing is an open, reproducible **[benchmark for AI professional work](https://mohitagw15856.github.io/pm-claude-skills/benchmark.html)** — and it's *eval-gated*: every contributed skill is auto-checked for structure and scored on the rubric. The easiest way to add one is **[Skill Studio](https://mohitagw15856.github.io/pm-claude-skills/studio.html)** — describe a skill in your browser, generate a compliant `SKILL.md`, and open a pull request in one click ([or use the form →](https://github.com/mohitagw15856/pm-claude-skills/issues/new?template=submit-skill.yml)).
+
+---
+
+## ⚖️ How it compares
+
+Most skill repos are a folder of prompts. This one is a **system** — measured, composable, and usable in the browser:
+
+| | **PM Skills** | Typical skill repo |
+|---|:---:|:---:|
+| Skills | **175**, across 18 professions | a handful → dozens, usually one domain |
+| Quality | **eval-scored** on a rubric + a public [benchmark](https://mohitagw15856.github.io/pm-claude-skills/benchmark.html) | trust the README |
+| Improves itself | ✅ eval → critique → rewrite (kept only if it scores higher) | ✗ |
+| Grounded in frameworks | ✅ each cites its source (RICE, JTBD, Pyramid Principle…) | rarely |
+| Run without installing | ✅ [browser playground](https://mohitagw15856.github.io/pm-claude-skills/) + your key | ✗ copy-paste |
+| Compose / orchestrate | ✅ [recipes](WORKFLOWS.md), a [visual canvas](https://mohitagw15856.github.io/pm-claude-skills/canvas.html), an [auto-agent](https://mohitagw15856.github.io/pm-claude-skills/agent.html) | ✗ |
+| Works beyond Claude | ✅ MCP · ChatGPT/Gemini exports · VS Code extension | usually one tool |
+| Community | ✅ per-skill discussions + a [hub](https://mohitagw15856.github.io/pm-claude-skills/community.html) | issues only |
 
 ---
 
