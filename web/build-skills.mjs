@@ -40,6 +40,13 @@ if (existsSync(evalsFile)) {
   } catch { /* leave unscored on parse error */ }
 }
 
+// --- Framework attribution (from skill-sources.json) ---
+let SOURCES = {};
+const sourcesFile = join(root, 'skill-sources.json');
+if (existsSync(sourcesFile)) {
+  try { SOURCES = JSON.parse(readFileSync(sourcesFile, 'utf8')).sources || {}; } catch { /* ignore */ }
+}
+
 // --- Map each skill name -> plugin bundle (for grouping/filtering) ---
 const skillToPlugin = {};
 if (existsSync(pluginsDir)) {
@@ -130,6 +137,7 @@ for (const name of readdirSync(skillsDir)) {
     plugin: skillToPlugin[name] || 'other',
     tier: tierFor(name),
     eval: evalScores[meta.name || name] || null,
+    source: SOURCES[meta.name || name] || null,
     inputs: parseInputs(body),
     instructions: body.trim(),
   });
