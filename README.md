@@ -639,7 +639,7 @@ This repo was built alongside a published 16-part article series on Medium.
 A 205-skill library doesn't have 205 equally-mature skills, and pretending otherwise
 wastes your time. Skills are tiered honestly so you can start with the best work:
 
-- 🟢 **Production-Ready (47)** — battle-tested, stable output, used in real work. Includes the three skills with computed Python helpers (sprint planning, RICE, customer health). **Start here.**
+- 🟢 **Production-Ready (50)** — battle-tested, stable output, used in real work. Includes the three skills with computed Python helpers (sprint planning, RICE, customer health). **Start here.**
 - 🔵 **Stable** — solid, reliable, well-structured; the default for most of the library.
 - 🟡 **Experimental** — newer or dependent on an external tool/API/scrape (Gemini, Gmail, browser automation, social scraping). Useful, but more setup and more moving parts.
 
@@ -881,16 +881,19 @@ Learn more: [Anthropic's Skills documentation](https://code.claude.com/docs/en/s
 
 ## ⭐ Star Milestones
 
-Stars unlock the next wave of skills. Here's the roadmap:
+Stars unlock the next wave of skills and features. We've hit every milestone so far — here's the track record, and what's next:
 
 | Milestone | Unlocks | Status |
 |---|---|---|
-| 100 ⭐ | 10 Figma skills + quality rebuild across all 93 skills | ✅ Shipped (v6.0.0) |
-| 250 ⭐ | 10 Customer Success skills (health scorecard, QBR deck, escalation brief, churn analysis) | ✅ Unlocked — coming in next release |
-| 500 ⭐ | 25 Engineering skills (CI/CD playbooks, SLO templates, onboarding docs, debugging patterns, threat models, capacity planning, DR plans, and more) | ✅ Shipped — pm-engineering now 35 skills (v11.0.0) |
-| 1000 ⭐ | Full Startup Founder kit (fundraising memo, pitch critique, co-founder equity split) | 🔒 Locked |
+| 100 ⭐ | 10 Figma skills + a quality rebuild across the whole library | ✅ Shipped (v6.0.0) |
+| 250 ⭐ | Customer Success bundle (health scorecard, QBR deck, escalation brief, churn analysis) | ✅ Shipped (v8.0.0) |
+| 500 ⭐ | Engineering bundle — 40+ skills (CI/CD, SLOs, onboarding, threat models, capacity & DR planning) | ✅ Shipped (v11.0.0) |
+| 1,000 ⭐ | Startup Founder kit — *delivered, and then some: the Founders **and** Educators bundles + a browser extension for ChatGPT/Claude.ai/Gemini* | ✅ Shipped (v24.0.0) |
+| **2,000 ⭐** | 2 community-voted profession bundles + the browser & VS Code extensions published to their stores | 🔓 **Current goal** |
+| 3,500 ⭐ | Community **skill packs** (curated role/industry bundles) + internationalised skill descriptions | 🔒 Locked |
+| 5,000 ⭐ | Public **contributor leaderboard** + the push to 300 skills | 🔒 Locked |
 
-**[⭐ Star this repo to unlock the next milestone →](https://github.com/mohitagw15856/pm-claude-skills)**
+**[⭐ Star this repo to unlock the next milestone →](https://github.com/mohitagw15856/pm-claude-skills)** — we're at **2,000⭐** next.
 
 Want a specific skill built? [Vote or request in SKILL_REQUEST.md](SKILL_REQUEST.md).
 
