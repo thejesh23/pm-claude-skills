@@ -102,8 +102,13 @@ async function handle(msg) {
 export default {
   async fetch(request) {
     if (request.method === 'OPTIONS') return new Response(null, { headers: CORS });
-    if (request.method === 'GET') {
-      return new Response(JSON.stringify({ server: SERVER, transport: 'streamable-http', hint: 'POST JSON-RPC MCP requests here. Add this URL as an MCP connector.' }), { headers: { 'content-type': 'application/json', ...CORS } });
+    if (request.method === 'GET' || request.method === 'HEAD') {
+      // MCP Streamable HTTP: a client opening the optional SSE stream sends Accept:
+      // text/event-stream. This server is stateless (no server-initiated messages), so
+      // we signal "no stream" with 405 per spec; humans/health-checks get a JSON blurb.
+      const accept = request.headers.get('accept') || '';
+      if (accept.includes('text/event-stream')) return new Response('This MCP server has no server-initiated stream; send JSON-RPC via POST.', { status: 405, headers: CORS });
+      return new Response(JSON.stringify({ server: SERVER, transport: 'streamable-http', hint: 'POST MCP JSON-RPC here, or add this URL as an MCP connector.' }), { headers: { 'content-type': 'application/json', ...CORS } });
     }
     if (request.method !== 'POST') return new Response('Method Not Allowed', { status: 405, headers: CORS });
     let body;
