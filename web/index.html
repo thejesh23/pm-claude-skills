@@ -21,8 +21,13 @@
       </div>
     </div>
     <div class="key-area">
+      <select id="provider" title="Model provider — run with your own key from any of these">
+        <option value="anthropic">Claude</option>
+        <option value="openai">OpenAI</option>
+        <option value="gemini">Gemini</option>
+      </select>
       <div class="key-field">
-        <input id="apiKey" type="password" placeholder="sk-ant-… (your Claude API key)" autocomplete="off" spellcheck="false" />
+        <input id="apiKey" type="password" placeholder="sk-ant-… (your Anthropic API key)" autocomplete="off" spellcheck="false" />
         <button id="keyToggle" type="button" class="show-toggle">Show</button>
       </div>
       <select id="model" title="Model">
@@ -37,8 +42,8 @@
   <nav class="toolbar-nav" id="toolbar" aria-label="Tools"></nav>
 
   <div class="key-note">
-    <strong>👆 To run a skill, paste your Claude API key in the top-right.</strong> It's free to get, stays only in this browser, and is sent directly to api.anthropic.com — never to us.
-    <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">Get a key →</a> · Or just <strong>copy any skill</strong> for ChatGPT/Gemini — no key needed.
+    <strong>👆 To run a skill, pick a provider and paste your API key in the top-right.</strong> Works with <strong>Claude, OpenAI, or Gemini</strong> — your key stays only in this browser and is sent directly to that provider — never to us.
+    <a id="getKeyLink" href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">Get a Claude key →</a> · Or just <strong>copy any skill</strong> for ChatGPT/Gemini — no key needed.
     <br /><span style="opacity:.7;font-size:12px">🔒 Privacy: we use cookieless, anonymous usage counts (page views + which skills run) — never your key, inputs, or outputs.</span>
   </div>
 

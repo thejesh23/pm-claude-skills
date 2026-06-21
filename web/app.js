@@ -1,13 +1,56 @@
 'use strict';
 
-const KEY_STORE = 'anthropic_api_key';
-const MODEL_STORE = 'anthropic_model';
 const CONTEXT_STORE = 'pm_skills_context';
 const ROLE_STORE = 'pm_skills_role';
 const THEME_STORE = 'pm_theme';
 const FAV_STORE = 'pm_favs';
 const RECENT_STORE = 'pm_recents';
-const API_URL = 'https://api.anthropic.com/v1/messages';
+const PROVIDER_STORE = 'pm_provider';
+
+// Multi-model: run any skill with your own Claude, OpenAI, or Gemini key. All three
+// support direct browser calls over SSE `data:` lines — only the request shape and the
+// way a text delta is extracted differ, which is all this registry abstracts.
+const PROVIDERS = {
+  anthropic: {
+    name: 'Claude', keyStore: 'anthropic_api_key',
+    placeholder: 'sk-ant-… (your Anthropic API key)', keyUrl: 'https://console.anthropic.com/settings/keys',
+    models: [['claude-opus-4-8', 'Opus 4.8'], ['claude-sonnet-4-6', 'Sonnet 4.6'], ['claude-haiku-4-5-20251001', 'Haiku 4.5']],
+    buildReq: ({ key, model, system, userMessage }) => ({
+      url: 'https://api.anthropic.com/v1/messages',
+      headers: { 'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
+      body: { model, max_tokens: 8192, stream: true, ...(system ? { system } : {}), messages: [{ role: 'user', content: userMessage }] },
+    }),
+    delta: (e) => (e.type === 'content_block_delta' && e.delta && e.delta.text) ? e.delta.text : '',
+    errOf: (e) => (e.type === 'error' && e.error) ? (e.error.message || 'Stream error') : '',
+  },
+  openai: {
+    name: 'OpenAI', keyStore: 'openai_api_key',
+    placeholder: 'sk-… (your OpenAI API key)', keyUrl: 'https://platform.openai.com/api-keys',
+    models: [['gpt-4o', 'GPT-4o'], ['gpt-4o-mini', 'GPT-4o mini'], ['gpt-4.1', 'GPT-4.1']],
+    buildReq: ({ key, model, system, userMessage }) => ({
+      url: 'https://api.openai.com/v1/chat/completions',
+      headers: { 'content-type': 'application/json', authorization: 'Bearer ' + key },
+      body: { model, stream: true, messages: [...(system ? [{ role: 'system', content: system }] : []), { role: 'user', content: userMessage }] },
+    }),
+    delta: (e) => (e.choices && e.choices[0] && e.choices[0].delta && e.choices[0].delta.content) || '',
+    errOf: (e) => e.error ? (e.error.message || 'OpenAI error') : '',
+  },
+  gemini: {
+    name: 'Gemini', keyStore: 'gemini_api_key',
+    placeholder: 'AIza… (your Google AI Studio key)', keyUrl: 'https://aistudio.google.com/apikey',
+    models: [['gemini-2.0-flash', 'Gemini 2.0 Flash'], ['gemini-1.5-pro', 'Gemini 1.5 Pro'], ['gemini-1.5-flash', 'Gemini 1.5 Flash']],
+    buildReq: ({ key, model, system, userMessage }) => ({
+      url: 'https://generativelanguage.googleapis.com/v1beta/models/' + model + ':streamGenerateContent?alt=sse&key=' + encodeURIComponent(key),
+      headers: { 'content-type': 'application/json' },
+      body: { ...(system ? { system_instruction: { parts: [{ text: system }] } } : {}), contents: [{ role: 'user', parts: [{ text: userMessage }] }] },
+    }),
+    delta: (e) => { try { return e.candidates[0].content.parts[0].text || ''; } catch (_) { return ''; } },
+    errOf: (e) => e.error ? (e.error.message || 'Gemini error') : '',
+  },
+};
+const providerId = () => { const p = localStorage.getItem(PROVIDER_STORE); return PROVIDERS[p] ? p : 'anthropic'; };
+const P = () => PROVIDERS[providerId()];
+const modelStoreKey = (p) => 'pm_model_' + p;
 
 const lsGet = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) || d; } catch (e) { return d; } };
 const lsSet = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
@@ -42,13 +85,13 @@ function evalBadgeText(s) {
 init();
 
 async function init() {
-  const savedKey = localStorage.getItem(KEY_STORE);
-  if (savedKey) el('apiKey').value = savedKey;
-  const savedModel = localStorage.getItem(MODEL_STORE);
-  if (savedModel) el('model').value = savedModel;
-
-  el('apiKey').addEventListener('input', (e) => localStorage.setItem(KEY_STORE, e.target.value.trim()));
-  el('model').addEventListener('change', (e) => localStorage.setItem(MODEL_STORE, e.target.value));
+  if (el('provider')) {
+    el('provider').value = providerId();
+    el('provider').addEventListener('change', (e) => { localStorage.setItem(PROVIDER_STORE, e.target.value); applyProvider(); });
+  }
+  applyProvider();
+  el('apiKey').addEventListener('input', (e) => localStorage.setItem(P().keyStore, e.target.value.trim()));
+  el('model').addEventListener('change', (e) => localStorage.setItem(modelStoreKey(providerId()), e.target.value));
 
   // Skill Memory: restore + auto-save the user's context, used on every run.
   const savedContext = localStorage.getItem(CONTEXT_STORE) || '';
@@ -493,6 +536,21 @@ function showGallery() {
 }
 
 // ---------- Select & build form ----------
+// Swap the model list, key field, and help link to match the selected provider.
+function applyProvider() {
+  const cfg = P(), p = providerId();
+  const msel = el('model');
+  if (msel) {
+    msel.innerHTML = cfg.models.map((m) => `<option value="${m[0]}">${m[1]}</option>`).join('');
+    const saved = localStorage.getItem(modelStoreKey(p));
+    if (saved && cfg.models.some((m) => m[0] === saved)) msel.value = saved;
+  }
+  const kf = el('apiKey');
+  if (kf) { kf.value = localStorage.getItem(cfg.keyStore) || ''; kf.placeholder = cfg.placeholder; }
+  const gk = el('getKeyLink');
+  if (gk) { gk.href = cfg.keyUrl; gk.textContent = 'Get your ' + cfg.name + ' key →'; }
+}
+
 function renderRelated(s) {
   const box = el('skillRelated');
   if (!box) return;
@@ -591,21 +649,12 @@ function makeField(inp, i) {
 
 // Stream one completion from the API into a target node. Returns the full text.
 async function streamCompletion({ key, model, system, userMessage, node, signal }) {
-  const res = await fetch(API_URL, {
+  const prov = P();
+  const req = prov.buildReq({ key, model, system, userMessage });
+  const res = await fetch(req.url, {
     method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-      'x-api-key': key,
-      'anthropic-version': '2023-06-01',
-      'anthropic-dangerous-direct-browser-access': 'true',
-    },
-    body: JSON.stringify({
-      model,
-      max_tokens: 8192,
-      stream: true,
-      ...(system ? { system } : {}),
-      messages: [{ role: 'user', content: userMessage }],
-    }),
+    headers: req.headers,
+    body: JSON.stringify(req.body),
     signal,
   });
   if (!res.ok) throw new Error(parseApiError(await res.text(), res.status));
@@ -626,11 +675,13 @@ async function streamCompletion({ key, model, system, userMessage, node, signal 
       if (!payload || payload === '[DONE]') continue;
       let evt;
       try { evt = JSON.parse(payload); } catch (_) { continue; }
-      if (evt.type === 'content_block_delta' && evt.delta && evt.delta.text) {
-        acc += evt.delta.text;
+      const text = prov.delta(evt);
+      if (text) {
+        acc += text;
         renderMarkdown(node, acc, true);
-      } else if (evt.type === 'error') {
-        throw new Error(evt.error ? evt.error.message : 'Stream error from the API.');
+      } else {
+        const err = prov.errOf(evt);
+        if (err) throw new Error(err);
       }
     }
   }
@@ -644,7 +695,7 @@ const SKILL_SUFFIX =
 // ---------- Run ----------
 async function run() {
   const key = el('apiKey').value.trim();
-  if (!key) { flagMissingKey(); return setStatus('👆 Paste your Claude API key (top-right) to run.', true); }
+  if (!key) { flagMissingKey(); return setStatus(`👆 Paste your ${P().name} API key (top-right) to run.`, true); }
   if (!current) return;
   if (window.pmTrack) pmTrack('run/' + current.name);
 
@@ -688,7 +739,7 @@ ${current.instructions}${ctxBlock}`;
   // Single → #output. Compare-plain → 2 panes. Compare-models → one pane per model.
   const out = el('output');
   const grid = el('compareGrid');
-  const MODELS = [['claude-opus-4-8', 'Opus 4.8'], ['claude-sonnet-4-6', 'Sonnet 4.6'], ['claude-haiku-4-5-20251001', 'Haiku 4.5']];
+  const MODELS = P().models; // the active provider's models (for compare-models)
   let withNode, plainNode;
   if (compareModels) {
     out.hidden = true; grid.hidden = false;

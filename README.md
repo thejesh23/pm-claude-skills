@@ -449,7 +449,7 @@ ANTHROPIC_API_KEY=sk-ant-… npx pm-claude-skills generate --from ./team-process
 
 **▶ Live: [mohitagw15856.github.io/pm-claude-skills](https://mohitagw15856.github.io/pm-claude-skills/)** · 📚 [Browse the full skill catalog](https://mohitagw15856.github.io/pm-claude-skills/catalog.html)
 
-Don't want to install anything yet? Run any of these skills from a **zero-backend web app** using **your own Claude API key**. Pick a skill, fill in the auto-generated form, and Claude streams the result. Your key is stored only in your browser (`localStorage`) and sent directly to the Anthropic API — nothing touches a server we own.
+Don't want to install anything yet? Run any of these skills from a **zero-backend web app** using **your own Claude, OpenAI, or Gemini key**. Pick a provider, pick a skill, fill in the auto-generated form, and the result streams back live. Your key is stored only in your browser (`localStorage`) and sent **directly to the provider you chose** — nothing touches a server we own.
 
 ![Skill Playground — pick a skill, fill the form, run it with your own Claude key](web/docs-assets/playground.png)
 
