@@ -3,12 +3,13 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-180 skills exported. Copy a `.mdc rule` into the tool to use it.
+198 skills exported. Copy a `.mdc rule` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
 | 360-Degree Feedback Template | `pm-people` | `pm-people/360-feedback-template/360-feedback-template.md` |
 | A/B Test Planner | `pm-delivery` | `pm-delivery/ab-test-planner/ab-test-planner.md` |
+| A/B Test Readout | `pm-data` | `pm-data/ab-test-readout/ab-test-readout.md` |
 | Accessibility Audit | `pm-design` | `pm-design/accessibility-audit/accessibility-audit.md` |
 | Account Plan | `pm-sales` | `pm-sales/account-plan/account-plan.md` |
 | AEO Optimizer | `pm-writers` | `pm-writers/aeo-optimizer/aeo-optimizer.md` |
@@ -21,6 +22,7 @@
 | Assumption Mapper | `pm-discovery` | `pm-discovery/assumption-mapper/assumption-mapper.md` |
 | Board Deck Narrative | `pm-business` | `pm-business/board-deck-narrative/board-deck-narrative.md` |
 | Budget Variance Analysis | `pm-finance` | `pm-finance/budget-variance-analysis/budget-variance-analysis.md` |
+| Cap Table Explainer | `pm-founders` | `pm-founders/cap-table-explainer/cap-table-explainer.md` |
 | Capacity Planning | `pm-engineering` | `pm-engineering/capacity-planning/capacity-planning.md` |
 | Change Management Plan | `pm-hr` | `pm-hr/change-management-plan/change-management-plan.md` |
 | Changelog Generator | `pm-engineering` | `pm-engineering/changelog-generator/changelog-generator.md` |
@@ -28,6 +30,7 @@
 | Churn Analysis | `pm-cs` | `pm-cs/churn-analysis/churn-analysis.md` |
 | CI/CD Playbook | `pm-engineering` | `pm-engineering/cicd-playbook/cicd-playbook.md` |
 | Claude Superpowers | `pm-engineering` | `pm-engineering/claude-superpowers/claude-superpowers.md` |
+| Clause Explainer | `pm-legal` | `pm-legal/clause-explainer/clause-explainer.md` |
 | Clinical Case Summary | `pm-research` | `pm-research/clinical-case-summary/clinical-case-summary.md` |
 | Code Explainer | `pm-engineering` | `pm-engineering/code-explainer/code-explainer.md` |
 | Code Review Checklist | `pm-engineering` | `pm-engineering/code-review-checklist/code-review-checklist.md` |
@@ -48,9 +51,11 @@
 | Dashboard Brief | `pm-data` | `pm-data/dashboard-brief/dashboard-brief.md` |
 | Data Analysis Standard | `pm-analytics` | `pm-analytics/data-analysis-standard/data-analysis-standard.md` |
 | Data Pipeline Spec | `pm-data` | `pm-data/data-pipeline-spec/data-pipeline-spec.md` |
+| Data Quality Audit | `pm-data` | `pm-data/data-quality-audit/data-quality-audit.md` |
 | Database Migration Plan | `pm-engineering` | `pm-engineering/database-migration-plan/database-migration-plan.md` |
 | Database Schema Design | `pm-engineering` | `pm-engineering/database-schema-design/database-schema-design.md` |
 | Debugging Log Analyser | `pm-engineering` | `pm-engineering/debugging-log-analyser/debugging-log-analyser.md` |
+| Demand Letter | `pm-legal` | `pm-legal/demand-letter/demand-letter.md` |
 | Dependency Audit | `pm-engineering` | `pm-engineering/dependency-audit/dependency-audit.md` |
 | Dependency Conflict Resolver | `pm-engineering` | `pm-engineering/dependency-conflict-resolver/dependency-conflict-resolver.md` |
 | Design Critique | `pm-design` | `pm-design/design-critique/design-critique.md` |
@@ -84,15 +89,19 @@
 | Figma Variant Matrix | `pm-figma` | `pm-figma/figma-variant-matrix/figma-variant-matrix.md` |
 | Financial Due Diligence | `pm-finance` | `pm-finance/financial-due-diligence/financial-due-diligence.md` |
 | Financial Model Narrative | `pm-finance` | `pm-finance/financial-model-narrative/financial-model-narrative.md` |
+| Founder-Market Fit | `pm-founders` | `pm-founders/founder-market-fit/founder-market-fit.md` |
+| Fundraising FAQ | `pm-founders` | `pm-founders/fundraising-faq/fundraising-faq.md` |
 | Git Troubleshooter | `pm-engineering` | `pm-engineering/git-troubleshooter/git-troubleshooter.md` |
 | Go-To-Market | `pm-gtm` | `pm-gtm/go-to-market/go-to-market.md` |
 | Go-to-Market Planner | `pm-delivery` | `pm-delivery/go-to-market-planner/go-to-market-planner.md` |
 | Grant Proposal | `pm-cross` | `pm-cross/grant-proposal/grant-proposal.md` |
 | Hiring Rubric | `pm-people` | `pm-people/hiring-rubric/hiring-rubric.md` |
+| IEP Goal Support | `pm-education` | `pm-education/iep-goal-support/iep-goal-support.md` |
 | Incident Postmortem | `pm-engineering` | `pm-engineering/incident-postmortem/incident-postmortem.md` |
 | Influencer Brief | `pm-social` | `pm-social/influencer-brief/influencer-brief.md` |
 | Infrastructure-as-Code Review | `pm-engineering` | `pm-engineering/infra-as-code-review/infra-as-code-review.md` |
 | Instagram Post Downloader | `pm-writers` | `pm-writers/instagram-post-downloader/instagram-post-downloader.md` |
+| Investor Cold Email | `pm-founders` | `pm-founders/investor-cold-email/investor-cold-email.md` |
 | Investor Pitch Deck | `pm-finance` | `pm-finance/investor-pitch-deck/investor-pitch-deck.md` |
 | Investor Update | `pm-business` | `pm-business/investor-update/investor-update.md` |
 | Job Application | `pm-business` | `pm-business/job-application/job-application.md` |
@@ -101,11 +110,13 @@
 | Last 30 Days Research | `pm-cross` | `pm-cross/last-30-days-research/last-30-days-research.md` |
 | Launch Readiness | `pm-delivery` | `pm-delivery/launch-readiness/launch-readiness.md` |
 | Legal Brief | `pm-legal` | `pm-legal/legal-brief/legal-brief.md` |
+| Lesson Plan | `pm-education` | `pm-education/lesson-plan/lesson-plan.md` |
 | Literature Review | `pm-research` | `pm-research/literature-review/literature-review.md` |
 | Load Testing Plan | `pm-engineering` | `pm-engineering/load-testing-plan/load-testing-plan.md` |
 | Local Dev Setup | `pm-engineering` | `pm-engineering/local-dev-setup/local-dev-setup.md` |
 | Media Pitch | `pm-gtm` | `pm-gtm/media-pitch/media-pitch.md` |
 | Meeting Notes | `pm-essentials` | `pm-essentials/meeting-notes/meeting-notes.md` |
+| Metric Tree Builder | `pm-data` | `pm-data/metric-tree-builder/metric-tree-builder.md` |
 | Metrics Framework | `pm-data` | `pm-data/metrics-framework/metrics-framework.md` |
 | Microservices Decomposition | `pm-engineering` | `pm-engineering/microservices-decomposition/microservices-decomposition.md` |
 | Monitoring Setup Guide | `pm-engineering` | `pm-engineering/monitoring-setup-guide/monitoring-setup-guide.md` |
@@ -117,6 +128,7 @@
 | OKR Builder | `pm-planning` | `pm-planning/okr-builder/okr-builder.md` |
 | Onboarding Plan | `pm-hr` | `pm-hr/onboarding-plan/onboarding-plan.md` |
 | On-Call Runbook | `pm-engineering` | `pm-engineering/oncall-runbook/oncall-runbook.md` |
+| Parent Communication | `pm-education` | `pm-education/parent-communication/parent-communication.md` |
 | Partnership Proposal | `pm-sales` | `pm-sales/partnership-proposal/partnership-proposal.md` |
 | Patient Communication | `pm-research` | `pm-research/patient-communication/patient-communication.md` |
 | Performance Budget | `pm-engineering` | `pm-engineering/performance-budget/performance-budget.md` |
@@ -127,6 +139,7 @@
 | PRD Template | `pm-essentials` | `pm-essentials/prd-template/prd-template.md` |
 | Press Release | `pm-cross` | `pm-cross/press-release/press-release.md` |
 | Pricing Strategy | `pm-planning` | `pm-planning/pricing-strategy/pricing-strategy.md` |
+| Privacy Policy Drafter | `pm-legal` | `pm-legal/privacy-policy-drafter/privacy-policy-drafter.md` |
 | Process Documentation | `pm-operations` | `pm-operations/process-documentation/process-documentation.md` |
 | Product Health Analysis | `pm-analytics` | `pm-analytics/product-health-analysis/product-health-analysis.md` |
 | Product Launch Checklist | `pm-delivery` | `pm-delivery/product-launch-checklist/product-launch-checklist.md` |
@@ -134,6 +147,7 @@
 | Project Status Report | `pm-operations` | `pm-operations/project-status-report/project-status-report.md` |
 | Proposal Writer | `pm-sales` | `pm-sales/proposal-writer/proposal-writer.md` |
 | QBR Deck | `pm-cs` | `pm-cs/qbr-deck/qbr-deck.md` |
+| Quiz Generator | `pm-education` | `pm-education/quiz-generator/quiz-generator.md` |
 | RACI Matrix | `pm-operations` | `pm-operations/raci-matrix/raci-matrix.md` |
 | Red-Team Review | `pm-cross` | `pm-cross/red-team-review/red-team-review.md` |
 | Redundancy Consultation | `pm-hr` | `pm-hr/redundancy-consultation/redundancy-consultation.md` |
@@ -148,7 +162,9 @@
 | Risk Register | `pm-operations` | `pm-operations/risk-register/risk-register.md` |
 | Roadmap Narrative | `pm-planning` | `pm-planning/roadmap-narrative/roadmap-narrative.md` |
 | Roadmap Presentation | `pm-planning` | `pm-planning/roadmap-presentation/roadmap-presentation.md` |
+| Rubric Builder | `pm-education` | `pm-education/rubric-builder/rubric-builder.md` |
 | Runbook Writer | `pm-engineering` | `pm-engineering/runbook-writer/runbook-writer.md` |
+| Runway Planner | `pm-founders` | `pm-founders/runway-planner/runway-planner.md` |
 | Sales Battlecard | `pm-sales` | `pm-sales/sales-battlecard/sales-battlecard.md` |
 | Sales Forecasting Model | `pm-sales` | `pm-sales/sales-forecasting-model/sales-forecasting-model.md` |
 | Security Threat Model | `pm-engineering` | `pm-engineering/security-threat-model/security-threat-model.md` |
@@ -166,7 +182,9 @@
 | SQL Query Explainer | `pm-data` | `pm-data/sql-query-explainer/sql-query-explainer.md` |
 | Stakeholder Influence Mapper | `pm-strategy` | `pm-strategy/stakeholder-influence-mapper/stakeholder-influence-mapper.md` |
 | Stakeholder Update | `pm-essentials` | `pm-essentials/stakeholder-update/stakeholder-update.md` |
+| Startup Idea Validator | `pm-founders` | `pm-founders/startup-idea-validator/startup-idea-validator.md` |
 | Strategic Narrative Generator | `pm-strategy` | `pm-strategy/strategic-narrative-generator/strategic-narrative-generator.md` |
+| Student Feedback | `pm-education` | `pm-education/student-feedback/student-feedback.md` |
 | Substack Notes Scraper | `pm-writers` | `pm-writers/substack-notes-scraper/substack-notes-scraper.md` |
 | Sycophancy Challenger | `pm-cross` | `pm-cross/sycophancy-challenger/sycophancy-challenger.md` |
 | System Design Interview | `pm-engineering` | `pm-engineering/system-design-interview/system-design-interview.md` |

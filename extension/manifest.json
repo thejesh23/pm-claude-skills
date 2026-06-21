@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "PM Skills — Skill Picker for ChatGPT, Claude & Gemini",
+  "version": "1.0.0",
+  "description": "Insert any of 198 professional Agent Skills (PRDs, launch plans, postmortems, rubrics, contracts…) straight into the ChatGPT, Claude.ai or Gemini chat box. No copy-paste.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "PM Skills",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["skills.json"],
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*"
+      ]
+    }
+  ],
+  "permissions": ["storage"],
+  "homepage_url": "https://github.com/mohitagw15856/pm-claude-skills"
+}

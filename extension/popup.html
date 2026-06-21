@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    :root { color-scheme: light dark; }
+    body { width: 300px; margin: 0; font: 13px/1.45 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    .head { display: flex; align-items: center; gap: 8px; padding: 14px; background: #d97757; color: #fff; }
+    .head img { width: 28px; height: 28px; border-radius: 6px; }
+    .head strong { font-size: 14px; }
+    .body { padding: 14px; }
+    .body p { margin: 0 0 10px; color: #555; }
+    @media (prefers-color-scheme: dark) { .body p { color: #aaa; } body { background: #1f1f23; color: #ececf1; } }
+    ul { margin: 0 0 12px; padding-left: 18px; }
+    li { margin: 3px 0; }
+    a.btn { display: block; text-align: center; padding: 9px; border-radius: 9px; background: #d97757; color: #fff; text-decoration: none; font-weight: 600; margin-top: 4px; }
+    .tip { font-size: 11.5px; color: #888; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="head">
+    <img src="icons/icon48.png" alt="" />
+    <strong>PM Skills</strong>
+  </div>
+  <div class="body">
+    <p><b id="count">198</b> professional skills, ready to drop into your chat.</p>
+    <p>Open <b>ChatGPT</b>, <b>Claude.ai</b> or <b>Gemini</b>, then click the floating <b>🧠 Skills</b> button to pick one — it inserts the framework into the message box. Add your task and send.</p>
+    <a class="btn" href="https://mohitagw15856.github.io/pm-claude-skills/" target="_blank" rel="noopener">Open the Playground ↗</a>
+    <a class="btn" style="background:#444;margin-top:8px" href="https://github.com/mohitagw15856/pm-claude-skills" target="_blank" rel="noopener">⭐ Star on GitHub</a>
+    <p class="tip">Works on chatgpt.com · claude.ai · gemini.google.com. Skills run locally — nothing is sent to us.</p>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

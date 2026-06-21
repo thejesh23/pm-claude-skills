@@ -3,12 +3,13 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-180 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
+198 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
 | 360-Degree Feedback Template | `pm-people` | `pm-people/360-feedback-template/GEM_INSTRUCTIONS.md` |
 | A/B Test Planner | `pm-delivery` | `pm-delivery/ab-test-planner/GEM_INSTRUCTIONS.md` |
+| A/B Test Readout | `pm-data` | `pm-data/ab-test-readout/GEM_INSTRUCTIONS.md` |
 | Accessibility Audit | `pm-design` | `pm-design/accessibility-audit/GEM_INSTRUCTIONS.md` |
 | Account Plan | `pm-sales` | `pm-sales/account-plan/GEM_INSTRUCTIONS.md` |
 | AEO Optimizer | `pm-writers` | `pm-writers/aeo-optimizer/GEM_INSTRUCTIONS.md` |
@@ -21,6 +22,7 @@
 | Assumption Mapper | `pm-discovery` | `pm-discovery/assumption-mapper/GEM_INSTRUCTIONS.md` |
 | Board Deck Narrative | `pm-business` | `pm-business/board-deck-narrative/GEM_INSTRUCTIONS.md` |
 | Budget Variance Analysis | `pm-finance` | `pm-finance/budget-variance-analysis/GEM_INSTRUCTIONS.md` |
+| Cap Table Explainer | `pm-founders` | `pm-founders/cap-table-explainer/GEM_INSTRUCTIONS.md` |
 | Capacity Planning | `pm-engineering` | `pm-engineering/capacity-planning/GEM_INSTRUCTIONS.md` |
 | Change Management Plan | `pm-hr` | `pm-hr/change-management-plan/GEM_INSTRUCTIONS.md` |
 | Changelog Generator | `pm-engineering` | `pm-engineering/changelog-generator/GEM_INSTRUCTIONS.md` |
@@ -28,6 +30,7 @@
 | Churn Analysis | `pm-cs` | `pm-cs/churn-analysis/GEM_INSTRUCTIONS.md` |
 | CI/CD Playbook | `pm-engineering` | `pm-engineering/cicd-playbook/GEM_INSTRUCTIONS.md` |
 | Claude Superpowers | `pm-engineering` | `pm-engineering/claude-superpowers/GEM_INSTRUCTIONS.md` |
+| Clause Explainer | `pm-legal` | `pm-legal/clause-explainer/GEM_INSTRUCTIONS.md` |
 | Clinical Case Summary | `pm-research` | `pm-research/clinical-case-summary/GEM_INSTRUCTIONS.md` |
 | Code Explainer | `pm-engineering` | `pm-engineering/code-explainer/GEM_INSTRUCTIONS.md` |
 | Code Review Checklist | `pm-engineering` | `pm-engineering/code-review-checklist/GEM_INSTRUCTIONS.md` |
@@ -48,9 +51,11 @@
 | Dashboard Brief | `pm-data` | `pm-data/dashboard-brief/GEM_INSTRUCTIONS.md` |
 | Data Analysis Standard | `pm-analytics` | `pm-analytics/data-analysis-standard/GEM_INSTRUCTIONS.md` |
 | Data Pipeline Spec | `pm-data` | `pm-data/data-pipeline-spec/GEM_INSTRUCTIONS.md` |
+| Data Quality Audit | `pm-data` | `pm-data/data-quality-audit/GEM_INSTRUCTIONS.md` |
 | Database Migration Plan | `pm-engineering` | `pm-engineering/database-migration-plan/GEM_INSTRUCTIONS.md` |
 | Database Schema Design | `pm-engineering` | `pm-engineering/database-schema-design/GEM_INSTRUCTIONS.md` |
 | Debugging Log Analyser | `pm-engineering` | `pm-engineering/debugging-log-analyser/GEM_INSTRUCTIONS.md` |
+| Demand Letter | `pm-legal` | `pm-legal/demand-letter/GEM_INSTRUCTIONS.md` |
 | Dependency Audit | `pm-engineering` | `pm-engineering/dependency-audit/GEM_INSTRUCTIONS.md` |
 | Dependency Conflict Resolver | `pm-engineering` | `pm-engineering/dependency-conflict-resolver/GEM_INSTRUCTIONS.md` |
 | Design Critique | `pm-design` | `pm-design/design-critique/GEM_INSTRUCTIONS.md` |
@@ -84,15 +89,19 @@
 | Figma Variant Matrix | `pm-figma` | `pm-figma/figma-variant-matrix/GEM_INSTRUCTIONS.md` |
 | Financial Due Diligence | `pm-finance` | `pm-finance/financial-due-diligence/GEM_INSTRUCTIONS.md` |
 | Financial Model Narrative | `pm-finance` | `pm-finance/financial-model-narrative/GEM_INSTRUCTIONS.md` |
+| Founder-Market Fit | `pm-founders` | `pm-founders/founder-market-fit/GEM_INSTRUCTIONS.md` |
+| Fundraising FAQ | `pm-founders` | `pm-founders/fundraising-faq/GEM_INSTRUCTIONS.md` |
 | Git Troubleshooter | `pm-engineering` | `pm-engineering/git-troubleshooter/GEM_INSTRUCTIONS.md` |
 | Go-To-Market | `pm-gtm` | `pm-gtm/go-to-market/GEM_INSTRUCTIONS.md` |
 | Go-to-Market Planner | `pm-delivery` | `pm-delivery/go-to-market-planner/GEM_INSTRUCTIONS.md` |
 | Grant Proposal | `pm-cross` | `pm-cross/grant-proposal/GEM_INSTRUCTIONS.md` |
 | Hiring Rubric | `pm-people` | `pm-people/hiring-rubric/GEM_INSTRUCTIONS.md` |
+| IEP Goal Support | `pm-education` | `pm-education/iep-goal-support/GEM_INSTRUCTIONS.md` |
 | Incident Postmortem | `pm-engineering` | `pm-engineering/incident-postmortem/GEM_INSTRUCTIONS.md` |
 | Influencer Brief | `pm-social` | `pm-social/influencer-brief/GEM_INSTRUCTIONS.md` |
 | Infrastructure-as-Code Review | `pm-engineering` | `pm-engineering/infra-as-code-review/GEM_INSTRUCTIONS.md` |
 | Instagram Post Downloader | `pm-writers` | `pm-writers/instagram-post-downloader/GEM_INSTRUCTIONS.md` |
+| Investor Cold Email | `pm-founders` | `pm-founders/investor-cold-email/GEM_INSTRUCTIONS.md` |
 | Investor Pitch Deck | `pm-finance` | `pm-finance/investor-pitch-deck/GEM_INSTRUCTIONS.md` |
 | Investor Update | `pm-business` | `pm-business/investor-update/GEM_INSTRUCTIONS.md` |
 | Job Application | `pm-business` | `pm-business/job-application/GEM_INSTRUCTIONS.md` |
@@ -101,11 +110,13 @@
 | Last 30 Days Research | `pm-cross` | `pm-cross/last-30-days-research/GEM_INSTRUCTIONS.md` |
 | Launch Readiness | `pm-delivery` | `pm-delivery/launch-readiness/GEM_INSTRUCTIONS.md` |
 | Legal Brief | `pm-legal` | `pm-legal/legal-brief/GEM_INSTRUCTIONS.md` |
+| Lesson Plan | `pm-education` | `pm-education/lesson-plan/GEM_INSTRUCTIONS.md` |
 | Literature Review | `pm-research` | `pm-research/literature-review/GEM_INSTRUCTIONS.md` |
 | Load Testing Plan | `pm-engineering` | `pm-engineering/load-testing-plan/GEM_INSTRUCTIONS.md` |
 | Local Dev Setup | `pm-engineering` | `pm-engineering/local-dev-setup/GEM_INSTRUCTIONS.md` |
 | Media Pitch | `pm-gtm` | `pm-gtm/media-pitch/GEM_INSTRUCTIONS.md` |
 | Meeting Notes | `pm-essentials` | `pm-essentials/meeting-notes/GEM_INSTRUCTIONS.md` |
+| Metric Tree Builder | `pm-data` | `pm-data/metric-tree-builder/GEM_INSTRUCTIONS.md` |
 | Metrics Framework | `pm-data` | `pm-data/metrics-framework/GEM_INSTRUCTIONS.md` |
 | Microservices Decomposition | `pm-engineering` | `pm-engineering/microservices-decomposition/GEM_INSTRUCTIONS.md` |
 | Monitoring Setup Guide | `pm-engineering` | `pm-engineering/monitoring-setup-guide/GEM_INSTRUCTIONS.md` |
@@ -117,6 +128,7 @@
 | OKR Builder | `pm-planning` | `pm-planning/okr-builder/GEM_INSTRUCTIONS.md` |
 | Onboarding Plan | `pm-hr` | `pm-hr/onboarding-plan/GEM_INSTRUCTIONS.md` |
 | On-Call Runbook | `pm-engineering` | `pm-engineering/oncall-runbook/GEM_INSTRUCTIONS.md` |
+| Parent Communication | `pm-education` | `pm-education/parent-communication/GEM_INSTRUCTIONS.md` |
 | Partnership Proposal | `pm-sales` | `pm-sales/partnership-proposal/GEM_INSTRUCTIONS.md` |
 | Patient Communication | `pm-research` | `pm-research/patient-communication/GEM_INSTRUCTIONS.md` |
 | Performance Budget | `pm-engineering` | `pm-engineering/performance-budget/GEM_INSTRUCTIONS.md` |
@@ -127,6 +139,7 @@
 | PRD Template | `pm-essentials` | `pm-essentials/prd-template/GEM_INSTRUCTIONS.md` |
 | Press Release | `pm-cross` | `pm-cross/press-release/GEM_INSTRUCTIONS.md` |
 | Pricing Strategy | `pm-planning` | `pm-planning/pricing-strategy/GEM_INSTRUCTIONS.md` |
+| Privacy Policy Drafter | `pm-legal` | `pm-legal/privacy-policy-drafter/GEM_INSTRUCTIONS.md` |
 | Process Documentation | `pm-operations` | `pm-operations/process-documentation/GEM_INSTRUCTIONS.md` |
 | Product Health Analysis | `pm-analytics` | `pm-analytics/product-health-analysis/GEM_INSTRUCTIONS.md` |
 | Product Launch Checklist | `pm-delivery` | `pm-delivery/product-launch-checklist/GEM_INSTRUCTIONS.md` |
@@ -134,6 +147,7 @@
 | Project Status Report | `pm-operations` | `pm-operations/project-status-report/GEM_INSTRUCTIONS.md` |
 | Proposal Writer | `pm-sales` | `pm-sales/proposal-writer/GEM_INSTRUCTIONS.md` |
 | QBR Deck | `pm-cs` | `pm-cs/qbr-deck/GEM_INSTRUCTIONS.md` |
+| Quiz Generator | `pm-education` | `pm-education/quiz-generator/GEM_INSTRUCTIONS.md` |
 | RACI Matrix | `pm-operations` | `pm-operations/raci-matrix/GEM_INSTRUCTIONS.md` |
 | Red-Team Review | `pm-cross` | `pm-cross/red-team-review/GEM_INSTRUCTIONS.md` |
 | Redundancy Consultation | `pm-hr` | `pm-hr/redundancy-consultation/GEM_INSTRUCTIONS.md` |
@@ -148,7 +162,9 @@
 | Risk Register | `pm-operations` | `pm-operations/risk-register/GEM_INSTRUCTIONS.md` |
 | Roadmap Narrative | `pm-planning` | `pm-planning/roadmap-narrative/GEM_INSTRUCTIONS.md` |
 | Roadmap Presentation | `pm-planning` | `pm-planning/roadmap-presentation/GEM_INSTRUCTIONS.md` |
+| Rubric Builder | `pm-education` | `pm-education/rubric-builder/GEM_INSTRUCTIONS.md` |
 | Runbook Writer | `pm-engineering` | `pm-engineering/runbook-writer/GEM_INSTRUCTIONS.md` |
+| Runway Planner | `pm-founders` | `pm-founders/runway-planner/GEM_INSTRUCTIONS.md` |
 | Sales Battlecard | `pm-sales` | `pm-sales/sales-battlecard/GEM_INSTRUCTIONS.md` |
 | Sales Forecasting Model | `pm-sales` | `pm-sales/sales-forecasting-model/GEM_INSTRUCTIONS.md` |
 | Security Threat Model | `pm-engineering` | `pm-engineering/security-threat-model/GEM_INSTRUCTIONS.md` |
@@ -166,7 +182,9 @@
 | SQL Query Explainer | `pm-data` | `pm-data/sql-query-explainer/GEM_INSTRUCTIONS.md` |
 | Stakeholder Influence Mapper | `pm-strategy` | `pm-strategy/stakeholder-influence-mapper/GEM_INSTRUCTIONS.md` |
 | Stakeholder Update | `pm-essentials` | `pm-essentials/stakeholder-update/GEM_INSTRUCTIONS.md` |
+| Startup Idea Validator | `pm-founders` | `pm-founders/startup-idea-validator/GEM_INSTRUCTIONS.md` |
 | Strategic Narrative Generator | `pm-strategy` | `pm-strategy/strategic-narrative-generator/GEM_INSTRUCTIONS.md` |
+| Student Feedback | `pm-education` | `pm-education/student-feedback/GEM_INSTRUCTIONS.md` |
 | Substack Notes Scraper | `pm-writers` | `pm-writers/substack-notes-scraper/GEM_INSTRUCTIONS.md` |
 | Sycophancy Challenger | `pm-cross` | `pm-cross/sycophancy-challenger/GEM_INSTRUCTIONS.md` |
 | System Design Interview | `pm-engineering` | `pm-engineering/system-design-interview/GEM_INSTRUCTIONS.md` |

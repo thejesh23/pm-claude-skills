@@ -1,6 +1,15 @@
 {
   "_comment": "Framework attribution: the canonical method/author each skill encodes. Surfaced as a 'Based on' line on skill pages, the playground, and the catalog. Only skills with a genuine, well-known source are listed; the rest are intentionally omitted rather than given a fabricated citation.",
   "sources": {
+    "cap-table-explainer": "Y Combinator SAFE & standard round mechanics",
+    "runway-planner": "Default Alive or Dead — Paul Graham (Y Combinator)",
+    "founder-market-fit": "Founder-market fit & YC application practice",
+    "lesson-plan": "Backward design (Wiggins & McTighe) + Bloom's taxonomy",
+    "rubric-builder": "Analytic rubric design (Wiggins; Stevens & Levi)",
+    "quiz-generator": "Bloom's taxonomy of cognitive objectives",
+    "iep-goal-support": "SMART IEP goals under IDEA (practitioner standard)",
+    "metric-tree-builder": "North-star metric / input-metric driver trees (Reforge, Amplitude)",
+    "ab-test-readout": "Frequentist A/B test inference (statistical & practical significance)",
     "rice-prioritisation": "RICE scoring framework (Intercom)",
     "rice-impact-matrix": "RICE scoring framework (Intercom)",
     "feature-prioritisation": "RICE, ICE, MoSCoW & Kano prioritisation models",

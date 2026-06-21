@@ -1,8 +1,8 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "pm-claude-skills",
-  "version": "23.0.0",
-  "description": "PM stands for Professional, not just Product Management. 180 Claude Skills + 4 agent templates across 26 bundles covering 18 professions — engineering, customer success, legal, finance, HR, sales, design, Figma, marketing, social media, writers, and more. Built by a PM, used by everyone. Building blocks for the Anthropic agent template architecture.",
+  "version": "24.0.0",
+  "description": "PM stands for Professional, not just Product Management. 198 Claude Skills + 4 agent templates across 27 bundles covering 20 professions — engineering, customer success, legal, finance, HR, sales, design, Figma, marketing, social media, writers, founders/startups, educators, and more. Built by a PM, used by everyone. Building blocks for the Anthropic agent template architecture.",
   "owner": {
     "name": "Mohit Aggarwal",
     "email": "mohit15856@gmail.com"
@@ -98,8 +98,8 @@
     },
     {
       "name": "pm-data",
-      "description": "Data & analytics skills: Metrics Framework, SQL Query Explainer, Dashboard Brief, Chart Data Extractor, Cohort Analysis, Data Pipeline Spec. Build metric trees, explain SQL, spec dashboards, run cohort retention analysis with LTV modelling, and design ETL/ELT pipeline specifications with SLAs and data quality rules.",
-      "version": "1.2.0",
+      "description": "Data & analytics skills: Metrics Framework, SQL Query Explainer, Dashboard Brief, Chart Data Extractor, Cohort Analysis, Data Pipeline Spec, A/B Test Readout, Metric Tree Builder, Data Quality Audit. Build metric trees, explain SQL, spec dashboards, run cohort retention with LTV modelling, design ETL/ELT pipelines, read out A/B tests with significance and guardrails, and audit datasets for quality before you trust them.",
+      "version": "1.3.0",
       "category": "productivity",
       "source": "./plugins/pm-data",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
@@ -130,10 +130,26 @@
     },
     {
       "name": "pm-legal",
-      "description": "Legal skills: Contract Review, NDA Analyser, Legal Brief, Compliance Checklist. Flag risks in contracts and NDAs, draft legal memos in IRAC format, and generate GDPR, SOC 2, FCA and other compliance checklists.",
-      "version": "1.1.0",
+      "description": "Legal skills: Contract Review, NDA Analyser, Legal Brief, Compliance Checklist, Privacy Policy Drafter, Demand Letter, Clause Explainer. Flag risks in contracts and NDAs, draft legal memos in IRAC format, generate GDPR/SOC 2/FCA compliance checklists, draft plain-language privacy policies and demand letters, and decode any contract clause. Not a substitute for qualified legal advice.",
+      "version": "1.2.0",
       "category": "productivity",
       "source": "./plugins/pm-legal",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-founders",
+      "description": "Founder & startup skills: Startup Idea Validator, Fundraising FAQ, Cap Table Explainer, Founder-Market Fit, Investor Cold Email, Runway Planner. Pressure-test an idea, prep for investor Q&A, explain dilution and SAFEs, articulate why-you/why-now, write outreach that gets replies, and decide when to raise. Not legal or financial advice.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-founders",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-education",
+      "description": "Educator skills: Lesson Plan, Rubric Builder, Quiz Generator, Parent Communication, IEP Goal Support, Student Feedback. Build standards-aligned lessons with differentiation, fair grading rubrics, quizzes with answer keys, warm parent messages, measurable SMART IEP goals, and constructive feedback that tells students how to improve. A drafting aid for teachers — not legal advice.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-education",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
     },
     {
