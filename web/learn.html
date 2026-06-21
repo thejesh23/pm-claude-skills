@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-site-verification" content="osZgdSLYnqidzCKt4CxjqAxo44OqGvlKi-Bmg0UmxFQ" />
+<title>Skills vs MCP vs Subagents vs Prompts vs Hooks — when to use each</title>
+<meta name="description" content="The mental model for AI agents: how Skills, MCP servers, subagents, prompts, and hooks differ, when to use each, and why skills cost almost nothing thanks to progressive disclosure." />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .learn { max-width: 880px; margin: 0 auto; padding: 20px 22px 80px; }
+  .learn h2 { font-size: 28px; margin: 28px 0 6px; }
+  .learn h3 { font-size: 19px; margin: 24px 0 6px; color: var(--accent-2); }
+  .learn p, .learn li { line-height: 1.6; }
+  .learn .lede { font-size: 17px; color: var(--text); }
+  .callout { background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 10px; padding: 14px 16px; margin: 16px 0; }
+  .learn table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13.5px; }
+  .learn th, .learn td { border: 1px solid var(--border); padding: 9px 11px; text-align: left; vertical-align: top; }
+  .learn th { background: var(--panel-2); }
+  .learn code { background: var(--panel-2); padding: 1px 5px; border-radius: 5px; font-size: 12.5px; }
+  .pick li { margin: 8px 0; }
+  .pick b { color: var(--accent-2); }
+  .cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 22px 0; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img src="assets/product-notes.jpg" alt="Product Notes" class="brand-logo" />
+    <div class="brand-text"><h1>Learn</h1><p class="tagline">Skills vs MCP vs Subagents vs Prompts vs Hooks — the mental model.</p></div>
+  </div>
+</header>
+<nav class="toolbar-nav" id="toolbar" aria-label="Tools"></nav>
+
+<div class="learn">
+  <p class="lede">You installed a skill, and now you're wondering: how is this different from an MCP server? A subagent? Just a good prompt? Short answer — <b>they solve different problems and compose together.</b></p>
+
+  <div class="callout">
+    <b>One-line version:</b> A <b>prompt</b> is what you say once. A <b>skill</b> is reusable know-how the model loads when relevant. An <b>MCP server</b> gives the model new actions and live data. A <b>subagent</b> is a separate worker with its own context. A <b>hook</b> is automation that fires on an event. A skill needs no API, no server, no code — it's just a structured instruction file.
+  </div>
+
+  <h2>The 60-second comparison</h2>
+  <table>
+    <thead><tr><th></th><th>What it is</th><th>Gives the model…</th><th>Needs code/server?</th><th>Best for</th></tr></thead>
+    <tbody>
+      <tr><td><b>Prompt</b></td><td>Text you send</td><td>Instructions for <em>this</em> turn</td><td>No</td><td>One-off asks; global persona</td></tr>
+      <tr><td><b>Skill</b> (<code>SKILL.md</code>)</td><td>A structured file the model loads on demand</td><td>Reusable <em>expertise</em> — how a pro produces a specific artifact</td><td><b>No</b></td><td>Repeatable structured deliverables (PRDs, postmortems, rubrics)</td></tr>
+      <tr><td><b>MCP server</b></td><td>A running service (Model Context Protocol)</td><td>New <b>tools &amp; live data</b> (DB, email, GitHub)</td><td><b>Yes</b></td><td><em>Acting</em> on real systems &amp; data</td></tr>
+      <tr><td><b>Subagent</b></td><td>A separate agent with its own context</td><td>Parallelism + isolation</td><td>No</td><td>Big or separable sub-tasks</td></tr>
+      <tr><td><b>Hook</b></td><td>A script that runs on an event</td><td><b>Automation</b> — before/after a tool, on prompt submit</td><td>A script</td><td>Guardrails, auto-formatting, auto-loading context</td></tr>
+    </tbody>
+  </table>
+
+  <h2>How to choose</h2>
+  <ul class="pick">
+    <li><b>Consistent, professional output for a recurring task?</b> → <b>Skill.</b> (Every incident gets a proper postmortem.)</li>
+    <li><b>Read/write a real system — DB, GitHub, Slack, files?</b> → <b>MCP server.</b> Pair it with a skill so structure comes from the skill and data from the server.</li>
+    <li><b>Just need this one thing, once?</b> → <b>Prompt.</b> If you keep pasting the same prompt, promote it to a skill.</li>
+    <li><b>Task is huge / want it off your main context?</b> → <b>Subagent.</b></li>
+    <li><b>Want something automatic every time?</b> → <b>Hook.</b></li>
+  </ul>
+  <p>They stack: a <b>hook</b> can auto-load a <b>skill</b>, which structures work that an <b>MCP server</b> grounds in live data, optionally delegated to a <b>subagent</b>.</p>
+
+  <h2>Why skills are so cheap: progressive disclosure</h2>
+  <p>A skill loads in two stages, which is why you can have <em>hundreds</em> installed without blowing up the context:</p>
+  <ol>
+    <li><b>Always in context (tiny):</b> just each skill's <code>name</code> + <code>description</code> — ~100 tokens each. This is how the model <em>decides</em> what's relevant (and why the description is the most important line in a SKILL.md).</li>
+    <li><b>Loaded on demand:</b> the full body — a few thousand tokens — enters context <em>only</em> when that skill is picked.</li>
+  </ol>
+  <p>So 199 skills cost almost nothing until one is actually used. <b>Broad capability, narrow cost.</b></p>
+
+  <h2>See it in practice</h2>
+  <div class="cta-row">
+    <a class="tool active" href="index.html" style="text-decoration:none">▶ Run a skill free</a>
+    <a class="tool" href="canvas.html" style="text-decoration:none">🧩 Chain skills into a workflow</a>
+    <a class="tool" href="https://github.com/mohitagw15856/pm-claude-skills/blob/main/connectors/composio.md" style="text-decoration:none">⚡ Ground in 500+ apps (Composio)</a>
+    <a class="tool" href="https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/writing-great-skills/SKILL.md" style="text-decoration:none">✍️ Write your own skill</a>
+  </div>
+  <p style="color:var(--muted);font-size:13px">Full written version with links: <a href="https://github.com/mohitagw15856/pm-claude-skills/blob/main/docs/concepts.md">docs/concepts.md</a>.</p>
+</div>
+
+<script src="nav.js"></script>
+</body>
+</html>

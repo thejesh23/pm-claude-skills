@@ -493,6 +493,29 @@ function showGallery() {
 }
 
 // ---------- Select & build form ----------
+function renderRelated(s) {
+  const box = el('skillRelated');
+  if (!box) return;
+  const find = (n) => SKILLS.find((x) => x.name === n);
+  const parts = [];
+  if (s.readsFirst) {
+    const f = find(s.readsFirst);
+    if (f) parts.push(`<span class="rel-lead">Start with</span><button class="rel-chip rel-first" data-n="${f.name}" title="${escapeHtml(f.description)}">${escapeHtml(f.title)}</button>`);
+  }
+  const rel = (s.related || []).filter((n) => n !== s.readsFirst).map(find).filter(Boolean);
+  if (rel.length) {
+    parts.push(`<span class="rel-lead">Related</span>` + rel.map((r) => `<button class="rel-chip" data-n="${r.name}" title="${escapeHtml(r.description)}">${escapeHtml(r.title)}</button>`).join(''));
+  }
+  if (!parts.length) { box.hidden = true; return; }
+  box.innerHTML = parts.join('');
+  box.hidden = false;
+  box.querySelectorAll('.rel-chip').forEach((btn) =>
+    btn.addEventListener('click', () => {
+      const t = find(btn.dataset.n);
+      if (t) { selectSkill(t); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    }));
+}
+
 function selectSkill(s) {
   current = s;
   recordRecent(s.name);
@@ -522,6 +545,7 @@ function selectSkill(s) {
   } else {
     srcEl.hidden = true;
   }
+  renderRelated(s);
   el('elsewhere').open = false;
   el('copyMsg').textContent = '';
   el('shareMsg').textContent = '';

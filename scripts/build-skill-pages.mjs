@@ -93,10 +93,18 @@ function page(s) {
 ['h1','h2','h3','h4'].reverse().forEach(function(t){var lvl=Math.min(6,parseInt(t[1])+2);n.querySelectorAll(t).forEach(function(el){var r=document.createElement('h'+lvl);r.innerHTML=el.innerHTML;el.replaceWith(r);});});})();</script>`
     : '';
 
-  const related = (byBundle[s.plugin] || []).filter((x) => x.name !== s.name).slice(0, 6);
-  const relatedHtml = related.length
-    ? `<h2>Related skills</h2>\n<div class="related">` + related.map((r) => `<a href="${r.name}.html">${esc(r.title)}</a>`).join('') + `</div>`
+  // Prefer the computed interconnection graph (related[] + readsFirst); fall back to
+  // same-bundle siblings for any skill built before the graph existed.
+  const byName = Object.fromEntries(skills.map((x) => [x.name, x]));
+  const foundation = s.readsFirst ? byName[s.readsFirst] : null;
+  let related = (s.related || []).map((n) => byName[n]).filter(Boolean).filter((x) => x.name !== s.readsFirst);
+  if (!related.length) related = (byBundle[s.plugin] || []).filter((x) => x.name !== s.name).slice(0, 6);
+  const foundationHtml = foundation
+    ? `<h2>Start with</h2>\n<div class="related"><a href="${foundation.name}.html">${esc(foundation.title)}</a></div>`
     : '';
+  const relatedHtml = related.length
+    ? `${foundationHtml}<h2>Related skills</h2>\n<div class="related">` + related.map((r) => `<a href="${r.name}.html">${esc(r.title)}</a>`).join('') + `</div>`
+    : foundationHtml;
 
   const jsonLd = {
     '@context': 'https://schema.org',

@@ -17,6 +17,7 @@
     ['community.html', '💬 Community'],
     ['leaderboard.html', '📊 Leaderboard'],
     ['catalog.html', '📚 Catalog'],
+    ['learn.html', '🎓 Learn'],
     ['pro.html', '⭐ Pro'],
   ];
   var nav = document.getElementById('toolbar');

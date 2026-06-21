@@ -1,0 +1,13 @@
+{
+  "_comment": "Example Claude Code hooks for PM Skills. Merge the `hooks` block into your ~/.claude/settings.json (or .claude/settings.json in a project). Replace /ABSOLUTE/PATH with where you cloned this repo. Both hooks are read-only and non-blocking. Docs: hooks/README.md",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "bash /ABSOLUTE/PATH/pm-claude-skills/hooks/load-context.sh" },
+          { "type": "command", "command": "bash /ABSOLUTE/PATH/pm-claude-skills/hooks/suggest-skill.sh" }
+        ]
+      }
+    ]
+  }
+}

@@ -273,6 +273,13 @@ input:focus, select:focus, textarea:focus { outline: none; box-shadow: 0 0 0 3px
 .skill-source { font-size: 12.5px; color: var(--muted); margin: 0 0 10px; }
 .skill-source em { color: var(--accent-2); font-style: italic; }
 
+.skill-related { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin: 0 0 14px; }
+.skill-related .rel-lead { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-right: 1px; }
+.skill-related .rel-lead:not(:first-child) { margin-left: 8px; }
+.rel-chip { font: inherit; font-size: 12.5px; padding: 4px 11px; border: 1px solid var(--border); border-radius: 999px; background: var(--panel-2); color: var(--text); cursor: pointer; transition: border-color .12s, background .12s; }
+.rel-chip:hover { border-color: var(--accent); background: var(--panel); }
+.rel-chip.rel-first { border-color: var(--accent); color: var(--accent-2); font-weight: 600; }
+
 /* ---------- Skill Memory (context box) ---------- */
 .context-box {
   max-width: 1100px; margin: 12px auto 0; padding: 4px 16px;
