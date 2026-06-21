@@ -6,14 +6,6 @@
 
 # 🧠 PM Skills — 205 Professional Agent Skills for Claude, ChatGPT, Gemini, Cursor, Codex & Hermes
 
-<p align="center">
-  <a href="https://mohitagw15856.github.io/pm-claude-skills/">
-    <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=24&pause=900&color=D97757&center=true&vCenter=true&width=720&lines=205+pro+AI+skills;PRDs%2C+roadmaps%2C+launches+%E2%80%94+done+right;Run+any+one+free+in+your+browser" alt="PM Skills" />
-  </a>
-</p>
-
-> **Generic AI gives you filler. These give you the structure a senior pro actually uses** — PRDs, exec updates, launch plans, postmortems — as open-source `SKILL.md` files. Across **21 professions**, not just product management. One source, every AI tool.
-
 [![Stars](https://img.shields.io/github/stars/mohitagw15856/pm-claude-skills?style=social)](https://github.com/mohitagw15856/pm-claude-skills/stargazers)
 [![npm](https://img.shields.io/npm/v/pm-claude-skills?logo=npm&color=cb3837)](https://www.npmjs.com/package/pm-claude-skills)
 [![npm downloads](https://img.shields.io/npm/dm/pm-claude-skills?logo=npm&color=cb3837&label=installs)](https://www.npmjs.com/package/pm-claude-skills)
@@ -34,6 +26,14 @@
 [![Install](https://img.shields.io/badge/Install%20in%20Claude%20Code-2%20minutes-orange)](https://github.com/mohitagw15856/pm-claude-skills#-quick-install-2-minutes)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 [![Sponsor](https://img.shields.io/badge/sponsor-❤️-ff69b4)](https://github.com/sponsors/mohitagw15856)
+
+<p align="center">
+  <a href="https://mohitagw15856.github.io/pm-claude-skills/">
+    <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=24&pause=900&color=D97757&center=true&vCenter=true&width=720&lines=205+pro+AI+skills;PRDs%2C+roadmaps%2C+launches+%E2%80%94+done+right;Run+any+one+free+in+your+browser" alt="PM Skills" />
+  </a>
+</p>
+
+> **Generic AI gives you filler. These give you the structure a senior pro actually uses** — PRDs, exec updates, launch plans, postmortems — as open-source `SKILL.md` files. Across **21 professions**, not just product management. One source, every AI tool.
 
 ### ⭐ If this saves you time, [star the repo](https://github.com/mohitagw15856/pm-claude-skills) — it's the #1 way to help others find it.
 
