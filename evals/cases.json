@@ -80,6 +80,42 @@
     {
       "skill": "code-explainer",
       "input": "Explain this:\n\nconst debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };"
+    },
+    {
+      "skill": "sql-query-explainer",
+      "input": "Explain and optimise this slow query (Postgres):\n\nSELECT u.id, u.email, COUNT(o.id) AS orders FROM users u LEFT JOIN orders o ON o.user_id = u.id WHERE u.created_at > '2025-01-01' GROUP BY u.id, u.email ORDER BY orders DESC;\n\nIt scans 4M users and takes ~30s."
+    },
+    {
+      "skill": "aeo-optimizer",
+      "input": "Optimise this article intro for answer engines:\n\n'Customer churn is when customers stop using your product. It's a big problem for SaaS companies. In this post we'll talk about some ways to reduce churn and why it matters for your business growth over time.'"
+    },
+    {
+      "skill": "literature-review",
+      "input": "Write a short literature review on the effect of remote work on software-engineering productivity. Use 3-4 representative findings (synthesise typical results from well-known studies) and note where the evidence conflicts."
+    },
+    {
+      "skill": "privacy-policy-drafter",
+      "input": "Draft a privacy policy for 'Tasky', a B2B SaaS task manager. We collect account info (name, email), usage analytics via PostHog, payments via Stripe, and support emails. EU + US customers. No data selling."
+    },
+    {
+      "skill": "assumption-mapper",
+      "input": "Audit this brief for hidden assumptions:\n\n'We'll add an AI summary to every report. Users want less reading. It'll boost weekly active usage by 20% and cut support tickets. We can ship it in 3 weeks reusing the existing model.'"
+    },
+    {
+      "skill": "cohort-analysis",
+      "input": "Run a cohort retention analysis. Monthly signup cohorts, % active at month 1/3/6: Jan 100/48/31; Feb 100/52/35; Mar 100/61/44 (after an onboarding revamp in Feb). Find the story and what to do."
+    },
+    {
+      "skill": "competitive-intelligence-monitor",
+      "input": "Brief me on these competitor signals this week: (1) Rival A launched an AI assistant in beta; (2) Rival B cut prices 20% for startups; (3) Rival C hired a VP of Enterprise Sales; (4) a newcomer raised a $15M Series A. We're a mid-market analytics product."
+    },
+    {
+      "skill": "chart-data-extractor",
+      "input": "Transcribe this described bar chart into a data table: 'Quarterly revenue ($M): Q1 1.2, Q2 1.5, Q3 1.4, Q4 2.1. Two series - New 0.8/0.9/0.7/1.1 and Returning 0.4/0.6/0.7/1.0.' Reconstruct the table with confidence notes."
+    },
+    {
+      "skill": "claude-superpowers",
+      "input": "I need to refactor our authentication module to support SSO and add tests. It's a 5000-line legacy file with no current tests. Apply your discipline before touching code."
     }
   ]
 }
