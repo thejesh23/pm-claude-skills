@@ -95,8 +95,11 @@
       <option value="experimental">🟡 Experimental</option>
     </select>
     <label class="eval-filter" title="Show only skills scored by the eval harness"><input type="checkbox" id="evalFilter" /> ✅ Eval-scored</label>
+    <button id="historyBtn" class="ghost" type="button" title="Your saved runs (stored only in this browser)">🕘 History</button>
     <span id="count" class="count"></span>
   </div>
+
+  <section id="historyPanel" class="history-panel" hidden></section>
 
   <main class="main">
     <!-- Tile gallery -->
@@ -152,7 +155,14 @@
           <span>Output</span>
           <div>
             <button id="copyBtn" class="ghost" type="button">Copy</button>
-            <button id="downloadBtn" class="ghost" type="button">Download .md</button>
+            <select id="exportFmt" class="ghost" title="Download as a real document">
+              <option value="">⬇ Download…</option>
+              <option value="md">Markdown (.md)</option>
+              <option value="docx">Word (.doc)</option>
+              <option value="pdf">PDF</option>
+              <option value="pptx">PowerPoint (.pptx)</option>
+              <option value="xlsx">Excel (.xlsx)</option>
+            </select>
             <button id="shareHubBtn" class="ghost" type="button" title="Post what you got to the community Show & Tell">💬 Share to Hub</button>
             <button id="imgBtn" class="ghost" type="button" title="Download this result as a branded image">🖼️ Save as image</button>
           </div>
@@ -171,6 +181,7 @@
   </div>
 
   <script src="providers.js"></script>
+<script src="export-doc.js"></script>
 <script src="app.js"></script>
 <script src="nav.js"></script>
 </body>

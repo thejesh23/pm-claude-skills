@@ -123,9 +123,17 @@ Based on (framework/source): ${el('f_source').value.trim()||'(none — only cite
         if(e.type==='content_block_delta'&&e.delta&&e.delta.text){acc+=e.delta.text;out.textContent=acc;}}}
     acc=acc.replace(/^```[a-z]*\n?|\n?```$/g,'').trim(); out.textContent=acc;
     setStatus('Done — review it, then open a PR.');
-    // Wire the one-click PR (GitHub create-file editor, prefilled).
-    const url=`https://github.com/${REPO}/new/main?filename=${encodeURIComponent('skills/'+name+'/SKILL.md')}&value=${encodeURIComponent(acc)}`;
-    const pr=el('prBtn'); pr.textContent='🚀 Open a pull request'; pr.href=url;
+    // Wire the one-click PR (GitHub create-file editor, prefilled). Fall back to a
+    // copy-then-paste flow if the prefilled URL would exceed GitHub's length limit.
+    const path=encodeURIComponent('skills/'+name+'/SKILL.md');
+    const full=`https://github.com/${REPO}/new/main?filename=${path}&value=${encodeURIComponent(acc)}`;
+    const pr=el('prBtn');
+    if(full.length<=7000){
+      pr.textContent='🚀 Open a pull request'; pr.href=full; pr.onclick=null;
+    }else{
+      pr.textContent='🚀 Open a PR (content copied)'; pr.href=`https://github.com/${REPO}/new/main?filename=${path}`;
+      pr.onclick=()=>{ try{navigator.clipboard.writeText(acc);}catch(_){ } setStatus('SKILL.md copied — paste it into the GitHub editor that just opened, then commit to propose the PR.'); };
+    }
   }catch(e){setStatus(e.name==='AbortError'?'Stopped.':(e.message||'Failed.'),true);}
   finally{el('genBtn').disabled=false;el('stopBtn').hidden=true;controller=null;}
 }

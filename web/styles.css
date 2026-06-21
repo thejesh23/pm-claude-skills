@@ -273,6 +273,21 @@ input:focus, select:focus, textarea:focus { outline: none; box-shadow: 0 0 0 3px
 .skill-source { font-size: 12.5px; color: var(--muted); margin: 0 0 10px; }
 .skill-source em { color: var(--accent-2); font-style: italic; }
 
+/* Workspace / history panel */
+.history-panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; margin: 0 0 14px; }
+.history-panel .hist-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.history-panel .hist-sub { font-size: 12px; color: var(--muted); }
+.history-panel .hist-head .ghost { margin-left: auto; }
+.history-panel .hist-list { display: flex; flex-direction: column; gap: 6px; max-height: 360px; overflow: auto; }
+.history-panel .hist-item { display: flex; align-items: stretch; gap: 6px; }
+.history-panel .hist-open { flex: 1; display: flex; flex-direction: column; gap: 2px; text-align: left; background: var(--panel-2); border: 1px solid var(--border); border-radius: 9px; padding: 8px 11px; cursor: pointer; color: var(--text); }
+.history-panel .hist-open:hover { border-color: var(--accent); }
+.history-panel .hist-title { font-weight: 600; font-size: 14px; }
+.history-panel .hist-meta { font-size: 11.5px; color: var(--muted); }
+.history-panel .hist-del { border: 1px solid var(--border); background: var(--panel-2); border-radius: 9px; color: var(--muted); cursor: pointer; padding: 0 11px; }
+.history-panel .hist-del:hover { border-color: #c0504d; color: #c0504d; }
+#exportFmt.ghost { padding: 5px 8px; }
+
 .skill-related { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin: 0 0 14px; }
 .skill-related .rel-lead { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-right: 1px; }
 .skill-related .rel-lead:not(:first-child) { margin-left: 8px; }

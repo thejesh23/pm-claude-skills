@@ -64,7 +64,9 @@
     "build:og": "node scripts/build-og-images.mjs",
     "skill-of-the-week": "node scripts/skill-of-the-week.mjs",
     "check": "node scripts/skillcheck.mjs && node scripts/build-exports.mjs --check && node scripts/build-workflows.mjs --check && node web/build-skills.mjs && node scripts/build-samples.mjs && git diff --exit-code -- web/skills.json web/samples.json",
-    "improve": "node scripts/improve-skill.mjs"
+    "improve": "node scripts/improve-skill.mjs",
+    "eval:gen-cases": "node scripts/gen-eval-cases.mjs",
+    "eval:all": "node scripts/gen-eval-cases.mjs && node evals/run-evals.mjs --cases evals/cases.full.json --models claude-haiku-4-5-20251001 --judge claude-haiku-4-5-20251001"
   },
   "engines": {
     "node": ">=18"

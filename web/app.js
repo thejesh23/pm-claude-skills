@@ -5,6 +5,7 @@ const ROLE_STORE = 'pm_skills_role';
 const THEME_STORE = 'pm_theme';
 const FAV_STORE = 'pm_favs';
 const RECENT_STORE = 'pm_recents';
+const WORKSPACE_STORE = 'pm_workspace';
 // Multi-model provider layer lives in providers.js (shared with grade/agent/canvas).
 const P = () => window.PMProviders.current();
 const providerId = () => window.PMProviders.providerId();
@@ -13,6 +14,7 @@ const lsGet = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) || d;
 const lsSet = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
 let favs = lsGet(FAV_STORE, []);
 let recents = lsGet(RECENT_STORE, []);
+let workspace = lsGet(WORKSPACE_STORE, []);
 
 // Role → a curated starter set of skill names (the "try these first" for each role).
 const ROLES = {
@@ -84,7 +86,9 @@ async function init() {
   el('runBtn').addEventListener('click', run);
   el('stopBtn').addEventListener('click', () => controller && controller.abort());
   el('copyBtn').addEventListener('click', () => navigator.clipboard.writeText(el('output').dataset.raw || ''));
-  el('downloadBtn').addEventListener('click', downloadOutput);
+  el('exportFmt').addEventListener('change', onExport);
+  el('historyBtn').addEventListener('click', toggleHistory);
+  updateHistoryBtn();
   el('shareHubBtn').addEventListener('click', shareToHub);
   el('imgBtn').addEventListener('click', shareAsImage);
 
@@ -678,6 +682,7 @@ ${current.instructions}${ctxBlock}`;
       acc = await streamCompletion({ key, model, system, userMessage, node: out, signal: controller.signal });
     }
     out.dataset.raw = acc; // copy/download use the skill output, in either mode
+    saveRun(acc);
     setStatus('Done.');
   } catch (e) {
     if (e.name === 'AbortError') {
@@ -737,6 +742,84 @@ function downloadOutput() {
   a.download = `${current.name}-output.md`;
   a.click();
   URL.revokeObjectURL(a.href);
+}
+
+// ---------- Workspace: saved runs & history (local, this browser only) ----------
+function saveRun(output) {
+  if (!current || !output || !output.trim()) return;
+  workspace.unshift({ name: current.name, title: current.title, provider: providerId(), model: el('model').value, output, ts: Date.now() });
+  workspace = workspace.slice(0, 50);
+  lsSet(WORKSPACE_STORE, workspace);
+  updateHistoryBtn();
+}
+function updateHistoryBtn() {
+  const b = el('historyBtn');
+  if (b) b.textContent = '🕘 History' + (workspace.length ? ` (${workspace.length})` : '');
+}
+function relTime(ts) {
+  const s = (Date.now() - ts) / 1000;
+  if (s < 60) return 'just now';
+  if (s < 3600) return Math.floor(s / 60) + 'm ago';
+  if (s < 86400) return Math.floor(s / 3600) + 'h ago';
+  return Math.floor(s / 86400) + 'd ago';
+}
+function toggleHistory() {
+  const panel = el('historyPanel');
+  if (panel.hidden) { renderHistory(); panel.hidden = false; panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+  else panel.hidden = true;
+}
+function renderHistory() {
+  const panel = el('historyPanel');
+  if (!workspace.length) {
+    panel.innerHTML = '<p class="empty-msg">No saved runs yet. Run a skill and it\'s saved here automatically — stored only in this browser.</p>';
+    return;
+  }
+  const provName = (id) => (PMProviders.PROVIDERS[id] && PMProviders.PROVIDERS[id].name) || id;
+  panel.innerHTML =
+    `<div class="hist-head"><strong>🕘 Your saved runs</strong> <span class="hist-sub">${workspace.length} saved · this browser only</span><button id="histClear" class="ghost" type="button">Clear all</button></div>` +
+    '<div class="hist-list">' + workspace.map((r, i) =>
+      `<div class="hist-item"><button class="hist-open" data-i="${i}"><span class="hist-title">${escapeHtml(r.title)}</span><span class="hist-meta">${escapeHtml(r.name)} · ${escapeHtml(provName(r.provider))} · ${relTime(r.ts)}</span></button><button class="hist-del" data-i="${i}" title="Delete this run">✕</button></div>`).join('') + '</div>';
+  panel.querySelectorAll('.hist-open').forEach((b) => b.addEventListener('click', () => restoreRun(+b.dataset.i)));
+  panel.querySelectorAll('.hist-del').forEach((b) => b.addEventListener('click', () => {
+    workspace.splice(+b.dataset.i, 1); lsSet(WORKSPACE_STORE, workspace); updateHistoryBtn(); renderHistory();
+  }));
+  el('histClear').addEventListener('click', () => {
+    if (confirm('Clear all saved runs? This only affects this browser.')) { workspace = []; lsSet(WORKSPACE_STORE, workspace); updateHistoryBtn(); renderHistory(); }
+  });
+}
+function restoreRun(i) {
+  const r = workspace[i];
+  if (!r) return;
+  el('historyPanel').hidden = true;
+  const skill = SKILLS.find((s) => s.name === r.name);
+  if (skill) selectSkill(skill);
+  el('outputWrap').hidden = false;
+  el('compareGrid').hidden = true;
+  const out = el('output');
+  out.hidden = false;
+  out.dataset.raw = r.output;
+  renderMarkdown(out, r.output, false);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setStatus(`Restored — ${r.title} (${relTime(r.ts)})`);
+}
+
+// Export the current output as a real document (.md/.doc/PDF/.pptx/.xlsx).
+function onExport(e) {
+  const fmt = e.target.value;
+  e.target.value = '';
+  const md = el('output').dataset.raw || '';
+  if (!fmt || !md) return;
+  const title = (current && current.title) || 'pm-skills-output';
+  if (window.pmTrack) pmTrack('export/' + fmt);
+  try {
+    if (fmt === 'md') return downloadOutput();
+    if (fmt === 'docx') return PMExport.word(md, title);
+    if (fmt === 'pdf') return PMExport.pdf(md, title);
+    if (fmt === 'pptx') return PMExport.pptx(md, title);
+    if (fmt === 'xlsx') return PMExport.xlsx(md, title);
+  } catch (err) {
+    setStatus('Export failed: ' + (err.message || err), true);
+  }
 }
 
 // ---------- Helpers ----------

@@ -443,6 +443,8 @@ ANTHROPIC_API_KEY=sk-ant-… npx pm-claude-skills generate --from ./team-process
 
 **🏆 Skill Leaderboard — [evals](evals/).** An LLM-as-judge harness scores each skill across Claude models on structure, completeness, usefulness, and grounding. **[View the leaderboard →](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)**
 
+> **Score the *whole* library, cheaply.** `npm run eval:gen-cases` writes a representative input for **all 205 skills** (curated cases kept verbatim; the rest auto-generated), then `npm run eval:all` runs the full pass on Haiku for **~$2** total. The weakest scorers can then be auto-rewritten with **`npm run improve -- <skill>`** (`/improve`), which keeps a change only if the score goes up.
+
 ---
 
 ## 🌐 Skill Playground — Try Any Skill in Your Browser
