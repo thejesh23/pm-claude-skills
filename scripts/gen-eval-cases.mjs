@@ -34,13 +34,30 @@ const firstSentence = (s) => (s.split(/(?<=[.!?])\s/)[0] || s).slice(0, 200);
 const curated = JSON.parse(readFileSync(join(root, 'evals', 'cases.json'), 'utf8')).cases;
 const curatedBySkill = new Map(curated.map((c) => [c.skill, c]));
 
+// Skills that an LLM-as-judge can't fairly score on a text "artifact" rubric — they need
+// an image, a live URL/account, or they activate a behaviour rather than produce a document.
+// Scoring them yields a misleading low (grounding tanks because there's nothing to ground on),
+// so we exclude them from the leaderboard and mark them "not eval-applicable" instead.
+const EVAL_EXCLUDE = new Set([
+  'chart-data-extractor',        // needs an image to read
+  'substack-notes-scraper',      // needs a live URL
+  'instagram-post-downloader',   // needs a live URL / tool
+  'thumbnail-creator',           // produces an image
+  'email-triage',                // needs a connected Gmail
+  'notebooklm-connector',        // external tool / live source
+  'morning-intelligence',        // needs live web data
+  'context-mode',                // activates a session behaviour, not an artifact
+  'claude-superpowers',          // activates a coding discipline, not an artifact
+]);
+
 const cases = [];
-let generated = 0;
+let generated = 0, excluded = 0;
 for (const name of readdirSync(skillsDir).sort()) {
   const file = join(skillsDir, name, 'SKILL.md');
   if (!existsSync(file)) continue;
   const s = parse(readFileSync(file, 'utf8'));
   const skill = s.name || name;
+  if (EVAL_EXCLUDE.has(skill)) { excluded++; continue; }
   if (curatedBySkill.has(skill)) { cases.push(curatedBySkill.get(skill)); continue; }
   cases.push({
     skill,
@@ -55,5 +72,5 @@ const out = {
   cases,
 };
 writeFileSync(join(root, 'evals', 'cases.full.json'), JSON.stringify(out, null, 2) + '\n');
-console.log(`Wrote evals/cases.full.json — ${cases.length} cases (${curated.length} curated, ${generated} auto-generated).`);
+console.log(`Wrote evals/cases.full.json — ${cases.length} cases (${cases.length - generated} curated, ${generated} auto-generated; ${excluded} excluded as not eval-applicable).`);
 console.log('Cheapest full run:\n  ANTHROPIC_API_KEY=sk-ant-… node evals/run-evals.mjs --cases evals/cases.full.json --models claude-haiku-4-5-20251001 --judge claude-haiku-4-5-20251001');
