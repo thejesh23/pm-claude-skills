@@ -90,7 +90,7 @@ async function init(){
 
 function renderPalette(){
   const q=el('paletteSearch').value.toLowerCase().trim();
-  const list=SKILLS.filter(s=>!q||(s.title+' '+s.description+' '+s.name).toLowerCase().includes(q)).slice(0,60);
+  const list=SKILLS.filter(s=>!q||(s.title+' '+s.description+' '+s.name).toLowerCase().includes(q));
   const box=el('paletteList'); box.innerHTML='';
   for(const s of list){
     const d=document.createElement('div'); d.className='palette-item';

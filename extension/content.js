@@ -114,7 +114,7 @@
       list.innerHTML = '';
       countEl.textContent = `${SKILLS.length} skills`;
       if (!items.length) { list.innerHTML = '<div class="pm-empty">No match.</div>'; return; }
-      for (const s of items.slice(0, 60)) {
+      for (const s of items) {
         const row = document.createElement('button');
         row.className = 'pm-row';
         row.type = 'button';
