@@ -1,6 +1,6 @@
 # ❤️ Sponsor PM Skills
 
-This library is free and MIT-licensed, and it takes real, ongoing work: re-testing 175 skills against every new Claude model, building new ones from community requests, running the eval benchmark, and keeping the playground, hub, and docs alive. **Sponsorship is what keeps it independent, free, and ad-free.**
+This library is free and MIT-licensed, and it takes real, ongoing work: re-testing 180 skills against every new Claude model, building new ones from community requests, running the eval benchmark, and keeping the playground, hub, and docs alive. **Sponsorship is what keeps it independent, free, and ad-free.**
 
 **[💖 Become a sponsor →](https://github.com/sponsors/mohitagw15856)**  ·  **[☕ Buy me a coffee →](https://www.buymeacoffee.com/mohit15856)**
 

@@ -1,7 +1,7 @@
 {
   "name": "pm-skills",
-  "displayName": "PM Skills — 175 Agent Skills",
-  "description": "Insert any of 175 professional Agent Skills as context for Copilot/Cursor, or open one in the playground — without leaving your editor.",
+  "displayName": "PM Skills — 180 Agent Skills",
+  "description": "Insert any of 180 professional Agent Skills as context for Copilot/Cursor, or open one in the playground — without leaving your editor.",
   "version": "0.1.0",
   "publisher": "mohitagw15856",
   "engines": { "vscode": "^1.80.0" },
