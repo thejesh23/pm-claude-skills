@@ -18,3 +18,8 @@ web/community.html
 web/skill/
 web/sitemap.xml
 web/robots.txt
+
+# vercel-labs `skills` CLI install artifacts (if run inside the repo)
+.agents/
+.claude/skills/
+skills-lock.json
