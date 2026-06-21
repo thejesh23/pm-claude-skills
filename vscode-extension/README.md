@@ -1,6 +1,6 @@
 # PM Skills — VS Code / Cursor extension
 
-Bring **175 professional Agent Skills** into your editor. Search the catalog and:
+Bring **180 professional Agent Skills** into your editor. Search the catalog and:
 
 - **Insert a skill as context** — drops the skill's full instructions at your cursor, ready to feed Copilot / Cursor inline chat ("now write the PRD using the structure above").
 - **Copy a skill** to the clipboard.
