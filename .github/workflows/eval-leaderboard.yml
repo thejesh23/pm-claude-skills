@@ -13,9 +13,9 @@ on:
         required: false
         default: 'claude-sonnet-4-6,claude-haiku-4-5-20251001'
       judge:
-        description: 'Judge model id'
+        description: 'Judge model id (Sonnet is ~5x cheaper than Opus and fine for the rubric)'
         required: false
-        default: 'claude-opus-4-8'
+        default: 'claude-sonnet-4-6'
   # schedule:
   #   - cron: '0 6 1 * *'   # 06:00 on the 1st of each month
 
