@@ -108,14 +108,6 @@
     {
       "skill": "competitive-intelligence-monitor",
       "input": "Brief me on these competitor signals this week: (1) Rival A launched an AI assistant in beta; (2) Rival B cut prices 20% for startups; (3) Rival C hired a VP of Enterprise Sales; (4) a newcomer raised a $15M Series A. We're a mid-market analytics product."
-    },
-    {
-      "skill": "chart-data-extractor",
-      "input": "Transcribe this described bar chart into a data table: 'Quarterly revenue ($M): Q1 1.2, Q2 1.5, Q3 1.4, Q4 2.1. Two series - New 0.8/0.9/0.7/1.1 and Returning 0.4/0.6/0.7/1.0.' Reconstruct the table with confidence notes."
-    },
-    {
-      "skill": "claude-superpowers",
-      "input": "I need to refactor our authentication module to support SSO and add tests. It's a 5000-line legacy file with no current tests. Apply your discipline before touching code."
     }
   ]
 }
