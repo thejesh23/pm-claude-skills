@@ -29,5 +29,20 @@ jobs:
           chmod +x mcp-publisher
       - name: Login via GitHub OIDC
         run: ./mcp-publisher login github-oidc
+      - name: Wait for the npm package version to be live
+        # The MCP registry validates that the npm package@version in server.json
+        # actually exists on npm. On a release this workflow and npm-publish fire
+        # together, so we must wait for npm to have the version first — otherwise
+        # the registry 404s the npm package lookup and the publish fails.
+        run: |
+          VERSION="$(node -p "require('./package.json').version")"
+          echo "Waiting for pm-claude-skills@${VERSION} on npm…"
+          for i in $(seq 1 30); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "https://registry.npmjs.org/pm-claude-skills/${VERSION}")
+            if [ "$code" = "200" ]; then echo "npm has ${VERSION}."; exit 0; fi
+            echo "attempt $i: HTTP $code — not yet; sleeping 10s"; sleep 10
+          done
+          echo "::error::pm-claude-skills@${VERSION} not on npm after ~5 min. Re-run this workflow once npm-publish has finished."
+          exit 1
       - name: Publish server.json
         run: ./mcp-publisher publish
