@@ -1,5 +1,7 @@
 # 🧠 Professional Brain — memory + actions for the skills
 
+> **Just want to use it?** → **[5-minute Quickstart](BRAIN_QUICKSTART.md)** (a folder + one file; MCP optional). This page is the architecture.
+
 > **Status: Phase 2 (actions).** The full loop is in: skills read the brain, write
 > provenance-tagged records back (Phase 1), and now **execute** their recommendations —
 > opening tickets, posting updates — via the [`action-runner`](skills/action-runner/SKILL.md)

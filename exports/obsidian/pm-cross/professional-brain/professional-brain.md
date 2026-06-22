@@ -7,6 +7,8 @@ description: "Maintain a durable, local markdown memory ('brain') of your produc
 
 # Professional Brain Skill
 
+> 🚀 **New to this? Start with the [5-minute Quickstart](../../BRAIN_QUICKSTART.md)** — a folder + one file, with a worked example. This file is the full reference.
+
 Most skills start cold — you paste the same context every time, and decisions made six weeks
 ago lose the *why*. This skill gives the library a **memory**: a plain-markdown `brain/` folder
 on disk that skills read before they answer and write to after. No vector DB, no cloud — just
