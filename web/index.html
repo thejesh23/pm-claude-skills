@@ -151,6 +151,21 @@
         <button id="stopBtn" class="ghost" type="button" hidden>Stop</button>
         <label class="compare-toggle" title="Run the same inputs with and without the skill, side by side"><input type="checkbox" id="compareToggle" /> ⚖️ Compare vs. plain prompt</label>
         <label class="compare-toggle" title="Run this skill across Opus, Sonnet & Haiku side by side"><input type="checkbox" id="modelsToggle" /> 🤖 Compare models</label>
+        <label class="lang-select" title="Get the output in another language — every skill works in any language">🌐
+          <select id="outputLang">
+            <option value="">English</option>
+            <option value="Spanish">Español</option>
+            <option value="Mandarin Chinese">中文 (Mandarin)</option>
+            <option value="Hindi">हिन्दी</option>
+            <option value="Arabic" data-rtl="1">العربية</option>
+            <option value="Portuguese">Português</option>
+            <option value="French">Français</option>
+            <option value="German">Deutsch</option>
+            <option value="Japanese">日本語</option>
+            <option value="Russian">Русский</option>
+            <option value="Indonesian">Bahasa Indonesia</option>
+          </select>
+        </label>
         <span id="status" class="status"></span>
       </div>
 

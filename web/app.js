@@ -104,6 +104,12 @@ async function init() {
   el('imgBtn').addEventListener('click', shareAsImage);
   el('fbUp').addEventListener('click', () => sendFeedback('up'));
   el('fbDown').addEventListener('click', () => sendFeedback('down'));
+  // Output language — restore the saved choice, persist + track changes.
+  try { const sl = localStorage.getItem('pm_outputLang'); if (sl && el('outputLang')) el('outputLang').value = sl; } catch (e) {}
+  if (el('outputLang')) el('outputLang').addEventListener('change', function () {
+    try { localStorage.setItem('pm_outputLang', this.value); } catch (e) {}
+    if (window.pmTrack && this.value) pmTrack('lang/' + this.value);
+  });
   initBrainSave();
 
   // Copy the skill's instructions formatted for another assistant.
@@ -745,6 +751,20 @@ ${current.instructions}${ctxBlock}`;
     compareModels = el('modelsToggle').checked;
     compare = !compareModels && el('compareToggle').checked;
   }
+
+  // Output language: the frameworks are language-agnostic, so we just ask the model to
+  // localize the whole response. Applied to the plain side too, for a fair compare.
+  const outLang = el('outputLang') ? el('outputLang').value : '';
+  if (outLang) {
+    const langInstr = `\n\n## Output language\nWrite your ENTIRE response in ${outLang}. Translate all headings, labels, and prose. Keep code, identifiers, URLs, and proper nouns unchanged. Use natural, professional ${outLang}.`;
+    system += langInstr;
+    plainSystem = plainSystem ? plainSystem + langInstr : langInstr.trim();
+  }
+  // RTL scripts (Arabic, Urdu…) render right-to-left.
+  const rtlOpt = el('outputLang') && el('outputLang').selectedOptions[0];
+  const dir = rtlOpt && rtlOpt.dataset.rtl ? 'rtl' : 'ltr';
+  el('output').dir = dir;
+  el('compareGrid').dir = dir;
 
   el('outputWrap').hidden = false;
   el('runBtn').disabled = true;

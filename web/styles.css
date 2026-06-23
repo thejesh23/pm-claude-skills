@@ -89,6 +89,12 @@ button { font-family: inherit; }
 .controls input { flex: 1; min-width: 200px; max-width: 480px; }
 .controls input:focus, .controls select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(217,119,87,.15); }
 .count { color: var(--muted); font-size: 12px; margin-left: auto; }
+.lang-select { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; color: var(--muted); }
+.lang-select select {
+  padding: 7px 9px; background: var(--panel-2); border: 1px solid var(--border);
+  border-radius: 8px; color: var(--text); font: inherit; font-size: 13px;
+}
+.lang-select select:focus { outline: none; border-color: var(--accent); }
 
 /* ---------- Main / gallery ---------- */
 .main { flex: 1; padding: 22px; }

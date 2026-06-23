@@ -9,6 +9,23 @@ each new wave of skills bumps the **major** version, extensions and fixes bump
 
 ## [Unreleased]
 
+## [29.0.0] — Multilingual + a polished experience — 2026-06-23
+
+### Added
+- **Multilingual output** — run any of the 207 skills in **10 languages** (Spanish, Mandarin, Hindi, Arabic, Portuguese, French, German, Japanese, Russian, Indonesian; English default) via a language selector in the playground. The frameworks are language-agnostic, so the model localizes the whole output; the choice persists, and **RTL scripts (Arabic) render right-to-left**. Applied to the plain side of Compare too.
+- **The Practical Guide** — a 15-page, example-driven manual ([`web/guide.html`](web/guide.html) → [`PM-Skills-Guide.pdf`](web/docs-assets/PM-Skills-Guide.pdf)): install, anatomy of a skill, three worked examples (PRD, exec update, RICE), chaining recipes, the Brain, running anywhere, and tips.
+- **One-page cheatsheet** — [`CHEATSHEET.md`](CHEATSHEET.md) + a printable poster ([PNG](web/docs-assets/cheatsheet.png) / [PDF](web/docs-assets/cheatsheet.pdf)); both PDF covers carry the Product Notes logo.
+- **Proof of ROI** — [`CASE_STUDIES.md`](CASE_STUDIES.md) (before→after time-saved template) + a "Share an ROI story" issue form.
+- **Opt-in usage feedback** — a 👍/👎 bar after each playground run (anonymous event + a prefilled GitHub issue for "what I'd change"; never inputs/outputs/keys).
+
+### Changed
+- **Navigation & playground UX revamp** — an always-visible **GitHub repo link** in the toolbar (there was no way back to the repo), a **sticky** toolbar, the **Product Notes logo now links home**, plus a redesigned playground home (bigger hero, stat chip-cards, rounded controls, even card grid). Fixed a sticky-bar overlap and stale skill counts (→ 207).
+
+### Quality
+- **Eval regression gate** — the PR check now **fails if a changed skill's score drops** vs. main, so quality can't quietly rot as models change.
+
+> Builds on the **v28.x** wave (not previously changelogged): the **Professional Brain** — a local-first markdown memory skills read, write back to (provenance-tagged, approval-gated), and act on via [`action-runner`](skills/action-runner/SKILL.md) — now also **in the browser**; the **n8n / Lovable / Obsidian** integrations + a read-only **REST API**; and a free, **no-credit-card** playground (Gemini free key / in-browser WebLLM).
+
 ## [28.1.0] — Integrations: n8n, Lovable & Obsidian + a REST API — 2026-06-22
 
 ### Added
