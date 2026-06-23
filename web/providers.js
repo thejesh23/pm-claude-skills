@@ -174,7 +174,19 @@
     var prov = current();
     if (prov.local) return streamLocal(opts);
     var req = prov.buildReq(opts);
-    var res = await fetch(req.url, { method: 'POST', headers: req.headers, body: JSON.stringify(req.body), signal: opts.signal });
+    var res;
+    try {
+      res = await fetch(req.url, { method: 'POST', headers: req.headers, body: JSON.stringify(req.body), signal: opts.signal });
+    } catch (err) {
+      if (err && err.name === 'AbortError') throw err;
+      // Network-level failure — fetch never got a response (connection refused / DNS / CORS / mixed content).
+      var isOllama = prov.name === 'Ollama' || /(?:localhost|127\.0\.0\.1):11434/.test(req.url);
+      if (isOllama) {
+        var base = req.url.replace(/\/v1\/.*$/, '');
+        throw new Error('Couldn’t reach Ollama at ' + base + '. Is it running? 1) start it: ollama serve  2) pull a model: ollama pull ' + (opts.model || 'llama3.2') + '  3) allow this page: OLLAMA_ORIGINS=' + location.origin + ' ollama serve. Or switch the provider to Gemini (free key) or In-browser (no key).');
+      }
+      throw new Error('Network error reaching ' + prov.name + (location.protocol === 'https:' && /^http:\/\//.test(req.url) ? ' — an http:// endpoint can’t be called from this https page' : '. Check your connection and key') + '.');
+    }
     if (!res.ok) throw new Error(parseApiError(await res.text(), res.status));
     var reader = res.body.getReader(), dec = new TextDecoder(), buf = '', acc = '';
     while (true) {
