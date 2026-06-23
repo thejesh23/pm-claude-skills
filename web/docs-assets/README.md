@@ -1,9 +1,25 @@
 # Docs assets
 
-Images used in the main README.
+Images used in the main README and in articles.
 
 - `playground-demo.gif` — animated hero demo (shown in the README).
 - `playground.png` — static screenshot / fallback.
+- `galaxy.png` — the **Skill Galaxy** (`galaxy.html`) constellation, clustered by profession.
+- `brain.png` — the **in-browser Brain** (`brain.html`), the six provenance-tagged sections.
+
+## Screenshots of the Galaxy + Brain (automated)
+
+`shoot.mjs` screenshots `galaxy.html` and `brain.html` from the live site (or a local
+server) into `galaxy.png` / `brain.png`. Handy for the README and for articles.
+
+```bash
+npx playwright install chromium                 # one-time, if needed
+node web/docs-assets/shoot.mjs                  # shoot the live GitHub Pages site
+# options:
+BASE_URL=http://localhost:8080 node web/docs-assets/shoot.mjs   # shoot a local `web/` server
+PAGES=galaxy node web/docs-assets/shoot.mjs                     # just one (galaxy|brain)
+IGNORE_HTTPS_ERRORS=1 node web/docs-assets/shoot.mjs            # behind a TLS-intercepting proxy
+```
 
 ## Re-recording the hero demo GIF (automated)
 

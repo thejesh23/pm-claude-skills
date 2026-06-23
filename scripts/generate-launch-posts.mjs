@@ -106,6 +106,9 @@ Rules:
 - Known links you may use: repo https://github.com/mohitagw15856/pm-claude-skills ·
   playground https://mohitagw15856.github.io/pm-claude-skills/ ·
   REST API https://pm-skills-mcp.pm-claude-skills.workers.dev/v1/skills
+- Referral tracking: on every **playground** link (the github.io ones), append a
+  \`?ref=<channel>\` query param matching where it's posted — \`?ref=hn\`, \`?ref=x\`,
+  \`?ref=reddit\`, \`?ref=producthunt\`, \`?ref=linkedin\`. (GitHub repo links don't need it.)
 - If a number isn't in the PRs, don't state it.`;
 
 async function main() {

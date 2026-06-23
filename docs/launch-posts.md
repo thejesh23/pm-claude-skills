@@ -3,6 +3,12 @@
 Distribution is the biggest remaining lever for stars. Everything below is plug-and-play —
 real links filled in, lead assets ready. Post **mid-week (Tue–Thu), ~8–10am US Eastern**.
 
+> **📊 Referral tracking:** the playground links in each post carry a `?ref=<channel>` tag
+> (`?ref=hn`, `?ref=x`, `?ref=reddit`, `?ref=producthunt`, `?ref=linkedin`). GoatCounter reads
+> that query param even when the `Referer` header is missing (apps, email, privacy browsers) —
+> so your traffic shows up named instead of in the *(unknown)* bucket. Keep the tag when you
+> reuse a link, and match it to where you post.
+
 ## Assets & links (all live)
 - **Repo:** https://github.com/mohitagw15856/pm-claude-skills
 - **Live Playground:** https://mohitagw15856.github.io/pm-claude-skills/
@@ -66,7 +72,7 @@ real links filled in, lead assets ready. Post **mid-week (Tue–Thu), ~8–10am 
 > - **Workflow recipes** chain skills (idea → PRD → prioritise → roadmap → launch plan).
 >
 > Runs natively in Claude Code, works over MCP in any client, and exports as copy-paste prompts
-> for ChatGPT/Gemini. Browser playground (your own API key, no install): https://mohitagw15856.github.io/pm-claude-skills/
+> for ChatGPT/Gemini. Browser playground (your own API key, no install): https://mohitagw15856.github.io/pm-claude-skills/?ref=hn
 >
 > MIT-licensed; skills are small and meant to be forked. Feedback welcome — especially on which
 > skills are weakest, since that's what I want the evals to catch.
@@ -89,7 +95,7 @@ real links filled in, lead assets ready. Post **mid-week (Tue–Thu), ~8–10am 
 > 80% there and 100% generic. Each skill encodes how a senior pro actually structures the work —
 > and you can prove it: the playground's **Compare** mode runs your input with vs. without the
 > skill, side by side. Free, MIT, runs in Claude Code / ChatGPT / Gemini. Try one in 30s:
-> https://mohitagw15856.github.io/pm-claude-skills/ — what skill would you want next?
+> https://mohitagw15856.github.io/pm-claude-skills/?ref=producthunt — what skill would you want next?
 
 ---
 
@@ -123,7 +129,7 @@ real links filled in, lead assets ready. Post **mid-week (Tue–Thu), ~8–10am 
 
 **6/**
 > Try any of them right now — browser, your own key, no install:
-> https://mohitagw15856.github.io/pm-claude-skills/
+> https://mohitagw15856.github.io/pm-claude-skills/?ref=x
 >
 > ⭐ If it's useful, star it so others find it: https://github.com/mohitagw15856/pm-claude-skills
 
@@ -142,7 +148,7 @@ real links filled in, lead assets ready. Post **mid-week (Tue–Thu), ~8–10am 
 > held-out cases), you can **compare** with/without the skill in the browser, and you can **chain**
 > skills into workflows. Runs in Claude Code, over MCP, or as ChatGPT/Gemini prompts.
 >
-> Playground (no install, your own key): https://mohitagw15856.github.io/pm-claude-skills/
+> Playground (no install, your own key): https://mohitagw15856.github.io/pm-claude-skills/?ref=reddit
 > Repo (MIT): https://github.com/mohitagw15856/pm-claude-skills
 >
 > What skill would you want that isn't there yet?
@@ -264,7 +270,7 @@ Monday and composes ready-to-post X + LinkedIn copy (in the Action's job summary
 **5/**
 > It's the memory layer for 206 open-source skills (PRDs, roadmaps, postmortems…), MIT.
 >
-> Try the in-browser version, no install: https://mohitagw15856.github.io/pm-claude-skills/brain.html
+> Try the in-browser version, no install: https://mohitagw15856.github.io/pm-claude-skills/brain.html?ref=x
 > ⭐ https://github.com/mohitagw15856/pm-claude-skills
 
 ### A3. LinkedIn
@@ -318,7 +324,7 @@ Monday and composes ready-to-post X + LinkedIn copy (in the Action's job summary
 
 **6/**
 > 206 skills, 21 professions, 196 eval-scored (avg 4.8/5). MIT.
-> Browser, your own key, no install: https://mohitagw15856.github.io/pm-claude-skills/
+> Browser, your own key, no install: https://mohitagw15856.github.io/pm-claude-skills/?ref=x
 > ⭐ https://github.com/mohitagw15856/pm-claude-skills
 
 ### B2. Reddit (r/ClaudeAI, then r/n8n, r/ObsidianMD, r/ProductManagement)
