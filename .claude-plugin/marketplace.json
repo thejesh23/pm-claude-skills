@@ -146,8 +146,8 @@
     },
     {
       "name": "pm-business",
-      "description": "Business & strategy skills: Investor Update, Board Deck Narrative, Job Application. Write investor updates investors actually read, structure board presentations, and tailor CVs with ATS optimisation.",
-      "version": "1.0.0",
+      "description": "Business, strategy & C-suite skills: Investor Update, Board Deck Narrative, Board Pre-Read, Decision Memo, Strategy Memo, Capital Allocation, Job Application. Drive decisions with crisp memos, run board meetings on pre-reads, allocate budget by return × strategic fit, and articulate a real strategy with explicit non-goals.",
+      "version": "1.1.0",
       "category": "productivity",
       "source": "./plugins/pm-business",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"

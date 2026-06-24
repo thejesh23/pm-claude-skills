@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-228 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
+232 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -25,9 +25,11 @@
 | Architecture Decision Record (ADR) | `pm-engineering` | `pm-engineering/architecture-decision-record/SYSTEM_PROMPT.md` |
 | Assumption Mapper | `pm-discovery` | `pm-discovery/assumption-mapper/SYSTEM_PROMPT.md` |
 | Board Deck Narrative | `pm-business` | `pm-business/board-deck-narrative/SYSTEM_PROMPT.md` |
+| Board Pre-Read | `pm-business` | `pm-business/board-pre-read/SYSTEM_PROMPT.md` |
 | Budget Variance Analysis | `pm-finance` | `pm-finance/budget-variance-analysis/SYSTEM_PROMPT.md` |
 | Cap Table Explainer | `pm-founders` | `pm-founders/cap-table-explainer/SYSTEM_PROMPT.md` |
 | Capacity Planning | `pm-engineering` | `pm-engineering/capacity-planning/SYSTEM_PROMPT.md` |
+| Capital Allocation | `pm-business` | `pm-business/capital-allocation/SYSTEM_PROMPT.md` |
 | Change Management Plan | `pm-hr` | `pm-hr/change-management-plan/SYSTEM_PROMPT.md` |
 | Changelog Generator | `pm-engineering` | `pm-engineering/changelog-generator/SYSTEM_PROMPT.md` |
 | Chart Data Extractor | `pm-data` | `pm-data/chart-data-extractor/SYSTEM_PROMPT.md` |
@@ -65,6 +67,7 @@
 | Database Schema Design | `pm-engineering` | `pm-engineering/database-schema-design/SYSTEM_PROMPT.md` |
 | Dataset Datasheet | `pm-ai` | `pm-ai/dataset-datasheet/SYSTEM_PROMPT.md` |
 | Debugging Log Analyser | `pm-engineering` | `pm-engineering/debugging-log-analyser/SYSTEM_PROMPT.md` |
+| Decision Memo | `pm-business` | `pm-business/decision-memo/SYSTEM_PROMPT.md` |
 | Demand Letter | `pm-legal` | `pm-legal/demand-letter/SYSTEM_PROMPT.md` |
 | Dependency Audit | `pm-engineering` | `pm-engineering/dependency-audit/SYSTEM_PROMPT.md` |
 | Dependency Conflict Resolver | `pm-engineering` | `pm-engineering/dependency-conflict-resolver/SYSTEM_PROMPT.md` |
@@ -212,6 +215,7 @@
 | Stakeholder Update | `pm-essentials` | `pm-essentials/stakeholder-update/SYSTEM_PROMPT.md` |
 | Startup Idea Validator | `pm-founders` | `pm-founders/startup-idea-validator/SYSTEM_PROMPT.md` |
 | Strategic Narrative Generator | `pm-strategy` | `pm-strategy/strategic-narrative-generator/SYSTEM_PROMPT.md` |
+| Strategy Memo | `pm-business` | `pm-business/strategy-memo/SYSTEM_PROMPT.md` |
 | Student Feedback | `pm-education` | `pm-education/student-feedback/SYSTEM_PROMPT.md` |
 | Substack Notes Scraper | `pm-writers` | `pm-writers/substack-notes-scraper/SYSTEM_PROMPT.md` |
 | Sycophancy Challenger | `pm-cross` | `pm-cross/sycophancy-challenger/SYSTEM_PROMPT.md` |

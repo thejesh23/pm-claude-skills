@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-228 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
+232 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -25,9 +25,11 @@
 | Architecture Decision Record (ADR) | `pm-engineering` | `pm-engineering/architecture-decision-record/GEM_INSTRUCTIONS.md` |
 | Assumption Mapper | `pm-discovery` | `pm-discovery/assumption-mapper/GEM_INSTRUCTIONS.md` |
 | Board Deck Narrative | `pm-business` | `pm-business/board-deck-narrative/GEM_INSTRUCTIONS.md` |
+| Board Pre-Read | `pm-business` | `pm-business/board-pre-read/GEM_INSTRUCTIONS.md` |
 | Budget Variance Analysis | `pm-finance` | `pm-finance/budget-variance-analysis/GEM_INSTRUCTIONS.md` |
 | Cap Table Explainer | `pm-founders` | `pm-founders/cap-table-explainer/GEM_INSTRUCTIONS.md` |
 | Capacity Planning | `pm-engineering` | `pm-engineering/capacity-planning/GEM_INSTRUCTIONS.md` |
+| Capital Allocation | `pm-business` | `pm-business/capital-allocation/GEM_INSTRUCTIONS.md` |
 | Change Management Plan | `pm-hr` | `pm-hr/change-management-plan/GEM_INSTRUCTIONS.md` |
 | Changelog Generator | `pm-engineering` | `pm-engineering/changelog-generator/GEM_INSTRUCTIONS.md` |
 | Chart Data Extractor | `pm-data` | `pm-data/chart-data-extractor/GEM_INSTRUCTIONS.md` |
@@ -65,6 +67,7 @@
 | Database Schema Design | `pm-engineering` | `pm-engineering/database-schema-design/GEM_INSTRUCTIONS.md` |
 | Dataset Datasheet | `pm-ai` | `pm-ai/dataset-datasheet/GEM_INSTRUCTIONS.md` |
 | Debugging Log Analyser | `pm-engineering` | `pm-engineering/debugging-log-analyser/GEM_INSTRUCTIONS.md` |
+| Decision Memo | `pm-business` | `pm-business/decision-memo/GEM_INSTRUCTIONS.md` |
 | Demand Letter | `pm-legal` | `pm-legal/demand-letter/GEM_INSTRUCTIONS.md` |
 | Dependency Audit | `pm-engineering` | `pm-engineering/dependency-audit/GEM_INSTRUCTIONS.md` |
 | Dependency Conflict Resolver | `pm-engineering` | `pm-engineering/dependency-conflict-resolver/GEM_INSTRUCTIONS.md` |
@@ -212,6 +215,7 @@
 | Stakeholder Update | `pm-essentials` | `pm-essentials/stakeholder-update/GEM_INSTRUCTIONS.md` |
 | Startup Idea Validator | `pm-founders` | `pm-founders/startup-idea-validator/GEM_INSTRUCTIONS.md` |
 | Strategic Narrative Generator | `pm-strategy` | `pm-strategy/strategic-narrative-generator/GEM_INSTRUCTIONS.md` |
+| Strategy Memo | `pm-business` | `pm-business/strategy-memo/GEM_INSTRUCTIONS.md` |
 | Student Feedback | `pm-education` | `pm-education/student-feedback/GEM_INSTRUCTIONS.md` |
 | Substack Notes Scraper | `pm-writers` | `pm-writers/substack-notes-scraper/GEM_INSTRUCTIONS.md` |
 | Sycophancy Challenger | `pm-cross` | `pm-cross/sycophancy-challenger/GEM_INSTRUCTIONS.md` |

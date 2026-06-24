@@ -1,6 +1,8 @@
 {
   "_comment": "Framework attribution: the canonical method/author each skill encodes. Surfaced as a 'Based on' line on skill pages, the playground, and the catalog. Only skills with a genuine, well-known source are listed; the rest are intentionally omitted rather than given a fabricated citation.",
   "sources": {
+    "decision-memo": "Amazon-style narrative memos + one-way / two-way door decisions",
+    "strategy-memo": "Good Strategy / Bad Strategy — Richard Rumelt (diagnosis · guiding policy · coherent action)",
     "soc2-readiness": "AICPA SOC 2 Trust Services Criteria",
     "gdpr-compliance": "EU GDPR (Art. 6, 9, 30, 35 + data-subject rights)",
     "hipaa-safeguards": "HIPAA Security Rule (45 CFR §164.308–312)",

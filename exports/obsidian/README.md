@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-228 skills exported. Copy a `.mdc rule` into the tool to use it.
+232 skills exported. Copy a `.mdc rule` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -25,9 +25,11 @@
 | Architecture Decision Record (ADR) | `pm-engineering` | `pm-engineering/architecture-decision-record/architecture-decision-record.md` |
 | Assumption Mapper | `pm-discovery` | `pm-discovery/assumption-mapper/assumption-mapper.md` |
 | Board Deck Narrative | `pm-business` | `pm-business/board-deck-narrative/board-deck-narrative.md` |
+| Board Pre-Read | `pm-business` | `pm-business/board-pre-read/board-pre-read.md` |
 | Budget Variance Analysis | `pm-finance` | `pm-finance/budget-variance-analysis/budget-variance-analysis.md` |
 | Cap Table Explainer | `pm-founders` | `pm-founders/cap-table-explainer/cap-table-explainer.md` |
 | Capacity Planning | `pm-engineering` | `pm-engineering/capacity-planning/capacity-planning.md` |
+| Capital Allocation | `pm-business` | `pm-business/capital-allocation/capital-allocation.md` |
 | Change Management Plan | `pm-hr` | `pm-hr/change-management-plan/change-management-plan.md` |
 | Changelog Generator | `pm-engineering` | `pm-engineering/changelog-generator/changelog-generator.md` |
 | Chart Data Extractor | `pm-data` | `pm-data/chart-data-extractor/chart-data-extractor.md` |
@@ -65,6 +67,7 @@
 | Database Schema Design | `pm-engineering` | `pm-engineering/database-schema-design/database-schema-design.md` |
 | Dataset Datasheet | `pm-ai` | `pm-ai/dataset-datasheet/dataset-datasheet.md` |
 | Debugging Log Analyser | `pm-engineering` | `pm-engineering/debugging-log-analyser/debugging-log-analyser.md` |
+| Decision Memo | `pm-business` | `pm-business/decision-memo/decision-memo.md` |
 | Demand Letter | `pm-legal` | `pm-legal/demand-letter/demand-letter.md` |
 | Dependency Audit | `pm-engineering` | `pm-engineering/dependency-audit/dependency-audit.md` |
 | Dependency Conflict Resolver | `pm-engineering` | `pm-engineering/dependency-conflict-resolver/dependency-conflict-resolver.md` |
@@ -212,6 +215,7 @@
 | Stakeholder Update | `pm-essentials` | `pm-essentials/stakeholder-update/stakeholder-update.md` |
 | Startup Idea Validator | `pm-founders` | `pm-founders/startup-idea-validator/startup-idea-validator.md` |
 | Strategic Narrative Generator | `pm-strategy` | `pm-strategy/strategic-narrative-generator/strategic-narrative-generator.md` |
+| Strategy Memo | `pm-business` | `pm-business/strategy-memo/strategy-memo.md` |
 | Student Feedback | `pm-education` | `pm-education/student-feedback/student-feedback.md` |
 | Substack Notes Scraper | `pm-writers` | `pm-writers/substack-notes-scraper/substack-notes-scraper.md` |
 | Sycophancy Challenger | `pm-cross` | `pm-cross/sycophancy-challenger/sycophancy-challenger.md` |
