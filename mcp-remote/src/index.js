@@ -8,7 +8,16 @@
 
 const SKILLS_URL = 'https://mohitagw15856.github.io/pm-claude-skills/skills.json';
 const WORKFLOWS_URL = 'https://raw.githubusercontent.com/mohitagw15856/pm-claude-skills/main/workflows.json';
-const SERVER = { name: 'pm-claude-skills', version: 'remote-1.0.0' };
+const SERVER = {
+  name: 'pm-claude-skills',
+  title: 'PM Skills — Professional Agent Skills',
+  version: 'remote-1.0.0',
+  websiteUrl: 'https://mohitagw15856.github.io/pm-claude-skills/',
+  icons: [{ src: 'https://raw.githubusercontent.com/mohitagw15856/pm-claude-skills/main/icon.svg', mimeType: 'image/svg+xml', sizes: ['any'] }],
+};
+const INSTRUCTIONS =
+  'A library of professional Agent Skills (PRDs, launches, postmortems, compliance, growth, careers & more). ' +
+  "To answer a professional task: call search_skills (or list_skills) to find the right skill, then get_skill to fetch its instructions and apply them to the user's input.";
 
 let CACHE = null;
 async function getSkills() {
@@ -47,25 +56,95 @@ const CORS = {
   'access-control-allow-headers': 'content-type, authorization, mcp-session-id, mcp-protocol-version',
 };
 
+const SKILL_ITEM = {
+  type: 'object',
+  properties: {
+    name: { type: 'string', description: 'The skill id (use with get_skill).' },
+    title: { type: 'string', description: 'Human-readable title.' },
+    bundle: { type: 'string', description: 'The bundle the skill belongs to.' },
+    description: { type: 'string', description: 'One-line summary of what the skill does.' },
+  },
+  required: ['name', 'description'],
+};
+// All tools are read-only lookups over the bundled library — non-destructive, idempotent, closed-world.
+const READONLY = { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false };
+
 const TOOLS = [
-  { name: 'list_skills', description: 'List every available skill (name + description). Optionally filter by bundle.', inputSchema: { type: 'object', properties: { bundle: { type: 'string' } } } },
-  { name: 'search_skills', description: 'Search skills by keyword and return the best matches.', inputSchema: { type: 'object', properties: { query: { type: 'string' }, limit: { type: 'number' } }, required: ['query'] } },
-  { name: 'get_skill', description: 'Get a skill\'s full instructions by name. Apply them to the user\'s task.', inputSchema: { type: 'object', properties: { name: { type: 'string' } }, required: ['name'] } },
+  {
+    name: 'list_skills',
+    title: 'List skills',
+    description: 'List every available professional skill (name, title, bundle, one-line description). Optionally filter by bundle.',
+    inputSchema: {
+      type: 'object',
+      additionalProperties: false,
+      properties: { bundle: { type: 'string', description: 'Optional. Only return skills in this bundle, e.g. "pm-essentials".' } },
+    },
+    outputSchema: {
+      type: 'object',
+      properties: { count: { type: 'integer', description: 'Number of skills returned.' }, skills: { type: 'array', description: 'The matching skills.', items: SKILL_ITEM } },
+      required: ['count', 'skills'],
+    },
+    annotations: { title: 'List skills', ...READONLY },
+  },
+  {
+    name: 'search_skills',
+    title: 'Search skills',
+    description: 'Search skills by keyword across name, title, and description. Returns the best matches, ranked.',
+    inputSchema: {
+      type: 'object',
+      additionalProperties: false,
+      properties: {
+        query: { type: 'string', description: 'Keywords describing the task, e.g. "prioritise backlog" or "customer churn".' },
+        limit: { type: 'integer', minimum: 1, maximum: 50, description: 'Maximum number of results to return (default 10).' },
+      },
+      required: ['query'],
+    },
+    outputSchema: {
+      type: 'object',
+      properties: { query: { type: 'string', description: 'The query that was searched.' }, matches: { type: 'array', description: 'Matching skills, best first.', items: SKILL_ITEM } },
+      required: ['query', 'matches'],
+    },
+    annotations: { title: 'Search skills', ...READONLY },
+  },
+  {
+    name: 'get_skill',
+    title: 'Get a skill',
+    description: "Get a skill's full instructions (the SKILL.md body) by name. Apply them to the user's task.",
+    inputSchema: {
+      type: 'object',
+      additionalProperties: false,
+      properties: { name: { type: 'string', description: 'The exact skill id, e.g. "rice-prioritisation" (from list_skills / search_skills).' } },
+      required: ['name'],
+    },
+    outputSchema: {
+      type: 'object',
+      properties: { name: { type: 'string', description: 'The skill id.' }, title: { type: 'string', description: 'Human-readable title.' }, instructions: { type: 'string', description: 'The full SKILL.md body to apply to the task.' } },
+      required: ['name', 'instructions'],
+    },
+    annotations: { title: 'Get a skill', ...READONLY },
+  },
 ];
+
+// Each tool returns { text, structured }: human-readable text + a structured object matching outputSchema.
+const skillItem = (s) => ({ name: s.name, title: s.title, bundle: s.plugin, description: s.description });
 
 async function runTool(name, args) {
   const skills = await getSkills();
   if (name === 'list_skills') {
     const list = args.bundle ? skills.filter((s) => s.plugin === args.bundle) : skills;
-    return list.map((s) => `- ${s.name} (${s.plugin}): ${s.description}`).join('\n');
+    const text = list.map((s) => `- ${s.name} (${s.plugin}): ${s.description}`).join('\n');
+    return { text, structured: { count: list.length, skills: list.map(skillItem) } };
   }
   if (name === 'search_skills') {
     const hits = searchSkills(skills, args.query, args.limit || 10);
-    return hits.length ? hits.map((s) => `- ${s.name}: ${s.description}`).join('\n') : 'No matching skills.';
+    const matches = hits.map(skillItem);
+    const text = matches.length ? matches.map((s) => `- ${s.name}: ${s.description}`).join('\n') : 'No matching skills.';
+    return { text, structured: { query: String(args.query || ''), matches } };
   }
   if (name === 'get_skill') {
     const s = skills.find((x) => x.name === args.name);
-    return s ? `# ${s.title}\n\n${s.body}` : `No skill named "${args.name}". Use search_skills to find one.`;
+    if (!s) return { text: `No skill named "${args.name}". Use search_skills to find one.`, structured: { name: String(args.name || ''), title: '', instructions: '' } };
+    return { text: `# ${s.title}\n\n${s.body}`, structured: { name: s.name, title: s.title, instructions: s.body } };
   }
   throw new Error('Unknown tool: ' + name);
 }
@@ -75,11 +154,11 @@ async function handle(msg) {
   const result = async () => {
     switch (method) {
       case 'initialize':
-        return { protocolVersion: params.protocolVersion || '2025-03-26', capabilities: { tools: {}, prompts: {}, resources: {} }, serverInfo: SERVER };
+        return { protocolVersion: params.protocolVersion || '2025-03-26', capabilities: { tools: {}, prompts: {}, resources: {} }, serverInfo: SERVER, instructions: INSTRUCTIONS };
       case 'tools/list':
         return { tools: TOOLS };
       case 'tools/call': {
-        try { return { content: [{ type: 'text', text: await runTool(params.name, params.arguments || {}) }] }; }
+        try { const { text, structured } = await runTool(params.name, params.arguments || {}); return { content: [{ type: 'text', text }], structuredContent: structured }; }
         catch (e) { return { content: [{ type: 'text', text: 'Error: ' + e.message }], isError: true }; }
       }
       case 'prompts/list': {
