@@ -329,7 +329,7 @@ export default {
     const url = new URL(request.url);
     // Capped, sponsored "try Claude free, no key" endpoint (off until configured — see handleTry).
     if (url.pathname === '/try') {
-      if (request.method === 'GET') return jsonResponse(tryStatus(env));   // frontend probes this to show/hide the button
+      if (request.method === 'GET') return tryStatus(env);   // frontend probes this to show/hide the button (already a Response)
       if (request.method === 'POST') return handleTry(request, env);
       return new Response('Method Not Allowed', { status: 405, headers: CORS });
     }
