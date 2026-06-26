@@ -37,5 +37,11 @@
 - **Tech we use:** <!-- relevant stack, if skills touch code -->
 - **Anything off-limits:** <!-- topics, claims, or framings to avoid -->
 
+## Personal brand (for documents & designed exports)
+<!-- Used by personal-doc skills (resume, bio, one-pager…) and the themed PDF export. -->
+- **Name & role:** <!-- e.g. Jane Doe, Senior PM -->
+- **Brand color:** <!-- a hex, e.g. #1B365D — the themed PDF export tints headings & tables with this -->
+- **Tone:** <!-- e.g. confident and plain; warm and human -->
+
 ---
 *Used by [PM Skills](https://github.com/mohitagw15856/pm-claude-skills). In the [browser Playground](https://mohitagw15856.github.io/pm-claude-skills/), paste the same content into the "🧠 Your context" box — it does the same thing.*
