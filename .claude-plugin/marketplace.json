@@ -9,6 +9,14 @@
   },
   "plugins": [
     {
+      "name": "pm-copy",
+      "description": "Copywriting & conversion skills: Value Proposition, Landing Page Copy, Sales Page, Ad Copy, Cold Email, Headline Options, and Email Sequence. Words that convert — pairs with the themed PDF export.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-copy",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
       "name": "pm-jobsearch",
       "description": "Land the job: JD Decoder, Company Brief, Outreach Message, Follow-Up Sequence, and Interview Prep. The active-job-hunt toolkit — pairs with the pm-personal documents (resume, cover letter, LinkedIn) and the Job Search hub.",
       "version": "1.0.0",

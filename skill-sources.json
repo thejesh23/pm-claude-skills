@@ -1,6 +1,8 @@
 {
   "_comment": "Framework attribution: the canonical method/author each skill encodes. Surfaced as a 'Based on' line on skill pages, the playground, and the catalog. Only skills with a genuine, well-known source are listed; the rest are intentionally omitted rather than given a fabricated citation.",
   "sources": {
+    "value-proposition": "Value Proposition Design (Osterwalder) + April Dunford positioning",
+    "sales-page": "Direct-response copywriting — PAS, unique mechanism, offer stack, risk reversal",
     "brag-doc": "Brag-document practice (Julia Evans)",
     "one-on-one-prep": "High Output Management (Andy Grove)",
     "salary-negotiation": "Getting to Yes — Fisher & Ury (BATNA, interests over positions)",
