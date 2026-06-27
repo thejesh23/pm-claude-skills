@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-site-verification" content="osZgdSLYnqidzCKt4CxjqAxo44OqGvlKi-Bmg0UmxFQ" />
+<title>Privacy Policy — PM Skills</title>
+<meta name="description" content="Privacy policy for PM Skills — the open-source skills library, the browser playground, and the MCP server. What is and isn't collected." />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .doc { max-width: 760px; margin: 0 auto; padding: 22px 22px 80px; }
+  .doc h1 { font-size: 28px; margin: 12px 0 4px; }
+  .doc h2 { font-size: 19px; margin: 26px 0 6px; }
+  .doc p, .doc li { line-height: 1.65; color: var(--text); }
+  .doc .muted { color: var(--muted); font-size: 13px; }
+  .doc ul { padding-left: 1.2em; } .doc li { margin: 6px 0; }
+  .tl;dr { background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 10px; padding: 12px 16px; margin: 14px 0; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><img src="assets/product-notes.jpg" alt="Product Notes" class="brand-logo" />
+    <div class="brand-text"><h1>Privacy Policy</h1><p class="tagline">PM Skills — library, playground & MCP server</p></div></div>
+</header>
+<nav class="toolbar-nav" id="toolbar" aria-label="Tools"></nav>
+
+<div class="doc">
+  <p class="muted">Last updated: 2026-06-27</p>
+
+  <div class="tl;dr">
+    <strong>TL;DR.</strong> PM Skills is open-source and privacy-first. The skills are plain files that run locally. The browser playground keeps your API key and your inputs/outputs <strong>in your browser</strong> — they're sent only to the AI provider you choose, never to us. We collect <strong>no personal data</strong> and use only cookieless, anonymous page-view counts.
+  </div>
+
+  <h2>1. The skills &amp; the npm/PyPI packages</h2>
+  <p>The skills are plain-markdown <code>SKILL.md</code> files plus a few standard-library helper scripts. They run on <em>your</em> machine in your AI tool. They collect nothing, make no network calls on their own, and send no data anywhere. Installing or running them transmits nothing to us.</p>
+
+  <h2>2. The browser playground</h2>
+  <p>When you run a skill in the <a href="index.html">playground</a>:</p>
+  <ul>
+    <li><strong>Your API key</strong> is stored only in your browser's local storage and is sent <strong>directly to the model provider you select</strong> (Anthropic, OpenAI, Google, or your local model) — never to us, never to any server we run.</li>
+    <li><strong>Your inputs and the generated outputs</strong> stay in your browser. They're sent only to that provider to produce the result, and are not stored on or transmitted to us. Your saved context, history, and Brain live in your browser's local storage.</li>
+    <li>If you use the optional <strong>"free Claude trial"</strong> button (where enabled), your prompt is sent to our hosted proxy solely to relay it to Anthropic; it is not logged or stored beyond an anonymous rate-limit counter.</li>
+  </ul>
+
+  <h2>3. Anonymous, cookieless analytics</h2>
+  <p>The website uses <a href="https://www.goatcounter.com/" target="_blank" rel="noopener">GoatCounter</a>, a privacy-friendly, <strong>cookieless</strong> analytics tool, to count page views and which skills/tools are run (e.g. an event like <code>run/prd-template</code>). This is aggregate and anonymous. We do <strong>not</strong> collect your API key, your inputs, your outputs, your IP-based identity, or any personal information, and we do not use advertising or tracking cookies.</p>
+
+  <h2>4. The MCP server &amp; REST API</h2>
+  <p>The hosted MCP connector and read-only REST API serve the public skill catalogue. They don't require an account and don't collect personal data. If you self-host or call them, standard server request logs (as with any web request) may apply at the infrastructure layer; we don't use them to identify you.</p>
+
+  <h2>5. Third parties</h2>
+  <p>When you choose a model provider (Anthropic, OpenAI, Google) or use a connected tool, your use of that provider is governed by <em>their</em> privacy policy and terms. PM Skills is an independent, open-source project and is not operated by those providers.</p>
+
+  <h2>6. Data requests &amp; contact</h2>
+  <p>Because we don't collect personal data, there's typically nothing to access or delete. For any privacy question, contact <strong>mohit15856@gmail.com</strong>.</p>
+
+  <h2>7. Changes</h2>
+  <p>We'll update this page if the practices change, with a new "last updated" date. The source is in the <a href="https://github.com/mohitagw15856/pm-claude-skills">public repository</a>.</p>
+</div>
+<script src="nav.js"></script>
+</body>
+</html>
