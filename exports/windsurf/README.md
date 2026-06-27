@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-270 skills exported. Copy a `.mdc rule` into the tool to use it.
+276 skills exported. Copy a `.mdc rule` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -66,12 +66,15 @@
 | Customer Success Plan | `pm-cs` | `pm-cs/customer-success-plan/customer-success-plan.md` |
 | Dashboard Brief | `pm-data` | `pm-data/dashboard-brief/dashboard-brief.md` |
 | Data Analysis Standard | `pm-analytics` | `pm-analytics/data-analysis-standard/data-analysis-standard.md` |
+| Data Contract | `pm-dataeng` | `pm-dataeng/data-contract/data-contract.md` |
 | Data Pipeline Spec | `pm-data` | `pm-data/data-pipeline-spec/data-pipeline-spec.md` |
 | Data Quality Audit | `pm-data` | `pm-data/data-quality-audit/data-quality-audit.md` |
+| Data Quality Checks | `pm-dataeng` | `pm-dataeng/data-quality-checks/data-quality-checks.md` |
 | Data Retention Policy | `pm-compliance` | `pm-compliance/data-retention-policy/data-retention-policy.md` |
 | Database Migration Plan | `pm-engineering` | `pm-engineering/database-migration-plan/database-migration-plan.md` |
 | Database Schema Design | `pm-engineering` | `pm-engineering/database-schema-design/database-schema-design.md` |
 | Dataset Datasheet | `pm-ai` | `pm-ai/dataset-datasheet/dataset-datasheet.md` |
+| dbt Model Spec | `pm-dataeng` | `pm-dataeng/dbt-model-spec/dbt-model-spec.md` |
 | Debugging Log Analyser | `pm-engineering` | `pm-engineering/debugging-log-analyser/debugging-log-analyser.md` |
 | Decision Memo | `pm-business` | `pm-business/decision-memo/decision-memo.md` |
 | Demand Letter | `pm-legal` | `pm-legal/demand-letter/demand-letter.md` |
@@ -98,6 +101,7 @@
 | Executive Summary | `pm-cross` | `pm-cross/executive-summary/executive-summary.md` |
 | Executive Update | `pm-strategy` | `pm-strategy/executive-update/executive-update.md` |
 | Experiment Designer | `pm-advanced` | `pm-advanced/experiment-designer/experiment-designer.md` |
+| Experiment Readout | `pm-dataeng` | `pm-dataeng/experiment-readout/experiment-readout.md` |
 | Feature Flag Guide | `pm-engineering` | `pm-engineering/feature-flag-guide/feature-flag-guide.md` |
 | Feature Prioritisation | `pm-planning` | `pm-planning/feature-prioritisation/feature-prioritisation.md` |
 | Figma Annotation Guide | `pm-figma` | `pm-figma/figma-annotation-guide/figma-annotation-guide.md` |
@@ -156,6 +160,7 @@
 | Media Pitch | `pm-gtm` | `pm-gtm/media-pitch/media-pitch.md` |
 | Meeting Notes | `pm-essentials` | `pm-essentials/meeting-notes/meeting-notes.md` |
 | Messaging Framework | `pm-growth` | `pm-growth/messaging-framework/messaging-framework.md` |
+| Metric Semantic Layer | `pm-dataeng` | `pm-dataeng/metric-semantic-layer/metric-semantic-layer.md` |
 | Metric Tree Builder | `pm-data` | `pm-data/metric-tree-builder/metric-tree-builder.md` |
 | Metrics Framework | `pm-data` | `pm-data/metrics-framework/metrics-framework.md` |
 | Microservices Decomposition | `pm-engineering` | `pm-engineering/microservices-decomposition/microservices-decomposition.md` |
@@ -245,6 +250,7 @@
 | Sprint Brief | `pm-delivery` | `pm-delivery/sprint-brief/sprint-brief.md` |
 | Sprint Planning | `pm-delivery` | `pm-delivery/sprint-planning/sprint-planning.md` |
 | Sprint Velocity Analysis | `pm-engineering` | `pm-engineering/sprint-velocity-analysis/sprint-velocity-analysis.md` |
+| SQL Optimizer | `pm-dataeng` | `pm-dataeng/sql-optimizer/sql-optimizer.md` |
 | SQL Query Explainer | `pm-data` | `pm-data/sql-query-explainer/sql-query-explainer.md` |
 | Stakeholder Influence Mapper | `pm-strategy` | `pm-strategy/stakeholder-influence-mapper/stakeholder-influence-mapper.md` |
 | Stakeholder Update | `pm-essentials` | `pm-essentials/stakeholder-update/stakeholder-update.md` |

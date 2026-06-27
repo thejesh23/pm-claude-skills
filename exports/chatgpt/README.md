@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-270 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
+276 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -66,12 +66,15 @@
 | Customer Success Plan | `pm-cs` | `pm-cs/customer-success-plan/SYSTEM_PROMPT.md` |
 | Dashboard Brief | `pm-data` | `pm-data/dashboard-brief/SYSTEM_PROMPT.md` |
 | Data Analysis Standard | `pm-analytics` | `pm-analytics/data-analysis-standard/SYSTEM_PROMPT.md` |
+| Data Contract | `pm-dataeng` | `pm-dataeng/data-contract/SYSTEM_PROMPT.md` |
 | Data Pipeline Spec | `pm-data` | `pm-data/data-pipeline-spec/SYSTEM_PROMPT.md` |
 | Data Quality Audit | `pm-data` | `pm-data/data-quality-audit/SYSTEM_PROMPT.md` |
+| Data Quality Checks | `pm-dataeng` | `pm-dataeng/data-quality-checks/SYSTEM_PROMPT.md` |
 | Data Retention Policy | `pm-compliance` | `pm-compliance/data-retention-policy/SYSTEM_PROMPT.md` |
 | Database Migration Plan | `pm-engineering` | `pm-engineering/database-migration-plan/SYSTEM_PROMPT.md` |
 | Database Schema Design | `pm-engineering` | `pm-engineering/database-schema-design/SYSTEM_PROMPT.md` |
 | Dataset Datasheet | `pm-ai` | `pm-ai/dataset-datasheet/SYSTEM_PROMPT.md` |
+| dbt Model Spec | `pm-dataeng` | `pm-dataeng/dbt-model-spec/SYSTEM_PROMPT.md` |
 | Debugging Log Analyser | `pm-engineering` | `pm-engineering/debugging-log-analyser/SYSTEM_PROMPT.md` |
 | Decision Memo | `pm-business` | `pm-business/decision-memo/SYSTEM_PROMPT.md` |
 | Demand Letter | `pm-legal` | `pm-legal/demand-letter/SYSTEM_PROMPT.md` |
@@ -98,6 +101,7 @@
 | Executive Summary | `pm-cross` | `pm-cross/executive-summary/SYSTEM_PROMPT.md` |
 | Executive Update | `pm-strategy` | `pm-strategy/executive-update/SYSTEM_PROMPT.md` |
 | Experiment Designer | `pm-advanced` | `pm-advanced/experiment-designer/SYSTEM_PROMPT.md` |
+| Experiment Readout | `pm-dataeng` | `pm-dataeng/experiment-readout/SYSTEM_PROMPT.md` |
 | Feature Flag Guide | `pm-engineering` | `pm-engineering/feature-flag-guide/SYSTEM_PROMPT.md` |
 | Feature Prioritisation | `pm-planning` | `pm-planning/feature-prioritisation/SYSTEM_PROMPT.md` |
 | Figma Annotation Guide | `pm-figma` | `pm-figma/figma-annotation-guide/SYSTEM_PROMPT.md` |
@@ -156,6 +160,7 @@
 | Media Pitch | `pm-gtm` | `pm-gtm/media-pitch/SYSTEM_PROMPT.md` |
 | Meeting Notes | `pm-essentials` | `pm-essentials/meeting-notes/SYSTEM_PROMPT.md` |
 | Messaging Framework | `pm-growth` | `pm-growth/messaging-framework/SYSTEM_PROMPT.md` |
+| Metric Semantic Layer | `pm-dataeng` | `pm-dataeng/metric-semantic-layer/SYSTEM_PROMPT.md` |
 | Metric Tree Builder | `pm-data` | `pm-data/metric-tree-builder/SYSTEM_PROMPT.md` |
 | Metrics Framework | `pm-data` | `pm-data/metrics-framework/SYSTEM_PROMPT.md` |
 | Microservices Decomposition | `pm-engineering` | `pm-engineering/microservices-decomposition/SYSTEM_PROMPT.md` |
@@ -245,6 +250,7 @@
 | Sprint Brief | `pm-delivery` | `pm-delivery/sprint-brief/SYSTEM_PROMPT.md` |
 | Sprint Planning | `pm-delivery` | `pm-delivery/sprint-planning/SYSTEM_PROMPT.md` |
 | Sprint Velocity Analysis | `pm-engineering` | `pm-engineering/sprint-velocity-analysis/SYSTEM_PROMPT.md` |
+| SQL Optimizer | `pm-dataeng` | `pm-dataeng/sql-optimizer/SYSTEM_PROMPT.md` |
 | SQL Query Explainer | `pm-data` | `pm-data/sql-query-explainer/SYSTEM_PROMPT.md` |
 | Stakeholder Influence Mapper | `pm-strategy` | `pm-strategy/stakeholder-influence-mapper/SYSTEM_PROMPT.md` |
 | Stakeholder Update | `pm-essentials` | `pm-essentials/stakeholder-update/SYSTEM_PROMPT.md` |

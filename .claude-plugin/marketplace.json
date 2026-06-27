@@ -9,6 +9,14 @@
   },
   "plugins": [
     {
+      "name": "pm-dataeng",
+      "description": "Analytics-engineering skills: dbt Model Spec, Data Contract, Metric Semantic Layer, Experiment Readout (with a stdlib significance calculator), SQL Optimizer, and Data Quality Checks.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-dataeng",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
       "name": "pm-documents",
       "description": "Produce real, editable Office files (not markdown): Excel Model (live formulas), Slide Deck (.pptx), and Word Document (.docx). Generated via openpyxl / python-pptx / python-docx — needs a code-execution environment (Claude Code, API code tool, or Claude.ai).",
       "version": "1.0.0",

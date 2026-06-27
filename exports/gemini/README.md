@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-270 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
+276 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -66,12 +66,15 @@
 | Customer Success Plan | `pm-cs` | `pm-cs/customer-success-plan/GEM_INSTRUCTIONS.md` |
 | Dashboard Brief | `pm-data` | `pm-data/dashboard-brief/GEM_INSTRUCTIONS.md` |
 | Data Analysis Standard | `pm-analytics` | `pm-analytics/data-analysis-standard/GEM_INSTRUCTIONS.md` |
+| Data Contract | `pm-dataeng` | `pm-dataeng/data-contract/GEM_INSTRUCTIONS.md` |
 | Data Pipeline Spec | `pm-data` | `pm-data/data-pipeline-spec/GEM_INSTRUCTIONS.md` |
 | Data Quality Audit | `pm-data` | `pm-data/data-quality-audit/GEM_INSTRUCTIONS.md` |
+| Data Quality Checks | `pm-dataeng` | `pm-dataeng/data-quality-checks/GEM_INSTRUCTIONS.md` |
 | Data Retention Policy | `pm-compliance` | `pm-compliance/data-retention-policy/GEM_INSTRUCTIONS.md` |
 | Database Migration Plan | `pm-engineering` | `pm-engineering/database-migration-plan/GEM_INSTRUCTIONS.md` |
 | Database Schema Design | `pm-engineering` | `pm-engineering/database-schema-design/GEM_INSTRUCTIONS.md` |
 | Dataset Datasheet | `pm-ai` | `pm-ai/dataset-datasheet/GEM_INSTRUCTIONS.md` |
+| dbt Model Spec | `pm-dataeng` | `pm-dataeng/dbt-model-spec/GEM_INSTRUCTIONS.md` |
 | Debugging Log Analyser | `pm-engineering` | `pm-engineering/debugging-log-analyser/GEM_INSTRUCTIONS.md` |
 | Decision Memo | `pm-business` | `pm-business/decision-memo/GEM_INSTRUCTIONS.md` |
 | Demand Letter | `pm-legal` | `pm-legal/demand-letter/GEM_INSTRUCTIONS.md` |
@@ -98,6 +101,7 @@
 | Executive Summary | `pm-cross` | `pm-cross/executive-summary/GEM_INSTRUCTIONS.md` |
 | Executive Update | `pm-strategy` | `pm-strategy/executive-update/GEM_INSTRUCTIONS.md` |
 | Experiment Designer | `pm-advanced` | `pm-advanced/experiment-designer/GEM_INSTRUCTIONS.md` |
+| Experiment Readout | `pm-dataeng` | `pm-dataeng/experiment-readout/GEM_INSTRUCTIONS.md` |
 | Feature Flag Guide | `pm-engineering` | `pm-engineering/feature-flag-guide/GEM_INSTRUCTIONS.md` |
 | Feature Prioritisation | `pm-planning` | `pm-planning/feature-prioritisation/GEM_INSTRUCTIONS.md` |
 | Figma Annotation Guide | `pm-figma` | `pm-figma/figma-annotation-guide/GEM_INSTRUCTIONS.md` |
@@ -156,6 +160,7 @@
 | Media Pitch | `pm-gtm` | `pm-gtm/media-pitch/GEM_INSTRUCTIONS.md` |
 | Meeting Notes | `pm-essentials` | `pm-essentials/meeting-notes/GEM_INSTRUCTIONS.md` |
 | Messaging Framework | `pm-growth` | `pm-growth/messaging-framework/GEM_INSTRUCTIONS.md` |
+| Metric Semantic Layer | `pm-dataeng` | `pm-dataeng/metric-semantic-layer/GEM_INSTRUCTIONS.md` |
 | Metric Tree Builder | `pm-data` | `pm-data/metric-tree-builder/GEM_INSTRUCTIONS.md` |
 | Metrics Framework | `pm-data` | `pm-data/metrics-framework/GEM_INSTRUCTIONS.md` |
 | Microservices Decomposition | `pm-engineering` | `pm-engineering/microservices-decomposition/GEM_INSTRUCTIONS.md` |
@@ -245,6 +250,7 @@
 | Sprint Brief | `pm-delivery` | `pm-delivery/sprint-brief/GEM_INSTRUCTIONS.md` |
 | Sprint Planning | `pm-delivery` | `pm-delivery/sprint-planning/GEM_INSTRUCTIONS.md` |
 | Sprint Velocity Analysis | `pm-engineering` | `pm-engineering/sprint-velocity-analysis/GEM_INSTRUCTIONS.md` |
+| SQL Optimizer | `pm-dataeng` | `pm-dataeng/sql-optimizer/GEM_INSTRUCTIONS.md` |
 | SQL Query Explainer | `pm-data` | `pm-data/sql-query-explainer/GEM_INSTRUCTIONS.md` |
 | Stakeholder Influence Mapper | `pm-strategy` | `pm-strategy/stakeholder-influence-mapper/GEM_INSTRUCTIONS.md` |
 | Stakeholder Update | `pm-essentials` | `pm-essentials/stakeholder-update/GEM_INSTRUCTIONS.md` |
