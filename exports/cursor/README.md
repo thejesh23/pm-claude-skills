@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-276 skills exported. Copy a `.mdc rule` into the tool to use it.
+282 skills exported. Copy a `.mdc rule` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -33,6 +33,7 @@
 | Capacity Planning | `pm-engineering` | `pm-engineering/capacity-planning/capacity-planning.mdc` |
 | Capital Allocation | `pm-business` | `pm-business/capital-allocation/capital-allocation.mdc` |
 | Career Ladder Map | `pm-career` | `pm-career/career-ladder-map/career-ladder-map.mdc` |
+| Case Study Write-up | `pm-consulting` | `pm-consulting/case-study-writeup/case-study-writeup.mdc` |
 | Change Management Plan | `pm-hr` | `pm-hr/change-management-plan/change-management-plan.mdc` |
 | Changelog Generator | `pm-engineering` | `pm-engineering/changelog-generator/changelog-generator.mdc` |
 | Chart Data Extractor | `pm-data` | `pm-data/chart-data-extractor/chart-data-extractor.mdc` |
@@ -40,6 +41,7 @@
 | CI/CD Playbook | `pm-engineering` | `pm-engineering/cicd-playbook/cicd-playbook.mdc` |
 | Claude Superpowers | `pm-engineering` | `pm-engineering/claude-superpowers/claude-superpowers.mdc` |
 | Clause Explainer | `pm-legal` | `pm-legal/clause-explainer/clause-explainer.mdc` |
+| Client Discovery | `pm-consulting` | `pm-consulting/client-discovery/client-discovery.mdc` |
 | Clinical Case Summary | `pm-research` | `pm-research/clinical-case-summary/clinical-case-summary.mdc` |
 | Code Explainer | `pm-engineering` | `pm-engineering/code-explainer/code-explainer.mdc` |
 | Code Review Checklist | `pm-engineering` | `pm-engineering/code-review-checklist/code-review-checklist.mdc` |
@@ -52,6 +54,7 @@
 | Competitor Signal Tracker | `pm-strategy` | `pm-strategy/competitor-signal-tracker/competitor-signal-tracker.mdc` |
 | Competitor Teardown | `pm-gtm` | `pm-gtm/competitor-teardown/competitor-teardown.mdc` |
 | Compliance Checklist | `pm-legal` | `pm-legal/compliance-checklist/compliance-checklist.mdc` |
+| Consulting Proposal | `pm-consulting` | `pm-consulting/consulting-proposal/consulting-proposal.mdc` |
 | Content Calendar | `pm-gtm` | `pm-gtm/content-calendar/content-calendar.mdc` |
 | Content Repurposer | `pm-creator` | `pm-creator/content-repurposer/content-repurposer.mdc` |
 | Context Mode | `pm-engineering` | `pm-engineering/context-mode/context-mode.mdc` |
@@ -93,6 +96,7 @@
 | Email Sequence | `pm-copy` | `pm-copy/email-sequence/email-sequence.mdc` |
 | Email Triage | `pm-operations` | `pm-operations/email-triage/email-triage.mdc` |
 | Employee Engagement Survey | `pm-hr` | `pm-hr/employee-engagement-survey/employee-engagement-survey.mdc` |
+| Engagement Retro | `pm-consulting` | `pm-consulting/engagement-retro/engagement-retro.mdc` |
 | Engineering Hiring Rubric | `pm-engineering` | `pm-engineering/engineering-hiring-rubric/engineering-hiring-rubric.mdc` |
 | Engineering Weekly Report | `pm-engineering` | `pm-engineering/engineering-weekly-report/engineering-weekly-report.mdc` |
 | Error Decoder | `pm-engineering` | `pm-engineering/error-decoder/error-decoder.mdc` |
@@ -207,6 +211,7 @@
 | Quiz Generator | `pm-education` | `pm-education/quiz-generator/quiz-generator.mdc` |
 | RACI Matrix | `pm-operations` | `pm-operations/raci-matrix/raci-matrix.mdc` |
 | RAG Design Doc | `pm-ai` | `pm-ai/rag-design-doc/rag-design-doc.mdc` |
+| Rate Card | `pm-consulting` | `pm-consulting/rate-card/rate-card.mdc` |
 | Red-Team Review | `pm-cross` | `pm-cross/red-team-review/red-team-review.mdc` |
 | Redundancy Consultation | `pm-hr` | `pm-hr/redundancy-consultation/redundancy-consultation.mdc` |
 | Referral Program Design | `pm-growth` | `pm-growth/referral-program-design/referral-program-design.mdc` |
@@ -255,6 +260,7 @@
 | Stakeholder Influence Mapper | `pm-strategy` | `pm-strategy/stakeholder-influence-mapper/stakeholder-influence-mapper.mdc` |
 | Stakeholder Update | `pm-essentials` | `pm-essentials/stakeholder-update/stakeholder-update.mdc` |
 | Startup Idea Validator | `pm-founders` | `pm-founders/startup-idea-validator/startup-idea-validator.mdc` |
+| Statement of Work | `pm-consulting` | `pm-consulting/statement-of-work/statement-of-work.mdc` |
 | Strategic Narrative Generator | `pm-strategy` | `pm-strategy/strategic-narrative-generator/strategic-narrative-generator.mdc` |
 | Strategy Memo | `pm-business` | `pm-business/strategy-memo/strategy-memo.mdc` |
 | Student Feedback | `pm-education` | `pm-education/student-feedback/student-feedback.mdc` |

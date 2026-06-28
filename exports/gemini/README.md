@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-276 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
+282 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -33,6 +33,7 @@
 | Capacity Planning | `pm-engineering` | `pm-engineering/capacity-planning/GEM_INSTRUCTIONS.md` |
 | Capital Allocation | `pm-business` | `pm-business/capital-allocation/GEM_INSTRUCTIONS.md` |
 | Career Ladder Map | `pm-career` | `pm-career/career-ladder-map/GEM_INSTRUCTIONS.md` |
+| Case Study Write-up | `pm-consulting` | `pm-consulting/case-study-writeup/GEM_INSTRUCTIONS.md` |
 | Change Management Plan | `pm-hr` | `pm-hr/change-management-plan/GEM_INSTRUCTIONS.md` |
 | Changelog Generator | `pm-engineering` | `pm-engineering/changelog-generator/GEM_INSTRUCTIONS.md` |
 | Chart Data Extractor | `pm-data` | `pm-data/chart-data-extractor/GEM_INSTRUCTIONS.md` |
@@ -40,6 +41,7 @@
 | CI/CD Playbook | `pm-engineering` | `pm-engineering/cicd-playbook/GEM_INSTRUCTIONS.md` |
 | Claude Superpowers | `pm-engineering` | `pm-engineering/claude-superpowers/GEM_INSTRUCTIONS.md` |
 | Clause Explainer | `pm-legal` | `pm-legal/clause-explainer/GEM_INSTRUCTIONS.md` |
+| Client Discovery | `pm-consulting` | `pm-consulting/client-discovery/GEM_INSTRUCTIONS.md` |
 | Clinical Case Summary | `pm-research` | `pm-research/clinical-case-summary/GEM_INSTRUCTIONS.md` |
 | Code Explainer | `pm-engineering` | `pm-engineering/code-explainer/GEM_INSTRUCTIONS.md` |
 | Code Review Checklist | `pm-engineering` | `pm-engineering/code-review-checklist/GEM_INSTRUCTIONS.md` |
@@ -52,6 +54,7 @@
 | Competitor Signal Tracker | `pm-strategy` | `pm-strategy/competitor-signal-tracker/GEM_INSTRUCTIONS.md` |
 | Competitor Teardown | `pm-gtm` | `pm-gtm/competitor-teardown/GEM_INSTRUCTIONS.md` |
 | Compliance Checklist | `pm-legal` | `pm-legal/compliance-checklist/GEM_INSTRUCTIONS.md` |
+| Consulting Proposal | `pm-consulting` | `pm-consulting/consulting-proposal/GEM_INSTRUCTIONS.md` |
 | Content Calendar | `pm-gtm` | `pm-gtm/content-calendar/GEM_INSTRUCTIONS.md` |
 | Content Repurposer | `pm-creator` | `pm-creator/content-repurposer/GEM_INSTRUCTIONS.md` |
 | Context Mode | `pm-engineering` | `pm-engineering/context-mode/GEM_INSTRUCTIONS.md` |
@@ -93,6 +96,7 @@
 | Email Sequence | `pm-copy` | `pm-copy/email-sequence/GEM_INSTRUCTIONS.md` |
 | Email Triage | `pm-operations` | `pm-operations/email-triage/GEM_INSTRUCTIONS.md` |
 | Employee Engagement Survey | `pm-hr` | `pm-hr/employee-engagement-survey/GEM_INSTRUCTIONS.md` |
+| Engagement Retro | `pm-consulting` | `pm-consulting/engagement-retro/GEM_INSTRUCTIONS.md` |
 | Engineering Hiring Rubric | `pm-engineering` | `pm-engineering/engineering-hiring-rubric/GEM_INSTRUCTIONS.md` |
 | Engineering Weekly Report | `pm-engineering` | `pm-engineering/engineering-weekly-report/GEM_INSTRUCTIONS.md` |
 | Error Decoder | `pm-engineering` | `pm-engineering/error-decoder/GEM_INSTRUCTIONS.md` |
@@ -207,6 +211,7 @@
 | Quiz Generator | `pm-education` | `pm-education/quiz-generator/GEM_INSTRUCTIONS.md` |
 | RACI Matrix | `pm-operations` | `pm-operations/raci-matrix/GEM_INSTRUCTIONS.md` |
 | RAG Design Doc | `pm-ai` | `pm-ai/rag-design-doc/GEM_INSTRUCTIONS.md` |
+| Rate Card | `pm-consulting` | `pm-consulting/rate-card/GEM_INSTRUCTIONS.md` |
 | Red-Team Review | `pm-cross` | `pm-cross/red-team-review/GEM_INSTRUCTIONS.md` |
 | Redundancy Consultation | `pm-hr` | `pm-hr/redundancy-consultation/GEM_INSTRUCTIONS.md` |
 | Referral Program Design | `pm-growth` | `pm-growth/referral-program-design/GEM_INSTRUCTIONS.md` |
@@ -255,6 +260,7 @@
 | Stakeholder Influence Mapper | `pm-strategy` | `pm-strategy/stakeholder-influence-mapper/GEM_INSTRUCTIONS.md` |
 | Stakeholder Update | `pm-essentials` | `pm-essentials/stakeholder-update/GEM_INSTRUCTIONS.md` |
 | Startup Idea Validator | `pm-founders` | `pm-founders/startup-idea-validator/GEM_INSTRUCTIONS.md` |
+| Statement of Work | `pm-consulting` | `pm-consulting/statement-of-work/GEM_INSTRUCTIONS.md` |
 | Strategic Narrative Generator | `pm-strategy` | `pm-strategy/strategic-narrative-generator/GEM_INSTRUCTIONS.md` |
 | Strategy Memo | `pm-business` | `pm-business/strategy-memo/GEM_INSTRUCTIONS.md` |
 | Student Feedback | `pm-education` | `pm-education/student-feedback/GEM_INSTRUCTIONS.md` |

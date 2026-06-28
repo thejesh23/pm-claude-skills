@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-276 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
+282 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -33,6 +33,7 @@
 | Capacity Planning | `pm-engineering` | `pm-engineering/capacity-planning/SYSTEM_PROMPT.md` |
 | Capital Allocation | `pm-business` | `pm-business/capital-allocation/SYSTEM_PROMPT.md` |
 | Career Ladder Map | `pm-career` | `pm-career/career-ladder-map/SYSTEM_PROMPT.md` |
+| Case Study Write-up | `pm-consulting` | `pm-consulting/case-study-writeup/SYSTEM_PROMPT.md` |
 | Change Management Plan | `pm-hr` | `pm-hr/change-management-plan/SYSTEM_PROMPT.md` |
 | Changelog Generator | `pm-engineering` | `pm-engineering/changelog-generator/SYSTEM_PROMPT.md` |
 | Chart Data Extractor | `pm-data` | `pm-data/chart-data-extractor/SYSTEM_PROMPT.md` |
@@ -40,6 +41,7 @@
 | CI/CD Playbook | `pm-engineering` | `pm-engineering/cicd-playbook/SYSTEM_PROMPT.md` |
 | Claude Superpowers | `pm-engineering` | `pm-engineering/claude-superpowers/SYSTEM_PROMPT.md` |
 | Clause Explainer | `pm-legal` | `pm-legal/clause-explainer/SYSTEM_PROMPT.md` |
+| Client Discovery | `pm-consulting` | `pm-consulting/client-discovery/SYSTEM_PROMPT.md` |
 | Clinical Case Summary | `pm-research` | `pm-research/clinical-case-summary/SYSTEM_PROMPT.md` |
 | Code Explainer | `pm-engineering` | `pm-engineering/code-explainer/SYSTEM_PROMPT.md` |
 | Code Review Checklist | `pm-engineering` | `pm-engineering/code-review-checklist/SYSTEM_PROMPT.md` |
@@ -52,6 +54,7 @@
 | Competitor Signal Tracker | `pm-strategy` | `pm-strategy/competitor-signal-tracker/SYSTEM_PROMPT.md` |
 | Competitor Teardown | `pm-gtm` | `pm-gtm/competitor-teardown/SYSTEM_PROMPT.md` |
 | Compliance Checklist | `pm-legal` | `pm-legal/compliance-checklist/SYSTEM_PROMPT.md` |
+| Consulting Proposal | `pm-consulting` | `pm-consulting/consulting-proposal/SYSTEM_PROMPT.md` |
 | Content Calendar | `pm-gtm` | `pm-gtm/content-calendar/SYSTEM_PROMPT.md` |
 | Content Repurposer | `pm-creator` | `pm-creator/content-repurposer/SYSTEM_PROMPT.md` |
 | Context Mode | `pm-engineering` | `pm-engineering/context-mode/SYSTEM_PROMPT.md` |
@@ -93,6 +96,7 @@
 | Email Sequence | `pm-copy` | `pm-copy/email-sequence/SYSTEM_PROMPT.md` |
 | Email Triage | `pm-operations` | `pm-operations/email-triage/SYSTEM_PROMPT.md` |
 | Employee Engagement Survey | `pm-hr` | `pm-hr/employee-engagement-survey/SYSTEM_PROMPT.md` |
+| Engagement Retro | `pm-consulting` | `pm-consulting/engagement-retro/SYSTEM_PROMPT.md` |
 | Engineering Hiring Rubric | `pm-engineering` | `pm-engineering/engineering-hiring-rubric/SYSTEM_PROMPT.md` |
 | Engineering Weekly Report | `pm-engineering` | `pm-engineering/engineering-weekly-report/SYSTEM_PROMPT.md` |
 | Error Decoder | `pm-engineering` | `pm-engineering/error-decoder/SYSTEM_PROMPT.md` |
@@ -207,6 +211,7 @@
 | Quiz Generator | `pm-education` | `pm-education/quiz-generator/SYSTEM_PROMPT.md` |
 | RACI Matrix | `pm-operations` | `pm-operations/raci-matrix/SYSTEM_PROMPT.md` |
 | RAG Design Doc | `pm-ai` | `pm-ai/rag-design-doc/SYSTEM_PROMPT.md` |
+| Rate Card | `pm-consulting` | `pm-consulting/rate-card/SYSTEM_PROMPT.md` |
 | Red-Team Review | `pm-cross` | `pm-cross/red-team-review/SYSTEM_PROMPT.md` |
 | Redundancy Consultation | `pm-hr` | `pm-hr/redundancy-consultation/SYSTEM_PROMPT.md` |
 | Referral Program Design | `pm-growth` | `pm-growth/referral-program-design/SYSTEM_PROMPT.md` |
@@ -255,6 +260,7 @@
 | Stakeholder Influence Mapper | `pm-strategy` | `pm-strategy/stakeholder-influence-mapper/SYSTEM_PROMPT.md` |
 | Stakeholder Update | `pm-essentials` | `pm-essentials/stakeholder-update/SYSTEM_PROMPT.md` |
 | Startup Idea Validator | `pm-founders` | `pm-founders/startup-idea-validator/SYSTEM_PROMPT.md` |
+| Statement of Work | `pm-consulting` | `pm-consulting/statement-of-work/SYSTEM_PROMPT.md` |
 | Strategic Narrative Generator | `pm-strategy` | `pm-strategy/strategic-narrative-generator/SYSTEM_PROMPT.md` |
 | Strategy Memo | `pm-business` | `pm-business/strategy-memo/SYSTEM_PROMPT.md` |
 | Student Feedback | `pm-education` | `pm-education/student-feedback/SYSTEM_PROMPT.md` |
