@@ -1,0 +1,74 @@
+{
+  "_comment": "Guided journey hubs — curated, ordered skill journeys rendered by hub.html (?j=<id>). Each step maps to a real skill that opens in the playground runner. Add a journey here; no new HTML needed.",
+  "journeys": [
+    {
+      "id": "launch-a-startup",
+      "emoji": "🚀",
+      "name": "Launch a Startup",
+      "tagline": "From idea to first customers — the founder's path, one step at a time.",
+      "stages": [
+        { "title": "Validate the idea", "note": "is this worth building?", "skills": [
+          ["startup-idea-validator", "Idea Validator", "Pressure-test the idea before you build."],
+          ["founder-market-fit", "Founder–Market Fit", "Are you the right person for this?"],
+          ["competitor-teardown", "Competitor Teardown", "Map the landscape and your wedge."]
+        ] },
+        { "title": "Shape the product", "note": "decide what to build", "skills": [
+          ["value-proposition", "Value Proposition", "The one line that says who it's for and why."],
+          ["prd-template", "PRD", "Turn the idea into a buildable spec."],
+          ["rice-prioritisation", "Prioritise", "Rank the backlog so you build the right thing first."]
+        ] },
+        { "title": "Go to market", "note": "get your first users", "skills": [
+          ["go-to-market", "Go-to-Market", "Positioning, messaging, channels, launch plan."],
+          ["pricing-strategy", "Pricing", "Model, packaging, and what to charge."],
+          ["landing-page-copy", "Landing Page", "Copy that converts the first visitors."]
+        ] },
+        { "title": "Raise & survive", "note": "fund the journey", "skills": [
+          ["investor-pitch-deck", "Pitch Deck", "The narrative + slide structure investors fund."],
+          ["unit-economics", "Unit Economics", "Prove each customer is worth more than they cost."],
+          ["runway-calculator", "Runway", "How long the money lasts — default alive or dead."]
+        ] }
+      ]
+    },
+    {
+      "id": "new-pm-30-days",
+      "emoji": "🧭",
+      "name": "New PM in 30 Days",
+      "tagline": "Land in a product role and ship credibility fast.",
+      "stages": [
+        { "title": "Learn the landscape", "note": "weeks 1–2", "skills": [
+          ["metrics-framework", "Metrics Framework", "Map the metrics that actually matter here."],
+          ["user-research-synthesis", "Research Synthesis", "Turn existing research/notes into insight."],
+          ["competitive-analysis", "Competitive Analysis", "Know the market you're now responsible for."]
+        ] },
+        { "title": "Make your first calls", "note": "weeks 2–3", "skills": [
+          ["rice-prioritisation", "Prioritise", "Make a defensible first call on what's next."],
+          ["prd-template", "PRD", "Spec your first feature properly."],
+          ["okr-builder", "OKRs", "Set goals you can be measured against."]
+        ] },
+        { "title": "Build trust", "note": "weeks 3–4", "skills": [
+          ["roadmap-narrative", "Roadmap Narrative", "Tell the story of where the product goes."],
+          ["stakeholder-update", "Stakeholder Update", "Communicate up and across, credibly."],
+          ["executive-update", "Exec Update", "A tight briefing leadership respects."]
+        ] }
+      ]
+    },
+    {
+      "id": "close-the-quarter",
+      "emoji": "📊",
+      "name": "Close the Quarter",
+      "tagline": "Wrap the quarter and tell the story to leadership and the board.",
+      "stages": [
+        { "title": "Measure", "note": "what happened", "skills": [
+          ["metrics-framework", "Metrics Review", "Pull the quarter's numbers into a frame."],
+          ["churn-analysis", "Churn Analysis", "Separate avoidable from unavoidable churn."],
+          ["retention-analysis", "Retention Analysis", "Read the cohorts behind the headline."]
+        ] },
+        { "title": "Communicate", "note": "tell the story", "skills": [
+          ["executive-update", "Exec Update", "The quarter in a tight, honest briefing."],
+          ["board-deck-narrative", "Board Deck", "The slide-by-slide board narrative."],
+          ["qbr-deck", "QBR Deck", "The customer/business review deck."]
+        ] }
+      ]
+    }
+  ]
+}

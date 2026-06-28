@@ -30,6 +30,7 @@
   var NAV = [
     { href: 'index.html', label: '▶ Playground' },
     { href: 'jobs.html', label: '💼 Job Search' },
+    { href: 'hub.html', label: '🧭 Journeys' },
     { href: 'galaxy.html', label: '🌌 Galaxy' },
     { group: 'Tools', items: [
       ['agent.html', '✨ Auto-Agent'],
