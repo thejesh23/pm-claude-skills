@@ -15,6 +15,7 @@ venv/
 web/catalog.html
 web/leaderboard.html
 web/community.html
+web/coverage.html
 web/skill/
 web/sitemap.xml
 web/robots.txt
