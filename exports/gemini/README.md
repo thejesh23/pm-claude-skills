@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-308 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
+313 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -35,6 +35,7 @@
 | Capacity Planning | `pm-engineering` | `pm-engineering/capacity-planning/GEM_INSTRUCTIONS.md` |
 | Capital Allocation | `pm-business` | `pm-business/capital-allocation/GEM_INSTRUCTIONS.md` |
 | Career Ladder Map | `pm-career` | `pm-career/career-ladder-map/GEM_INSTRUCTIONS.md` |
+| Case for Support | `pm-nonprofit` | `pm-nonprofit/case-for-support/GEM_INSTRUCTIONS.md` |
 | Case Study Write-up | `pm-consulting` | `pm-consulting/case-study-writeup/GEM_INSTRUCTIONS.md` |
 | Change Management Plan | `pm-hr` | `pm-hr/change-management-plan/GEM_INSTRUCTIONS.md` |
 | Changelog Generator | `pm-engineering` | `pm-engineering/changelog-generator/GEM_INSTRUCTIONS.md` |
@@ -100,6 +101,7 @@
 | Discovery Interview Guide | `pm-discovery` | `pm-discovery/discovery-interview-guide/GEM_INSTRUCTIONS.md` |
 | Dispute Letter | `pm-lifeadmin` | `pm-lifeadmin/dispute-letter/GEM_INSTRUCTIONS.md` |
 | Word Doc Tracked Changes | `pm-essentials` | `pm-essentials/docx-tracked-changes/GEM_INSTRUCTIONS.md` |
+| Donor Update | `pm-nonprofit` | `pm-nonprofit/donor-update/GEM_INSTRUCTIONS.md` |
 | Email Campaign | `pm-gtm` | `pm-gtm/email-campaign/GEM_INSTRUCTIONS.md` |
 | Email Sequence | `pm-copy` | `pm-copy/email-sequence/GEM_INSTRUCTIONS.md` |
 | Email Triage | `pm-operations` | `pm-operations/email-triage/GEM_INSTRUCTIONS.md` |
@@ -146,6 +148,7 @@
 | Hiring Rubric | `pm-people` | `pm-people/hiring-rubric/GEM_INSTRUCTIONS.md` |
 | Hook Writer | `pm-creator` | `pm-creator/hook-writer/GEM_INSTRUCTIONS.md` |
 | IEP Goal Support | `pm-education` | `pm-education/iep-goal-support/GEM_INSTRUCTIONS.md` |
+| Impact Report | `pm-nonprofit` | `pm-nonprofit/impact-report/GEM_INSTRUCTIONS.md` |
 | Incident Postmortem | `pm-engineering` | `pm-engineering/incident-postmortem/GEM_INSTRUCTIONS.md` |
 | Incident Public Statement | `pm-crisis` | `pm-crisis/incident-public-statement/GEM_INSTRUCTIONS.md` |
 | Influencer Brief | `pm-social` | `pm-social/influencer-brief/GEM_INSTRUCTIONS.md` |
@@ -246,6 +249,7 @@
 | Retention Loop Design | `pm-growth` | `pm-growth/retention-loop-design/GEM_INSTRUCTIONS.md` |
 | Retrospective Analysis | `pm-delivery` | `pm-delivery/retro-analysis/GEM_INSTRUCTIONS.md` |
 | RFC Writer | `pm-engineering` | `pm-engineering/rfc-writer/GEM_INSTRUCTIONS.md` |
+| RFP Writer | `pm-operations` | `pm-operations/rfp-writer/GEM_INSTRUCTIONS.md` |
 | RICE + Strategic Alignment | `pm-planning` | `pm-planning/rice-impact-matrix/GEM_INSTRUCTIONS.md` |
 | RICE Prioritisation | `pm-planning` | `pm-planning/rice-prioritisation/GEM_INSTRUCTIONS.md` |
 | Risk Register | `pm-operations` | `pm-operations/risk-register/GEM_INSTRUCTIONS.md` |
@@ -308,6 +312,7 @@
 | User Story Writer | `pm-delivery` | `pm-delivery/user-story-writer/GEM_INSTRUCTIONS.md` |
 | UX Research Plan | `pm-design` | `pm-design/ux-research-plan/GEM_INSTRUCTIONS.md` |
 | Value Proposition | `pm-copy` | `pm-copy/value-proposition/GEM_INSTRUCTIONS.md` |
+| Vendor Contract Checklist | `pm-operations` | `pm-operations/vendor-contract-checklist/GEM_INSTRUCTIONS.md` |
 | Vendor Evaluation | `pm-operations` | `pm-operations/vendor-evaluation/GEM_INSTRUCTIONS.md` |
 | Vendor Security Review | `pm-compliance` | `pm-compliance/vendor-security-review/GEM_INSTRUCTIONS.md` |
 | Viral Content Framework | `pm-social` | `pm-social/viral-content-framework/GEM_INSTRUCTIONS.md` |

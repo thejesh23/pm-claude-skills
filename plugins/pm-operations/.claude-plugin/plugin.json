@@ -1,8 +1,8 @@
 {
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "pm-operations",
-  "version": "1.1.0",
-  "description": "Operations skills: Process Documentation, SOP Writer, Vendor Evaluation, Project Status Report, Workshop Facilitation Guide. Document workflows, write audit-ready SOPs, evaluate vendors, produce RAG status reports, and design facilitated workshops with activity instructions and facilitator moves.",
+  "version": "1.2.0",
+  "description": "Operations & procurement skills: Process Documentation, SOP Writer, Vendor Evaluation, RFP Writer, Vendor Contract Checklist, Project Status Report, Workshop Facilitation Guide. Document workflows, write audit-ready SOPs and RFPs, evaluate vendors and review their contracts, produce RAG status reports, and design facilitated workshops.",
   "author": {
     "name": "Mohit Aggarwal",
     "email": "mohit15856@gmail.com"

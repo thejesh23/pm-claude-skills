@@ -192,6 +192,26 @@
     {
       "skill": "insurance-claim",
       "input": "Write a home-insurance claim letter. Policy number HOME-558921. A pipe under the kitchen sink burst on 8 May while I was away, flooding the kitchen and damaging the flooring, lower cabinets, and a dishwasher. Estimated repair/replacement: flooring $2,800, cabinets $1,500, dishwasher $600. I have photos, a plumber's report, and repair quotes. I'm claiming $4,900 and want it processed promptly."
+    },
+    {
+      "skill": "rfp-writer",
+      "input": "Write an RFP for a new customer-support help-desk platform for a 60-person B2B SaaS company. Must-haves: shared inbox, live chat, a knowledge base, and integration with our existing CRM and Slack. Nice-to-haves: AI-assisted replies and CSAT surveys. We care most about ease of use and total cost, then integrations, then support. Budget is roughly $30-50k/year. We want to go live in Q3; vendor questions due in 2 weeks, proposals in 4."
+    },
+    {
+      "skill": "vendor-contract-checklist",
+      "input": "Review this SaaS subscription agreement before we sign. Deal: an analytics platform, $40k/year, 2-year term. Key terms: auto-renews for successive 12-month periods unless cancelled with 90 days' notice; price may increase each renewal (no cap stated); 99.5% uptime SLA with service credits as the sole remedy; liability capped at fees paid in the prior 3 months; data export available during the term but deletion/portability on termination isn't mentioned; governing law is the vendor's home state. Flag the risks and give me negotiation points."
+    },
+    {
+      "skill": "impact-report",
+      "input": "Write our annual impact report. We're a nonprofit that runs free coding bootcamps for unemployed adults. This year: 6 cohorts, 180 graduates, 71% employed within 6 months at an average starting salary uplift of about $18k. Income was $1.2M (60% grants, 30% individual donors, 10% corporate), with 82% spent on programs. Include a placeholder beneficiary story. Audience is donors and grant funders. Mark any invented figures for us to replace."
+    },
+    {
+      "skill": "case-for-support",
+      "input": "Write a case for support for a $500k campaign to fund a new youth mental-health drop-in centre in our city. The need: youth mental-health referrals are up sharply and wait times for support are months long. Our solution: a walk-in centre offering immediate, free counselling; we've run a successful pilot. We want giving levels from $50 to $50k. Audience: major donors and local foundations. Mark invented statistics for replacement."
+    },
+    {
+      "skill": "donor-update",
+      "input": "Write a year-end donor update/thank-you email to our recurring donors. Because of their support this year we provided 12,000 meals and opened a second community kitchen. We want them to feel appreciated and part of the mission, with a short story and only a very light, optional invitation to a volunteer day — no hard ask. Warm, personal tone. Mark any invented specifics for us to replace."
     }
   ]
 }

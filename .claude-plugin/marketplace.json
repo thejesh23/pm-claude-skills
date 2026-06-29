@@ -314,10 +314,18 @@
     },
     {
       "name": "pm-operations",
-      "description": "Operations skills: Process Documentation, SOP Writer, Vendor Evaluation, Project Status Report, Workshop Facilitation Guide, Risk Register, RACI Matrix, Email Triage, Morning Intelligence. Document workflows, write SOPs, build risk registers, define RACI matrices, triage your inbox to only what needs action, and auto-generate a personalised morning news brief.",
-      "version": "1.3.0",
+      "description": "Operations & procurement skills: Process Documentation, SOP Writer, Vendor Evaluation, RFP Writer, Vendor Contract Checklist, Project Status Report, Workshop Facilitation Guide, Risk Register, RACI Matrix, Email Triage, Morning Intelligence. Document workflows, write SOPs and RFPs, review vendor contracts, build risk registers, define RACI matrices, triage your inbox, and auto-generate a morning news brief.",
+      "version": "1.4.0",
       "category": "productivity",
       "source": "./plugins/pm-operations",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-nonprofit",
+      "description": "Nonprofit fundraising & stewardship skills: Impact Report, Case for Support, and Donor Update. Show funders what their giving achieved and keep supporters close.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-nonprofit",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
     },
     {

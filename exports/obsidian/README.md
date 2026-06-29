@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-308 skills exported. Copy a `.mdc rule` into the tool to use it.
+313 skills exported. Copy a `.mdc rule` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -35,6 +35,7 @@
 | Capacity Planning | `pm-engineering` | `pm-engineering/capacity-planning/capacity-planning.md` |
 | Capital Allocation | `pm-business` | `pm-business/capital-allocation/capital-allocation.md` |
 | Career Ladder Map | `pm-career` | `pm-career/career-ladder-map/career-ladder-map.md` |
+| Case for Support | `pm-nonprofit` | `pm-nonprofit/case-for-support/case-for-support.md` |
 | Case Study Write-up | `pm-consulting` | `pm-consulting/case-study-writeup/case-study-writeup.md` |
 | Change Management Plan | `pm-hr` | `pm-hr/change-management-plan/change-management-plan.md` |
 | Changelog Generator | `pm-engineering` | `pm-engineering/changelog-generator/changelog-generator.md` |
@@ -100,6 +101,7 @@
 | Discovery Interview Guide | `pm-discovery` | `pm-discovery/discovery-interview-guide/discovery-interview-guide.md` |
 | Dispute Letter | `pm-lifeadmin` | `pm-lifeadmin/dispute-letter/dispute-letter.md` |
 | Word Doc Tracked Changes | `pm-essentials` | `pm-essentials/docx-tracked-changes/docx-tracked-changes.md` |
+| Donor Update | `pm-nonprofit` | `pm-nonprofit/donor-update/donor-update.md` |
 | Email Campaign | `pm-gtm` | `pm-gtm/email-campaign/email-campaign.md` |
 | Email Sequence | `pm-copy` | `pm-copy/email-sequence/email-sequence.md` |
 | Email Triage | `pm-operations` | `pm-operations/email-triage/email-triage.md` |
@@ -146,6 +148,7 @@
 | Hiring Rubric | `pm-people` | `pm-people/hiring-rubric/hiring-rubric.md` |
 | Hook Writer | `pm-creator` | `pm-creator/hook-writer/hook-writer.md` |
 | IEP Goal Support | `pm-education` | `pm-education/iep-goal-support/iep-goal-support.md` |
+| Impact Report | `pm-nonprofit` | `pm-nonprofit/impact-report/impact-report.md` |
 | Incident Postmortem | `pm-engineering` | `pm-engineering/incident-postmortem/incident-postmortem.md` |
 | Incident Public Statement | `pm-crisis` | `pm-crisis/incident-public-statement/incident-public-statement.md` |
 | Influencer Brief | `pm-social` | `pm-social/influencer-brief/influencer-brief.md` |
@@ -246,6 +249,7 @@
 | Retention Loop Design | `pm-growth` | `pm-growth/retention-loop-design/retention-loop-design.md` |
 | Retrospective Analysis | `pm-delivery` | `pm-delivery/retro-analysis/retro-analysis.md` |
 | RFC Writer | `pm-engineering` | `pm-engineering/rfc-writer/rfc-writer.md` |
+| RFP Writer | `pm-operations` | `pm-operations/rfp-writer/rfp-writer.md` |
 | RICE + Strategic Alignment | `pm-planning` | `pm-planning/rice-impact-matrix/rice-impact-matrix.md` |
 | RICE Prioritisation | `pm-planning` | `pm-planning/rice-prioritisation/rice-prioritisation.md` |
 | Risk Register | `pm-operations` | `pm-operations/risk-register/risk-register.md` |
@@ -308,6 +312,7 @@
 | User Story Writer | `pm-delivery` | `pm-delivery/user-story-writer/user-story-writer.md` |
 | UX Research Plan | `pm-design` | `pm-design/ux-research-plan/ux-research-plan.md` |
 | Value Proposition | `pm-copy` | `pm-copy/value-proposition/value-proposition.md` |
+| Vendor Contract Checklist | `pm-operations` | `pm-operations/vendor-contract-checklist/vendor-contract-checklist.md` |
 | Vendor Evaluation | `pm-operations` | `pm-operations/vendor-evaluation/vendor-evaluation.md` |
 | Vendor Security Review | `pm-compliance` | `pm-compliance/vendor-security-review/vendor-security-review.md` |
 | Viral Content Framework | `pm-social` | `pm-social/viral-content-framework/viral-content-framework.md` |
