@@ -67,6 +67,7 @@
       ['catalog.html', '📚 Catalog'],
       ['examples.html', '📄 Sample outputs'],
       ['leaderboard.html', '📊 Leaderboard'],
+      ['coverage.html', '📈 Eval coverage'],
       ['benchmark.html', '🏆 Benchmark'],
       ['learn.html', '🎓 Learn'],
       ['guide.html', '📖 Guide'],

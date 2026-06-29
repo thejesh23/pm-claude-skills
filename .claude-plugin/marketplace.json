@@ -1,8 +1,8 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "pm-claude-skills",
-  "version": "29.8.0",
-  "description": "PM stands for Professional, not just Product Management. 288 Claude Skills + 4 agent templates across 41 bundles covering 23 professions — engineering, customer success, legal, finance, HR, sales, design, Figma, marketing, social media, writers, founders/startups, educators, content creators, and more. Built by a PM, used by everyone. Building blocks for the Anthropic agent template architecture.",
+  "version": "30.0.0",
+  "description": "PM stands for Professional, not just Product Management. 313 Claude Skills + 4 agent templates across 45 bundles covering 23 professions — engineering, AI/ML, customer success, legal, finance, HR, sales, design, Figma, marketing, social media, writers, founders/startups, healthcare, nonprofit, crisis comms, educators, content creators, and more. Built by a PM, used by everyone. Building blocks for the Anthropic agent template architecture.",
   "owner": {
     "name": "Mohit Aggarwal",
     "email": "mohit15856@gmail.com"
@@ -46,6 +46,30 @@
       "version": "1.0.0",
       "category": "productivity",
       "source": "./plugins/pm-comms",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-crisis",
+      "description": "Crisis & sensitive communications skills for high-stakes moments: PR Crisis Response, Incident Public Statement, Customer Outage Notice, Layoff Communication, and Apology Letter.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-crisis",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-health",
+      "description": "Healthcare documentation skills for clinicians and health teams (drafting aids for clinician review, not medical advice): SOAP Note, Discharge Summary, Prior Authorization Letter, and Clinical Trial Protocol.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-health",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-lifeadmin",
+      "description": "Life-admin letters that get results: Complaint Letter, Dispute Letter, Reference Letter, Rental Application, and Insurance Claim. The everyday correspondence everyone needs, done well.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-lifeadmin",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
     },
     {
@@ -106,8 +130,8 @@
     },
     {
       "name": "pm-ai",
-      "description": "AI/ML engineering skills for shipping AI features responsibly: Model Card, AI Eval Plan, RAG Design Doc, Agent Spec, Dataset Datasheet, AI Feature PRD, and LLM Cost & Latency Budget.",
-      "version": "1.0.0",
+      "description": "AI/ML engineering skills for shipping AI features responsibly: Model Card, AI Eval Plan, RAG Design Doc, Agent Spec, Dataset Datasheet, AI Feature PRD, LLM Cost & Latency Budget, Prompt Optimizer, Eval Rubric Designer, RAG Architecture Review, LLM Guardrails Spec, Agent Design Review, and Model Selection Advisor.",
+      "version": "1.1.0",
       "category": "productivity",
       "source": "./plugins/pm-ai",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
@@ -290,10 +314,18 @@
     },
     {
       "name": "pm-operations",
-      "description": "Operations skills: Process Documentation, SOP Writer, Vendor Evaluation, Project Status Report, Workshop Facilitation Guide, Risk Register, RACI Matrix, Email Triage, Morning Intelligence. Document workflows, write SOPs, build risk registers, define RACI matrices, triage your inbox to only what needs action, and auto-generate a personalised morning news brief.",
-      "version": "1.3.0",
+      "description": "Operations & procurement skills: Process Documentation, SOP Writer, Vendor Evaluation, RFP Writer, Vendor Contract Checklist, Project Status Report, Workshop Facilitation Guide, Risk Register, RACI Matrix, Email Triage, Morning Intelligence. Document workflows, write SOPs and RFPs, review vendor contracts, build risk registers, define RACI matrices, triage your inbox, and auto-generate a morning news brief.",
+      "version": "1.4.0",
       "category": "productivity",
       "source": "./plugins/pm-operations",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-nonprofit",
+      "description": "Nonprofit fundraising & stewardship skills: Impact Report, Case for Support, and Donor Update. Show funders what their giving achieved and keep supporters close.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-nonprofit",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
     },
     {

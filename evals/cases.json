@@ -112,6 +112,106 @@
     {
       "skill": "resume",
       "input": "Write my one-page resume for a Senior Product Manager role at a B2B SaaS company. Use only the facts below.\nContact: Jordan Lee, San Francisco / remote, jordan.lee@email.com, (555) 010-2233, linkedin.com/in/jordanlee.\nExperience:\n- Product Manager, Acme Analytics (2021-present): Owned onboarding and activation. Led an onboarding revamp that lifted activation from 31% to 44% in two quarters. Launched a self-serve plan that now drives 34% of new signups and added ~$480k ARR in its first year. Ran a 12-experiment A/B program that cut time-to-first-value from 9 days to 3. Managed 3 reports (2 designers, 1 engineer).\n- Associate PM, Beta Corp (2019-2021): Shipped the mobile app v1 (40k downloads in 6 months, 4.6 App Store rating). Built the experimentation program from scratch (0 to 20 tests/quarter), lifting checkout conversion from 2.1% to 3.3%.\nSkills: SQL, Amplitude, Figma, A/B testing, roadmapping, stakeholder management.\nEducation: BS Computer Science, State University, 2019.\nTarget-role keywords from the JD: activation, retention, experimentation, self-serve growth, cross-functional leadership."
+    },
+    {
+      "skill": "prompt-optimizer",
+      "input": "Improve this prompt. It's flaky — sometimes it returns prose, sometimes a list, and it occasionally makes up ticket fields that don't exist.\nPrompt: \"Summarize this support ticket and tell me how urgent it is and what to do.\"\nDesired output: a JSON object with fields summary (1-2 sentences), priority (P1-P4), and next_action. It runs on every inbound ticket. Only use information present in the ticket; if priority is unclear, use P3."
+    },
+    {
+      "skill": "eval-rubric-designer",
+      "input": "Design an eval rubric and LLM-judge prompt for an AI feature that drafts replies to customer support emails. Good means: on-topic and correct, grounded in the customer's message and our help-centre context (no invented policies), correct empathetic tone, and a clear next step. We'll score with an LLM judge at scale and spot-check with humans."
+    },
+    {
+      "skill": "rag-architecture-review",
+      "input": "Review our RAG system. Setup: we dump PDFs into pgvector with fixed 1000-token chunks, embed with a general model, retrieve top-5 by cosine similarity, and stuff them into the prompt 'Answer the question using the context.' Symptoms: it often answers confidently but cites the wrong product version, and questions that mention a specific error code usually get a generic answer. Corpus is ~4,000 product docs across 6 versions, updated weekly. Per-customer isolation is required."
+    },
+    {
+      "skill": "llm-guardrails-spec",
+      "input": "Spec the guardrails for an AI assistant on our B2B SaaS support site. It answers product questions using our docs, can look up the logged-in user's own account info via a tool, and can open a support ticket. Input comes from untrusted end users; the docs it retrieves include some third-party content. In scope: product and account questions. Out of scope: legal/financial advice. Data includes account details and billing info."
+    },
+    {
+      "skill": "agent-design-review",
+      "input": "Review this agent design. It's a 'research assistant': given a question, it loops — search the web, read a page, decide if it has enough, otherwise search again — then writes a summary with sources. It has tools: web_search, fetch_url, and send_email (to email the summary). Control flow is a ReAct loop with no explicit step cap. Each step re-sends the full conversation. Runs interactively; cost has spiked on some runs. Input is untrusted."
+    },
+    {
+      "skill": "model-selection-advisor",
+      "input": "Which model should we use to classify inbound support tickets into one of 12 categories and extract the product name? ~50,000 tickets/day, needs to keep up in near-real-time, budget-sensitive. Accuracy matters but it's a fairly constrained extraction/classification task, not open-ended reasoning. Tickets are short. Outputs feed an automated routing system, so consistency matters."
+    },
+    {
+      "skill": "pr-crisis-response",
+      "input": "We're a B2B SaaS company. A security researcher just tweeted that a misconfiguration may have exposed some customers' support attachments; it's getting traction and a journalist has emailed us. We've confirmed the misconfiguration existed and is now fixed, but we don't yet know exactly how many customers were affected or whether anything was actually accessed. Build our crisis comms plan."
+    },
+    {
+      "skill": "incident-public-statement",
+      "input": "Draft our public statement. Our payments service had a 3-hour outage this morning (09:10-12:05 UTC) caused by a failed database upgrade; some customers were double-charged. We've rolled back, identified the affected transactions, and are issuing automatic refunds within 5 business days. Affected customers don't need to do anything. Tone: accountable and reassuring."
+    },
+    {
+      "skill": "customer-outage-notice",
+      "input": "Write our outage notices. Our file-upload feature is currently failing for users in the EU region (started ~14:20 CET); the rest of the app works. We're still investigating the cause. We'll update every 30 minutes. Need status-page posts for each phase, a customer email, and a resolved summary."
+    },
+    {
+      "skill": "layoff-communication",
+      "input": "We need to communicate a layoff: a 12% reduction (about 60 people) across sales and recruiting, driven by slower-than-planned revenue growth and a refocus on the core product. Affected employees get 12 weeks' severance, 6 months of benefits, and outplacement support. People will be told individually on Tuesday morning, followed by an all-hands. Prepare the full comms package."
+    },
+    {
+      "skill": "apology-letter",
+      "input": "Write an apology to a customer. We're a meal-kit company; we shipped their order to the wrong address and by the time it was sorted the ingredients had spoiled, ruining a dinner party they'd planned. It was our fulfilment error. We want to refund the order in full, give them a credit for a future box, and keep them as a customer."
+    },
+    {
+      "skill": "soap-note",
+      "input": "Write a SOAP note from these encounter notes. 54-year-old presents with a productive cough for 5 days, low-grade fever, and mild shortness of breath on exertion; no chest pain. History of mild asthma. Exam: temp 38.1C, RR 20, SpO2 96% on room air, scattered crackles in the right lower lung field. Working impression: community-acquired pneumonia, mild. Plan: chest X-ray, start oral amoxicillin, continue inhaler, push fluids, review in 3 days or sooner if worse."
+    },
+    {
+      "skill": "discharge-summary",
+      "input": "Write a discharge summary. Admitted 3 days ago for community-acquired pneumonia after presenting with cough, fever, and shortness of breath; chest X-ray confirmed a right-lower-lobe infiltrate. Treated with IV antibiotics, switched to oral on day 2 with good response; afebrile for 24 hours at discharge. Discharge meds: complete a 5-day course of oral amoxicillin (new), continue home inhaler (unchanged). Discharged home in stable condition. Follow up with primary care in 1 week; return if fever returns or breathing worsens."
+    },
+    {
+      "skill": "prior-authorization-letter",
+      "input": "Write a letter of medical necessity. Patient has moderate-to-severe plaque psoriasis covering ~15% body surface area, with significant impact on daily function and quality of life. They have tried and failed topical corticosteroids and methotrexate (inadequate response after 3 months; methotrexate caused elevated liver enzymes). We are requesting authorization for a biologic (adalimumab). Insurer requires step-therapy documentation. Patient is a 42-year-old on a commercial plan."
+    },
+    {
+      "skill": "clinical-trial-protocol",
+      "input": "Draft a clinical trial protocol synopsis. Phase II, randomized, double-blind, placebo-controlled trial of an investigational oral drug for moderate knee osteoarthritis pain in adults. Primary question: does it reduce pain versus placebo over 12 weeks? We expect to enroll adults 45-75 with a confirmed diagnosis. Outcome of interest is patient-reported pain. Treat effect sizes and prior data as placeholders for the study team to set."
+    },
+    {
+      "skill": "complaint-letter",
+      "input": "Write a complaint letter to an airline. My flight (BA286, 14 March, booking ref ABC123) was cancelled 2 hours before departure with no rebooking offered; I had to buy a last-minute ticket on another airline for $640 and missed the first day of a conference. I've called twice and been told to 'wait for an email' that never came. I want a full refund of the original fare plus reimbursement of the $640. Deadline: 14 days."
+    },
+    {
+      "skill": "dispute-letter",
+      "input": "Write a letter to my credit-card company disputing a charge. There's a $129.99 charge from 'GLOWFIT LTD' dated 3 April on my account ending 4821 that I did not authorise and do not recognise; I've never done business with this company. I want the charge reversed and written confirmation. I have my statement and can provide more detail."
+    },
+    {
+      "skill": "reference-letter",
+      "input": "Write a reference letter. I'm a senior engineering manager recommending a software engineer who reported to me for 3 years for a senior/staff engineer role at another company. Strengths: technically excellent, owned our payments rewrite end to end, mentors junior engineers, and is unusually calm in incidents. Mark any specific examples you invent so I can replace them with real ones."
+    },
+    {
+      "skill": "rental-application",
+      "input": "Write a rental application cover letter for a 2-bedroom flat I want to rent, move-in 1 June, ideally a 2-year tenancy. I'm a full-time nurse with stable income, have rented my current place for 4 years with on-time rent and a landlord reference available. I have a small, well-behaved cat. I can provide proof of income, ID, and references quickly."
+    },
+    {
+      "skill": "insurance-claim",
+      "input": "Write a home-insurance claim letter. Policy number HOME-558921. A pipe under the kitchen sink burst on 8 May while I was away, flooding the kitchen and damaging the flooring, lower cabinets, and a dishwasher. Estimated repair/replacement: flooring $2,800, cabinets $1,500, dishwasher $600. I have photos, a plumber's report, and repair quotes. I'm claiming $4,900 and want it processed promptly."
+    },
+    {
+      "skill": "rfp-writer",
+      "input": "Write an RFP for a new customer-support help-desk platform for a 60-person B2B SaaS company. Must-haves: shared inbox, live chat, a knowledge base, and integration with our existing CRM and Slack. Nice-to-haves: AI-assisted replies and CSAT surveys. We care most about ease of use and total cost, then integrations, then support. Budget is roughly $30-50k/year. We want to go live in Q3; vendor questions due in 2 weeks, proposals in 4."
+    },
+    {
+      "skill": "vendor-contract-checklist",
+      "input": "Review this SaaS subscription agreement before we sign. Deal: an analytics platform, $40k/year, 2-year term. Key terms: auto-renews for successive 12-month periods unless cancelled with 90 days' notice; price may increase each renewal (no cap stated); 99.5% uptime SLA with service credits as the sole remedy; liability capped at fees paid in the prior 3 months; data export available during the term but deletion/portability on termination isn't mentioned; governing law is the vendor's home state. Flag the risks and give me negotiation points."
+    },
+    {
+      "skill": "impact-report",
+      "input": "Write our annual impact report. We're a nonprofit that runs free coding bootcamps for unemployed adults. This year: 6 cohorts, 180 graduates, 71% employed within 6 months at an average starting salary uplift of about $18k. Income was $1.2M (60% grants, 30% individual donors, 10% corporate), with 82% spent on programs. Include a placeholder beneficiary story. Audience is donors and grant funders. Mark any invented figures for us to replace."
+    },
+    {
+      "skill": "case-for-support",
+      "input": "Write a case for support for a $500k campaign to fund a new youth mental-health drop-in centre in our city. The need: youth mental-health referrals are up sharply and wait times for support are months long. Our solution: a walk-in centre offering immediate, free counselling; we've run a successful pilot. We want giving levels from $50 to $50k. Audience: major donors and local foundations. Mark invented statistics for replacement."
+    },
+    {
+      "skill": "donor-update",
+      "input": "Write a year-end donor update/thank-you email to our recurring donors. Because of their support this year we provided 12,000 meals and opened a second community kitchen. We want them to feel appreciated and part of the mission, with a short story and only a very light, optional invitation to a volunteer day — no hard ask. Warm, personal tone. Mark any invented specifics for us to replace."
     }
   ]
 }
