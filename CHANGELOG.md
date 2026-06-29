@@ -9,6 +9,8 @@ each new wave of skills bumps the **major** version, extensions and fixes bump
 
 ## [Unreleased]
 
+## [30.0.0] — 25 new skills, 4 new bundles & eval coverage — 2026-06-29
+
 ### Added
 - **25 new skills across 4 new bundles (288 → 313 skills, 41 → 45 bundles)** — each ships a curated eval case:
   - **AI-builder pack** (`pm-ai`, 7 → 13): `prompt-optimizer`, `eval-rubric-designer`, `rag-architecture-review`, `llm-guardrails-spec`, `agent-design-review`, `model-selection-advisor`.
@@ -21,7 +23,7 @@ each new wave of skills bumps the **major** version, extensions and fixes bump
 
 ### Fixed
 - **Header navigation on generated pages** — the Tools/Explore dropdowns broke on `catalog.html`, `leaderboard.html`, and `community.html` because those pages ship inline CSS and don't link `styles.css`, so the dropdown/CTA rules never loaded. [`web/nav.js`](web/nav.js) now injects its own styles, keeping it the single source of truth so the bar works on every page.
-- **Guide skill count** — [`web/guide.html`](web/guide.html) now reads **288 skills across 23 professions** (was 244 / 21).
+- **Guide skill count** — [`web/guide.html`](web/guide.html) now reads **313 skills across 23 professions** (was 244 / 21).
 - **`resume` skill scored low (1.75/5)** — it told the model to *ask* for inputs, so on a brief it stalled instead of producing a resume. Added a **"Working from a brief"** rule (always deliver a complete resume; infer missing details and label them *(assumed — confirm)*; never silently inflate metrics) and a **curated eval case** so it's scored on a concrete brief like other top skills.
 
 ## [29.0.0] — Multilingual + a polished experience — 2026-06-23

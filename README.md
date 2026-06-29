@@ -60,7 +60,7 @@
 
 A community-built library of professional skills for every field — product management, engineering, customer success, marketing, social media, writers, design, legal, finance, HR, sales, operations, research, and more. Each skill is a structured `SKILL.md` file that teaches an AI assistant how to produce professional-grade outputs for your workflows. Skills run natively in **Claude Code** and **Hermes Agent** (same open `SKILL.md` standard), and ship as ready-to-paste exports for **ChatGPT** and **Gemini** — see [Works With](#-works-with--cross-tool-compatibility).
 
-**🆕 Latest — v29.7.0 (3 new bundles + guided journeys):** **📊 Data & Analytics Engineering** (dbt specs, data contracts, a semantic-metric layer, an experiment readout *with a real significance calculator*, SQL optimizer, DQ checks), **💼 Consulting & Freelance** (proposals, SOWs, client discovery, case studies, rate cards, retros), and **🎧 Support & Customer Ops** (macros, help-center articles, CSAT/NPS analysis, runbooks, escalation trees, KB audits). Plus **[🧭 Guided Journeys](https://mohitagw15856.github.io/pm-claude-skills/hub.html)** — step-by-step paths (Launch a Startup, New PM in 30 Days, Close the Quarter) that run in your browser. *Earlier (v29.6):* Copywriting, Calculators, Communication & Office-file packs. **313 skills across 45 bundles.** → **[Full release history & notes](https://github.com/mohitagw15856/pm-claude-skills/releases)**.
+**🆕 Latest — v30.0.0 (25 new skills, 4 new bundles + eval coverage):** **🤖 AI-builder pack** (prompt-optimizer, eval-rubric-designer, RAG architecture review, LLM guardrails spec, agent-design review, model-selection advisor), **🚨 Crisis & sensitive comms** (PR crisis response, incident public statement, customer outage notice, layoff communication, apology letter), **🩺 Healthcare documentation** (SOAP note, discharge summary, prior-authorization letter, clinical-trial protocol), **📮 Life-admin letters** (complaint, dispute, reference, rental application, insurance claim), **🎗️ Nonprofit** (impact report, case for support, donor update) and **procurement** (RFP writer, vendor-contract checklist). Plus a new **[📈 Eval-coverage page](https://mohitagw15856.github.io/pm-claude-skills/coverage.html)** showing which bundles are scored. *Earlier (v29.7):* Data-Eng, Consulting & Support packs + Guided Journeys. **313 skills across 45 bundles.** → **[Full release history & notes](https://github.com/mohitagw15856/pm-claude-skills/releases)**.
 
 ### ▶ See it in action — [try the live Skill Playground](https://mohitagw15856.github.io/pm-claude-skills/)
 
@@ -771,7 +771,7 @@ More templates will follow. If you want to contribute one, see the [template con
 <details>
 <summary>Read more ↓</summary>
 
-**Latest: v29.1.0 — AI/ML + Growth skill packs, composable recipes, a deeper Brain.** 313 skills across 45 bundles, 23 professions. Every tagged release has complete notes on the **[Releases page](https://github.com/mohitagw15856/pm-claude-skills/releases)**.
+**Latest: v30.0.0 — 25 new skills, 4 new bundles (AI-builder, crisis comms, healthcare, life-admin, nonprofit) & an eval-coverage page.** 313 skills across 45 bundles, 23 professions. Every tagged release has complete notes on the **[Releases page](https://github.com/mohitagw15856/pm-claude-skills/releases)**.
 
 Full [Keep a Changelog](https://keepachangelog.com/)-format history — every release back to the start — is in **[CHANGELOG.md](CHANGELOG.md)**.
 
