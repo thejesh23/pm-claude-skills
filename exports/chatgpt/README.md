@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-288 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
+294 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -15,6 +15,7 @@
 | Action Runner | `pm-cross` | `pm-cross/action-runner/SYSTEM_PROMPT.md` |
 | Ad Copy | `pm-copy` | `pm-copy/ad-copy/SYSTEM_PROMPT.md` |
 | AEO Optimizer | `pm-writers` | `pm-writers/aeo-optimizer/SYSTEM_PROMPT.md` |
+| Agent Design Review | `pm-ai` | `pm-ai/agent-design-review/SYSTEM_PROMPT.md` |
 | Agent Spec | `pm-ai` | `pm-ai/agent-spec/SYSTEM_PROMPT.md` |
 | AI Ethics Review | `pm-advanced` | `pm-advanced/ai-ethics-review/SYSTEM_PROMPT.md` |
 | AI Eval Plan | `pm-ai` | `pm-ai/ai-eval-plan/SYSTEM_PROMPT.md` |
@@ -102,6 +103,7 @@
 | Engineering Weekly Report | `pm-engineering` | `pm-engineering/engineering-weekly-report/SYSTEM_PROMPT.md` |
 | Error Decoder | `pm-engineering` | `pm-engineering/error-decoder/SYSTEM_PROMPT.md` |
 | Escalation Tree | `pm-support` | `pm-support/escalation-tree/SYSTEM_PROMPT.md` |
+| Eval Rubric Designer | `pm-ai` | `pm-ai/eval-rubric-designer/SYSTEM_PROMPT.md` |
 | Excel Model | `pm-documents` | `pm-documents/excel-model/SYSTEM_PROMPT.md` |
 | Executive Presence | `pm-comms` | `pm-comms/executive-presence/SYSTEM_PROMPT.md` |
 | Executive Summary | `pm-cross` | `pm-cross/executive-summary/SYSTEM_PROMPT.md` |
@@ -161,6 +163,7 @@
 | LinkedIn Profile | `pm-personal` | `pm-personal/linkedin-profile/SYSTEM_PROMPT.md` |
 | Literature Review | `pm-research` | `pm-research/literature-review/SYSTEM_PROMPT.md` |
 | LLM Cost & Latency Budget | `pm-ai` | `pm-ai/llm-cost-latency-budget/SYSTEM_PROMPT.md` |
+| LLM Guardrails Spec | `pm-ai` | `pm-ai/llm-guardrails-spec/SYSTEM_PROMPT.md` |
 | Load Testing Plan | `pm-engineering` | `pm-engineering/load-testing-plan/SYSTEM_PROMPT.md` |
 | Local Dev Setup | `pm-engineering` | `pm-engineering/local-dev-setup/SYSTEM_PROMPT.md` |
 | Managing Up | `pm-comms` | `pm-comms/managing-up/SYSTEM_PROMPT.md` |
@@ -173,6 +176,7 @@
 | Metrics Framework | `pm-data` | `pm-data/metrics-framework/SYSTEM_PROMPT.md` |
 | Microservices Decomposition | `pm-engineering` | `pm-engineering/microservices-decomposition/SYSTEM_PROMPT.md` |
 | Model Card | `pm-ai` | `pm-ai/model-card/SYSTEM_PROMPT.md` |
+| Model Selection Advisor | `pm-ai` | `pm-ai/model-selection-advisor/SYSTEM_PROMPT.md` |
 | Monitoring Setup Guide | `pm-engineering` | `pm-engineering/monitoring-setup-guide/SYSTEM_PROMPT.md` |
 | Morning Intelligence | `pm-operations` | `pm-operations/morning-intelligence/SYSTEM_PROMPT.md` |
 | Multi-Source Signal Synthesiser | `pm-advanced` | `pm-advanced/multi-source-signal-synthesiser/SYSTEM_PROMPT.md` |
@@ -210,10 +214,12 @@
 | Professional Brain | `pm-cross` | `pm-cross/professional-brain/SYSTEM_PROMPT.md` |
 | Project Status Report | `pm-operations` | `pm-operations/project-status-report/SYSTEM_PROMPT.md` |
 | Promotion Packet | `pm-career` | `pm-career/promotion-packet/SYSTEM_PROMPT.md` |
+| Prompt Optimizer | `pm-ai` | `pm-ai/prompt-optimizer/SYSTEM_PROMPT.md` |
 | Proposal Writer | `pm-sales` | `pm-sales/proposal-writer/SYSTEM_PROMPT.md` |
 | QBR Deck | `pm-cs` | `pm-cs/qbr-deck/SYSTEM_PROMPT.md` |
 | Quiz Generator | `pm-education` | `pm-education/quiz-generator/SYSTEM_PROMPT.md` |
 | RACI Matrix | `pm-operations` | `pm-operations/raci-matrix/SYSTEM_PROMPT.md` |
+| RAG Architecture Review | `pm-ai` | `pm-ai/rag-architecture-review/SYSTEM_PROMPT.md` |
 | RAG Design Doc | `pm-ai` | `pm-ai/rag-design-doc/SYSTEM_PROMPT.md` |
 | Rate Card | `pm-consulting` | `pm-consulting/rate-card/SYSTEM_PROMPT.md` |
 | Red-Team Review | `pm-cross` | `pm-cross/red-team-review/SYSTEM_PROMPT.md` |

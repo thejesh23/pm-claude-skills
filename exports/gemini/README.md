@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-288 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
+294 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -15,6 +15,7 @@
 | Action Runner | `pm-cross` | `pm-cross/action-runner/GEM_INSTRUCTIONS.md` |
 | Ad Copy | `pm-copy` | `pm-copy/ad-copy/GEM_INSTRUCTIONS.md` |
 | AEO Optimizer | `pm-writers` | `pm-writers/aeo-optimizer/GEM_INSTRUCTIONS.md` |
+| Agent Design Review | `pm-ai` | `pm-ai/agent-design-review/GEM_INSTRUCTIONS.md` |
 | Agent Spec | `pm-ai` | `pm-ai/agent-spec/GEM_INSTRUCTIONS.md` |
 | AI Ethics Review | `pm-advanced` | `pm-advanced/ai-ethics-review/GEM_INSTRUCTIONS.md` |
 | AI Eval Plan | `pm-ai` | `pm-ai/ai-eval-plan/GEM_INSTRUCTIONS.md` |
@@ -102,6 +103,7 @@
 | Engineering Weekly Report | `pm-engineering` | `pm-engineering/engineering-weekly-report/GEM_INSTRUCTIONS.md` |
 | Error Decoder | `pm-engineering` | `pm-engineering/error-decoder/GEM_INSTRUCTIONS.md` |
 | Escalation Tree | `pm-support` | `pm-support/escalation-tree/GEM_INSTRUCTIONS.md` |
+| Eval Rubric Designer | `pm-ai` | `pm-ai/eval-rubric-designer/GEM_INSTRUCTIONS.md` |
 | Excel Model | `pm-documents` | `pm-documents/excel-model/GEM_INSTRUCTIONS.md` |
 | Executive Presence | `pm-comms` | `pm-comms/executive-presence/GEM_INSTRUCTIONS.md` |
 | Executive Summary | `pm-cross` | `pm-cross/executive-summary/GEM_INSTRUCTIONS.md` |
@@ -161,6 +163,7 @@
 | LinkedIn Profile | `pm-personal` | `pm-personal/linkedin-profile/GEM_INSTRUCTIONS.md` |
 | Literature Review | `pm-research` | `pm-research/literature-review/GEM_INSTRUCTIONS.md` |
 | LLM Cost & Latency Budget | `pm-ai` | `pm-ai/llm-cost-latency-budget/GEM_INSTRUCTIONS.md` |
+| LLM Guardrails Spec | `pm-ai` | `pm-ai/llm-guardrails-spec/GEM_INSTRUCTIONS.md` |
 | Load Testing Plan | `pm-engineering` | `pm-engineering/load-testing-plan/GEM_INSTRUCTIONS.md` |
 | Local Dev Setup | `pm-engineering` | `pm-engineering/local-dev-setup/GEM_INSTRUCTIONS.md` |
 | Managing Up | `pm-comms` | `pm-comms/managing-up/GEM_INSTRUCTIONS.md` |
@@ -173,6 +176,7 @@
 | Metrics Framework | `pm-data` | `pm-data/metrics-framework/GEM_INSTRUCTIONS.md` |
 | Microservices Decomposition | `pm-engineering` | `pm-engineering/microservices-decomposition/GEM_INSTRUCTIONS.md` |
 | Model Card | `pm-ai` | `pm-ai/model-card/GEM_INSTRUCTIONS.md` |
+| Model Selection Advisor | `pm-ai` | `pm-ai/model-selection-advisor/GEM_INSTRUCTIONS.md` |
 | Monitoring Setup Guide | `pm-engineering` | `pm-engineering/monitoring-setup-guide/GEM_INSTRUCTIONS.md` |
 | Morning Intelligence | `pm-operations` | `pm-operations/morning-intelligence/GEM_INSTRUCTIONS.md` |
 | Multi-Source Signal Synthesiser | `pm-advanced` | `pm-advanced/multi-source-signal-synthesiser/GEM_INSTRUCTIONS.md` |
@@ -210,10 +214,12 @@
 | Professional Brain | `pm-cross` | `pm-cross/professional-brain/GEM_INSTRUCTIONS.md` |
 | Project Status Report | `pm-operations` | `pm-operations/project-status-report/GEM_INSTRUCTIONS.md` |
 | Promotion Packet | `pm-career` | `pm-career/promotion-packet/GEM_INSTRUCTIONS.md` |
+| Prompt Optimizer | `pm-ai` | `pm-ai/prompt-optimizer/GEM_INSTRUCTIONS.md` |
 | Proposal Writer | `pm-sales` | `pm-sales/proposal-writer/GEM_INSTRUCTIONS.md` |
 | QBR Deck | `pm-cs` | `pm-cs/qbr-deck/GEM_INSTRUCTIONS.md` |
 | Quiz Generator | `pm-education` | `pm-education/quiz-generator/GEM_INSTRUCTIONS.md` |
 | RACI Matrix | `pm-operations` | `pm-operations/raci-matrix/GEM_INSTRUCTIONS.md` |
+| RAG Architecture Review | `pm-ai` | `pm-ai/rag-architecture-review/GEM_INSTRUCTIONS.md` |
 | RAG Design Doc | `pm-ai` | `pm-ai/rag-design-doc/GEM_INSTRUCTIONS.md` |
 | Rate Card | `pm-consulting` | `pm-consulting/rate-card/GEM_INSTRUCTIONS.md` |
 | Red-Team Review | `pm-cross` | `pm-cross/red-team-review/GEM_INSTRUCTIONS.md` |

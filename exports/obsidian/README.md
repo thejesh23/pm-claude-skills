@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-288 skills exported. Copy a `.mdc rule` into the tool to use it.
+294 skills exported. Copy a `.mdc rule` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -15,6 +15,7 @@
 | Action Runner | `pm-cross` | `pm-cross/action-runner/action-runner.md` |
 | Ad Copy | `pm-copy` | `pm-copy/ad-copy/ad-copy.md` |
 | AEO Optimizer | `pm-writers` | `pm-writers/aeo-optimizer/aeo-optimizer.md` |
+| Agent Design Review | `pm-ai` | `pm-ai/agent-design-review/agent-design-review.md` |
 | Agent Spec | `pm-ai` | `pm-ai/agent-spec/agent-spec.md` |
 | AI Ethics Review | `pm-advanced` | `pm-advanced/ai-ethics-review/ai-ethics-review.md` |
 | AI Eval Plan | `pm-ai` | `pm-ai/ai-eval-plan/ai-eval-plan.md` |
@@ -102,6 +103,7 @@
 | Engineering Weekly Report | `pm-engineering` | `pm-engineering/engineering-weekly-report/engineering-weekly-report.md` |
 | Error Decoder | `pm-engineering` | `pm-engineering/error-decoder/error-decoder.md` |
 | Escalation Tree | `pm-support` | `pm-support/escalation-tree/escalation-tree.md` |
+| Eval Rubric Designer | `pm-ai` | `pm-ai/eval-rubric-designer/eval-rubric-designer.md` |
 | Excel Model | `pm-documents` | `pm-documents/excel-model/excel-model.md` |
 | Executive Presence | `pm-comms` | `pm-comms/executive-presence/executive-presence.md` |
 | Executive Summary | `pm-cross` | `pm-cross/executive-summary/executive-summary.md` |
@@ -161,6 +163,7 @@
 | LinkedIn Profile | `pm-personal` | `pm-personal/linkedin-profile/linkedin-profile.md` |
 | Literature Review | `pm-research` | `pm-research/literature-review/literature-review.md` |
 | LLM Cost & Latency Budget | `pm-ai` | `pm-ai/llm-cost-latency-budget/llm-cost-latency-budget.md` |
+| LLM Guardrails Spec | `pm-ai` | `pm-ai/llm-guardrails-spec/llm-guardrails-spec.md` |
 | Load Testing Plan | `pm-engineering` | `pm-engineering/load-testing-plan/load-testing-plan.md` |
 | Local Dev Setup | `pm-engineering` | `pm-engineering/local-dev-setup/local-dev-setup.md` |
 | Managing Up | `pm-comms` | `pm-comms/managing-up/managing-up.md` |
@@ -173,6 +176,7 @@
 | Metrics Framework | `pm-data` | `pm-data/metrics-framework/metrics-framework.md` |
 | Microservices Decomposition | `pm-engineering` | `pm-engineering/microservices-decomposition/microservices-decomposition.md` |
 | Model Card | `pm-ai` | `pm-ai/model-card/model-card.md` |
+| Model Selection Advisor | `pm-ai` | `pm-ai/model-selection-advisor/model-selection-advisor.md` |
 | Monitoring Setup Guide | `pm-engineering` | `pm-engineering/monitoring-setup-guide/monitoring-setup-guide.md` |
 | Morning Intelligence | `pm-operations` | `pm-operations/morning-intelligence/morning-intelligence.md` |
 | Multi-Source Signal Synthesiser | `pm-advanced` | `pm-advanced/multi-source-signal-synthesiser/multi-source-signal-synthesiser.md` |
@@ -210,10 +214,12 @@
 | Professional Brain | `pm-cross` | `pm-cross/professional-brain/professional-brain.md` |
 | Project Status Report | `pm-operations` | `pm-operations/project-status-report/project-status-report.md` |
 | Promotion Packet | `pm-career` | `pm-career/promotion-packet/promotion-packet.md` |
+| Prompt Optimizer | `pm-ai` | `pm-ai/prompt-optimizer/prompt-optimizer.md` |
 | Proposal Writer | `pm-sales` | `pm-sales/proposal-writer/proposal-writer.md` |
 | QBR Deck | `pm-cs` | `pm-cs/qbr-deck/qbr-deck.md` |
 | Quiz Generator | `pm-education` | `pm-education/quiz-generator/quiz-generator.md` |
 | RACI Matrix | `pm-operations` | `pm-operations/raci-matrix/raci-matrix.md` |
+| RAG Architecture Review | `pm-ai` | `pm-ai/rag-architecture-review/rag-architecture-review.md` |
 | RAG Design Doc | `pm-ai` | `pm-ai/rag-design-doc/rag-design-doc.md` |
 | Rate Card | `pm-consulting` | `pm-consulting/rate-card/rate-card.md` |
 | Red-Team Review | `pm-cross` | `pm-cross/red-team-review/red-team-review.md` |

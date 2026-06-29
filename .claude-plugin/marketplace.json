@@ -106,8 +106,8 @@
     },
     {
       "name": "pm-ai",
-      "description": "AI/ML engineering skills for shipping AI features responsibly: Model Card, AI Eval Plan, RAG Design Doc, Agent Spec, Dataset Datasheet, AI Feature PRD, and LLM Cost & Latency Budget.",
-      "version": "1.0.0",
+      "description": "AI/ML engineering skills for shipping AI features responsibly: Model Card, AI Eval Plan, RAG Design Doc, Agent Spec, Dataset Datasheet, AI Feature PRD, LLM Cost & Latency Budget, Prompt Optimizer, Eval Rubric Designer, RAG Architecture Review, LLM Guardrails Spec, Agent Design Review, and Model Selection Advisor.",
+      "version": "1.1.0",
       "category": "productivity",
       "source": "./plugins/pm-ai",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"

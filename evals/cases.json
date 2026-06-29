@@ -112,6 +112,30 @@
     {
       "skill": "resume",
       "input": "Write my one-page resume for a Senior Product Manager role at a B2B SaaS company. Use only the facts below.\nContact: Jordan Lee, San Francisco / remote, jordan.lee@email.com, (555) 010-2233, linkedin.com/in/jordanlee.\nExperience:\n- Product Manager, Acme Analytics (2021-present): Owned onboarding and activation. Led an onboarding revamp that lifted activation from 31% to 44% in two quarters. Launched a self-serve plan that now drives 34% of new signups and added ~$480k ARR in its first year. Ran a 12-experiment A/B program that cut time-to-first-value from 9 days to 3. Managed 3 reports (2 designers, 1 engineer).\n- Associate PM, Beta Corp (2019-2021): Shipped the mobile app v1 (40k downloads in 6 months, 4.6 App Store rating). Built the experimentation program from scratch (0 to 20 tests/quarter), lifting checkout conversion from 2.1% to 3.3%.\nSkills: SQL, Amplitude, Figma, A/B testing, roadmapping, stakeholder management.\nEducation: BS Computer Science, State University, 2019.\nTarget-role keywords from the JD: activation, retention, experimentation, self-serve growth, cross-functional leadership."
+    },
+    {
+      "skill": "prompt-optimizer",
+      "input": "Improve this prompt. It's flaky — sometimes it returns prose, sometimes a list, and it occasionally makes up ticket fields that don't exist.\nPrompt: \"Summarize this support ticket and tell me how urgent it is and what to do.\"\nDesired output: a JSON object with fields summary (1-2 sentences), priority (P1-P4), and next_action. It runs on every inbound ticket. Only use information present in the ticket; if priority is unclear, use P3."
+    },
+    {
+      "skill": "eval-rubric-designer",
+      "input": "Design an eval rubric and LLM-judge prompt for an AI feature that drafts replies to customer support emails. Good means: on-topic and correct, grounded in the customer's message and our help-centre context (no invented policies), correct empathetic tone, and a clear next step. We'll score with an LLM judge at scale and spot-check with humans."
+    },
+    {
+      "skill": "rag-architecture-review",
+      "input": "Review our RAG system. Setup: we dump PDFs into pgvector with fixed 1000-token chunks, embed with a general model, retrieve top-5 by cosine similarity, and stuff them into the prompt 'Answer the question using the context.' Symptoms: it often answers confidently but cites the wrong product version, and questions that mention a specific error code usually get a generic answer. Corpus is ~4,000 product docs across 6 versions, updated weekly. Per-customer isolation is required."
+    },
+    {
+      "skill": "llm-guardrails-spec",
+      "input": "Spec the guardrails for an AI assistant on our B2B SaaS support site. It answers product questions using our docs, can look up the logged-in user's own account info via a tool, and can open a support ticket. Input comes from untrusted end users; the docs it retrieves include some third-party content. In scope: product and account questions. Out of scope: legal/financial advice. Data includes account details and billing info."
+    },
+    {
+      "skill": "agent-design-review",
+      "input": "Review this agent design. It's a 'research assistant': given a question, it loops — search the web, read a page, decide if it has enough, otherwise search again — then writes a summary with sources. It has tools: web_search, fetch_url, and send_email (to email the summary). Control flow is a ReAct loop with no explicit step cap. Each step re-sends the full conversation. Runs interactively; cost has spiked on some runs. Input is untrusted."
+    },
+    {
+      "skill": "model-selection-advisor",
+      "input": "Which model should we use to classify inbound support tickets into one of 12 categories and extract the product name? ~50,000 tickets/day, needs to keep up in near-real-time, budget-sensitive. Accuracy matters but it's a fairly constrained extraction/classification task, not open-ended reasoning. Tickets are short. Outputs feed an automated routing system, so consistency matters."
     }
   ]
 }
