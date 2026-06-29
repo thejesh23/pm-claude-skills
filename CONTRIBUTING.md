@@ -145,6 +145,32 @@ In your PR description, include:
 
 ---
 
+## Adding an export / install target (another AI tool)
+
+Want the library to work in another tool (a new IDE, agent, or rules format)? "Support
+another tool" should mean a **working install path**, not just a README mention. So a new
+target is only complete when all four of these land together — use this as the checklist:
+
+1. **Registry entry** — one entry in the `PLATFORMS` registry in
+   [`scripts/build-exports.mjs`](scripts/build-exports.mjs) (`dir`, `file`, `render`), so the
+   skills generate in the format that tool reads. Model it on a similar existing target
+   (e.g. Cline/Roo/Kilo Code for a `rules/` directory of markdown).
+2. **Install-path mapping** — a `default_target` case in
+   [`scripts/install.sh`](scripts/install.sh) pointing at the exact directory *that tool*
+   discovers skills in (e.g. `.kilocode/rules`), plus adding it to the rule-install branch
+   and the `--list` output.
+3. **CLI branch** — entries in [`bin/cli.mjs`](bin/cli.mjs) (`RULEFILE` + `defaultTarget` +
+   the post-install hint) so `npx pm-claude-skills add --agent <tool>` routes to that path.
+4. **Proof it works** — run `node scripts/build-exports.mjs` to generate the files, and
+   `node scripts/build-exports.mjs --check` must pass (this is the fixture proving the
+   exports land where the tool actually looks). Verify the install with
+   `node bin/cli.mjs add --agent <tool> --dry-run`.
+
+Then update the target list/count in the README and `docs/`. See
+[Kilo Code](exports/kilocode/) as a complete worked example.
+
+---
+
 ## Skills Wishlist
 
 These have been requested but not yet built. Pick one up if you have the expertise:

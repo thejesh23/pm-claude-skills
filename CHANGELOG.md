@@ -9,6 +9,10 @@ each new wave of skills bumps the **major** version, extensions and fixes bump
 
 ## [Unreleased]
 
+### Added
+- **Kilo Code export/install target** (#40) — `exports/kilocode/` (rules for `.kilocode/rules/`) wired end-to-end: a `PLATFORMS` entry in `build-exports.mjs`, an install-path mapping in `install.sh`, and a CLI branch in `bin/cli.mjs` (`npx pm-claude-skills add --agent kilocode`). 11 export platforms total.
+- **Export-target contributor checklist** ([`CONTRIBUTING.md`](CONTRIBUTING.md)) — a 4-point contract (registry entry · install-path mapping · CLI branch · `build-exports --check` proof) so "support another tool" always means a working install path, not just a README entry. Kilo Code is the worked example.
+
 ## [30.0.0] — 25 new skills, 4 new bundles & eval coverage — 2026-06-29
 
 ### Added

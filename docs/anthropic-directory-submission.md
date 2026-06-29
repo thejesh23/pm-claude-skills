@@ -50,7 +50,7 @@ we're at 270) and **(b) request the "Anthropic Verified" tier**, via the officia
 
 **Maturity / reach**
 - Published on **npm** (`pm-claude-skills`), **PyPI** (`pm-skills`), and the **MCP registry**; on **Smithery**.
-- Exports for 10 tools (ChatGPT, Gemini, Cursor, Windsurf, Aider, Cline, Continue, Zed, Roo, Obsidian).
+- Exports for 11 tools (ChatGPT, Gemini, Cursor, Windsurf, Aider, Cline, Continue, Zed, Roo, Kilo Code, Obsidian).
 - Already **listed** in the Anthropic plugin directory (at an older 205-skill snapshot — this submission refreshes it to 270 and requests verified review).
 
 ---

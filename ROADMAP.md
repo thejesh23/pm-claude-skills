@@ -20,7 +20,7 @@ or [request a skill](SKILL_REQUEST.md).
 
 ## ⏭️ Next
 
-- More **export/install targets** as the `SKILL.md` standard spreads (Kilo Code, OpenCode, Windsurf rule modes).
+- More **export/install targets** as the `SKILL.md` standard spreads (OpenCode, Windsurf rule modes). ✅ Kilo Code shipped.
 - **Skill chaining** helpers to make the [orchestration patterns](ORCHESTRATION.md) one-command.
 - Expanding **Production-Ready** coverage — promoting Stable skills as they prove out.
 

@@ -26,7 +26,7 @@ const VERSION = (() => {
 
 const NATIVE = new Set(['claude', 'hermes', 'codex', 'openclaw']);
 // Rule-file agents install generated files from exports/<agent> (ext per agent).
-const RULEFILE = { cursor: '.mdc', windsurf: '.md', aider: '.md' };
+const RULEFILE = { cursor: '.mdc', windsurf: '.md', aider: '.md', kilocode: '.md' };
 const defaultTarget = (agent) => ({
   claude: join(homedir(), '.claude', 'skills'),
   hermes: join(homedir(), '.hermes', 'skills'),
@@ -35,6 +35,7 @@ const defaultTarget = (agent) => ({
   cursor: join(process.cwd(), '.cursor', 'rules'),
   windsurf: join(process.cwd(), '.windsurf', 'rules'),
   aider: join(process.cwd(), '.aider', 'skills'),
+  kilocode: join(process.cwd(), '.kilocode', 'rules'),
 }[agent]);
 
 function parse(argv) {
@@ -74,7 +75,7 @@ function placeDir(src, dest, { link, dryRun }) {
 function add(opts) {
   const agent = opts.agent;
   if (!agent || !(NATIVE.has(agent) || agent in RULEFILE)) {
-    console.error(`Error: --agent must be one of: claude, hermes, codex, openclaw, cursor, windsurf, aider.`);
+    console.error(`Error: --agent must be one of: claude, hermes, codex, openclaw, cursor, windsurf, aider, kilocode.`);
     process.exit(2);
   }
   const skillsDir = join(PKG_ROOT, 'skills');
@@ -135,6 +136,7 @@ function add(opts) {
       cursor: `Cursor will pick up the rules in ${target} on its next session.`,
       windsurf: `Windsurf will pick up the rules in ${target} on its next session.`,
       aider: `Load any of them with:  aider --read ${join(target, '<skill>.md')}`,
+      kilocode: `Kilo Code will pick up the rules in ${target} on its next session.`,
     }[agent] || `Restart ${agent} — it auto-discovers SKILL.md skills in ${target} by their description.`;
     console.log(note);
     console.log(`\n${STAR}`);
