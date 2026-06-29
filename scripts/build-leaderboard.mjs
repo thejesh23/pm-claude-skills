@@ -70,6 +70,7 @@ const html = `<!DOCTYPE html>
   <p>LLM-judged quality (1–5) for each skill across Claude models — scored on structure, completeness, usefulness &amp; grounding by <code>${esc(data.judge || 'an LLM judge')}</code>. Skills that need an image, a live source, or that activate a behaviour aren't scored on this rubric.</p>
 </header>
 <nav class="toolbar-nav" id="toolbar" aria-label="Tools"></nav>
+<script src="i18n.js"></script>
 <script src="nav.js"></script>
 <main>
   ${isExample ? '<div class="banner">⚠️ <strong>Example data</strong> — illustrative scores so this page renders. Run <code>ANTHROPIC_API_KEY=… node evals/run-evals.mjs</code> then <code>node scripts/build-leaderboard.mjs</code> for real numbers.</div>' : ''}

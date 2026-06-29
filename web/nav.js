@@ -154,12 +154,13 @@
   });
   nav.appendChild(t);
 
-  // UI-language toggle (中 / EN) — only where i18n.js is loaded (the playground). Switches the
-  // interface chrome; the 🌐 output selector / Translate button handle the generated content.
+  // UI-language toggle (🌐 中文 / 🌐 English) — rendered on every page that loads i18n.js. Switches the
+  // interface chrome; the 🌐 output selector / Translate button handle the generated skill content.
   if (window.PMi18n) {
     var lt = document.createElement('button');
-    lt.type = 'button'; lt.className = 'tool theme-pill'; lt.title = 'Switch interface language · 切换界面语言';
-    var setLangIcon = function () { lt.textContent = window.PMi18n.getLang() === 'zh' ? 'EN' : '中'; };
+    lt.type = 'button'; lt.className = 'tool lang-pill'; lt.title = 'Switch interface language · 切换界面语言';
+    // Show a globe + the language you'd switch TO, so it reads as an obvious language control.
+    var setLangIcon = function () { lt.textContent = window.PMi18n.getLang() === 'zh' ? '🌐 English' : '🌐 中文'; };
     setLangIcon();
     lt.addEventListener('click', function () {
       window.PMi18n.setLang(window.PMi18n.getLang() === 'zh' ? 'en' : 'zh');

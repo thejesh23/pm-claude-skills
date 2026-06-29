@@ -94,6 +94,7 @@ const html = `<!DOCTYPE html>
   <p>Structured <code>SKILL.md</code> skills for Claude, ChatGPT, Gemini, Cursor, Codex &amp; Hermes. Install all with <code>npx pm-claude-skills add --agent &lt;tool&gt;</code>.</p>
 </header>
 <nav class="toolbar-nav" id="toolbar" aria-label="Tools"></nav>
+<script src="i18n.js"></script>
 <script src="nav.js"></script>
 <div class="controls"><input id="q" type="search" placeholder="Filter ${skills.length} skills…" oninput="filter()" /></div>
 <main id="main">

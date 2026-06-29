@@ -34,16 +34,16 @@
 <body>
 <header class="topbar">
   <div class="brand"><img src="assets/product-notes.jpg" alt="Product Notes" class="brand-logo" />
-    <div class="brand-text"><h1 id="hubTitle">🧭 Guided Journeys</h1><p class="tagline" id="hubTag">Step-by-step skill journeys for real goals.</p></div></div>
+    <div class="brand-text"><h1 id="hubTitle" data-i18n="hub.brandH1">🧭 Guided Journeys</h1><p class="tagline" id="hubTag" data-i18n="hub.brandTag">Step-by-step skill journeys for real goals.</p></div></div>
 </header>
 <nav class="toolbar-nav" id="toolbar" aria-label="Tools"></nav>
 
 <div class="jobs">
   <div class="jobs-hero">
-    <h1 id="heroTitle">Guided Journeys</h1>
-    <p id="heroTag">Pick a goal and follow the steps — each runs in the playground with the structure a senior pro uses.</p>
+    <h1 id="heroTitle" data-i18n="hub.heroH1">Guided Journeys</h1>
+    <p id="heroTag" data-i18n="hub.heroP">Pick a goal and follow the steps — each runs in the playground with the structure a senior pro uses.</p>
   </div>
-  <div class="jobs-note">🔒 Runs in your browser — free with a Google AI Studio key or the in-browser model (no card), or your own key. Export any result as a designed PDF.</div>
+  <div class="jobs-note" data-i18n="hub.note">🔒 Runs in your browser — free with a Google AI Studio key or the in-browser model (no card), or your own key. Export any result as a designed PDF.</div>
 
   <div id="picker" class="journey-picker" hidden></div>
   <div id="stages"></div>
@@ -61,14 +61,13 @@ const params = new URLSearchParams(location.search);
   const journey = journeys.find((x) => x.id === id);
 
   if (!journey) {
-    // No (or unknown) journey → show the picker.
-    document.getElementById('heroTitle').textContent = 'Guided Journeys';
-    document.getElementById('heroTag').textContent = 'Pick a goal — each is a curated, ordered path through the skills.';
+    // No (or unknown) journey → show the picker. Leave heroTitle/heroTag to the data-i18n chrome.
     const pick = document.getElementById('picker');
     pick.hidden = false;
     pick.innerHTML = journeys.map((j) =>
       `<a class="journey-pick" href="hub.html?j=${encodeURIComponent(j.id)}"><b>${j.emoji || ''} ${esc(j.name)}</b><span>${esc(j.tagline)}</span></a>`).join('') +
       `<a class="journey-pick" href="jobs.html"><b>💼 Job Search</b><span>Find and land your next role.</span></a>`;
+    if (window.PMi18n) window.PMi18n.apply();
     return;
   }
 
@@ -103,6 +102,7 @@ const params = new URLSearchParams(location.search);
   wrap.appendChild(back);
 })();
 </script>
+<script src="i18n.js"></script>
 <script src="nav.js"></script>
 </body>
 </html>

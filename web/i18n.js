@@ -60,6 +60,22 @@
     'page.recommendPh': { en: '🧭 Not sure which skill? Describe your task — e.g. “explain a metric drop to my CEO”', zh: '🧭 不确定用哪个技能？描述你的任务 —— 例如“向 CEO 解释某项指标下滑”' },
     'page.runBtn': { en: 'Run with my Claude key', zh: '用我的 Claude 密钥运行' },
     'page.back': { en: '← All skills', zh: '← 所有技能' },
+
+    // ── Job Search (jobs.html) ──
+    'jobs.brandH1': { en: '💼 Job Search', zh: '💼 求职' },
+    'jobs.brandTag': { en: 'Your single stop to find and land the role — free, in your browser.', zh: '找到并拿下心仪职位的一站式工具 —— 免费，全程在浏览器中完成。' },
+    'jobs.heroH1': { en: 'Land the job — one guided toolkit', zh: '拿下这份工作 —— 一套引导式工具包' },
+    'jobs.heroP': { en: 'Every step of a real search, in order: sharpen your materials, target the right roles, reach out, ace the interview, and negotiate. Each tool runs in the playground with the structure a senior pro uses.', zh: '一次真实求职的每一步，按顺序排列：打磨材料、锁定合适职位、主动出击、拿下面试、谈妥薪资。每个工具都在技能场中运行，套用资深专家的结构。' },
+    'jobs.note': { en: '🔒 Runs in your browser. Nothing is stored on a server. Export any result as a <strong>designed PDF</strong>.', zh: '🔒 在你的浏览器中运行。服务器不存储任何内容。任何结果都可导出为<strong>精美排版的 PDF</strong>。' },
+    'jobs.freekeySummary': { en: '🔑 No API key? Here are 3 free ways to run — pick one', zh: '🔑 没有 API 密钥？这里有 3 种免费运行方式 —— 任选其一' },
+    'jobs.cta': { en: '🧩 Run the whole “Land a Job” chain in the Workflow Canvas', zh: '🧩 在工作流画布中运行完整的「拿下工作」链路' },
+
+    // ── Guided Journeys (hub.html) ──
+    'hub.brandH1': { en: '🧭 Guided Journeys', zh: '🧭 学习路径' },
+    'hub.brandTag': { en: 'Step-by-step skill journeys for real goals.', zh: '为真实目标量身打造的分步技能路径。' },
+    'hub.heroH1': { en: 'Guided Journeys', zh: '学习路径' },
+    'hub.heroP': { en: 'Pick a goal and follow the steps — each runs in the playground with the structure a senior pro uses.', zh: '选定一个目标，跟着步骤走 —— 每一步都在技能场中运行，套用资深专家的结构。' },
+    'hub.note': { en: '🔒 Runs in your browser — free with a Google AI Studio key or the in-browser model (no card), or your own key. Export any result as a designed PDF.', zh: '🔒 在你的浏览器中运行 —— 用 Google AI Studio 密钥或内置模型即可免费使用（无需信用卡），也可用你自己的密钥。任何结果都可导出为精美排版的 PDF。' },
   };
 
   function getLang() { try { var l = localStorage.getItem(STORE); return LANGS.indexOf(l) !== -1 ? l : 'en'; } catch (e) { return 'en'; } }

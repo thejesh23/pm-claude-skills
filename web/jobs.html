@@ -41,19 +41,19 @@
 <body>
 <header class="topbar">
   <div class="brand"><img src="assets/product-notes.jpg" alt="Product Notes" class="brand-logo" />
-    <div class="brand-text"><h1>💼 Job Search</h1><p class="tagline">Your single stop to find and land the role — free, in your browser.</p></div></div>
+    <div class="brand-text"><h1 data-i18n="jobs.brandH1">💼 Job Search</h1><p class="tagline" data-i18n="jobs.brandTag">Your single stop to find and land the role — free, in your browser.</p></div></div>
 </header>
 <nav class="toolbar-nav" id="toolbar" aria-label="Tools"></nav>
 
 <div class="jobs">
   <div class="jobs-hero">
-    <h1>Land the job — one guided toolkit</h1>
-    <p>Every step of a real search, in order: sharpen your materials, target the right roles, reach out, ace the interview, and negotiate. Each tool runs in the playground with the structure a senior pro uses.</p>
+    <h1 data-i18n="jobs.heroH1">Land the job — one guided toolkit</h1>
+    <p data-i18n="jobs.heroP">Every step of a real search, in order: sharpen your materials, target the right roles, reach out, ace the interview, and negotiate. Each tool runs in the playground with the structure a senior pro uses.</p>
   </div>
-  <div class="jobs-note">🔒 Runs in your browser. Nothing is stored on a server. Export any result as a <strong>designed PDF</strong>.</div>
+  <div class="jobs-note" data-i18n-html="jobs.note">🔒 Runs in your browser. Nothing is stored on a server. Export any result as a <strong>designed PDF</strong>.</div>
 
   <details class="freekey">
-    <summary>🔑 No API key? Here are 3 free ways to run — pick one</summary>
+    <summary data-i18n="jobs.freekeySummary">🔑 No API key? Here are 3 free ways to run — pick one</summary>
     <div class="freekey-body">
       <ol>
         <li><b>Free Google key (no credit card, ~30s)</b> — open <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> → <em>Create API key</em> → copy it. On the <a href="index.html">Playground</a>, the provider is already set to <b>Gemini (free)</b> — paste the key once and every tool runs. Generous free tier, no card ever.</li>
@@ -67,7 +67,7 @@
   <div id="stages"></div>
 
   <div class="jobs-cta">
-    <a class="tool active" href="canvas.html" style="text-decoration:none">🧩 Run the whole “Land a Job” chain in the Workflow Canvas</a>
+    <a class="tool active" href="canvas.html" style="text-decoration:none" data-i18n="jobs.cta">🧩 Run the whole “Land a Job” chain in the Workflow Canvas</a>
   </div>
 </div>
 
@@ -123,6 +123,7 @@ STAGES.forEach((st) => {
   wrap.appendChild(sec);
 });
 </script>
+<script src="i18n.js"></script>
 <script src="nav.js"></script>
 </body>
 </html>

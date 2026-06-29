@@ -101,6 +101,7 @@ const html = `<!DOCTYPE html>
     <div class="brand-text"><h1>Community Hub</h1><p class="tagline">Share what you built. Swap recipes. Shape the library.</p></div></div>
 </header>
 <nav class="toolbar-nav" id="toolbar" aria-label="Tools"></nav>
+<script src="i18n.js"></script>
 <script src="nav.js"></script>
 <div class="hub">
   <div class="stats">

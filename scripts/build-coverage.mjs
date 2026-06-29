@@ -94,6 +94,7 @@ const html = `<!DOCTYPE html>
   <p>Which bundles are scored on the <a href="leaderboard.html">leaderboard</a>, and what's left to evaluate. Skills that need an image, a live source, or that activate a behaviour aren't eval-applicable and are excluded here.</p>
 </header>
 <nav class="toolbar-nav" id="toolbar" aria-label="Tools"></nav>
+<script src="i18n.js"></script>
 <script src="nav.js"></script>
 <main>
   ${isExample ? '<div class="banner">⚠️ <strong>Example data</strong> — illustrative coverage so this page renders. Real coverage appears once <code>evals/results.json</code> is populated.</div>' : ''}
