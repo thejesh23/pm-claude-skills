@@ -112,6 +112,14 @@ const PLATFORMS = {
     // Drop into `.roo/rules/` in your project; Roo Code loads them as rules.
     render: ({ body }) => `${body.trim()}\n`,
   },
+  kilocode: {
+    label: 'Kilo Code — .kilocode/rules/ rule (.md)',
+    dir: 'exports/kilocode',
+    file: (s) => `${s.name}.md`,
+    groupByBundle: true,
+    // Drop into `.kilocode/rules/` in your project; Kilo Code loads them as rules.
+    render: ({ body }) => `${body.trim()}\n`,
+  },
   obsidian: {
     label: 'Obsidian — vault skill note (AI-plugin prompt)',
     dir: 'exports/obsidian',

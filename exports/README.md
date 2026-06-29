@@ -19,6 +19,7 @@ Currently exporting **313 skills** to:
 - **Continue.dev — rule (.md)** → `exports/continue/`
 - **Zed — .rules file (.md)** → `exports/zed/`
 - **Roo Code — .roo/rules/ rule (.md)** → `exports/roo/`
+- **Kilo Code — .kilocode/rules/ rule (.md)** → `exports/kilocode/`
 - **Obsidian — vault skill note (AI-plugin prompt)** → `exports/obsidian/`
 
 Adding a new platform is a few lines in the `PLATFORMS` registry of

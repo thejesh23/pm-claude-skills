@@ -34,13 +34,14 @@ default_target() {
     cursor)   echo "$PWD/.cursor/rules" ;;
     windsurf) echo "$PWD/.windsurf/rules" ;;
     aider)    echo "$PWD/.aider/skills" ;;
+    kilocode) echo "$PWD/.kilocode/rules" ;;
     *) return 1 ;;
   esac
 }
 
 list_agents() {
   echo "Supported agents and default targets:"
-  for a in claude hermes codex openclaw cursor windsurf aider; do
+  for a in claude hermes codex openclaw cursor windsurf aider kilocode; do
     printf "  %-9s %s\n" "$a" "$(default_target "$a")"
   done
   echo
@@ -83,7 +84,7 @@ count=0
 if [ "$DRYRUN" = 1 ]; then echo "[dry-run] Installing skills for '$AGENT' into $TARGET";
 else echo "Installing skills for '$AGENT' into $TARGET"; mkdir -p "$TARGET"; fi
 
-if [ "$AGENT" = "cursor" ] || [ "$AGENT" = "windsurf" ] || [ "$AGENT" = "aider" ]; then
+if [ "$AGENT" = "cursor" ] || [ "$AGENT" = "windsurf" ] || [ "$AGENT" = "aider" ] || [ "$AGENT" = "kilocode" ]; then
   # Install generated rule/conventions files (flattened) into the target dir.
   EXPORT_DIR="$REPO_DIR/exports/$AGENT"
   EXT='*.md'; [ "$AGENT" = "cursor" ] && EXT='*.mdc'
@@ -134,6 +135,7 @@ else
     cursor)   echo "Cursor will pick up the rules in $TARGET on its next session." ;;
     windsurf) echo "Windsurf will pick up the rules in $TARGET on its next session." ;;
     aider)    echo "Load any of them with:  aider --read $TARGET/<skill>.md" ;;
+    kilocode) echo "Kilo Code will pick up the rules in $TARGET on its next session." ;;
     *) echo "Restart $AGENT — it auto-discovers SKILL.md skills in $TARGET by their description." ;;
   esac
 fi
