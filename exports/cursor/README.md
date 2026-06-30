@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-360 skills exported. Copy a `.mdc rule` into the tool to use it.
+366 skills exported. Copy a `.mdc rule` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -64,6 +64,7 @@
 | Collections Email | `pm-accounting` | `pm-accounting/collections-email/collections-email.mdc` |
 | Community Management Playbook | `pm-social` | `pm-social/community-management-playbook/community-management-playbook.mdc` |
 | Company Brief | `pm-jobsearch` | `pm-jobsearch/company-brief/company-brief.mdc` |
+| Comparative Market Analysis | `pm-realestate` | `pm-realestate/comparative-market-analysis/comparative-market-analysis.mdc` |
 | Competitive Analysis | `pm-essentials` | `pm-essentials/competitive-analysis/competitive-analysis.mdc` |
 | Competitive Intelligence Monitor | `pm-strategy` | `pm-strategy/competitive-intelligence-monitor/competitive-intelligence-monitor.mdc` |
 | Competitor Signal Tracker | `pm-strategy` | `pm-strategy/competitor-signal-tracker/competitor-signal-tracker.mdc` |
@@ -231,6 +232,7 @@
 | On-Call Runbook | `pm-engineering` | `pm-engineering/oncall-runbook/oncall-runbook.mdc` |
 | One-on-One Prep | `pm-career` | `pm-career/one-on-one-prep/one-on-one-prep.mdc` |
 | One-Pager | `pm-personal` | `pm-personal/one-pager/one-pager.mdc` |
+| Open House Plan | `pm-realestate` | `pm-realestate/open-house-plan/open-house-plan.mdc` |
 | Org Chart | `pm-visuals` | `pm-visuals/org-chart/org-chart.mdc` |
 | Outreach Message | `pm-jobsearch` | `pm-jobsearch/outreach-message/outreach-message.mdc` |
 | Paid Acquisition Plan | `pm-growth` | `pm-growth/paid-acquisition-plan/paid-acquisition-plan.mdc` |
@@ -264,6 +266,9 @@
 | Promotion Packet | `pm-career` | `pm-career/promotion-packet/promotion-packet.mdc` |
 | Promotion Plan | `pm-ecommerce` | `pm-ecommerce/promotion-plan/promotion-plan.mdc` |
 | Prompt Optimizer | `pm-ai` | `pm-ai/prompt-optimizer/prompt-optimizer.mdc` |
+| Property Investment Analysis | `pm-realestate` | `pm-realestate/property-investment-analysis/property-investment-analysis.mdc` |
+| Property Listing | `pm-realestate` | `pm-realestate/property-listing/property-listing.mdc` |
+| Property Offer Letter | `pm-realestate` | `pm-realestate/property-offer-letter/property-offer-letter.mdc` |
 | Proposal Writer | `pm-sales` | `pm-sales/proposal-writer/proposal-writer.mdc` |
 | QA Release Sign-off | `pm-qa` | `pm-qa/qa-release-signoff/qa-release-signoff.mdc` |
 | QBR Deck | `pm-cs` | `pm-cs/qbr-deck/qbr-deck.mdc` |
@@ -348,6 +353,7 @@
 | Tech Radar | `pm-engineering` | `pm-engineering/tech-radar/tech-radar.mdc` |
 | Technical Debt Register | `pm-engineering` | `pm-engineering/technical-debt-register/technical-debt-register.mdc` |
 | Technical Spec Template | `pm-delivery` | `pm-delivery/technical-spec-template/technical-spec-template.mdc` |
+| Tenant Screening Guide | `pm-realestate` | `pm-realestate/tenant-screening-guide/tenant-screening-guide.mdc` |
 | Test Case Writer | `pm-qa` | `pm-qa/test-case-writer/test-case-writer.mdc` |
 | Test Strategy Document | `pm-engineering` | `pm-engineering/test-strategy-doc/test-strategy-doc.mdc` |
 | Thumbnail Creator Skill (via Gemini) | `pm-writers` | `pm-writers/thumbnail-creator/thumbnail-creator.mdc` |

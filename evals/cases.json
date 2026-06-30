@@ -332,6 +332,30 @@
     {
       "skill": "api-test-plan",
       "input": "Plan tests for a REST endpoint: POST /api/v1/orders. It creates an order from a JSON body { items: [{sku, qty}], shippingAddress }, requires a bearer token with the 'orders:write' scope, returns 201 with the created order on success, 400 on validation errors, 401/403 for auth issues, and 409 if an item is out of stock. Rate-limited to 100 req/min. Give me functional, validation, auth/authz, negative, and contract cases, plus non-functional notes."
+    },
+    {
+      "skill": "property-listing",
+      "input": "Write a listing description for a 3-bedroom, 2-bath single-family home (1,850 sq ft) in a walkable neighbourhood. Standout features: a renovated kitchen with quartz counters and a large island, an open-plan living/dining area with lots of natural light, a private fenced backyard with a deck, and a 2-car garage. Close to parks, cafes, and a train station. Upscale-but-warm tone for MLS and Zillow. Don't invent any facts; flag anything to confirm."
+    },
+    {
+      "skill": "comparative-market-analysis",
+      "input": "Build a CMA for a 3-bed/2-bath, 1,850 sq ft home in good condition. Recent comparable sales nearby: (A) 3/2, 1,800 sq ft, sold $620k 1 month ago, similar condition; (B) 4/2, 2,100 sq ft, sold $690k 2 months ago, larger; (C) 3/2, 1,700 sq ft, sold $585k 3 weeks ago, needs updating. Market is rising, low inventory, homes selling in ~2 weeks. Seller wants to sell within 60 days but maximize price. Give adjustments, a value range, and a pricing recommendation."
+    },
+    {
+      "skill": "property-offer-letter",
+      "input": "Write an offer cover letter for buyers (Sam and Alex) on a home they love. What won them over: the big kitchen island (they cook constantly), the light-filled living room, and the garden for their vegetable patch. Their offer is strong: pre-approved financing, a competitive price, flexible on the closing date to fit the sellers, and minimal contingencies. Warm and sincere tone. Keep it about the home and the offer, and flag the fair-housing considerations."
+    },
+    {
+      "skill": "property-investment-analysis",
+      "input": "Analyze a rental investment. Purchase price $300,000, ~$8,000 closing costs, no rehab. Financing: 25% down, 7% interest, 30-year loan. Rent $2,400/month. I haven't given you operating costs — use realistic placeholder assumptions for vacancy, maintenance, property management, taxes, insurance, and a capex reserve, and flag them. My target is at least 8% cash-on-cash and positive monthly cash flow. Show the formulas, the returns, a verdict, and a downside check."
+    },
+    {
+      "skill": "open-house-plan",
+      "input": "Plan an open house for my listing this Saturday 12-3pm: a 3-bed/2-bath family home listed at $625k in a desirable school district. I have MLS/Zillow, social media, an email list of buyers and agents, yard signage, and a small boost budget. Goal is to sell this home and pick up buyer leads. Give me the timing, promotion plan, prep/staging checklist, a day-of run sheet, lead capture, and follow-up."
+    },
+    {
+      "skill": "tenant-screening-guide",
+      "input": "Help me design a fair tenant screening process for a single-family rental I'm listing at $2,000/month in the US. I want reliable tenants but I want to stay compliant and consistent. Walk me through objective criteria (income, credit, rental history, verification), the application and checks I should run with consent, how to evaluate applicants consistently, applicant communication including adverse action, and the fair-housing guardrails. Flag anything I must confirm with a local attorney."
     }
   ]
 }

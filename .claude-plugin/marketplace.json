@@ -9,6 +9,14 @@
   },
   "plugins": [
     {
+      "name": "pm-realestate",
+      "description": "Real-estate skills for agents, buyers, and investors: Property Listing, Comparative Market Analysis, Property Offer Letter, Property Investment Analysis, Open House Plan, and Tenant Screening Guide. Market, price, and evaluate property — Fair-Housing-aware drafting aids, not legal advice.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-realestate",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
       "name": "pm-qa",
       "description": "QA & testing skills: Test Case Writer, Bug Report, Exploratory Test Charter, Regression Test Plan, QA Release Sign-off, and API Test Plan. Find bugs early and ship with evidence, not vibes.",
       "version": "1.0.0",

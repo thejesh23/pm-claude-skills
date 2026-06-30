@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-360 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
+366 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -64,6 +64,7 @@
 | Collections Email | `pm-accounting` | `pm-accounting/collections-email/SYSTEM_PROMPT.md` |
 | Community Management Playbook | `pm-social` | `pm-social/community-management-playbook/SYSTEM_PROMPT.md` |
 | Company Brief | `pm-jobsearch` | `pm-jobsearch/company-brief/SYSTEM_PROMPT.md` |
+| Comparative Market Analysis | `pm-realestate` | `pm-realestate/comparative-market-analysis/SYSTEM_PROMPT.md` |
 | Competitive Analysis | `pm-essentials` | `pm-essentials/competitive-analysis/SYSTEM_PROMPT.md` |
 | Competitive Intelligence Monitor | `pm-strategy` | `pm-strategy/competitive-intelligence-monitor/SYSTEM_PROMPT.md` |
 | Competitor Signal Tracker | `pm-strategy` | `pm-strategy/competitor-signal-tracker/SYSTEM_PROMPT.md` |
@@ -231,6 +232,7 @@
 | On-Call Runbook | `pm-engineering` | `pm-engineering/oncall-runbook/SYSTEM_PROMPT.md` |
 | One-on-One Prep | `pm-career` | `pm-career/one-on-one-prep/SYSTEM_PROMPT.md` |
 | One-Pager | `pm-personal` | `pm-personal/one-pager/SYSTEM_PROMPT.md` |
+| Open House Plan | `pm-realestate` | `pm-realestate/open-house-plan/SYSTEM_PROMPT.md` |
 | Org Chart | `pm-visuals` | `pm-visuals/org-chart/SYSTEM_PROMPT.md` |
 | Outreach Message | `pm-jobsearch` | `pm-jobsearch/outreach-message/SYSTEM_PROMPT.md` |
 | Paid Acquisition Plan | `pm-growth` | `pm-growth/paid-acquisition-plan/SYSTEM_PROMPT.md` |
@@ -264,6 +266,9 @@
 | Promotion Packet | `pm-career` | `pm-career/promotion-packet/SYSTEM_PROMPT.md` |
 | Promotion Plan | `pm-ecommerce` | `pm-ecommerce/promotion-plan/SYSTEM_PROMPT.md` |
 | Prompt Optimizer | `pm-ai` | `pm-ai/prompt-optimizer/SYSTEM_PROMPT.md` |
+| Property Investment Analysis | `pm-realestate` | `pm-realestate/property-investment-analysis/SYSTEM_PROMPT.md` |
+| Property Listing | `pm-realestate` | `pm-realestate/property-listing/SYSTEM_PROMPT.md` |
+| Property Offer Letter | `pm-realestate` | `pm-realestate/property-offer-letter/SYSTEM_PROMPT.md` |
 | Proposal Writer | `pm-sales` | `pm-sales/proposal-writer/SYSTEM_PROMPT.md` |
 | QA Release Sign-off | `pm-qa` | `pm-qa/qa-release-signoff/SYSTEM_PROMPT.md` |
 | QBR Deck | `pm-cs` | `pm-cs/qbr-deck/SYSTEM_PROMPT.md` |
@@ -348,6 +353,7 @@
 | Tech Radar | `pm-engineering` | `pm-engineering/tech-radar/SYSTEM_PROMPT.md` |
 | Technical Debt Register | `pm-engineering` | `pm-engineering/technical-debt-register/SYSTEM_PROMPT.md` |
 | Technical Spec Template | `pm-delivery` | `pm-delivery/technical-spec-template/SYSTEM_PROMPT.md` |
+| Tenant Screening Guide | `pm-realestate` | `pm-realestate/tenant-screening-guide/SYSTEM_PROMPT.md` |
 | Test Case Writer | `pm-qa` | `pm-qa/test-case-writer/SYSTEM_PROMPT.md` |
 | Test Strategy Document | `pm-engineering` | `pm-engineering/test-strategy-doc/SYSTEM_PROMPT.md` |
 | Thumbnail Creator Skill (via Gemini) | `pm-writers` | `pm-writers/thumbnail-creator/SYSTEM_PROMPT.md` |

@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-360 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
+366 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -64,6 +64,7 @@
 | Collections Email | `pm-accounting` | `pm-accounting/collections-email/GEM_INSTRUCTIONS.md` |
 | Community Management Playbook | `pm-social` | `pm-social/community-management-playbook/GEM_INSTRUCTIONS.md` |
 | Company Brief | `pm-jobsearch` | `pm-jobsearch/company-brief/GEM_INSTRUCTIONS.md` |
+| Comparative Market Analysis | `pm-realestate` | `pm-realestate/comparative-market-analysis/GEM_INSTRUCTIONS.md` |
 | Competitive Analysis | `pm-essentials` | `pm-essentials/competitive-analysis/GEM_INSTRUCTIONS.md` |
 | Competitive Intelligence Monitor | `pm-strategy` | `pm-strategy/competitive-intelligence-monitor/GEM_INSTRUCTIONS.md` |
 | Competitor Signal Tracker | `pm-strategy` | `pm-strategy/competitor-signal-tracker/GEM_INSTRUCTIONS.md` |
@@ -231,6 +232,7 @@
 | On-Call Runbook | `pm-engineering` | `pm-engineering/oncall-runbook/GEM_INSTRUCTIONS.md` |
 | One-on-One Prep | `pm-career` | `pm-career/one-on-one-prep/GEM_INSTRUCTIONS.md` |
 | One-Pager | `pm-personal` | `pm-personal/one-pager/GEM_INSTRUCTIONS.md` |
+| Open House Plan | `pm-realestate` | `pm-realestate/open-house-plan/GEM_INSTRUCTIONS.md` |
 | Org Chart | `pm-visuals` | `pm-visuals/org-chart/GEM_INSTRUCTIONS.md` |
 | Outreach Message | `pm-jobsearch` | `pm-jobsearch/outreach-message/GEM_INSTRUCTIONS.md` |
 | Paid Acquisition Plan | `pm-growth` | `pm-growth/paid-acquisition-plan/GEM_INSTRUCTIONS.md` |
@@ -264,6 +266,9 @@
 | Promotion Packet | `pm-career` | `pm-career/promotion-packet/GEM_INSTRUCTIONS.md` |
 | Promotion Plan | `pm-ecommerce` | `pm-ecommerce/promotion-plan/GEM_INSTRUCTIONS.md` |
 | Prompt Optimizer | `pm-ai` | `pm-ai/prompt-optimizer/GEM_INSTRUCTIONS.md` |
+| Property Investment Analysis | `pm-realestate` | `pm-realestate/property-investment-analysis/GEM_INSTRUCTIONS.md` |
+| Property Listing | `pm-realestate` | `pm-realestate/property-listing/GEM_INSTRUCTIONS.md` |
+| Property Offer Letter | `pm-realestate` | `pm-realestate/property-offer-letter/GEM_INSTRUCTIONS.md` |
 | Proposal Writer | `pm-sales` | `pm-sales/proposal-writer/GEM_INSTRUCTIONS.md` |
 | QA Release Sign-off | `pm-qa` | `pm-qa/qa-release-signoff/GEM_INSTRUCTIONS.md` |
 | QBR Deck | `pm-cs` | `pm-cs/qbr-deck/GEM_INSTRUCTIONS.md` |
@@ -348,6 +353,7 @@
 | Tech Radar | `pm-engineering` | `pm-engineering/tech-radar/GEM_INSTRUCTIONS.md` |
 | Technical Debt Register | `pm-engineering` | `pm-engineering/technical-debt-register/GEM_INSTRUCTIONS.md` |
 | Technical Spec Template | `pm-delivery` | `pm-delivery/technical-spec-template/GEM_INSTRUCTIONS.md` |
+| Tenant Screening Guide | `pm-realestate` | `pm-realestate/tenant-screening-guide/GEM_INSTRUCTIONS.md` |
 | Test Case Writer | `pm-qa` | `pm-qa/test-case-writer/GEM_INSTRUCTIONS.md` |
 | Test Strategy Document | `pm-engineering` | `pm-engineering/test-strategy-doc/GEM_INSTRUCTIONS.md` |
 | Thumbnail Creator Skill (via Gemini) | `pm-writers` | `pm-writers/thumbnail-creator/GEM_INSTRUCTIONS.md` |
