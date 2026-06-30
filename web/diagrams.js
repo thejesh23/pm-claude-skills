@@ -107,5 +107,26 @@
     }).catch(function () { /* mermaid CDN unreachable — leave code blocks as-is */ });
   }
 
-  g.PMDiagrams = { enhance: enhance, load: loadMermaid };
+  // Replace every inline diagram <svg> under root with an equivalent raster <img> (data URL).
+  // html2canvas (used by the "Save as image" card) can't reliably snapshot a live SVG node, so we
+  // flatten diagrams to images first. Resolves once all conversions finish. Safe if there are none.
+  function rasterize(root) {
+    if (!root) return Promise.resolve();
+    var svgs = [].slice.call(root.querySelectorAll('svg'));
+    return Promise.all(svgs.map(function (svg) {
+      return new Promise(function (resolve) {
+        var vb = svg.viewBox && svg.viewBox.baseVal;
+        var w = (vb && vb.width) || svg.clientWidth || 800;
+        var h = (vb && vb.height) || svg.clientHeight || 600;
+        var xml = new XMLSerializer().serializeToString(svg);
+        var img = new Image();
+        img.onload = function () { img.style.maxWidth = '100%'; img.style.height = 'auto'; if (svg.parentNode) svg.replaceWith(img); resolve(); };
+        img.onerror = function () { resolve(); };
+        img.width = w; img.height = h;
+        img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(xml);
+      });
+    }));
+  }
+
+  g.PMDiagrams = { enhance: enhance, load: loadMermaid, rasterize: rasterize };
 })(window);

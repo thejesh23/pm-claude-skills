@@ -434,19 +434,29 @@ function initBrainSave() {
 // ---------- Save output as a branded PNG card ----------
 async function shareAsImage() {
   if (!current) return;
-  const raw = (el('output').dataset.raw || '').trim();
+  const live = el('output');
+  const raw = (live.dataset.raw || '').trim();
   if (!raw) return setStatus('Run the skill first, then save the image.', true);
   if (typeof html2canvas === 'undefined') return setStatus('Image library not loaded — try again.', true);
+  // Build the card body from the ALREADY-RENDERED output so rendered diagrams are included
+  // (the raw markdown only has the ```mermaid source). Fall back to parsing raw if needed.
+  let bodyHtml;
+  const clone = live.cloneNode(true);
+  clone.querySelectorAll('.diagram-tools, .sample-banner, .diagram-err').forEach((n) => n.remove());
+  bodyHtml = clone.innerHTML.trim() || DOMPurify.sanitize(marked.parse(raw));
   const card = document.createElement('div');
   card.className = 'img-card';
+  if (live.getAttribute('dir') === 'rtl') card.setAttribute('dir', 'rtl');
   card.innerHTML =
     `<div class="ic-top"><span>🧠 PM Skills</span>${current.eval ? `<span class="ic-badge">✅ ${current.eval.score}/5</span>` : ''}</div>` +
     `<div class="ic-title">${escapeHtml(current.title)}</div>` +
-    `<div class="ic-body markdown">${DOMPurify.sanitize(marked.parse(raw))}</div>` +
+    `<div class="ic-body markdown">${bodyHtml}</div>` +
     `<div class="ic-foot">Made with PM Skills · mohitagw15856.github.io/pm-claude-skills</div>`;
   document.body.appendChild(card);
   setStatus('Rendering image…');
   try {
+    // Flatten any inline diagram SVGs to raster images — html2canvas can't snapshot live SVG nodes.
+    if (window.PMDiagrams) await PMDiagrams.rasterize(card);
     const canvas = await html2canvas(card, { backgroundColor: '#0d0f14', scale: 2, windowWidth: 760 });
     const a = document.createElement('a');
     a.href = canvas.toDataURL('image/png');
