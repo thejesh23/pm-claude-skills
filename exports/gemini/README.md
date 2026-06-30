@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-329 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
+330 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -41,6 +41,7 @@
 | Case Study Write-up | `pm-consulting` | `pm-consulting/case-study-writeup/GEM_INSTRUCTIONS.md` |
 | Change Management Plan | `pm-hr` | `pm-hr/change-management-plan/GEM_INSTRUCTIONS.md` |
 | Changelog Generator | `pm-engineering` | `pm-engineering/changelog-generator/GEM_INSTRUCTIONS.md` |
+| Chart | `pm-visuals` | `pm-visuals/chart/GEM_INSTRUCTIONS.md` |
 | Chart Data Extractor | `pm-data` | `pm-data/chart-data-extractor/GEM_INSTRUCTIONS.md` |
 | Churn Analysis | `pm-cs` | `pm-cs/churn-analysis/GEM_INSTRUCTIONS.md` |
 | CI/CD Playbook | `pm-engineering` | `pm-engineering/cicd-playbook/GEM_INSTRUCTIONS.md` |

@@ -113,6 +113,7 @@ async function init() {
   updateHistoryBtn();
   el('shareHubBtn').addEventListener('click', shareToHub);
   el('imgBtn').addEventListener('click', shareAsImage);
+  if (el('presentBtn')) el('presentBtn').addEventListener('click', presentOutput);
   if (el('translateBtn')) el('translateBtn').addEventListener('click', translateOutput);
   el('fbUp').addEventListener('click', () => sendFeedback('up'));
   el('fbDown').addEventListener('click', () => sendFeedback('down'));
@@ -431,6 +432,16 @@ function initBrainSave() {
   el('brainSaveText').addEventListener('keydown', (e) => { if (e.key === 'Enter') el('brainSaveGo').click(); });
 }
 
+// ---------- Present the output as a fullscreen slideshow ----------
+function presentOutput() {
+  if (!current) return;
+  const raw = (el('output').dataset.raw || '').trim();
+  if (!raw) return setStatus('Run a skill first, then present the result.', true);
+  if (!window.PMPresent) return setStatus('Present mode not loaded — try again.', true);
+  if (window.pmTrack) pmTrack('present/' + current.name);
+  PMPresent.start(raw, current.title);
+}
+
 // ---------- Save output as a branded PNG card ----------
 async function shareAsImage() {
   if (!current) return;
@@ -440,6 +451,11 @@ async function shareAsImage() {
   if (typeof html2canvas === 'undefined') return setStatus('Image library not loaded — try again.', true);
   // Build the card body from the ALREADY-RENDERED output so rendered diagrams are included
   // (the raw markdown only has the ```mermaid source). Fall back to parsing raw if needed.
+  // Snapshot any chart <canvas> pixels from the LIVE node first — cloneNode does not copy a
+  // canvas's drawn bitmap, so we capture data URLs here and re-attach them after cloning.
+  const chartPngs = [].slice.call(live.querySelectorAll('canvas')).map((c) => {
+    try { return c.toDataURL('image/png'); } catch (e) { return null; }
+  });
   let bodyHtml;
   const clone = live.cloneNode(true);
   clone.querySelectorAll('.diagram-tools, .sample-banner, .diagram-err').forEach((n) => n.remove());
@@ -457,6 +473,14 @@ async function shareAsImage() {
   try {
     // Flatten any inline diagram SVGs to raster images — html2canvas can't snapshot live SVG nodes.
     if (window.PMDiagrams) await PMDiagrams.rasterize(card);
+    // Swap each cloned (blank) chart canvas for the image captured from the live canvas.
+    [].slice.call(card.querySelectorAll('canvas')).forEach((cv, i) => {
+      if (!chartPngs[i] || !cv.parentNode) return;
+      const img = new Image();
+      img.src = chartPngs[i];
+      img.style.maxWidth = '100%';
+      cv.replaceWith(img);
+    });
     const canvas = await html2canvas(card, { backgroundColor: '#0d0f14', scale: 2, windowWidth: 760 });
     const a = document.createElement('a');
     a.href = canvas.toDataURL('image/png');
@@ -621,6 +645,7 @@ function showSample(s) {
   const banner = `<div class="sample-banner">📄 <strong>Sample output</strong> — pre-generated for the example input below. Fill the form and hit <strong>${escapeHtml(runLabel())}</strong> to make your own.<br /><span class="sample-input">Example input: ${escapeHtml((x.input || '').slice(0, 220))}${(x.input || '').length > 220 ? '…' : ''}</span></div>`;
   out.innerHTML = banner + DOMPurify.sanitize(marked.parse(x.output));
   if (window.PMDiagrams) PMDiagrams.enhance(out, s.name);
+  if (window.PMCharts) PMCharts.enhance(out, s.name);
   setStatus(`📄 Showing a pre-generated sample${x.source ? ' (' + x.source + ')' : ''} — no key used.`);
   el('outputWrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
@@ -1010,8 +1035,11 @@ function buildUserMessage(fields) {
 function renderMarkdown(node, text, streaming) {
   node.innerHTML = DOMPurify.sanitize(marked.parse(text, { breaks: true }));
   node.classList.toggle('cursor', streaming);
-  // Once streaming settles, turn any ```mermaid blocks into real diagrams (with SVG/PNG export).
-  if (!streaming && window.PMDiagrams) PMDiagrams.enhance(node, current && current.name);
+  // Once streaming settles, turn any ```mermaid / ```chart blocks into real diagrams & charts.
+  if (!streaming) {
+    if (window.PMDiagrams) PMDiagrams.enhance(node, current && current.name);
+    if (window.PMCharts) PMCharts.enhance(node, current && current.name);
+  }
 }
 
 function downloadOutput() {

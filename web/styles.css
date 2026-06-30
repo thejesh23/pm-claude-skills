@@ -237,9 +237,24 @@ button.ghost:hover { border-color: var(--accent); background: var(--panel); }
 /* Rendered ```mermaid diagrams (PMDiagrams) */
 .diagram { margin: 16px 0; padding: 14px; background: var(--panel-2); border: 1px solid var(--border); border-radius: 12px; text-align: center; position: relative; }
 .diagram svg { max-width: 100%; height: auto; }
+.diagram.chart .chart-holder { position: relative; height: 340px; }
 .diagram-tools { display: flex; gap: 6px; justify-content: flex-end; margin-top: 8px; }
 .diagram-tools button { font-size: 12px; padding: 3px 9px; }
 .diagram-err { font-size: 12.5px; color: var(--muted); margin: 8px 0 -4px; }
+/* Present mode — fullscreen slideshow (PMPresent) */
+.present-overlay { position: fixed; inset: 0; z-index: 9999; background: #0b0d12; display: flex; flex-direction: column; }
+.present-stage { flex: 1; display: grid; place-items: center; padding: 4vh 6vw; overflow: hidden; cursor: pointer; }
+.present-slide { width: 100%; max-width: 980px; max-height: 88vh; overflow-y: auto; font-size: clamp(16px, 2.1vw, 23px); line-height: 1.6; }
+.present-slide h1 { font-size: clamp(30px, 5vw, 54px); margin: .1em 0 .5em; color: var(--accent-2); }
+.present-slide h2 { font-size: clamp(24px, 3.4vw, 38px); margin: 0 0 .6em; border-bottom: 1px solid var(--border); padding-bottom: .25em; }
+.present-slide h3 { font-size: clamp(19px, 2.4vw, 27px); }
+.present-slide ul, .present-slide ol { padding-left: 1.3em; } .present-slide li { margin: .35em 0; }
+.present-slide .diagram { background: transparent; border: 0; }
+.present-bar { display: flex; align-items: center; gap: 12px; justify-content: center; padding: 10px; background: rgba(0,0,0,.4); border-top: 1px solid var(--border); }
+.present-btn { background: var(--panel-2); border: 1px solid var(--border); color: var(--text); border-radius: 8px; cursor: pointer; font-size: 20px; line-height: 1; padding: 6px 14px; }
+.present-btn:hover { border-color: var(--accent); }
+.present-count { color: var(--muted); font-size: 14px; min-width: 64px; text-align: center; }
+.present-close { margin-left: 18px; }
 .markdown table { border-collapse: collapse; width: 100%; margin: 12px 0; }
 .markdown th, .markdown td { border: 1px solid var(--border); padding: 7px 10px; text-align: left; font-size: 13px; }
 .markdown th { background: var(--panel-2); }
