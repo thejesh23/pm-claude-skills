@@ -308,6 +308,30 @@
     {
       "skill": "cash-flow-forecast",
       "input": "Build me a 13-week cash flow forecast structure for my agency. Starting cash is $60,000. Expected inflows: two retainer clients paying $12,000/month (around the 5th), plus a $25,000 project invoice I expect to collect in week 6. Outflows: payroll ~$28,000/month (15th and end of month), rent $4,000/month, software ~$1,500/month, and quarterly tax of $18,000 in week 9. Show the model, a worked example, where the low point is, and what to do if cash gets tight."
+    },
+    {
+      "skill": "test-case-writer",
+      "input": "Write test cases for a login feature. Acceptance criteria: a user can log in with a valid email and password; wrong credentials show an error without logging in; after 5 failed attempts the account is locked for 15 minutes; the email field must be a valid format; 'remember me' keeps the session for 30 days. Web app, UI testing. Cover happy path, validation, negative, and edge cases, and trace each case to the criteria."
+    },
+    {
+      "skill": "bug-report",
+      "input": "Turn this into a proper bug report: 'The CSV export is broken.' Context I can give: on the Reports page, clicking 'Export to CSV' when a report has more than about 1,000 rows just spins and never downloads; under 1,000 rows it works. Happens every time on Chrome 120 on Windows; a colleague saw it on Safari too. There's a 500 error in the network tab on the /export request. I'm on the Pro plan as an admin. Build version 4.7.2."
+    },
+    {
+      "skill": "exploratory-test-charter",
+      "input": "Plan exploratory testing for a new checkout flow on an e-commerce site. It's brand new, integrates a third-party payment provider, supports guest and logged-in checkout, multiple payment methods, discount codes, and address validation. We have about half a day. Give me risk-prioritized, timeboxed charters with test ideas and oracles."
+    },
+    {
+      "skill": "regression-test-plan",
+      "input": "We're releasing a change to our checkout's discount-code logic. It touches the cart total calculation and the payment step, which are shared with the rest of checkout. Critical paths that must never break: add-to-cart, checkout, and payment. A full regression run currently takes about 6 hours and we have limited time before release. Build a risk-based regression plan with tiers, what to skip, automation candidates, and a run strategy."
+    },
+    {
+      "skill": "qa-release-signoff",
+      "input": "Write a QA sign-off for release v4.8.0 shipping Friday. Testing done: full regression on web (98% pass), smoke on mobile, and exploratory on the new checkout. Open defects: BUG-101 (major — discount code occasionally not applied on first try, workaround: refresh), BUG-118 (minor — alignment issue on the confirmation page). The new checkout has a feature flag and we can roll back. Mobile wasn't fully regression-tested. Give me a go/no-go with conditions, the risk, and a rollback note."
+    },
+    {
+      "skill": "api-test-plan",
+      "input": "Plan tests for a REST endpoint: POST /api/v1/orders. It creates an order from a JSON body { items: [{sku, qty}], shippingAddress }, requires a bearer token with the 'orders:write' scope, returns 201 with the created order on success, 400 on validation errors, 401/403 for auth issues, and 409 if an item is out of stock. Rate-limited to 100 req/min. Give me functional, validation, auth/authz, negative, and contract cases, plus non-functional notes."
     }
   ]
 }
