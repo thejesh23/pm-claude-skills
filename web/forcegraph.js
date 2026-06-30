@@ -77,6 +77,8 @@
       ctx.scale(view.k, view.k);
       links.forEach(function (l) { opts.drawLink(ctx, idMap[l.source], idMap[l.target], l, l === null); });
       nodes.forEach(function (n) { opts.drawNode(ctx, n, n === hover, view.k); });
+      // Optional overlay drawn on top of everything, still inside the world transform.
+      if (opts.afterDraw) opts.afterDraw(ctx, view, idMap);
       ctx.restore();
     }
 

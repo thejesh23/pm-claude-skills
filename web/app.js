@@ -114,6 +114,7 @@ async function init() {
   el('shareHubBtn').addEventListener('click', shareToHub);
   el('imgBtn').addEventListener('click', shareAsImage);
   if (el('presentBtn')) el('presentBtn').addEventListener('click', presentOutput);
+  if (el('visualizeBtn')) el('visualizeBtn').addEventListener('click', visualizeOutput);
   if (el('translateBtn')) el('translateBtn').addEventListener('click', translateOutput);
   el('fbUp').addEventListener('click', () => sendFeedback('up'));
   el('fbDown').addEventListener('click', () => sendFeedback('down'));
@@ -828,6 +829,40 @@ async function translateOutput() {
     setStatus(e.name === 'AbortError' ? 'Stopped.' : (e.message || 'Translation failed.'), true);
   } finally {
     el('translateBtn').disabled = false;
+    controller = null;
+  }
+}
+
+// Ask the model for the single best-fit diagram/chart for the current output, then append + render it.
+async function visualizeOutput() {
+  const out = el('output');
+  const md = (out && out.dataset.raw || '').trim();
+  if (!md) return setStatus('Run a skill first, then add a visual.', true);
+  const key = el('apiKey').value.trim();
+  if (!key && !P().local) { flagMissingKey(); return setStatus(`👆 Add your ${P().name} key (or pick In-browser) to visualize.`, true); }
+  if (/```(mermaid|chart)/.test(md)) return setStatus('This result already has a diagram/chart.', true);
+  if (window.pmTrack) pmTrack('visualize/' + (current ? current.name : ''));
+  el('visualizeBtn').disabled = true;
+  setStatus('✨ Creating the best-fit visual…');
+  controller = new AbortController();
+  const system = `You turn a document into ONE visual that adds the most insight. Read it and output a SINGLE fenced code block — nothing else, no preamble.
+- For a process, flow, structure, architecture, sequence, hierarchy, or timeline → a \`\`\`mermaid block (flowchart / sequenceDiagram / gantt / mindmap / erDiagram — pick what fits). Keep labels short and the syntax valid.
+- For numeric data, metrics, comparisons, trends, or breakdowns → a \`\`\`chart block containing valid JSON: {"type":"bar|line|area|pie|doughnut","title":"...","labels":[...],"series":[{"name":"...","data":[numbers]}]}. data length must equal labels length; numbers only.
+Use ONLY data/steps present in the document — do not invent. If it genuinely cannot be visualized, output exactly: NONE`;
+  try {
+    const model = el('model').value;
+    const tmp = document.createElement('div'); // throwaway stream target; we only want the text
+    const acc = await streamCompletion({ key, model, system, userMessage: md, node: tmp, signal: controller.signal });
+    const m = acc.match(/```(?:mermaid|chart)[\s\S]*?```/);
+    if (!m) { setStatus('Couldn’t find a good visual for this result — try a more structured output.', true); return; }
+    out.dataset.raw = md + '\n\n' + m[0];
+    renderMarkdown(out, out.dataset.raw, false); // re-render → PMDiagrams / PMCharts enhance it
+    saveRun(out.dataset.raw);
+    setStatus('✨ Added a visual — export it as PNG from the diagram/chart, or Save as image.');
+  } catch (e) {
+    setStatus(e.name === 'AbortError' ? 'Stopped.' : (e.message || 'Visualize failed.'), true);
+  } finally {
+    el('visualizeBtn').disabled = false;
     controller = null;
   }
 }

@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-366 skills exported. Copy a `.mdc rule` into the tool to use it.
+378 skills exported. Copy a `.mdc rule` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -35,6 +35,7 @@
 | Bookkeeping Categorization | `pm-accounting` | `pm-accounting/bookkeeping-categorization/bookkeeping-categorization.mdc` |
 | Boolean Search Builder | `pm-recruiting` | `pm-recruiting/boolean-search-builder/boolean-search-builder.mdc` |
 | Brag Doc | `pm-career` | `pm-career/brag-doc/brag-doc.mdc` |
+| Budget Builder | `pm-money` | `pm-money/budget-builder/budget-builder.mdc` |
 | Budget Variance Analysis | `pm-finance` | `pm-finance/budget-variance-analysis/budget-variance-analysis.mdc` |
 | Bug Report | `pm-qa` | `pm-qa/bug-report/bug-report.mdc` |
 | Candidate Scorecard | `pm-recruiting` | `pm-recruiting/candidate-scorecard/candidate-scorecard.mdc` |
@@ -48,6 +49,7 @@
 | Category Page Brief | `pm-ecommerce` | `pm-ecommerce/category-page-brief/category-page-brief.mdc` |
 | Change Management Plan | `pm-hr` | `pm-hr/change-management-plan/change-management-plan.mdc` |
 | Changelog Generator | `pm-engineering` | `pm-engineering/changelog-generator/changelog-generator.mdc` |
+| Changelog Writer | `pm-devrel` | `pm-devrel/changelog-writer/changelog-writer.mdc` |
 | Chart | `pm-visuals` | `pm-visuals/chart/chart.mdc` |
 | Chart Data Extractor | `pm-data` | `pm-data/chart-data-extractor/chart-data-extractor.mdc` |
 | Churn Analysis | `pm-cs` | `pm-cs/churn-analysis/churn-analysis.mdc` |
@@ -71,12 +73,14 @@
 | Competitor Teardown | `pm-gtm` | `pm-gtm/competitor-teardown/competitor-teardown.mdc` |
 | Complaint Letter | `pm-lifeadmin` | `pm-lifeadmin/complaint-letter/complaint-letter.mdc` |
 | Compliance Checklist | `pm-legal` | `pm-legal/compliance-checklist/compliance-checklist.mdc` |
+| Conference Talk Proposal | `pm-devrel` | `pm-devrel/conference-talk-proposal/conference-talk-proposal.mdc` |
 | Consulting Proposal | `pm-consulting` | `pm-consulting/consulting-proposal/consulting-proposal.mdc` |
 | Content Calendar | `pm-gtm` | `pm-gtm/content-calendar/content-calendar.mdc` |
 | Content Repurposer | `pm-creator` | `pm-creator/content-repurposer/content-repurposer.mdc` |
 | Content Style Guide | `pm-uxwriting` | `pm-uxwriting/content-style-guide/content-style-guide.mdc` |
 | Context Mode | `pm-engineering` | `pm-engineering/context-mode/context-mode.mdc` |
 | Contract Review | `pm-legal` | `pm-legal/contract-review/contract-review.mdc` |
+| Contributor Guide | `pm-devrel` | `pm-devrel/contributor-guide/contributor-guide.mdc` |
 | Conversion Rate Optimization | `pm-growth` | `pm-growth/conversion-rate-optimization/conversion-rate-optimization.mdc` |
 | Cover Letter | `pm-personal` | `pm-personal/cover-letter/cover-letter.mdc` |
 | Creator Brand Kit | `pm-creator` | `pm-creator/creator-brand-kit/creator-brand-kit.mdc` |
@@ -98,6 +102,7 @@
 | Database Schema Design | `pm-engineering` | `pm-engineering/database-schema-design/database-schema-design.mdc` |
 | Dataset Datasheet | `pm-ai` | `pm-ai/dataset-datasheet/dataset-datasheet.mdc` |
 | dbt Model Spec | `pm-dataeng` | `pm-dataeng/dbt-model-spec/dbt-model-spec.mdc` |
+| Debt Payoff Plan | `pm-money` | `pm-money/debt-payoff-plan/debt-payoff-plan.mdc` |
 | Debugging Log Analyser | `pm-engineering` | `pm-engineering/debugging-log-analyser/debugging-log-analyser.mdc` |
 | Decision Memo | `pm-business` | `pm-business/decision-memo/decision-memo.mdc` |
 | Demand Letter | `pm-legal` | `pm-legal/demand-letter/demand-letter.mdc` |
@@ -113,6 +118,7 @@
 | Discovery Call Prep | `pm-sales` | `pm-sales/discovery-call-prep/discovery-call-prep.mdc` |
 | Discovery Interview Guide | `pm-discovery` | `pm-discovery/discovery-interview-guide/discovery-interview-guide.mdc` |
 | Dispute Letter | `pm-lifeadmin` | `pm-lifeadmin/dispute-letter/dispute-letter.mdc` |
+| Docs Quickstart | `pm-devrel` | `pm-devrel/docs-quickstart/docs-quickstart.mdc` |
 | Word Doc Tracked Changes | `pm-essentials` | `pm-essentials/docx-tracked-changes/docx-tracked-changes.mdc` |
 | Donor Update | `pm-nonprofit` | `pm-nonprofit/donor-update/donor-update.mdc` |
 | Email Campaign | `pm-gtm` | `pm-gtm/email-campaign/email-campaign.mdc` |
@@ -132,6 +138,7 @@
 | Executive Presence | `pm-comms` | `pm-comms/executive-presence/executive-presence.mdc` |
 | Executive Summary | `pm-cross` | `pm-cross/executive-summary/executive-summary.mdc` |
 | Executive Update | `pm-strategy` | `pm-strategy/executive-update/executive-update.mdc` |
+| Expense Audit | `pm-money` | `pm-money/expense-audit/expense-audit.mdc` |
 | Expense Policy | `pm-accounting` | `pm-accounting/expense-policy/expense-policy.mdc` |
 | Experiment Designer | `pm-advanced` | `pm-advanced/experiment-designer/experiment-designer.mdc` |
 | Experiment Readout | `pm-dataeng` | `pm-dataeng/experiment-readout/experiment-readout.mdc` |
@@ -180,6 +187,7 @@
 | Insurance Claim | `pm-lifeadmin` | `pm-lifeadmin/insurance-claim/insurance-claim.mdc` |
 | Interview Prep | `pm-jobsearch` | `pm-jobsearch/interview-prep/interview-prep.mdc` |
 | Interview Question Bank | `pm-recruiting` | `pm-recruiting/interview-question-bank/interview-question-bank.mdc` |
+| Investing Policy Statement | `pm-money` | `pm-money/investing-policy-statement/investing-policy-statement.mdc` |
 | Investor Cold Email | `pm-founders` | `pm-founders/investor-cold-email/investor-cold-email.mdc` |
 | Investor Pitch Deck | `pm-finance` | `pm-finance/investor-pitch-deck/investor-pitch-deck.mdc` |
 | Investor Update | `pm-business` | `pm-business/investor-update/investor-update.mdc` |
@@ -192,6 +200,7 @@
 | Knowledge Base Audit | `pm-support` | `pm-support/kb-audit/kb-audit.mdc` |
 | Landing Page Copy | `pm-copy` | `pm-copy/landing-page-copy/landing-page-copy.mdc` |
 | Last 30 Days Research | `pm-cross` | `pm-cross/last-30-days-research/last-30-days-research.mdc` |
+| Launch Post | `pm-devrel` | `pm-devrel/launch-post/launch-post.mdc` |
 | Launch Readiness | `pm-delivery` | `pm-delivery/launch-readiness/launch-readiness.mdc` |
 | Layoff Communication | `pm-crisis` | `pm-crisis/layoff-communication/layoff-communication.mdc` |
 | Legal Brief | `pm-legal` | `pm-legal/legal-brief/legal-brief.mdc` |
@@ -222,6 +231,7 @@
 | Morning Intelligence | `pm-operations` | `pm-operations/morning-intelligence/morning-intelligence.mdc` |
 | Multi-Source Signal Synthesiser | `pm-advanced` | `pm-advanced/multi-source-signal-synthesiser/multi-source-signal-synthesiser.mdc` |
 | NDA Analyser | `pm-legal` | `pm-legal/nda-analyser/nda-analyser.mdc` |
+| Net Worth Statement | `pm-money` | `pm-money/net-worth-statement/net-worth-statement.mdc` |
 | Newsletter Writer | `pm-creator` | `pm-creator/newsletter-writer/newsletter-writer.mdc` |
 | NotebookLM Connector | `pm-cross` | `pm-cross/notebooklm-connector/notebooklm-connector.mdc` |
 | Notes Humanizer | `pm-writers` | `pm-writers/notes-humanizer/notes-humanizer.mdc` |
@@ -278,6 +288,7 @@
 | RAG Architecture Review | `pm-ai` | `pm-ai/rag-architecture-review/rag-architecture-review.mdc` |
 | RAG Design Doc | `pm-ai` | `pm-ai/rag-design-doc/rag-design-doc.mdc` |
 | Rate Card | `pm-consulting` | `pm-consulting/rate-card/rate-card.mdc` |
+| README Writer | `pm-devrel` | `pm-devrel/readme-writer/readme-writer.mdc` |
 | Recruiter Outreach | `pm-recruiting` | `pm-recruiting/recruiter-outreach/recruiter-outreach.mdc` |
 | Red-Team Review | `pm-cross` | `pm-cross/red-team-review/red-team-review.mdc` |
 | Redundancy Consultation | `pm-hr` | `pm-hr/redundancy-consultation/redundancy-consultation.mdc` |
@@ -311,6 +322,7 @@
 | Sales Battlecard | `pm-sales` | `pm-sales/sales-battlecard/sales-battlecard.mdc` |
 | Sales Forecasting Model | `pm-sales` | `pm-sales/sales-forecasting-model/sales-forecasting-model.mdc` |
 | Sales Page | `pm-copy` | `pm-copy/sales-page/sales-page.mdc` |
+| Savings Goal Plan | `pm-money` | `pm-money/savings-goal-plan/savings-goal-plan.mdc` |
 | Saying No | `pm-comms` | `pm-comms/saying-no/saying-no.mdc` |
 | Security Threat Model | `pm-engineering` | `pm-engineering/security-threat-model/security-threat-model.mdc` |
 | Self-Review | `pm-career` | `pm-career/self-review/self-review.mdc` |

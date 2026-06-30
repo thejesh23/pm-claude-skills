@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-site-verification" content="osZgdSLYnqidzCKt4CxjqAxo44OqGvlKi-Bmg0UmxFQ" />
-<title>🌌 Skill Galaxy — explore 200+ skills as a living map</title>
-<meta name="description" content="The whole skills library as an interactive constellation: 244 skills clustered by profession, sized by eval score, linked by what pairs with what. Drag, zoom, click a star to run it." />
+<title>🌌 Skill Galaxy — explore every skill as a living map</title>
+<meta name="description" content="The whole skills library as an interactive constellation: skills clustered by profession, brightness by eval score, Guided Journeys traced as star-paths, linked by what pairs with what. Drag, zoom, click a star to run it." />
 <link rel="stylesheet" href="styles.css" />
 <style>
   html, body { height: 100%; }
@@ -28,7 +28,9 @@
     background: rgba(13,15,20,.82); border: 1px solid var(--border); border-radius: 10px; padding: 9px 11px;
     font-size: 11px; backdrop-filter: blur(8px); display: flex; flex-wrap: wrap; gap: 4px 10px; }
   .legend b { width: 100%; font-size: 10px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: 2px; }
-  .legend span { display: inline-flex; align-items: center; gap: 5px; color: var(--text); cursor: pointer; opacity: .9; }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; color: var(--text); cursor: pointer; opacity: .72; }
+  .legend span:hover { opacity: 1; }
+  .legend span.on { opacity: 1; font-weight: 700; text-shadow: 0 0 8px currentColor; }
   .legend i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
   #gtip { position: fixed; z-index: 20; max-width: 280px; pointer-events: none; display: none;
     background: rgba(13,15,20,.96); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px;
@@ -48,7 +50,7 @@
     <input id="galaxySearch" type="search" placeholder="Highlight a skill…" />
   </div>
   <div class="legend" id="legend"></div>
-  <div class="galaxy-hint">drag the void to pan · scroll to zoom · drag a star to fling it · click a star to run it</div>
+  <div class="galaxy-hint">drag to pan · scroll to zoom · click a star to run it · brightness = eval score · trace a ✨ Journey from the legend</div>
   <div id="gtip"></div>
 </div>
 
@@ -60,9 +62,10 @@ const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': 
 const label = (p) => p.replace(/^pm-/, '').replace(/(^|-)(\w)/g, (_, d, c) => (d ? ' ' : '') + c.toUpperCase()).trim();
 
 (async function () {
-  let skills = [], trending = {};
+  let skills = [], trending = {}, journeys = [];
   try { skills = (await (await fetch('skills.json')).json()).skills; } catch (_) {}
   try { trending = ((await (await fetch('trending.json', { cache: 'no-store' })).json()).skills || []).reduce((m, t) => (m[t.name] = true, m), {}); } catch (_) {}
+  try { journeys = (await (await fetch('hubs.json')).json()).journeys || []; } catch (_) {}
   if (!skills.length) { el('galaxyCount').textContent = '— could not load skills.json'; return; }
 
   const canvas = el('galaxyCanvas');
@@ -78,9 +81,14 @@ const label = (p) => p.replace(/^pm-/, '').replace(/(^|-)(\w)/g, (_, d, c) => (d
       ax: cx + Math.cos(a) * ringR, ay: cy + Math.sin(a) * ringR };
   });
 
+  // Brightness encodes eval score: a 5/5 skill blazes, an unscored one is a dim grey ember — so the
+  // eval-coverage gap is literally visible across the galaxy.
   const nodes = skills.map((s, i) => {
     const m = bmeta[s.plugin], score = s.eval ? s.eval.score : 0;
-    return { id: s.name, s, color: m.color, ax: m.ax, ay: m.ay, seed: i * 1.7,
+    return { id: s.name, s, scored: !!s.eval,
+      color: s.eval ? m.color : '#5b6472',
+      bright: s.eval ? Math.max(0.55, Math.min(1, (score - 3) / 2)) : 0.26,
+      ax: m.ax, ay: m.ay, seed: i * 1.7,
       r: 4 + (score ? (score - 3.5) * 4 : 1.5), trend: !!trending[s.name] };
   });
   const idset = new Set(nodes.map((n) => n.id));
@@ -90,14 +98,38 @@ const label = (p) => p.replace(/^pm-/, '').replace(/(^|-)(\w)/g, (_, d, c) => (d
     if (s.readsFirst) add(s.readsFirst);
     (s.related || []).forEach(add);
   });
-  el('galaxyCount').textContent = `· ${nodes.length} skills · ${bundles.length} professions · drag, zoom, explore`;
+  const scoredN = nodes.filter((n) => n.scored).length;
+  el('galaxyCount').textContent = `· ${nodes.length} skills · ${bundles.length} professions · ${scoredN} eval-scored (brighter = higher)`;
 
-  // Legend (click a bundle to spotlight it).
+  // ✨ Constellations — each Guided Journey is an ordered path of skills you can light up as an overlay.
+  const JCOLORS = ['#ffd36e', '#7ee0c0', '#8fb8ff', '#f49ac1', '#c89bff', '#ff9f6b', '#9be15d'];
+  const constellations = journeys.map((j, i) => ({
+    id: j.id, name: j.name, emoji: j.emoji || '✨', color: JCOLORS[i % JCOLORS.length],
+    names: [].concat(...(j.stages || []).map((st) => (st.skills || []).map((sk) => sk[0]))).filter((n) => idset.has(n)),
+  })).filter((c) => c.names.length > 1);
+  const activeJ = new Set();
+
+  // 🛸 My trail — skills you've actually run (the playground's saved-runs history, this browser).
+  let trailUniq = [];
+  try { trailUniq = [...new Set((JSON.parse(localStorage.getItem('pm_workspace')) || []).map((r) => r.name))].filter((n) => idset.has(n)); } catch (_) {}
+  let trailOn = false;
+
+  // Legend (click a profession to spotlight it; click a journey to trace its constellation).
   let spotlight = null;
-  el('legend').innerHTML = '<b>Professions</b>' + bundles.map((b) =>
+  let html = '<b>Professions · ☀ brightness = eval score</b>' + bundles.map((b) =>
     `<span data-b="${esc(b)}"><i style="background:${bmeta[b].color}"></i>${esc(label(b))}</span>`).join('');
+  if (constellations.length) html += '<b style="margin-top:7px">✨ Journeys — click to trace</b>' + constellations.map((c) =>
+    `<span data-j="${esc(c.id)}"><i style="background:${c.color}"></i>${esc(c.emoji)} ${esc(c.name)}</span>`).join('');
+  if (trailUniq.length) html += `<b style="margin-top:7px">🛸 You</b><span data-trail="1"><i style="background:#fff"></i>My trail (${trailUniq.length} run)</span>`;
+  el('legend').innerHTML = html;
   el('legend').querySelectorAll('span[data-b]').forEach((sp) =>
-    sp.addEventListener('click', () => { spotlight = (spotlight === sp.dataset.b) ? null : sp.dataset.b; }));
+    sp.addEventListener('click', () => { spotlight = (spotlight === sp.dataset.b) ? null : sp.dataset.b;
+      sp.parentNode.querySelectorAll('span[data-b]').forEach((x) => x.classList.toggle('on', x.dataset.b === spotlight)); }));
+  el('legend').querySelectorAll('span[data-j]').forEach((sp) =>
+    sp.addEventListener('click', () => { activeJ.has(sp.dataset.j) ? activeJ.delete(sp.dataset.j) : activeJ.add(sp.dataset.j);
+      sp.classList.toggle('on', activeJ.has(sp.dataset.j)); }));
+  const trailEl = el('legend').querySelector('span[data-trail]');
+  if (trailEl) trailEl.addEventListener('click', () => { trailOn = !trailOn; trailEl.classList.toggle('on', trailOn); });
 
   let query = '';
   el('galaxySearch').addEventListener('input', (e) => { query = e.target.value.toLowerCase().trim(); });
@@ -125,10 +157,10 @@ const label = (p) => p.replace(/^pm-/, '').replace(/(^|-)(\w)/g, (_, d, c) => (d
       // glow
       const grd = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, rad * 3.4);
       grd.addColorStop(0, n.color); grd.addColorStop(0.35, n.color); grd.addColorStop(1, 'rgba(0,0,0,0)');
-      ctx.globalAlpha = on ? (n.trend ? 0.5 : 0.32) : 0.05;
+      ctx.globalAlpha = (on ? (n.trend ? 0.5 : 0.32) : 0.05) * n.bright;
       ctx.fillStyle = grd; ctx.beginPath(); ctx.arc(n.x, n.y, rad * 3.4, 0, 7); ctx.fill();
-      // core
-      ctx.globalAlpha = on ? 1 : 0.12;
+      // core — brightness scales with eval score (unscored skills stay dim)
+      ctx.globalAlpha = on ? n.bright : 0.1;
       ctx.fillStyle = n.color; ctx.beginPath(); ctx.arc(n.x, n.y, rad, 0, 7); ctx.fill();
       // trending = a static ring (no animation, so the galaxy stays perfectly still)
       if (n.trend) { ctx.globalAlpha = on ? 0.85 : 0.1; ctx.strokeStyle = '#fff'; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(n.x, n.y, rad + 3, 0, 7); ctx.stroke(); }
@@ -150,6 +182,41 @@ const label = (p) => p.replace(/^pm-/, '').replace(/(^|-)(\w)/g, (_, d, c) => (d
       tip.style.top = Math.min(y + 14, innerHeight - th - 8) + 'px';
     },
     onClick(n) { location.href = 'index.html?skill=' + encodeURIComponent(n.id); },
+    afterDraw(ctx, view, idMap) {
+      const lw = (px) => px / view.k; // keep stroke widths visually constant under zoom
+      // ✨ Active journey constellations — a glowing path through the journey's skills, in order.
+      constellations.forEach((c) => {
+        if (!activeJ.has(c.id)) return;
+        const pts = c.names.map((n) => idMap[n]).filter(Boolean);
+        if (pts.length < 2) return;
+        ctx.save();
+        ctx.shadowColor = c.color; ctx.shadowBlur = 14; ctx.strokeStyle = c.color;
+        ctx.globalAlpha = 0.92; ctx.lineWidth = lw(2.2); ctx.lineJoin = 'round';
+        ctx.beginPath(); ctx.moveTo(pts[0].x, pts[0].y);
+        for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+        pts.forEach((p) => { ctx.fillStyle = c.color; ctx.globalAlpha = 0.95; ctx.beginPath(); ctx.arc(p.x, p.y, (p.r || 5) + lw(2), 0, 7); ctx.fill(); });
+        ctx.globalAlpha = 1; ctx.fillStyle = c.color; ctx.font = `600 ${lw(13)}px -apple-system,system-ui,sans-serif`;
+        ctx.fillText(c.emoji + ' ' + c.name, pts[0].x + lw(9), pts[0].y - lw(9));
+        ctx.restore();
+      });
+      // 🛸 Your personal trail — dashed line through the skills you've run, ringed.
+      if (trailOn && trailUniq.length) {
+        const pts = trailUniq.map((n) => idMap[n]).filter(Boolean);
+        if (pts.length) {
+          ctx.save();
+          ctx.strokeStyle = '#ffffff'; ctx.globalAlpha = 0.5; ctx.lineWidth = lw(1.5);
+          ctx.setLineDash([lw(5), lw(5)]);
+          ctx.beginPath(); ctx.moveTo(pts[0].x, pts[0].y);
+          for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
+          ctx.stroke(); ctx.setLineDash([]);
+          ctx.globalAlpha = 0.9;
+          pts.forEach((p) => { ctx.beginPath(); ctx.arc(p.x, p.y, (p.r || 5) + lw(3), 0, 7); ctx.stroke(); });
+          ctx.restore();
+        }
+      }
+    },
   });
 })();
 </script>

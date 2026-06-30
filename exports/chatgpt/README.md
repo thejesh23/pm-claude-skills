@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-366 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
+378 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -35,6 +35,7 @@
 | Bookkeeping Categorization | `pm-accounting` | `pm-accounting/bookkeeping-categorization/SYSTEM_PROMPT.md` |
 | Boolean Search Builder | `pm-recruiting` | `pm-recruiting/boolean-search-builder/SYSTEM_PROMPT.md` |
 | Brag Doc | `pm-career` | `pm-career/brag-doc/SYSTEM_PROMPT.md` |
+| Budget Builder | `pm-money` | `pm-money/budget-builder/SYSTEM_PROMPT.md` |
 | Budget Variance Analysis | `pm-finance` | `pm-finance/budget-variance-analysis/SYSTEM_PROMPT.md` |
 | Bug Report | `pm-qa` | `pm-qa/bug-report/SYSTEM_PROMPT.md` |
 | Candidate Scorecard | `pm-recruiting` | `pm-recruiting/candidate-scorecard/SYSTEM_PROMPT.md` |
@@ -48,6 +49,7 @@
 | Category Page Brief | `pm-ecommerce` | `pm-ecommerce/category-page-brief/SYSTEM_PROMPT.md` |
 | Change Management Plan | `pm-hr` | `pm-hr/change-management-plan/SYSTEM_PROMPT.md` |
 | Changelog Generator | `pm-engineering` | `pm-engineering/changelog-generator/SYSTEM_PROMPT.md` |
+| Changelog Writer | `pm-devrel` | `pm-devrel/changelog-writer/SYSTEM_PROMPT.md` |
 | Chart | `pm-visuals` | `pm-visuals/chart/SYSTEM_PROMPT.md` |
 | Chart Data Extractor | `pm-data` | `pm-data/chart-data-extractor/SYSTEM_PROMPT.md` |
 | Churn Analysis | `pm-cs` | `pm-cs/churn-analysis/SYSTEM_PROMPT.md` |
@@ -71,12 +73,14 @@
 | Competitor Teardown | `pm-gtm` | `pm-gtm/competitor-teardown/SYSTEM_PROMPT.md` |
 | Complaint Letter | `pm-lifeadmin` | `pm-lifeadmin/complaint-letter/SYSTEM_PROMPT.md` |
 | Compliance Checklist | `pm-legal` | `pm-legal/compliance-checklist/SYSTEM_PROMPT.md` |
+| Conference Talk Proposal | `pm-devrel` | `pm-devrel/conference-talk-proposal/SYSTEM_PROMPT.md` |
 | Consulting Proposal | `pm-consulting` | `pm-consulting/consulting-proposal/SYSTEM_PROMPT.md` |
 | Content Calendar | `pm-gtm` | `pm-gtm/content-calendar/SYSTEM_PROMPT.md` |
 | Content Repurposer | `pm-creator` | `pm-creator/content-repurposer/SYSTEM_PROMPT.md` |
 | Content Style Guide | `pm-uxwriting` | `pm-uxwriting/content-style-guide/SYSTEM_PROMPT.md` |
 | Context Mode | `pm-engineering` | `pm-engineering/context-mode/SYSTEM_PROMPT.md` |
 | Contract Review | `pm-legal` | `pm-legal/contract-review/SYSTEM_PROMPT.md` |
+| Contributor Guide | `pm-devrel` | `pm-devrel/contributor-guide/SYSTEM_PROMPT.md` |
 | Conversion Rate Optimization | `pm-growth` | `pm-growth/conversion-rate-optimization/SYSTEM_PROMPT.md` |
 | Cover Letter | `pm-personal` | `pm-personal/cover-letter/SYSTEM_PROMPT.md` |
 | Creator Brand Kit | `pm-creator` | `pm-creator/creator-brand-kit/SYSTEM_PROMPT.md` |
@@ -98,6 +102,7 @@
 | Database Schema Design | `pm-engineering` | `pm-engineering/database-schema-design/SYSTEM_PROMPT.md` |
 | Dataset Datasheet | `pm-ai` | `pm-ai/dataset-datasheet/SYSTEM_PROMPT.md` |
 | dbt Model Spec | `pm-dataeng` | `pm-dataeng/dbt-model-spec/SYSTEM_PROMPT.md` |
+| Debt Payoff Plan | `pm-money` | `pm-money/debt-payoff-plan/SYSTEM_PROMPT.md` |
 | Debugging Log Analyser | `pm-engineering` | `pm-engineering/debugging-log-analyser/SYSTEM_PROMPT.md` |
 | Decision Memo | `pm-business` | `pm-business/decision-memo/SYSTEM_PROMPT.md` |
 | Demand Letter | `pm-legal` | `pm-legal/demand-letter/SYSTEM_PROMPT.md` |
@@ -113,6 +118,7 @@
 | Discovery Call Prep | `pm-sales` | `pm-sales/discovery-call-prep/SYSTEM_PROMPT.md` |
 | Discovery Interview Guide | `pm-discovery` | `pm-discovery/discovery-interview-guide/SYSTEM_PROMPT.md` |
 | Dispute Letter | `pm-lifeadmin` | `pm-lifeadmin/dispute-letter/SYSTEM_PROMPT.md` |
+| Docs Quickstart | `pm-devrel` | `pm-devrel/docs-quickstart/SYSTEM_PROMPT.md` |
 | Word Doc Tracked Changes | `pm-essentials` | `pm-essentials/docx-tracked-changes/SYSTEM_PROMPT.md` |
 | Donor Update | `pm-nonprofit` | `pm-nonprofit/donor-update/SYSTEM_PROMPT.md` |
 | Email Campaign | `pm-gtm` | `pm-gtm/email-campaign/SYSTEM_PROMPT.md` |
@@ -132,6 +138,7 @@
 | Executive Presence | `pm-comms` | `pm-comms/executive-presence/SYSTEM_PROMPT.md` |
 | Executive Summary | `pm-cross` | `pm-cross/executive-summary/SYSTEM_PROMPT.md` |
 | Executive Update | `pm-strategy` | `pm-strategy/executive-update/SYSTEM_PROMPT.md` |
+| Expense Audit | `pm-money` | `pm-money/expense-audit/SYSTEM_PROMPT.md` |
 | Expense Policy | `pm-accounting` | `pm-accounting/expense-policy/SYSTEM_PROMPT.md` |
 | Experiment Designer | `pm-advanced` | `pm-advanced/experiment-designer/SYSTEM_PROMPT.md` |
 | Experiment Readout | `pm-dataeng` | `pm-dataeng/experiment-readout/SYSTEM_PROMPT.md` |
@@ -180,6 +187,7 @@
 | Insurance Claim | `pm-lifeadmin` | `pm-lifeadmin/insurance-claim/SYSTEM_PROMPT.md` |
 | Interview Prep | `pm-jobsearch` | `pm-jobsearch/interview-prep/SYSTEM_PROMPT.md` |
 | Interview Question Bank | `pm-recruiting` | `pm-recruiting/interview-question-bank/SYSTEM_PROMPT.md` |
+| Investing Policy Statement | `pm-money` | `pm-money/investing-policy-statement/SYSTEM_PROMPT.md` |
 | Investor Cold Email | `pm-founders` | `pm-founders/investor-cold-email/SYSTEM_PROMPT.md` |
 | Investor Pitch Deck | `pm-finance` | `pm-finance/investor-pitch-deck/SYSTEM_PROMPT.md` |
 | Investor Update | `pm-business` | `pm-business/investor-update/SYSTEM_PROMPT.md` |
@@ -192,6 +200,7 @@
 | Knowledge Base Audit | `pm-support` | `pm-support/kb-audit/SYSTEM_PROMPT.md` |
 | Landing Page Copy | `pm-copy` | `pm-copy/landing-page-copy/SYSTEM_PROMPT.md` |
 | Last 30 Days Research | `pm-cross` | `pm-cross/last-30-days-research/SYSTEM_PROMPT.md` |
+| Launch Post | `pm-devrel` | `pm-devrel/launch-post/SYSTEM_PROMPT.md` |
 | Launch Readiness | `pm-delivery` | `pm-delivery/launch-readiness/SYSTEM_PROMPT.md` |
 | Layoff Communication | `pm-crisis` | `pm-crisis/layoff-communication/SYSTEM_PROMPT.md` |
 | Legal Brief | `pm-legal` | `pm-legal/legal-brief/SYSTEM_PROMPT.md` |
@@ -222,6 +231,7 @@
 | Morning Intelligence | `pm-operations` | `pm-operations/morning-intelligence/SYSTEM_PROMPT.md` |
 | Multi-Source Signal Synthesiser | `pm-advanced` | `pm-advanced/multi-source-signal-synthesiser/SYSTEM_PROMPT.md` |
 | NDA Analyser | `pm-legal` | `pm-legal/nda-analyser/SYSTEM_PROMPT.md` |
+| Net Worth Statement | `pm-money` | `pm-money/net-worth-statement/SYSTEM_PROMPT.md` |
 | Newsletter Writer | `pm-creator` | `pm-creator/newsletter-writer/SYSTEM_PROMPT.md` |
 | NotebookLM Connector | `pm-cross` | `pm-cross/notebooklm-connector/SYSTEM_PROMPT.md` |
 | Notes Humanizer | `pm-writers` | `pm-writers/notes-humanizer/SYSTEM_PROMPT.md` |
@@ -278,6 +288,7 @@
 | RAG Architecture Review | `pm-ai` | `pm-ai/rag-architecture-review/SYSTEM_PROMPT.md` |
 | RAG Design Doc | `pm-ai` | `pm-ai/rag-design-doc/SYSTEM_PROMPT.md` |
 | Rate Card | `pm-consulting` | `pm-consulting/rate-card/SYSTEM_PROMPT.md` |
+| README Writer | `pm-devrel` | `pm-devrel/readme-writer/SYSTEM_PROMPT.md` |
 | Recruiter Outreach | `pm-recruiting` | `pm-recruiting/recruiter-outreach/SYSTEM_PROMPT.md` |
 | Red-Team Review | `pm-cross` | `pm-cross/red-team-review/SYSTEM_PROMPT.md` |
 | Redundancy Consultation | `pm-hr` | `pm-hr/redundancy-consultation/SYSTEM_PROMPT.md` |
@@ -311,6 +322,7 @@
 | Sales Battlecard | `pm-sales` | `pm-sales/sales-battlecard/SYSTEM_PROMPT.md` |
 | Sales Forecasting Model | `pm-sales` | `pm-sales/sales-forecasting-model/SYSTEM_PROMPT.md` |
 | Sales Page | `pm-copy` | `pm-copy/sales-page/SYSTEM_PROMPT.md` |
+| Savings Goal Plan | `pm-money` | `pm-money/savings-goal-plan/SYSTEM_PROMPT.md` |
 | Saying No | `pm-comms` | `pm-comms/saying-no/SYSTEM_PROMPT.md` |
 | Security Threat Model | `pm-engineering` | `pm-engineering/security-threat-model/SYSTEM_PROMPT.md` |
 | Self-Review | `pm-career` | `pm-career/self-review/SYSTEM_PROMPT.md` |
