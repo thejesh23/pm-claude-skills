@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-336 skills exported. Copy a `.mdc rule` into the tool to use it.
+342 skills exported. Copy a `.mdc rule` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -66,6 +66,7 @@
 | Consulting Proposal | `pm-consulting` | `pm-consulting/consulting-proposal/consulting-proposal.mdc` |
 | Content Calendar | `pm-gtm` | `pm-gtm/content-calendar/content-calendar.mdc` |
 | Content Repurposer | `pm-creator` | `pm-creator/content-repurposer/content-repurposer.mdc` |
+| Content Style Guide | `pm-uxwriting` | `pm-uxwriting/content-style-guide/content-style-guide.mdc` |
 | Context Mode | `pm-engineering` | `pm-engineering/context-mode/context-mode.mdc` |
 | Contract Review | `pm-legal` | `pm-legal/contract-review/contract-review.mdc` |
 | Conversion Rate Optimization | `pm-growth` | `pm-growth/conversion-rate-optimization/conversion-rate-optimization.mdc` |
@@ -110,11 +111,13 @@
 | Email Sequence | `pm-copy` | `pm-copy/email-sequence/email-sequence.mdc` |
 | Email Triage | `pm-operations` | `pm-operations/email-triage/email-triage.mdc` |
 | Employee Engagement Survey | `pm-hr` | `pm-hr/employee-engagement-survey/employee-engagement-survey.mdc` |
+| Empty State Writer | `pm-uxwriting` | `pm-uxwriting/empty-state-writer/empty-state-writer.mdc` |
 | Engagement Retro | `pm-consulting` | `pm-consulting/engagement-retro/engagement-retro.mdc` |
 | Engineering Hiring Rubric | `pm-engineering` | `pm-engineering/engineering-hiring-rubric/engineering-hiring-rubric.mdc` |
 | Engineering Weekly Report | `pm-engineering` | `pm-engineering/engineering-weekly-report/engineering-weekly-report.mdc` |
 | Entity-Relationship Diagram | `pm-visuals` | `pm-visuals/entity-relationship-diagram/entity-relationship-diagram.mdc` |
 | Error Decoder | `pm-engineering` | `pm-engineering/error-decoder/error-decoder.mdc` |
+| Error Message Writer | `pm-uxwriting` | `pm-uxwriting/error-message-writer/error-message-writer.mdc` |
 | Escalation Tree | `pm-support` | `pm-support/escalation-tree/escalation-tree.mdc` |
 | Eval Rubric Designer | `pm-ai` | `pm-ai/eval-rubric-designer/eval-rubric-designer.mdc` |
 | Excel Model | `pm-documents` | `pm-documents/excel-model/excel-model.mdc` |
@@ -197,6 +200,7 @@
 | Metric Semantic Layer | `pm-dataeng` | `pm-dataeng/metric-semantic-layer/metric-semantic-layer.mdc` |
 | Metric Tree Builder | `pm-data` | `pm-data/metric-tree-builder/metric-tree-builder.mdc` |
 | Metrics Framework | `pm-data` | `pm-data/metrics-framework/metrics-framework.mdc` |
+| Microcopy Writer | `pm-uxwriting` | `pm-uxwriting/microcopy-writer/microcopy-writer.mdc` |
 | Microservices Decomposition | `pm-engineering` | `pm-engineering/microservices-decomposition/microservices-decomposition.mdc` |
 | Mind Map | `pm-visuals` | `pm-visuals/mind-map/mind-map.mdc` |
 | Model Card | `pm-ai` | `pm-ai/model-card/model-card.mdc` |
@@ -209,6 +213,7 @@
 | NotebookLM Connector | `pm-cross` | `pm-cross/notebooklm-connector/notebooklm-connector.mdc` |
 | Notes Humanizer | `pm-writers` | `pm-writers/notes-humanizer/notes-humanizer.mdc` |
 | OKR Builder | `pm-planning` | `pm-planning/okr-builder/okr-builder.mdc` |
+| Onboarding Copy | `pm-uxwriting` | `pm-uxwriting/onboarding-copy/onboarding-copy.mdc` |
 | Onboarding Plan | `pm-hr` | `pm-hr/onboarding-plan/onboarding-plan.mdc` |
 | On-Call Runbook | `pm-engineering` | `pm-engineering/oncall-runbook/oncall-runbook.mdc` |
 | One-on-One Prep | `pm-career` | `pm-career/one-on-one-prep/one-on-one-prep.mdc` |
@@ -238,6 +243,7 @@
 | Product Description | `pm-ecommerce` | `pm-ecommerce/product-description/product-description.mdc` |
 | Product Health Analysis | `pm-analytics` | `pm-analytics/product-health-analysis/product-health-analysis.mdc` |
 | Product Launch Checklist | `pm-delivery` | `pm-delivery/product-launch-checklist/product-launch-checklist.mdc` |
+| Product Naming | `pm-uxwriting` | `pm-uxwriting/product-naming/product-naming.mdc` |
 | Product Positioning Doc | `pm-gtm` | `pm-gtm/product-positioning-doc/product-positioning-doc.mdc` |
 | Professional Brain | `pm-cross` | `pm-cross/professional-brain/professional-brain.mdc` |
 | Professional Translator | `pm-localization` | `pm-localization/professional-translator/professional-translator.mdc` |

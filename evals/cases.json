@@ -236,6 +236,30 @@
     {
       "skill": "category-page-brief",
       "input": "Write a category page brief for the 'Women's Running Shoes' collection on our Shopify store. Shoppers range from beginners to marathoners. We carry ~60 styles across brands, with attributes like cushioning, support type (neutral/stability), surface (road/trail), and price. Target keywords around 'women's running shoes'. Cover intent/keywords, H1 + intro, merchandising/sort, filters and their crawlability, internal links, and technical SEO."
+    },
+    {
+      "skill": "microcopy-writer",
+      "input": "Write the microcopy for the final step of a checkout flow on a paid subscription app. There's a primary button that charges the card and starts the plan, plus a small reassurance line under it. The plan is $12/month, billed monthly, cancel anytime. Voice is friendly and trustworthy. Give me the button label, the reassurance line, and the success-toast text, with a couple of options and why."
+    },
+    {
+      "skill": "error-message-writer",
+      "input": "Rewrite this error for end users: 'Error 402: payment_intent authentication_required'. Context: a card payment failed because the bank needs the customer to authenticate (3-D Secure). It shows as a full-page state after they hit Pay. They can retry, complete verification, or use a different card. Voice is calm and helpful. Give me the user-facing message plus a note on what to log vs. show."
+    },
+    {
+      "skill": "empty-state-writer",
+      "input": "Write the empty states for a 'Projects' screen in a team task-management app. Cover: (1) first use — a brand-new account with no projects yet, where we want them to create their first project; (2) a search/filter that returns no matching projects; (3) all projects archived/completed. Voice is encouraging and concise. For each give headline, supporting line, and action(s)."
+    },
+    {
+      "skill": "product-naming",
+      "input": "Help me name a new feature in our analytics product: an AI assistant that answers questions about your data in plain English and builds charts. Audience is data-curious business users (not analysts). Our brand is clean and modern; existing features have clear, descriptive names. Give me candidates across naming strategies, an evaluation, a recommendation, and the checks to run before we commit."
+    },
+    {
+      "skill": "content-style-guide",
+      "input": "Create a content style guide for our B2B fintech app aimed at small-business owners. We want to sound clear, trustworthy, and human — never stuffy or jargon-heavy. US English. It applies to product UI, marketing, and support. Include voice principles with before/after examples, tone by context, mechanics, a do/don't word list, and accessibility rules. Mark anything you infer for us to confirm."
+    },
+    {
+      "skill": "onboarding-copy",
+      "input": "Write the in-product onboarding copy for a personal habit-tracking app. The first win is the user creating their first habit and checking it off once. The path: welcome → name a habit → set a reminder time → mark it done today. Format is a mix of a welcome modal and tooltips, and steps should be skippable. Encouraging, concise voice. Include the welcome, the step tooltips, a checklist, and the first-win success moment."
     }
   ]
 }

@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-336 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
+342 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -66,6 +66,7 @@
 | Consulting Proposal | `pm-consulting` | `pm-consulting/consulting-proposal/GEM_INSTRUCTIONS.md` |
 | Content Calendar | `pm-gtm` | `pm-gtm/content-calendar/GEM_INSTRUCTIONS.md` |
 | Content Repurposer | `pm-creator` | `pm-creator/content-repurposer/GEM_INSTRUCTIONS.md` |
+| Content Style Guide | `pm-uxwriting` | `pm-uxwriting/content-style-guide/GEM_INSTRUCTIONS.md` |
 | Context Mode | `pm-engineering` | `pm-engineering/context-mode/GEM_INSTRUCTIONS.md` |
 | Contract Review | `pm-legal` | `pm-legal/contract-review/GEM_INSTRUCTIONS.md` |
 | Conversion Rate Optimization | `pm-growth` | `pm-growth/conversion-rate-optimization/GEM_INSTRUCTIONS.md` |
@@ -110,11 +111,13 @@
 | Email Sequence | `pm-copy` | `pm-copy/email-sequence/GEM_INSTRUCTIONS.md` |
 | Email Triage | `pm-operations` | `pm-operations/email-triage/GEM_INSTRUCTIONS.md` |
 | Employee Engagement Survey | `pm-hr` | `pm-hr/employee-engagement-survey/GEM_INSTRUCTIONS.md` |
+| Empty State Writer | `pm-uxwriting` | `pm-uxwriting/empty-state-writer/GEM_INSTRUCTIONS.md` |
 | Engagement Retro | `pm-consulting` | `pm-consulting/engagement-retro/GEM_INSTRUCTIONS.md` |
 | Engineering Hiring Rubric | `pm-engineering` | `pm-engineering/engineering-hiring-rubric/GEM_INSTRUCTIONS.md` |
 | Engineering Weekly Report | `pm-engineering` | `pm-engineering/engineering-weekly-report/GEM_INSTRUCTIONS.md` |
 | Entity-Relationship Diagram | `pm-visuals` | `pm-visuals/entity-relationship-diagram/GEM_INSTRUCTIONS.md` |
 | Error Decoder | `pm-engineering` | `pm-engineering/error-decoder/GEM_INSTRUCTIONS.md` |
+| Error Message Writer | `pm-uxwriting` | `pm-uxwriting/error-message-writer/GEM_INSTRUCTIONS.md` |
 | Escalation Tree | `pm-support` | `pm-support/escalation-tree/GEM_INSTRUCTIONS.md` |
 | Eval Rubric Designer | `pm-ai` | `pm-ai/eval-rubric-designer/GEM_INSTRUCTIONS.md` |
 | Excel Model | `pm-documents` | `pm-documents/excel-model/GEM_INSTRUCTIONS.md` |
@@ -197,6 +200,7 @@
 | Metric Semantic Layer | `pm-dataeng` | `pm-dataeng/metric-semantic-layer/GEM_INSTRUCTIONS.md` |
 | Metric Tree Builder | `pm-data` | `pm-data/metric-tree-builder/GEM_INSTRUCTIONS.md` |
 | Metrics Framework | `pm-data` | `pm-data/metrics-framework/GEM_INSTRUCTIONS.md` |
+| Microcopy Writer | `pm-uxwriting` | `pm-uxwriting/microcopy-writer/GEM_INSTRUCTIONS.md` |
 | Microservices Decomposition | `pm-engineering` | `pm-engineering/microservices-decomposition/GEM_INSTRUCTIONS.md` |
 | Mind Map | `pm-visuals` | `pm-visuals/mind-map/GEM_INSTRUCTIONS.md` |
 | Model Card | `pm-ai` | `pm-ai/model-card/GEM_INSTRUCTIONS.md` |
@@ -209,6 +213,7 @@
 | NotebookLM Connector | `pm-cross` | `pm-cross/notebooklm-connector/GEM_INSTRUCTIONS.md` |
 | Notes Humanizer | `pm-writers` | `pm-writers/notes-humanizer/GEM_INSTRUCTIONS.md` |
 | OKR Builder | `pm-planning` | `pm-planning/okr-builder/GEM_INSTRUCTIONS.md` |
+| Onboarding Copy | `pm-uxwriting` | `pm-uxwriting/onboarding-copy/GEM_INSTRUCTIONS.md` |
 | Onboarding Plan | `pm-hr` | `pm-hr/onboarding-plan/GEM_INSTRUCTIONS.md` |
 | On-Call Runbook | `pm-engineering` | `pm-engineering/oncall-runbook/GEM_INSTRUCTIONS.md` |
 | One-on-One Prep | `pm-career` | `pm-career/one-on-one-prep/GEM_INSTRUCTIONS.md` |
@@ -238,6 +243,7 @@
 | Product Description | `pm-ecommerce` | `pm-ecommerce/product-description/GEM_INSTRUCTIONS.md` |
 | Product Health Analysis | `pm-analytics` | `pm-analytics/product-health-analysis/GEM_INSTRUCTIONS.md` |
 | Product Launch Checklist | `pm-delivery` | `pm-delivery/product-launch-checklist/GEM_INSTRUCTIONS.md` |
+| Product Naming | `pm-uxwriting` | `pm-uxwriting/product-naming/GEM_INSTRUCTIONS.md` |
 | Product Positioning Doc | `pm-gtm` | `pm-gtm/product-positioning-doc/GEM_INSTRUCTIONS.md` |
 | Professional Brain | `pm-cross` | `pm-cross/professional-brain/GEM_INSTRUCTIONS.md` |
 | Professional Translator | `pm-localization` | `pm-localization/professional-translator/GEM_INSTRUCTIONS.md` |

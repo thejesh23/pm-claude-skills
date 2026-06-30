@@ -25,6 +25,14 @@
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
     },
     {
+      "name": "pm-uxwriting",
+      "description": "UX writing & content design skills: Microcopy Writer, Error Message Writer, Empty State Writer, Product Naming, Content Style Guide, and Onboarding Copy. The small words that make a product clear, usable, and on-voice.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-uxwriting",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
       "name": "pm-ecommerce",
       "description": "E-commerce & retail skills that sell: Product Description, Marketplace Listing Optimizer, Return & Refund Policy, Promotion Plan, Review Response, and Category Page Brief. Listings that rank and convert, promos with the margin math, and reviews handled well.",
       "version": "1.0.0",

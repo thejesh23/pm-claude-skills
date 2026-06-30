@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-336 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
+342 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -66,6 +66,7 @@
 | Consulting Proposal | `pm-consulting` | `pm-consulting/consulting-proposal/SYSTEM_PROMPT.md` |
 | Content Calendar | `pm-gtm` | `pm-gtm/content-calendar/SYSTEM_PROMPT.md` |
 | Content Repurposer | `pm-creator` | `pm-creator/content-repurposer/SYSTEM_PROMPT.md` |
+| Content Style Guide | `pm-uxwriting` | `pm-uxwriting/content-style-guide/SYSTEM_PROMPT.md` |
 | Context Mode | `pm-engineering` | `pm-engineering/context-mode/SYSTEM_PROMPT.md` |
 | Contract Review | `pm-legal` | `pm-legal/contract-review/SYSTEM_PROMPT.md` |
 | Conversion Rate Optimization | `pm-growth` | `pm-growth/conversion-rate-optimization/SYSTEM_PROMPT.md` |
@@ -110,11 +111,13 @@
 | Email Sequence | `pm-copy` | `pm-copy/email-sequence/SYSTEM_PROMPT.md` |
 | Email Triage | `pm-operations` | `pm-operations/email-triage/SYSTEM_PROMPT.md` |
 | Employee Engagement Survey | `pm-hr` | `pm-hr/employee-engagement-survey/SYSTEM_PROMPT.md` |
+| Empty State Writer | `pm-uxwriting` | `pm-uxwriting/empty-state-writer/SYSTEM_PROMPT.md` |
 | Engagement Retro | `pm-consulting` | `pm-consulting/engagement-retro/SYSTEM_PROMPT.md` |
 | Engineering Hiring Rubric | `pm-engineering` | `pm-engineering/engineering-hiring-rubric/SYSTEM_PROMPT.md` |
 | Engineering Weekly Report | `pm-engineering` | `pm-engineering/engineering-weekly-report/SYSTEM_PROMPT.md` |
 | Entity-Relationship Diagram | `pm-visuals` | `pm-visuals/entity-relationship-diagram/SYSTEM_PROMPT.md` |
 | Error Decoder | `pm-engineering` | `pm-engineering/error-decoder/SYSTEM_PROMPT.md` |
+| Error Message Writer | `pm-uxwriting` | `pm-uxwriting/error-message-writer/SYSTEM_PROMPT.md` |
 | Escalation Tree | `pm-support` | `pm-support/escalation-tree/SYSTEM_PROMPT.md` |
 | Eval Rubric Designer | `pm-ai` | `pm-ai/eval-rubric-designer/SYSTEM_PROMPT.md` |
 | Excel Model | `pm-documents` | `pm-documents/excel-model/SYSTEM_PROMPT.md` |
@@ -197,6 +200,7 @@
 | Metric Semantic Layer | `pm-dataeng` | `pm-dataeng/metric-semantic-layer/SYSTEM_PROMPT.md` |
 | Metric Tree Builder | `pm-data` | `pm-data/metric-tree-builder/SYSTEM_PROMPT.md` |
 | Metrics Framework | `pm-data` | `pm-data/metrics-framework/SYSTEM_PROMPT.md` |
+| Microcopy Writer | `pm-uxwriting` | `pm-uxwriting/microcopy-writer/SYSTEM_PROMPT.md` |
 | Microservices Decomposition | `pm-engineering` | `pm-engineering/microservices-decomposition/SYSTEM_PROMPT.md` |
 | Mind Map | `pm-visuals` | `pm-visuals/mind-map/SYSTEM_PROMPT.md` |
 | Model Card | `pm-ai` | `pm-ai/model-card/SYSTEM_PROMPT.md` |
@@ -209,6 +213,7 @@
 | NotebookLM Connector | `pm-cross` | `pm-cross/notebooklm-connector/SYSTEM_PROMPT.md` |
 | Notes Humanizer | `pm-writers` | `pm-writers/notes-humanizer/SYSTEM_PROMPT.md` |
 | OKR Builder | `pm-planning` | `pm-planning/okr-builder/SYSTEM_PROMPT.md` |
+| Onboarding Copy | `pm-uxwriting` | `pm-uxwriting/onboarding-copy/SYSTEM_PROMPT.md` |
 | Onboarding Plan | `pm-hr` | `pm-hr/onboarding-plan/SYSTEM_PROMPT.md` |
 | On-Call Runbook | `pm-engineering` | `pm-engineering/oncall-runbook/SYSTEM_PROMPT.md` |
 | One-on-One Prep | `pm-career` | `pm-career/one-on-one-prep/SYSTEM_PROMPT.md` |
@@ -238,6 +243,7 @@
 | Product Description | `pm-ecommerce` | `pm-ecommerce/product-description/SYSTEM_PROMPT.md` |
 | Product Health Analysis | `pm-analytics` | `pm-analytics/product-health-analysis/SYSTEM_PROMPT.md` |
 | Product Launch Checklist | `pm-delivery` | `pm-delivery/product-launch-checklist/SYSTEM_PROMPT.md` |
+| Product Naming | `pm-uxwriting` | `pm-uxwriting/product-naming/SYSTEM_PROMPT.md` |
 | Product Positioning Doc | `pm-gtm` | `pm-gtm/product-positioning-doc/SYSTEM_PROMPT.md` |
 | Professional Brain | `pm-cross` | `pm-cross/professional-brain/SYSTEM_PROMPT.md` |
 | Professional Translator | `pm-localization` | `pm-localization/professional-translator/SYSTEM_PROMPT.md` |
