@@ -212,6 +212,30 @@
     {
       "skill": "donor-update",
       "input": "Write a year-end donor update/thank-you email to our recurring donors. Because of their support this year we provided 12,000 meals and opened a second community kitchen. We want them to feel appreciated and part of the mission, with a short story and only a very light, optional invitation to a volunteer day — no hard ask. Warm, personal tone. Mark any invented specifics for us to replace."
+    },
+    {
+      "skill": "product-description",
+      "input": "Write a product description for our insulated stainless-steel water bottle. Details: 750ml, double-wall vacuum insulation (keeps cold 24h / hot 12h), powder-coated matte finish, leak-proof lid, fits most cup holders, BPA-free, available in 5 colours. Sold on our own Shopify store. Buyers are active commuters and gym-goers. Brand voice: friendly and energetic. Don't invent any specs I haven't given."
+    },
+    {
+      "skill": "marketplace-listing-optimizer",
+      "input": "Optimize our Amazon listing. Product: a bamboo cutting board set (3 pieces, different sizes, juice groove, non-slip). Current title is just 'Bamboo Cutting Board Set'. Traffic is low and conversion is mediocre. Category is Kitchen. Buyers search things like 'wood cutting board', 'chopping board set', 'bamboo cutting board with handle'. Give me an optimized title, bullets, backend keywords, an images plan, and conversion fixes."
+    },
+    {
+      "skill": "return-refund-policy",
+      "input": "Write a returns, refunds and exchanges policy for my Shopify clothing store. I want a 30-day window, items must be unworn with tags, customers pay return shipping except for faulty/wrong items, refunds to original payment within 5-7 business days, and final-sale items (underwear and clearance) aren't returnable. Friendly tone. Flag anything I should check legally."
+    },
+    {
+      "skill": "promotion-plan",
+      "input": "Plan a Black Friday / Cyber Monday promotion for our skincare DTC brand. Goal: acquire new customers but protect margin. Hero product costs us $12 and sells for $40. We have email (~50k list), Meta/Google ads, and our Shopify store. Window is the BFCM weekend. Show me the offer options, the margin/break-even math (use placeholders for numbers I haven't given), the channel plan, timeline, and how to measure it."
+    },
+    {
+      "skill": "review-response",
+      "input": "Write replies to two reviews on our Trustpilot. (1) 5 stars: 'Fast shipping and the headphones sound amazing, exactly as described!' (2) 1 star: 'Arrived 10 days late and the box was crushed. Really disappointed.' Our brand voice is warm and professional; we can offer a replacement or refund on the second. Sign off as 'The Acme Audio Team'. Also give me reusable templates."
+    },
+    {
+      "skill": "category-page-brief",
+      "input": "Write a category page brief for the 'Women's Running Shoes' collection on our Shopify store. Shoppers range from beginners to marathoners. We carry ~60 styles across brands, with attributes like cushioning, support type (neutral/stability), surface (road/trail), and price. Target keywords around 'women's running shoes'. Cover intent/keywords, H1 + intro, merchandising/sort, filters and their crawlability, internal links, and technical SEO."
     }
   ]
 }

@@ -25,6 +25,14 @@
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
     },
     {
+      "name": "pm-ecommerce",
+      "description": "E-commerce & retail skills that sell: Product Description, Marketplace Listing Optimizer, Return & Refund Policy, Promotion Plan, Review Response, and Category Page Brief. Listings that rank and convert, promos with the margin math, and reviews handled well.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-ecommerce",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
       "name": "pm-support",
       "description": "Support & customer-ops skills: Support Macro, Help-Center Article, CSAT/NPS Analysis (with an NPS calculator), Support Runbook, Escalation Tree, and KB Audit. For frontline support, CX, and success teams.",
       "version": "1.0.0",
