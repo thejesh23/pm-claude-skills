@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-411 skills exported. Copy a `.mdc rule` into the tool to use it.
+420 skills exported. Copy a `.mdc rule` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -16,6 +16,8 @@
 | Ad Copy | `pm-copy` | `pm-copy/ad-copy/ad-copy.md` |
 | AEO Optimizer | `pm-writers` | `pm-writers/aeo-optimizer/aeo-optimizer.md` |
 | Agent Design Review | `pm-ai` | `pm-ai/agent-design-review/agent-design-review.md` |
+| Agent Incident Postmortem | `pm-agentops` | `pm-agentops/agent-incident-postmortem/agent-incident-postmortem.md` |
+| Agent Observability Spec | `pm-agentops` | `pm-agentops/agent-observability-spec/agent-observability-spec.md` |
 | Agent Spec | `pm-ai` | `pm-ai/agent-spec/agent-spec.md` |
 | AI Ethics Review | `pm-advanced` | `pm-advanced/ai-ethics-review/ai-ethics-review.md` |
 | AI Eval Plan | `pm-ai` | `pm-ai/ai-eval-plan/ai-eval-plan.md` |
@@ -31,6 +33,7 @@
 | Architecture Decision Record (ADR) | `pm-engineering` | `pm-engineering/architecture-decision-record/architecture-decision-record.md` |
 | Architecture Diagram | `pm-visuals` | `pm-visuals/architecture-diagram/architecture-diagram.md` |
 | Assumption Mapper | `pm-discovery` | `pm-discovery/assumption-mapper/assumption-mapper.md` |
+| Autopilot Charter | `pm-autopilot` | `pm-autopilot/autopilot-charter/autopilot-charter.md` |
 | Board Deck Narrative | `pm-business` | `pm-business/board-deck-narrative/board-deck-narrative.md` |
 | Board Minutes | `pm-business` | `pm-business/board-minutes/board-minutes.md` |
 | Board Pre-Read | `pm-business` | `pm-business/board-pre-read/board-pre-read.md` |
@@ -85,6 +88,7 @@
 | Content Calendar | `pm-gtm` | `pm-gtm/content-calendar/content-calendar.md` |
 | Content Repurposer | `pm-creator` | `pm-creator/content-repurposer/content-repurposer.md` |
 | Content Style Guide | `pm-uxwriting` | `pm-uxwriting/content-style-guide/content-style-guide.md` |
+| Context Engineering Review | `pm-agentops` | `pm-agentops/context-engineering-review/context-engineering-review.md` |
 | Context Mode | `pm-engineering` | `pm-engineering/context-mode/context-mode.md` |
 | Contract Review | `pm-legal` | `pm-legal/contract-review/contract-review.md` |
 | Contributor Guide | `pm-devrel` | `pm-devrel/contributor-guide/contributor-guide.md` |
@@ -113,6 +117,7 @@
 | Debt Payoff Plan | `pm-money` | `pm-money/debt-payoff-plan/debt-payoff-plan.md` |
 | Debugging Log Analyser | `pm-engineering` | `pm-engineering/debugging-log-analyser/debugging-log-analyser.md` |
 | Decision Memo | `pm-business` | `pm-business/decision-memo/decision-memo.md` |
+| Delta Briefing | `pm-autopilot` | `pm-autopilot/delta-briefing/delta-briefing.md` |
 | Demand Letter | `pm-legal` | `pm-legal/demand-letter/demand-letter.md` |
 | Dependency Audit | `pm-engineering` | `pm-engineering/dependency-audit/dependency-audit.md` |
 | Dependency Conflict Resolver | `pm-engineering` | `pm-engineering/dependency-conflict-resolver/dependency-conflict-resolver.md` |
@@ -237,6 +242,7 @@
 | Microservices Decomposition | `pm-engineering` | `pm-engineering/microservices-decomposition/microservices-decomposition.md` |
 | Mind Map | `pm-visuals` | `pm-visuals/mind-map/mind-map.md` |
 | Model Card | `pm-ai` | `pm-ai/model-card/model-card.md` |
+| Model Migration Plan | `pm-agentops` | `pm-agentops/model-migration-plan/model-migration-plan.md` |
 | Model Selection Advisor | `pm-ai` | `pm-ai/model-selection-advisor/model-selection-advisor.md` |
 | Monitoring Setup Guide | `pm-engineering` | `pm-engineering/monitoring-setup-guide/monitoring-setup-guide.md` |
 | Morning Intelligence | `pm-operations` | `pm-operations/morning-intelligence/morning-intelligence.md` |
@@ -293,6 +299,7 @@
 | Promotion Packet | `pm-career` | `pm-career/promotion-packet/promotion-packet.md` |
 | Promotion Plan | `pm-ecommerce` | `pm-ecommerce/promotion-plan/promotion-plan.md` |
 | Prompt Optimizer | `pm-ai` | `pm-ai/prompt-optimizer/prompt-optimizer.md` |
+| Prompt Regression Suite | `pm-agentops` | `pm-agentops/prompt-regression-suite/prompt-regression-suite.md` |
 | Property Investment Analysis | `pm-realestate` | `pm-realestate/property-investment-analysis/property-investment-analysis.md` |
 | Property Listing | `pm-realestate` | `pm-realestate/property-listing/property-listing.md` |
 | Property Offer Letter | `pm-realestate` | `pm-realestate/property-offer-letter/property-offer-letter.md` |
@@ -348,6 +355,7 @@
 | Sales Page | `pm-copy` | `pm-copy/sales-page/sales-page.md` |
 | Savings Goal Plan | `pm-money` | `pm-money/savings-goal-plan/savings-goal-plan.md` |
 | Saying No | `pm-comms` | `pm-comms/saying-no/saying-no.md` |
+| Schedule Recipe | `pm-autopilot` | `pm-autopilot/schedule-recipe/schedule-recipe.md` |
 | Schema Markup | `pm-growth` | `pm-growth/schema-markup/schema-markup.md` |
 | Security Incident Response | `pm-security` | `pm-security/security-incident-response/security-incident-response.md` |
 | Security Review | `pm-security` | `pm-security/security-review/security-review.md` |
@@ -413,6 +421,7 @@
 | Viral Content Framework | `pm-social` | `pm-social/viral-content-framework/viral-content-framework.md` |
 | Voice of Customer Program | `pm-pmm` | `pm-pmm/voice-of-customer-program/voice-of-customer-program.md` |
 | Vulnerability Triage | `pm-security` | `pm-security/vuln-triage/vuln-triage.md` |
+| Which Skill Router | `pm-essentials` | `pm-essentials/which-skill/which-skill.md` |
 | Win/Loss Analysis | `pm-pmm` | `pm-pmm/win-loss-analysis/win-loss-analysis.md` |
 | Word Document | `pm-documents` | `pm-documents/word-document/word-document.md` |
 | Workshop Facilitation Guide | `pm-operations` | `pm-operations/workshop-facilitation-guide/workshop-facilitation-guide.md` |

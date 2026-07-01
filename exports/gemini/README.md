@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-411 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
+420 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -16,6 +16,8 @@
 | Ad Copy | `pm-copy` | `pm-copy/ad-copy/GEM_INSTRUCTIONS.md` |
 | AEO Optimizer | `pm-writers` | `pm-writers/aeo-optimizer/GEM_INSTRUCTIONS.md` |
 | Agent Design Review | `pm-ai` | `pm-ai/agent-design-review/GEM_INSTRUCTIONS.md` |
+| Agent Incident Postmortem | `pm-agentops` | `pm-agentops/agent-incident-postmortem/GEM_INSTRUCTIONS.md` |
+| Agent Observability Spec | `pm-agentops` | `pm-agentops/agent-observability-spec/GEM_INSTRUCTIONS.md` |
 | Agent Spec | `pm-ai` | `pm-ai/agent-spec/GEM_INSTRUCTIONS.md` |
 | AI Ethics Review | `pm-advanced` | `pm-advanced/ai-ethics-review/GEM_INSTRUCTIONS.md` |
 | AI Eval Plan | `pm-ai` | `pm-ai/ai-eval-plan/GEM_INSTRUCTIONS.md` |
@@ -31,6 +33,7 @@
 | Architecture Decision Record (ADR) | `pm-engineering` | `pm-engineering/architecture-decision-record/GEM_INSTRUCTIONS.md` |
 | Architecture Diagram | `pm-visuals` | `pm-visuals/architecture-diagram/GEM_INSTRUCTIONS.md` |
 | Assumption Mapper | `pm-discovery` | `pm-discovery/assumption-mapper/GEM_INSTRUCTIONS.md` |
+| Autopilot Charter | `pm-autopilot` | `pm-autopilot/autopilot-charter/GEM_INSTRUCTIONS.md` |
 | Board Deck Narrative | `pm-business` | `pm-business/board-deck-narrative/GEM_INSTRUCTIONS.md` |
 | Board Minutes | `pm-business` | `pm-business/board-minutes/GEM_INSTRUCTIONS.md` |
 | Board Pre-Read | `pm-business` | `pm-business/board-pre-read/GEM_INSTRUCTIONS.md` |
@@ -85,6 +88,7 @@
 | Content Calendar | `pm-gtm` | `pm-gtm/content-calendar/GEM_INSTRUCTIONS.md` |
 | Content Repurposer | `pm-creator` | `pm-creator/content-repurposer/GEM_INSTRUCTIONS.md` |
 | Content Style Guide | `pm-uxwriting` | `pm-uxwriting/content-style-guide/GEM_INSTRUCTIONS.md` |
+| Context Engineering Review | `pm-agentops` | `pm-agentops/context-engineering-review/GEM_INSTRUCTIONS.md` |
 | Context Mode | `pm-engineering` | `pm-engineering/context-mode/GEM_INSTRUCTIONS.md` |
 | Contract Review | `pm-legal` | `pm-legal/contract-review/GEM_INSTRUCTIONS.md` |
 | Contributor Guide | `pm-devrel` | `pm-devrel/contributor-guide/GEM_INSTRUCTIONS.md` |
@@ -113,6 +117,7 @@
 | Debt Payoff Plan | `pm-money` | `pm-money/debt-payoff-plan/GEM_INSTRUCTIONS.md` |
 | Debugging Log Analyser | `pm-engineering` | `pm-engineering/debugging-log-analyser/GEM_INSTRUCTIONS.md` |
 | Decision Memo | `pm-business` | `pm-business/decision-memo/GEM_INSTRUCTIONS.md` |
+| Delta Briefing | `pm-autopilot` | `pm-autopilot/delta-briefing/GEM_INSTRUCTIONS.md` |
 | Demand Letter | `pm-legal` | `pm-legal/demand-letter/GEM_INSTRUCTIONS.md` |
 | Dependency Audit | `pm-engineering` | `pm-engineering/dependency-audit/GEM_INSTRUCTIONS.md` |
 | Dependency Conflict Resolver | `pm-engineering` | `pm-engineering/dependency-conflict-resolver/GEM_INSTRUCTIONS.md` |
@@ -237,6 +242,7 @@
 | Microservices Decomposition | `pm-engineering` | `pm-engineering/microservices-decomposition/GEM_INSTRUCTIONS.md` |
 | Mind Map | `pm-visuals` | `pm-visuals/mind-map/GEM_INSTRUCTIONS.md` |
 | Model Card | `pm-ai` | `pm-ai/model-card/GEM_INSTRUCTIONS.md` |
+| Model Migration Plan | `pm-agentops` | `pm-agentops/model-migration-plan/GEM_INSTRUCTIONS.md` |
 | Model Selection Advisor | `pm-ai` | `pm-ai/model-selection-advisor/GEM_INSTRUCTIONS.md` |
 | Monitoring Setup Guide | `pm-engineering` | `pm-engineering/monitoring-setup-guide/GEM_INSTRUCTIONS.md` |
 | Morning Intelligence | `pm-operations` | `pm-operations/morning-intelligence/GEM_INSTRUCTIONS.md` |
@@ -293,6 +299,7 @@
 | Promotion Packet | `pm-career` | `pm-career/promotion-packet/GEM_INSTRUCTIONS.md` |
 | Promotion Plan | `pm-ecommerce` | `pm-ecommerce/promotion-plan/GEM_INSTRUCTIONS.md` |
 | Prompt Optimizer | `pm-ai` | `pm-ai/prompt-optimizer/GEM_INSTRUCTIONS.md` |
+| Prompt Regression Suite | `pm-agentops` | `pm-agentops/prompt-regression-suite/GEM_INSTRUCTIONS.md` |
 | Property Investment Analysis | `pm-realestate` | `pm-realestate/property-investment-analysis/GEM_INSTRUCTIONS.md` |
 | Property Listing | `pm-realestate` | `pm-realestate/property-listing/GEM_INSTRUCTIONS.md` |
 | Property Offer Letter | `pm-realestate` | `pm-realestate/property-offer-letter/GEM_INSTRUCTIONS.md` |
@@ -348,6 +355,7 @@
 | Sales Page | `pm-copy` | `pm-copy/sales-page/GEM_INSTRUCTIONS.md` |
 | Savings Goal Plan | `pm-money` | `pm-money/savings-goal-plan/GEM_INSTRUCTIONS.md` |
 | Saying No | `pm-comms` | `pm-comms/saying-no/GEM_INSTRUCTIONS.md` |
+| Schedule Recipe | `pm-autopilot` | `pm-autopilot/schedule-recipe/GEM_INSTRUCTIONS.md` |
 | Schema Markup | `pm-growth` | `pm-growth/schema-markup/GEM_INSTRUCTIONS.md` |
 | Security Incident Response | `pm-security` | `pm-security/security-incident-response/GEM_INSTRUCTIONS.md` |
 | Security Review | `pm-security` | `pm-security/security-review/GEM_INSTRUCTIONS.md` |
@@ -413,6 +421,7 @@
 | Viral Content Framework | `pm-social` | `pm-social/viral-content-framework/GEM_INSTRUCTIONS.md` |
 | Voice of Customer Program | `pm-pmm` | `pm-pmm/voice-of-customer-program/GEM_INSTRUCTIONS.md` |
 | Vulnerability Triage | `pm-security` | `pm-security/vuln-triage/GEM_INSTRUCTIONS.md` |
+| Which Skill Router | `pm-essentials` | `pm-essentials/which-skill/GEM_INSTRUCTIONS.md` |
 | Win/Loss Analysis | `pm-pmm` | `pm-pmm/win-loss-analysis/GEM_INSTRUCTIONS.md` |
 | Word Document | `pm-documents` | `pm-documents/word-document/GEM_INSTRUCTIONS.md` |
 | Workshop Facilitation Guide | `pm-operations` | `pm-operations/workshop-facilitation-guide/GEM_INSTRUCTIONS.md` |

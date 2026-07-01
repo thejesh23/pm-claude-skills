@@ -9,6 +9,21 @@ each new wave of skills bumps the **major** version, extensions and fixes bump
 
 ## [Unreleased]
 
+## [37.0.0] — The Boardroom, AgentOps & Autopilot bundles, the skill router & per-skill depth — 2026-07-01
+
+### Added
+- **🏛️ The Boardroom** ([`web/boardroom.html`](web/boardroom.html)) — the library's first *adversarial* tool: every other page helps you write the document; this one tells you if it survives a leadership team. Paste a PRD/plan/pitch and a bench of five AI executives (CFO, CTO, Chief Customer Officer, General Counsel, a sceptical VC — seat or excuse each) debates it live in structured rounds: severity-tagged opening statements (`BLOCKER`/`RISK`/`QUESTION`), cross-examination where they argue with each other and concede points, then a neutral Chair's verdict memo — approve/conditions/rework/reject, risks ranked with owners, and the 3–5 changes that would survive the room. Three grill levels (constructive → brutal), downloadable decision memo + transcript, runs fully client-side on any playground provider (Claude, Gemini free key, OpenAI, Ollama, in-browser WebLLM).
+- **New bundle — AgentOps (`pm-agentops`), 8 skills (5 new)** — for teams *operating* AI agents and LLM features in production, complementing `pm-ai`'s design-time skills: `prompt-regression-suite` (golden sets, CI gates, failure triage), `model-migration-plan` (eval → shadow → canary phases with rollback triggers), `context-engineering-review` (audit the assembled context window: bloat, conflicts, caching, token budgets), `agent-incident-postmortem` (blameless postmortems for behavioural AI failures, root-cause layers, nondeterminism discipline), `agent-observability-spec` (trace schema, drift-based quality alerts, sampling/retention/privacy). Wires in `ai-eval-plan`, `llm-cost-latency-budget`, and `agent-design-review` from `pm-ai`. Each new skill ships a curated eval case.
+- **New bundle — Autopilot (`pm-autopilot`), 6 skills (3 new)** — put recurring rituals on a schedule: `autopilot-charter` (decide what to automate — automate/assist/keep-manual calls with guardrails and kill criteria), `schedule-recipe` (turn "every Friday 4pm" into copy-paste setup for Claude Code routines, `/loop`, GitHub Actions cron, n8n, or crontab — with failure alerting), `delta-briefing` (make recurring briefs report what *changed* since the last edition, with a state record the next run diffs against). Wires in `morning-intelligence`, `competitive-intelligence-monitor`, and `pm-weekly-review`. Each new skill ships a curated eval case.
+- **`which-skill` router** (in `pm-essentials`) — describe a task in your own words and get routed to the best-fit skill: routing method, a disambiguation table for the library's look-alike clusters (competitive ×4, changelog ×2, GTM ×2, research synthesis ×2, prioritisation ×3, exec comms ×3, A/B testing ×2), inputs to gather, runner-up with tie-breaker, and workflow-recipe escalation for multi-skill jobs.
+- **Per-skill depth: `references/` + `templates/` for 6 Production-Ready skills** — the first wave of the roadmap's depth push: `prd-template` (success-metrics guide + PRD skeleton), `rice-prioritisation` (estimate calibration + evidence-column scoring worksheet), `okr-builder` (bad-OKR gallery with rewrites + OKR worksheet), `competitor-teardown` (intel sourcing guide with confidence labels + teardown skeleton), `incident-postmortem` (root-cause digging / blameless-language guide + review-meeting agenda), `stakeholder-update` (status-honesty "watermelon" guide + one-page update skeleton). Each SKILL.md now points at its deeper materials.
+
+### Changed
+- **Cross-references in 10 overlapping skill descriptions** — the competitive, changelog, GTM, and research-synthesis clusters now say when to use the sibling skill instead, so models (and humans) pick the right one first time.
+
+### Fixed
+- Removed `plugins/pm-advaned/` — an empty leftover typo twin of `pm-advanced/`.
+
 ## [35.0.0] — 400 skills, new reach (Custom GPT · Gemini Gem · Raycast · Alfred) & Product Marketing — 2026-07-01
 
 ### Added

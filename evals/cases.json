@@ -392,6 +392,42 @@
     {
       "skill": "sales-demo-script",
       "input": "Write a 20-minute first-demo script for our AI reporting analytics product to a Head of RevOps. Their pain (from discovery): the team spends a full day every week hand-building the same board and revenue reports in spreadsheets, and numbers are often stale by the meeting. Value story: connect your data once, then generate a trustworthy draft report from a prompt in minutes, with drill-down. Show: the prompt-to-report generation, the drill-down/verification, and a scheduled auto-refresh. Use realistic sample sales data. Competitor in the deal: Looker. Give me the open that restates their world, discovery hooks to tailor live, a scene-by-scene flow with talk track and marked aha moments, handling for 'can I trust the numbers?', and a close with a concrete next step."
+    },
+    {
+      "skill": "which-skill",
+      "input": "My boss wants something on our competitors for the board next week — we have three main rivals and one of them just announced a pricing change. Which skill should I use?"
+    },
+    {
+      "skill": "autopilot-charter",
+      "input": "I am a solo PM. Every week I write a stakeholder update and a competitive briefing; every month a churn review. I also write performance feedback twice a year. My analytics are in Amplitude, competitor news I collect manually. What should I put on autopilot?"
+    },
+    {
+      "skill": "schedule-recipe",
+      "input": "I want a competitive briefing generated every Monday at 8am London time. I live in Claude Code and my notes are markdown files in a git repo. Output should land as a file in the repo under briefings/."
+    },
+    {
+      "skill": "delta-briefing",
+      "input": "Here is last week's competitor brief: Rival A shipped SSO (watching enterprise push), Rival B raised Series C, Rival C quiet. This week: Rival A announced SOC 2 and a Salesforce integration, Rival B did layoffs of 15%, Rival C still quiet. Write this week's edition."
+    },
+    {
+      "skill": "prompt-regression-suite",
+      "input": "Our support-reply drafter (Claude, JSON output with reply_text and category fields) broke twice: once it started replying in English to German tickets, once it leaked internal ticket IDs into replies. We tweak the prompt weekly. Design the regression suite."
+    },
+    {
+      "skill": "model-migration-plan",
+      "input": "We must move our summarisation feature off claude-3-5-sonnet (deprecated in 90 days) to claude-sonnet-4-6. 2M requests/month, output shown directly to end users, we have ~40 golden examples but no CI evals. Plan the migration."
+    },
+    {
+      "skill": "context-engineering-review",
+      "input": "Our RAG chatbot system prompt is 1,200 tokens, we inject the current date and user name at the top, then 20 retrieved chunks (about 6k tokens), then full chat history unbounded, then 14 tool definitions. Users say it ignores instructions late in conversations and our token bill doubled. Review the context."
+    },
+    {
+      "skill": "agent-incident-postmortem",
+      "input": "Yesterday our billing-support agent told ~30 customers they were eligible for a refund policy that does not exist. It cited a deprecated help-centre article that was still in the retrieval index. A customer posted it on X and support noticed 6 hours in. We have full traces. Write the postmortem."
+    },
+    {
+      "skill": "agent-observability-spec",
+      "input": "We are launching a tool-using research agent (search + internal wiki + email draft tools), about 50k requests/day, on Datadog. Biggest fears: it emailing the wrong thing, cost blowouts, and quality drifting after prompt changes. Spec the observability."
     }
   ]
 }

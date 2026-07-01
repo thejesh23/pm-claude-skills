@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-411 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
+420 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -16,6 +16,8 @@
 | Ad Copy | `pm-copy` | `pm-copy/ad-copy/SYSTEM_PROMPT.md` |
 | AEO Optimizer | `pm-writers` | `pm-writers/aeo-optimizer/SYSTEM_PROMPT.md` |
 | Agent Design Review | `pm-ai` | `pm-ai/agent-design-review/SYSTEM_PROMPT.md` |
+| Agent Incident Postmortem | `pm-agentops` | `pm-agentops/agent-incident-postmortem/SYSTEM_PROMPT.md` |
+| Agent Observability Spec | `pm-agentops` | `pm-agentops/agent-observability-spec/SYSTEM_PROMPT.md` |
 | Agent Spec | `pm-ai` | `pm-ai/agent-spec/SYSTEM_PROMPT.md` |
 | AI Ethics Review | `pm-advanced` | `pm-advanced/ai-ethics-review/SYSTEM_PROMPT.md` |
 | AI Eval Plan | `pm-ai` | `pm-ai/ai-eval-plan/SYSTEM_PROMPT.md` |
@@ -31,6 +33,7 @@
 | Architecture Decision Record (ADR) | `pm-engineering` | `pm-engineering/architecture-decision-record/SYSTEM_PROMPT.md` |
 | Architecture Diagram | `pm-visuals` | `pm-visuals/architecture-diagram/SYSTEM_PROMPT.md` |
 | Assumption Mapper | `pm-discovery` | `pm-discovery/assumption-mapper/SYSTEM_PROMPT.md` |
+| Autopilot Charter | `pm-autopilot` | `pm-autopilot/autopilot-charter/SYSTEM_PROMPT.md` |
 | Board Deck Narrative | `pm-business` | `pm-business/board-deck-narrative/SYSTEM_PROMPT.md` |
 | Board Minutes | `pm-business` | `pm-business/board-minutes/SYSTEM_PROMPT.md` |
 | Board Pre-Read | `pm-business` | `pm-business/board-pre-read/SYSTEM_PROMPT.md` |
@@ -85,6 +88,7 @@
 | Content Calendar | `pm-gtm` | `pm-gtm/content-calendar/SYSTEM_PROMPT.md` |
 | Content Repurposer | `pm-creator` | `pm-creator/content-repurposer/SYSTEM_PROMPT.md` |
 | Content Style Guide | `pm-uxwriting` | `pm-uxwriting/content-style-guide/SYSTEM_PROMPT.md` |
+| Context Engineering Review | `pm-agentops` | `pm-agentops/context-engineering-review/SYSTEM_PROMPT.md` |
 | Context Mode | `pm-engineering` | `pm-engineering/context-mode/SYSTEM_PROMPT.md` |
 | Contract Review | `pm-legal` | `pm-legal/contract-review/SYSTEM_PROMPT.md` |
 | Contributor Guide | `pm-devrel` | `pm-devrel/contributor-guide/SYSTEM_PROMPT.md` |
@@ -113,6 +117,7 @@
 | Debt Payoff Plan | `pm-money` | `pm-money/debt-payoff-plan/SYSTEM_PROMPT.md` |
 | Debugging Log Analyser | `pm-engineering` | `pm-engineering/debugging-log-analyser/SYSTEM_PROMPT.md` |
 | Decision Memo | `pm-business` | `pm-business/decision-memo/SYSTEM_PROMPT.md` |
+| Delta Briefing | `pm-autopilot` | `pm-autopilot/delta-briefing/SYSTEM_PROMPT.md` |
 | Demand Letter | `pm-legal` | `pm-legal/demand-letter/SYSTEM_PROMPT.md` |
 | Dependency Audit | `pm-engineering` | `pm-engineering/dependency-audit/SYSTEM_PROMPT.md` |
 | Dependency Conflict Resolver | `pm-engineering` | `pm-engineering/dependency-conflict-resolver/SYSTEM_PROMPT.md` |
@@ -237,6 +242,7 @@
 | Microservices Decomposition | `pm-engineering` | `pm-engineering/microservices-decomposition/SYSTEM_PROMPT.md` |
 | Mind Map | `pm-visuals` | `pm-visuals/mind-map/SYSTEM_PROMPT.md` |
 | Model Card | `pm-ai` | `pm-ai/model-card/SYSTEM_PROMPT.md` |
+| Model Migration Plan | `pm-agentops` | `pm-agentops/model-migration-plan/SYSTEM_PROMPT.md` |
 | Model Selection Advisor | `pm-ai` | `pm-ai/model-selection-advisor/SYSTEM_PROMPT.md` |
 | Monitoring Setup Guide | `pm-engineering` | `pm-engineering/monitoring-setup-guide/SYSTEM_PROMPT.md` |
 | Morning Intelligence | `pm-operations` | `pm-operations/morning-intelligence/SYSTEM_PROMPT.md` |
@@ -293,6 +299,7 @@
 | Promotion Packet | `pm-career` | `pm-career/promotion-packet/SYSTEM_PROMPT.md` |
 | Promotion Plan | `pm-ecommerce` | `pm-ecommerce/promotion-plan/SYSTEM_PROMPT.md` |
 | Prompt Optimizer | `pm-ai` | `pm-ai/prompt-optimizer/SYSTEM_PROMPT.md` |
+| Prompt Regression Suite | `pm-agentops` | `pm-agentops/prompt-regression-suite/SYSTEM_PROMPT.md` |
 | Property Investment Analysis | `pm-realestate` | `pm-realestate/property-investment-analysis/SYSTEM_PROMPT.md` |
 | Property Listing | `pm-realestate` | `pm-realestate/property-listing/SYSTEM_PROMPT.md` |
 | Property Offer Letter | `pm-realestate` | `pm-realestate/property-offer-letter/SYSTEM_PROMPT.md` |
@@ -348,6 +355,7 @@
 | Sales Page | `pm-copy` | `pm-copy/sales-page/SYSTEM_PROMPT.md` |
 | Savings Goal Plan | `pm-money` | `pm-money/savings-goal-plan/SYSTEM_PROMPT.md` |
 | Saying No | `pm-comms` | `pm-comms/saying-no/SYSTEM_PROMPT.md` |
+| Schedule Recipe | `pm-autopilot` | `pm-autopilot/schedule-recipe/SYSTEM_PROMPT.md` |
 | Schema Markup | `pm-growth` | `pm-growth/schema-markup/SYSTEM_PROMPT.md` |
 | Security Incident Response | `pm-security` | `pm-security/security-incident-response/SYSTEM_PROMPT.md` |
 | Security Review | `pm-security` | `pm-security/security-review/SYSTEM_PROMPT.md` |
@@ -413,6 +421,7 @@
 | Viral Content Framework | `pm-social` | `pm-social/viral-content-framework/SYSTEM_PROMPT.md` |
 | Voice of Customer Program | `pm-pmm` | `pm-pmm/voice-of-customer-program/SYSTEM_PROMPT.md` |
 | Vulnerability Triage | `pm-security` | `pm-security/vuln-triage/SYSTEM_PROMPT.md` |
+| Which Skill Router | `pm-essentials` | `pm-essentials/which-skill/SYSTEM_PROMPT.md` |
 | Win/Loss Analysis | `pm-pmm` | `pm-pmm/win-loss-analysis/SYSTEM_PROMPT.md` |
 | Word Document | `pm-documents` | `pm-documents/word-document/SYSTEM_PROMPT.md` |
 | Workshop Facilitation Guide | `pm-operations` | `pm-operations/workshop-facilitation-guide/SYSTEM_PROMPT.md` |

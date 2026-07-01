@@ -57,6 +57,7 @@
     { href: 'hub.html', label: '🧭 Journeys' },
     { href: 'galaxy.html', label: '🌌 Galaxy' },
     { group: 'Tools', items: [
+      ['boardroom.html', '🏛️ Boardroom'],
       ['agent.html', '✨ Auto-Agent'],
       ['canvas.html', '🧩 Workflow Canvas'],
       ['ask.html', '❓ Ask'],
