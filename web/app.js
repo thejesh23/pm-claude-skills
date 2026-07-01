@@ -163,6 +163,10 @@ async function init() {
   // "Which skill do I need?" recommender + shareable links.
   el('recommendInput').addEventListener('input', renderRecommendations);
   el('shareBtn').addEventListener('click', shareSkill);
+  if (el('embedBtn')) el('embedBtn').addEventListener('click', copyEmbed);
+  if (el('remixShareBtn')) el('remixShareBtn').addEventListener('click', shareRemix);
+  if (el('remixClearBtn')) el('remixClearBtn').addEventListener('click', clearRemix);
+  if (el('remixInput')) el('remixInput').addEventListener('input', updateRemixActive);
 
   // Theme is applied + toggled by nav.js (shared across all pages).
 
@@ -545,6 +549,49 @@ function shareSkill() {
   );
 }
 
+// Copy an embed snippet — a "Run this skill" card (rendered by embed.js) for a blog or docs.
+function copyEmbed() {
+  if (!current) return;
+  const snippet = `<div data-pm-skill="${current.name}"></div>\n<script src="https://mohitagw15856.github.io/pm-claude-skills/embed.js" async><\/script>`;
+  navigator.clipboard.writeText(snippet).then(
+    () => { el('shareMsg').textContent = 'Embed snippet copied — paste it into your page HTML.'; },
+    () => { el('shareMsg').textContent = snippet; }
+  );
+}
+
+function updateRemixActive() {
+  const on = !!(el('remixInput') && el('remixInput').value.trim());
+  if (el('remixActive')) el('remixActive').hidden = !on;
+}
+
+function clearRemix() {
+  if (el('remixInput')) el('remixInput').value = '';
+  updateRemixActive();
+  if (el('remixMsg')) el('remixMsg').textContent = '';
+}
+
+// Share a link that reopens this skill with the user's remix (and inputs) applied.
+function shareRemix() {
+  if (!current) return;
+  const rx = el('remixInput') ? el('remixInput').value.trim() : '';
+  if (!rx) { el('remixMsg').textContent = 'Add a remix instruction first.'; return; }
+  const url = new URL(location.href.split('?')[0]);
+  url.searchParams.set('skill', current.name);
+  const values = [...el('inputForm').querySelectorAll('input, textarea')].map((f) => f.value);
+  if (values.some((v) => v.trim())) {
+    try { const p = btoa(unescape(encodeURIComponent(JSON.stringify(values)))); if (p.length < 1800) url.searchParams.set('i', p); } catch (_) {}
+  }
+  let packed;
+  try { packed = btoa(unescape(encodeURIComponent(rx))); } catch (_) { el('remixMsg').textContent = "Couldn't encode that remix."; return; }
+  if (packed.length > 3000) { el('remixMsg').textContent = 'Remix is too long to fit in a link — keep it short.'; return; }
+  url.searchParams.set('remix', packed);
+  const link = url.toString();
+  navigator.clipboard.writeText(link).then(
+    () => { el('remixMsg').textContent = 'Remix link copied — it opens this skill with your instructions applied.'; },
+    () => { el('remixMsg').textContent = link; }
+  );
+}
+
 function applyShareLink() {
   const params = new URLSearchParams(location.search);
   const name = params.get('skill');
@@ -559,6 +606,14 @@ function applyShareLink() {
       const fields = [...el('inputForm').querySelectorAll('input, textarea')];
       fields.forEach((f, i) => { if (values[i] != null) f.value = values[i]; });
     } catch (_) { /* ignore malformed input payloads */ }
+  }
+  const rx = params.get('remix');
+  if (rx && el('remixInput')) {
+    try {
+      el('remixInput').value = decodeURIComponent(escape(atob(rx)));
+      updateRemixActive();
+      if (el('remixBox')) el('remixBox').open = true;
+    } catch (_) { /* ignore malformed remix payloads */ }
   }
 }
 
@@ -817,6 +872,8 @@ function renderRelated(s) {
 function selectSkill(s) {
   current = s;
   recordRecent(s.name);
+  // Reset any remix from a previously-open skill (a shared remix link re-applies it after this).
+  if (el('remixInput')) { el('remixInput').value = ''; updateRemixActive(); if (el('remixMsg')) el('remixMsg').textContent = ''; }
   showHero(false);
   el('gallery').hidden = true;
   el('controls').hidden = true;
@@ -1032,6 +1089,15 @@ ${current.instructions}${ctxBlock}`;
     system += langInstr;
     plainSystem = plainSystem ? plainSystem + langInstr : langInstr.trim();
   }
+  // Remix: layer the user's custom instructions on top of the skill (and the plain side).
+  const remix = el('remixInput') ? el('remixInput').value.trim() : '';
+  if (remix) {
+    const remixInstr = `\n\n## User remix — apply on top of everything above\n${remix}`;
+    system += remixInstr;
+    plainSystem = plainSystem ? plainSystem + remixInstr : remixInstr.trim();
+    if (window.pmTrack) pmTrack('remix/' + current.name);
+  }
+
   // RTL scripts (Arabic, Urdu…) render right-to-left.
   const rtlOpt = el('outputLang') && el('outputLang').selectedOptions[0];
   const dir = rtlOpt && rtlOpt.dataset.rtl ? 'rtl' : 'ltr';

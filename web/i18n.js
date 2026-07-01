@@ -12,6 +12,7 @@
   var DICT = {
     // ── Nav (shared) ──
     'nav.playground': { en: '▶ Playground', zh: '▶ 技能场' },
+    'nav.daily': { en: '🔥 Daily', zh: '🔥 每日挑战' },
     'nav.jobs': { en: '💼 Job Search', zh: '💼 求职' },
     'nav.journeys': { en: '🧭 Journeys', zh: '🧭 学习路径' },
     'nav.galaxy': { en: '🌌 Galaxy', zh: '🌌 技能星系' },
