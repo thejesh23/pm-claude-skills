@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daily Challenge — one professional task a day | PM Skills</title>
+<meta name="description" content="A new professional challenge every day — write today's PRD, board minutes, launch plan or postmortem with a real Agent Skill. Build a streak, run it free in your browser, and share your result." />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .daily { max-width: 720px; margin: 0 auto; padding: 22px 22px 80px; }
+  .streak-row { display: flex; gap: 12px; align-items: center; justify-content: center; margin: 6px 0 18px; flex-wrap: wrap; }
+  .streak { display: inline-flex; align-items: center; gap: 8px; background: var(--panel); border: 1px solid var(--border); border-radius: 999px; padding: 8px 16px; font-weight: 700; }
+  .streak .n { color: var(--accent); font-size: 20px; }
+  .card-day { border: 1px solid var(--border); border-radius: 16px; background: var(--panel); padding: 22px 24px; }
+  .card-day .eyebrow { font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--accent-2); font-weight: 700; }
+  .card-day h2 { font-size: 23px; margin: 6px 0 4px; }
+  .card-day .skill-chip { display: inline-block; font-size: 12px; font-weight: 700; color: var(--accent-2); background: var(--panel-2); border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px; margin-bottom: 12px; }
+  .card-day .prompt { font-size: 16px; line-height: 1.6; color: var(--text); background: var(--panel-2); border-left: 3px solid var(--accent); border-radius: 8px; padding: 14px 16px; margin: 10px 0 18px; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 11px 18px; border-radius: 10px; font-weight: 700; font-size: 15px; cursor: pointer; border: none; text-decoration: none; }
+  .btn-primary { background: linear-gradient(135deg, #e0855f, #d9605a); color: #1a1207; }
+  .btn-ghost { background: var(--panel-2); border: 1px solid var(--border); color: var(--text); }
+  .msg { min-height: 20px; font-size: 13px; color: var(--accent-2); margin-top: 10px; }
+  .sub { text-align: center; color: #95a0b0; font-size: 14px; margin-top: 22px; }
+  .done-note { color: #6ee7b7; font-weight: 600; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img src="assets/product-notes.jpg" alt="Product Notes" class="brand-logo" />
+    <div class="brand-text"><h1>Daily Challenge</h1><p class="tagline">One professional task a day. Build the habit, build a streak.</p></div>
+  </div>
+</header>
+<nav class="toolbar-nav" id="toolbar" aria-label="Tools"></nav>
+<div class="key-note">🔥 A new challenge every day — write it with a real skill, free in your browser.</div>
+
+<div class="daily">
+  <div class="streak-row">
+    <span class="streak">🔥 <span class="n" id="streakN">0</span>&nbsp;day streak</span>
+    <span class="streak">🏆 <span class="n" id="totalN">0</span>&nbsp;done</span>
+  </div>
+
+  <div class="card-day">
+    <div class="eyebrow" id="dayLabel">Today's challenge</div>
+    <h2 id="chTitle">…</h2>
+    <span class="skill-chip" id="chSkill">skill</span>
+    <div class="prompt" id="chPrompt">Loading today's challenge…</div>
+    <div class="cta">
+      <a class="btn btn-primary" id="runBtn" href="#">▶ Do it now — run in the playground</a>
+      <button class="btn btn-ghost" id="doneBtn" type="button">✓ Mark done</button>
+      <button class="btn btn-ghost" id="shareBtn" type="button">🔗 Share</button>
+    </div>
+    <div class="msg" id="msg"></div>
+  </div>
+
+  <p class="sub" id="comeBack">Come back tomorrow for a new one — miss a day and the streak resets.</p>
+</div>
+
+<script src="nav.js"></script>
+<script>
+(function () {
+  // Curated challenges — each maps to a real skill. Picked deterministically by date,
+  // so everyone gets the same challenge on the same day.
+  var CHALLENGES = [
+    { skill: 'prd-template', title: 'Write a PRD for a referral program', prompt: 'Write a PRD for a referral program that rewards existing B2B users for inviting teammates. Goal: +15% activated signups next quarter. Include problem, goals, users, requirements, success metrics, risks, and rollout.' },
+    { skill: 'board-minutes', title: 'Draft board minutes from rough notes', prompt: 'Draft formal board minutes from these notes: quarterly meeting, 4 directors present, 1 apology, quorum met. Approved prior minutes; reviewed Q3 financials (revenue +12%); approved the annual budget; deferred the fundraising decision. Actions: CFO to send the runway model; CEO to prep a term sheet. Mark unknowns [to confirm].' },
+    { skill: 'incident-postmortem', title: 'Write a blameless postmortem', prompt: 'Write a blameless postmortem for a 45-minute checkout outage caused by a database connection-pool exhaustion after a deploy. Include timeline, impact, root cause, what went well, what went wrong, and corrective actions with owners.' },
+    { skill: 'go-to-market', title: 'Plan a go-to-market for a new feature', prompt: 'Build a go-to-market plan for a new AI-assisted reporting feature in a mid-market analytics product. Audience: RevOps leaders. Cover positioning, target segments, channels, launch tier, enablement, and success metrics.' },
+    { skill: 'executive-update', title: 'Write an exec update on a slipping project', prompt: 'Write a crisp executive update: a key integration project is two weeks behind due to a vendor API delay, mitigation is in progress, and the launch date is at risk. Be honest, lead with the decision needed, and keep it short.' },
+    { skill: 'win-loss-analysis', title: 'Turn deal outcomes into a win/loss report', prompt: 'Run a win/loss analysis: 30 won ($1.2M), 45 lost ($2.4M). Top lost reasons: price (15), missing SSO (10), chose a competitor (8), no decision (7). Wins skew mid-market. Give themes, win rate by cut, controllable vs structural, and actions with owners.' },
+    { skill: 'launch-readiness', title: 'Run a launch-readiness review', prompt: 'Run a launch-readiness review for a payments feature shipping in two weeks. Assess product, docs, support, sales enablement, legal, and marketing. Give a Go / Conditional Go / No-Go with ranked blockers, owners, and deadlines.' },
+    { skill: 'investor-update', title: 'Write a monthly investor update', prompt: 'Write a monthly investor update for a seed-stage SaaS: MRR $85k (+9% MoM), 2 enterprise logos signed, churn ticked up, hiring a founding AE. Include highlights, lowlights, metrics, asks, and runway.' },
+    { skill: 'competitive-analysis', title: 'Do a competitive teardown', prompt: 'Write a competitive analysis of our project-management tool vs two rivals across positioning, pricing, key features, and gaps. End with where we win, where we lose, and two strategic recommendations.' },
+    { skill: 'strategy-memo', title: 'Write a strategy memo on a hard call', prompt: 'Write a strategy memo arguing whether we should move upmarket to enterprise or double down on self-serve SMB. State the recommendation up front, the reasoning, the risks, and what we would stop doing.' },
+    { skill: 'decision-memo', title: 'Write a decision memo', prompt: 'Write a decision memo on whether to build, buy, or partner for a notifications system. Frame the decision, options with trade-offs, a recommendation, and the reversibility of the choice.' },
+    { skill: 'meeting-notes', title: 'Turn messy notes into clean minutes', prompt: 'Turn these messy meeting notes into clean, structured notes with decisions and action items (owner + due date): kickoff for the mobile redesign, debated scope, agreed to ship iOS first, Sarah owns research, launch target end of Q3, open question on the design system.' },
+    { skill: 'product-launch-checklist', title: 'Build a launch checklist', prompt: 'Build a product launch checklist for a new self-serve onboarding flow, covering product, QA, docs, support, marketing, sales, and analytics, with owners and a T-minus timeline.' },
+    { skill: 'sales-demo-script', title: 'Script a value-story product demo', prompt: 'Write a 20-minute first-demo script for an AI reporting tool to a Head of RevOps whose team spends a day a week hand-building reports. Lead with their pain, mark the aha moments, handle "can I trust the numbers?", and close with a next step.' },
+    { skill: 'pricing-page-copy', title: 'Write pricing page copy', prompt: 'Write pricing page copy for a SaaS with Free, Pro ($12/user/mo), Business ($22/user/mo), and Enterprise (custom). Per-seat value metric, 14-day trial, no credit card. Include tier cards, risk reducers, and a pricing FAQ.' },
+    { skill: 'customer-journey-map', title: 'Map a customer journey', prompt: 'Map the customer journey for a new user of a team collaboration app from first touch to habitual use, with stages, actions, thoughts, pain points, and opportunities at each step.' },
+    { skill: 'cs-health-scorecard', title: 'Build an account health scorecard', prompt: 'Build a customer health scorecard for a $60k/yr enterprise account: usage down 20% this quarter, champion left, support tickets rising, renewal in 4 months. Score the risk and recommend a save plan.' },
+    { skill: 'rice-prioritisation', title: 'Prioritise a backlog with RICE', prompt: 'Prioritise these five features with RICE and recommend what to build next quarter: SSO, mobile app, an AI assistant, a public API, and bulk import. Make reasonable assumptions and show the scoring.' },
+    { skill: 'ab-test-planner', title: 'Design an A/B test', prompt: 'Design an A/B test for a new pricing page that we think will lift trial signups. Define the hypothesis, primary and guardrail metrics, sample size assumptions, duration, and how you will decide.' },
+    { skill: 'runbook-writer', title: 'Write an on-call runbook', prompt: 'Write an on-call runbook for "elevated API error rate" on a payments service: detection, triage steps, common causes, mitigations, escalation path, and rollback.' },
+    { skill: 'launch-post', title: 'Write a Show HN / launch post', prompt: 'Write a credible, hype-free launch post for an open-source tool that turns SQL queries into shareable dashboards. Lead with what it does and why it is different, and include title options and a comment-ready first reply.' },
+    { skill: 'readme-writer', title: 'Write a great README', prompt: 'Write a README for a small open-source CLI that formats and lints Markdown files. Include what it is, install, quick start, key options, and a contributing note.' },
+    { skill: 'changelog-writer', title: 'Write a user-facing changelog', prompt: 'Write a user-facing changelog entry for a release that added dark mode, faster search, and fixed a CSV export bug. Group by Added/Improved/Fixed and keep it benefit-led.' },
+    { skill: 'sales-battlecard', title: 'Build a competitive battlecard', prompt: 'Build a sales battlecard for selling our analytics product against a well-known incumbent: our strengths, their strengths, landmines, objection handling, and trap-setting questions.' },
+    { skill: 'sales-enablement-kit', title: 'Build a sales enablement kit', prompt: 'Build a sales enablement kit for a new AI-assisted reporting feature: the pitch, discovery questions, a talk track, a short demo flow, objection handling, and a competitive counter.' },
+    { skill: 'user-interview-synthesis', title: 'Synthesize user interviews', prompt: 'Synthesize these three user-interview takeaways into themes, insights, and recommendations: users love the speed but are confused by onboarding, two asked for integrations, all three disliked the mobile experience.' },
+    { skill: 'board-deck-narrative', title: 'Structure a board deck narrative', prompt: 'Build the storyline and slide structure for a quarterly board deck: strong revenue, a churn problem in SMB, a big enterprise opportunity, and an ask to approve two senior hires.' },
+    { skill: 'one-pager', title: 'Write a one-pager for a new bet', prompt: 'Write a one-pager pitching an internal bet: an AI assistant embedded in our product. Cover the problem, the idea, why now, the expected impact, the risks, and what you need to start.' },
+    { skill: 'voice-of-customer-program', title: 'Design a Voice of Customer program', prompt: 'Design a Voice of Customer program to reduce churn and guide the roadmap, pulling from support tickets, NPS surveys, sales notes, and reviews. Cover sources, taxonomy, cadence, closed-loop routing, and success metrics.' },
+    { skill: 'analyst-relations-brief', title: 'Prep an analyst briefing', prompt: 'Prep a Forrester briefing for a customer data platform. Objective: get on their radar and reposition as activation-first. Give the one message, differentiation with proof, a demo storyline, tough questions with honest answers, and follow-ups.' }
+  ];
+
+  var STORE = 'pm_daily_streak';
+  var PLAYGROUND = 'index.html';
+
+  // Local day index (midnight-based), so "today" is stable for the user's day.
+  function dayNumber(d) { return Math.floor((d.getTime() - d.getTimezoneOffset() * 60000) / 86400000); }
+  var today = dayNumber(new Date());
+  var ch = CHALLENGES[((today % CHALLENGES.length) + CHALLENGES.length) % CHALLENGES.length];
+
+  function load() { try { return JSON.parse(localStorage.getItem(STORE)) || {}; } catch (_) { return {}; } }
+  function save(s) { try { localStorage.setItem(STORE, JSON.stringify(s)); } catch (_) {} }
+
+  var st = load();
+  if (typeof st.streak !== 'number') st = { streak: 0, total: 0, lastDay: null };
+
+  function render() {
+    document.getElementById('streakN').textContent = st.streak || 0;
+    document.getElementById('totalN').textContent = st.total || 0;
+    document.getElementById('chTitle').textContent = ch.title;
+    document.getElementById('chSkill').textContent = ch.skill;
+    document.getElementById('chPrompt').textContent = ch.prompt;
+    // Deep-link into the playground, prefilling the first input with the challenge prompt.
+    var i = btoa(unescape(encodeURIComponent(JSON.stringify([ch.prompt]))));
+    document.getElementById('runBtn').href = PLAYGROUND + '?skill=' + encodeURIComponent(ch.skill) + '&i=' + i;
+    if (st.lastDay === today) {
+      document.getElementById('doneBtn').textContent = '✓ Done today';
+      document.getElementById('doneBtn').disabled = true;
+      document.getElementById('comeBack').innerHTML = '<span class="done-note">Nice — done for today.</span> Come back tomorrow to keep the streak alive.';
+    }
+  }
+
+  function markDone() {
+    if (st.lastDay === today) return;
+    if (st.lastDay === today - 1) st.streak = (st.streak || 0) + 1; // consecutive day
+    else st.streak = 1;                                            // first day or streak broken
+    st.total = (st.total || 0) + 1;
+    st.lastDay = today;
+    save(st);
+    render();
+    document.getElementById('msg').textContent = 'Streak updated — 🔥 ' + st.streak + ' day' + (st.streak === 1 ? '' : 's') + '. See you tomorrow!';
+  }
+
+  // Count a run as completing the challenge.
+  document.getElementById('runBtn').addEventListener('click', function () { markDone(); });
+  document.getElementById('doneBtn').addEventListener('click', markDone);
+  document.getElementById('shareBtn').addEventListener('click', function () {
+    var text = "Today's PM Skills challenge: " + ch.title + ' 🔥 ' + (st.streak || 0) + '-day streak. ' + location.href.split('?')[0];
+    if (navigator.share) { navigator.share({ title: 'PM Skills Daily Challenge', text: text }).catch(function () {}); return; }
+    navigator.clipboard.writeText(text).then(
+      function () { document.getElementById('msg').textContent = 'Copied — share your streak!'; },
+      function () { document.getElementById('msg').textContent = text; }
+    );
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

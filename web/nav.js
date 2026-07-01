@@ -52,6 +52,7 @@
   // stays short. To add/move a tool, edit this list only.
   var NAV = [
     { href: 'index.html', label: '▶ Playground' },
+    { href: 'daily.html', label: '🔥 Daily' },
     { href: 'jobs.html', label: '💼 Job Search' },
     { href: 'hub.html', label: '🧭 Journeys' },
     { href: 'galaxy.html', label: '🌌 Galaxy' },
@@ -85,7 +86,7 @@
   if (file === '' || file === '/') file = 'index.html';
   // Map nav targets to i18n keys (used by i18n.js when the UI language is switched).
   var NAVKEY = {
-    'index.html': 'nav.playground', 'jobs.html': 'nav.jobs', 'hub.html': 'nav.journeys', 'galaxy.html': 'nav.galaxy', 'pro.html': 'nav.pro',
+    'index.html': 'nav.playground', 'daily.html': 'nav.daily', 'jobs.html': 'nav.jobs', 'hub.html': 'nav.journeys', 'galaxy.html': 'nav.galaxy', 'pro.html': 'nav.pro',
     'agent.html': 'nav.agent', 'canvas.html': 'nav.canvas', 'ask.html': 'nav.ask', 'brain.html': 'nav.brain', 'grade.html': 'nav.grade', 'studio.html': 'nav.studio',
     'catalog.html': 'nav.catalog', 'examples.html': 'nav.examples', 'leaderboard.html': 'nav.leaderboard', 'coverage.html': 'nav.coverage',
     'benchmark.html': 'nav.benchmark', 'learn.html': 'nav.learn', 'guide.html': 'nav.guide', 'community.html': 'nav.community',

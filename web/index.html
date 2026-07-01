@@ -127,6 +127,7 @@
         <div id="skillRelated" class="skill-related" hidden></div>
         <button id="sampleBtn" class="ghost sample-btn" type="button" hidden title="See a real, pre-generated example — no key needed">📄 See a sample output — no key needed</button>
         <button id="shareBtn" class="ghost share-btn" type="button" title="Copy a link that opens this skill with these inputs">🔗 Share</button>
+        <button id="embedBtn" class="ghost share-btn" type="button" title="Copy an embed snippet — a 'Run this skill' card for your blog or docs">⧉ Embed</button>
         <span id="shareMsg" class="copy-msg"></span>
       </div>
 
@@ -146,6 +147,18 @@
       </div>
 
       <form id="inputForm" class="input-form"></form>
+
+      <details class="remix" id="remixBox">
+        <summary>✏️ Remix this skill <span id="remixActive" class="remix-active" hidden>· active</span></summary>
+        <p class="remix-note">Add your own instructions on top of this skill — a tone, a format, a must-have section, a language. They're layered onto the skill when you run it, and travel in the Share link so others get your version.</p>
+        <textarea id="remixInput" rows="3" placeholder="e.g. Always write in a warm, plain-English tone. Add a 'Risks' section at the end. Keep it under 400 words."></textarea>
+        <div class="remix-actions">
+          <button id="remixShareBtn" class="ghost" type="button" title="Copy a link that opens this skill with your remix applied">🔗 Share my remix</button>
+          <button id="remixClearBtn" class="ghost" type="button">Clear</button>
+          <span id="remixMsg" class="copy-msg"></span>
+        </div>
+      </details>
+
       <div id="critiqueWrap" class="field" hidden>
         <label for="critiqueInput">Paste your existing draft — it'll be graded against this skill's framework</label>
         <textarea id="critiqueInput" rows="10" placeholder="Paste your PRD / roadmap / exec update / etc. You'll get a rubric score, the specific gaps, and a redline of concrete fixes — graded against the framework this skill encodes."></textarea>

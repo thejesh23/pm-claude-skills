@@ -381,6 +381,14 @@ input:focus, select:focus, textarea:focus { outline: none; box-shadow: 0 0 0 3px
 .file-load:hover { border-color: var(--accent); }
 .gh-issue-input { flex: 1 1 240px; min-width: 200px; font-size: 12.5px; color: var(--text); background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 6px 11px; }
 .gh-issue-input:focus { outline: none; border-color: var(--accent); }
+.remix { margin: 10px 0 4px; border: 1px solid var(--border); border-radius: 10px; background: var(--panel); padding: 4px 12px; }
+.remix > summary { cursor: pointer; font-size: 13.5px; font-weight: 600; color: var(--accent-2); padding: 6px 0; list-style: none; }
+.remix > summary::-webkit-details-marker { display: none; }
+.remix-active { color: #6ee7b7; font-weight: 700; font-size: 12px; }
+.remix-note { font-size: 12.5px; color: #95a0b0; margin: 4px 0 8px; }
+.remix textarea { width: 100%; box-sizing: border-box; font-size: 13.5px; color: var(--text); background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; resize: vertical; }
+.remix textarea:focus { outline: none; border-color: var(--accent); }
+.remix-actions { display: flex; gap: 10px; align-items: center; margin: 8px 0; flex-wrap: wrap; }
 
 /* ---------- Recommender ---------- */
 .recommend { max-width: 1100px; margin: 18px auto 0; padding: 0 4px; }
