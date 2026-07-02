@@ -33,10 +33,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          # PM_TOKEN (a PAT) so the commit can push past branch protection;
-          # the default workflow token is blocked by the PR-only rule.
-          token: ${{ secrets.PM_TOKEN || github.token }}
       - uses: actions/setup-node@v4
         with: { node-version: '20' }
       - name: Translate
@@ -53,11 +49,15 @@ jobs:
           name: i18n-${{ inputs.lang }}
           path: i18n/
           retention-days: 14
-      - name: Validate + commit
+      # Main is PR-only for the workflow token, so results land on a branch
+      # (i18n-<lang>); merge it to main locally or via PR. The artifact above
+      # is the belt to this suspender.
+      - name: Validate + commit to branch
         run: |
           node scripts/translate-skills.mjs --check
           git config user.name "i18n-bot"
           git config user.email "actions@github.com"
+          git checkout -B "i18n-${{ inputs.lang }}"
           git add i18n/
           git diff --cached --quiet || git commit -m "i18n: translate skills to ${{ inputs.lang }}"
-          git push
+          git push -f origin "i18n-${{ inputs.lang }}"

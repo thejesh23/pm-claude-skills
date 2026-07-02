@@ -22,9 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          # PAT so the results commit can push past branch protection.
-          token: ${{ secrets.PM_TOKEN || github.token }}
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -38,6 +35,7 @@ jobs:
         run: |
           git config user.name "skillbench-bot"
           git config user.email "actions@github.com"
+          git checkout -B skillbench-results
           git add skillbench/results.json
           git diff --cached --quiet || git commit -m "bench: SkillBench run — ${{ inputs.models }}"
-          git push
+          git push -f origin skillbench-results
