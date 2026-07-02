@@ -333,16 +333,29 @@ async function handleA2A(request) {
   if (!query) return rpcError(id, -32600, 'Invalid request: params.message.parts must contain text describing the task.');
 
   const skills = await getSkills();
-  // Direct skill-name mention wins; otherwise keyword search over the catalogue.
+  // Direct skill-name mention wins; otherwise rank by token overlap — A2A
+  // queries are whole sentences, so whole-phrase substring search (fine for
+  // the REST /v1/search keywords) would almost never match here.
+  const qTokens = new Set(query.toLowerCase().match(/[a-z]{4,}/g) || []);
+  const ranked = skills
+    .map((s) => {
+      let score = 0;
+      for (const w of new Set((s.title + ' ' + s.description).toLowerCase().match(/[a-z]{4,}/g) || [])) if (qTokens.has(w)) score++;
+      for (const w of s.name.split('-')) if (w.length >= 4 && qTokens.has(w)) score += 2;
+      return { s, score };
+    })
+    .filter((x) => x.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .map((x) => x.s);
   const named = skills.find((s) => query.toLowerCase().includes(s.name));
-  const best = named || searchSkills(skills, query, 1)[0] || searchSkills(skills, query.split(/\s+/).slice(0, 3).join(' '), 1)[0];
+  const best = named || ranked[0];
   if (!best) {
     return jsonResponse({
       jsonrpc: '2.0', id,
       result: { kind: 'message', role: 'agent', messageId: crypto.randomUUID(), metadata: { skill: null, bundle: null, runnerUp: null }, parts: [{ kind: 'text', text: 'No matching skill found. Try different keywords, or GET ' + WORKER_URL + '/v1/skills for the catalogue.' }] },
     });
   }
-  const runnerUp = searchSkills(skills, query, 2).filter((s) => s.name !== best.name)[0];
+  const runnerUp = ranked.filter((s) => s.name !== best.name)[0];
   return jsonResponse({
     jsonrpc: '2.0', id,
     result: {
