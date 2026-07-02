@@ -180,6 +180,8 @@ const label = (p) => p.replace(/^pm-/, '').replace(/(^|-)(\w)/g, (_, d, c) => (d
 
   // Tour / recommendation state — declared before create(), which draws synchronously.
   let tourTimers = [], tourPath = [], touring = false, forYou = [];
+  // Per-frame label collision boxes (world coords) — see the label block in drawNode.
+  const labelBoxes = []; let lastLabelReset = 0;
 
   const graph = PMGraph.create(canvas, {
     nodes, links, repulsion: 900, spring: 0.02, linkLen: 42, gravity: 0.06,
@@ -204,11 +206,23 @@ const label = (p) => p.replace(/^pm-/, '').replace(/(^|-)(\w)/g, (_, d, c) => (d
       // trending = a static ring (no animation, so the galaxy stays perfectly still)
       if (n.trend) { ctx.globalAlpha = on ? 0.85 : 0.1; ctx.strokeStyle = '#fff'; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(n.x, n.y, rad + 3, 0, 7); ctx.stroke(); }
       if (hovered) { ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(n.x, n.y, rad, 0, 7); ctx.stroke(); }
-      // label when zoomed in, hovered, or searching
-      if (on && (hovered || k > 1.7 || (query && rad))) {
-        ctx.globalAlpha = 1; ctx.fillStyle = hovered ? '#fff' : 'rgba(220,226,236,0.82)';
-        ctx.font = (hovered ? '600 ' : '') + '11px -apple-system,system-ui,sans-serif';
-        ctx.fillText(n.s.title, n.x + rad + 4, n.y + 3.5);
+      // Labels: constant SCREEN size (font scales 1/k so zooming never blows the text up),
+      // collision-culled per frame so dense clusters show a few names instead of word soup,
+      // and suppressed entirely during the sky tour — the captions carry the story there.
+      const wantLabel = on && !touring && (hovered || (query && !hovered) || (k > 2.1 && n.bright > 0.6) || k > 3.2);
+      if (wantLabel) {
+        const now = performance.now();
+        if (now - lastLabelReset > 8) { labelBoxes.length = 0; lastLabelReset = now; }
+        const fs = 11 / k, pad = 3 / k;
+        const wpx = (n.s.title.length * 6.2) / k, hpx = 14 / k;
+        const bx = n.x + rad + 4 / k, by = n.y - hpx / 2;
+        const clash = !hovered && labelBoxes.some((b) => bx < b.x + b.w + pad && bx + wpx + pad > b.x && by < b.y + b.h + pad && by + hpx + pad > b.y);
+        if (!clash) {
+          labelBoxes.push({ x: bx, y: by, w: wpx, h: hpx });
+          ctx.globalAlpha = 1; ctx.fillStyle = hovered ? '#fff' : 'rgba(220,226,236,0.8)';
+          ctx.font = (hovered ? '600 ' : '') + fs + 'px -apple-system,system-ui,sans-serif';
+          ctx.fillText(n.s.title, n.x + rad + 4 / k, n.y + fs / 3);
+        }
       }
       ctx.globalAlpha = 1;
     },
