@@ -1,6 +1,6 @@
 # Skill Tiers
 
-Not every skill in a 170+ library is at the same level of maturity — and pretending
+Not every skill in a library this size is at the same level of maturity — and pretending
 otherwise wastes your time. This page tiers the skills honestly so you can start with the
 strongest work and know what to expect from the rest.
 

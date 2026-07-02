@@ -1,7 +1,7 @@
 # Skill Authoring Standard
 
 This is the canonical structure every skill in this library follows. It exists so
-that 160+ skills feel like one coherent product rather than a folder of loose prompts,
+that hundreds of skills feel like one coherent product rather than a folder of loose prompts,
 and so contributors know exactly what "done" looks like. If you are adding or editing a
 skill, match this standard.
 
