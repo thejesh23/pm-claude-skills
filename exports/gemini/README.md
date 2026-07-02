@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-426 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
+441 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -16,13 +16,20 @@
 | Ad Copy | `pm-copy` | `pm-copy/ad-copy/GEM_INSTRUCTIONS.md` |
 | AEO Optimizer | `pm-writers` | `pm-writers/aeo-optimizer/GEM_INSTRUCTIONS.md` |
 | Agent Design Review | `pm-ai` | `pm-ai/agent-design-review/GEM_INSTRUCTIONS.md` |
+| Agent Era Pricing | `pm-agentnative` | `pm-agentnative/agent-era-pricing/GEM_INSTRUCTIONS.md` |
 | Agent Incident Postmortem | `pm-agentops` | `pm-agentops/agent-incident-postmortem/GEM_INSTRUCTIONS.md` |
 | Agent Observability Spec | `pm-agentops` | `pm-agentops/agent-observability-spec/GEM_INSTRUCTIONS.md` |
+| Agent Readiness Audit | `pm-agentnative` | `pm-agentnative/agent-readiness-audit/GEM_INSTRUCTIONS.md` |
 | Agent Spec | `pm-ai` | `pm-ai/agent-spec/GEM_INSTRUCTIONS.md` |
+| AI-Assisted Performance Review | `pm-aiwork` | `pm-aiwork/ai-assisted-performance-review/GEM_INSTRUCTIONS.md` |
+| AI Code Review | `pm-engineering` | `pm-engineering/ai-code-review/GEM_INSTRUCTIONS.md` |
+| AI Content Audit | `pm-aiwork` | `pm-aiwork/ai-content-audit/GEM_INSTRUCTIONS.md` |
 | AI Ethics Review | `pm-advanced` | `pm-advanced/ai-ethics-review/GEM_INSTRUCTIONS.md` |
 | AI Eval Plan | `pm-ai` | `pm-ai/ai-eval-plan/GEM_INSTRUCTIONS.md` |
 | AI Feature PRD | `pm-ai` | `pm-ai/ai-feature-prd/GEM_INSTRUCTIONS.md` |
 | AI Product Canvas | `pm-advanced` | `pm-advanced/ai-product-canvas/GEM_INSTRUCTIONS.md` |
+| AI ROI Audit | `pm-aiwork` | `pm-aiwork/ai-roi-audit/GEM_INSTRUCTIONS.md` |
+| AI Usage Policy | `pm-aiwork` | `pm-aiwork/ai-usage-policy/GEM_INSTRUCTIONS.md` |
 | Ambiguity Resolver | `pm-strategy` | `pm-strategy/ambiguity-resolver/GEM_INSTRUCTIONS.md` |
 | Analyst Relations Brief | `pm-pmm` | `pm-pmm/analyst-relations-brief/GEM_INSTRUCTIONS.md` |
 | Announcement Card | `pm-visuals` | `pm-visuals/announcement-card/GEM_INSTRUCTIONS.md` |
@@ -33,6 +40,7 @@
 | Architecture Decision Record (ADR) | `pm-engineering` | `pm-engineering/architecture-decision-record/GEM_INSTRUCTIONS.md` |
 | Architecture Diagram | `pm-visuals` | `pm-visuals/architecture-diagram/GEM_INSTRUCTIONS.md` |
 | Assumption Mapper | `pm-discovery` | `pm-discovery/assumption-mapper/GEM_INSTRUCTIONS.md` |
+| Async Decision Memo | `pm-operations` | `pm-operations/async-decision-memo/GEM_INSTRUCTIONS.md` |
 | Autopilot Charter | `pm-autopilot` | `pm-autopilot/autopilot-charter/GEM_INSTRUCTIONS.md` |
 | Board Deck Narrative | `pm-business` | `pm-business/board-deck-narrative/GEM_INSTRUCTIONS.md` |
 | Board Minutes | `pm-business` | `pm-business/board-minutes/GEM_INSTRUCTIONS.md` |
@@ -40,6 +48,7 @@
 | Bookkeeping Categorization | `pm-accounting` | `pm-accounting/bookkeeping-categorization/GEM_INSTRUCTIONS.md` |
 | Boolean Search Builder | `pm-recruiting` | `pm-recruiting/boolean-search-builder/GEM_INSTRUCTIONS.md` |
 | Brag Doc | `pm-career` | `pm-career/brag-doc/GEM_INSTRUCTIONS.md` |
+| Brand Impersonation Response | `pm-crisis` | `pm-crisis/brand-impersonation-response/GEM_INSTRUCTIONS.md` |
 | Brief Builder | `pm-cross` | `pm-cross/brief-builder/GEM_INSTRUCTIONS.md` |
 | Briefing Note | `pm-gov` | `pm-gov/briefing-note/GEM_INSTRUCTIONS.md` |
 | Budget Builder | `pm-money` | `pm-money/budget-builder/GEM_INSTRUCTIONS.md` |
@@ -160,6 +169,7 @@
 | Exploratory Test Charter | `pm-qa` | `pm-qa/exploratory-test-charter/GEM_INSTRUCTIONS.md` |
 | Feature Flag Guide | `pm-engineering` | `pm-engineering/feature-flag-guide/GEM_INSTRUCTIONS.md` |
 | Feature Prioritisation | `pm-planning` | `pm-planning/feature-prioritisation/GEM_INSTRUCTIONS.md` |
+| Feature Sunset Plan | `pm-planning` | `pm-planning/feature-sunset-plan/GEM_INSTRUCTIONS.md` |
 | Figma Annotation Guide | `pm-figma` | `pm-figma/figma-annotation-guide/GEM_INSTRUCTIONS.md` |
 | Figma Component Audit | `pm-figma` | `pm-figma/figma-component-audit/GEM_INSTRUCTIONS.md` |
 | Figma Design Brief | `pm-figma` | `pm-figma/figma-design-brief/GEM_INSTRUCTIONS.md` |
@@ -192,6 +202,7 @@
 | HIPAA Safeguards | `pm-compliance` | `pm-compliance/hipaa-safeguards/GEM_INSTRUCTIONS.md` |
 | Hiring Rubric | `pm-people` | `pm-people/hiring-rubric/GEM_INSTRUCTIONS.md` |
 | Hook Writer | `pm-creator` | `pm-creator/hook-writer/GEM_INSTRUCTIONS.md` |
+| Human-in-the-Loop Design | `pm-agentnative` | `pm-agentnative/human-in-the-loop-design/GEM_INSTRUCTIONS.md` |
 | i18n Readiness Review | `pm-localization` | `pm-localization/i18n-readiness-review/GEM_INSTRUCTIONS.md` |
 | IEP Goal Support | `pm-education` | `pm-education/iep-goal-support/GEM_INSTRUCTIONS.md` |
 | Impact Report | `pm-nonprofit` | `pm-nonprofit/impact-report/GEM_INSTRUCTIONS.md` |
@@ -234,6 +245,7 @@
 | Marketing Funnel Plan | `pm-growth` | `pm-growth/marketing-funnel-plan/GEM_INSTRUCTIONS.md` |
 | Marketing Psychology | `pm-growth` | `pm-growth/marketing-psychology/GEM_INSTRUCTIONS.md` |
 | Marketplace Listing Optimizer | `pm-ecommerce` | `pm-ecommerce/marketplace-listing-optimizer/GEM_INSTRUCTIONS.md` |
+| MCP Server Spec | `pm-agentnative` | `pm-agentnative/mcp-server-spec/GEM_INSTRUCTIONS.md` |
 | Media Pitch | `pm-gtm` | `pm-gtm/media-pitch/GEM_INSTRUCTIONS.md` |
 | Meeting Notes | `pm-essentials` | `pm-essentials/meeting-notes/GEM_INSTRUCTIONS.md` |
 | Messaging Framework | `pm-growth` | `pm-growth/messaging-framework/GEM_INSTRUCTIONS.md` |
@@ -345,6 +357,7 @@
 | Roadmap Narrative | `pm-planning` | `pm-planning/roadmap-narrative/GEM_INSTRUCTIONS.md` |
 | Roadmap Presentation | `pm-planning` | `pm-planning/roadmap-presentation/GEM_INSTRUCTIONS.md` |
 | ROI Estimator | `pm-calculators` | `pm-calculators/roi-estimator/GEM_INSTRUCTIONS.md` |
+| Role Redesign For AI | `pm-aiwork` | `pm-aiwork/role-redesign-for-ai/GEM_INSTRUCTIONS.md` |
 | Rubric Builder | `pm-education` | `pm-education/rubric-builder/GEM_INSTRUCTIONS.md` |
 | Runbook Writer | `pm-engineering` | `pm-engineering/runbook-writer/GEM_INSTRUCTIONS.md` |
 | Runway Calculator | `pm-calculators` | `pm-calculators/runway-calculator/GEM_INSTRUCTIONS.md` |
@@ -398,6 +411,7 @@
 | Support Macro | `pm-support` | `pm-support/support-macro/GEM_INSTRUCTIONS.md` |
 | Support Runbook | `pm-support` | `pm-support/support-runbook/GEM_INSTRUCTIONS.md` |
 | Sycophancy Challenger | `pm-cross` | `pm-cross/sycophancy-challenger/GEM_INSTRUCTIONS.md` |
+| Synthetic User Research | `pm-research` | `pm-research/synthetic-user-research/GEM_INSTRUCTIONS.md` |
 | System Design Interview | `pm-engineering` | `pm-engineering/system-design-interview/GEM_INSTRUCTIONS.md` |
 | Tax Planning Checklist | `pm-finance` | `pm-finance/tax-planning-checklist/GEM_INSTRUCTIONS.md` |
 | TDD Workflow | `pm-craft` | `pm-craft/tdd-workflow/GEM_INSTRUCTIONS.md` |
@@ -424,6 +438,7 @@
 | Vendor Evaluation | `pm-operations` | `pm-operations/vendor-evaluation/GEM_INSTRUCTIONS.md` |
 | Vendor Security Review | `pm-compliance` | `pm-compliance/vendor-security-review/GEM_INSTRUCTIONS.md` |
 | Viral Content Framework | `pm-social` | `pm-social/viral-content-framework/GEM_INSTRUCTIONS.md` |
+| Voice Agent Design | `pm-agentnative` | `pm-agentnative/voice-agent-design/GEM_INSTRUCTIONS.md` |
 | Voice of Customer Program | `pm-pmm` | `pm-pmm/voice-of-customer-program/GEM_INSTRUCTIONS.md` |
 | Vulnerability Triage | `pm-security` | `pm-security/vuln-triage/GEM_INSTRUCTIONS.md` |
 | Which Skill Router | `pm-essentials` | `pm-essentials/which-skill/GEM_INSTRUCTIONS.md` |

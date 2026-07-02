@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-426 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
+441 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -16,13 +16,20 @@
 | Ad Copy | `pm-copy` | `pm-copy/ad-copy/SYSTEM_PROMPT.md` |
 | AEO Optimizer | `pm-writers` | `pm-writers/aeo-optimizer/SYSTEM_PROMPT.md` |
 | Agent Design Review | `pm-ai` | `pm-ai/agent-design-review/SYSTEM_PROMPT.md` |
+| Agent Era Pricing | `pm-agentnative` | `pm-agentnative/agent-era-pricing/SYSTEM_PROMPT.md` |
 | Agent Incident Postmortem | `pm-agentops` | `pm-agentops/agent-incident-postmortem/SYSTEM_PROMPT.md` |
 | Agent Observability Spec | `pm-agentops` | `pm-agentops/agent-observability-spec/SYSTEM_PROMPT.md` |
+| Agent Readiness Audit | `pm-agentnative` | `pm-agentnative/agent-readiness-audit/SYSTEM_PROMPT.md` |
 | Agent Spec | `pm-ai` | `pm-ai/agent-spec/SYSTEM_PROMPT.md` |
+| AI-Assisted Performance Review | `pm-aiwork` | `pm-aiwork/ai-assisted-performance-review/SYSTEM_PROMPT.md` |
+| AI Code Review | `pm-engineering` | `pm-engineering/ai-code-review/SYSTEM_PROMPT.md` |
+| AI Content Audit | `pm-aiwork` | `pm-aiwork/ai-content-audit/SYSTEM_PROMPT.md` |
 | AI Ethics Review | `pm-advanced` | `pm-advanced/ai-ethics-review/SYSTEM_PROMPT.md` |
 | AI Eval Plan | `pm-ai` | `pm-ai/ai-eval-plan/SYSTEM_PROMPT.md` |
 | AI Feature PRD | `pm-ai` | `pm-ai/ai-feature-prd/SYSTEM_PROMPT.md` |
 | AI Product Canvas | `pm-advanced` | `pm-advanced/ai-product-canvas/SYSTEM_PROMPT.md` |
+| AI ROI Audit | `pm-aiwork` | `pm-aiwork/ai-roi-audit/SYSTEM_PROMPT.md` |
+| AI Usage Policy | `pm-aiwork` | `pm-aiwork/ai-usage-policy/SYSTEM_PROMPT.md` |
 | Ambiguity Resolver | `pm-strategy` | `pm-strategy/ambiguity-resolver/SYSTEM_PROMPT.md` |
 | Analyst Relations Brief | `pm-pmm` | `pm-pmm/analyst-relations-brief/SYSTEM_PROMPT.md` |
 | Announcement Card | `pm-visuals` | `pm-visuals/announcement-card/SYSTEM_PROMPT.md` |
@@ -33,6 +40,7 @@
 | Architecture Decision Record (ADR) | `pm-engineering` | `pm-engineering/architecture-decision-record/SYSTEM_PROMPT.md` |
 | Architecture Diagram | `pm-visuals` | `pm-visuals/architecture-diagram/SYSTEM_PROMPT.md` |
 | Assumption Mapper | `pm-discovery` | `pm-discovery/assumption-mapper/SYSTEM_PROMPT.md` |
+| Async Decision Memo | `pm-operations` | `pm-operations/async-decision-memo/SYSTEM_PROMPT.md` |
 | Autopilot Charter | `pm-autopilot` | `pm-autopilot/autopilot-charter/SYSTEM_PROMPT.md` |
 | Board Deck Narrative | `pm-business` | `pm-business/board-deck-narrative/SYSTEM_PROMPT.md` |
 | Board Minutes | `pm-business` | `pm-business/board-minutes/SYSTEM_PROMPT.md` |
@@ -40,6 +48,7 @@
 | Bookkeeping Categorization | `pm-accounting` | `pm-accounting/bookkeeping-categorization/SYSTEM_PROMPT.md` |
 | Boolean Search Builder | `pm-recruiting` | `pm-recruiting/boolean-search-builder/SYSTEM_PROMPT.md` |
 | Brag Doc | `pm-career` | `pm-career/brag-doc/SYSTEM_PROMPT.md` |
+| Brand Impersonation Response | `pm-crisis` | `pm-crisis/brand-impersonation-response/SYSTEM_PROMPT.md` |
 | Brief Builder | `pm-cross` | `pm-cross/brief-builder/SYSTEM_PROMPT.md` |
 | Briefing Note | `pm-gov` | `pm-gov/briefing-note/SYSTEM_PROMPT.md` |
 | Budget Builder | `pm-money` | `pm-money/budget-builder/SYSTEM_PROMPT.md` |
@@ -160,6 +169,7 @@
 | Exploratory Test Charter | `pm-qa` | `pm-qa/exploratory-test-charter/SYSTEM_PROMPT.md` |
 | Feature Flag Guide | `pm-engineering` | `pm-engineering/feature-flag-guide/SYSTEM_PROMPT.md` |
 | Feature Prioritisation | `pm-planning` | `pm-planning/feature-prioritisation/SYSTEM_PROMPT.md` |
+| Feature Sunset Plan | `pm-planning` | `pm-planning/feature-sunset-plan/SYSTEM_PROMPT.md` |
 | Figma Annotation Guide | `pm-figma` | `pm-figma/figma-annotation-guide/SYSTEM_PROMPT.md` |
 | Figma Component Audit | `pm-figma` | `pm-figma/figma-component-audit/SYSTEM_PROMPT.md` |
 | Figma Design Brief | `pm-figma` | `pm-figma/figma-design-brief/SYSTEM_PROMPT.md` |
@@ -192,6 +202,7 @@
 | HIPAA Safeguards | `pm-compliance` | `pm-compliance/hipaa-safeguards/SYSTEM_PROMPT.md` |
 | Hiring Rubric | `pm-people` | `pm-people/hiring-rubric/SYSTEM_PROMPT.md` |
 | Hook Writer | `pm-creator` | `pm-creator/hook-writer/SYSTEM_PROMPT.md` |
+| Human-in-the-Loop Design | `pm-agentnative` | `pm-agentnative/human-in-the-loop-design/SYSTEM_PROMPT.md` |
 | i18n Readiness Review | `pm-localization` | `pm-localization/i18n-readiness-review/SYSTEM_PROMPT.md` |
 | IEP Goal Support | `pm-education` | `pm-education/iep-goal-support/SYSTEM_PROMPT.md` |
 | Impact Report | `pm-nonprofit` | `pm-nonprofit/impact-report/SYSTEM_PROMPT.md` |
@@ -234,6 +245,7 @@
 | Marketing Funnel Plan | `pm-growth` | `pm-growth/marketing-funnel-plan/SYSTEM_PROMPT.md` |
 | Marketing Psychology | `pm-growth` | `pm-growth/marketing-psychology/SYSTEM_PROMPT.md` |
 | Marketplace Listing Optimizer | `pm-ecommerce` | `pm-ecommerce/marketplace-listing-optimizer/SYSTEM_PROMPT.md` |
+| MCP Server Spec | `pm-agentnative` | `pm-agentnative/mcp-server-spec/SYSTEM_PROMPT.md` |
 | Media Pitch | `pm-gtm` | `pm-gtm/media-pitch/SYSTEM_PROMPT.md` |
 | Meeting Notes | `pm-essentials` | `pm-essentials/meeting-notes/SYSTEM_PROMPT.md` |
 | Messaging Framework | `pm-growth` | `pm-growth/messaging-framework/SYSTEM_PROMPT.md` |
@@ -345,6 +357,7 @@
 | Roadmap Narrative | `pm-planning` | `pm-planning/roadmap-narrative/SYSTEM_PROMPT.md` |
 | Roadmap Presentation | `pm-planning` | `pm-planning/roadmap-presentation/SYSTEM_PROMPT.md` |
 | ROI Estimator | `pm-calculators` | `pm-calculators/roi-estimator/SYSTEM_PROMPT.md` |
+| Role Redesign For AI | `pm-aiwork` | `pm-aiwork/role-redesign-for-ai/SYSTEM_PROMPT.md` |
 | Rubric Builder | `pm-education` | `pm-education/rubric-builder/SYSTEM_PROMPT.md` |
 | Runbook Writer | `pm-engineering` | `pm-engineering/runbook-writer/SYSTEM_PROMPT.md` |
 | Runway Calculator | `pm-calculators` | `pm-calculators/runway-calculator/SYSTEM_PROMPT.md` |
@@ -398,6 +411,7 @@
 | Support Macro | `pm-support` | `pm-support/support-macro/SYSTEM_PROMPT.md` |
 | Support Runbook | `pm-support` | `pm-support/support-runbook/SYSTEM_PROMPT.md` |
 | Sycophancy Challenger | `pm-cross` | `pm-cross/sycophancy-challenger/SYSTEM_PROMPT.md` |
+| Synthetic User Research | `pm-research` | `pm-research/synthetic-user-research/SYSTEM_PROMPT.md` |
 | System Design Interview | `pm-engineering` | `pm-engineering/system-design-interview/SYSTEM_PROMPT.md` |
 | Tax Planning Checklist | `pm-finance` | `pm-finance/tax-planning-checklist/SYSTEM_PROMPT.md` |
 | TDD Workflow | `pm-craft` | `pm-craft/tdd-workflow/SYSTEM_PROMPT.md` |
@@ -424,6 +438,7 @@
 | Vendor Evaluation | `pm-operations` | `pm-operations/vendor-evaluation/SYSTEM_PROMPT.md` |
 | Vendor Security Review | `pm-compliance` | `pm-compliance/vendor-security-review/SYSTEM_PROMPT.md` |
 | Viral Content Framework | `pm-social` | `pm-social/viral-content-framework/SYSTEM_PROMPT.md` |
+| Voice Agent Design | `pm-agentnative` | `pm-agentnative/voice-agent-design/SYSTEM_PROMPT.md` |
 | Voice of Customer Program | `pm-pmm` | `pm-pmm/voice-of-customer-program/SYSTEM_PROMPT.md` |
 | Vulnerability Triage | `pm-security` | `pm-security/vuln-triage/SYSTEM_PROMPT.md` |
 | Which Skill Router | `pm-essentials` | `pm-essentials/which-skill/SYSTEM_PROMPT.md` |

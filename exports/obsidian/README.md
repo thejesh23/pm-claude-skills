@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-426 skills exported. Copy a `.mdc rule` into the tool to use it.
+441 skills exported. Copy a `.mdc rule` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -16,13 +16,20 @@
 | Ad Copy | `pm-copy` | `pm-copy/ad-copy/ad-copy.md` |
 | AEO Optimizer | `pm-writers` | `pm-writers/aeo-optimizer/aeo-optimizer.md` |
 | Agent Design Review | `pm-ai` | `pm-ai/agent-design-review/agent-design-review.md` |
+| Agent Era Pricing | `pm-agentnative` | `pm-agentnative/agent-era-pricing/agent-era-pricing.md` |
 | Agent Incident Postmortem | `pm-agentops` | `pm-agentops/agent-incident-postmortem/agent-incident-postmortem.md` |
 | Agent Observability Spec | `pm-agentops` | `pm-agentops/agent-observability-spec/agent-observability-spec.md` |
+| Agent Readiness Audit | `pm-agentnative` | `pm-agentnative/agent-readiness-audit/agent-readiness-audit.md` |
 | Agent Spec | `pm-ai` | `pm-ai/agent-spec/agent-spec.md` |
+| AI-Assisted Performance Review | `pm-aiwork` | `pm-aiwork/ai-assisted-performance-review/ai-assisted-performance-review.md` |
+| AI Code Review | `pm-engineering` | `pm-engineering/ai-code-review/ai-code-review.md` |
+| AI Content Audit | `pm-aiwork` | `pm-aiwork/ai-content-audit/ai-content-audit.md` |
 | AI Ethics Review | `pm-advanced` | `pm-advanced/ai-ethics-review/ai-ethics-review.md` |
 | AI Eval Plan | `pm-ai` | `pm-ai/ai-eval-plan/ai-eval-plan.md` |
 | AI Feature PRD | `pm-ai` | `pm-ai/ai-feature-prd/ai-feature-prd.md` |
 | AI Product Canvas | `pm-advanced` | `pm-advanced/ai-product-canvas/ai-product-canvas.md` |
+| AI ROI Audit | `pm-aiwork` | `pm-aiwork/ai-roi-audit/ai-roi-audit.md` |
+| AI Usage Policy | `pm-aiwork` | `pm-aiwork/ai-usage-policy/ai-usage-policy.md` |
 | Ambiguity Resolver | `pm-strategy` | `pm-strategy/ambiguity-resolver/ambiguity-resolver.md` |
 | Analyst Relations Brief | `pm-pmm` | `pm-pmm/analyst-relations-brief/analyst-relations-brief.md` |
 | Announcement Card | `pm-visuals` | `pm-visuals/announcement-card/announcement-card.md` |
@@ -33,6 +40,7 @@
 | Architecture Decision Record (ADR) | `pm-engineering` | `pm-engineering/architecture-decision-record/architecture-decision-record.md` |
 | Architecture Diagram | `pm-visuals` | `pm-visuals/architecture-diagram/architecture-diagram.md` |
 | Assumption Mapper | `pm-discovery` | `pm-discovery/assumption-mapper/assumption-mapper.md` |
+| Async Decision Memo | `pm-operations` | `pm-operations/async-decision-memo/async-decision-memo.md` |
 | Autopilot Charter | `pm-autopilot` | `pm-autopilot/autopilot-charter/autopilot-charter.md` |
 | Board Deck Narrative | `pm-business` | `pm-business/board-deck-narrative/board-deck-narrative.md` |
 | Board Minutes | `pm-business` | `pm-business/board-minutes/board-minutes.md` |
@@ -40,6 +48,7 @@
 | Bookkeeping Categorization | `pm-accounting` | `pm-accounting/bookkeeping-categorization/bookkeeping-categorization.md` |
 | Boolean Search Builder | `pm-recruiting` | `pm-recruiting/boolean-search-builder/boolean-search-builder.md` |
 | Brag Doc | `pm-career` | `pm-career/brag-doc/brag-doc.md` |
+| Brand Impersonation Response | `pm-crisis` | `pm-crisis/brand-impersonation-response/brand-impersonation-response.md` |
 | Brief Builder | `pm-cross` | `pm-cross/brief-builder/brief-builder.md` |
 | Briefing Note | `pm-gov` | `pm-gov/briefing-note/briefing-note.md` |
 | Budget Builder | `pm-money` | `pm-money/budget-builder/budget-builder.md` |
@@ -160,6 +169,7 @@
 | Exploratory Test Charter | `pm-qa` | `pm-qa/exploratory-test-charter/exploratory-test-charter.md` |
 | Feature Flag Guide | `pm-engineering` | `pm-engineering/feature-flag-guide/feature-flag-guide.md` |
 | Feature Prioritisation | `pm-planning` | `pm-planning/feature-prioritisation/feature-prioritisation.md` |
+| Feature Sunset Plan | `pm-planning` | `pm-planning/feature-sunset-plan/feature-sunset-plan.md` |
 | Figma Annotation Guide | `pm-figma` | `pm-figma/figma-annotation-guide/figma-annotation-guide.md` |
 | Figma Component Audit | `pm-figma` | `pm-figma/figma-component-audit/figma-component-audit.md` |
 | Figma Design Brief | `pm-figma` | `pm-figma/figma-design-brief/figma-design-brief.md` |
@@ -192,6 +202,7 @@
 | HIPAA Safeguards | `pm-compliance` | `pm-compliance/hipaa-safeguards/hipaa-safeguards.md` |
 | Hiring Rubric | `pm-people` | `pm-people/hiring-rubric/hiring-rubric.md` |
 | Hook Writer | `pm-creator` | `pm-creator/hook-writer/hook-writer.md` |
+| Human-in-the-Loop Design | `pm-agentnative` | `pm-agentnative/human-in-the-loop-design/human-in-the-loop-design.md` |
 | i18n Readiness Review | `pm-localization` | `pm-localization/i18n-readiness-review/i18n-readiness-review.md` |
 | IEP Goal Support | `pm-education` | `pm-education/iep-goal-support/iep-goal-support.md` |
 | Impact Report | `pm-nonprofit` | `pm-nonprofit/impact-report/impact-report.md` |
@@ -234,6 +245,7 @@
 | Marketing Funnel Plan | `pm-growth` | `pm-growth/marketing-funnel-plan/marketing-funnel-plan.md` |
 | Marketing Psychology | `pm-growth` | `pm-growth/marketing-psychology/marketing-psychology.md` |
 | Marketplace Listing Optimizer | `pm-ecommerce` | `pm-ecommerce/marketplace-listing-optimizer/marketplace-listing-optimizer.md` |
+| MCP Server Spec | `pm-agentnative` | `pm-agentnative/mcp-server-spec/mcp-server-spec.md` |
 | Media Pitch | `pm-gtm` | `pm-gtm/media-pitch/media-pitch.md` |
 | Meeting Notes | `pm-essentials` | `pm-essentials/meeting-notes/meeting-notes.md` |
 | Messaging Framework | `pm-growth` | `pm-growth/messaging-framework/messaging-framework.md` |
@@ -345,6 +357,7 @@
 | Roadmap Narrative | `pm-planning` | `pm-planning/roadmap-narrative/roadmap-narrative.md` |
 | Roadmap Presentation | `pm-planning` | `pm-planning/roadmap-presentation/roadmap-presentation.md` |
 | ROI Estimator | `pm-calculators` | `pm-calculators/roi-estimator/roi-estimator.md` |
+| Role Redesign For AI | `pm-aiwork` | `pm-aiwork/role-redesign-for-ai/role-redesign-for-ai.md` |
 | Rubric Builder | `pm-education` | `pm-education/rubric-builder/rubric-builder.md` |
 | Runbook Writer | `pm-engineering` | `pm-engineering/runbook-writer/runbook-writer.md` |
 | Runway Calculator | `pm-calculators` | `pm-calculators/runway-calculator/runway-calculator.md` |
@@ -398,6 +411,7 @@
 | Support Macro | `pm-support` | `pm-support/support-macro/support-macro.md` |
 | Support Runbook | `pm-support` | `pm-support/support-runbook/support-runbook.md` |
 | Sycophancy Challenger | `pm-cross` | `pm-cross/sycophancy-challenger/sycophancy-challenger.md` |
+| Synthetic User Research | `pm-research` | `pm-research/synthetic-user-research/synthetic-user-research.md` |
 | System Design Interview | `pm-engineering` | `pm-engineering/system-design-interview/system-design-interview.md` |
 | Tax Planning Checklist | `pm-finance` | `pm-finance/tax-planning-checklist/tax-planning-checklist.md` |
 | TDD Workflow | `pm-craft` | `pm-craft/tdd-workflow/tdd-workflow.md` |
@@ -424,6 +438,7 @@
 | Vendor Evaluation | `pm-operations` | `pm-operations/vendor-evaluation/vendor-evaluation.md` |
 | Vendor Security Review | `pm-compliance` | `pm-compliance/vendor-security-review/vendor-security-review.md` |
 | Viral Content Framework | `pm-social` | `pm-social/viral-content-framework/viral-content-framework.md` |
+| Voice Agent Design | `pm-agentnative` | `pm-agentnative/voice-agent-design/voice-agent-design.md` |
 | Voice of Customer Program | `pm-pmm` | `pm-pmm/voice-of-customer-program/voice-of-customer-program.md` |
 | Vulnerability Triage | `pm-security` | `pm-security/vuln-triage/vuln-triage.md` |
 | Which Skill Router | `pm-essentials` | `pm-essentials/which-skill/which-skill.md` |

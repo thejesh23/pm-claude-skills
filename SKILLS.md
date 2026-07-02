@@ -1,4 +1,4 @@
-# 🗂️ All 426 Skills — full catalog
+# 🗂️ All 441 Skills — full catalog
 
 > The complete per-skill breakdown, grouped by domain. For an interactive, searchable version see the [**live catalog**](https://mohitagw15856.github.io/pm-claude-skills/catalog.html); to run any skill in your browser, use the [**Playground**](https://mohitagw15856.github.io/pm-claude-skills/). Back to the [README](README.md).
 >
@@ -6,7 +6,7 @@
 
 **Jump to:** [🚀 Product](#product) · [📣 Marketing & Growth](#marketing-growth) · [💻 Engineering & AI](#engineering-ai) · [📊 Data & Analytics](#data-analytics) · [🎨 Design & Content](#design-content) · [🤝 Customers & Sales](#customers-sales) · [💰 Finance, Ops & Business](#finance-ops-business) · [⚖️ Legal & Compliance](#legal-compliance) · [🧑 You & Career](#you-career) · [🌍 Industries & Public Sector](#industries-public-sector)
 
-## 🚀 Product (42 skills)
+## 🚀 Product (43 skills)
 
 ### `pm-advanced` — 5 skills · 5 eval-scored
 
@@ -56,11 +56,12 @@
 | **User Research Synthesis** (`user-research-synthesis`) | Analyze and synthesize user research findings into structured, actionable insights. | ✅ 5/5 |
 | **Which Skill Router** (`which-skill`) | Route a fuzzy request to the right skill in this library. | — |
 
-### `pm-planning` — 7 skills · 7 eval-scored
+### `pm-planning` — 8 skills · 7 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
 | **Feature Prioritisation** (`feature-prioritisation`) | Apply prioritisation frameworks (RICE, MoSCoW, Kano, ICE, Opportunity Scoring) to rank features and backlog items. | ✅ 5/5 |
+| **Feature Sunset Plan** (`feature-sunset-plan`) | Plan the retirement of a product feature — the kill decision made honest, user migration, data handling, comms sequencing, and the code actually… | — |
 | **OKR Builder** (`okr-builder`) | Create well-structured OKRs (Objectives and Key Results) for product teams, startups, and individuals. | ✅ 4.8/5 |
 | **Pricing Strategy** (`pricing-strategy`) | Structure pricing strategy decisions, packaging options, and tier design for SaaS and digital products. | ✅ 5/5 |
 | **RICE + Strategic Alignment** (`rice-impact-matrix`) | Scores features using both RICE and strategic alignment for nuanced prioritisation. | ✅ 4.8/5 |
@@ -165,7 +166,7 @@
 | **Social Media Audit** (`social-media-audit`) | Audit an existing social media presence across all active platforms. | ✅ 5/5 |
 | **Viral Content Framework** (`viral-content-framework`) | Build a framework for creating shareable, high-reach social media content. | ✅ 4/5 |
 
-## 💻 Engineering & AI (80 skills)
+## 💻 Engineering & AI (81 skills)
 
 ### `pm-ai` — 13 skills
 
@@ -207,10 +208,11 @@
 | **Metric Semantic Layer** (`metric-semantic-layer`) | Define a metric in a semantic layer so it means one thing everywhere. | — |
 | **SQL Optimizer** (`sql-optimizer`) | Diagnose a slow SQL query and produce a concrete optimization plan. | — |
 
-### `pm-engineering` — 44 skills · 42 eval-scored
+### `pm-engineering` — 45 skills · 42 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
+| **AI Code Review** (`ai-code-review`) | Review AI-authored code for its characteristic failure modes — plausible-but-wrong logic, hallucinated APIs, over-engineering, dead scaffolding… | — |
 | **API Docs Writer** (`api-docs-writer`) | Write clear, developer-facing API documentation. | ✅ 5/5 |
 | **API Versioning Strategy** (`api-versioning-strategy`) | Write an API versioning strategy document for a service or API platform. | ✅ 5/5 |
 | **Architecture Decision Record (ADR)** (`architecture-decision-record`) | Create an Architecture Decision Record (ADR) for any technical decision. | ✅ 5/5 |
@@ -410,7 +412,7 @@
 | **Support Macro** (`support-macro`) | Write reusable support macros / canned responses that sound human, not robotic. | — |
 | **Support Runbook** (`support-runbook`) | Write a support runbook for handling a recurring issue type consistently. | — |
 
-## 💰 Finance, Ops & Business (53 skills)
+## 💰 Finance, Ops & Business (54 skills)
 
 ### `pm-accounting` — 6 skills
 
@@ -489,10 +491,11 @@
 | **Net Worth Statement** (`net-worth-statement`) | Produce a personal net-worth statement — assets minus liabilities — and a way to track it. | — |
 | **Savings Goal Plan** (`savings-goal-plan`) | Turn a savings goal into a month-by-month funding plan. | — |
 
-### `pm-operations` — 11 skills · 7 eval-scored
+### `pm-operations` — 12 skills · 7 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
+| **Async Decision Memo** (`async-decision-memo`) | Run a decision asynchronously — the memo, the silent-read window, the comment protocol, and the deadline that makes it land without a meeting. | — |
 | **Email Triage** (`email-triage`) | Triage a Gmail inbox down to only what needs you. | — |
 | **Morning Intelligence** (`morning-intelligence`) | Interviews you across 15 questions to capture your role, topics, sources, exclusions, and format preferences, then writes a master prompt you can… | — |
 | **Process Documentation** (`process-documentation`) | Document any business process in a clear, structured format. | ✅ 5/5 |
@@ -605,7 +608,17 @@
 | **Portfolio Page** (`portfolio-page`) | Structure a portfolio or case-study page that shows your work, not just lists it. | ✅ 5/5 |
 | **Resume** (`resume`) | Write a sharp, achievement-led resume/CV that passes ATS and earns the interview. | ✅ 3.3/5 |
 
-## 🌍 Industries & Public Sector (80 skills)
+## 🌍 Industries & Public Sector (92 skills)
+
+### `pm-agentnative` — 5 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **Agent Era Pricing** (`agent-era-pricing`) | Redesign seat-based pricing for the agent era — when one human runs ten agents, per-seat models collapse. | — |
+| **Agent Readiness Audit** (`agent-readiness-audit`) | Audit whether AI agents can actually use your product — docs, APIs, onboarding, errors, and discoverability, evaluated from a non-human user's… | — |
+| **Human-in-the-Loop Design** (`human-in-the-loop-design`) | Design the human approval surface for an agent system — which actions gate, how approvals batch without becoming rubber stamps, and what the audit… | — |
+| **MCP Server Spec** (`mcp-server-spec`) | Design an MCP server for a product — the tool surface, auth model, and safety boundaries that make it genuinely usable by AI agents. | — |
+| **Voice Agent Design** (`voice-agent-design`) | Design a voice AI agent for phone or in-app conversations — call flows, interruption handling, escalation to humans, and the metrics that catch a… | — |
 
 ### `pm-agentops` — 5 skills
 
@@ -617,6 +630,16 @@
 | **Model Migration Plan** (`model-migration-plan`) | Plan the migration of an LLM feature from one model to another without breaking production. | — |
 | **Prompt Regression Suite** (`prompt-regression-suite`) | Design a regression test suite that catches an LLM feature getting worse when the prompt, model, or context changes. | — |
 
+### `pm-aiwork` — 5 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **AI-Assisted Performance Review** (`ai-assisted-performance-review`) | Evaluate performance fairly when output is AI-assisted — what still measures the human, what now measures the tooling, and how to run the review… | — |
+| **AI Content Audit** (`ai-content-audit`) | Audit a content library, docs site, or blog for AI-generated filler that's eroding trust and search performance — and triage what to fix, rewrite… | — |
+| **AI ROI Audit** (`ai-roi-audit`) | Audit whether the organisation's AI spend actually paid — measured against baselines, not vendor math or vibes. | — |
+| **AI Usage Policy** (`ai-usage-policy`) | Write an AI usage policy people can actually follow — approved tools, data rules, disclosure duties, and review obligations, in one page instead… | — |
+| **Role Redesign For AI** (`role-redesign-for-ai`) | Redesign a job role that AI now does a large part of — deliberately, instead of quietly expecting the same headcount to absorb 140% output. | — |
+
 ### `pm-autopilot` — 4 skills
 
 | Skill | What it does | Eval |
@@ -626,11 +649,12 @@
 | **Outcome Tracker** (`outcome-tracker`) | Record the testable predictions inside a decision, then score them against reality later — so frameworks earn trust from outcomes, not vibes. | — |
 | **Schedule Recipe** (`schedule-recipe`) | Turn 'run this every Friday at 4pm' into a working, copy-paste schedule on the user's actual runner. | — |
 
-### `pm-crisis` — 5 skills
+### `pm-crisis` — 6 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
 | **Apology Letter** (`apology-letter`) | Write a sincere, effective apology to a customer, group, or the public. | — |
+| **Brand Impersonation Response** (`brand-impersonation-response`) | Respond to a brand or executive impersonation incident — deepfaked executives, cloned support lines, fake apps, spoofed domains, or AI-generated… | — |
 | **Customer Outage Notice** (`customer-outage-notice`) | Write clear customer-facing outage and service-disruption notifications. | — |
 | **Incident Public Statement** (`incident-public-statement`) | Write a single clear, honest public statement about an incident. | — |
 | **Layoff Communication** (`layoff-communication`) | Plan and write the communications for a layoff or restructure with clarity and dignity. | — |
@@ -743,7 +767,7 @@
 | **Property Offer Letter** (`property-offer-letter`) | Write a buyer's offer cover letter to a seller to strengthen a real-estate bid. | — |
 | **Tenant Screening Guide** (`tenant-screening-guide`) | Design a fair, consistent tenant screening process for a rental. | — |
 
-### `pm-research` — 5 skills · 4 eval-scored
+### `pm-research` — 6 skills · 4 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
@@ -752,6 +776,7 @@
 | **Literature Review** (`literature-review`) | Structure and write a literature review for any research topic. | ✅ 4/5 |
 | **Patient Communication** (`patient-communication`) | Write clear, plain-English patient communications for any healthcare context. | ✅ 5/5 |
 | **Research Protocol** (`research-protocol`) | Write a structured research protocol or study design document. | ✅ 4.8/5 |
+| **Synthetic User Research** (`synthetic-user-research`) | Use AI personas for early-stage research signal — with hard guardrails on what synthetic methods can and cannot validate. Use when asked to run… | — |
 
 ### `pm-vision` — 4 skills
 
@@ -764,4 +789,4 @@
 
 ---
 
-_426 skills across 62 bundles · 208 eval-scored (49%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._
+_441 skills across 64 bundles · 208 eval-scored (47%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._
