@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-site-verification" content="osZgdSLYnqidzCKt4CxjqAxo44OqGvlKi-Bmg0UmxFQ" />
+<title>The Interview Gauntlet — decode the job, build your stories, survive the interview, win the offer</title>
+<meta name="description" content="One arc from job posting to signed offer: an AI decodes the role's real requirements, forges your experiences into interview ammunition, cross-examines you as the hiring manager, then plays the recruiter in a live salary negotiation — and scores your readiness at the end." />
+<link rel="stylesheet" href="styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.9/dist/purify.min.js"></script>
+<script src="providers.js"></script>
+<style>
+  .g-wrap { max-width: 860px; margin: 0 auto; padding: 16px 22px 70px; }
+  .lead { color: #c7cfda; font-size: 15.5px; }
+  .stages { display: flex; gap: 6px; margin: 16px 0; flex-wrap: wrap; }
+  .stage-pill { flex: 1; min-width: 130px; text-align: center; padding: 9px 8px; border-radius: 11px; border: 1px solid var(--border); background: var(--panel); font-size: 12.5px; color: var(--muted); }
+  .stage-pill.live { border-color: var(--accent); color: var(--text); background: rgba(217,119,87,.1); font-weight: 700; }
+  .stage-pill.done { border-color: #5ad19a; color: #5ad19a; }
+  textarea, input[type=text] { width: 100%; box-sizing: border-box; padding: 11px 13px; border-radius: 11px; background: var(--panel); border: 1px solid var(--border); color: var(--text); font-family: inherit; font-size: 14px; }
+  textarea { min-height: 110px; resize: vertical; }
+  .bar { display: flex; gap: 10px; align-items: center; margin: 12px 0; flex-wrap: wrap; }
+  .out { border: 1px solid var(--border); border-radius: 13px; background: var(--panel); padding: 14px 16px; font-size: 13.8px; line-height: 1.55; margin: 12px 0; }
+  .chat { display: flex; flex-direction: column; gap: 10px; margin: 12px 0; }
+  .msg { max-width: 84%; border: 1px solid var(--border); border-radius: 14px; padding: 10px 14px; font-size: 13.8px; line-height: 1.5; }
+  .msg.them { align-self: flex-start; background: var(--panel); border-left: 3px solid #6aa9ff; }
+  .msg.them.recruiter { border-left-color: #ffb454; }
+  .msg.you { align-self: flex-end; background: rgba(217,119,87,.1); border-right: 3px solid var(--accent); }
+  .msg .who { font-size: 11px; color: var(--muted); margin-bottom: 3px; text-transform: uppercase; letter-spacing: .04em; }
+  .typing { display: inline-flex; gap: 4px; } .typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: blink 1s infinite; }
+  .typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+  @keyframes blink { 0%,80%,100% { opacity:.25 } 40% { opacity:1 } }
+  .say { display: flex; gap: 8px; margin-top: 8px; }
+  .say textarea { min-height: 48px; flex: 1; }
+  .verdict { border: 1.5px solid var(--accent); border-radius: 14px; background: linear-gradient(180deg, rgba(217,119,87,.09), transparent 55%), var(--panel); padding: 16px 18px; margin-top: 14px; }
+  .hidden { display: none !important; }
+  h2.stage-h { margin: 20px 0 4px; font-size: 18px; }
+  .stage-sub { color: var(--muted); font-size: 13px; margin: 0 0 10px; }
+  .out-actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><img src="assets/product-notes.jpg" alt="Product Notes" class="brand-logo" />
+    <div class="brand-text"><h1>The Interview Gauntlet</h1><p class="tagline">Job posting → signed offer, one arc. Survive all four stages.</p></div></div>
+  <div class="key-area">
+    <select id="provider" title="Model provider"><option value="gemini">Gemini (free key)</option><option value="webllm">In-browser (no key)</option><option value="anthropic">Claude</option><option value="openai">OpenAI</option><option value="ollama">Ollama (local)</option></select>
+    <div class="key-field"><input id="apiKey" type="password" placeholder="sk-ant-… (your Anthropic API key)" autocomplete="off" /><button id="keyToggle" type="button" class="show-toggle">Show</button></div>
+    <select id="model" title="Model"><option value="claude-fable-5">Fable 5 ✨</option><option value="claude-opus-4-8">Opus 4.8</option><option value="claude-sonnet-4-6" selected>Sonnet 4.6</option><option value="claude-haiku-4-5-20251001">Haiku 4.5</option></select>
+  </div>
+</header>
+<nav class="toolbar-nav" id="toolbar" aria-label="Tools"></nav>
+<div class="key-note">🔒 Your key stays in this browser. The job description and your answers go only to the model provider you choose.</div>
+
+<div class="g-wrap">
+  <p class="lead">Four stages, one job: <strong>Decode</strong> what the posting actually wants · <strong>Forge</strong> your experiences into interview ammunition · <strong>Survive</strong> a live cross-examination by the hiring manager · <strong>Negotiate</strong> the offer against a recruiter with a hidden band. Then a readiness score that tells you exactly what to fix before the real thing.</p>
+
+  <div class="stages">
+    <span class="stage-pill" data-s="1">1 · 🔎 Decode</span>
+    <span class="stage-pill" data-s="2">2 · ⚒️ Forge stories</span>
+    <span class="stage-pill" data-s="3">3 · 🎤 The interview</span>
+    <span class="stage-pill" data-s="4">4 · 💰 The offer</span>
+    <span class="stage-pill" data-s="5">🏁 Verdict</span>
+  </div>
+
+  <!-- Stage 1 -->
+  <section id="s1">
+    <h2 class="stage-h">🔎 Stage 1 — Decode the posting</h2>
+    <p class="stage-sub">Paste the job description. You'll get what they *actually* want, the interview loop to expect, and your angle.</p>
+    <textarea id="jd" placeholder="Paste the full job description…"></textarea>
+    <input id="me" type="text" placeholder="One line about you: current role, years, the headline of your experience (optional but sharpens everything)" style="margin-top:8px" />
+    <select id="difficulty" style="margin-top:8px;width:auto;padding:9px 12px;border-radius:10px;background:var(--panel);border:1px solid var(--border);color:var(--text);font-family:inherit">
+      <option value="practice">🎓 Practice — supportive interviewer</option>
+      <option value="realistic" selected>🎯 Realistic — a fair but probing loop</option>
+      <option value="brutal">🔥 Brutal — bar-raiser energy</option>
+    </select>
+    <div class="bar"><button id="b1" class="primary" type="button">Decode it →</button><span id="st1" class="status"></span></div>
+    <div id="o1" class="out markdown hidden"></div>
+    <div class="bar hidden" id="n1"><button class="primary" type="button" data-next="2">Next: forge your stories →</button></div>
+  </section>
+
+  <!-- Stage 2 -->
+  <section id="s2" class="hidden">
+    <h2 class="stage-h">⚒️ Stage 2 — Forge your stories</h2>
+    <p class="stage-sub">Give 2-3 real experiences (messy notes fine). They come back as tight, metric-led stories mapped to what Stage 1 said this role tests.</p>
+    <textarea id="exp" placeholder="e.g. 'led the checkout redesign, conversion went 2.1→2.8%, had to fight legal on the one-click flow' … 2-3 of these"></textarea>
+    <div class="bar"><button id="b2" class="primary" type="button">Forge them →</button><span id="st2" class="status"></span></div>
+    <div id="o2" class="out markdown hidden"></div>
+    <div class="bar hidden" id="n2"><button class="primary" type="button" data-next="3">Next: face the interviewer →</button></div>
+  </section>
+
+  <!-- Stage 3 -->
+  <section id="s3" class="hidden">
+    <h2 class="stage-h">🎤 Stage 3 — The interview</h2>
+    <p class="stage-sub">The hiring manager has read the posting and your stories. Five questions, one at a time. Honest "I don't know" beats a bluff.</p>
+    <div class="chat" id="chat3"></div>
+    <div class="say" id="say3"><textarea id="a3" placeholder="Your answer… (Enter to send)"></textarea><button id="send3" class="primary" type="button">Answer</button></div>
+    <div class="bar hidden" id="n3"><button class="primary" type="button" data-next="4">Next: the offer call →</button></div>
+  </section>
+
+  <!-- Stage 4 -->
+  <section id="s4" class="hidden">
+    <h2 class="stage-h">💰 Stage 4 — The offer</h2>
+    <p class="stage-sub">You got it. Now the recruiter calls with a number — and a hidden approval band. Negotiate; close or push. 4-6 exchanges is realistic.</p>
+    <div class="chat" id="chat4"></div>
+    <div class="say" id="say4"><textarea id="a4" placeholder="Your move… (Enter to send)"></textarea><button id="send4" class="primary" type="button">Send</button></div>
+    <div class="bar"><button id="accept" class="ghost hidden" type="button">🤝 Accept current offer</button><span id="st4" class="status"></span></div>
+  </section>
+
+  <!-- Verdict -->
+  <section id="s5" class="hidden">
+    <h2 class="stage-h">🏁 The verdict</h2>
+    <div id="o5" class="verdict markdown"></div>
+    <div class="out-actions">
+      <button id="dl" class="primary" type="button">⬇ Download the full gauntlet report (.md)</button>
+      <button id="again" class="ghost" type="button">↻ Run it again</button>
+    </div>
+  </section>
+</div>
+
+<script>
+const el=(id)=>document.getElementById(id);
+let S={jd:'',me:'',diff:'realistic',decoded:'',stories:'',iq:[],ia:[],offerTurns:[],offerHidden:null,verdict:''};
+let controller=null;
+
+init();
+function init(){
+  PMProviders.initProviderUI();
+  el('keyToggle').addEventListener('click',()=>{const f=el('apiKey');const s=f.type==='password';f.type=s?'text':'password';el('keyToggle').textContent=s?'Hide':'Show';});
+  el('b1').addEventListener('click',stage1);
+  el('b2').addEventListener('click',stage2);
+  el('send3').addEventListener('click',answer3);
+  el('a3').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();answer3();}});
+  el('send4').addEventListener('click',()=>move4(null));
+  el('a4').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();move4(null);}});
+  el('accept').addEventListener('click',()=>finish('accepted'));
+  el('again').addEventListener('click',()=>location.reload());
+  el('dl').addEventListener('click',download);
+  document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>gotoStage(+b.dataset.next)));
+  setStage(1);
+}
+function key(){ const k=el('apiKey').value.trim(); if(!k&&!PMProviders.current().local){ status(1,'Enter your '+PMProviders.current().name+' key (top-right) — or pick In-browser (no key).',true); return null;} return k; }
+function setStage(n){ document.querySelectorAll('.stage-pill').forEach(p=>{const s=+p.dataset.s; p.classList.toggle('live',s===n); p.classList.toggle('done',s<n);}); }
+function gotoStage(n){ for(let i=1;i<=5;i++) el('s'+i).classList.toggle('hidden',i!==n); setStage(n); if(n===3&&!S.iq.length) ask3(); if(n===4&&!S.offerTurns.length) open4(); window.scrollTo({top:0,behavior:'smooth'}); }
+function status(n,m,err){ const s=el('st'+n)||el('st1'); if(s){s.textContent=m;s.className='status'+(err?' err':'');} }
+async function gen({system,user,node}){
+  controller=new AbortController();
+  return PMProviders.stream({key:el('apiKey').value.trim(),model:el('model').value,system,userMessage:user,signal:controller.signal,
+    onDelta:node?(a)=>{node.innerHTML=DOMPurify.sanitize(marked.parse(a));}:undefined});
+}
+
+// ── Stage 1: decode ───────────────────────────────────────────────────────────
+async function stage1(){
+  if(key()===null) return;
+  S.jd=el('jd').value.trim(); S.me=el('me').value.trim(); S.diff=el('difficulty').value;
+  if(S.jd.length<200) return status(1,'Paste the full job description (a real one — at least a few paragraphs).',true);
+  if(window.pmTrack) pmTrack('gauntlet/start');
+  el('b1').disabled=true; status(1,'Decoding…');
+  const o=el('o1'); o.classList.remove('hidden');
+  try{
+    S.decoded=await gen({node:o,user:'JOB DESCRIPTION:\n\n'+S.jd+(S.me?('\n\nTHE CANDIDATE (one line): '+S.me):''),
+      system:`You decode job postings for candidates. Read past the boilerplate. Produce, in markdown, ≤350 words:
+### What they actually want — the 3-4 real requirements behind the listed ones, and the one unstated thing (the pain that opened this req)
+### The interview loop to expect — likely rounds and what each screens for
+### Your angle — ${S.me?'given the candidate line,':'for a strong candidate,'} the positioning that wins, and the 2 gaps to pre-empt
+### Red flags in the posting — if any, honestly (or "none serious")`});
+    el('n1').classList.remove('hidden'); status(1,'');
+  }catch(e){ status(1,e.message||'Failed.',true); }
+  finally{ el('b1').disabled=false; }
+}
+
+// ── Stage 2: forge stories ────────────────────────────────────────────────────
+async function stage2(){
+  if(key()===null) return;
+  const exp=el('exp').value.trim();
+  if(exp.length<100) return status(2,'Give at least 2 real experiences — a couple of messy lines each is enough.',true);
+  el('b2').disabled=true; status(2,'Forging…');
+  const o=el('o2'); o.classList.remove('hidden');
+  try{
+    S.stories=await gen({node:o,user:'THE ROLE (decoded):\n'+S.decoded+'\n\nRAW EXPERIENCES:\n'+exp,
+      system:`You turn raw career experiences into interview ammunition for THIS role. For each experience produce:
+**Story: [sharp 4-6 word title]** — *maps to: [which decoded requirement]*
+- **Situation/Task** (1 line) · **Action** (2-3 lines, "I" not "we", the decision visible) · **Result** (metric first; if none given, say "[add the number — even approximate]")
+- **The question this answers:** the interview question this story kills.
+Then "### Coverage gaps" — which decoded requirements have NO story yet and what to prepare. ≤400 words total. Do not invent facts not in the raw notes.`});
+    el('n2').classList.remove('hidden'); status(2,'');
+  }catch(e){ status(2,e.message||'Failed.',true); }
+  finally{ el('b2').disabled=false; }
+}
+
+// ── Stage 3: the interview (5 questions) ─────────────────────────────────────
+function bubble(chatId,who,cls){
+  const m=document.createElement('div'); m.className='msg '+cls;
+  m.innerHTML='<div class="who">'+who+'</div><div class="t"><span class="typing"><i></i><i></i><i></i></span></div>';
+  el(chatId).appendChild(m); m.scrollIntoView({behavior:'smooth',block:'end'});
+  return m.querySelector('.t');
+}
+const diffLine={practice:'supportive; give a small steer if the candidate flounders',realistic:'fair but probing; one follow-up when an answer is thin',brutal:'bar-raiser: challenge weak evidence directly, never rescue'};
+async function ask3(){
+  if(key()===null) return;
+  const t=bubble('chat3','Hiring manager','them');
+  try{
+    const q=await gen({node:t,user:'DECODED ROLE:\n'+S.decoded+'\n\nCANDIDATE STORIES:\n'+S.stories+'\n\nINTERVIEW SO FAR:\n'+S.iq.map((q,i)=>'Q: '+q+'\nA: '+(S.ia[i]||'')).join('\n\n')+'\n\nAsk question '+(S.iq.length+1)+' of 5.',
+      system:`You are the hiring manager for this role, interviewing live. Style: ${diffLine[S.diff]}. Ask ONE question (≤50 words): grounded in the decoded requirements, probing where the stories are thinnest, building on previous answers. Questions 4-5 should be the hardest (a gap, a contradiction, or "walk me through the failure"). Output only the question, in character.`});
+    S.iq.push(q);
+  }catch(e){ t.textContent='('+(e.message||'failed')+')'; }
+}
+async function answer3(){
+  const a=el('a3').value.trim(); if(!a||S.ia.length>=S.iq.length) return;
+  el('a3').value='';
+  const t=bubble('chat3','You','you'); t.textContent=a;
+  S.ia.push(a);
+  if(S.iq.length>=5){ el('say3').classList.add('hidden'); el('n3').classList.remove('hidden'); return; }
+  el('send3').disabled=true; await ask3(); el('send3').disabled=false; el('a3').focus();
+}
+
+// ── Stage 4: the offer ────────────────────────────────────────────────────────
+async function open4(){
+  if(key()===null) return;
+  // Hidden state first (not shown), then the recruiter's opening.
+  try{
+    const raw=await gen({user:'ROLE:\n'+S.decoded.slice(0,1500)+(S.me?'\nCANDIDATE: '+S.me:''),
+      system:`Create the hidden negotiation state for a job offer. Realistic numbers for this role/market. Return STRICT JSON only:
+{"opening":"<the number+package the recruiter opens with>","band_max":"<the true approval ceiling>","levers":["<non-salary lever 1>","<lever 2>"],"pressure":"<why the recruiter wants this closed fast>"}`});
+    S.offerHidden=JSON.parse(raw.slice(raw.indexOf('{'),raw.lastIndexOf('}')+1));
+  }catch(_){ S.offerHidden={opening:'a market-typical package',band_max:'~12% above opening',levers:['sign-on bonus','extra equity'],pressure:'quarter-end hiring target'}; }
+  await move4('(Open the call: congratulate them, present the opening offer with specific numbers, in character, ≤80 words.)');
+  el('accept').classList.remove('hidden');
+}
+async function move4(nudge){
+  if(key()===null) return;
+  if(!nudge){
+    const a=el('a4').value.trim(); if(!a) return;
+    el('a4').value='';
+    const t=bubble('chat4','You','you'); t.textContent=a;
+    S.offerTurns.push({who:'You',text:a});
+    if(S.offerTurns.filter(x=>x.who==='You').length>=6){ finish('walked-long'); return; }
+  }
+  el('send4').disabled=true;
+  const t=bubble('chat4','Recruiter','them recruiter');
+  try{
+    const text=await gen({node:t,user:'NEGOTIATION SO FAR:\n'+(S.offerTurns.map(x=>x.who+': '+x.text).join('\n\n')||'(none yet)')+'\n\nRespond with your next line only.',
+      system:`You are the recruiter. HIDDEN STATE (never reveal): opening ${S.offerHidden.opening} · true ceiling ${S.offerHidden.band_max} · flexible levers: ${(S.offerHidden.levers||[]).join(', ')} · your pressure: ${S.offerHidden.pressure}. Negotiate realistically (≤80 words/turn): concede slowly toward the ceiling only against good arguments (competing data, specific asks); offer levers before base; if pushed past the ceiling, hold and mean it. ${nudge||''}`});
+    S.offerTurns.push({who:'Recruiter',text});
+  }catch(e){ t.textContent='('+(e.message||'failed')+')'; }
+  el('send4').disabled=false;
+}
+
+// ── Verdict ───────────────────────────────────────────────────────────────────
+async function finish(how){
+  gotoStage(5);
+  const o=el('o5');
+  try{
+    S.verdict=await gen({node:o,user:'DECODED ROLE:\n'+S.decoded+'\n\nSTORIES:\n'+S.stories+'\n\nINTERVIEW:\n'+S.iq.map((q,i)=>'Q: '+q+'\nA: '+(S.ia[i]||'(no answer)')).join('\n\n')+'\n\nNEGOTIATION ('+how+'):\n'+S.offerTurns.map(x=>x.who+': '+x.text).join('\n')+'\n\nHIDDEN OFFER STATE (now revealed): '+JSON.stringify(S.offerHidden),
+      system:`You are the gauntlet examiner. Score the candidate's full run, strictly from the transcript. Markdown, ≤400 words:
+"## Readiness: <n>/100 — <one line>" (interview 60%, negotiation 40%)
+"### The interview" — table: Question | Strength of answer /10 | The tell (quote them).
+"### The negotiation" — what they captured vs the revealed ceiling; the lever they never pulled.
+"### Before the real one" — the 3 preparations that would most move the score, specific to THIS run.
+End with: 🏆 Gauntlet ${S.diff} level — <n>/100 · pm-skills, ${new Date().toISOString().slice(0,10)}`});
+    if(window.pmTrack) pmTrack('gauntlet/finish/'+S.diff);
+  }catch(e){ o.textContent=e.message||'Scoring failed.'; }
+}
+function download(){
+  const md='# Interview Gauntlet report\n\n## Stage 1 — decoded role\n\n'+S.decoded+'\n\n## Stage 2 — stories\n\n'+S.stories+'\n\n## Stage 3 — interview\n\n'+S.iq.map((q,i)=>'**Q:** '+q+'\n\n**A:** '+(S.ia[i]||'')).join('\n\n')+'\n\n## Stage 4 — negotiation\n\n'+S.offerTurns.map(x=>'**'+x.who+':** '+x.text).join('\n\n')+'\n\n## Verdict\n\n'+S.verdict;
+  const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([md],{type:'text/markdown'})); a.download='gauntlet-report.md'; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),3000);
+}
+</script>
+<script src="i18n.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

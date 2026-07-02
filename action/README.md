@@ -56,6 +56,17 @@ jobs:
         env: { BODY: ${{ steps.skill.outputs.result }} }
 ```
 
+## 📦 Turnkey recipes — copy one file, done
+
+Ready-made workflows in [`examples/`](examples/) — copy into `.github/workflows/`, add the `ANTHROPIC_API_KEY` secret, and skills start working in your CI:
+
+| Recipe | Trigger | What lands |
+|---|---|---|
+| [`pr-description.yml`](examples/pr-description.yml) | PR opened | A drafted description posted as a comment (never overwrites the author's) |
+| [`release-changelog.yml`](examples/release-changelog.yml) | Release published | User-facing notes generated from the commit log, prepended to the release body |
+| [`incident-postmortem.yml`](examples/incident-postmortem.yml) | Issue labelled `incident` | A blameless-postmortem scaffold posted on the issue, pre-filled from its body |
+| [`doc-lint.yml`](examples/doc-lint.yml) | PR touching `docs/**` / `*.prd.md` | Pass/fail verdicts against a skill's Quality Checks, commented on the PR |
+
 ## Other ideas
 
 - `skill: changelog-generator` from `git log` → write `CHANGELOG.md`.
@@ -63,3 +74,7 @@ jobs:
 - `skill: code-review-checklist` → post a review checklist as a PR comment.
 
 Pin to a release tag (e.g. `@v19`) for stability once you've tried `@main`.
+
+## Publishing to the GitHub Marketplace
+
+Marketplace listings require `action.yml` at a repo root, so this in-repo action ships as `mohitagw15856/pm-claude-skills/action@main`. To list it: mirror `action/` into a dedicated `pm-skills-action` repo (a 5-minute copy + tag), publish from there, and keep this directory as the source of truth.

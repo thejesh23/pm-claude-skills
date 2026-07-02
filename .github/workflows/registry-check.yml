@@ -1,0 +1,22 @@
+name: Community registry check
+
+# Validates community/registry.json on every PR touching it: structure,
+# namespace-vs-repo-owner, and a live fetch of each SKILL.md (SkillSpec
+# conformance + security-pattern scan). Also re-scans weekly so entries
+# that turn bad after merge get caught.
+on:
+  pull_request:
+    paths: ['community/registry.json']
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node scripts/check-registry.mjs --fetch

@@ -60,6 +60,7 @@
       ['boardroom.html', '🏛️ Boardroom'],
       ['defend.html', '🛡️ Defend'],
       ['gym.html', '🥊 The Gym'],
+      ['gauntlet.html', '🏆 Gauntlet'],
       ['xray.html', '🩻 X-ray'],
       ['agent.html', '✨ Auto-Agent'],
       ['canvas.html', '🧩 Workflow Canvas'],

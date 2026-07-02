@@ -1,0 +1,78 @@
+{
+  "_comment": "SkillBench task set v1 — FROZEN. Do not edit tasks in place; add a v2 set instead. Drawn from evals/cases.json (curated).",
+  "version": 1,
+  "tasks": [
+    {
+      "id": "prd-template",
+      "domain": "product",
+      "skill": "prd-template",
+      "input": "Feature: in-app referral program so existing users invite colleagues and both get a credit. Target: activated B2B users. Goal: grow signups 15% in Q3."
+    },
+    {
+      "id": "rice-prioritisation",
+      "domain": "product",
+      "skill": "rice-prioritisation",
+      "input": "Rank these for next quarter:\n1. Onboarding redesign — reach ~5000 users/qtr, big activation impact, ~3 person-months.\n2. Dark mode — ~8000 users want it, low impact, ~1 person-month.\n3. SSO for enterprise — ~400 accounts, high deal impact, ~4 person-months, low confidence."
+    },
+    {
+      "id": "stakeholder-update",
+      "domain": "communication",
+      "skill": "stakeholder-update",
+      "input": "Weekly update for sales, support, and exec stakeholders on the checkout revamp. Status: 10% rollout live, conversion +4%, one payments edge case under investigation, full launch gated on a Legal PCI review due Tuesday."
+    },
+    {
+      "id": "incident-postmortem",
+      "domain": "engineering-ops",
+      "skill": "incident-postmortem",
+      "input": "Checkout was down 42 minutes after a deploy set a wrong env var on the payments service; 5xx spiked, ~1,200 failed checkouts. Detected by alert in 6 min, fixed by rollback. Blameless postmortem with timeline and action items."
+    },
+    {
+      "id": "model-migration-plan",
+      "domain": "engineering-ops",
+      "skill": "model-migration-plan",
+      "input": "We must move our summarisation feature off claude-3-5-sonnet (deprecated in 90 days) to claude-sonnet-4-6. 2M requests/month, output shown directly to end users, we have ~40 golden examples but no CI evals. Plan the migration."
+    },
+    {
+      "id": "churn-analysis",
+      "domain": "analysis",
+      "skill": "churn-analysis",
+      "input": "SMB SaaS, $49/mo. Monthly logo churn rose from 3% to 5% over two quarters. Most cancellations happen in month 2-3. Top stated reasons: 'too hard to set up' and 'didn't see value'. Annual plans churn far less than monthly."
+    },
+    {
+      "id": "ab-test-planner",
+      "domain": "analysis",
+      "skill": "ab-test-planner",
+      "input": "Test whether moving the signup CTA above the fold on the pricing page increases free-trial starts. Current trial-start rate 8%, ~20k weekly visitors. We want to detect a 10% relative lift."
+    },
+    {
+      "id": "okr-builder",
+      "domain": "people",
+      "skill": "okr-builder",
+      "input": "Company objective: become the default analytics tool for startups. For the product team, next quarter. We care about activation, retention, and word-of-mouth growth."
+    },
+    {
+      "id": "cs-escalation-brief",
+      "domain": "communication",
+      "skill": "cs-escalation-brief",
+      "input": "Acme Corp ($240k ARR, renewal in 60 days) had a 9-hour data-sync outage last week - their third P1 this quarter. Their VP Ops emailed our CEO directly this morning threatening to churn and mentioning a competitor by name. Support history: 14 tickets in 90 days, CSAT dropped from 4.6 to 2.9. We shipped a fix yesterday but have not told them. Write the internal escalation brief for the exec save-play meeting at 4pm."
+    },
+    {
+      "id": "competitor-teardown",
+      "domain": "strategy",
+      "skill": "competitor-teardown",
+      "input": "We sell a mid-market applicant tracking system ($12k ACV, 800 customers). Tear down Greenhouse and Ashby: positioning map, feature gaps that matter in deals we lose, their messaging weak points, and what we should do about it. Sales says we lose to Ashby on \"feels modern\" and to Greenhouse on \"integrations\"."
+    },
+    {
+      "id": "pricing-strategy",
+      "domain": "strategy",
+      "skill": "pricing-strategy",
+      "input": "B2B SaaS analytics tool, single $99/mo plan, 2,100 customers, 4% monthly logo churn, NRR 96%. Enterprise prospects keep asking for SSO/audit logs and our sales-assisted deals stall at procurement. Design a pricing/packaging change: tiers, the fence for each, migration for existing customers, and the risks."
+    },
+    {
+      "id": "performance-review",
+      "domain": "people",
+      "skill": "performance-review",
+      "input": "Write the annual review for a senior engineer: technically excellent (led the payments migration, zero-downtime), but two peers independently raised that he dismisses juniors ideas in review and a PM flagged missed standups for a month. He is expecting a promotion this cycle. Manager assessment: not this cycle, revisit in 6 months if the collaboration feedback lands."
+    }
+  ]
+}

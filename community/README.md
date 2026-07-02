@@ -1,0 +1,41 @@
+# 🌐 The Community Skill Registry — publish your skill, keep your repo
+
+npm for skills: your `SKILL.md` stays in **your repo**, an entry in [`registry.json`](registry.json) makes it **discoverable and installable** through the whole pm-skills toolchain — the hosted [REST API](../mcp-remote/#rest-api-for-n8n-lovable-make-any-http-tool) (`/v1/community`), the MCP server's `search_skills`, and the CLI. Namespaced as `you/skill-name`, so nothing collides with the curated library or anyone else.
+
+> **Trust model, stated plainly:** registry entries are validated **structurally** on every PR (SkillSpec conformance + a security-pattern scan of the fetched file) and re-scanned periodically — but they are *not* eval-scored or hand-reviewed like the [core library](../skills/). Consumers see the `community:` prefix wherever these skills surface. This registry supersedes the old link-only directory in [COMMUNITY-SKILLS.md](../COMMUNITY-SKILLS.md), which remains as a showcase list.
+
+## Publish (one PR)
+
+1. Your skill lives in a **public GitHub repo** as a `SKILL.md` following [SkillSpec](../SKILLSPEC.md) — check it locally first:
+   ```bash
+   npx pm-claude-skills validate ./path/to/SKILL.md   # or: node scripts/skillcheck.mjs from a clone
+   ```
+2. Add one object to the `skills` array in [`registry.json`](registry.json):
+   ```json
+   {
+     "name": "yourhandle/your-skill-name",
+     "description": "Copied from your SKILL.md frontmatter (kept in sync by CI).",
+     "repo": "https://github.com/yourhandle/your-repo",
+     "path": "skills/your-skill-name/SKILL.md",
+     "ref": "main"
+   }
+   ```
+   - `name` MUST be `<your-github-handle>/<skill-name>`; the skill name must match the file's frontmatter `name`.
+   - `path` is the file path within your repo; `ref` a branch or tag (tag = your consumers get stability).
+3. Open the PR. CI ([`registry-check`](../.github/workflows/registry-check.yml)) fetches your file from `raw.githubusercontent.com`, validates SkillSpec conformance (L1 minimum, level reported), scans for the security patterns the core library bans (prompt-injection phrasing, undisclosed network calls, data-exfiltration instructions), and verifies your handle matches the repo owner. Green check → a maintainer merges → you're live everywhere within minutes.
+
+## Consume
+
+```bash
+curl https://pm-skills-mcp.pm-claude-skills.workers.dev/v1/community                 # list
+curl https://pm-skills-mcp.pm-claude-skills.workers.dev/v1/community/yourhandle/your-skill-name   # one skill, fetched live from the author's repo
+```
+
+Over MCP, `search_skills` results include community entries marked `community: true` — agents and the playground can distinguish curated from community at a glance.
+
+## House rules
+
+- **You own it, you maintain it.** Broken fetch (404/moved) for >30 days → the entry is removed (re-add anytime).
+- **Same safety bar as the core library** ([SKILLSPEC §7](../SKILLSPEC.md)): no instruction-override attempts, no undisclosed data collection, no fabrication instructions. The scan is automated *and* adversarially updated; evasion = permanent removal.
+- **Namespace = your GitHub handle.** Verified by CI against the repo owner; org repos may use the org name.
+- Duplicate-ish skills are fine (competition is good); typosquatting curated skill names is not.

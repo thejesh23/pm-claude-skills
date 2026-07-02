@@ -1,0 +1,34 @@
+# Lint changed docs against a skill's quality bar (Quality Checks + Anti-Patterns)
+# and comment the verdicts on the PR. Pairs a doc path pattern with the skill to judge it.
+# Copy to .github/workflows/doc-lint.yml · needs secret ANTHROPIC_API_KEY.
+name: Doc lint
+on:
+  pull_request:
+    paths: ['docs/**/*.md', '**/*.prd.md']
+permissions:
+  pull-requests: write
+  contents: read
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Gather changed docs
+        run: |
+          git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'docs/**/*.md' '**/*.prd.md' | head -5 > /tmp/files.txt
+          echo "Lint these documents against the skill's Quality Checks and Anti-Patterns. For each: verdict per check (pass/fail + one specific note quoting the doc), then a one-line summary." > /tmp/input.txt
+          while read -r f; do [ -f "$f" ] && { echo; echo "=== $f ==="; head -c 20000 "$f"; } >> /tmp/input.txt; done < /tmp/files.txt
+      - uses: mohitagw15856/pm-claude-skills/action@main
+        if: hashFiles('/tmp/files.txt') != ''
+        with:
+          skill: prd-template   # swap for the skill that matches your docs
+          input_file: /tmp/input.txt
+          output_file: /tmp/lint.md
+          api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Comment the verdicts
+        if: hashFiles('/tmp/files.txt') != ''
+        env: { GH_TOKEN: ${{ github.token }} }
+        run: |
+          { echo '🧐 **Doc lint** — judged against the skill quality bar ([pm-skills](https://github.com/mohitagw15856/pm-claude-skills)):'; echo; cat /tmp/lint.md; } > /tmp/comment.md
+          gh pr comment ${{ github.event.pull_request.number }} --body-file /tmp/comment.md

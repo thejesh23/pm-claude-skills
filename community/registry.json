@@ -1,0 +1,5 @@
+{
+  "_comment": "The community skill registry — installable, namespaced skills that live in their authors' repos. Add yours via PR (see community/README.md); CI fetches and validates every entry (SkillSpec conformance + security-pattern scan) before merge. Served by the hosted worker at /v1/community and by the MCP search_skills tool alongside the core library.",
+  "spec": "pm-skills-registry/1",
+  "skills": []
+}

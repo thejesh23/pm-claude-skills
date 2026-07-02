@@ -1,0 +1,60 @@
+name: Publish dataset to Hugging Face
+
+# Rebuilds dataset/ from the canonical sources and pushes it to the HF Hub on
+# every release (and on demand). Fails soft when HF_TOKEN isn't configured, so
+# forks and the main repo pre-setup stay green.
+#
+# One-time setup: create the dataset repo on HF (default: <HF_USERNAME>/pm-skills-instruct),
+# then add repo secrets HF_TOKEN (write) and optionally HF_DATASET_REPO to override the id.
+on:
+  release:
+    types: [published]
+  workflow_dispatch: {}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for HF_TOKEN
+        id: gate
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          if [ -z "$HF_TOKEN" ]; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::HF_TOKEN not configured — skipping the Hugging Face publish (add the secret to enable)."
+          else
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.enabled == 'true'
+        with:
+          node-version: '20'
+      - name: Rebuild the dataset from canonical sources
+        if: steps.gate.outputs.enabled == 'true'
+        run: node scripts/build-dataset.mjs
+      - name: Push to the Hub
+        if: steps.gate.outputs.enabled == 'true'
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_DATASET_REPO: ${{ secrets.HF_DATASET_REPO }}
+          TAG: ${{ github.event.release.tag_name || 'manual' }}
+        run: |
+          pip install -q "huggingface_hub>=0.23"
+          python3 - <<'EOF'
+          import os
+          from huggingface_hub import HfApi
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          user = api.whoami()["name"]
+          repo = os.environ.get("HF_DATASET_REPO") or f"{user}/pm-skills-instruct"
+          api.create_repo(repo, repo_type="dataset", exist_ok=True)
+          # The card becomes the dataset README on the Hub.
+          api.upload_file(path_or_fileobj="dataset/CARD.md", path_in_repo="README.md",
+                          repo_id=repo, repo_type="dataset")
+          for f in ("routing.jsonl", "sft-seeds.jsonl", "samples.jsonl"):
+              api.upload_file(path_or_fileobj=f"dataset/{f}", path_in_repo=f,
+                              repo_id=repo, repo_type="dataset",
+                              commit_message=f"release {os.environ['TAG']}")
+          print(f"Published to https://huggingface.co/datasets/{repo}")
+          EOF

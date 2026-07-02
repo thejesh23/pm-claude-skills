@@ -8,6 +8,7 @@
 
 const SKILLS_URL = 'https://mohitagw15856.github.io/pm-claude-skills/skills.json';
 const WORKFLOWS_URL = 'https://raw.githubusercontent.com/mohitagw15856/pm-claude-skills/main/workflows.json';
+const REGISTRY_URL = 'https://raw.githubusercontent.com/mohitagw15856/pm-claude-skills/main/community/registry.json';
 const SERVER = {
   name: 'pm-claude-skills',
   title: 'PM Skills — Professional Agent Skills',
@@ -223,9 +224,36 @@ async function handleRest(url) {
         'GET /v1/search?q=<query>': 'Search skills by keyword.',
         'GET /v1/workflows': 'List workflow recipes (skill chains).',
         'GET /v1/workflows/{id}': 'One workflow recipe with its ordered steps.',
+        'GET /v1/community': 'List community-registry skills (namespaced handle/skill; not curated — see community/README.md).',
+        'GET /v1/community/{handle}/{skill}': 'One community skill, fetched live from its author repo.',
       },
       note: 'Read-only, no auth, CORS-open. Same catalogue as the MCP connector (POST /).',
     });
+  }
+
+  // /v1/community  and  /v1/community/{handle}/{skill} — the community registry.
+  // Entries are validated on PR (structure + security scan) but NOT curated/eval-scored;
+  // responses carry community: true so consumers can distinguish at a glance.
+  if (seg[1] === 'community') {
+    let registry;
+    try {
+      const r = await fetch(REGISTRY_URL, { cf: { cacheTtl: 900, cacheEverything: true } });
+      registry = await r.json();
+    } catch { return jsonResponse({ error: 'Registry unavailable.' }, 502); }
+    const entries = (registry.skills || []).map((s) => ({ ...s, community: true }));
+    if (seg.length === 2) return jsonResponse({ count: entries.length, note: 'Community skills — validated, not curated. See community/README.md.', skills: entries });
+    const name = decodeURIComponent(seg.slice(2).join('/'));
+    const entry = entries.find((s) => s.name === name);
+    if (!entry) return jsonResponse({ error: `No community skill "${name}". GET /v1/community for the list.` }, 404);
+    const [owner, repo] = entry.repo.replace(/\/$/, '').split('/').slice(3);
+    const raw = `https://raw.githubusercontent.com/${owner}/${repo}/${entry.ref || 'main'}/${entry.path}`;
+    const fr = await fetch(raw, { cf: { cacheTtl: 900, cacheEverything: true } });
+    if (!fr.ok) return jsonResponse({ error: `Upstream fetch failed (${fr.status}) — the author's repo may have moved.`, source: raw }, 502);
+    const text = await fr.text();
+    if (url.searchParams.get('format') === 'md') {
+      return new Response(text, { headers: { 'content-type': 'text/markdown; charset=utf-8', ...CORS } });
+    }
+    return jsonResponse({ ...entry, source: raw, instructions: text.replace(/^---[\s\S]*?---\n/, '') });
   }
 
   // /v1/skills  and  /v1/skills/{name}

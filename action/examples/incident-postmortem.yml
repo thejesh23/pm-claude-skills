@@ -1,0 +1,28 @@
+# Label an issue `incident` → a blameless-postmortem scaffold is posted on it,
+# pre-filled from the issue body, ready for the review meeting.
+# Copy to .github/workflows/incident-postmortem.yml · needs secret ANTHROPIC_API_KEY.
+name: Postmortem scaffold
+on:
+  issues:
+    types: [labeled]
+permissions:
+  issues: write
+jobs:
+  scaffold:
+    if: github.event.label.name == 'incident'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Issue body as input
+        env: { BODY: ${{ github.event.issue.body }}, TITLE: ${{ github.event.issue.title }} }
+        run: printf 'Incident: %s\n\nNotes so far:\n%s\n' "$TITLE" "$BODY" > /tmp/input.txt
+      - uses: mohitagw15856/pm-claude-skills/action@main
+        with:
+          skill: incident-postmortem
+          input_file: /tmp/input.txt
+          output_file: /tmp/pm.md
+          api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Post the scaffold
+        env: { GH_TOKEN: ${{ github.token }} }
+        run: |
+          { echo '📋 **Postmortem draft** — structured from the notes above; correct it in review ([pm-skills](https://github.com/mohitagw15856/pm-claude-skills)):'; echo; cat /tmp/pm.md; } > /tmp/comment.md
+          gh issue comment ${{ github.event.issue.number }} --body-file /tmp/comment.md

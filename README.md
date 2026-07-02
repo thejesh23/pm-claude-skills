@@ -237,19 +237,27 @@ It anchors a whole **pressure-test suite**:
 
 And two upgrades to how skills *feel*: the [playground](https://mohitagw15856.github.io/pm-claude-skills/) now renders **🎛 [living artifacts](web/artifacts.js)** — for RICE, roadmaps, journey maps, and health scorecards the output includes an *interactive* component (drag a confidence slider on the RICE board and watch the ranking re-sort live) — and **📷 [`pm-vision`](plugins/pm-vision)** lets you attach whiteboard photos, competitor screenshots, or slide photos so vision-first skills ([`whiteboard-to-spec`](skills/whiteboard-to-spec/SKILL.md), [`screenshot-teardown`](skills/screenshot-teardown/SKILL.md), [`deck-autopsy`](skills/deck-autopsy/SKILL.md)) read the pixels as the primary input. Want outputs in *your* voice, with *your* evidence? [`style-fingerprint`](skills/style-fingerprint/SKILL.md) and [`evidence-lock`](skills/evidence-lock/SKILL.md) do exactly that.
 
-## 🔮 The library as infrastructure — five frontier bets
+## 🔮 The library as infrastructure — the frontier bets
 
 Beyond running skills, the repo is becoming *infrastructure* for whatever agents come next:
 
 | Bet | What shipped | Where |
 |---|---|---|
+| **The professional-work benchmark** | 🆕 **SkillBench** — a frozen 12-task set across 6 domains, run bare + skilled per model, judged on a fixed rubric: which model does real work best, and how much do skills lift it? Quarterly **State of Professional AI** reports | [skillbench/](skillbench/) |
+| **npm-for-skills** | 🆕 The **community registry**: publish `you/skill-name` via one PR while your skill stays in your repo — CI-validated (SkillSpec + security scan + typosquat guard), served live at `/v1/community` and over MCP | [community/](community/) |
 | **A formal standard** | SkillSpec v1.0 — a normative spec for `SKILL.md` (frontmatter contract, conformance levels L1–L4, SemVer + content-hash pinning, safety rules), with SkillCheck as the reference validator | [SKILLSPEC.md](SKILLSPEC.md) · [schema](spec/skill.schema.json) |
+| **Skills where work happens** | 🆕 Turnkey **CI recipes** (PR descriptions, release notes, postmortem scaffolds, doc lint — copy one file) + 🆕 **ambient hooks** for Claude Code (drafts that lint themselves, changelog nudges after commits, a session ledger for weekly reviews) | [action/examples/](action/examples/) · [hooks/](hooks/) |
 | **Skills that act, safely** | Optional `## Execution` blocks turn a skill into a bounded procedure for computer-use agents — closed allow-list of actions, human-approval gates, verification, rollback | [Spec §5](SKILLSPEC.md) · examples: [`sprint-planning`](skills/sprint-planning/SKILL.md), [`stakeholder-update`](skills/stakeholder-update/SKILL.md) |
 | **Agents hiring the library** | The hosted Worker speaks agent-to-agent: a discovery card at `/.well-known/agent-card.json` and a JSON-RPC `message/send` endpoint — any agent sends a task, gets back the best skill's full instructions | [mcp-remote](mcp-remote/) |
 | **Frameworks that earn trust** | The [`outcome-tracker`](skills/outcome-tracker/SKILL.md) skill records every decision's falsifiable predictions to the [Brain](BRAIN.md), scores them against reality on a schedule, and computes per-framework calibration — which frameworks *actually* predict outcomes | `skills/outcome-tracker` (in `pm-autopilot`) |
-| **The library as a model** | A deterministic dataset pipeline distills the skills into training data (~1,500 routing pairs + eval-case SFT seeds + graded samples) — step one toward `pm-skills-3b`, a fully local professional copilot | [dataset/](dataset/) |
+| **The library as a model** | The dataset pipeline (~1,500 routing pairs + SFT seeds + graded samples) now 🆕 **publishes to Hugging Face on every release** — step one toward `pm-skills-3b`, a fully local professional copilot | [dataset/](dataset/) |
+| **Every language** | 🆕 A **localization pipeline** with hard structural guarantees and honest `review: pending` labelling — the library in Spanish, Portuguese, Hindi, Japanese, German, French, Chinese, Korean | [i18n/](i18n/) |
 
 And the **browser extension (v1.1)** now lints *your own writing* against any skill's Quality Checks and Anti-Patterns — select text anywhere, get pass/fail verdicts with specific notes. Grammarly for professional judgment. → [extension/](extension/)
+
+### 🏆 The Interview Gauntlet — from job posting to signed offer
+
+The most requested arc, as one experience: **[the Gauntlet](https://mohitagw15856.github.io/pm-claude-skills/gauntlet.html)** decodes what a job posting *actually* wants, forges your raw experiences into metric-led interview stories mapped to the decoded requirements, cross-examines you live as the hiring manager (five questions that build on your answers — honest "I don't know" beats bluffing), then puts you on the phone with a recruiter whose approval band you can't see. You leave with a **readiness score /100**, the tells in your answers quoted back at you, and the three preparations that would most move the score. 🎓 Practice → 🎯 Realistic → 🔥 Brutal.
 
 ---
 

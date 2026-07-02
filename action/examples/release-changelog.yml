@@ -1,0 +1,31 @@
+# Generate user-facing release notes from the commit log when a release is published,
+# and prepend them to the release body.
+# Copy to .github/workflows/release-changelog.yml · needs secret ANTHROPIC_API_KEY.
+name: Release changelog
+on:
+  release:
+    types: [published]
+permissions:
+  contents: write
+jobs:
+  notes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Commits since the previous tag
+        run: |
+          PREV=$(git describe --tags --abbrev=0 "${{ github.event.release.tag_name }}^" 2>/dev/null || echo "")
+          git log --format='%s%n%b---' ${PREV:+$PREV..}${{ github.event.release.tag_name }} > /tmp/input.txt
+      - uses: mohitagw15856/pm-claude-skills/action@main
+        with:
+          skill: changelog-generator
+          input_file: /tmp/input.txt
+          output_file: /tmp/notes.md
+          api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Prepend to the release body
+        env: { GH_TOKEN: ${{ github.token }} }
+        run: |
+          gh release view "${{ github.event.release.tag_name }}" --json body -q .body > /tmp/existing.md
+          { cat /tmp/notes.md; echo; echo '---'; cat /tmp/existing.md; } > /tmp/body.md
+          gh release edit "${{ github.event.release.tag_name }}" --notes-file /tmp/body.md

@@ -1,0 +1,52 @@
+name: Translate skills
+
+# Manual localization runs: translate a tier/subset into a language and commit
+# the results to i18n/<lang>/. Validation (--check) runs on every PR touching i18n/.
+on:
+  workflow_dispatch:
+    inputs:
+      lang:
+        description: 'Language code (es, pt, hi, ja, de, fr, zh, ko)'
+        required: true
+      skills:
+        description: 'Comma-separated skill names (empty = Production-Ready tier)'
+        required: false
+        default: ''
+  pull_request:
+    paths: ['i18n/**']
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: node scripts/translate-skills.mjs --check
+
+  translate:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Translate
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          EXTRA=""
+          [ -n "${{ inputs.skills }}" ] && EXTRA="--skills ${{ inputs.skills }}"
+          node scripts/translate-skills.mjs --lang "${{ inputs.lang }}" $EXTRA
+      - name: Validate + commit
+        run: |
+          node scripts/translate-skills.mjs --check
+          git config user.name "i18n-bot"
+          git config user.email "actions@github.com"
+          git add i18n/
+          git diff --cached --quiet || git commit -m "i18n: translate skills to ${{ inputs.lang }}"
+          git push

@@ -1,0 +1,33 @@
+# Auto-draft the PR description from the diff — posts it as a comment for the
+# author to adopt (never overwrites what a human wrote).
+# Copy to .github/workflows/pr-description.yml · needs secret ANTHROPIC_API_KEY.
+name: PR description draft
+on:
+  pull_request:
+    types: [opened]
+permissions:
+  pull-requests: write
+  contents: read
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Collect the diff
+        run: |
+          git diff --stat origin/${{ github.base_ref }}...HEAD > /tmp/input.txt
+          echo '---' >> /tmp/input.txt
+          git log --format='%s%n%b' origin/${{ github.base_ref }}...HEAD >> /tmp/input.txt
+          git diff origin/${{ github.base_ref }}...HEAD | head -c 60000 >> /tmp/input.txt
+      - uses: mohitagw15856/pm-claude-skills/action@main
+        with:
+          skill: pr-description-writer
+          input_file: /tmp/input.txt
+          output_file: /tmp/desc.md
+          api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Post as a comment
+        env: { GH_TOKEN: ${{ github.token }} }
+        run: |
+          { echo '🧠 **Suggested PR description** (from [pm-skills](https://github.com/mohitagw15856/pm-claude-skills)) — adopt, edit, or ignore:'; echo; cat /tmp/desc.md; } > /tmp/comment.md
+          gh pr comment ${{ github.event.pull_request.number }} --body-file /tmp/comment.md

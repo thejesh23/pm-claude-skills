@@ -1,0 +1,40 @@
+name: Run SkillBench
+
+# Official model-benchmark runs (skillbench/). Manual only — it costs tokens.
+# Results are committed back to skillbench/results.json on main.
+on:
+  workflow_dispatch:
+    inputs:
+      models:
+        description: 'Comma-separated model ids (claude-*/gpt-*/gemini-*)'
+        required: true
+        default: 'claude-sonnet-4-6'
+      judge:
+        description: 'Judge model (pinned; disclose changes in the report)'
+        required: false
+        default: 'claude-sonnet-4-6'
+
+permissions:
+  contents: write
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Run the benchmark
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node skillbench/run-skillbench.mjs --models "${{ inputs.models }}" --judge "${{ inputs.judge }}"
+      - name: Commit results
+        run: |
+          git config user.name "skillbench-bot"
+          git config user.email "actions@github.com"
+          git add skillbench/results.json
+          git diff --cached --quiet || git commit -m "bench: SkillBench run — ${{ inputs.models }}"
+          git push
