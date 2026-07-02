@@ -114,6 +114,13 @@ The script returns available focus hours, a velocity figure adjusted for real av
 - If no velocity data is provided, assume 20–30 points for a 5-person team as a starting point
 - Highlight any story with unclear ownership as a blocker
 
+## Deeper Materials
+
+This skill ships with support files — use them when they are available:
+
+- **`references/capacity-honesty.md`** — Capacity Honesty — the numbers teams lie to themselves about. Apply it while producing the output; it carries the calibration and judgment calls the method summary above compresses.
+- **`templates/planning-worksheet.md`** — a fill-in version of the deliverable with the quality gates inline. Offer it when the user wants to work the document themselves rather than have it generated.
+
 ## Quality Checks
 
 - [ ] Sprint goal is outcome-focused (not "implement X" — something like "users can do Y")

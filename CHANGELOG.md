@@ -9,6 +9,18 @@ each new wave of skills bumps the **major** version, extensions and fixes bump
 
 ## [Unreleased]
 
+### Added — the everything-else wave (protection, theatre, depth)
+- **🧪 CI web smoke suite** ([tests/web-smoke.mjs](tests/web-smoke.mjs) + [web-tests.yml](.github/workflows/web-tests.yml)) — all 21 interactive pages load headlessly with zero console/page errors on every web PR and push, plus load-bearing interaction checks: keyless guards on every arena, command-bar routing, the artifact renderer, the attestation round-trip, Galaxy fly-to-search. The insurance layer that would have caught the Galaxy crashes before a human did.
+- **🔊 Voice for the arenas** ([web/voice.js](web/voice.js)) — **Theatre mode**: each Boardroom executive (and the Defense examiners, the Gauntlet's interviewer and recruiter) speaks their turn aloud in a distinct browser voice — deterministic voice assignment with per-persona rate/pitch, markdown and severity tags cleaned for speech. **🎙 Dictation**: answer the Defense and both Gauntlet stages out loud via browser speech recognition. Zero API cost; feature-detected, buttons hide when unsupported.
+- **🏢 Firm v2** — staff cards now carry a *real calibration report* (hit rate over resolved with a gradient bar, trust verdict once ≥5 resolved: 🟢 earned trust / 🟡 mixed / 🔴 verify their calls, current streak, pending count — the JS port of `outcome_calibration.py`'s logic), and every staff member's **duty skill is swappable** from all 441 catalog skills, persisted per browser.
+- **🎬 Demo GIFs** — the Boardroom and The Firm recorded live from the real pages with mock SSE streaming ([record-arena-demos.mjs](web/docs-assets/record-arena-demos.mjs), no API needed), embedded in the README: the executive debate streaming in, the staff meeting landing in the inbox.
+- **🧩 Two recipes for the new bundles** — `/ship-an-mcp-server` (spec → readiness audit → pricing → oversight) and `/adopt-ai-properly` (policy → roles → reviews → ROI audit); 11 recipes total.
+- **📚 Depth wave 2 — the moat work: every Production-Ready skill now ships `references/` + `templates/`.** 44 skills gained 88 crafted support files: calibration references (capacity honesty for sprint planning, churn avoidability calls, retention-curve reading, cohort design, review-depth calibration, ADR context craft, 3am-runbook usability, injection-pattern library…) and fill-in templates with quality gates inline. Each SKILL.md points to its deeper materials. 0 of 50 Production-Ready skills lack depth, up from 6 of 50.
+
+### Changed
+- **Standing decisions recorded** ([OPERATIONS.md](OPERATIONS.md)): `exports/` stays committed (browsability is a feature) with a 150 MB revisit threshold; tier policy aligned with practice — new self-contained skills enter **Stable**, Experimental reserved for external-dependency skills (authoring standard §8 updated).
+- **README** — a collapsible documentation map near the top (the README as trailer, details in focused docs) + the two demo GIFs.
+
 ## [41.0.0] — the modern skills wave (Agent-Native & AI-at-Work) + cosmic Galaxy, certificates & MCP pairings — 2026-07-02
 
 ### Added — the modern skills wave: 15 skills, 2 new domains (426 → 441 skills, 62 → 64 bundles)
