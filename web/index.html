@@ -68,6 +68,16 @@
     <a class="hero-gif" href="agent.html"><img src="docs-assets/agent-demo.gif" alt="Auto-Agent: a goal becomes a planned chain of skills" loading="lazy" /></a>
   </section>
 
+  <section class="cmdbar" id="cmdbar">
+    <div class="cmd-inner">
+      <span class="cmd-emoji" aria-hidden="true">🪄</span>
+      <input id="cmdInput" type="text" autocomplete="off" spellcheck="false"
+        placeholder='Describe what you need to make…' aria-label="Describe your task and get matched to a skill" />
+      <button id="cmdGo" class="cmd-go" type="button">Find my skill</button>
+    </div>
+    <div id="cmdResults" class="cmd-results" hidden></div>
+  </section>
+
   <div class="onboarding" id="onboarding" hidden>
     <span class="onboarding-q" data-i18n="page.onboardingQ">👋 New here? What do you do?</span>
     <div class="role-chips" id="roleChips"></div>

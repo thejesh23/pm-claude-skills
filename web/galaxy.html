@@ -39,6 +39,31 @@
   #gtip .b { font-size: 11px; color: var(--accent-2); margin: 2px 0 4px; }
   #gtip .d { font-size: 12px; color: var(--muted); line-height: 1.4; }
   #gtip .e { font-size: 11px; color: #7bd88f; margin-top: 4px; }
+  .gbtn { padding: 8px 12px; background: rgba(20,24,31,.85); border: 1px solid var(--border); border-radius: 9px;
+    color: var(--text); font: inherit; font-size: 13px; cursor: pointer; backdrop-filter: blur(6px); }
+  .gbtn.on { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  #gpanel { position: absolute; top: 60px; right: 12px; z-index: 8; width: 292px; max-height: 70vh; overflow: auto;
+    background: rgba(13,15,20,.94); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px;
+    backdrop-filter: blur(10px); box-shadow: 0 14px 40px rgba(0,0,0,.5);
+    transform: translateX(16px); opacity: 0; pointer-events: none; transition: all .25s ease; }
+  #gpanel.open { transform: none; opacity: 1; pointer-events: auto; }
+  #gpanel h2 { margin: 0 0 2px; font-size: 16px; }
+  #gpanel .b { font-size: 11px; color: var(--accent-2); text-transform: uppercase; letter-spacing: .04em; }
+  #gpanel .d { font-size: 12.5px; color: var(--muted); line-height: 1.5; margin: 8px 0; }
+  #gpanel .e { font-size: 12px; color: #7bd88f; }
+  #gpanel .run { display: block; text-align: center; margin: 10px 0 4px; padding: 9px; border-radius: 9px;
+    background: var(--accent-grad); color: #1a1207; font-weight: 700; text-decoration: none; }
+  #gpanel .rel { border-top: 1px solid var(--border); margin-top: 10px; padding-top: 8px; font-size: 12px; }
+  #gpanel .rel b { display: block; color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 5px; }
+  #gpanel .rel a { display: block; color: var(--text); text-decoration: none; padding: 3px 0; }
+  #gpanel .rel a:hover { color: var(--accent); }
+  #gpanel .x { position: absolute; top: 8px; right: 10px; background: none; border: 0; color: var(--muted); font-size: 16px; cursor: pointer; }
+  #gcaption { position: absolute; left: 50%; bottom: 54px; transform: translateX(-50%) translateY(8px); z-index: 7;
+    background: rgba(13,15,20,.92); border: 1px solid var(--border); border-radius: 999px; padding: 10px 22px;
+    font-size: 14.5px; font-weight: 600; backdrop-filter: blur(8px); box-shadow: 0 10px 30px rgba(0,0,0,.45);
+    opacity: 0; transition: all .4s ease; pointer-events: none; white-space: nowrap; max-width: 92vw; overflow: hidden; text-overflow: ellipsis; }
+  #gcaption.show { opacity: 1; transform: translateX(-50%); }
+  #gcaption small { color: var(--muted); font-weight: 400; margin-left: 8px; }
 </style>
 </head>
 <body>
@@ -47,11 +72,15 @@
   <div class="galaxy-top">
     <a href="index.html" class="galaxy-back">← Playground</a>
     <span class="galaxy-title">🌌 Skill Galaxy <small id="galaxyCount"></small></span>
-    <input id="galaxySearch" type="search" placeholder="Highlight a skill…" />
+    <input id="galaxySearch" type="search" placeholder="Find a skill… (Enter flies you there)" />
+    <button id="tourBtn" class="gbtn" type="button" title="Sit back — a guided flight across the professions and one Journey constellation">▶ Sky tour</button>
+    <button id="forYouBtn" class="gbtn" type="button" title="Highlights high-scoring skills next to the ones you've already run">🧭 For you</button>
   </div>
   <div class="legend" id="legend"></div>
-  <div class="galaxy-hint">drag to pan · scroll to zoom · click a star to run it · brightness = eval score · trace a ✨ Journey from the legend</div>
+  <div class="galaxy-hint">drag to pan · scroll to zoom · click a star for details · Enter in search flies to it · brightness = eval score</div>
   <div id="gtip"></div>
+  <aside id="gpanel"><button class="x" type="button" title="Close">✕</button><div id="gpanelBody"></div></aside>
+  <div id="gcaption"></div>
 </div>
 
 <script src="forcegraph.js"></script>
@@ -133,6 +162,13 @@ const label = (p) => p.replace(/^pm-/, '').replace(/(^|-)(\w)/g, (_, d, c) => (d
 
   let query = '';
   el('galaxySearch').addEventListener('input', (e) => { query = e.target.value.toLowerCase().trim(); });
+  // Enter = fly the camera to the best match and open its panel.
+  el('galaxySearch').addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter' || !query) return;
+    const hit = nodes.find((n) => n.s.title.toLowerCase().includes(query)) ||
+      nodes.find((n) => (n.s.title + ' ' + n.s.name + ' ' + n.s.description).toLowerCase().includes(query));
+    if (hit) { stopTour(); graph.flyTo(hit.x, hit.y, 2.3, 1000); openPanel(hit); }
+  });
 
   const tip = el('gtip');
 
@@ -142,7 +178,10 @@ const label = (p) => p.replace(/^pm-/, '').replace(/(^|-)(\w)/g, (_, d, c) => (d
     return true;
   }
 
-  PMGraph.create(canvas, {
+  // Tour / recommendation state — declared before create(), which draws synchronously.
+  let tourTimers = [], tourPath = [], touring = false, forYou = [];
+
+  const graph = PMGraph.create(canvas, {
     nodes, links, repulsion: 900, spring: 0.02, linkLen: 42, gravity: 0.06,
     prewarm: 280, alphaDecay: 0.05, // settle off-screen, then freeze quickly — no perpetual motion
     drawLink(ctx, a, b) {
@@ -181,7 +220,7 @@ const label = (p) => p.replace(/^pm-/, '').replace(/(^|-)(\w)/g, (_, d, c) => (d
       tip.style.left = Math.min(x + 14, innerWidth - tw - 8) + 'px';
       tip.style.top = Math.min(y + 14, innerHeight - th - 8) + 'px';
     },
-    onClick(n) { location.href = 'index.html?skill=' + encodeURIComponent(n.id); },
+    onClick(n) { openPanel(n); },
     afterDraw(ctx, view, idMap) {
       const lw = (px) => px / view.k; // keep stroke widths visually constant under zoom
       // ✨ Active journey constellations — a glowing path through the journey's skills, in order.
@@ -201,6 +240,32 @@ const label = (p) => p.replace(/^pm-/, '').replace(/(^|-)(\w)/g, (_, d, c) => (d
         ctx.fillText(c.emoji + ' ' + c.name, pts[0].x + lw(9), pts[0].y - lw(9));
         ctx.restore();
       });
+      // 🧭 "For you" recommendations — pulsing rings on the suggested stars.
+      if (forYou.length) {
+        const t = performance.now() / 1000;
+        forYou.forEach((name, i) => {
+          const p = idMap[name]; if (!p) return;
+          const pulse = 3 + Math.sin(t * 2.4 + i) * 2;
+          ctx.save();
+          ctx.strokeStyle = '#ffd36e'; ctx.globalAlpha = 0.85; ctx.lineWidth = lw(1.6);
+          ctx.beginPath(); ctx.arc(p.x, p.y, (p.r || 5) + lw(4 + pulse), 0, 7); ctx.stroke();
+          ctx.restore();
+        });
+      }
+      // ▶ Sky-tour: the currently-traced journey path gets marching ants.
+      if (tourPath.length > 1) {
+        const pts = tourPath.map((n) => idMap[n]).filter(Boolean);
+        if (pts.length > 1) {
+          ctx.save();
+          ctx.strokeStyle = '#ffd36e'; ctx.shadowColor = '#ffd36e'; ctx.shadowBlur = 12;
+          ctx.globalAlpha = 0.95; ctx.lineWidth = lw(2.4); ctx.lineJoin = 'round';
+          ctx.setLineDash([lw(10), lw(7)]); ctx.lineDashOffset = -(performance.now() / 24) / view.k;
+          ctx.beginPath(); ctx.moveTo(pts[0].x, pts[0].y);
+          for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
+          ctx.stroke(); ctx.setLineDash([]);
+          ctx.restore();
+        }
+      }
       // 🛸 Your personal trail — dashed line through the skills you've run, ringed.
       if (trailOn && trailUniq.length) {
         const pts = trailUniq.map((n) => idMap[n]).filter(Boolean);
@@ -217,6 +282,106 @@ const label = (p) => p.replace(/^pm-/, '').replace(/(^|-)(\w)/g, (_, d, c) => (d
         }
       }
     },
+  });
+
+  // ── Skill panel: click a star → details, run, and hop to neighbours ─────────
+  const neighbours = {};
+  links.forEach((l) => {
+    (neighbours[l.source] = neighbours[l.source] || []).push(l.target);
+    (neighbours[l.target] = neighbours[l.target] || []).push(l.source);
+  });
+  function openPanel(n) {
+    const rel = (neighbours[n.id] || []).slice(0, 5);
+    el('gpanelBody').innerHTML =
+      `<div class="b">${esc(label(n.s.plugin))}${n.trend ? ' · 🔥 trending' : ''}</div>` +
+      `<h2>${esc(n.s.title)}</h2>` +
+      (n.s.eval ? `<div class="e">✅ eval-scored ${n.s.eval.score}/5</div>` : '') +
+      `<div class="d">${esc((n.s.summary || n.s.description || '').slice(0, 260))}</div>` +
+      `<a class="run" href="index.html?skill=${encodeURIComponent(n.id)}">▶ Run this skill</a>` +
+      (rel.length ? `<div class="rel"><b>Connected stars</b>${rel.map((r) =>
+        `<a href="#" data-go="${esc(r)}">↗ ${esc((idset.has(r) && nodes.find((x) => x.id === r).s.title) || r)}</a>`).join('')}</div>` : '');
+    el('gpanel').classList.add('open');
+    el('gpanelBody').querySelectorAll('a[data-go]').forEach((a) => a.addEventListener('click', (e) => {
+      e.preventDefault();
+      const t = nodes.find((x) => x.id === a.dataset.go);
+      if (t) { graph.flyTo(t.x, t.y, 2.3, 900); openPanel(t); }
+    }));
+    if (window.pmTrack) pmTrack('galaxy/panel/' + n.id);
+  }
+  el('gpanel').querySelector('.x').addEventListener('click', () => el('gpanel').classList.remove('open'));
+
+  // ── ▶ Sky tour: an auto-piloted flight — constellations first, then a Journey traced ──
+  function caption(text, sub) {
+    const c = el('gcaption');
+    c.innerHTML = esc(text) + (sub ? `<small>${esc(sub)}</small>` : '');
+    c.classList.add('show');
+  }
+  function stopTour() {
+    if (!touring && !tourPath.length) return;
+    touring = false; tourTimers.forEach(clearTimeout); tourTimers = []; tourPath = [];
+    el('gcaption').classList.remove('show');
+    el('tourBtn').classList.remove('on'); el('tourBtn').textContent = '▶ Sky tour';
+  }
+  function startTour() {
+    stopTour(); touring = true;
+    el('tourBtn').classList.add('on'); el('tourBtn').textContent = '⏹ End tour';
+    if (window.pmTrack) pmTrack('galaxy/tour');
+    // Stops: the 6 brightest professions (by avg eval, min 4 skills), then one Journey.
+    const byBundle = {};
+    nodes.forEach((n) => (byBundle[n.s.plugin] = byBundle[n.s.plugin] || []).push(n));
+    const stops = Object.entries(byBundle)
+      .filter(([, ns]) => ns.length >= 4)
+      .map(([b, ns]) => {
+        const scored = ns.filter((n) => n.scored);
+        const avg = scored.length ? scored.reduce((s, n) => s + n.s.eval.score, 0) / scored.length : 0;
+        return { b, ns, avg, x: ns.reduce((s, n) => s + n.x, 0) / ns.length, y: ns.reduce((s, n) => s + n.y, 0) / ns.length };
+      })
+      .sort((a, b) => b.avg - a.avg).slice(0, 6);
+    let t = 200;
+    const HOLD = 3200;
+    stops.forEach((st) => {
+      tourTimers.push(setTimeout(() => {
+        graph.flyTo(st.x, st.y, 1.9, 1300);
+        caption(`✨ ${label(st.b)}`, `${st.ns.length} skills${st.avg ? ' · avg eval ' + st.avg.toFixed(1) + '/5' : ''}`);
+      }, t));
+      t += HOLD;
+    });
+    const j = constellations[0];
+    if (j) {
+      tourTimers.push(setTimeout(() => {
+        const pts = j.names.map((n) => nodes.find((x) => x.id === n)).filter(Boolean);
+        const cx2 = pts.reduce((s, p) => s + p.x, 0) / pts.length, cy2 = pts.reduce((s, p) => s + p.y, 0) / pts.length;
+        graph.flyTo(cx2, cy2, 1.25, 1400);
+        tourPath = j.names;
+        caption(`${j.emoji} Journey: ${j.name}`, 'a chain of skills, run in order — each output feeds the next');
+      }, t));
+      t += HOLD + 1200;
+    }
+    tourTimers.push(setTimeout(() => {
+      graph.flyTo(cx, cy, 0.9, 1500);
+      caption('🌌 426 skills · one map', 'click any star · Enter in search flies to it');
+      tourTimers.push(setTimeout(stopTour, 2600));
+    }, t));
+  }
+  el('tourBtn').addEventListener('click', () => (touring ? stopTour() : startTour()));
+  canvas.addEventListener('pointerdown', stopTour);
+
+  // ── 🧭 For you: high-scoring stars orbiting the ones you've already run ──────
+  el('forYouBtn').addEventListener('click', () => {
+    if (forYou.length) { forYou = []; el('forYouBtn').classList.remove('on'); return; }
+    const run = new Set(trailUniq);
+    const homeBundles = new Set(trailUniq.map((n) => (nodes.find((x) => x.id === n) || {}).s?.plugin).filter(Boolean));
+    const pool = nodes.filter((n) => !run.has(n.id) && n.scored)
+      .sort((a, b) => (homeBundles.has(b.s.plugin) - homeBundles.has(a.s.plugin)) || (b.s.eval.score - a.s.eval.score) || (b.trend - a.trend));
+    forYou = pool.slice(0, 6).map((n) => n.id);
+    el('forYouBtn').classList.add('on');
+    if (forYou.length) {
+      const first = nodes.find((x) => x.id === forYou[0]);
+      if (first) graph.flyTo(first.x, first.y, 1.6, 1000);
+      caption('🧭 Picked for you', run.size ? 'high-scoring skills near the ones you already run' : 'the highest-scoring stars to start with');
+      setTimeout(() => el('gcaption').classList.remove('show'), 3600);
+    }
+    if (window.pmTrack) pmTrack('galaxy/foryou');
   });
 })();
 </script>

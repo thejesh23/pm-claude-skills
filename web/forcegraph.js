@@ -150,6 +150,19 @@
       },
       reheat: function () { reheat(1); },
       fit: function () { view = { x: 0, y: 0, k: 1 }; },
+      getView: function () { return view; },
+      // Animate the camera so world-point (x, y) lands at the canvas centre at zoom k.
+      flyTo: function (x, y, k, ms) {
+        var s = { x: view.x, y: view.y, k: view.k }, t0 = performance.now(), dur = ms || 900;
+        var t = { k: k, x: W / 2 - x * k, y: H / 2 - y * k };
+        function ease(p) { return p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2; }
+        function step(now) {
+          var p = Math.min(1, (now - t0) / dur), e = ease(p);
+          view.x = s.x + (t.x - s.x) * e; view.y = s.y + (t.y - s.y) * e; view.k = s.k + (t.k - s.k) * e;
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      },
       stop: function () { cancelAnimationFrame(raf); },
     };
   }

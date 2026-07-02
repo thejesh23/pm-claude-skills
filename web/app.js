@@ -221,6 +221,8 @@ async function init() {
     return;
   }
 
+  initCmdBar();
+
   const bundles = [...new Set(SKILLS.map((s) => s.plugin))].sort();
   const sel = el('pluginFilter');
   for (const b of bundles) {
@@ -618,6 +620,80 @@ function applyShareLink() {
 }
 
 // ---------- Gallery (tiles) ----------
+// ── 🪄 Command bar: describe the task, get matched to a skill ────────────────
+// Task-first entry: local token-overlap scoring over the catalog (no API call),
+// live top-3 matches as you type, Enter opens the best one.
+const CMD_EXAMPLES = [
+  'a board update from my messy notes…', 'rank this backlog so I can defend it…',
+  'a PRD for the referral feature…', 'prep me for the pricing negotiation…',
+  'a postmortem for Friday’s outage…', 'tear down our biggest competitor…',
+  'OKRs that aren’t a task list…', 'a launch plan for six weeks out…',
+];
+function initCmdBar() {
+  const input = el('cmdInput'), results = el('cmdResults');
+  if (!input) return;
+  let exIdx = 0;
+  const cycle = setInterval(() => {
+    if (document.activeElement === input || input.value) return;
+    exIdx = (exIdx + 1) % CMD_EXAMPLES.length;
+    input.placeholder = 'Describe what you need to make — ' + CMD_EXAMPLES[exIdx];
+  }, 2600);
+  const tokens = (t) => (t.toLowerCase().match(/[a-z]{3,}/g) || []);
+  // IDF over the catalog so rare, meaningful words ("postmortem") outvote common
+  // ones ("board", "update") that appear in dozens of skills.
+  const df = {};
+  SKILLS.forEach((s) => new Set(tokens(s.title + ' ' + s.name + ' ' + s.description)).forEach((w) => { df[w] = (df[w] || 0) + 1; }));
+  const idf = (w) => 1 / Math.log(3 + (df[w] || 0));
+  function matches(q) {
+    const qt = new Set(tokens(q));
+    if (!qt.size) return [];
+    return SKILLS.map((s) => {
+      let score = 0;
+      for (const w of new Set(tokens(s.description))) if (qt.has(w)) score += idf(w);
+      for (const w of new Set(tokens(s.title))) if (qt.has(w)) score += idf(w) * 1.5;
+      for (const w of s.name.split('-')) if (w.length >= 3 && qt.has(w)) score += idf(w) * 1.5;
+      return { s, score };
+    }).filter((x) => x.score > 0.4).sort((a, b) => b.score - a.score).slice(0, 3).map((x) => x.s);
+  }
+  function show(q) {
+    const top = matches(q);
+    if (!top.length) {
+      results.hidden = !q.trim();
+      results.innerHTML = q.trim() ? '<div class="cmd-none">Nothing close yet — keep typing, or <button class="link-btn" type="button" id="cmdBrowse">browse everything below</button>.</div>' : '';
+      const br = el('cmdBrowse');
+      if (br) br.onclick = () => { results.hidden = true; el('gallery').scrollIntoView({ behavior: 'smooth' }); };
+      return;
+    }
+    results.hidden = false;
+    results.innerHTML = top.map((s, i) =>
+      `<button class="cmd-hit${i === 0 ? ' best' : ''}" type="button" data-name="${escapeHtml(s.name)}">
+        <span class="cmd-hit-t">${i === 0 ? '⭐ ' : ''}${escapeHtml(s.title)}</span>
+        <span class="cmd-hit-b">${escapeHtml(s.plugin)}${s.eval ? ' · ✅ ' + s.eval.score + '/5' : ''}</span>
+        <span class="cmd-hit-d">${escapeHtml((s.summary || s.description).slice(0, 90))}</span>
+      </button>`).join('');
+    results.querySelectorAll('.cmd-hit').forEach((btn) => btn.addEventListener('click', () => {
+      const s = SKILLS.find((x) => x.name === btn.dataset.name);
+      if (!s) return;
+      if (window.pmTrack) pmTrack('cmd/pick/' + s.name);
+      results.hidden = true;
+      selectSkill(s);
+    }));
+  }
+  let deb;
+  input.addEventListener('input', () => { clearTimeout(deb); deb = setTimeout(() => show(input.value), 140); });
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const best = results.querySelector('.cmd-hit');
+      if (best) best.click();
+    }
+    if (e.key === 'Escape') { results.hidden = true; input.blur(); }
+  });
+  el('cmdGo').addEventListener('click', () => {
+    const best = results.querySelector('.cmd-hit');
+    if (best) best.click(); else show(input.value);
+  });
+}
+
 function makeCard(s) {
   const meta = TIER_META[s.tier] || TIER_META.stable;
   const card = document.createElement('button');

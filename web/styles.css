@@ -564,3 +564,73 @@ html[data-theme="light"] .toolbar-nav .tool.active { color: #fff; }
 .key-field.pulse input { animation: keypulse .45s ease 3; }
 @keyframes keypulse { 0%,100% { box-shadow: 0 0 0 3px rgba(217,119,87,.22); } 50% { box-shadow: 0 0 0 7px rgba(217,119,87,.55); } }
 .key-hint { font-size: 11px; color: var(--accent-2); font-weight: 600; white-space: nowrap; }
+
+/* ── 2026 polish layer: aurora backdrop, command bar, card entrances ───────── */
+/* A very soft aurora behind everything — two blurred colour fields that give the
+   dark theme depth without stealing contrast. Light theme keeps a plain canvas. */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(600px 420px at 12% -6%, rgba(217,119,87,.13), transparent 60%),
+    radial-gradient(720px 500px at 88% 4%, rgba(106,169,255,.09), transparent 65%),
+    radial-gradient(560px 420px at 50% 108%, rgba(126,224,192,.06), transparent 60%);
+}
+html[data-theme="light"] body::before { display: none; }
+
+/* 🪄 Command bar — the task-first front door. */
+.cmdbar { max-width: 900px; margin: 6px auto 4px; padding: 0 18px; }
+.cmd-inner {
+  display: flex; align-items: center; gap: 10px; padding: 7px 8px 7px 16px;
+  background: linear-gradient(var(--panel), var(--panel)) padding-box,
+    linear-gradient(120deg, rgba(217,119,87,.65), rgba(106,169,255,.4), rgba(217,119,87,.65)) border-box;
+  border: 1.5px solid transparent; border-radius: 999px;
+  box-shadow: 0 10px 34px rgba(0,0,0,.35);
+  transition: box-shadow .2s;
+}
+.cmd-inner:focus-within { box-shadow: 0 10px 40px rgba(217,119,87,.28); }
+.cmd-emoji { font-size: 19px; }
+#cmdInput {
+  flex: 1; min-width: 0; padding: 11px 4px; background: none; border: 0; outline: none;
+  color: var(--text); font: inherit; font-size: 15.5px;
+}
+#cmdInput::placeholder { color: var(--muted); transition: opacity .3s; }
+.cmd-go {
+  flex: none; padding: 10px 18px; border: 0; border-radius: 999px; cursor: pointer;
+  background: var(--accent-grad); color: #1a1207; font: inherit; font-weight: 800; font-size: 13.5px;
+  transition: transform .12s, box-shadow .12s;
+}
+.cmd-go:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(217,119,87,.4); }
+.cmd-results {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px;
+  animation: cmdIn .25s ease both;
+}
+@media (max-width: 760px) { .cmd-results { grid-template-columns: 1fr; } }
+@keyframes cmdIn { from { opacity: 0; transform: translateY(-4px); } }
+.cmd-hit {
+  text-align: left; background: var(--panel); border: 1px solid var(--border); border-radius: 13px;
+  padding: 11px 13px; cursor: pointer; color: var(--text); font: inherit;
+  display: flex; flex-direction: column; gap: 3px;
+  transition: transform .13s, border-color .13s, box-shadow .13s;
+}
+.cmd-hit:hover { transform: translateY(-2px); border-color: rgba(217,119,87,.55); box-shadow: var(--shadow-accent); }
+.cmd-hit.best { border-color: rgba(217,119,87,.45); background: linear-gradient(180deg, rgba(217,119,87,.07), transparent 70%), var(--panel); }
+.cmd-hit-t { font-weight: 700; font-size: 14px; }
+.cmd-hit-b { font-size: 10.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--accent-2); font-weight: 600; }
+.cmd-hit-d { font-size: 12px; color: var(--muted); line-height: 1.4; }
+.cmd-none { grid-column: 1/-1; color: var(--muted); font-size: 13px; padding: 4px 6px; }
+
+/* Cards drift in as the gallery renders — first two rows only, subtle and quick. */
+@keyframes cardIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.skill-card { animation: cardIn .38s ease both; }
+.skill-card:nth-of-type(n+13) { animation: none; }
+.skill-card:nth-of-type(1) { animation-delay: .02s; } .skill-card:nth-of-type(2) { animation-delay: .05s; }
+.skill-card:nth-of-type(3) { animation-delay: .08s; } .skill-card:nth-of-type(4) { animation-delay: .11s; }
+.skill-card:nth-of-type(5) { animation-delay: .14s; } .skill-card:nth-of-type(6) { animation-delay: .17s; }
+.skill-card:nth-of-type(7) { animation-delay: .20s; } .skill-card:nth-of-type(8) { animation-delay: .23s; }
+.skill-card:nth-of-type(9) { animation-delay: .26s; } .skill-card:nth-of-type(10) { animation-delay: .29s; }
+.skill-card:nth-of-type(11) { animation-delay: .32s; } .skill-card:nth-of-type(12) { animation-delay: .35s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-card, .cmd-results { animation: none !important; }
+  .cmd-go:hover, .cmd-hit:hover { transform: none; }
+}
