@@ -1,0 +1,56 @@
+name: Evolve skills
+
+# The evolution loop: challenger rewrites of the lowest-scoring skills, blind-judged
+# against the champions; winners land on a branch for human review. MANUAL DISPATCH
+# ONLY — this spends API credits, so it never runs automatically.
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'How many of the lowest-scoring skills to evolve'
+        required: false
+        default: '3'
+      skills:
+        description: 'Comma-separated skill names (overrides count)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  evolve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Evolve
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          EXTRA=""
+          [ -n "${{ inputs.skills }}" ] && EXTRA="--skills ${{ inputs.skills }}"
+          node scripts/evolve-skills.mjs --count "${{ inputs.count }}" $EXTRA
+      # Insurance: paid API output must survive even if the push is rejected.
+      - name: Upload evolved skills as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: evolved-skills
+          path: |
+            skills/
+            evolve-summary.json
+          retention-days: 14
+      # Main is PR-only for the workflow token, so results land on a branch;
+      # review the diff and merge via PR. The artifact above is the belt to
+      # this suspender.
+      - name: Validate + commit to branch
+        run: |
+          node scripts/skillcheck.mjs
+          git config user.name "evolve-bot"
+          git config user.email "actions@github.com"
+          git checkout -B "evolve-${{ github.run_number }}"
+          git add skills/
+          git diff --cached --quiet || git commit -m "evolve: challenger rewrites that beat their champions (run ${{ github.run_number }})"
+          git push -f origin "evolve-${{ github.run_number }}"
+          echo "Review branch: evolve-${{ github.run_number }} — evolve-summary.json in the artifact has the blind-judge scores."

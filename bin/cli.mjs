@@ -246,6 +246,7 @@ Usage:
   npx pm-claude-skills add --agent <claude|hermes|codex|openclaw|cursor|windsurf|aider> [--target <path>] [--link] [--dry-run]
   npx pm-claude-skills run <skill> [--text "…" | --input <file>] [--model <m>] [--out <file>]
   npx pm-claude-skills search [query…] [--json] [--limit <n>]
+  npx pm-claude-skills doctor      # checkup: what's installed, what's stale, what to fix (read-only)
   npx pm-claude-skills list
   npx pm-claude-skills --version
 
@@ -272,6 +273,11 @@ else if (!cmd || cmd === 'help' || (opts.help && cmd !== 'run' && cmd !== 'gener
 else if (cmd === 'list') list();
 else if (cmd === 'search') search(opts);
 else if (cmd === 'add') add(opts);
+else if (cmd === 'doctor') {
+  const { run } = await import('./doctor.mjs');
+  try { process.exit(await run()); }
+  catch (e) { console.error(`Error: ${e.message}`); process.exit(1); }
+}
 else if (cmd === 'run') {
   const { run } = await import('./run.mjs');
   try { process.exit(await run(process.argv.slice(3))); }
