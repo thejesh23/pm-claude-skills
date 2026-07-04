@@ -34,6 +34,17 @@ const BANNED = [
   [/\b(api[_-]?key|token|password)\s*[:=]\s*['"][A-Za-z0-9_\-]{16,}/, 'embedded credential'],
 ];
 
+// ── Packs: benches (Boardroom panels) and scenarios (Gym) ────────────────────
+for (const pk of reg.packs || []) {
+  const tag = pk.name || '(unnamed pack)';
+  if (!pk.name || !NAME_RE.test(pk.name)) errors.push(`${tag}: pack name must be "handle/pack-name"`);
+  if (!['bench', 'scenario'].includes(pk.type)) errors.push(`${tag}: type must be bench|scenario`);
+  if (!/^https:\/\/github\.com\/[^/]+\/[^/]+\/?$/.test(pk.repo || '')) errors.push(`${tag}: repo must be github.com/<owner>/<repo>`);
+  else if ((pk.name||'').split('/')[0].toLowerCase() !== pk.repo.split('/')[3].toLowerCase()) errors.push(`${tag}: namespace must match repo owner`);
+  if (!pk.path || !pk.path.endsWith('.json')) errors.push(`${tag}: path must point at a .json pack file`);
+  if (pk.type === 'bench' && fetchMode) { /* validated in validateLivePack */ }
+}
+
 for (const s of reg.skills || []) {
   const tag = s.name || '(unnamed)';
   if (!s.name || !NAME_RE.test(s.name)) errors.push(`${tag}: name must be "handle/skill-name" (lowercase kebab)`);
@@ -75,8 +86,33 @@ async function validateLive(s) {
   return errs;
 }
 
+async function validateLivePack(pk) {
+  const [owner, repo] = pk.repo.replace(/\/$/, '').split('/').slice(3);
+  const url = `https://raw.githubusercontent.com/${owner}/${repo}/${pk.ref || 'main'}/${pk.path}`;
+  const res = await fetch(url);
+  if (!res.ok) return [`${pk.name}: fetch failed (${res.status})`];
+  let j; try { j = JSON.parse(await res.text()); } catch { return [`${pk.name}: pack is not valid JSON`]; }
+  const errs = [];
+  if (pk.type === 'bench') {
+    const ex = j.executives || [];
+    if (ex.length < 2 || ex.length > 8) errs.push(`${pk.name}: bench needs 2-8 executives`);
+    for (const e of ex) for (const f of ['id','name','role','lens','bias']) if (!e[f]) errs.push(`${pk.name}: executive missing ${f}`);
+    for (const [re2, why] of BANNED) if (re2.test(JSON.stringify(j))) errs.push(`${pk.name}: SECURITY — ${why}`);
+  }
+  if (pk.type === 'scenario') {
+    for (const f of ['you','them','stakes']) if (!j[f]) errs.push(`${pk.name}: scenario missing ${f}`);
+    for (const [re2, why] of BANNED) if (re2.test(JSON.stringify(j))) errs.push(`${pk.name}: SECURITY — ${why}`);
+  }
+  return errs;
+}
+
 (async () => {
   if (fetchMode) {
+    for (const pk of reg.packs || []) {
+      if (!pk.name || !pk.repo || !pk.path) continue;
+      try { errors.push(...await validateLivePack(pk)); }
+      catch (e) { errors.push(`${pk.name}: fetch error — ${e.message}`); }
+    }
     for (const s of reg.skills || []) {
       if (!s.name || !s.repo || !s.path) continue; // structural errors already recorded
       try { errors.push(...await validateLive(s)); }
@@ -85,5 +121,6 @@ async function validateLive(s) {
   }
   warnings.forEach((w) => console.warn('⚠ ' + w));
   if (errors.length) { errors.forEach((e) => console.error('✗ ' + e)); process.exit(1); }
-  console.log(`Registry OK — ${reg.skills.length} entr${reg.skills.length === 1 ? 'y' : 'ies'}${fetchMode ? ' (live-validated)' : ' (structural; use --fetch for live checks)'}`);
+  const np = (reg.packs || []).length;
+  console.log(`Registry OK — ${reg.skills.length} skill entr${reg.skills.length === 1 ? 'y' : 'ies'}, ${np} pack${np === 1 ? '' : 's'}${fetchMode ? ' (live-validated)' : ' (structural; use --fetch for live checks)'}`);
 })();

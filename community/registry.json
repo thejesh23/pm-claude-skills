@@ -1,13 +1,14 @@
 {
-  "_comment": "The community skill registry — installable, namespaced skills that live in their authors' repos. Add yours via PR (see community/README.md); CI fetches and validates every entry (SkillSpec conformance + security-pattern scan) before merge. Served by the hosted worker at /v1/community and by the MCP search_skills tool alongside the core library.",
+  "_comment": "The community skill registry \u2014 installable, namespaced skills that live in their authors' repos. Add yours via PR (see community/README.md); CI fetches and validates every entry (SkillSpec conformance + security-pattern scan) before merge. Served by the hosted worker at /v1/community and by the MCP search_skills tool alongside the core library. Also accepts PACKS: bench packs (Boardroom executive panels) and Gym scenarios \u2014 type bench|scenario, a much lower contribution bar than a full skill.",
   "spec": "pm-skills-registry/1",
   "skills": [
     {
       "name": "mohitagw15856/podcast-guest-pitch",
-      "description": "Pitch yourself as a podcast guest — a host-first email that shows you know the show, three episode-ready angles, and the proof you can talk. Produces the pitch email, angles with talking points, and a speaker one-sheet.",
+      "description": "Pitch yourself as a podcast guest \u2014 a host-first email that shows you know the show, three episode-ready angles, and the proof you can talk. Produces the pitch email, angles with talking points, and a speaker one-sheet.",
       "repo": "https://github.com/mohitagw15856/skill-podcast-guest-pitch",
       "path": "skills/podcast-guest-pitch/SKILL.md",
       "ref": "main"
     }
-  ]
+  ],
+  "packs": []
 }

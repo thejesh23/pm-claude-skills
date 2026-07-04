@@ -39,3 +39,17 @@ Over MCP, `search_skills` results include community entries marked `community: t
 - **Same safety bar as the core library** ([SKILLSPEC §7](../SKILLSPEC.md)): no instruction-override attempts, no undisclosed data collection, no fabrication instructions. The scan is automated *and* adversarially updated; evasion = permanent removal.
 - **Namespace = your GitHub handle.** Verified by CI against the repo owner; org repos may use the org name.
 - Duplicate-ish skills are fine (competition is good); typosquatting curated skill names is not.
+
+## 🪑 Packs — benches & scenarios (the low-bar contribution)
+
+Beyond skills, the registry accepts **packs** — JSON character content for the arenas:
+
+- **Bench packs** (`type: bench`) — a Boardroom executive panel: `{"name":"…","for":"…","executives":[{id,emoji,name,role,color,lens,bias}×2-8]}`. See [`web/benches.json`](../web/benches.json) for the built-in examples (fundraising, healthcare, seed-stage).
+- **Scenario packs** (`type: scenario`) — a Gym negotiation world: `{"you":"…","them":"…","stakes":"…"}`.
+
+Add to the `packs` array in [`registry.json`](registry.json):
+```json
+{ "name": "yourhandle/med-device-bench", "type": "bench",
+  "repo": "https://github.com/yourhandle/your-repo", "path": "packs/med-device-bench.json", "ref": "main" }
+```
+CI validates structure (2-8 complete executives / required scenario fields) and runs the security scan on the fetched JSON. Writing a great *character* is a 20-minute contribution — a great skill is a day. Start here.
