@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-site-verification" content="osZgdSLYnqidzCKt4CxjqAxo44OqGvlKi-Bmg0UmxFQ" />
+<title>The Academy — learn the craft behind the skills, drill by drill</title>
+<meta name="description" content="Three learning tracks built from the library's own Anti-Patterns: executive communication, discovery & evidence, and work discipline. Spot-the-flaw drills with explanations that quote the skills, a final exam in a live arena, and a certificate when you graduate. No API key needed for the drills." />
+<link rel="stylesheet" href="styles.css" />
+<script src="export-doc.js"></script>
+<style>
+  .a-wrap { max-width: 860px; margin: 0 auto; padding: 16px 22px 70px; }
+  .lead { color: #c7cfda; font-size: 15.5px; }
+  .tracks { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 18px 0; }
+  .track { border: 1px solid var(--border); border-radius: 15px; background: var(--panel); padding: 16px 18px; cursor: pointer; transition: border-color .2s, transform .15s; }
+  .track:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .track h3 { margin: 0 0 6px; font-size: 16px; }
+  .track p { margin: 0 0 10px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+  .track .prog { font-size: 12px; color: var(--muted); }
+  .track .prog b { color: #5ad19a; }
+  .track.done { border-color: #5ad19a; }
+  .drill { border: 1px solid var(--border); border-radius: 15px; background: var(--panel); padding: 18px 20px; margin: 14px 0; }
+  .drill .dn { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
+  .snippet { border-left: 3px solid var(--accent); background: rgba(217,119,87,.06); border-radius: 0 10px 10px 0; padding: 10px 14px; font-size: 13.6px; line-height: 1.55; margin: 10px 0; white-space: pre-wrap; }
+  .qq { font-weight: 700; margin: 12px 0 8px; font-size: 14.5px; }
+  .opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 11px 14px; border-radius: 11px; border: 1px solid var(--border); background: var(--bg,#10131a); color: var(--text); font-family: inherit; font-size: 13.6px; line-height: 1.45; cursor: pointer; }
+  .opt:hover { border-color: var(--accent); }
+  .opt.right { border-color: #5ad19a; background: rgba(90,209,154,.09); }
+  .opt.wrong { border-color: #e5534b; background: rgba(229,83,75,.08); }
+  .why { border: 1px solid var(--border); border-radius: 11px; padding: 11px 14px; margin-top: 10px; font-size: 13.3px; line-height: 1.5; color: #c7cfda; }
+  .why b { color: var(--text); }
+  .why .src { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); }
+  .exam { border: 1.5px solid var(--accent); border-radius: 15px; background: linear-gradient(180deg, rgba(217,119,87,.09), transparent 55%), var(--panel); padding: 18px 20px; margin: 18px 0; }
+  .bar { display: flex; gap: 10px; align-items: center; margin: 14px 0; flex-wrap: wrap; }
+  .hidden { display: none !important; }
+  .crumb { font-size: 13px; color: var(--muted); margin: 14px 0 4px; cursor: pointer; }
+  .crumb:hover { color: var(--text); }
+  .scorebar { font-size: 13px; color: var(--muted); margin: 8px 0; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><img src="assets/product-notes.jpg" alt="Product Notes" class="brand-logo" />
+    <div class="brand-text"><h1>The Academy</h1><p class="tagline">The craft behind the skills — drilled, then examined in a live arena.</p></div></div>
+</header>
+<nav class="toolbar-nav" id="toolbar" aria-label="Tools"></nav>
+
+<div class="a-wrap">
+  <div id="home">
+    <p class="lead">Every skill in the library ends with <strong>Anti-Patterns</strong> — the mistakes that make smart people produce weak work. The Academy turns them into drills: real snippets, one flaw, you find it. Finish a track's drills, pass its arena exam, take the certificate. <strong>Drills need no API key</strong> — only the final exam runs live.</p>
+    <div class="tracks" id="tracks"></div>
+  </div>
+
+  <div id="trackView" class="hidden">
+    <div class="crumb" id="back">← All tracks</div>
+    <h2 id="tTitle" style="margin:6px 0 2px"></h2>
+    <p id="tDesc" class="lead" style="font-size:14px"></p>
+    <div class="scorebar" id="tScore"></div>
+    <div id="drills"></div>
+    <div class="exam" id="exam"></div>
+  </div>
+</div>
+
+<script>
+const el=(id)=>document.getElementById(id);
+// Drills are hand-authored from the library's own Anti-Patterns sections —
+// each "why" quotes the rule and names the skill it comes from.
+const TRACKS=[
+{id:'exec',emoji:'🎯',title:'Executive communication',desc:'Writing that survives the people with the least time and the most power — summaries, updates, and asks.',
+ exam:{page:'defend.html',name:'The Defense',line:'Paste a real document and defend it live against AI executives. Surviving the Chair\'s scoring IS the exam.'},
+ drills:[
+  {sn:'EXECUTIVE SUMMARY (opening)\n\n"In January we began exploring options for the data platform. February\'s workshops surfaced three vendor candidates. After a March bake-off and an April security review, we believe Vendor B is the right choice, pending budget approval of $240k."',
+   q:'What makes this a weak executive summary?',
+   o:['It names a specific vendor before legal review','It follows the project\'s chronology instead of leading with the decision','It mentions a dollar figure in the opening','It is too short for a platform decision'],
+   c:1,why:'The reader has to sit through your journey before learning what you want. Lead with the ask: "Approve $240k for Vendor B" — then the evidence.',src:'executive-summary — "Do not summarise the document chronologically… that is an abstract" · "the ask must be in sentence one or two"'},
+  {sn:'STATUS UPDATE (metrics section)\n\n"Activation rate: 45.2%\nWeekly active teams: 1,208\nSupport tickets: 96"',
+   q:'These numbers are accurate. Why are they still useless to an executive?',
+   o:['Too few metrics for a real update','No targets or prior-period comparison — nothing says whether these are good or bad','Percentages and counts should never be mixed','Support tickets are not an executive metric'],
+   c:1,why:'A number without a target or a trend is a fact, not information. "45.2% (target 50%, last month 43.1%)" tells the reader what to feel and do.',src:'stakeholder-update — "Do not report metrics without a target or prior-period comparison"'},
+  {sn:'STATUS UPDATE (decisions section)\n\n"Open question for leadership: should we delay the launch to include SSO, or ship without it?"',
+   q:'What\'s the anti-pattern?',
+   o:['Decisions should go to a meeting, not a document','The question exposes internal disagreement','A decision is requested without a recommendation — executives got homework instead of options','SSO is too technical for leadership'],
+   c:2,why:'Never hand an executive an open-ended question. Present the options, your recommendation, and the cost of each — they confirm or overrule in one line.',src:'stakeholder-update — "Do not write decisions needed as questions without providing a clear recommendation"'},
+  {sn:'EXECUTIVE SUMMARY (risk section)\n\n"If we do not act, we risk falling behind competitively and the problem may compound over time."',
+   q:'Which fix would most strengthen this?',
+   o:['Add more risks so the section feels thorough','Quantify the inaction cost: what is lost, by when, at what rate','Soften it — fear-based framing reads as manipulative','Move the risks to an appendix'],
+   c:1,why:'Vague doom removes urgency instead of creating it. "Each quarter of delay cedes ~120 enterprise deals to the incumbent" makes doing nothing a decision with a price.',src:'executive-summary — "Do not leave the risks-of-inaction section vague… quantify what happens if the reader does nothing"'},
+  {sn:'ONE UPDATE, TWO READERS\n\nYou send the identical summary to the CEO (deciding budget) and a board member (assessing management competence).',
+   q:'Why is "efficient" wrong here?',
+   o:['Board members must legally receive different documents','Different decision contexts need different framing — one asks "should I fund this", the other "is this team on top of it"','The CEO should always get more detail than the board','It isn\'t wrong — consistency builds trust'],
+   c:1,why:'A summary is built backwards from the reader\'s decision. Same facts, different bottom line: budget case for the CEO, control-and-competence case for the board.',src:'executive-summary — "Do not use the same summary for different audiences"'},
+  {sn:'STATUS UPDATE (length)\n\nYour weekly update has grown to 3 pages. Everything in it is true and someone once asked for each section.',
+   q:'What does the discipline say?',
+   o:['Keep it — completeness beats brevity for accountability','Split it into three one-page updates','One page, full stop — past that, the message needs editing, not the reader more time','Move it to a dashboard and stop writing prose'],
+   c:2,why:'Length is a tax the busiest readers won\'t pay; they\'ll skim and miss the one thing you needed them to see. Cut until the signal is the page.',src:'stakeholder-update — "Do not allow the update to exceed one page — the message needs editing, not expanding"'}
+ ]},
+{id:'discovery',emoji:'🔬',title:'Discovery & evidence',desc:'Interviewing, synthesis, and the discipline of not fooling yourself — the difference between evidence and anecdote.',
+ exam:{page:'hiring.html',name:'The Panel',line:'Interview an AI candidate with a hidden archetype. Extracting truth through questioning is discovery under pressure — the coach\'s score IS the exam.'},
+ drills:[
+  {sn:'INTERVIEW GUIDE (draft question)\n\n"Would you use a tool that automatically categorised your support tickets?"',
+   q:'What\'s wrong with this question?',
+   o:['It\'s a leading question about our product','It\'s future-tense and hypothetical — answers won\'t predict real behaviour','It should offer a price point to be concrete','Nothing — it\'s a clean yes/no signal'],
+   c:1,why:'People are terrible predictors of their own behaviour and generous to ideas in the room. Ask about the last time the problem actually happened and what they did.',src:'discovery-interview-guide — "Do not use future-tense questions — hypothetical responses do not predict real behaviour"'},
+  {sn:'INTERVIEW (minute 4 of 30)\n\n"So we\'re building an AI ticket-triage assistant — but first, tell me about your current workflow."',
+   q:'The damage is already done. What is it?',
+   o:['The intro ran too long','Mentioning the solution anchored everything they\'ll now say about their problems','Workflow questions should come last','Nothing — transparency about the product builds rapport'],
+   c:1,why:'Once they know what you\'re selling, participants helpfully bend their stories toward it. Problem exploration must finish before your product is ever named.',src:'discovery-interview-guide — "Do not mention your product before problem exploration is complete — doing so anchors responses and invalidates the discovery"'},
+  {sn:'SYNTHESIS (research readout)\n\n"After 3 interviews, a clear theme has emerged: enterprise buyers want usage-based pricing."',
+   q:'What\'s the flaw?',
+   o:['Themes need quotes attached','Three interviews is anecdote, not pattern — synthesis starts around 5, at saturation','Pricing can\'t be researched via interviews','"Clear theme" is too strong for any qualitative work'],
+   c:1,why:'Two people agreeing is a coincidence you happened to schedule. Saturation — when new interviews stop surprising you — is what turns stories into signal.',src:'discovery-interview-guide — "Do not synthesise across fewer than 5 interviews — themes from 2–3 reflect anecdote, not pattern"'},
+  {sn:'RESEARCH READOUT (findings slide)\n\n"Users find the dashboard confusing."\n(9 of 14 participants said this; 5 actively disagreed and called it the best part.)',
+   q:'The slide states only the first part. What must synthesis do instead?',
+   o:['Report the majority view — that\'s what synthesis means','Surface the contradiction AND quantify prevalence: 9/14 confused, 5/14 loved it — then investigate the split','Drop the finding since the data conflicts','Re-run the study with a bigger sample'],
+   c:1,why:'Conflicting data is a finding, not noise — the split usually maps to a segment difference that matters more than the average. And always count: "users say" hides the denominator.',src:'user-research-synthesis — "Do not ignore contradictory data" · "Do not present results without quantifying prevalence"'},
+  {sn:'FEATURE REQUEST (top of the synthesis)\n\n"Participants requested: bulk export, a Slack integration, and custom fields. Recommend building bulk export first (7 mentions)."',
+   q:'What did this synthesis skip?',
+   o:['Effort estimates for each request','The underlying problem — feature requests were counted before the job-to-be-done was understood','Revenue impact per feature','Nothing — mention-counting is exactly how prioritisation works'],
+   c:1,why:'Requests are the user\'s guess at a solution. Seven people asking for bulk export might be seven people failing at a reconciliation job a report would solve better.',src:'user-research-synthesis — "Do not focus on feature requests before understanding the underlying problem — identify the job-to-be-done first"'},
+  {sn:'SCREENER (recruiting question)\n\n"Do you regularly analyse customer data as part of your role? (Yes/No)"',
+   q:'Why will this recruit the wrong people?',
+   o:['It\'s too short to filter anyone','The "right" answer is guessable, and paid participants will guess it','Data analysts don\'t take screeners','Yes/No questions are always invalid'],
+   c:1,why:'A screener that telegraphs the desired answer selects for people who want the incentive, not people with the problem. Ask them to describe the last analysis they ran instead.',src:'discovery-interview-guide — "Do not write screener questions that are too easy to pass"'}
+ ]},
+{id:'method',emoji:'⚙️',title:'Work discipline',desc:'The pm-method bundle: briefs before plans, plans before work, verification before "done" — how disciplined operators avoid burning weeks.',
+ exam:{page:'boardroom.html',name:'The Boardroom',line:'Take a real plan or PRD into the Boardroom and survive the bench. Defending disciplined work to hostile executives IS the exam.'},
+ drills:[
+  {sn:'PROJECT PLAN (step 4 of 9)\n\n"Step 4: Migrate the auth service to the new tenancy model."\n(No verification listed. Steps 5–9 all depend on it.)',
+   q:'What\'s the anti-pattern?',
+   o:['Migrations should never be a single step','A step without a verification — unverifiable steps are where sprawl enters','Auth should be migrated last','The plan has too many steps'],
+   c:1,why:'Every step needs an observable "how we know it worked". The mysterious step-6 failure was born at step 3 — unverified steps let broken state travel forward.',src:'writing-plans — "Do not write steps without verifications" · executing-plans — "Do not skip verifications when steps obviously worked"'},
+  {sn:'PLAN SEQUENCING\n\nThe plan: week 1 scaffolding, week 2 UI, week 3 integrate the vendor API (which legal hasn\'t approved and may veto), week 4 launch.',
+   q:'What would a disciplined planner change?',
+   o:['Nothing — momentum from easy wins helps morale','Move the vendor-API risk to week 1 — sequence to kill the plan early if it\'s killable','Add buffer to week 4','Run all four weeks in parallel'],
+   c:1,why:'If the plan can die, find out before you\'ve spent three weeks building around the corpse. Happy-path-first turns a cheap "no" into an expensive one.',src:'writing-plans — "Do not plan happy-path-first when a hard unknown exists — sequence to kill the plan early"'},
+  {sn:'MID-EXECUTION\n\nStep 5 reveals the data model assumption from step 2 was wrong. The developer quietly adapts the remaining steps in their head and keeps going. The written plan still shows the old approach.',
+   q:'What\'s the failure?',
+   o:['They should have stopped the project entirely','Improvising around a broken plan — silent drift makes the work unaccountable; amend the plan visibly or stop','Nothing — adapting is what good executors do','Step 2 should have been longer'],
+   c:1,why:'The plan is the shared record of intent. Once reality diverges and the plan isn\'t updated, nobody — including future-you — can tell sanctioned changes from mistakes.',src:'executing-plans — "Do not improvise around a broken plan — amend it visibly or stop; silent drift is unaccountable work"'},
+  {sn:'DELIVERY\n\n"Done! All the requested changes are in." The developer checked the diff against their memory of the Slack thread. It looks clean.',
+   q:'Which two anti-patterns are stacked here?',
+   o:['Verifying against memory of the ask + treating clean-looking output as evidence','Finishing too fast + not asking for review','Using Slack for requirements + no tests','None — the work may genuinely be done'],
+   c:0,why:'Memory is where the third requirement went to die: re-read the actual ask, line by line, against the actual output. And polish proves nothing — run it.',src:'verification-before-completion — "Do not verify against your memory of the ask" · "Do not treat a clean-looking output as evidence"'},
+  {sn:'KICKOFF\n\nA stakeholder asks for "a dashboard for the exec team". The builder, saving time, starts on a metrics dashboard immediately — questions can be asked along the way.',
+   q:'What does the discipline prescribe instead?',
+   o:['A longer written spec before any questions','A short interview FIRST, then a playback ("yes, that") — half-brief work anchors everyone to the wrong draft','Building two options and letting the exec pick','Asking all questions in one big questionnaire'],
+   c:1,why:'Work started on a guessed brief doesn\'t save time; it spends it — the wrong draft becomes the anchor every conversation must fight. Interview, play it back, then build. (But don\'t fire seven questions at once either.)',src:'interview-me — "Do not start building mid-interview to save time" · "Do not fire a questionnaire" · "Do not skip the playback"'},
+  {sn:'BRAINSTORM (facilitation)\n\n"OK, ideas for reducing churn — anything goes!"\n"Loyalty points?" — "Hmm, feels gimmicky. Next?"',
+   q:'What just happened to the session?',
+   o:['Nothing — fast filtering keeps energy up','The divergent phase collapsed — one judgment mid-generation and everyone starts pre-censoring','Loyalty points deserved deeper discussion','The prompt was too broad'],
+   c:1,why:'Generation and judgment are different modes; mixing them gets you neither. One "(gimmicky)" and the room switches from creating to defending — the wild idea that mattered never gets said.',src:'brainstorming — "Do not judge while generating — one (unrealistic) mid-list collapses the whole divergent phase"'}
+ ]}
+];
+
+// ── Progress: localStorage, first-try scoring ────────────────────────────────
+const STORE='pm_academy';
+const P=(()=>{ try{ return JSON.parse(localStorage.getItem(STORE))||{}; }catch(_){ return {}; } })();
+function save(){ try{ localStorage.setItem(STORE,JSON.stringify(P)); }catch(_){} }
+function tp(id){ return P[id]=P[id]||{answers:{},firstTry:{},exam:false}; }
+function doneCount(t){ const p=tp(t.id); return t.drills.filter((_,i)=>p.answers[i]!==undefined).length; }
+function isGraduated(t){ const p=tp(t.id); return doneCount(t)===t.drills.length&&p.exam; }
+
+// ── Home ─────────────────────────────────────────────────────────────────────
+function renderHome(){
+  el('tracks').innerHTML=TRACKS.map(t=>{
+    const d=doneCount(t), grad=isGraduated(t);
+    return '<div class="track'+(grad?' done':'')+'" data-t="'+t.id+'"><h3>'+t.emoji+' '+t.title+'</h3><p>'+t.desc+'</p>'+
+      '<div class="prog">'+(grad?'<b>🎓 Graduated</b>':d+'/'+t.drills.length+' drills · exam: '+t.exam.name)+'</div></div>';
+  }).join('');
+  document.querySelectorAll('.track').forEach(x=>x.addEventListener('click',()=>openTrack(x.dataset.t)));
+}
+
+// ── Track view ───────────────────────────────────────────────────────────────
+let T=null;
+function openTrack(id){
+  T=TRACKS.find(t=>t.id===id);
+  el('home').classList.add('hidden'); el('trackView').classList.remove('hidden');
+  el('tTitle').textContent=T.emoji+' '+T.title; el('tDesc').textContent=T.desc;
+  renderDrills(); window.scrollTo({top:0});
+  if(window.pmTrack) pmTrack('academy/track/'+id);
+}
+function renderDrills(){
+  const p=tp(T.id);
+  const first=Object.values(p.firstTry).filter(Boolean).length;
+  el('tScore').textContent=doneCount(T)+'/'+T.drills.length+' drills · '+first+' right first try';
+  el('drills').innerHTML=T.drills.map((d,i)=>{
+    const a=p.answers[i];
+    return '<div class="drill"><div class="dn">Drill '+(i+1)+' of '+T.drills.length+'</div><div class="snippet">'+d.sn+'</div><div class="qq">'+d.q+'</div>'+
+      d.o.map((o,j)=>'<button type="button" class="opt'+(a===undefined?'':(j===d.c?' right':(j===a?' wrong':'')))+'" data-d="'+i+'" data-o="'+j+'"'+(a!==undefined?' disabled':'')+'>'+o+'</button>').join('')+
+      (a!==undefined?'<div class="why"><b>'+(a===d.c?'✅ Right.':'❌ The answer was: “'+d.o[d.c]+'”')+'</b> '+d.why+'<span class="src">📖 '+d.src+'</span></div>':'')+
+    '</div>';
+  }).join('');
+  document.querySelectorAll('.opt:not([disabled])').forEach(b=>b.addEventListener('click',()=>{
+    const i=+b.dataset.d, j=+b.dataset.o;
+    p.answers[i]=j; if(p.firstTry[i]===undefined) p.firstTry[i]=(j===T.drills[i].c);
+    save(); renderDrills();
+  }));
+  renderExam();
+}
+function renderExam(){
+  const p=tp(T.id), all=doneCount(T)===T.drills.length;
+  const first=Object.values(p.firstTry).filter(Boolean).length;
+  el('exam').innerHTML='<h3 style="margin:0 0 6px">🏟 Final exam — '+T.exam.name+'</h3><p style="margin:0 0 10px;color:var(--muted);font-size:13.5px">'+T.exam.line+'</p>'+
+    (all?'<div class="bar"><a class="primary" style="text-decoration:none;padding:10px 16px;border-radius:11px;display:inline-block" href="'+T.exam.page+'">Enter '+T.exam.name+' →</a>'+
+      (p.exam?'<button id="certBtn" class="ghost" type="button">🎓 Your certificate (PDF)</button>':'<button id="attest" class="ghost" type="button">I completed the exam ✔</button>')+'</div>'
+    :'<p style="font-size:13px;color:var(--muted)">🔒 Finish all '+T.drills.length+' drills to unlock the exam.</p>');
+  const at=el('attest'); if(at) at.addEventListener('click',()=>{ p.exam=true; save(); renderDrills(); if(window.pmTrack) pmTrack('academy/graduate/'+T.id); });
+  const cb=el('certBtn'); if(cb) cb.addEventListener('click',()=>{
+    const name=(prompt('Name on the certificate (blank to leave it off):','')||'').trim();
+    PMExport.certificate({kind:'PM Skills · The Academy',headline:'Graduated: '+T.title,
+      name:name||null,score:first+'/'+T.drills.length+' first-try',level:T.emoji+' '+T.title+' track — drills + live '+T.exam.name+' exam',
+      details:[T.drills.length+' anti-pattern drills completed','final exam taken in '+T.exam.name,'curriculum drawn from the skill library\'s own Anti-Patterns']});
+    if(window.pmTrack) pmTrack('academy/certificate/'+T.id);
+  });
+}
+el('back').addEventListener('click',()=>{ el('trackView').classList.add('hidden'); el('home').classList.remove('hidden'); renderHome(); });
+renderHome();
+if(window.pmTrack) pmTrack('academy/open');
+</script>
+<script src="i18n.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

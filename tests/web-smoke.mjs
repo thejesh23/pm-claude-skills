@@ -127,6 +127,24 @@ const PAGES = [
       });
       if (!/ok/.test(cls)) throw new Error('attestation round-trip failed: ' + cls);
     } },
+  { url: 'hiring.html', async check(p) {
+      await p.fill('#role', 'Senior PM for a payments platform, owns onboarding');
+      await p.click('#b1'); await p.waitForTimeout(300);
+      const s = await p.locator('#st1').textContent();
+      if (!/key/i.test(s || '')) throw new Error('keyless guard missing');
+    } },
+  { url: 'academy.html', async check(p) {
+      if ((await p.locator('.track').count()) !== 3) throw new Error('expected 3 tracks');
+      await p.click('.track[data-t="exec"]'); await p.waitForTimeout(200);
+      if ((await p.locator('.drill').count()) !== 6) throw new Error('expected 6 drills');
+      await p.click('.opt[data-d="0"][data-o="1"]'); await p.waitForTimeout(200);
+      if ((await p.locator('.why').count()) !== 1) throw new Error('drill feedback missing');
+    } },
+  { url: 'wrapped.html', async check(p) {
+      // Fresh browser context = empty state: one card with the arena CTAs.
+      if ((await p.locator('.card').count()) < 1) throw new Error('no cards rendered');
+      if (!(await p.locator('.card.on').textContent()).includes('Nothing here yet')) throw new Error('empty state missing');
+    } },
   { url: 'canvas.html' }, { url: 'agent.html' }, { url: 'studio.html' },
   { url: 'brain.html' }, { url: 'ask.html' }, { url: 'daily.html' },
   { url: 'jobs.html' }, { url: 'hub.html' }, { url: 'grade.html' },

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-site-verification" content="osZgdSLYnqidzCKt4CxjqAxo44OqGvlKi-Bmg0UmxFQ" />
+<title>The Panel — you're the interviewer now. Can you tell a great candidate from a great talker?</title>
+<meta name="description" content="The interviewer flip: an AI plays a candidate with a hidden archetype — genuinely strong, polished-but-evasive, or a confident bluffer. You ask the questions, you make the hire/no-hire call, and a hiring coach scores YOUR interviewing: question quality, follow-up discipline, and whether you saw through the performance." />
+<link rel="stylesheet" href="styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.9/dist/purify.min.js"></script>
+<script src="providers.js"></script>
+<script src="export-doc.js"></script>
+<script src="voice.js"></script>
+<style>
+  .g-wrap { max-width: 860px; margin: 0 auto; padding: 16px 22px 70px; }
+  .lead { color: #c7cfda; font-size: 15.5px; }
+  .stages { display: flex; gap: 6px; margin: 16px 0; flex-wrap: wrap; }
+  .stage-pill { flex: 1; min-width: 130px; text-align: center; padding: 9px 8px; border-radius: 11px; border: 1px solid var(--border); background: var(--panel); font-size: 12.5px; color: var(--muted); }
+  .stage-pill.live { border-color: var(--accent); color: var(--text); background: rgba(217,119,87,.1); font-weight: 700; }
+  .stage-pill.done { border-color: #5ad19a; color: #5ad19a; }
+  textarea, input[type=text] { width: 100%; box-sizing: border-box; padding: 11px 13px; border-radius: 11px; background: var(--panel); border: 1px solid var(--border); color: var(--text); font-family: inherit; font-size: 14px; }
+  textarea { min-height: 96px; resize: vertical; }
+  .bar { display: flex; gap: 10px; align-items: center; margin: 12px 0; flex-wrap: wrap; }
+  .chat { display: flex; flex-direction: column; gap: 10px; margin: 12px 0; }
+  .msg { max-width: 84%; border: 1px solid var(--border); border-radius: 14px; padding: 10px 14px; font-size: 13.8px; line-height: 1.5; }
+  .msg.them { align-self: flex-start; background: var(--panel); border-left: 3px solid #7fd6c2; }
+  .msg.you { align-self: flex-end; background: rgba(217,119,87,.1); border-right: 3px solid var(--accent); }
+  .msg .who { font-size: 11px; color: var(--muted); margin-bottom: 3px; text-transform: uppercase; letter-spacing: .04em; }
+  .typing { display: inline-flex; gap: 4px; } .typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: blink 1s infinite; }
+  .typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+  @keyframes blink { 0%,80%,100% { opacity:.25 } 40% { opacity:1 } }
+  .say { display: flex; gap: 8px; margin-top: 8px; }
+  .say textarea { min-height: 48px; flex: 1; }
+  .cv { border: 1px solid var(--border); border-radius: 13px; background: var(--panel); padding: 14px 16px; font-size: 13.6px; line-height: 1.55; margin: 12px 0; }
+  .verdict { border: 1.5px solid var(--accent); border-radius: 14px; background: linear-gradient(180deg, rgba(217,119,87,.09), transparent 55%), var(--panel); padding: 16px 18px; margin-top: 14px; }
+  .hidden { display: none !important; }
+  h2.stage-h { margin: 20px 0 4px; font-size: 18px; }
+  .stage-sub { color: var(--muted); font-size: 13px; margin: 0 0 10px; }
+  .out-actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0; }
+  .qleft { font-size: 12px; color: var(--muted); }
+  .callbtns { display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0; }
+  .callbtns button { font-size: 15px; padding: 12px 20px; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><img src="assets/product-notes.jpg" alt="Product Notes" class="brand-logo" />
+    <div class="brand-text"><h1>The Panel</h1><p class="tagline">You're the interviewer now. Can you tell strong from smooth?</p></div></div>
+  <div class="key-area">
+    <select id="provider" title="Model provider"><option value="gemini">Gemini (free key)</option><option value="webllm">In-browser (no key)</option><option value="anthropic">Claude</option><option value="openai">OpenAI</option><option value="ollama">Ollama (local)</option></select>
+    <div class="key-field"><input id="apiKey" type="password" placeholder="sk-ant-… (your Anthropic API key)" autocomplete="off" /><button id="keyToggle" type="button" class="show-toggle">Show</button></div>
+    <select id="model" title="Model"><option value="claude-fable-5">Fable 5 ✨</option><option value="claude-opus-4-8">Opus 4.8</option><option value="claude-sonnet-4-6" selected>Sonnet 4.6</option><option value="claude-haiku-4-5-20251001">Haiku 4.5</option></select>
+  </div>
+</header>
+<nav class="toolbar-nav" id="toolbar" aria-label="Tools"></nav>
+<div class="key-note">🔒 Your key stays in this browser. The role and your questions go only to the model provider you choose.</div>
+
+<div class="g-wrap">
+  <p class="lead">The <a href="gauntlet.html">Gauntlet</a> trains you to <em>be</em> interviewed. This trains the harder skill: <strong>interviewing</strong>. A candidate sits down — genuinely strong, polished-but-evasive, or a confident bluffer; you don't know which. Ask your questions, dig where it's soft, then make the call. A hiring coach scores <em>your</em> technique and reveals who you were really talking to.</p>
+
+  <div class="stages">
+    <span class="stage-pill" data-s="1">1 · 📋 The req</span>
+    <span class="stage-pill" data-s="2">2 · 🎤 You interview</span>
+    <span class="stage-pill" data-s="3">3 · ⚖️ Your call</span>
+    <span class="stage-pill" data-s="4">🏁 The reveal</span>
+  </div>
+
+  <!-- Stage 1: role setup -->
+  <section id="s1">
+    <h2 class="stage-h">📋 Stage 1 — The role you're hiring for</h2>
+    <p class="stage-sub">One or two lines is enough — "Senior PM for our payments platform" works. The candidate's résumé and hidden archetype get generated from it.</p>
+    <textarea id="role" placeholder="e.g. Senior product manager for a B2B payments platform — owns merchant onboarding, works with 2 eng squads, reports to the VP Product"></textarea>
+    <div class="bar">
+      <select id="rounds" style="width:auto;padding:9px 12px;border-radius:10px;background:var(--panel);border:1px solid var(--border);color:var(--text);font-family:inherit">
+        <option value="5">Quick screen — 5 questions</option>
+        <option value="7" selected>Full round — 7 questions</option>
+        <option value="10">Deep loop — 10 questions</option>
+      </select>
+      <button id="b1" class="primary" type="button">Bring in the candidate →</button>
+      <button id="theatreBtn" class="ghost" type="button" title="Hear the candidate out loud (browser speech, no API)">🔇 Theatre</button>
+      <span id="st1" class="status"></span>
+    </div>
+    <div id="cv" class="cv markdown hidden"></div>
+    <div class="bar hidden" id="n1"><button class="primary" type="button" id="startIv">Start the interview →</button></div>
+  </section>
+
+  <!-- Stage 2: the interview, flipped -->
+  <section id="s2" class="hidden">
+    <h2 class="stage-h">🎤 Stage 2 — Your interview</h2>
+    <p class="stage-sub">You ask, they answer. Vague answers are an invitation to follow up — the coach is watching whether you accept it.</p>
+    <div class="chat" id="chat"></div>
+    <div class="say" id="say"><textarea id="q" placeholder="Your question… (Enter to send)"></textarea><button id="mic" class="ghost" type="button" title="Ask out loud">🎙</button><button id="send" class="primary" type="button">Ask</button></div>
+    <div class="bar"><span id="qleft" class="qleft"></span><button id="endEarly" class="ghost" type="button">I've heard enough → make the call</button></div>
+  </section>
+
+  <!-- Stage 3: the call -->
+  <section id="s3" class="hidden">
+    <h2 class="stage-h">⚖️ Stage 3 — Your call</h2>
+    <p class="stage-sub">Real interviews end with a written recommendation, not a feeling. Make yours before the reveal.</p>
+    <div class="callbtns">
+      <button class="primary" type="button" data-call="strong hire">🟢 Strong hire</button>
+      <button class="ghost" type="button" data-call="hire">✅ Hire</button>
+      <button class="ghost" type="button" data-call="no hire">❌ No hire</button>
+      <button class="ghost" type="button" data-call="strong no hire">🛑 Strong no hire</button>
+    </div>
+    <textarea id="why" placeholder="Your written recommendation: the evidence behind your call — 2-3 sentences. (The coach scores this too.)"></textarea>
+  </section>
+
+  <!-- Stage 4: the reveal -->
+  <section id="s4" class="hidden">
+    <h2 class="stage-h">🏁 The reveal</h2>
+    <div id="o4" class="verdict markdown"></div>
+    <div class="out-actions">
+      <button id="dl" class="primary" type="button">⬇ Download the panel report (.md)</button>
+      <button id="cert" class="ghost" type="button">🎓 Certificate (PDF)</button>
+      <button id="again" class="ghost" type="button">↻ New candidate</button>
+    </div>
+  </section>
+</div>
+
+<script>
+const el=(id)=>document.getElementById(id);
+// The hidden archetypes — picked client-side so the model can't drift out of one.
+const ARCHETYPES=[
+  {id:'strong',brief:'GENUINELY STRONG: real depth everywhere. Specific numbers, named trade-offs, owns failures plainly and says what changed after. Modest phrasing, occasionally hesitant on delivery — substance over polish. Never volunteer everything at once; good follow-ups unlock the best material.'},
+  {id:'evasive',brief:'POLISHED BUT EVASIVE: superb communicator, weak evidence. Answer with frameworks and "we" — never "I" with a decision attached. Redirect hard questions to an adjacent strength. Metrics are directional ("significantly improved") unless pinned down twice, then produce one modest real number and go vague again. Never lie outright; evade.'},
+  {id:'bluffer',brief:'CONFIDENT BLUFFER: impressive claims, borrowed detail. Big metrics and name-drops delivered fluently — but the details are shallow copies of things read, not done. Under 2+ layers of follow-up ("what did YOU decide", "walk me through the number") the story wobbles: dates shift, the metric changes, ownership shrinks to "I was closely involved". Double down confidently on the FIRST follow-up; crack on the second.'}
+];
+let S={role:'',rounds:7,arch:null,cv:'',turns:[],call:'',why:'',verdict:''};
+
+init();
+function init(){
+  PMProviders.initProviderUI();
+  el('keyToggle').addEventListener('click',()=>{const f=el('apiKey');const s=f.type==='password';f.type=s?'text':'password';el('keyToggle').textContent=s?'Hide':'Show';});
+  el('b1').addEventListener('click',stage1);
+  el('startIv').addEventListener('click',()=>gotoStage(2));
+  el('send').addEventListener('click',ask);
+  el('q').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ask();}});
+  el('endEarly').addEventListener('click',()=>gotoStage(3));
+  document.querySelectorAll('[data-call]').forEach(b=>b.addEventListener('click',()=>makeCall(b.dataset.call)));
+  el('again').addEventListener('click',()=>location.reload());
+  el('dl').addEventListener('click',download);
+  el('cert').addEventListener('click',certificate);
+  if(window.PMVoice){ PMVoice.theatreToggle(el('theatreBtn')); PMVoice.micToTextarea(el('mic'),el('q')); }
+  setStage(1);
+}
+function key(){ const k=el('apiKey').value.trim(); if(!k&&!PMProviders.current().local){ st('Enter your '+PMProviders.current().name+' key (top-right) — or pick In-browser (no key).',true); return null;} return k; }
+function st(m,err){ const s=el('st1'); s.textContent=m; s.className='status'+(err?' err':''); }
+function setStage(n){ document.querySelectorAll('.stage-pill').forEach(p=>{const s=+p.dataset.s; p.classList.toggle('live',s===n); p.classList.toggle('done',s<n);}); }
+function gotoStage(n){ for(let i=1;i<=4;i++) el('s'+i).classList.toggle('hidden',i!==n); setStage(n); window.scrollTo({top:0,behavior:'smooth'}); if(n===2) el('q').focus(); }
+async function gen({system,user,node}){
+  return PMProviders.stream({key:el('apiKey').value.trim(),model:el('model').value,system,userMessage:user,
+    onDelta:node?(a)=>{node.innerHTML=DOMPurify.sanitize(marked.parse(a));}:undefined});
+}
+function bubble(who,cls){
+  const m=document.createElement('div'); m.className='msg '+cls;
+  m.innerHTML='<div class="who">'+who+'</div><div class="t"><span class="typing"><i></i><i></i><i></i></span></div>';
+  el('chat').appendChild(m); m.scrollIntoView({behavior:'smooth',block:'end'});
+  return m.querySelector('.t');
+}
+function archSystem(){
+  return `You are playing a job candidate in a live interview. THE INTERVIEWER IS THE USER — never break character, never reveal or hint at your archetype, never evaluate the interviewer.
+THE ROLE: ${S.role}
+YOUR RÉSUMÉ (stay consistent with it): ${S.cv}
+YOUR HIDDEN ARCHETYPE — ${S.arch.brief}
+Answer the interviewer's question in ≤110 words, in character, first person, conversational (this is speech, not an essay). If asked something outside the résumé, improvise consistently with the archetype.`;
+}
+
+// ── Stage 1: generate the candidate ──────────────────────────────────────────
+async function stage1(){
+  if(key()===null) return;
+  S.role=el('role').value.trim(); S.rounds=+el('rounds').value;
+  if(S.role.length<20) return st('Describe the role — one or two real lines.',true);
+  S.arch=ARCHETYPES[Math.floor(Math.random()*ARCHETYPES.length)];
+  if(window.pmTrack) pmTrack('panel/start');
+  el('b1').disabled=true; st('The candidate is in the lobby…');
+  const o=el('cv'); o.classList.remove('hidden');
+  try{
+    S.cv=await gen({node:o,user:'THE ROLE:\n'+S.role,
+      system:`Write the one-page résumé summary an interviewer skims before the call, for a plausible candidate for this role. Markdown, ≤180 words: **Name** (invent one) and current title · "**Experience**" — 3 roles with years and one-line achievements · "**Highlights**" — 3 bullets with claims and numbers. Make it genuinely attractive on paper regardless of what the live interview may reveal — résumés always look good; interviews find the truth. No commentary.`});
+    el('n1').classList.remove('hidden'); st('');
+  }catch(e){ st(e.message||'Failed.',true); }
+  finally{ el('b1').disabled=false; }
+}
+
+// ── Stage 2: the flipped interview ───────────────────────────────────────────
+function asked(){ return S.turns.filter(t=>t.who==='You').length; }
+async function ask(){
+  if(key()===null) return;
+  const q=el('q').value.trim(); if(!q) return;
+  el('q').value='';
+  bubble('You (interviewer)','you').textContent=q;
+  S.turns.push({who:'You',text:q});
+  el('send').disabled=true;
+  const t=bubble('Candidate','them');
+  try{
+    const a=await gen({node:t,user:'INTERVIEW SO FAR:\n'+S.turns.map(x=>x.who+': '+x.text).join('\n\n')+'\n\nAnswer the interviewer\'s last question.',system:archSystem()});
+    S.turns.push({who:'Candidate',text:a});
+    if(window.PMVoice&&PMVoice.isEnabled()&&a) PMVoice.speak('cco',a);
+  }catch(e){ t.textContent='('+(e.message||'failed')+')'; }
+  el('send').disabled=false;
+  const left=S.rounds-asked();
+  el('qleft').textContent=left>0?left+' question'+(left===1?'':'s')+' left':'';
+  if(left<=0){ el('say').classList.add('hidden'); gotoStage(3); } else el('q').focus();
+}
+
+// ── Stage 3→4: the call, then the reveal ─────────────────────────────────────
+async function makeCall(call){
+  S.call=call; S.why=el('why').value.trim();
+  gotoStage(4);
+  const o=el('o4');
+  try{
+    S.verdict=await gen({node:o,user:'THE ROLE:\n'+S.role+'\n\nTHE RÉSUMÉ:\n'+S.cv+'\n\nTHE CANDIDATE\'S TRUE ARCHETYPE: '+S.arch.id+' — '+S.arch.brief+'\n\nTHE INTERVIEW TRANSCRIPT:\n'+S.turns.map(x=>x.who+': '+x.text).join('\n\n')+'\n\nTHE INTERVIEWER\'S CALL: '+S.call+(S.why?'\nTHEIR WRITTEN RECOMMENDATION: '+S.why:'\n(no written recommendation given)'),
+      system:`You are a veteran hiring coach reviewing an interviewer's performance. The candidate was an actor with a known archetype; the interviewer is your student. Score strictly from the transcript. Markdown, ≤420 words:
+"## Interviewer score: <n>/100 — <one line>"
+"### The reveal" — who the candidate really was, and whether the interviewer's call (${S.call}) was RIGHT or WRONG for that archetype (strong→hire/strong-hire correct; evasive & bluffer→no-hire/strong-no-hire correct). Getting the call right is worth a lot; getting fooled costs.
+"### Your questions" — table: Question | What it tested | /10 | The miss (the follow-up not asked, or "clean"). Score behavioural specifics, evidence-pinning ("what did YOU do", "walk me through the number"), follow-up discipline. Penalise hypotheticals, leading questions, and accepting vagueness.
+"### The moments" — 2-3 quotes from the CANDIDATE that were tells (evasion, wobble, or genuine depth) and whether the interviewer caught each one.
+"### Next interview" — the 2 techniques that would most raise this interviewer's game.
+End with: 🏆 The Panel — interviewer <n>/100, candidate was: ${S.arch.id} · pm-skills, ${new Date().toISOString().slice(0,10)}`});
+    if(window.pmTrack) pmTrack('panel/finish/'+S.arch.id);
+    try{ const runs=JSON.parse(localStorage.getItem('pm_panel_runs')||'[]'); const m=S.verdict.match(/Interviewer score:\s*(\d+)/i); runs.push({d:Date.now(),arch:S.arch.id,call:S.call,score:m?+m[1]:null}); localStorage.setItem('pm_panel_runs',JSON.stringify(runs.slice(-50))); }catch(_){}
+  }catch(e){ o.textContent=e.message||'Scoring failed.'; }
+}
+function certificate(){
+  const m=S.verdict.match(/Interviewer score:\s*(\d+)\s*\/?\s*100?/i);
+  if(!m) return;
+  const name=(prompt('Name on the certificate (blank to leave it off):','')||'').trim();
+  PMExport.certificate({kind:'PM Skills · The Panel',headline:'Sat on the other side of the table',
+    name:name||null,score:m[1]+'/100',level:'Candidate archetype: '+S.arch.id+' — call made: '+S.call,
+    details:[asked()+' questions asked live','hire/no-hire call made before the reveal','questioning technique scored by the coach']});
+  if(window.pmTrack) pmTrack('panel/certificate');
+}
+function download(){
+  const md='# The Panel — interviewer report\n\n## Role\n\n'+S.role+'\n\n## Résumé shown\n\n'+S.cv+'\n\n## Interview\n\n'+S.turns.map(x=>'**'+x.who+':** '+x.text).join('\n\n')+'\n\n## The call\n\n'+S.call+(S.why?' — '+S.why:'')+'\n\n## The reveal\n\n'+S.verdict;
+  const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([md],{type:'text/markdown'})); a.download='panel-report.md'; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),3000);
+}
+</script>
+<script src="i18n.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>
