@@ -19,6 +19,16 @@ npx skillspec-check --strict --json    # warnings fail; machine-readable output
 
 Plus, at every level, the **security scan** the curated library bans on: prompt-injection phrasing, unvetted network calls, data-exfiltration instructions, embedded credentials. Security findings are always errors.
 
+## The badge
+
+Wear your conformance level — this renders a live-graded shield for any public repo:
+
+```markdown
+![SkillSpec](https://img.shields.io/endpoint?url=https%3A%2F%2Fpm-skills-mcp.pm-claude-skills.workers.dev%2Fbadge%3Frepo%3DYOURUSER%2FYOURREPO)
+```
+
+The badge service fetches your SKILL.md files, grades them, and reports the **minimum** level across the repo (a chain is as strong as…). Cached 6 hours.
+
 ## CI in one line
 
 ```yaml

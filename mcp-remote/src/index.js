@@ -445,6 +445,49 @@ async function handleTry(request, env) {
   return jsonResponse({ text, model: 'claude-haiku', remaining });
 }
 
+
+// ── SkillSpec badge: GET /badge?repo=owner/repo[&ref=main] ────────────────────
+// Live-grades a repo's SKILL.md files against SkillSpec and returns shields.io
+// endpoint JSON, so any skills repo can wear its conformance level:
+//   ![SkillSpec](https://img.shields.io/endpoint?url=<this-worker>/badge%3Frepo%3Downer/repo)
+// Cached hard (6h) — grading is a courtesy, not a DoS vector.
+function gradeSkill(text) {
+  const fm = text.match(/^\s*---\r?\n([\s\S]*?)\r?\n\s*---\r?\n?([\s\S]*)$/);
+  if (!fm) return 0;
+  const name = /^name:\s*.+$/m.test(fm[1]), desc = /^description:\s*.+$/m.test(fm[1]);
+  if (!name || !desc) return 0;
+  const body = fm[2] || '';
+  const l2 = /##\s*(What This Skill Produces|Required Inputs|Input)/i.test(body) && /##\s*(Output|Deliverable)|##[^\n]*\b(Template|Structure|Format)\b/i.test(body);
+  const l3 = l2 && /##\s*Quality Checks/i.test(body) && /##\s*Anti-Patterns/i.test(body);
+  return l3 ? 3 : l2 ? 2 : 1;
+}
+async function handleBadge(url) {
+  const repo = url.searchParams.get('repo') || '';
+  const m = repo.match(/^([\w.-]+)\/([\w.-]+)$/);
+  const shield = (message, color) => new Response(JSON.stringify({ schemaVersion: 1, label: 'SkillSpec', message, color }),
+    { headers: { 'content-type': 'application/json', 'cache-control': 'public, s-maxage=21600, max-age=3600', ...CORS } });
+  if (!m) return shield('bad repo param', 'lightgrey');
+  const [, owner, name] = m;
+  try {
+    const gh = { headers: { 'User-Agent': 'pm-skills-badge', Accept: 'application/vnd.github+json' } };
+    const ref = url.searchParams.get('ref') || (await (await fetch(`https://api.github.com/repos/${owner}/${name}`, gh)).json()).default_branch;
+    const tree = await (await fetch(`https://api.github.com/repos/${owner}/${name}/git/trees/${encodeURIComponent(ref)}?recursive=1`, gh)).json();
+    const paths = (tree.tree || []).filter((e) => e.type === 'blob' && (e.path.endsWith('/SKILL.md') || e.path === 'SKILL.md')).map((e) => e.path).slice(0, 20);
+    if (!paths.length) return shield('no skills found', 'lightgrey');
+    const levels = await Promise.all(paths.map(async (p) => {
+      try { const r = await fetch(`https://raw.githubusercontent.com/${owner}/${name}/${ref}/${p}`); return r.ok ? gradeSkill(await r.text()) : 0; }
+      catch { return 0; }
+    }));
+    const min = Math.min(...levels);
+    const label = ['not loadable', 'L1 Loadable', 'L2 Structured', 'L3 Trustworthy'][min];
+    const color = ['red', 'yellow', 'green', 'brightgreen'][min];
+    const suffix = paths.length >= 20 ? '20+ skills' : `${paths.length} skill${paths.length === 1 ? '' : 's'}`;
+    return shield(`${label} \u00b7 ${suffix}`, color);
+  } catch (e) {
+    return shield('unavailable', 'lightgrey');
+  }
+}
+
 export default {
   async fetch(request, env) {
     if (request.method === 'OPTIONS') return new Response(null, { headers: CORS });
@@ -452,6 +495,15 @@ export default {
     // A2A: standard discovery card + minimal message/send endpoint (see handleA2A).
     if (url.pathname === '/.well-known/agent-card.json' && (request.method === 'GET' || request.method === 'HEAD')) {
       return jsonResponse(AGENT_CARD);
+    }
+    if (url.pathname === '/badge' && (request.method === 'GET' || request.method === 'HEAD')) {
+      const key = new Request(url.toString());
+      const cache = caches.default;
+      const hit = await cache.match(key);
+      if (hit) return hit;
+      const res = await handleBadge(url);
+      try { await cache.put(key, res.clone()); } catch { /* cache is best-effort */ }
+      return res;
     }
     if (url.pathname === '/a2a') {
       if (request.method === 'POST') return handleA2A(request);
