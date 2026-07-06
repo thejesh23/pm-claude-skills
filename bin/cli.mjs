@@ -246,6 +246,9 @@ Usage:
   npx pm-claude-skills add --agent <claude|hermes|codex|openclaw|cursor|windsurf|aider> [--target <path>] [--link] [--dry-run]
   npx pm-claude-skills run <skill> [--text "…" | --input <file>] [--model <m>] [--out <file>]
   npx pm-claude-skills search [query…] [--json] [--limit <n>]
+  npx pm-claude-skills install <owner/repo>   # install skills from ANY GitHub repo — security-scanned + SkillSpec-graded
+  npx pm-claude-skills chain <workflow>       # run a whole multi-skill pipeline (chain --list to see them)
+  npx pm-claude-skills init        # scaffold the professional workspace here (brain/, context, arena folders)
   npx pm-claude-skills doctor      # checkup: what's installed, what's stale, what to fix (read-only)
   npx pm-claude-skills list
   npx pm-claude-skills --version
@@ -261,6 +264,8 @@ Examples:
 
   npx pm-claude-skills run prd-template --text "a referral program for B2B users"   # run a skill (needs ANTHROPIC_API_KEY)
   cat notes.txt | npx pm-claude-skills run meeting-notes --out summary.md           # pipe input, write the artifact
+  cat notes.txt | npx pm-claude-skills chain run-discovery --deck                   # notes → 4 artifacts + a real .pptx
+  npx pm-claude-skills install acme/their-skills --dry-run                          # audit a third-party skill repo
   npx pm-claude-skills generate --from <url|file>   # turn your docs into a SKILL.md (needs ANTHROPIC_API_KEY)
 
 ${STAR}
@@ -269,10 +274,25 @@ ${STAR}
 const opts = parse(process.argv.slice(2));
 const cmd = opts._[0];
 if (opts.version) console.log(VERSION);
-else if (!cmd || cmd === 'help' || (opts.help && cmd !== 'run' && cmd !== 'generate')) console.log(HELP);
+else if (!cmd || cmd === 'help' || (opts.help && !['run', 'generate', 'install', 'chain', 'init'].includes(cmd))) console.log(HELP);
 else if (cmd === 'list') list();
 else if (cmd === 'search') search(opts);
 else if (cmd === 'add') add(opts);
+else if (cmd === 'init') {
+  const { run } = await import('./init.mjs');
+  try { process.exit(await run(process.argv.slice(3))); }
+  catch (e) { console.error(`Error: ${e.message}`); process.exit(1); }
+}
+else if (cmd === 'chain') {
+  const { run } = await import('./chain.mjs');
+  try { process.exit(await run(process.argv.slice(3))); }
+  catch (e) { console.error(`Error: ${e.message}`); process.exit(1); }
+}
+else if (cmd === 'install') {
+  const { run } = await import('./install.mjs');
+  try { process.exit(await run(process.argv.slice(3))); }
+  catch (e) { console.error(`Error: ${e.message}`); process.exit(1); }
+}
 else if (cmd === 'doctor') {
   const { run } = await import('./doctor.mjs');
   try { process.exit(await run()); }
