@@ -1,0 +1,14 @@
+# pre-commit hooks published by this repo (https://pre-commit.com).
+# Usage in YOUR repo's .pre-commit-config.yaml:
+#   repos:
+#     - repo: https://github.com/mohitagw15856/pm-claude-skills
+#       rev: <tag>
+#       hooks:
+#         - id: skillspec
+- id: skillspec
+  name: skillspec (SKILL.md lint)
+  description: Validate Agent Skills against SkillSpec — conformance levels + security scan.
+  entry: node skillspec/cli.mjs
+  language: node
+  files: (^|/)SKILL\.md$
+  pass_filenames: true

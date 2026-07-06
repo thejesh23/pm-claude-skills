@@ -79,7 +79,7 @@ async function validateLive(s) {
   if (!desc) errs.push(`${s.name}: frontmatter missing description`);
   const body = fm[2] || '';
   // Conformance level (informational)
-  const hasL2 = /##\s*(What This Skill Produces|Required Inputs)/i.test(body) && /##\s*Output/i.test(body);
+  const hasL2 = /##\s*(What This Skill Produces|Required Inputs|Input)/i.test(body) && /##\s*(Output|Deliverable)|##[^\n]*\b(Template|Structure|Format)\b/i.test(body);
   const hasL3 = hasL2 && /##\s*Quality Checks/i.test(body) && /##\s*Anti-Patterns/i.test(body);
   console.log(`  ${s.name}: SkillSpec ${hasL3 ? 'L3 Trustworthy' : hasL2 ? 'L2 Structured' : 'L1 Loadable'} (${Math.round(text.length / 1024)} KB)`);
   for (const [re, why] of BANNED) if (re.test(text)) errs.push(`${s.name}: SECURITY — ${why}`);

@@ -1,0 +1,28 @@
+name: Publish skillspec-check to npm
+
+# Publishes the standalone SkillSpec validator (skillspec/ subpackage) to npm.
+# Manual dispatch only — it versions independently of the main package; bump
+# skillspec/package.json before dispatching. Reuses the same NPM_TOKEN secret.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write   # npm provenance
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Self-test on the curated library
+        run: node skillspec/cli.mjs skills/ | tail -1
+      - name: Publish (public, with provenance)
+        working-directory: skillspec
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
