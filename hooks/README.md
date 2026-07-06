@@ -41,3 +41,7 @@ Hooks run **on your machine with your permissions** — treat them like any shel
 - **`Stop`** — append a one-line summary of what changed to a session log.
 
 Learn more in the [Claude Code hooks docs](https://code.claude.com/docs/en/hooks).
+
+## ☀️ chief-of-staff.sh — the morning brief (SessionStart)
+
+Opens every session with this project's professional state: **predictions due for settling** (from `brain/predictions/`), the **latest Firm minutes / Boardroom verdicts** (so you revise documents with their verdicts in mind), and the brain's **open hypotheses**. Pure file reads, zero API cost, prints nothing when there's nothing to say. Pairs with `npx pm-claude-skills init`.

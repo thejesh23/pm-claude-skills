@@ -249,6 +249,8 @@ Usage:
   npx pm-claude-skills install <owner/repo>   # install skills from ANY GitHub repo — security-scanned + SkillSpec-graded
   npx pm-claude-skills verify                 # integrity check: detect drift in anything "install" brought in
   npx pm-claude-skills chain <workflow>       # run a whole multi-skill pipeline (chain --list to see them)
+  npx pm-claude-skills council <skill>        # author -> cross-vendor critique -> arbiter (2+ provider keys)
+  npx pm-claude-skills migrate <dir>          # convert a folder of prompts/SOPs into SkillSpec skills
   npx pm-claude-skills init        # scaffold the professional workspace here (brain/, context, arena folders)
   npx pm-claude-skills reckoning   # your prediction ledger: due calls, hit rate, calibration curve, Brier score
   npx pm-claude-skills doctor      # checkup: what's installed, what's stale, what to fix (read-only)
@@ -276,10 +278,20 @@ ${STAR}
 const opts = parse(process.argv.slice(2));
 const cmd = opts._[0];
 if (opts.version) console.log(VERSION);
-else if (!cmd || cmd === 'help' || (opts.help && !['run', 'generate', 'install', 'chain', 'init', 'reckoning'].includes(cmd))) console.log(HELP);
+else if (!cmd || cmd === 'help' || (opts.help && !['run', 'generate', 'install', 'chain', 'init', 'reckoning', 'council', 'migrate'].includes(cmd))) console.log(HELP);
 else if (cmd === 'list') list();
 else if (cmd === 'search') search(opts);
 else if (cmd === 'add') add(opts);
+else if (cmd === 'migrate') {
+  const { run } = await import('./migrate.mjs');
+  try { process.exit(await run(process.argv.slice(3))); }
+  catch (e) { console.error(`Error: ${e.message}`); process.exit(1); }
+}
+else if (cmd === 'council') {
+  const { run } = await import('./council.mjs');
+  try { process.exit(await run(process.argv.slice(3))); }
+  catch (e) { console.error(`Error: ${e.message}`); process.exit(1); }
+}
 else if (cmd === 'verify') {
   const { run } = await import('./verify.mjs');
   try { process.exit(await run(process.argv.slice(3))); }
