@@ -83,6 +83,16 @@
     var f = await (await dir.getFileHandle(parts[parts.length - 1])).getFile();
     return f.text();
   }
+  // List file names in a relative directory (returns [] if the path doesn't exist).
+  async function list(relDir) {
+    if (!handle) throw new Error('No workspace connected');
+    var dir = handle;
+    try { for (var p of relDir.split('/').filter(Boolean)) dir = await dir.getDirectoryHandle(p); }
+    catch (e) { return []; }
+    var names = [];
+    for await (var entry of dir.values()) if (entry.kind === 'file') names.push(entry.name);
+    return names.sort();
+  }
 
   // ── The standard UI chip: connect / connected-as / grant ───────────────────
   // Pages call PMWorkspace.chip(container, onChange?) and get a self-managing control.
@@ -119,5 +129,5 @@
   var today = function () { return new Date().toISOString().slice(0, 10); };
 
   g.PMWorkspace = { supported: supported, connect: connect, restore: restore, connected: connected,
-    disconnect: disconnect, write: write, read: read, chip: chip, slug: slug, today: today };
+    disconnect: disconnect, write: write, read: read, list: list, chip: chip, slug: slug, today: today };
 })(window);
