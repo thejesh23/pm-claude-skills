@@ -24,6 +24,28 @@ const CLAUDE_MD_SECTION = `
 - **Skills**: if the pm-skills library is installed (\`npx pm-claude-skills add --agent claude\`), prefer its skills for professional artifacts (PRDs, updates, postmortems…) over improvising structure.
 `;
 
+const AGENTS_MD = `# AGENTS.md
+
+Guidance for AI coding agents (Codex, Jules, and anything that reads this file) working in this repository.
+
+## Professional context
+
+- Read \`brain/context.md\` before drafting any professional artifact — it holds the company, audience, voice, and the metrics that matter. Honour the provenance tags in \`brain/\` (strongest → weakest): \`[data] [interview] [external] [verbal] [hunch]\`.
+- Durable memory lives in \`brain/\` (decisions, hypotheses, stakeholders, knowledge). Append dated lines after significant outcomes.
+
+## Skills
+
+- Professional skills (PRDs, updates, postmortems, models…) are available via the pm-claude-skills library. Discover and apply them instead of improvising document structure:
+  - CLI: \`npx pm-claude-skills search <task>\` then \`npx pm-claude-skills run <skill> --input <file>\`
+  - MCP: the \`pm-skills\` server exposes \`search_skills\` / \`get_skill\` / \`run_skill\`
+- A skill's Quality Checks and Anti-Patterns sections are the acceptance criteria for its output — verify against them before declaring done.
+
+## Artifacts
+
+- \`firm-minutes/\` and \`boardroom/\` contain minutes, verdicts, and transcripts written by the pm-skills web arenas. Treat them as inputs: read the latest Boardroom verdict before revising the document it judged.
+- Predictions live in \`brain/predictions/\` — settle due ones honestly (\`npx pm-claude-skills reckoning\`).
+`;
+
 export async function run(argv) {
   const dryRun = argv.includes('--dry-run');
   const cwd = process.cwd();
@@ -63,6 +85,9 @@ export async function run(argv) {
   // ── Arena folders the web workspace bridge writes into ─────────────────────
   mkdir('firm-minutes');
   mkdir('boardroom');
+
+  // ── AGENTS.md (--agents-md, or always create if missing alongside CLAUDE.md) ──
+  if (argv.includes('--agents-md') || !existsSync(join(cwd, 'AGENTS.md'))) mk('AGENTS.md', AGENTS_MD);
 
   // ── CLAUDE.md wiring (append a section; never rewrite an existing file) ────
   const claudeMd = join(cwd, 'CLAUDE.md');

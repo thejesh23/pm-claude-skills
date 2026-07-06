@@ -37,3 +37,16 @@ Skills with a formal `## Execution` block (`sprint-planning`, `stakeholder-updat
 - **Verbatim means verbatim.** What was approved is what ships — no silent edits between approval and delivery.
 - **Verify and link back.** After delivery, fetch the created page/issue/message and report its URL; a claimed delivery without a link didn't happen.
 - **Least tools.** Load only the MCP servers a workflow needs; a skill that files Notion pages has no business seeing your email.
+
+
+## Every protocol, one library
+
+The skills are reachable from every agent convention in the wild — pick whichever your stack speaks:
+
+| Protocol | How |
+|---|---|
+| **MCP** (Claude Desktop/Code, Cursor, ChatGPT…) | `claude mcp add pm-skills -- npx -y pm-claude-skills-mcp`, or the hosted URL as a connector. Includes `run_skill` via **MCP sampling** (zero API key). |
+| **A2A** (Google agent ecosystem) | Discovery card at `https://pm-skills-mcp.pm-claude-skills.workers.dev/.well-known/agent-card.json`; JSON-RPC `message/send` at `/a2a`. |
+| **AGENTS.md** (Codex, Jules, et al.) | `npx pm-claude-skills init` writes an AGENTS.md wiring the brain, the skills, and the arena artifacts for any agent that reads the convention. |
+| **Function calling** (OpenAI SDK, Vercel AI SDK, LangChain) | `npm i pm-skills-tools` — the library as typed tools with pick()/search(). |
+| **REST** (n8n, Make, Lovable, anything HTTP) | `GET /v1/skills`, `/v1/search`, `/v1/community` on the hosted worker. |
