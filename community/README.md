@@ -40,6 +40,15 @@ Over MCP, `search_skills` results include community entries marked `community: t
 - **Namespace = your GitHub handle.** Verified by CI against the repo owner; org repos may use the org name.
 - Duplicate-ish skills are fine (competition is good); typosquatting curated skill names is not.
 
+## 🔏 Trust & integrity — the full chain
+
+Four layers, all verifiable, none requiring you to trust us:
+
+1. **Security scan** — every registry entry (and everything `pm-claude-skills install` fetches from *any* repo) is checked against the banned patterns: prompt-injection phrasing, unvetted network calls, data-exfiltration instructions, embedded credentials. Flagged = never installed.
+2. **Content pinning** — add `"sha256": "sha256:<hash of your SKILL.md>"` to your registry entry (`shasum -a 256 SKILL.md`) and CI verifies the fetched file matches it exactly, forever. Pin + a tag `ref` = your consumers can't be served something you didn't publish. Unpinned entries get a warning.
+3. **Install lockfile** — the installer records the hash of every installed file in `.pm-skills-lock.json`; `npx pm-claude-skills verify` detects any post-install drift or tampering before an agent runs it.
+4. **Package provenance** — the npm packages publish with [provenance](https://docs.npmjs.com/generating-provenance-statements) (sigstore-backed "built from this repo by this workflow" attestations, verifiable with `npm audit signatures`).
+
 ## 🪑 Packs — benches & scenarios (the low-bar contribution)
 
 Beyond skills, the registry accepts **packs** — JSON character content for the arenas:

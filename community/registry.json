@@ -7,7 +7,8 @@
       "description": "Pitch yourself as a podcast guest \u2014 a host-first email that shows you know the show, three episode-ready angles, and the proof you can talk. Produces the pitch email, angles with talking points, and a speaker one-sheet.",
       "repo": "https://github.com/mohitagw15856/skill-podcast-guest-pitch",
       "path": "skills/podcast-guest-pitch/SKILL.md",
-      "ref": "main"
+      "ref": "main",
+      "sha256": "sha256:473cbad27572359a2db261dcb9db8cad5bd7e2fa179944a16a3e8ee0e11454a4"
     }
   ],
   "packs": []

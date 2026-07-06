@@ -9,7 +9,8 @@
 //
 // Pure Node ≥18 (global fetch), no dependencies, GitHub API unauthenticated
 // (60 req/h is plenty: 2 API calls + 1 raw fetch per file).
-import { readdirSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { readdirSync, existsSync, mkdirSync, writeFileSync, readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { homedir } from 'node:os';
@@ -56,7 +57,7 @@ function specLevel(text) {
   const hasDesc = /^description:/m.test(fm[1]);
   if (!name || !hasDesc) return { level: 0, name };
   const body = fm[2] || '';
-  const l2 = /##\s*(What This Skill Produces|Required Inputs)/i.test(body) && /##\s*Output/i.test(body);
+  const l2 = /##\s*(What This Skill Produces|Required Inputs|Input)/i.test(body) && /##\s*(Output|Deliverable)|##[^\n]*\b(Template|Structure|Format)\b/i.test(body);
   const l3 = l2 && /##\s*Quality Checks/i.test(body) && /##\s*Anti-Patterns/i.test(body);
   return { level: l3 ? 3 : l2 ? 2 : 1, name };
 }
@@ -106,6 +107,10 @@ What happens:
   if (!skillDirs.length) { console.error('No SKILL.md files found in this repo.'); return 1; }
 
   const curated = existsSync(join(PKG_ROOT, 'skills')) ? new Set(readdirSync(join(PKG_ROOT, 'skills'))) : new Set();
+  const lockPath = join(target, '.pm-skills-lock.json');
+  let lock = { spec: 'pm-skills-lock/1', skills: {} };
+  try { if (existsSync(lockPath)) lock = JSON.parse(readFileSync(lockPath, 'utf8')); } catch { /* rebuild */ }
+  lock.skills = lock.skills || {};
   const results = [];
 
   for (const dir of skillDirs.sort()) {
@@ -158,11 +163,17 @@ What happens:
       mkdirSync(dirname(p), { recursive: true });
       writeFileSync(p, f.content);
     }
+    // Integrity lockfile: record the hash of every installed file, so `verify`
+    // can detect drift/tampering later.
+    lock.skills[r.name] = { repo: `${owner}/${repo}`, ref, installedAt: new Date().toISOString().slice(0, 10),
+      files: Object.fromEntries(r.files.map((f) => [f.path, 'sha256:' + createHash('sha256').update(f.content).digest('hex')])) };
     installed++;
     console.error(`  ✔ ${head} → ${dest}`);
   }
 
+  if (installed && !dryRun) writeFileSync(lockPath, JSON.stringify(lock, null, 2) + '\n');
   console.error(`\n${dryRun ? '[dry-run] Would install' : 'Installed'} ${installed} · blocked ${blocked} · skipped ${skipped}  (agent: ${agent})`);
+  if (installed && !dryRun) console.error(`Integrity hashes recorded in ${lockPath} — check later with: pm-claude-skills verify`);
   if (installed && !dryRun) console.error(`Restart ${agent} to pick up the new skills.\n\n${STAR}`);
   return blocked && !installed ? 1 : 0;
 }

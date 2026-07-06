@@ -7,6 +7,7 @@
 //   node scripts/check-registry.mjs            # structural only, no network
 //   node scripts/check-registry.mjs --fetch    # + fetch and validate each skill
 import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -59,6 +60,7 @@ for (const s of reg.skills || []) {
   }
   if (!s.path || !s.path.endsWith('SKILL.md')) errors.push(`${tag}: path must point at a SKILL.md`);
   if (!s.ref) warnings.push(`${tag}: no ref — defaulting consumers to main; a tag is more stable`);
+  if (!s.sha256) warnings.push(`${tag}: no sha256 pin — consumers get whatever the ref serves; pin with: shasum -a 256 SKILL.md`);
   if (!s.description || s.description.length < 30) warnings.push(`${tag}: description missing/short — copy the frontmatter description`);
 }
 
@@ -70,6 +72,11 @@ async function validateLive(s) {
   if (!res.ok) return [`${s.name}: fetch failed (${res.status}) — ${url}`];
   const text = await res.text();
   const errs = [];
+  // Content pinning: if the entry declares sha256, the fetched file must match it exactly.
+  if (s.sha256) {
+    const actual = createHash('sha256').update(text).digest('hex');
+    if (actual !== s.sha256.replace(/^sha256:/, '')) errs.push(`${s.name}: INTEGRITY — fetched content does not match the pinned sha256 (expected ${s.sha256.slice(0, 19)}…, got sha256:${actual.slice(0, 12)}…)`);
+  }
   const fm = text.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
   if (!fm) return [`${s.name}: no YAML frontmatter — fails SkillSpec L1`];
   const name = (fm[1].match(/^name:\s*["']?([\w-]+)["']?\s*$/m) || [])[1];
@@ -91,8 +98,13 @@ async function validateLivePack(pk) {
   const url = `https://raw.githubusercontent.com/${owner}/${repo}/${pk.ref || 'main'}/${pk.path}`;
   const res = await fetch(url);
   if (!res.ok) return [`${pk.name}: fetch failed (${res.status})`];
-  let j; try { j = JSON.parse(await res.text()); } catch { return [`${pk.name}: pack is not valid JSON`]; }
+  const rawText = await res.text();
+  let j; try { j = JSON.parse(rawText); } catch { return [`${pk.name}: pack is not valid JSON`]; }
   const errs = [];
+  if (pk.sha256) {
+    const actual = createHash('sha256').update(rawText).digest('hex');
+    if (actual !== pk.sha256.replace(/^sha256:/, '')) errs.push(`${pk.name}: INTEGRITY — fetched pack does not match the pinned sha256`);
+  }
   if (pk.type === 'bench') {
     const ex = j.executives || [];
     if (ex.length < 2 || ex.length > 8) errs.push(`${pk.name}: bench needs 2-8 executives`);
