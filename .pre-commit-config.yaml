@@ -1,0 +1,16 @@
+# This repo runs the hooks it publishes — the standard applies to us first.
+repos:
+  - repo: local
+    hooks:
+      - id: skillspec
+        name: skillspec (SKILL.md lint — the published hook, run from source)
+        entry: node skillspec/cli.mjs
+        language: node
+        files: (^|/)SKILL\.md$
+        pass_filenames: true
+      - id: skillcheck
+        name: skillcheck (house authoring standard)
+        entry: node scripts/skillcheck.mjs
+        language: node
+        files: ^skills/.*SKILL\.md$
+        pass_filenames: false

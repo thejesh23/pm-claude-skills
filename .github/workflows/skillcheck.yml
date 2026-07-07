@@ -32,3 +32,5 @@ jobs:
 
       - name: Run SkillCheck
         run: node scripts/skillcheck.mjs
+      - name: SkillSpec conformance gate (dogfooding the published validator)
+        run: node skillspec/cli.mjs skills/ --min-level 3

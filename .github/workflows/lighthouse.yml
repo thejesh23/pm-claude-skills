@@ -1,0 +1,36 @@
+name: Lighthouse
+
+# Performance + accessibility budgets for the playground. Runs weekly and on
+# demand (not per-push — Lighthouse is slow and page weight changes rarely).
+# Budgets are floors, not vanity: a11y is the hard gate.
+on:
+  schedule:
+    - cron: '7 4 * * 2'   # Tuesdays
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Build generated pages
+        run: node web/build-skills.mjs
+      - name: Lighthouse with budgets
+        run: |
+          npx -y serve web -l 8123 &
+          sleep 3
+          npx -y @lhci/cli@0.14.x autorun \
+            --collect.url=http://localhost:8123/index.html \
+            --collect.url=http://localhost:8123/handbook.html \
+            --collect.url=http://localhost:8123/boardroom.html \
+            --collect.url=http://localhost:8123/academy.html \
+            --collect.numberOfRuns=1 \
+            --assert.assertions.categories:accessibility=error:0.9 \
+            --assert.assertions.categories:performance=warn:0.7 \
+            --assert.assertions.categories:best-practices=warn:0.9 \
+            --upload.target=temporary-public-storage
