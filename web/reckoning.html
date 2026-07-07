@@ -59,6 +59,9 @@
 
   <div id="dueWrap"><h2>🔔 Due — settle these</h2><div id="dueList"></div></div>
   <div id="openWrap"><h2>⏳ Open</h2><div id="openList"></div></div>
+  <h2>☄️ The orrery — your open calls in orbit</h2>
+  <canvas id="orrery" width="660" height="300" style="width:100%;max-width:660px;border:1px solid var(--border);border-radius:13px;background:radial-gradient(ellipse at center,#0d1020,#07080d 70%)"></canvas>
+  <p class="hint">Each planet is an open prediction — orbits shrink as the due date approaches; at the sun, it's due. Green stars: settled hits. Red streaks: misses.</p>
   <h2>📈 Your calibration curve</h2>
   <canvas id="curve" width="660" height="300"></canvas>
   <p class="hint">Each dot: predictions where you said X% (bucket) vs how often they actually hit. On the dashed line = perfectly calibrated. Above = underconfident; below = overconfident. Brier score: 0 is an oracle, 0.25 is coin-flip guessing.</p>
@@ -171,8 +174,55 @@ function drawCurve(scored){
   }
 }
 
+// ── ☄️ The orrery ─────────────────────────────────────────────────────────────
+function drawOrrery(){
+  const c=el('orrery'); if(!c) return;
+  const x=c.getContext('2d'), W=c.width, H=c.height, cx=W/2, cy=H/2;
+  const A=all(), now=Date.now(), t=now*0.001;
+  x.clearRect(0,0,W,H);
+  // the sun: today
+  const sg=x.createRadialGradient(cx,cy,2,cx,cy,26);
+  sg.addColorStop(0,'#ffe9b0'); sg.addColorStop(0.4,'rgba(217,119,87,.85)'); sg.addColorStop(1,'rgba(217,119,87,0)');
+  x.fillStyle=sg; x.beginPath(); x.arc(cx,cy,26,0,7); x.fill();
+  x.fillStyle='#95a0b0'; x.font='9.5px system-ui'; x.textAlign='center'; x.fillText('today',cx,cy+34);
+  const open=A.filter(p=>p.status==='pending');
+  const maxDays=90;
+  open.forEach((p,i)=>{
+    const due=p.due? (new Date(p.due).getTime()-now)/86400000 : maxDays;
+    const days=Math.max(0,Math.min(maxDays,due));
+    const r=30+ (days/maxDays)*(Math.min(cx,cy)-46);
+    x.strokeStyle='rgba(120,140,180,.16)'; x.beginPath(); x.ellipse(cx,cy,r,r*0.62,0,0,7); x.stroke();
+    const a=t*(0.25+0.06*(i%5))+i*1.7;
+    const px=cx+Math.cos(a)*r, py=cy+Math.sin(a)*r*0.62;
+    const overdue=p.due&&p.due<=today();
+    const size=4+((p.conf||60)-50)/12;
+    const g=x.createRadialGradient(px,py,0,px,py,size*2.4);
+    const col=overdue?'255,120,80':'110,180,255';
+    g.addColorStop(0,'rgba('+col+',1)'); g.addColorStop(1,'rgba('+col+',0)');
+    x.fillStyle=g; x.beginPath(); x.arc(px,py,size*2.4,0,7); x.fill();
+    x.fillStyle='#e7ebf0'; x.font='9px system-ui';
+    if(i<6) x.fillText(String(p.text).slice(0,22),px,py-size*2.6);
+  });
+  // settled: hits as a constellation ring, misses as fading streaks (bottom corners)
+  const scored=A.filter(p=>p.status!=='pending');
+  scored.slice(-24).forEach((p,i)=>{
+    if(p.status==='hit'){
+      const a=i*0.5+t*0.05, R=Math.min(cx,cy)-14;
+      const px=cx+Math.cos(a)*R, py=cy+Math.sin(a)*R*0.72;
+      x.fillStyle='rgba(90,209,154,'+(0.5+0.4*Math.sin(t*2+i))+')';
+      x.beginPath(); x.arc(px,py,2.2,0,7); x.fill();
+    } else {
+      const px=40+i*24, py=H-14;
+      x.strokeStyle='rgba(229,83,75,.5)'; x.lineWidth=1.5;
+      x.beginPath(); x.moveTo(px,py); x.lineTo(px+10,py-7); x.stroke();
+    }
+  });
+  requestAnimationFrame(drawOrrery);
+}
+
 if(window.PMWorkspace) PMWorkspace.chip(el('wsChip'));
 render();
+drawOrrery();
 if(window.pmTrack) pmTrack('reckoning/open');
 </script>
 <script src="i18n.js"></script>
