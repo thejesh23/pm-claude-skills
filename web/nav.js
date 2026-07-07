@@ -89,6 +89,7 @@
       ['city.html', '🌃 Skill City'],
       ['trophy.html', '🏆 Trophy Forge'],
       ['galaxy.html', '🗺 Galaxy (2D)'],
+      ['status.html', '📈 Vitals'],
       ['guide.html', '📖 Guide'],
       ['community.html', '💬 Community'],
       // External (GitHub doc): a 3rd truthy element renders it as a new-tab link.
@@ -186,5 +187,16 @@
       setLangIcon();
     });
     nav.appendChild(lt);
+  }
+})();
+
+// ── PWA: manifest + offline service worker (registered from every page) ──────
+(function () {
+  if (!document.querySelector('link[rel="manifest"]')) {
+    var l = document.createElement('link'); l.rel = 'manifest'; l.href = 'manifest.json';
+    document.head.appendChild(l);
+  }
+  if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+    navigator.serviceWorker.register('sw.js').catch(function () {});
   }
 })();
