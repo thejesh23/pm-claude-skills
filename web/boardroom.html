@@ -330,7 +330,7 @@ async function shareReplay(){
   const frag=await gz(JSON.stringify(payload));
   const url=location.origin+location.pathname+'#replay='+frag;
   if(url.length>28000) return setStatus('Session too large to fit in a link — download the transcript instead.',true);
-  try{ await navigator.clipboard.writeText(url); setStatus('Replay link copied ('+Math.round(url.length/1024)+' KB) — anyone can watch, no key needed.'); }
+  try{ await navigator.clipboard.writeText(url); setStatus('Replay link copied ('+Math.round(url.length/1024)+' KB) — anyone can watch, no key needed. 🎬 Or watch it in 3D: stage.html'); }
   catch(_){ setStatus(url.slice(0,80)+'…',false); }
   if(window.pmTrack) pmTrack('boardroom/share-replay');
 }
