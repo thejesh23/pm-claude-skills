@@ -11,5 +11,30 @@
       "sha256": "sha256:473cbad27572359a2db261dcb9db8cad5bd7e2fa179944a16a3e8ee0e11454a4"
     }
   ],
-  "packs": []
+  "packs": [
+    {
+      "name": "mohitagw15856/legal-bench",
+      "type": "bench",
+      "repo": "https://github.com/mohitagw15856/pm-claude-skills",
+      "path": "packs/legal-bench.json",
+      "ref": "main",
+      "sha256": "sha256:d9a6736102c397f341191dfa09db8bc03ecff2904df7df3eaeb098f2c8dab709"
+    },
+    {
+      "name": "mohitagw15856/edtech-bench",
+      "type": "bench",
+      "repo": "https://github.com/mohitagw15856/pm-claude-skills",
+      "path": "packs/edtech-bench.json",
+      "ref": "main",
+      "sha256": "sha256:2bf7c00220b4ba2578a48d746efb16a0229c8936ecbf287e4d68c44ab6373dff"
+    },
+    {
+      "name": "mohitagw15856/acquisition-scenario",
+      "type": "scenario",
+      "repo": "https://github.com/mohitagw15856/pm-claude-skills",
+      "path": "packs/acquisition-scenario.json",
+      "ref": "main",
+      "sha256": "sha256:f9ae55dcf83a2ec17cd7dbbe40b27615be31ad3e5408ce49543e7ed4ac71e27f"
+    }
+  ]
 }
