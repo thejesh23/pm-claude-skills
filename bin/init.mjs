@@ -13,7 +13,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const PKG_ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
-const STAR = '⭐ Find this useful? Star the repo: https://github.com/mohitagw15856/pm-claude-skills';
+const STAR = '⭐ Find this useful? Star the repo: https://github.com/mohitagw15856/pm-claude-skills\n💛 The free playground runs are sponsor-funded — fund more: https://github.com/sponsors/mohitagw15856';
 
 const CLAUDE_MD_SECTION = `
 ## PM Skills — this project's professional setup

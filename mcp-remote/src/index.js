@@ -419,7 +419,7 @@ async function tryStats(url, env) {
     { headers: { 'content-type': 'application/json', 'cache-control': 'public, s-maxage=300, max-age=300', ...CORS } });
 }
 function tryStatus(env) {
-  return jsonResponse({ enabled: tryConfigured(env), perIpPerDay: TRY.perIpPerDay, model: 'Claude Haiku', note: tryConfigured(env) ? 'A few free Claude runs per day, on the house. Bring your own key for more.' : 'Free Claude trial not configured on this deployment.' });
+  return jsonResponse({ enabled: tryConfigured(env), perIpPerDay: TRY.perIpPerDay, model: 'Claude Haiku', note: tryConfigured(env) ? 'A few free Claude runs per day, sponsor-funded. Bring your own key for more — or fund runs for everyone: https://github.com/sponsors/mohitagw15856' : 'Free Claude trial not configured on this deployment.' });
 }
 async function handleTry(request, env) {
   if (!tryConfigured(env)) return jsonResponse({ error: 'disabled', message: 'Free Claude trial is not enabled here. Use the free Gemini key or your own key.' }, 503);
@@ -428,8 +428,8 @@ async function handleTry(request, env) {
   const day = new Date().toISOString().slice(0, 10);
   const ipKey = `try:ip:${day}:${ip}`, globalKey = `try:global:${day}`;
   const [ipN, globalN] = await Promise.all([env.TRY_KV.get(ipKey), env.TRY_KV.get(globalKey)]);
-  if (+(globalN || 0) >= TRY.globalPerDay) return jsonResponse({ error: 'global_cap', message: "The free Claude trial has hit today's shared limit. Grab a free Gemini key (no card) — it's unlimited." }, 429);
-  if (+(ipN || 0) >= TRY.perIpPerDay) return jsonResponse({ error: 'ip_cap', message: `That's your ${TRY.perIpPerDay} free Claude runs for today. Add a free Gemini key or your own key to keep going.` }, 429);
+  if (+(globalN || 0) >= TRY.globalPerDay) return jsonResponse({ error: 'global_cap', message: "The free Claude trial hit today's shared limit — the free runs are sponsor-funded. Grab a free Gemini key (no card), or help raise the cap: https://github.com/sponsors/mohitagw15856" }, 429);
+  if (+(ipN || 0) >= TRY.perIpPerDay) return jsonResponse({ error: 'ip_cap', message: `That's your ${TRY.perIpPerDay} free Claude runs today — they're sponsor-funded. Add a free Gemini key to keep going, or fund more runs for everyone: https://github.com/sponsors/mohitagw15856` }, 429);
 
   let payload;
   try { payload = await request.json(); } catch { return jsonResponse({ error: 'bad_json' }, 400); }

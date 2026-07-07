@@ -19,7 +19,7 @@ import { homedir } from 'node:os';
 import { createRequire } from 'node:module';
 
 const PKG_ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
-const STAR = '⭐ Find this useful? Star the repo: https://github.com/mohitagw15856/pm-claude-skills';
+const STAR = '⭐ Find this useful? Star the repo: https://github.com/mohitagw15856/pm-claude-skills\n💛 The free playground runs are sponsor-funded — fund more: https://github.com/sponsors/mohitagw15856';
 const VERSION = (() => {
   try { return createRequire(import.meta.url)('../package.json').version; } catch { return '0.0.0'; }
 })();

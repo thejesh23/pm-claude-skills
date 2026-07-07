@@ -11,6 +11,9 @@
 [![Smithery](https://smithery.ai/badge/mohit15856/pm-skills)](https://smithery.ai/servers/mohit15856/pm-skills)
 [![Skills](https://img.shields.io/badge/skills-454-blue)](https://github.com/mohitagw15856/pm-claude-skills)
 [![Free runs served](https://img.shields.io/endpoint?url=https%3A%2F%2Fpm-skills-mcp.pm-claude-skills.workers.dev%2Ftry%2Fstats&cacheSeconds=300)](https://mohitagw15856.github.io/pm-claude-skills/)
+[![Sponsor](https://img.shields.io/badge/💛_sponsors_fund_the_free_runs-ea4aaa)](https://github.com/sponsors/mohitagw15856)
+
+> 💛 **The free runs are sponsor-funded.** Every sponsor dollar visibly raises the daily cap on the counter above — and sponsors get [naming rights, not influence](docs/SPONSORSHIP.md): your name in this README, your logo on the playground, or **a Boardroom bench carrying your company's name**. → [Become a sponsor](https://github.com/sponsors/mohitagw15856)
 [![eval](https://img.shields.io/badge/eval--scored-208%20%C2%B7%20avg%204.8%2F5-brightgreen)](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)
 [![Subagents](https://img.shields.io/badge/subagents-4-blueviolet)](agents/)
 [![Commands](https://img.shields.io/badge/slash%20commands-21-blueviolet)](commands/)

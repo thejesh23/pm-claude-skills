@@ -16,7 +16,7 @@ import { fileURLToPath } from 'node:url';
 import { homedir } from 'node:os';
 
 const PKG_ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
-const STAR = '⭐ Find this useful? Star the repo: https://github.com/mohitagw15856/pm-claude-skills';
+const STAR = '⭐ Find this useful? Star the repo: https://github.com/mohitagw15856/pm-claude-skills\n💛 The free playground runs are sponsor-funded — fund more: https://github.com/sponsors/mohitagw15856';
 
 const AGENT_DIRS = {
   claude: join(homedir(), '.claude', 'skills'),

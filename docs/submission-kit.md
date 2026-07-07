@@ -41,3 +41,48 @@ Opened from your account by Claude (see the PR links in the session summary) —
 ## 5. After all four
 
 Update the "Still to submit" section of [`OPERATIONS.md`](../OPERATIONS.md) — move the completed ones into the live-links table with their listing URLs.
+
+---
+
+## 🏪 Storefront submissions — one-time, permanent discovery channels
+
+Each entry below is paste-ready. Do them in any order; each takes 5-15 minutes.
+
+### 1. PulseMCP (pulsemcp.com)
+Submit at pulsemcp.com → "Submit a server".
+- **Name:** PM Skills
+- **Server URL / package:** `npx -y pm-claude-skills-mcp` · hosted: `https://pm-skills-mcp.pm-claude-skills.workers.dev/`
+- **Description:** 454 professional Agent Skills (PRDs, launches, postmortems, negotiations, compliance…) as MCP tools: search_skills, get_skill, workflow recipes, and run_skill via MCP sampling — execute any skill with ZERO API key (your client's model does the work). Community registry + REST API included.
+- **Repo:** https://github.com/mohitagw15856/pm-claude-skills
+
+### 2. mcp.so
+Submit at mcp.so → "Submit" (GitHub URL is usually enough; it auto-reads the README).
+- **GitHub URL:** https://github.com/mohitagw15856/pm-claude-skills
+- If a description field appears, reuse the PulseMCP one above.
+
+### 3. Glama (glama.ai/mcp)
+`glama.json` is now in the repo root with your handle as maintainer — Glama indexes npm MCP packages automatically. Go to glama.ai/mcp, search "pm-claude-skills", and **claim the server** with your GitHub login. If it hasn't been indexed, use their "Add server" with the npm package name `pm-claude-skills-mcp`.
+
+### 4. Slack App Directory (the /pmskill bot, shipped v35)
+api.slack.com/apps → your app → "Manage Distribution" → "Submit to App Directory".
+- **Short description:** Instantly pull any of 454 professional skill templates (PRDs, launch checklists, postmortems…) into your channel with /pmskill.
+- **Long description:** reuse the bot section from integrations/chatops/README.md.
+- Needs: app icon (use icon.svg → PNG), a support URL (the repo), a privacy note ("processes only the command text; stores nothing" — verify against the bot code before submitting).
+
+### 5. Discord App Directory
+discord.com/developers → your application → "App Directory" → get discoverable.
+- Same copy as Slack. Needs the bot verified if it's in 100+ servers; below that, the directory listing is still available for eligible apps.
+
+### 6. Raycast Store (extension already built: integrations/raycast/)
+The extension is store-shaped already (search → open/run/install skills via the hosted REST API).
+1. `cd integrations/raycast && npm install && npx ray develop` — test it locally in Raycast once.
+2. Fork raycast/extensions, copy the folder in under `extensions/pm-skills/`, `npx ray build -e dist` to validate.
+3. Open the PR — their bot walks you through review. Store listing = permanent storefront in front of exactly your audience.
+
+### 7. pre-commit hooks directory (pre-commit.com/hooks)
+The repo ships `.pre-commit-hooks.yaml` (the `skillspec` hook). Get listed:
+- PR to https://github.com/pre-commit/pre-commit.github.io adding `mohitagw15856/pm-claude-skills` to `all-repos.yaml` (alphabetical).
+- One-line PR; their CI does the rest.
+
+### 8. The awesome-list PRs (highest value, yours by request)
+The prefilled entries are earlier in this document — awesome-claude-code, awesome-mcp-servers, awesome-chatgpt, awesome-product-management.
