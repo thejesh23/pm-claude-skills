@@ -64,6 +64,8 @@
       ['gauntlet.html', '🏆 Gauntlet'],
       ['hiring.html', '🎤 The Panel'],
       ['campaign.html', '🗺 Campaign'],
+      ['charter.html', '🎓 Charter'],
+      ['tower.html', '🏗 Tower of Claims'],
       ['reckoning.html', '⚖️ Reckoning'],
       ['academy.html', '🎓 Academy'],
       ['xray.html', '🩻 X-ray'],
@@ -83,6 +85,7 @@
       ['learn.html', '🎓 Learn'],
       ['wrapped.html', '🎁 Wrapped'],
       ['handbook.html', '📖 Handbook'],
+      ['city.html', '🌃 Skill City'],
       ['guide.html', '📖 Guide'],
       ['community.html', '💬 Community'],
       // External (GitHub doc): a 3rd truthy element renders it as a new-tab link.

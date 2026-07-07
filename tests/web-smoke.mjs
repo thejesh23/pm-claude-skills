@@ -160,6 +160,29 @@ const PAGES = [
       if ((await p.locator('h3.skill-h').count()) < 40) throw new Error('craft chapters did not render');
       if ((await p.locator('.alm-skill').count()) < 400) throw new Error('almanac did not render');
     } },
+  { url: 'charter.html', async check(p) {
+      if ((await p.locator('.req').count()) !== 4) throw new Error('expected 4 requirements');
+      if (!(await p.locator('#progressLine').textContent()).includes('0/4')) throw new Error('should start locked');
+    } },
+  { url: 'tower.html', settle: 3000, async check(p) {
+      await p.waitForFunction(() => window.__towerReady, null, { timeout: 20000 });
+      await p.click('#demo'); await p.waitForTimeout(1200);
+      if (!/9 blocks/.test(await p.locator('#status').textContent())) throw new Error('demo tower did not build');
+    } },
+  { url: 'stage.html', async check(p) {
+      if (!(await p.locator('#enter').isVisible())) throw new Error('entry card missing');
+    } },
+  { url: 'galaxy3d.html', settle: 3000, async check(p) {
+      await p.waitForFunction(() => window.__galaxyReady, null, { timeout: 25000 });
+      const r = await p.evaluate(() => window.__galaxyReady);
+      if (r.stars < 400) throw new Error('starfield incomplete: ' + r.stars);
+    } },
+  { url: 'city.html', settle: 3000, async check(p) {
+      await p.waitForFunction(() => window.__cityReady, null, { timeout: 25000 });
+    } },
+  { url: 'trophy.html', settle: 2000, async check(p) {
+      await p.waitForFunction(() => window.__trophyReady, null, { timeout: 20000 });
+    } },
   { url: 'canvas.html' }, { url: 'agent.html' }, { url: 'studio.html' },
   { url: 'brain.html' }, { url: 'ask.html' }, { url: 'daily.html' },
   { url: 'jobs.html' }, { url: 'hub.html' }, { url: 'grade.html' },
@@ -177,6 +200,13 @@ const pw = await loadPlaywright();
 const chromium = pw.chromium || pw.default?.chromium;
 const browser = await chromium.launch();
 const ctx = await browser.newContext({ viewport: { width: 1280, height: 850 } });
+// The live free-trial endpoint must NEVER serve CI: block the production worker
+// so the trial reads as disabled, keyless guards fire, and no sponsored runs burn.
+await ctx.route(/pm-skills-mcp.*workers\.dev/, (route) => {
+  const u = route.request().url();
+  if (u.endsWith('/try') && route.request().method() === 'GET') return route.fulfill({ json: { enabled: false } });
+  return route.fulfill({ status: 503, json: { error: 'blocked-in-ci' } });
+});
 let failures = 0;
 for (const spec of PAGES) {
   const page = await ctx.newPage();

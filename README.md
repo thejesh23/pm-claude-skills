@@ -350,6 +350,13 @@ Connect the Firm or the Boardroom to a **real folder on disk** (the 🗂 chip, C
 
 ---
 
+### 🌌 The library in 3D
+
+- **[Galaxy 3D](https://mohitagw15856.github.io/pm-claude-skills/galaxy3d.html)** — 454 skills as a bloom-lit starfield you fly through; **your sky is yours** (stars you've run burn brighter). **[Skill City](https://mohitagw15856.github.io/pm-claude-skills/city.html)** — the same idea as a dusk skyline: windows light up in buildings you've used.
+- **[The Tower of Claims](https://mohitagw15856.github.io/pm-claude-skills/tower.html)** — your document as a physics tower: data is steel, assumptions are glass, and the stress test shows the argument stand or **collapse**. Keyless demo built in.
+- **[The Stage](https://mohitagw15856.github.io/pm-claude-skills/stage.html)** — any Boardroom replay as a cinematic 3D scene: the hologram document cracks as objections land; the verdict seals it gold or shatters it.
+- **⚔️ Duels** — challenge links from the Gym and the Panel: your friend faces the *identical* hidden scenario, side-by-side scorecard at the end. **[The Charter](https://mohitagw15856.github.io/pm-claude-skills/charter.html)** — the performance-based, cryptographically verifiable certification. **[The Trophy Forge](https://mohitagw15856.github.io/pm-claude-skills/trophy.html)** — cast it in spinning gold.
+
 ### 🗺 The Campaign, the Book, and the Ledger
 
 - **[Your First 90 Days](https://mohitagw15856.github.io/pm-claude-skills/campaign.html)** — campaign mode: one story across every arena. You join a fictional Series A startup, and your *real* arena scores write the plot — lose the Gym negotiation and the account churns; get fooled in the Panel and the bad hire haunts Week 10. Replayable, saves locally, certificate at Day 90.

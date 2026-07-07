@@ -9,6 +9,21 @@ each new wave of skills bumps the **major** version, extensions and fixes bump
 
 ## [Unreleased]
 
+### Added — the spectacle wave: duels, the Charter, and the library in 3D
+- **⚔️ Duels — challenge links** ([web/duel.js](web/duel.js)) — after any Gym or Panel run, one click copies a link that puts a friend in the EXACT same scenario: the Gym's hidden world or the Panel's candidate + archetype travels gzip-compressed in the URL, and the challenger finishes to a **side-by-side scorecard** ("Beat my 33/40"). No server; honour-based and says so.
+- **🎓 The Charter** ([charter.html](https://mohitagw15856.github.io/pm-claude-skills/charter.html)) — the certification you can't talk your way into: four requirements read from your actual practice record (graduate all 3 Academy tracks · Gym 28+/40 · Panel 70+ with the RIGHT call · 5 settled predictions) grant a charter with a **cryptographic attestation** anyone can check on verify.html — tamper-tested: a forged name fails the hash. Certificate PDF + LinkedIn-ready post included.
+- **🌌 Galaxy 3D** ([galaxy3d.html](https://mohitagw15856.github.io/pm-claude-skills/galaxy3d.html)) — the flagship visual goes volumetric: 454 skills as bloom-lit stars on spiral-arm constellations, fly-to search, a hyperspace warp with FOV punch — and **your sky is yours**: stars you've run burn brighter.
+- **🏗 The Tower of Claims** ([tower.html](https://mohitagw15856.github.io/pm-claude-skills/tower.html)) — a document as a physics tower: sentences are blocks, evidence is material (steel/stone/wood/cardboard/**glass**), and the stress test shatters fragile blocks under load with camera shake — "💥 IT FALLS — the conclusion was resting on glass." Keyless demo included; grade your real document live.
+- **🏛 The Stage** ([stage.html](https://mohitagw15856.github.io/pm-claude-skills/stage.html)) — any Boardroom replay link as cinema: moody table, glowing emoji-faced executives, camera cuts to the speaker, the document as a floating hologram that **cracks as objections land**, and a verdict finale that seals it gold or shatters it.
+- **✨ Holo cards + 🏆 the Trophy Forge** — Wrapped's persona becomes a tilt-tracking holographic trading card (foil follows your cursor/phone); [trophy.html](https://mohitagw15856.github.io/pm-claude-skills/trophy.html) casts any achievement as a spinning engraved gold obelisk (Charter-aware), PNG export.
+- **🌃 Skill City + ☄️ the orrery** — [city.html](https://mohitagw15856.github.io/pm-claude-skills/city.html): 454 buildings in 65 districts at dusk, windows lit only in skills you've used, a beacon on your most-used; the Reckoning gains an animated orrery — open predictions orbit inward toward their due dates, hits join a constellation, misses streak out.
+- **📊 Runs served, in public** — `/try/stats` on the worker + a live README badge counting every sponsored free run (counts only, never content).
+- **🏁 First official results, on the record**: [SkillBench run #1](skillbench/results.json) (Claude Haiku 4.5 vs Sonnet 4.6 across the 12 frozen tasks — 4.5 vs 4.6 mean, per-task detail in the results) and **evolution loop run #1**: all three challenged champions held under blind judging (5.00 draws — the referee requires a clear win). The benchmark and the loop are no longer claims.
+- **🪑 First registry packs** ([packs/](packs/)) — ⚖️ the Legal Bench, 🎓 the Education Bench, 🤝 the Acquisition Call scenario — all sha256-pinned in the [community registry](community/registry.json).
+
+### Fixed
+- The CI smoke suite now blocks the production worker (the live free trial was hijacking keyless-guard tests and burning sponsored runs); a Tower lighting bug; smoke suite covers 32 pages.
+
 ## [44.0.0] — the legendary release: the campaign, the handbook, the package manager, and infrastructure for the whole ecosystem — 2026-07-07
 
 ### Added — the infrastructure wave: the tools, the badge, the census, and every protocol

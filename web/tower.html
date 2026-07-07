@@ -87,7 +87,7 @@ scene.add(new THREE.AmbientLight(0x8899bb, 0.5));
 const key=new THREE.DirectionalLight(0xffe8c8, 1.6); key.position.set(18,30,14); key.castShadow=true;
 key.shadow.mapSize.set(1024,1024); key.shadow.camera.left=-25; key.shadow.camera.right=25; key.shadow.camera.top=40; key.shadow.camera.bottom=-5;
 scene.add(key);
-scene.add(new THREE.DirectionalLight(0x88aaff, 0.35).position.set(-14,10,-10).clone());
+const fill=new THREE.DirectionalLight(0x88aaff, 0.35); fill.position.set(-14,10,-10); scene.add(fill);
 renderer.shadowMap.enabled=true;
 // ground
 const ground=new THREE.Mesh(new THREE.CylinderGeometry(16,16,0.6,48), new THREE.MeshStandardMaterial({color:0x12151d, roughness:0.9}));
