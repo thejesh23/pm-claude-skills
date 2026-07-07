@@ -698,9 +698,12 @@ function makeCard(s) {
   const meta = TIER_META[s.tier] || TIER_META.stable;
   const card = document.createElement('button');
   card.className = 'skill-card';
+  const ident = skillIdentity(s);
+  card.style.setProperty('--chue', ident.hue);
   card.innerHTML =
     `<div class="card-tags"><span class="card-bundle"></span><span class="card-eval"></span><span class="card-proof"></span><span class="card-tier"></span></div>` +
-    `<h3 class="card-title"></h3><p class="card-summary"></p>`;
+    `<h3 class="card-title"></h3><p class="card-summary"></p>` +
+    `<span class="card-mono" aria-hidden="true">${ident.mono}</span>`;
   card.querySelector('.card-bundle').textContent = s.plugin;
   const proofEl = card.querySelector('.card-proof');
   const proof = feedbackBadge(s.name, true);
@@ -723,9 +726,36 @@ function makeCard(s) {
   fav.title = isFav(s.name) ? 'Unfavourite' : 'Favourite';
   fav.addEventListener('click', (e) => { e.stopPropagation(); toggleFav(s.name); });
   card.querySelector('.card-tags').appendChild(fav);
+  // ⓘ the skill's own page (banner, quality checks, anti-patterns, examples) —
+  // card click still runs the skill; this is the read-more path.
+  const info = document.createElement('a');
+  info.className = 'card-info';
+  info.href = 'skill/' + s.name + '.html';
+  info.textContent = 'ⓘ';
+  info.title = 'Open the full skill page — triggers, quality checks, anti-patterns, examples';
+  info.addEventListener('click', (e) => e.stopPropagation());
+  card.querySelector('.card-tags').appendChild(info);
   card.addEventListener('click', () => selectSkill(s));
   return card;
 }
+
+// ── Skill identity (matches scripts/build-skill-pages.mjs exactly, so a card's
+// colour and monogram are the same as its skill page's) ──────────────────────
+function skillHash(str) { let h = 2166136261; for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function skillRng(seed) { let a = seed; return () => { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+let _bundleIndex = null;
+function skillIdentity(s) {
+  if (!_bundleIndex) {
+    const bundles = [...new Set(SKILLS.map((x) => x.plugin))].sort();
+    _bundleIndex = Object.fromEntries(bundles.map((b, i) => [b, i]));
+  }
+  const r = skillRng(skillHash(s.name));
+  const baseHue = ((_bundleIndex[s.plugin] || 0) * 0.618034 % 1) * 360;
+  const hue = Math.round((baseHue + (r() * 40 - 20) + 360) % 360);
+  const mono = s.title.split(/\s+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+  return { hue, mono };
+}
+
 function galleryHead(text) {
   const h = document.createElement('h4');
   h.className = 'gallery-head';

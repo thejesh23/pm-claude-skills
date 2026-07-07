@@ -111,10 +111,20 @@ button { font-family: inherit; }
 }
 .skill-card::before {
   content: ""; position: absolute; left: 0; top: 0; height: 100%; width: 3px;
-  background: var(--accent-grad); opacity: 0; transition: opacity .15s;
+  background: hsl(var(--chue, 18), 62%, 52%); opacity: .55; transition: opacity .15s, width .15s;
 }
+.skill-card:hover::before { width: 4px; }
+.card-mono {
+  position: absolute; right: 12px; bottom: 8px; font-size: 26px; font-weight: 800;
+  letter-spacing: -1px; color: hsl(var(--chue, 18), 70%, 62%); opacity: .13; pointer-events: none;
+}
+.card-info {
+  font-size: 13px; color: var(--muted); text-decoration: none; line-height: 1;
+  padding: 2px 4px; border-radius: 6px;
+}
+.card-info:hover { color: hsl(var(--chue, 18), 70%, 66%); background: rgba(255,255,255,.06); }
 .skill-card:hover {
-  border-color: rgba(217,119,87,.5); transform: translateY(-3px);
+  border-color: hsl(var(--chue, 18), 55%, 45%); transform: translateY(-3px);
   background: var(--panel-2); box-shadow: var(--shadow-accent);
 }
 .skill-card:hover::before { opacity: 1; }
