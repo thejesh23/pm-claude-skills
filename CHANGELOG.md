@@ -9,6 +9,8 @@ each new wave of skills bumps the **major** version, extensions and fixes bump
 
 ## [Unreleased]
 
+## [45.0.0] — the spectacle release: duels, the Charter, and the library in 3D — 2026-07-07
+
 ### Added — the spectacle wave: duels, the Charter, and the library in 3D
 - **⚔️ Duels — challenge links** ([web/duel.js](web/duel.js)) — after any Gym or Panel run, one click copies a link that puts a friend in the EXACT same scenario: the Gym's hidden world or the Panel's candidate + archetype travels gzip-compressed in the URL, and the challenger finishes to a **side-by-side scorecard** ("Beat my 33/40"). No server; honour-based and says so.
 - **🎓 The Charter** ([charter.html](https://mohitagw15856.github.io/pm-claude-skills/charter.html)) — the certification you can't talk your way into: four requirements read from your actual practice record (graduate all 3 Academy tracks · Gym 28+/40 · Panel 70+ with the RIGHT call · 5 settled predictions) grant a charter with a **cryptographic attestation** anyone can check on verify.html — tamper-tested: a forged name fails the hash. Certificate PDF + LinkedIn-ready post included.
@@ -620,7 +622,8 @@ Earlier releases (v1.0.0 – v5.0.0) predate this changelog. See the
 [article series](README.md#-the-article-series) for the full history of how the
 library grew from the first PM toolkit to 100+ skills.
 
-[Unreleased]: https://github.com/mohitagw15856/pm-claude-skills/compare/v44.0.0...HEAD
+[Unreleased]: https://github.com/mohitagw15856/pm-claude-skills/compare/v45.0.0...HEAD
+[45.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v44.0.0...v45.0.0
 [44.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v43.0.0...v44.0.0
 [43.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v42.0.0...v43.0.0
 [20.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v19.0.0...v20.0.0
