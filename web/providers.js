@@ -205,12 +205,31 @@
     if (kf) kf.addEventListener('input', function (e) { localStorage.setItem(current().keyStore, e.target.value.trim()); });
     var ms = d.getElementById('model');
     if (ms) ms.addEventListener('change', function (e) { localStorage.setItem(modelStoreKey(providerId()), e.target.value); });
-    // The free-Claude-trial option only makes sense when the deployment has it enabled —
-    // remove it otherwise (and fall back if it was the saved choice).
+    // The free-Claude-trial: injected on EVERY page when the deployment has it
+    // enabled (no per-page markup needed), removed when it doesn't. First-time
+    // visitors with no saved provider and no saved key default straight into it —
+    // type, run, get output; keys only enter the picture when the free runs are spent.
     if (ps) {
-      var opt = ps.querySelector('option[value="tryclaude"]');
-      if (opt) tryEnabled().then(function (on) {
-        if (!on) { opt.remove(); if (providerId() === 'tryclaude') { localStorage.setItem(PROVIDER_STORE, 'gemini'); ps.value = 'gemini'; applyProvider(); } }
+      tryEnabled().then(function (on) {
+        var opt = ps.querySelector('option[value="tryclaude"]');
+        if (on && !opt) {
+          opt = d.createElement('option');
+          opt.value = 'tryclaude'; opt.textContent = '✨ Claude — free, no key';
+          ps.insertBefore(opt, ps.firstChild);
+        }
+        if (!on) {
+          if (opt) opt.remove();
+          if (providerId() === 'tryclaude') { localStorage.setItem(PROVIDER_STORE, 'gemini'); ps.value = 'gemini'; applyProvider(); }
+          return;
+        }
+        var chosen = localStorage.getItem(PROVIDER_STORE);
+        var hasAnyKey = !!(localStorage.getItem('gemini_api_key') || localStorage.getItem('anthropic_api_key') || localStorage.getItem('openai_api_key'));
+        if (!chosen && !hasAnyKey) {
+          localStorage.setItem(PROVIDER_STORE, 'tryclaude');
+          ps.value = 'tryclaude'; applyProvider();
+        } else if (providerId() === 'tryclaude') {
+          ps.value = 'tryclaude';
+        }
       });
     }
   }

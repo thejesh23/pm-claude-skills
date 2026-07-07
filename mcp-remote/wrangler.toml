@@ -20,6 +20,6 @@ compatibility_date = "2025-01-01"
 # Tune caps in src/index.js (the TRY object). Kill switch without redeploy:
 #   npx wrangler secret put TRY_ENABLED   → enter: false
 #
-# [[kv_namespaces]]
-# binding = "TRY_KV"
-# id = "<your-kv-namespace-id>"
+[[kv_namespaces]]
+binding = "TRY_KV"
+id = "6118d589c097433e9d09e0a63fbfba93"

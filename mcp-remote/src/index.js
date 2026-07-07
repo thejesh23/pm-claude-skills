@@ -405,7 +405,7 @@ async function handleA2A(request) {
 // per-IP daily cap → global daily cap. Uses cheap Haiku + a low token cap, so the
 // global cap bounds your worst-case daily spend to a few dollars. Heavy/serious
 // users are nudged to bring their own key (free Gemini or their own Claude).
-const TRY = { model: 'claude-haiku-4-5-20251001', maxTokens: 1200, perIpPerDay: 5, globalPerDay: 300, maxInputChars: 8000 };
+const TRY = { model: 'claude-haiku-4-5-20251001', maxTokens: 1200, perIpPerDay: 5, globalPerDay: 100, maxInputChars: 8000 };
 
 function tryConfigured(env) { return !!(env && env.ANTHROPIC_API_KEY && env.TRY_KV && env.TRY_ENABLED !== 'false'); }
 function tryStatus(env) {
