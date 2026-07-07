@@ -408,6 +408,16 @@ async function handleA2A(request) {
 const TRY = { model: 'claude-haiku-4-5-20251001', maxTokens: 1200, perIpPerDay: 5, globalPerDay: 100, maxInputChars: 8000 };
 
 function tryConfigured(env) { return !!(env && env.ANTHROPIC_API_KEY && env.TRY_KV && env.TRY_ENABLED !== 'false'); }
+// GET /try/stats — public runs-served counter (counts only, never content).
+// Default: shields.io endpoint JSON for a README badge; ?format=json for raw.
+async function tryStats(url, env) {
+  const total = tryConfigured(env) ? +((await env.TRY_KV.get('try:total')) || 0) : 0;
+  if (url.searchParams.get('format') === 'json') {
+    return jsonResponse({ freeRunsServed: total, perIpPerDay: TRY.perIpPerDay, globalPerDay: TRY.globalPerDay });
+  }
+  return new Response(JSON.stringify({ schemaVersion: 1, label: 'free skill runs served', message: '🔥 ' + total.toLocaleString('en-US'), color: 'd97757' }),
+    { headers: { 'content-type': 'application/json', 'cache-control': 'public, s-maxage=300, max-age=300', ...CORS } });
+}
 function tryStatus(env) {
   return jsonResponse({ enabled: tryConfigured(env), perIpPerDay: TRY.perIpPerDay, model: 'Claude Haiku', note: tryConfigured(env) ? 'A few free Claude runs per day, on the house. Bring your own key for more.' : 'Free Claude trial not configured on this deployment.' });
 }
@@ -428,9 +438,11 @@ async function handleTry(request, env) {
   if (!prompt.trim()) return jsonResponse({ error: 'no_prompt' }, 400);
 
   // Count first (fail-safe: a hammered endpoint can't exceed the cap even if a call errors).
+  const total = +((await env.TRY_KV.get('try:total')) || 0) + 1;
   await Promise.all([
     env.TRY_KV.put(ipKey, String(+(ipN || 0) + 1), { expirationTtl: 172800 }),
     env.TRY_KV.put(globalKey, String(+(globalN || 0) + 1), { expirationTtl: 172800 }),
+    env.TRY_KV.put('try:total', String(total)),   // cumulative, never expires
   ]);
 
   const res = await fetch('https://api.anthropic.com/v1/messages', {
@@ -520,6 +532,9 @@ export default {
       return new Response('Method Not Allowed', { status: 405, headers: CORS });
     }
     // Capped, sponsored "try Claude free, no key" endpoint (off until configured — see handleTry).
+    if (url.pathname === '/try/stats' && (request.method === 'GET' || request.method === 'HEAD')) {
+      return tryStats(url, env);
+    }
     if (url.pathname === '/try') {
       if (request.method === 'GET') return tryStatus(env);   // frontend probes this to show/hide the button (already a Response)
       if (request.method === 'POST') return handleTry(request, env);
