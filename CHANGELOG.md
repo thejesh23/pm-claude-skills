@@ -9,6 +9,15 @@ each new wave of skills bumps the **major** version, extensions and fixes bump
 
 ## [Unreleased]
 
+## [46.0.0] — the arsenal release: pm-warroom, skills with faces, and the repo that proves itself — 2026-07-10
+
+### Added — identity & growth: every skill gets a face, every channel gets a listing
+- **🎨 Generative skill pages** — all 466 skill pages now carry a **deterministic generative identity**: one of five banner art families (orbits, waves, circuit, rays, constellation) drawn from the skill's name-hash, bundle-family colours with per-skill shifts, and a monogram — plus new craft sections parsed from each skill's own body (trigger-phrase chips, "the bar it holds itself to" Quality Checks card, Anti-Patterns as warnings, Deeper Materials, executable-helper badge).
+- **🃏 Playground cards wear the same identity** — the identity math ported verbatim (card hue === page hue, verified programmatically): colour strip, monogram watermark, and an ⓘ link to the skill's page on every card; card click still runs the skill.
+- **💛 Sponsorship wired into every value moment** — the trial's cap messages, the CLI thank-you, and the README badge all carry "sponsors fund the free runs"; [docs/SPONSORSHIP.md](docs/SPONSORSHIP.md) sells **naming rights, never influence** (README → playground footer → sponsor-a-bench → Galaxy constellation).
+- **🏪 Storefront kit + awesome-PR rescue** — 8 paste-ready directory listings in the [submission kit](docs/submission-kit.md) (PulseMCP, mcp.so, Glama via `glama.json`, Slack/Discord directories, Raycast Store, pre-commit registry); both stuck awesome-list PRs were diagnosed (a literal markdown typo on one), fixed, refreshed to current stats, and bumped.
+- **🗺 [REPO-MAP.md](REPO-MAP.md)** — the monorepo, explained by role ("you want X → you need one folder"), with the 10-second skills-only sparse clone (~5 MB vs the 63 MB full clone).
+
 ### Added — the crazy-skills wave: the adversarial bundle, more skills that do math, and the ones people share (454 → 466)
 - **⚔️ New bundle — `pm-warroom` (5 skills)** — the adversarial arsenal: [`premortem-assassin`](skills/premortem-assassin/SKILL.md) (twelve named failure vectors, the obituary, and dated tripwires), [`devils-twin`](skills/devils-twin/SKILL.md) (the opposition's best memo — argued from their premises, with a battle map of which of your claims fall), [`metric-gaslighting-detector`](skills/metric-gaslighting-detector/SKILL.md) (the eleven distortions through which true numbers create false beliefs), [`decision-autopsy`](skills/decision-autopsy/SKILL.md) (grade the process, not the outcome — with luck accounting), [`assumption-bounty`](skills/assumption-bounty/SKILL.md) (every hidden belief extracted and priced by cost-if-wrong ÷ cost-to-test).
 - **🧮 Computed wave 2 (3 skills, tested scripts)** — [`support-staffing-model`](skills/support-staffing-model/SKILL.md) (real **Erlang C**: agents, occupancy, shrinkage — not tickets-per-agent folklore), [`schedule-monte-carlo`](skills/schedule-monte-carlo/SKILL.md) (three-point estimates over the dependency DAG → P10/P50/P90 + per-task criticality; shows the sum-of-likelies lie explicitly), [`tornado-sensitivity`](skills/tornado-sensitivity/SKILL.md) (one-at-a-time driver swings, ranked — with an injection-tested restricted formula evaluator). All three in the CI harness with exact-output regression cases (76 assertions total).
@@ -642,7 +651,8 @@ Earlier releases (v1.0.0 – v5.0.0) predate this changelog. See the
 [article series](README.md#-the-article-series) for the full history of how the
 library grew from the first PM toolkit to 100+ skills.
 
-[Unreleased]: https://github.com/mohitagw15856/pm-claude-skills/compare/v45.0.0...HEAD
+[Unreleased]: https://github.com/mohitagw15856/pm-claude-skills/compare/v46.0.0...HEAD
+[46.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v45.0.0...v46.0.0
 [45.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v44.0.0...v45.0.0
 [44.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v43.0.0...v44.0.0
 [43.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v42.0.0...v43.0.0
