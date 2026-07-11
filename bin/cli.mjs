@@ -252,6 +252,8 @@ Usage:
   npx pm-claude-skills council <skill>        # author -> cross-vendor critique -> arbiter (2+ provider keys)
   npx pm-claude-skills migrate <dir>          # convert a folder of prompts/SOPs into SkillSpec skills
   npx pm-claude-skills init        # scaffold the professional workspace here (brain/, context, arena folders)
+  npx pm-claude-skills brief       # the chief-of-staff: predictions due, latest verdicts, open hypotheses
+  npx pm-claude-skills stats       # the project's public vitals (runs served, stars, benchmark)
   npx pm-claude-skills reckoning   # your prediction ledger: due calls, hit rate, calibration curve, Brier score
   npx pm-claude-skills doctor      # checkup: what's installed, what's stale, what to fix (read-only)
   npx pm-claude-skills list
@@ -295,6 +297,11 @@ else if (cmd === 'council') {
 else if (cmd === 'verify') {
   const { run } = await import('./verify.mjs');
   try { process.exit(await run(process.argv.slice(3))); }
+  catch (e) { console.error(`Error: ${e.message}`); process.exit(1); }
+}
+else if (cmd === 'brief' || cmd === 'stats') {
+  const m = await import('./brief.mjs');
+  try { process.exit(await (cmd === 'brief' ? m.brief() : m.stats())); }
   catch (e) { console.error(`Error: ${e.message}`); process.exit(1); }
 }
 else if (cmd === 'reckoning') {

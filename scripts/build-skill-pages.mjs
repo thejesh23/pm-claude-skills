@@ -214,6 +214,23 @@ function page(s) {
     ? `${foundationHtml}<h2>Related skills</h2>\n<div class="related">` + related.map((r) => `<a href="${r.name}.html">${esc(r.title)}</a>`).join('') + `</div>`
     : foundationHtml;
 
+  // FAQ structured data: the skill's own craft reshaped as questions Google
+  // actually gets asked — programmatic SEO across all pages.
+  const faq = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: `What does the ${s.title} skill do?`,
+        acceptedAnswer: { '@type': 'Answer', text: String(s.description).slice(0, 400) } },
+      (s.inputs && s.inputs.length) ? { '@type': 'Question', name: `What do I need to use ${s.title}?`,
+        acceptedAnswer: { '@type': 'Answer', text: s.inputs.map((i) => i.label + (i.optional ? ' (optional)' : '')).join('; ') + '.' } } : null,
+      cf.checks.length ? { '@type': 'Question', name: `How do I know the ${s.title} output is good?`,
+        acceptedAnswer: { '@type': 'Answer', text: 'The skill verifies itself against its own quality checks: ' + cf.checks.slice(0, 4).join('; ') + '.' } } : null,
+      { '@type': 'Question', name: `Is ${s.title} free to use?`,
+        acceptedAnswer: { '@type': 'Answer', text: 'Yes — run it free in the browser playground (no API key needed for the sponsored trial, or bring any provider key), or install it into Claude Code, Cursor, ChatGPT and more via npx pm-claude-skills. MIT-licensed and open source.' } },
+    ].filter(Boolean),
+  };
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
@@ -246,6 +263,7 @@ function page(s) {
 <meta name="twitter:description" content="${metaDesc}" />
 <meta name="twitter:image" content="${BASE}/og/${s.name}.jpg" />
 <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
+<script type="application/ld+json">${JSON.stringify(faq)}</script>
 <style>${CSS}</style>
 </head>
 <body>
