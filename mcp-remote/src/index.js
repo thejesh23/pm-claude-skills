@@ -509,6 +509,26 @@ async function handleBadge(url, env) {
   }
 }
 
+
+// ── /signal: ephemeral WebRTC signaling for multiplayer arenas ────────────────
+// Stores ONLY SDP offer/answer blobs (no session content ever touches the
+// worker — the arena traffic is peer-to-peer). Keys expire in 5 minutes.
+async function handleSignal(request, url, env) {
+  if (!env.TRY_KV) return jsonResponse({ error: 'no_kv', message: 'signaling not configured' }, 503);
+  const room = (url.searchParams.get('room') || '').replace(/[^A-Za-z0-9-]/g, '').slice(0, 24);
+  const role = url.searchParams.get('role') === 'answer' ? 'answer' : 'offer';
+  if (!room) return jsonResponse({ error: 'bad_room' }, 400);
+  const key = `sig:${room}:${role}`;
+  if (request.method === 'POST') {
+    const body = await request.text();
+    if (body.length > 32768) return jsonResponse({ error: 'too_big' }, 413);
+    await env.TRY_KV.put(key, body, { expirationTtl: 300 });
+    return jsonResponse({ ok: true });
+  }
+  const v = await env.TRY_KV.get(key);
+  return v ? new Response(v, { headers: { 'content-type': 'application/json', ...CORS } }) : jsonResponse({ waiting: true }, 404);
+}
+
 export default {
   async fetch(request, env) {
     if (request.method === 'OPTIONS') return new Response(null, { headers: CORS });
@@ -516,6 +536,9 @@ export default {
     // A2A: standard discovery card + minimal message/send endpoint (see handleA2A).
     if (url.pathname === '/.well-known/agent-card.json' && (request.method === 'GET' || request.method === 'HEAD')) {
       return jsonResponse(AGENT_CARD);
+    }
+    if (url.pathname === '/signal') {
+      return handleSignal(request, url, env);
     }
     if (url.pathname === '/badge' && (request.method === 'GET' || request.method === 'HEAD')) {
       const key = new Request(url.toString());

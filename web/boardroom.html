@@ -11,6 +11,7 @@
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.9/dist/purify.min.js"></script>
 <script src="providers.js"></script>
 <script src="voice.js"></script>
+<script src="live.js"></script>
 <script src="workspace.js"></script>
 <style>
   .board-wrap { max-width: 940px; margin: 0 auto; padding: 16px 22px 70px; }
@@ -109,6 +110,7 @@
     <button id="dlAll" class="ghost" type="button">⬇ Full transcript (.md)</button>
     <button id="dlAtt" class="ghost" type="button" title="A tamper-evident record that THIS exact document got THIS verdict — verifiable at verify.html">🔏 Attestation (.json)</button>
     <button id="shareReplay" class="ghost" type="button" title="A link that REPLAYS this session with the streaming animation — no key needed to watch">🔗 Share replay</button>
+    <button id="goLive" class="ghost" type="button" title="Invite someone to watch this session live, browser-to-browser (WebRTC — content never touches a server)">👥 Go live</button>
     <button id="again" class="ghost" type="button">↻ New session</button>
   </div>
 </div>
@@ -178,6 +180,7 @@ function init(){
   el('dlAll').addEventListener('click',()=>download('boardroom-transcript.md',fullTranscript()));
   el('dlAtt').addEventListener('click',downloadAttestation);
   el('shareReplay').addEventListener('click',shareReplay);
+  el('goLive').addEventListener('click',goLive);
   el('addExec').addEventListener('click',addCustomExec);
   initBenches();
   maybeReplay();
@@ -221,7 +224,7 @@ async function convene(){
     for(const p of bench){
       const sys=`You are ${p.name}, ${p.role} on an executive review board. A document has been brought to the board for a decision.\nYour lens: ${p.lens}.\nYour disposition: ${p.bias}\nTone: ${grill}\n\nRules: react only to what the document says or omits — reference its own words. Give exactly your 3 sharpest points. Start each point with one severity tag: [BLOCKER] (you would vote no over this), [RISK] (needs a named mitigation), or [QUESTION] (must be answered before any vote). At most 160 words total. First person, in character, no preamble, no praise sandwich. If the document genuinely satisfies your lens, say so in one line — then still raise your single strongest concern.`;
       const text=await speak(p,sys,docBlock,'Round 1');
-      TRANSCRIPT.push({round:1,who:p,text});
+      TRANSCRIPT.push({round:1,who:p,text}); liveBroadcast(p,text,1);
     }
     // Round 2 — cross-examination
     if(!quick){
@@ -230,7 +233,7 @@ async function convene(){
       for(const p of bench){
         const sys=`You are ${p.name}, ${p.role}, in the same board session. You have heard every opening statement.\nYour lens: ${p.lens}. Tone: ${grill}\n\nPick the ONE point from ANOTHER executive you most disagree with — or the one that most changes your own assessment — and respond to it directly, addressing them by name. At most 90 words. Conceding and updating your position under a good argument is strength, not weakness.`;
         const text=await speak(p,sys,docBlock+'\n\nOPENING STATEMENTS:\n\n'+openings,'Round 2');
-        TRANSCRIPT.push({round:2,who:p,text});
+        TRANSCRIPT.push({round:2,who:p,text}); liveBroadcast(p,text,2);
       }
     }
     // Round 3 — the Chair's verdict
@@ -309,6 +312,57 @@ function download(name,text){
   a.href=URL.createObjectURL(new Blob([text],{type:'text/markdown'})); a.download=name; a.click();
   setTimeout(()=>URL.revokeObjectURL(a.href),4000);
 }
+// ── 👥 Live: host streams turns to a watcher over WebRTC ─────────────────────
+let LIVE=null;
+async function goLive(){
+  if(!window.PMLive) return;
+  el('goLive').disabled=true; el('goLive').textContent='👥 opening room…';
+  try{
+    LIVE=await PMLive.host();
+    const url=location.origin+location.pathname+'#watch='+LIVE.room;
+    await navigator.clipboard.writeText(url).catch(()=>{});
+    el('goLive').textContent='👥 room '+LIVE.room+' — link copied';
+    LIVE.onOpen(()=>{ el('goLive').textContent='👥 LIVE — viewer connected'; el('goLive').style.color='#5ad19a';
+      // late joiner gets the story so far
+      TRANSCRIPT.forEach(x=>LIVE.send({t:'turn',r:x.round,id:x.who.id,n:x.who.name,ro:x.who.role,e:x.who.emoji,md:x.text}));
+    });
+    LIVE.onPeer(m=>{ if(m.t==='suggest'){ setStatus('👥 Viewer suggests: '+String(m.text).slice(0,140)); } });
+  }catch(e){ el('goLive').textContent='👥 failed — retry'; el('goLive').disabled=false; }
+}
+function liveBroadcast(who,text,round){ if(LIVE) LIVE.send({t:'turn',r:round,id:who.id,n:who.name,ro:who.role,e:who.emoji,md:text}); }
+
+// Watch mode: render a live session as it happens + send tag-in suggestions.
+(async function(){
+  const m=(location.hash||'').match(/#watch=([A-Z0-9]+)/i);
+  if(!m||!window.PMLive) return;
+  document.addEventListener('DOMContentLoaded',()=>{});
+  const room=m[1].toUpperCase();
+  const banner=document.createElement('div');
+  banner.style.cssText='border:1.5px solid #5ad19a;border-radius:13px;background:rgba(90,209,154,.08);padding:12px 16px;margin:12px 22px;font-size:13.5px;';
+  banner.innerHTML='👥 <b>Watching live session '+room+'</b> — connecting to the host, browser-to-browser…';
+  document.body.insertBefore(banner, document.body.children[3]||null);
+  try{
+    const w=await PMLive.watch(room);
+    w.onOpen(()=>{ banner.innerHTML='👥 <b>LIVE — session '+room+'</b>. Turns stream in below. '+
+      '<input id="suggestIn" placeholder="Tag in: suggest a line to the presenter…" style="width:min(340px,60%);margin-left:8px;padding:6px 10px;border-radius:8px;border:1px solid var(--border);background:var(--panel);color:var(--text)"/>'+
+      '<button id="suggestGo" class="ghost" style="margin-left:6px" type="button">Send</button>';
+      document.getElementById('suggestGo').addEventListener('click',()=>{
+        const v=document.getElementById('suggestIn').value.trim(); if(!v) return;
+        w.send({t:'suggest',text:v}); document.getElementById('suggestIn').value='';
+      });
+    });
+    w.onEvent(ev=>{
+      if(ev.t!=='turn') return;
+      const box=el('debate')||el('chat')||document.querySelector('main')||document.body;
+      const d=document.createElement('div');
+      d.style.cssText='border:1px solid var(--border);border-left:3px solid '+(ev.c||'#6aa9ff')+';border-radius:12px;background:var(--panel);padding:10px 14px;margin:8px 22px;font-size:13.6px;';
+      d.innerHTML='<b>'+(ev.e||'')+' '+ev.n+'</b> <span style="color:var(--muted);font-size:11px">'+(ev.ro||'')+'</span><div>'+(window.DOMPurify&&window.marked?DOMPurify.sanitize(marked.parse(ev.md||'')):String(ev.md||''))+'</div>';
+      (box||document.body).appendChild(d);
+      d.scrollIntoView({behavior:'smooth',block:'end'});
+    });
+  }catch(e){ banner.innerHTML='👥 Could not join '+room+' — the room may have expired (links live 5 minutes until the host connects).'; }
+})();
+
 // ── Shareable replays: the whole session gzipped into the URL fragment. ──────
 // Anyone opening the link watches the debate re-stream — no key, no API.
 async function gz(str){

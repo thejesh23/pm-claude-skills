@@ -27,6 +27,7 @@ Security matters here in three ways: **skill file safety**, **prompt injection r
 
 - **Keys never leave your browser/machine.** The playground sends prompts only to the provider you select; keys live in `localStorage` and never touch our worker. The one exception is the **sponsored free trial**, which uses the maintainer's key server-side, is hard-capped, and records **counts only, never content**.
 - **The chain of trust for installed skills** ([details](community/README.md#-trust--integrity--the-full-chain)): security-pattern scanning on everything `pm-claude-skills install` fetches from anywhere → optional **sha256 content pinning** in the community registry → an install **lockfile** with `pm-claude-skills verify` drift/tamper detection → **npm provenance** on all published packages.
+- **Multiplayer signaling**: the arenas' live mode is WebRTC peer-to-peer — session content flows browser-to-browser. Only the SDP handshake blobs touch the worker's `/signal` endpoint, stored under a random room code with a 5-minute TTL and never logged.
 - **Bypass = vulnerability.** If you get malicious phrasing past `skillspec-check`, the registry scan, or the install scanner, that's a security report — same channel below, credited unless you prefer otherwise.
 
 ## Supported Versions
