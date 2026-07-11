@@ -9,6 +9,16 @@ each new wave of skills bumps the **major** version, extensions and fixes bump
 
 ## [Unreleased]
 
+### Added — the frontier wave: the Season, the Nightwatch, the Atlas, and the show about you
+- **🏆 The Season** ([season.html](https://mohitagw15856.github.io/pm-claude-skills/season.html)) — the first open, serverless esport of professional judgment: one negotiation a month with **identical hidden state for everyone on Earth**, played through the Gym's season mode, scores attested with transcript SHA-256, submitted by PR to a CI-verified leaderboard (shape, bounds, author-matches-handle, tamper-protection). Season 1, "The Meridian Renewal," is open until 2026-08-10; winners enter the Hall of Seasons.
+- **🌙 The Nightwatch** (`pm-claude-skills nightwatch`) — AI staff that work your directory while you sleep: a scheduled Agent SDK shift that settles due predictions against file evidence, investigates open hunches, drafts the one artifact the workspace needs, and files a morning brief of work DONE. launchd/cron installer, `--dry-run` shows the shift plan free, bounded turns, writes only inside the workspace.
+- **⏰ Standing skills** (`pm-claude-skills subscribe`) — skills as scheduled subscriptions against living inputs; every run leads with **"What changed since last run"** (CHANGES.md is the artifact worth reading). Shared scheduler with the Nightwatch.
+- **🗺 The Atlas** ([atlas.html](https://mohitagw15856.github.io/pm-claude-skills/atlas.html)) — a navigable map of the public agent-skill ecosystem: 466 library skills in amber among 147 external skills from 144 repos, laid out by honest **lexical** similarity (TF-IDF + force layout, labeled as such), built by [build-atlas.mjs](scripts/build-atlas.mjs) with the census machinery.
+- **📻 The Morning Show** ([morningshow.html](https://mohitagw15856.github.io/pm-claude-skills/morningshow.html)) — your professional life as a two-host podcast: scripted entirely from local stores (predictions due, calibration, Gym record, Panel results, streaks, Charter status) with real banter, performed by two distinct browser voices. Zero API, zero upload.
+- **👥 Multiplayer Boardroom** — "Go live" streams your session to a watcher **browser-to-browser** (WebRTC; only 5-minute-TTL SDP handshake blobs touch the worker's new `/signal` endpoint — documented in SECURITY.md); the watcher can tag in with suggestions that surface to the presenter. E2E-tested with two real headless peers.
+- **🧠 pm-skills-7b pipeline** ([training/](training/)) — the press-go kit for distilling the library into an open model: a 616-pair SFT dataset (routing + structural discipline) generated free from all 466 skills, Axolotl LoRA config, Modal/Colab runbooks, and an honest model card ("learns judgment shape, not depth"). GPU run awaits budget sign-off.
+- **☀️ `pm-claude-skills brief` + `stats`** — the chief-of-staff on demand and the public vitals in the terminal; **FAQPage JSON-LD** on all 466 skill pages (4 real questions each, built from the skill's own description, inputs, and quality checks).
+
 ## [46.0.0] — the arsenal release: pm-warroom, skills with faces, and the repo that proves itself — 2026-07-10
 
 ### Added — identity & growth: every skill gets a face, every channel gets a listing

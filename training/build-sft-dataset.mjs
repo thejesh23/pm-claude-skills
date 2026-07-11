@@ -6,8 +6,6 @@
 // library's *judgment shape* without needing API-generated completions.
 //
 //   node training/build-sft-dataset.mjs        # → training/sft.jsonl
-// For higher-quality completions, generate teacher outputs first (costs API):
-//   node training/build-sft-dataset.mjs --teacher  # uses evals/cases.json inputs (153) via your key
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';

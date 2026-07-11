@@ -186,6 +186,17 @@ const PAGES = [
   { url: 'status.html', settle: 2500, async check(p) {
       if ((await p.locator('.vcard').count()) !== 4) throw new Error('vitals cards missing');
     } },
+  { url: 'season.html', async check(p) {
+      await p.waitForTimeout(800);
+      if (!(await p.locator('#hero').textContent()).includes('Season')) throw new Error('season hero missing');
+    } },
+  { url: 'atlas.html', settle: 2000, async check(p) {
+      await p.waitForFunction(() => window.__atlasReady, null, { timeout: 20000 });
+    } },
+  { url: 'morningshow.html', async check(p) {
+      const s = await p.evaluate(() => writeScript(news()).length);
+      if (s < 6) throw new Error('show script too short: ' + s);
+    } },
   { url: 'canvas.html' }, { url: 'agent.html' }, { url: 'studio.html' },
   { url: 'brain.html' }, { url: 'ask.html' }, { url: 'daily.html' },
   { url: 'jobs.html' }, { url: 'hub.html' }, { url: 'grade.html' },

@@ -65,6 +65,7 @@
       ['gauntlet.html', '🏆 Gauntlet'],
       ['hiring.html', '🎤 The Panel'],
       ['campaign.html', '🗺 Campaign'],
+      ['season.html', '🏆 The Season'],
       ['charter.html', '🎓 Charter'],
       ['tower.html', '🏗 Tower of Claims'],
       ['reckoning.html', '⚖️ Reckoning'],
@@ -90,6 +91,8 @@
       ['trophy.html', '🏆 Trophy Forge'],
       ['galaxy.html', '🗺 Galaxy (2D)'],
       ['status.html', '📈 Vitals'],
+      ['atlas.html', '🗺 The Atlas'],
+      ['morningshow.html', '📻 Morning Show'],
       ['guide.html', '📖 Guide'],
       ['community.html', '💬 Community'],
       // External (GitHub doc): a 3rd truthy element renders it as a new-tab link.

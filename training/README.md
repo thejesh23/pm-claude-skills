@@ -7,7 +7,7 @@ The pipeline to train **the first open model distilled from a skills library**: 
 | Step | State |
 |---|---|
 | 1. Dataset | ✅ `node training/build-sft-dataset.mjs` → `sft.jsonl` (616 pairs: routing + structure, from all 466 skills + the 153 eval inputs) |
-| 2. Teacher pass (optional, better) | 🔑 `--teacher` flag generates full completions for the 153 real inputs via your ANTHROPIC key (~$3-5) — richer targets than skeletons |
+| 2. Teacher pass (optional, better) | 🔑 optional upgrade: generate full teacher completions for the 153 real inputs via `pm-claude-skills run` in a loop (~$3-5 on your key) and merge them in as richer targets — not yet scripted, straightforward when wanted |
 | 3. Train | ▶️ press-go recipes below (~$10-25 GPU) |
 | 4. Publish | `huggingface-cli upload` to your HF account, model card in `training/MODEL_CARD.md` |
 
