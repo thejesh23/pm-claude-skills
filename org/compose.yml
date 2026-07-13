@@ -1,0 +1,16 @@
+# The Org Edition — your company's skill library on your infra.
+#   docker compose -f org/compose.yml up -d
+# Put your internal SKILL.md folders in ./org/private-skills/<name>/SKILL.md —
+# they hot-reload (60s) and OVERRIDE curated skills on name collision.
+# Access control: run it behind your VPN / SSO proxy like any internal tool.
+services:
+  pm-skills-org:
+    image: node:20-alpine
+    working_dir: /app
+    command: node org/server.mjs --port 8080
+    volumes:
+      - ..:/app:ro
+      - ./private-skills:/app/org/private-skills
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
