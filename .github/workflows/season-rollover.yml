@@ -1,0 +1,54 @@
+name: Season rollover
+
+# Monthly ritual automation: when a season passes its close date, freeze the
+# podium into the Hall and open an issue with the next-season checklist.
+# Free (no API); scenario authorship stays human — that's the craft.
+on:
+  schedule:
+    - cron: '0 8 * * *'    # daily check; acts only when a season has closed
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  rollover:
+    runs-on: ubuntu-latest
+    env: { GH_TOKEN: '${{ github.token }}' }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Check close + freeze podium
+        run: |
+          node - <<'JS'
+          const fs = require('fs');
+          const seasons = fs.readdirSync('seasons').filter((f) => /^season-\d+\.json$/.test(f));
+          const today = new Date().toISOString().slice(0, 10);
+          for (const f of seasons) {
+            const s = JSON.parse(fs.readFileSync('seasons/' + f, 'utf8'));
+            const hall = fs.readFileSync('seasons/HALL.md', 'utf8');
+            const rowRe = new RegExp(`^\\| ${s.season} \\|.*in play`, 'm');
+            if (s.closes >= today || !rowRe.test(hall)) continue;   // still open, or already frozen
+            const lb = JSON.parse(fs.readFileSync(`seasons/leaderboard-${s.season}.json`, 'utf8'));
+            const top = (lb.entries || []).slice().sort((a, b) => b.score - a.score);
+            const cell = (e) => e ? `[${e.name}](https://github.com/${e.name})` : '—';
+            const row = `| ${s.season} | ${s.title} | ${s.opens} → ${s.closes} | ${cell(top[0])} | ${top[0] ? top[0].score + '/40' : ''} | ${cell(top[1])} | ${cell(top[2])} |`;
+            fs.writeFileSync('seasons/HALL.md', hall.replace(new RegExp(`^\\| ${s.season} \\|.*$`, 'm'), row));
+            fs.writeFileSync('.rollover', JSON.stringify({ closed: s.season, champion: top[0]?.name || null, next: s.season + 1 }));
+            console.log(`Season ${s.season} frozen. Champion: ${top[0]?.name || '(no entries)'}`);
+          }
+          JS
+      - name: Commit Hall + open next-season issue
+        run: |
+          if [ ! -f .rollover ]; then echo "no season closed today"; exit 0; fi
+          NEXT=$(node -p "JSON.parse(require('fs').readFileSync('.rollover')).next")
+          CHAMP=$(node -p "JSON.parse(require('fs').readFileSync('.rollover')).champion || 'nobody (empty board)'")
+          rm .rollover
+          git config user.name "season-bot"; git config user.email "actions@github.com"
+          git checkout -b "season-rollover-$NEXT"
+          git add seasons/HALL.md
+          git commit -m "season: freeze podium into the Hall (champion: $CHAMP)"
+          git push -f origin "season-rollover-$NEXT"
+          gh issue create --title "🏆 Open Season $NEXT" --body "$(printf 'Season closed — the Hall podium is frozen on branch season-rollover-%s (merge it).\n\nChampion: **%s** — add the permanent README line and offer scenario-theme first pick.\n\nOpening checklist for Season %s:\n- [ ] Author seasons/season-%s.json (hand-written scenario — the craft stays human)\n- [ ] Empty seasons/leaderboard-%s.json\n- [ ] cp seasons/season-%s.json web/season-current.json\n- [ ] Announce (the Morning Show + newsletter pick it up automatically)' "$NEXT" "$CHAMP" "$NEXT" "$NEXT" "$NEXT" "$NEXT")" || true

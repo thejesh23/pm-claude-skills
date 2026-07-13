@@ -116,6 +116,7 @@ function writeScript(n){
     A(`Honestly Sam, the file is thin today — our listener is new.`);
     B(`Every legend starts with an empty file. One skill run, one Gym bout, and tomorrow's show writes itself. Literally. That's the whole premise.`);
   }
+  if(n.seasonLine){ A(`And in Season coverage: ${n.seasonLine}`); B(`The board is public, the transcripts are public, and the crown is one PR away. That's sport, baby.`); }
   A(`That's the bulletin. Today's assignment, if the desk had to pick one: ${n.due.length?'settle what\'s due before it settles you':n.gymN?'one more Gym round — the record won\'t beat itself':'run one skill in the playground and give us something to report'}.`);
   B(`This has been your Morning Show — local, private, and weirdly proud of you. Same time tomorrow.`);
   A(`Go do professional things!`);
@@ -140,7 +141,8 @@ function speak(host,text){
 async function roll(){
   if(playing) return; playing=true;
   el('play').disabled=true; el('stop').disabled=false; el('onair').classList.add('live');
-  SCRIPT=writeScript(news());
+  const n=news(); await seasonNews(n);
+  SCRIPT=writeScript(n);
   el('transcript').innerHTML=SCRIPT.map(([h,t])=>'<div><span class="who">'+(h==='A'?'ALEX':'SAM')+':</span> '+esc(t)+'</div>').join('');
   for(idx=0;idx<SCRIPT.length&&playing;idx++){
     const [h,t]=SCRIPT[idx];
