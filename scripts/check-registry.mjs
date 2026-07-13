@@ -60,6 +60,10 @@ for (const s of reg.skills || []) {
   }
   if (!s.path || !s.path.endsWith('SKILL.md')) errors.push(`${tag}: path must point at a SKILL.md`);
   if (!s.ref) warnings.push(`${tag}: no ref — defaulting consumers to main; a tag is more stable`);
+  if (s.pricing) {
+    if (!['free', 'paid'].includes(s.pricing.model)) errors.push(`${tag}: pricing.model must be free|paid`);
+    if (s.pricing.model === 'paid' && !/^https:\/\/(.*\.)?(lemonsqueezy\.com|polar\.sh)\//.test(s.pricing.checkout || '')) errors.push(`${tag}: paid entries need a lemonsqueezy/polar checkout URL`);
+  }
   if (!s.sha256) warnings.push(`${tag}: no sha256 pin — consumers get whatever the ref serves; pin with: shasum -a 256 SKILL.md`);
   if (!s.description || s.description.length < 30) warnings.push(`${tag}: description missing/short — copy the frontmatter description`);
 }
