@@ -9,6 +9,54 @@
   },
   "plugins": [
     {
+      "name": "pm-banking",
+      "description": "Banking & lending skills: credit memos with covenant headroom, quarterly covenant compliance reviews, KYC/AML escalation write-ups, and portfolio risk briefs — credit and compliance judgment for analysts and RMs.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-banking",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-insurance",
+      "description": "Insurance professional skills: claims triage with coverage-trigger checks, underwriting file narratives, pre-renewal reviews, and risk-register coverage-gap analysis — analytical support for claims handlers, underwriters, and brokers.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-insurance",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-climate",
+      "description": "Sustainability & ESG skills allergic to greenwash: GHG inventory sanity checks, CSRD/ESRS-flavored disclosure drafting, climate risk assessment (physical + transition), and a greenwashing self-audit that grades your claims before someone else does.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-climate",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-supplychain",
+      "description": "Supply chain & procurement skills: weighted RFP scoring, supplier scorecards, S&OP meeting prep, demand forecast interrogation, inventory policy (ABC/XYZ), and logistics incident reports — buyer and planner judgment.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-supplychain",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-hardware",
+      "description": "Hardware & physical-product skills: hardware PRDs with cost stacks, BOM cost review, EVT/DVT/PVT gate reviews, factory acceptance tests (AQL), tooling risk assessment, and RMA failure analysis (8D) — NPI judgment for HW PMs and ops leads.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-hardware",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-construction",
+      "description": "Construction & trades professional skills: bid/tender review, change orders, punch lists, toolbox-talk safety briefings, subcontractor scorecards, and delay claim letters — real field judgment for PMs, supers, and owners' reps.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-construction",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
       "name": "pm-warroom",
       "description": "The adversarial bundle \u2014 skills that attack your work before reality does: Premortem Assassin, Devil's Twin, Metric Gaslighting Detector, Decision Autopsy, Assumption Bounty.",
       "version": "1.0.0",

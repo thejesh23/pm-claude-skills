@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "pm-hardware",
+  "version": "1.0.0",
+  "description": "Hardware & physical-product skills: hardware PRDs with cost stacks, BOM cost review, EVT/DVT/PVT gate reviews, factory acceptance tests (AQL), tooling risk assessment, and RMA failure analysis (8D) — NPI judgment for HW PMs and ops leads.",
+  "author": {
+    "name": "Mohit Aggarwal",
+    "email": "mohit15856@gmail.com"
+  },
+  "homepage": "https://github.com/mohitagw15856/pm-claude-skills",
+  "license": "MIT",
+  "keywords": [
+    "hardware",
+    "npi",
+    "bom",
+    "evt-dvt-pvt",
+    "manufacturing",
+    "fat",
+    "rma",
+    "8d"
+  ]
+}
