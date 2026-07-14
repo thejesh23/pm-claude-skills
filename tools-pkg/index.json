@@ -216,6 +216,12 @@
   "description": "Decide which of your recurring rituals to put on autopilot — and which to keep manual. Use when asked what to automate, how to set up recurring AI runs, which reports or briefings could run on a schedule, or to design an automation charter for a team. Produces a ritual inventory with automate/assist/keep-manual calls, guardrails per ritual, and a rollout order."
  },
  {
+  "name": "bid_tender_review",
+  "skill": "bid-tender-review",
+  "bundle": "pm-construction",
+  "description": "Analyse a construction bid or tender package for scope gaps, risk-shifting exclusions, unit-rate red flags, and front-loading in the schedule of values. Use when asked to review a bid, level bids, check a tender for gaps, compare sub quotes, or vet a schedule of values before award. Produces a structured bid review with a gap register, exclusion risk table, pricing red flags, and an award recommendation with pre-award clarifications."
+ },
+ {
   "name": "board_deck_narrative",
   "skill": "board-deck-narrative",
   "bundle": "pm-business",
@@ -232,6 +238,12 @@
   "skill": "board-pre-read",
   "bundle": "pm-business",
   "description": "Write a board pre-read that's sent before the meeting so the meeting is about decisions, not status. Use when asked to prepare a board pre-read, a board update/package, or pre-meeting materials for a board. Produces a board pre-read — a TL;DR, the metrics dashboard vs. plan, what's working / what's not, the decisions and asks for the board, and risks — designed to be read in advance."
+ },
+ {
+  "name": "bom_cost_review",
+  "skill": "bom-cost-review",
+  "bundle": "pm-hardware",
+  "description": "Review a bill of materials for cost, risk, and supply exposure — cost rollup, top-10 cost drivers, single-source and EOL risk, MOQ vs forecast mismatch, cost-down candidates, and tariff/logistics sensitivity. Use when asked to review a BOM, find cost-down opportunities, check component sourcing risk, or sanity-check BOM cost against target. Produces a structured BOM review with a cost driver Pareto, risk flags per line, and a prioritised cost-down list."
  },
  {
   "name": "bookkeeping_categorization",
@@ -330,6 +342,12 @@
   "description": "Allocate a finite budget or headcount across competing initiatives by return and strategic fit. Use when asked to allocate budget, decide where to invest, build a funding/portfolio plan, or make trade-offs across initiatives under a cap. Produces a capital-allocation plan — initiatives scored by expected return × strategic fit per dollar, a funded/unfunded split against the cap, the cut line, and the reasoning."
  },
  {
+  "name": "carbon_accounting_check",
+  "skill": "carbon-accounting-check",
+  "bundle": "pm-climate",
+  "description": "Sanity-check a greenhouse gas inventory before it goes into a report or gets audited. Use when asked to review a carbon footprint, check a GHG inventory, validate scope 1/2/3 numbers, explain a year-over-year emissions change, or prepare emissions data for assurance. Produces a boundary review, data-quality assessment, emission-factor sensitivity list, YoY bridge, and a fix-before-publishing list."
+ },
+ {
   "name": "career_ladder_map",
   "skill": "career-ladder-map",
   "bundle": "pm-career",
@@ -364,6 +382,12 @@
   "skill": "change-management-plan",
   "bundle": "pm-hr",
   "description": "Create a structured change management plan for any organisational change. Use when asked to write a change management plan, manage a change initiative, plan a system rollout, or lead an organisational transformation. Produces a plan covering stakeholder analysis, impact assessment, communication strategy, and resistance management."
+ },
+ {
+  "name": "change_order_writer",
+  "skill": "change-order-writer",
+  "bundle": "pm-construction",
+  "description": "Draft a defensible construction change order with entitlement basis, scope delta, itemised pricing, and schedule impact. Use when asked to write a change order, price extra work, draft a CO or COR/PCO, respond to a directive for changed work, or paper a field change. Produces a complete change order request with contract-clause entitlement, labour/material/equipment/OH&P breakdown, time impact statement, and reservation of rights."
  },
  {
   "name": "changelog_generator",
@@ -402,6 +426,12 @@
   "description": "Write a CI/CD pipeline playbook for a service or team. Use when asked to document a CI/CD pipeline, write a deployment process, define release gates, document build and test stages, or create a deployment guide. Produces a structured playbook covering pipeline stages, environment definitions, deployment gates, rollback procedures, and on-call responsibilities."
  },
  {
+  "name": "claims_triage",
+  "skill": "claims-triage",
+  "bundle": "pm-insurance",
+  "description": "Triage an incoming insurance claim: check the coverage trigger against policy wording, band severity and complexity, screen for fraud indicators, set a first-pass reserve range, and route with an SLA. Use when asked to triage a claim, review a first notice of loss (FNOL), assess a new claim, decide fast-track vs adjuster routing, or screen a claim for SIU referral. Produces a structured triage note with coverage view, severity band, indicator screen, reserve range, and a routing recommendation."
+ },
+ {
   "name": "claude_superpowers",
   "skill": "claude-superpowers",
   "bundle": "pm-engineering",
@@ -418,6 +448,12 @@
   "skill": "client-discovery",
   "bundle": "pm-consulting",
   "description": "Run a consulting client discovery session — uncover the real problem, scope, and decision process. Use when asked to prepare for a client discovery call, qualify a consulting lead, scope an engagement, or run a kickoff. Produces a discovery plan — the questions that surface the real problem (not the stated one), budget/authority/timeline qualifiers, success criteria, red flags, and a follow-up that leads to a proposal."
+ },
+ {
+  "name": "climate_risk_assessment",
+  "skill": "climate-risk-assessment",
+  "bundle": "pm-climate",
+  "description": "Assess physical and transition climate risk for a site, product, or portfolio with scenario-based structure. Use when asked to run a climate risk assessment, evaluate physical or transition risk, prepare TCFD/ESRS-style climate risk analysis, or assess how climate scenarios affect an asset or business. Produces a hazard-exposure-vulnerability matrix across 2030/2040/2050 horizons and labelled scenarios, with financial-impact ranges, confidence levels, and adaptation options."
  },
  {
   "name": "clinical_case_summary",
@@ -606,6 +642,12 @@
   "description": "Write a specific, non-generic cover letter that connects your evidence to the role. Use when asked to write a cover letter, an application letter, or a note to accompany a resume. Produces a tight 3–4 paragraph letter — a real hook, two evidence paragraphs mapping your proof to the job's needs, and a confident close — tailored to the company, ready to export as a designed PDF."
  },
  {
+  "name": "coverage_gap_analysis",
+  "skill": "coverage-gap-analysis",
+  "bundle": "pm-insurance",
+  "description": "Map an organisation's risks against its insurance policy portfolio to find what's uncovered, underinsured, or double-covered. Use when asked to run a coverage gap analysis, review an insurance programme against a risk register, check what risks aren't insured, or audit a policy portfolio. Produces a risk-by-coverage matrix, flagged gaps and overlaps, a deductible stack review, and recommendations ranked by expected-loss severity."
+ },
+ {
   "name": "creator_brand_kit",
   "skill": "creator-brand-kit",
   "bundle": "pm-creator",
@@ -616,6 +658,12 @@
   "skill": "creator-media-kit",
   "bundle": "pm-creator",
   "description": "Build a creator's sponsorship media kit and brand-deal outreach — the one-pager brands ask for, plus a pitch email and a rate card. Use when asked to make a media kit, pitch a brand, land a sponsorship, write a brand-deal email, or set creator rates. Produces a structured media kit (audience, stats, offerings, past work), a personalised outreach email, and a defensible rate card. The creator side of a sponsorship — distinct from a brand briefing a creator."
+ },
+ {
+  "name": "credit_memo",
+  "skill": "credit-memo",
+  "bundle": "pm-banking",
+  "description": "Write a credit memo for a lending decision: borrower story, facility structure, repayment sources, financial-ratio spread with covenant headroom, risk factors with mitigants, risk-rating rationale, and a recommendation. Use when asked to write a credit memo, credit application, credit paper, loan write-up, or prepare a deal for credit committee. Produces a complete credit memo ready for committee review."
  },
  {
   "name": "csat_nps_analysis",
@@ -756,10 +804,22 @@
   "description": "Autopsy a slide deck from photos or screenshots of its slides — the narrative arc, the numbers, and what each slide is hiding. Use when given slide images (a competitor's pitch, a conference talk, your own deck before a big meeting) and asked what the deck argues, whether it holds up, or how to counter or improve it. Produces a slide-by-slide read, the reconstructed argument chain, weak links, and the questions the deck is engineered to avoid. Requires image input."
  },
  {
+  "name": "delay_claim_letter",
+  "skill": "delay-claim-letter",
+  "bundle": "pm-construction",
+  "description": "Draft a construction delay notice or delay claim letter with contract clause citation, cause classification, and critical-path impact narrative. Use when asked to write a delay notice, put the owner or GC on notice of delay, draft a time extension request, respond to weather or owner-caused delay, or paper a delay for a claim. Produces a notice/claim letter with the excusable-compensable classification, critical-path impact narrative, quantum placeholder, reservation of rights, and a records-preservation list."
+ },
+ {
   "name": "delta_briefing",
   "skill": "delta-briefing",
   "bundle": "pm-autopilot",
   "description": "Make a recurring brief report what changed since the last edition instead of restating everything. Use when a weekly or monthly report keeps repeating itself, when setting up a scheduled monitor or digest, or when asked to make a recurring update delta-aware. Produces a changes-first brief plus the state record the next run will diff against."
+ },
+ {
+  "name": "demand_forecast_review",
+  "skill": "demand-forecast-review",
+  "bundle": "pm-supplychain",
+  "description": "Interrogate a demand forecast before the business commits supply and inventory to it. Use when asked to review a demand plan, challenge a forecast, check forecast accuracy, decompose baseline vs uplift, or find hockey sticks in the numbers. Produces a forecast credibility review with baseline/uplift decomposition, MAPE and bias history, hockey-stick flags, an assumption register, and consensus-vs-statistical divergence analysis."
  },
  {
   "name": "demand_letter",
@@ -930,6 +990,12 @@
   "description": "Design a support/incident escalation tree — who handles what, when it escalates, and to whom. Use when asked to design an escalation path, an escalation matrix, support tiers, an on-call escalation policy, or to fix 'tickets bounce around / nothing gets escalated in time'. Produces an escalation tree — tiers & ownership, severity definitions, time-based triggers, routing rules, contacts/roles, and the customer-communication cadence per level."
  },
  {
+  "name": "esg_disclosure_draft",
+  "skill": "esg-disclosure-draft",
+  "bundle": "pm-climate",
+  "description": "Draft an honest, audit-ready ESG disclosure section in a CSRD/ESRS-flavored structure, adaptable to other frameworks. Use when asked to write a sustainability report section, draft an ESRS or CSRD disclosure, prepare an ESG section for an annual report, or turn raw sustainability data into disclosure text. Produces a disclosure draft with double-materiality framing, metric-methodology-limitation triplets, based forward statements, and explicit data-gap handling."
+ },
+ {
   "name": "eulogy_writer",
   "skill": "eulogy-writer",
   "bundle": "pm-lifeadmin",
@@ -946,6 +1012,12 @@
   "skill": "evidence-lock",
   "bundle": "pm-research",
   "description": "Write or rewrite a document in evidence-locked mode: no unsourced sentences — every substantive claim carries a footnote citing the exact passage in the user's provided sources, and anything unsupportable is explicitly marked. Use when asked to make a document fully sourced, add citations from my docs, ground a draft in the attached material, or produce something for audiences that will check (legal, board, regulators, enterprise buyers). Produces the document with numbered citations, a source map quoting each cited passage, and an unsupported-claims register."
+ },
+ {
+  "name": "evt_dvt_pvt_gate_review",
+  "skill": "evt-dvt-pvt-gate-review",
+  "bundle": "pm-hardware",
+  "description": "Run an NPI phase-gate review for EVT, DVT, or PVT — exit criteria per phase, open-issue triage, yield readout, waiver discipline, and a go/no-go call. Use when asked to run a gate review, decide EVT exit or DVT entry, review build results, assess whether to proceed to the next build, or triage open issues before a phase gate. Produces a gate review document with criteria scoring, waiver register, yield analysis, and a defensible go/conditional-go/no-go recommendation."
  },
  {
   "name": "excel_model",
@@ -1006,6 +1078,12 @@
   "skill": "exploratory-test-charter",
   "bundle": "pm-qa",
   "description": "Write session-based exploratory testing charters to find what scripted tests miss. Use when asked to plan exploratory testing, write a test charter, design a testing session, or do risk-based exploration of a feature. Produces focused charters — a mission, areas/risks to explore, tactics and oracles, and timeboxed sessions — so exploration is purposeful and accountable, not random clicking."
+ },
+ {
+  "name": "factory_acceptance_test",
+  "skill": "factory-acceptance-test",
+  "bundle": "pm-hardware",
+  "description": "Write a factory acceptance test (FAT) plan or report — test coverage matrix against spec, AQL sampling plan, pass/fail criteria, golden-sample handling, deviation log, and sign-off structure. Use when asked to write a FAT plan, define outgoing quality inspection, set AQL levels, prepare for a factory acceptance or pre-shipment inspection, or document FAT results. Produces a complete FAT plan or report with sampling tables, defect classification, and a sign-off block."
  },
  {
   "name": "feature_flag_guide",
@@ -1194,10 +1272,22 @@
   "description": "Write a structured grant proposal or funding application for any grant type. Use when asked to write a grant proposal, funding application, research grant, charitable grant, or innovation fund application. Produces a complete proposal with project summary, rationale, methodology, impact, and budget narrative."
  },
  {
+  "name": "greenwashing_self_audit",
+  "skill": "greenwashing-self-audit",
+  "bundle": "pm-climate",
+  "description": "Audit your own marketing and report claims for greenwashing risk before a regulator, journalist, or competitor does. Use when asked to review sustainability claims, check marketing copy for greenwash, audit environmental claims on a website or report, or pressure-test green messaging. Produces a claim inventory with substantiation status per claim, vague-term and omission flags, and a fix-or-drop recommendation for every claim."
+ },
+ {
   "name": "growth_experiment_backlog",
   "skill": "growth-experiment-backlog",
   "bundle": "pm-growth",
   "description": "Build and prioritise a growth experiment backlog. Use when asked to plan growth experiments, prioritise growth ideas, set up a test backlog, or run a growth process/sprint. Produces a prioritised backlog — each experiment as a hypothesis with the metric it moves, an ICE/PXL score, the minimum test design, and a definition of done; plus the cadence to run it."
+ },
+ {
+  "name": "hardware_prd",
+  "skill": "hardware-prd",
+  "bundle": "pm-hardware",
+  "description": "Write a PRD for a physical hardware product — target cost (BOM and landed), industrial design constraints, regulatory certifications, reliability targets, serviceability, packaging, and forecast assumptions. Use when asked to write a hardware PRD, spec a new device, define requirements for a physical product, or kick off an NPI program. Produces a complete hardware PRD with a cost stack, cert matrix, reliability spec, and EVT/DVT/PVT milestone targets."
  },
  {
   "name": "headline_options",
@@ -1314,6 +1404,12 @@
   "description": "Build a structured, role-specific interview question bank with what good answers look like. Use when asked to create interview questions, an interview guide, a structured interview kit, or competency-based questions for a role. Produces questions mapped to the competencies that matter — behavioral (STAR), role/technical, and values — each with what a strong vs. weak answer shows and follow-up probes, for fair, consistent interviews."
  },
  {
+  "name": "inventory_policy",
+  "skill": "inventory-policy",
+  "bundle": "pm-supplychain",
+  "description": "Set inventory policy for an item class: segmentation, safety stock, and replenishment method. Use when asked to set safety stock levels, segment items by ABC/XYZ, choose reorder points vs min-max, define stocking policy, or review excess and obsolete inventory. Produces a segmentation grid, per-segment service targets and safety-stock logic, a replenishment method choice per segment, and an E&O review cadence."
+ },
+ {
   "name": "investing_policy_statement",
   "skill": "investing-policy-statement",
   "bundle": "pm-money",
@@ -1380,6 +1476,12 @@
   "description": "Audit a knowledge base / help center for coverage, accuracy, and findability. Use when asked to audit a help center, review KB health, find documentation gaps, reduce ticket volume with better docs, or prioritise what to write/fix. Produces an audit — a health scorecard, content gaps (driven by top ticket drivers), stale/duplicate/low-findability articles, and a prioritised fix-and-create backlog."
  },
  {
+  "name": "kyc_escalation",
+  "skill": "kyc-escalation",
+  "bundle": "pm-banking",
+  "description": "Write an internal KYC/AML escalation memo: a factual time-stamped trigger description, customer-profile vs activity mismatch analysis, red-flag taxonomy mapping, outstanding information, and a recommendation with rationale. Use when asked to escalate a KYC alert, document an AML concern, write up unusual-activity findings for compliance review, or prepare an enhanced due diligence referral. Produces a structured internal escalation memo for a compliance team's decision-makers."
+ },
+ {
   "name": "landing_page_copy",
   "skill": "landing-page-copy",
   "bundle": "pm-copy",
@@ -1420,6 +1522,12 @@
   "skill": "legal-brief",
   "bundle": "pm-legal",
   "description": "Draft a structured legal brief, case summary, or legal argument outline. Use when asked to write a legal brief, case note, legal memo, argument outline, or position paper. Produces a structured document using IRAC format (Issue, Rule, Application, Conclusion)."
+ },
+ {
+  "name": "lending_risk_brief",
+  "skill": "lending-risk-brief",
+  "bundle": "pm-banking",
+  "description": "Write a portfolio-level lending risk brief: concentration analysis by sector, geography and single name, vintage performance, migration matrix narrative, macro-sensitivity scenarios, top watch names, and actions. Use when asked to write a portfolio risk report, credit risk committee brief, loan book review, or quarterly portfolio quality update. Produces a structured risk brief with concentration tables, migration narrative, scenario read, watch list, and recommended actions."
  },
  {
   "name": "lesson_plan",
@@ -1464,6 +1572,12 @@
   "description": "Write a load and performance testing plan for a service. Use when asked to create a performance test plan, write load testing documentation, define stress or soak test scenarios, or set performance regression gates for CI. Produces a complete test plan document with scenario definitions, k6/Locust script skeleton, threshold table, result interpretation guide, and CI integration steps."
  },
  {
+  "name": "loan_covenant_review",
+  "skill": "loan-covenant-review",
+  "bundle": "pm-banking",
+  "description": "Run a quarterly loan covenant compliance review: covenant table with required vs actual vs headroom, trend and trajectory-to-breach analysis, waiver and amendment options with pricing implications, early-warning indicators, and a watch-list recommendation. Use when asked to review covenant compliance, check covenant headroom, assess a potential covenant breach, or prepare a quarterly borrower monitoring review. Produces a structured covenant review with headroom table, trajectory analysis, and recommended actions."
+ },
+ {
   "name": "local_dev_setup",
   "skill": "local-dev-setup",
   "bundle": "pm-engineering",
@@ -1474,6 +1588,12 @@
   "skill": "localization-brief",
   "bundle": "pm-localization",
   "description": "Plan the localization of a product/content for a new market — beyond translating the words. Use when asked to localize a product, plan market entry localization, prepare a localization brief, or figure out what to adapt for a new region. Produces a brief — target locales, what to translate vs. adapt vs. rebuild (UI, content, formats, imagery, payments, legal), priorities, and the risks/cultural pitfalls."
+ },
+ {
+  "name": "logistics_incident_report",
+  "skill": "logistics-incident-report",
+  "bundle": "pm-supplychain",
+  "description": "Write up a supply chain disruption — port delay, carrier failure, customs hold, or in-transit damage — as a decision-ready incident report. Use when asked to document a shipment delay, write up a logistics failure, report a customs hold, quantify a supply disruption, or draft the customer notice for a late delivery. Produces an impact-quantified incident report with containment actions, root cause, prevention items, and a customer-communication draft."
  },
  {
   "name": "managing_up",
@@ -1770,6 +1890,12 @@
   "description": "Write a decision-ready policy memo that frames an issue and recommends an option. Use when asked to write a policy memo, options paper, decision memo for a principal/minister/executive, or brief a decision-maker on a policy choice. Produces a tight memo: the issue, background, options with trade-offs, a clear recommendation, and implementation/risks — written for a busy decision-maker who reads the first paragraph."
  },
  {
+  "name": "policy_renewal_review",
+  "skill": "policy-renewal-review",
+  "bundle": "pm-insurance",
+  "description": "Run a pre-renewal review of an insurance programme: scan coverage gaps against current operations, test limit adequacy against inflation and exposure growth, read the claims experience into pricing expectations, frame market alternatives, and arm the broker negotiation. Use when asked to prepare for a policy renewal, review cover before renewal, check if limits are still adequate, or build renewal negotiation points. Produces a structured renewal review with gap findings, limit assessment, pricing outlook, and negotiation points."
+ },
+ {
   "name": "portfolio_page",
   "skill": "portfolio-page",
   "bundle": "pm-personal",
@@ -1968,6 +2094,12 @@
   "description": "Draft a persuasive public comment on a proposed rule, regulation, or plan. Use when asked to comment on a rulemaking, respond to a consultation, submit feedback on a proposed regulation, or write a comment to an agency. Produces a structured comment: your position, specific evidence-based arguments tied to the proposal's text, suggested edits, and the impact — the kind agencies must consider on the record."
  },
  {
+  "name": "punch_list_builder",
+  "skill": "punch-list-builder",
+  "bundle": "pm-construction",
+  "description": "Turn walkthrough notes, photos, or voice-memo transcripts into a proper construction punch list with location, trade, and spec reference per item. Use when asked to build a punch list, clean up walkthrough notes, organise a deficiency list, prep for substantial completion, or track punch items to closeout. Produces a numbered punch list grouped by location with severity tiers, responsible subcontractor, back-charge candidates, and closeout/retainage linkage."
+ },
+ {
   "name": "qa_release_signoff",
   "skill": "qa-release-signoff",
   "bundle": "pm-qa",
@@ -2148,6 +2280,12 @@
   "description": "Write a compliant, competitive response to an RFP/RFQ/ITT (government or enterprise procurement). Use when responding to a request for proposal, bidding on a tender, or answering a procurement questionnaire. Produces a compliance-matrix-driven response that answers every requirement, wins on evaluation criteria, and reads as low-risk to the buyer — structured to the scoring, not the seller's ego."
  },
  {
+  "name": "rfp_scoring_matrix",
+  "skill": "rfp-scoring-matrix",
+  "bundle": "pm-supplychain",
+  "description": "Build a weighted RFP evaluation matrix and defensible award recommendation. Use when asked to score RFP responses, compare vendor bids, build a supplier evaluation matrix, run a sourcing event scorecard, or decide which bidder to award. Produces a criteria tree with weights, scoring anchors, normalized price scores, a consensus-scored comparison table, and an award recommendation with sensitivity check."
+ },
+ {
   "name": "rfp_writer",
   "skill": "rfp-writer",
   "bundle": "pm-operations",
@@ -2170,6 +2308,12 @@
   "skill": "risk-register",
   "bundle": "pm-operations",
   "description": "Build and maintain a project or product risk register. Use when asked to create a risk register, identify project risks, build a risk matrix, or document risks and mitigations for a programme. Produces a complete risk register with likelihood/impact scoring, RAG status, ownership, and prioritised mitigations."
+ },
+ {
+  "name": "rma_failure_analysis",
+  "skill": "rma-failure-analysis",
+  "bundle": "pm-hardware",
+  "description": "Turn field returns into a structured failure-analysis report — RMA triage taxonomy (NTF vs real failures), Pareto by verified failure mode, 8D-style containment→root-cause→corrective-action structure, and cost-of-quality framing. Use when asked to analyse RMA data, investigate field returns, run failure analysis on returned units, write an 8D report, or figure out why return rates are climbing. Produces a failure-analysis report with a triage-clean Pareto, 8D actions, and the cost case for fixing each mode."
  },
  {
   "name": "roadmap_narrative",
@@ -2224,6 +2368,12 @@
   "skill": "runway-planner",
   "bundle": "pm-founders",
   "description": "Turn burn and cash into a clear runway picture and a raise decision — months left, default-alive vs default-dead, and what to cut or change. Use when asked to calculate runway, model burn rate, decide when to raise, figure out if the company is default-alive, or plan a scenario with hiring/cuts. Produces the runway math, a default-alive verdict, and dated trigger points for raising or acting. Not financial advice."
+ },
+ {
+  "name": "sop_meeting_prep",
+  "skill": "sop-meeting-prep",
+  "bundle": "pm-supplychain",
+  "description": "Prepare an S&OP cycle readout that surfaces the demand-supply gaps and forces the three decisions the meeting must make. Use when asked to prep an S&OP meeting, build the executive S&OP deck, summarize demand vs supply for the monthly cycle, or prepare a supply review readout. Produces a gap table, scenario levers with costs, an inventory projection, a decisions-required list, and a pre-read package."
  },
  {
   "name": "saas_metrics",
@@ -2356,6 +2506,12 @@
   "skill": "short-form-script",
   "bundle": "pm-creator",
   "description": "Write a short-form video script for TikTok, Instagram Reels, or YouTube Shorts — built on the hook→retention→payoff structure that drives watch-time. Use when asked to script a Reel, TikTok, Short, or any 15–60s vertical video. Produces a timed script with a 0–3s hook, retention beats with on-screen text and B-roll cues, a payoff, and a CTA — plus a caption and on-screen-text list. Distinct from long-form YouTube scripting."
+ },
+ {
+  "name": "site_safety_briefing",
+  "skill": "site-safety-briefing",
+  "bundle": "pm-construction",
+  "description": "Produce a toolbox talk or pre-task safety briefing from the day's planned construction work. Use when asked to write a toolbox talk, prepare a pre-task plan or JHA/JSA briefing, brief a crew on today's hazards, or plan safety for a specific task like a crane pick, excavation, or hot work. Produces a crew-ready briefing with task-specific hazards, controls ordered by the hierarchy of controls, required permits, and explicit stop-work triggers."
  },
  {
   "name": "skill_fusion",
@@ -2508,6 +2664,12 @@
   "description": "Decompose work across parallel subagents properly — task slicing that avoids collisions, briefs that stand alone, and result integration that catches contradictions. Use when work can genuinely parallelise (research fan-outs, multi-file changes, independent analyses), when deciding whether to delegate or do it yourself, or when past multi-agent runs produced conflicts and duplicated effort. Produces an orchestration plan: the parallel/sequential split, per-agent briefs, and the integration protocol."
  },
  {
+  "name": "subcontractor_scorecard",
+  "skill": "subcontractor-scorecard",
+  "bundle": "pm-construction",
+  "description": "Score a subcontractor's performance across schedule reliability, quality, safety, paperwork, and change-order behaviour with weighted anchors. Use when asked to evaluate a sub, build a subcontractor scorecard, decide whether to rebid or rehire a trade, review sub performance for prequalification, or justify removing a sub from the bid list. Produces a weighted scorecard with per-dimension anchored ratings, evidence notes, and an award/retention recommendation."
+ },
+ {
   "name": "substack_notes_scraper",
   "skill": "substack-notes-scraper",
   "bundle": "pm-writers",
@@ -2518,6 +2680,12 @@
   "skill": "subtitle-caption",
   "bundle": "pm-localization",
   "description": "Write or translate subtitles/captions that respect reading speed and timing rules. Use when asked to write subtitles, captions, SRT/VTT content, or to translate subtitles for a video. Produces properly-formatted, readable subtitles — line-length and reading-speed compliant, well-segmented, with translation that fits the time available, plus SDH/caption guidance where relevant."
+ },
+ {
+  "name": "supplier_scorecard",
+  "skill": "supplier-scorecard",
+  "bundle": "pm-supplychain",
+  "description": "Build a quarterly supplier performance scorecard with a weighted grade and a clear escalate/develop/exit call. Use when asked to review supplier performance, prepare a quarterly business review for a vendor, score a supplier on OTIF and quality, or decide whether to escalate or exit a supplier. Produces a weighted scorecard with trend arrows, per-dimension evidence, corrective-action status, and a recommendation."
  },
  {
   "name": "support_macro",
@@ -2634,6 +2802,12 @@
   "description": "Generate article or newsletter thumbnail candidates using the Gemini API from inside Claude Code. Claude reads article copy, proposes composition concepts, writes image generation prompts incorporating brand specs, calls Gemini to generate the images, evaluates the results via computer vision, and returns ranked candidates with rationale. Use when asked to create thumbnails, generate cover images, or produce visual candidates for an article or newsletter."
  },
  {
+  "name": "tooling_risk_assessment",
+  "skill": "tooling-risk-assessment",
+  "bundle": "pm-hardware",
+  "description": "Assess an injection-mold or production tooling decision before cutting steel — soft vs hard tooling tradeoff, tool life vs forecast, cavitation math, T1 sample timeline, cost of design changes after tooling, and kill criteria. Use when asked whether to kick off tooling, choose soft vs hard tools, size cavities, review a tooling quote, or assess the risk of tooling before the design is frozen. Produces a tooling risk assessment with capacity math, a decision recommendation, and explicit kill criteria."
+ },
+ {
   "name": "tornado_sensitivity",
   "skill": "tornado-sensitivity",
   "bundle": "pm-calculators",
@@ -2644,6 +2818,12 @@
   "skill": "transcreation",
   "bundle": "pm-localization",
   "description": "Transcreate marketing/brand copy for another language and culture — recreate the impact, not the words. Use when asked to adapt a tagline, ad, slogan, campaign, or brand message for a new market, or when a translation is 'correct but flat'. Produces a transcreated version that lands emotionally in-culture, with the strategic rationale, 2-3 options, and notes on what was changed and why."
+ },
+ {
+  "name": "underwriting_narrative",
+  "skill": "underwriting-narrative",
+  "bundle": "pm-insurance",
+  "description": "Write the underwriting file narrative for a risk: the risk story, exposure quantification, loss-history read, mitigating and aggravating factors, terms and subjectivities rationale, appetite fit, and a refer-or-bind recommendation. Use when asked to write up an underwriting file, document why we're writing a risk, prepare a referral to a senior underwriter, or justify terms and exclusions on a submission. Produces a complete underwriting narrative ready for the file or referral."
  },
  {
   "name": "unit_economics",

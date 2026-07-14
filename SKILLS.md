@@ -1,4 +1,4 @@
-# 🗂️ All 466 Skills — full catalog
+# 🗂️ All 496 Skills — full catalog
 
 > The complete per-skill breakdown, grouped by domain. For an interactive, searchable version see the [**live catalog**](https://mohitagw15856.github.io/pm-claude-skills/catalog.html); to run any skill in your browser, use the [**Playground**](https://mohitagw15856.github.io/pm-claude-skills/). Back to the [README](README.md).
 >
@@ -8,84 +8,84 @@
 
 ## 🚀 Product (44 skills)
 
-### `pm-advanced` — 6 skills · 5 eval-scored
+### `pm-advanced` — 6 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **AI Ethics Review** (`ai-ethics-review`) | Conduct a structured ethical review of an AI or ML feature, model, or product. | ✅ 4.8/5 |
-| **AI Product Canvas** (`ai-product-canvas`) | Structure AI and ML product decisions with the rigour of any product decision. | ✅ 5/5 |
-| **Design Handoff Brief** (`design-handoff-brief`) | Transform feature briefs into structured design briefs that give designers the context they need before opening Figma. | ✅ 5/5 |
-| **Experiment Designer** (`experiment-designer`) | Design statistically rigorous A/B tests and interpret experiment results. | ✅ 5/5 |
-| **Multi-Source Signal Synthesiser** (`multi-source-signal-synthesiser`) | Synthesises user signals from multiple research sources into a unified, weighted insight brief. | ✅ 5/5 |
+| **AI Ethics Review** (`ai-ethics-review`) | Conduct a structured ethical review of an AI or ML feature, model, or product. | — |
+| **AI Product Canvas** (`ai-product-canvas`) | Structure AI and ML product decisions with the rigour of any product decision. | — |
+| **Design Handoff Brief** (`design-handoff-brief`) | Transform feature briefs into structured design briefs that give designers the context they need before opening Figma. | — |
+| **Experiment Designer** (`experiment-designer`) | Design statistically rigorous A/B tests and interpret experiment results. | — |
+| **Multi-Source Signal Synthesiser** (`multi-source-signal-synthesiser`) | Synthesises user signals from multiple research sources into a unified, weighted insight brief. | — |
 | **Skill Fusion** (`skill-fusion`) | Fuse two skills from this library into one hybrid brief for a task that sits between them — the meta-skill. | — |
 
-### `pm-delivery` — 10 skills · 10 eval-scored
+### `pm-delivery` — 10 skills · 3 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
 | **A/B Test Planner** (`ab-test-planner`) | Design statistically rigorous A/B tests for product features, UI changes, onboarding flows, and pricing experiments. | ✅ 4.8/5 |
-| **Go-to-Market Planner** (`go-to-market-planner`) | Build a go-to-market plan for any product launch, feature release, or new market entry. | ✅ 5/5 |
-| **Launch Readiness** (`launch-readiness`) | Assesses pre-launch readiness across every function and produces an explicit Go / Conditional Go / No-Go recommendation. | ✅ 5/5 |
-| **PPTX Slide Auditor** (`pptx-slide-auditor`) | Audit a PowerPoint presentation for layout issues, text overflow, visual hierarchy problems, and consistency gaps. | ✅ 5/5 |
-| **Product Launch Checklist** (`product-launch-checklist`) | Generate a comprehensive pre-launch, launch day, and post-launch checklist for any product release. | ✅ 4.8/5 |
-| **Retrospective Analysis** (`retro-analysis`) | Analyses sprint delivery data and produces a structured retrospective brief. | ✅ 5/5 |
-| **Sprint Brief** (`sprint-brief`) | Generate a structured sprint brief from sprint data and goals. | ✅ 5/5 |
+| **Go-to-Market Planner** (`go-to-market-planner`) | Build a go-to-market plan for any product launch, feature release, or new market entry. | — |
+| **Launch Readiness** (`launch-readiness`) | Assesses pre-launch readiness across every function and produces an explicit Go / Conditional Go / No-Go recommendation. | — |
+| **PPTX Slide Auditor** (`pptx-slide-auditor`) | Audit a PowerPoint presentation for layout issues, text overflow, visual hierarchy problems, and consistency gaps. | — |
+| **Product Launch Checklist** (`product-launch-checklist`) | Generate a comprehensive pre-launch, launch day, and post-launch checklist for any product release. | — |
+| **Retrospective Analysis** (`retro-analysis`) | Analyses sprint delivery data and produces a structured retrospective brief. | — |
+| **Sprint Brief** (`sprint-brief`) | Generate a structured sprint brief from sprint data and goals. | — |
 | **Sprint Planning** (`sprint-planning`) | Structure and facilitate sprint planning sessions. | ✅ 3.8/5 |
-| **Technical Spec Template** (`technical-spec-template`) | Create structured technical specification documents that bridge product requirements and engineering implementation. | ✅ 4.8/5 |
+| **Technical Spec Template** (`technical-spec-template`) | Create structured technical specification documents that bridge product requirements and engineering implementation. | — |
 | **User Story Writer** (`user-story-writer`) | Write well-structured user stories with acceptance criteria and edge cases. | ✅ 4.8/5 |
 
-### `pm-discovery` — 5 skills · 5 eval-scored
+### `pm-discovery` — 5 skills · 1 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
 | **Assumption Mapper** (`assumption-mapper`) | Extract and risk-rate hidden assumptions in a product brief or PRD. | ✅ 5/5 |
-| **Customer Journey Map** (`customer-journey-map`) | Build a customer journey map for a product, service, or experience. | ✅ 5/5 |
-| **Discovery Interview Guide** (`discovery-interview-guide`) | Create a structured user discovery interview guide with screener questions, a discussion guide, and a synthesis framework. | ✅ 5/5 |
-| **Job Story Mapper** (`job-story-mapper`) | Write Jobs-to-be-Done (JTBD) job stories and map customer jobs across functional, social, and emotional dimensions. | ✅ 5/5 |
-| **User Interview Synthesis** (`user-interview-synthesis`) | Synthesises user interview transcripts into structured research findings. | ✅ 5/5 |
+| **Customer Journey Map** (`customer-journey-map`) | Build a customer journey map for a product, service, or experience. | — |
+| **Discovery Interview Guide** (`discovery-interview-guide`) | Create a structured user discovery interview guide with screener questions, a discussion guide, and a synthesis framework. | — |
+| **Job Story Mapper** (`job-story-mapper`) | Write Jobs-to-be-Done (JTBD) job stories and map customer jobs across functional, social, and emotional dimensions. | — |
+| **User Interview Synthesis** (`user-interview-synthesis`) | Synthesises user interview transcripts into structured research findings. | — |
 
-### `pm-essentials` — 8 skills · 6 eval-scored
+### `pm-essentials` — 8 skills · 3 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
 | **Competitive Analysis** (`competitive-analysis`) | Analyze competitors and create competitive landscape documentation with feature matrices, positioning maps, and strategic recommendations. | ✅ 4.3/5 |
-| **Word Doc Tracked Changes** (`docx-tracked-changes`) | Produce properly-formatted tracked changes for a Word document. | ✅ 5/5 |
-| **Meeting Notes** (`meeting-notes`) | Structure and format meeting notes following PM best practices. | ✅ 5/5 |
+| **Word Doc Tracked Changes** (`docx-tracked-changes`) | Produce properly-formatted tracked changes for a Word document. | — |
+| **Meeting Notes** (`meeting-notes`) | Structure and format meeting notes following PM best practices. | — |
 | **PRD Template** (`prd-template`) | Create a Product Requirements Document following proven PM template structure. | ✅ 4.8/5 |
 | **Stakeholder Update** (`stakeholder-update`) | Create concise executive stakeholder updates using the BLUF (Bottom Line Up Front) framework. | ✅ 4.8/5 |
 | **Style Fingerprint** (`style-fingerprint`) | Study 3-5 documents the user actually shipped and distil a compact style card — so every skill writes in their voice, not the model's. | — |
-| **User Research Synthesis** (`user-research-synthesis`) | Analyze and synthesize user research findings into structured, actionable insights. | ✅ 5/5 |
+| **User Research Synthesis** (`user-research-synthesis`) | Analyze and synthesize user research findings into structured, actionable insights. | — |
 | **Which Skill Router** (`which-skill`) | Route a fuzzy request to the right skill in this library. | — |
 
-### `pm-planning` — 8 skills · 7 eval-scored
+### `pm-planning` — 8 skills · 3 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **Feature Prioritisation** (`feature-prioritisation`) | Apply prioritisation frameworks (RICE, MoSCoW, Kano, ICE, Opportunity Scoring) to rank features and backlog items. | ✅ 5/5 |
+| **Feature Prioritisation** (`feature-prioritisation`) | Apply prioritisation frameworks (RICE, MoSCoW, Kano, ICE, Opportunity Scoring) to rank features and backlog items. | — |
 | **Feature Sunset Plan** (`feature-sunset-plan`) | Plan the retirement of a product feature — the kill decision made honest, user migration, data handling, comms sequencing, and the code actually… | — |
 | **OKR Builder** (`okr-builder`) | Create well-structured OKRs (Objectives and Key Results) for product teams, startups, and individuals. | ✅ 4.8/5 |
-| **Pricing Strategy** (`pricing-strategy`) | Structure pricing strategy decisions, packaging options, and tier design for SaaS and digital products. | ✅ 5/5 |
-| **RICE + Strategic Alignment** (`rice-impact-matrix`) | Scores features using both RICE and strategic alignment for nuanced prioritisation. | ✅ 4.8/5 |
+| **Pricing Strategy** (`pricing-strategy`) | Structure pricing strategy decisions, packaging options, and tier design for SaaS and digital products. | — |
+| **RICE + Strategic Alignment** (`rice-impact-matrix`) | Scores features using both RICE and strategic alignment for nuanced prioritisation. | — |
 | **RICE Prioritisation** (`rice-prioritisation`) | Scores and ranks product initiatives using the RICE framework. | ✅ 4.8/5 |
 | **Roadmap Narrative** (`roadmap-narrative`) | Transform a prioritised initiative list into a compelling strategic roadmap narrative. | ✅ 4.8/5 |
-| **Roadmap Presentation** (`roadmap-presentation`) | Create structured roadmap presentations calibrated to any audience. | ✅ 5/5 |
+| **Roadmap Presentation** (`roadmap-presentation`) | Create structured roadmap presentations calibrated to any audience. | — |
 
-### `pm-rituals` — 1 skill · 1 eval-scored
-
-| Skill | What it does | Eval |
-|---|---|---|
-| **PM Weekly Review** (`pm-weekly-review`) | Structure a PM's weekly review and planning session. | ✅ 5/5 |
-
-### `pm-strategy` — 6 skills · 6 eval-scored
+### `pm-rituals` — 1 skill
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **Ambiguity Resolver** (`ambiguity-resolver`) | Structure vague opportunities and unclear briefs into actionable one-page problem statements. | ✅ 4.8/5 |
+| **PM Weekly Review** (`pm-weekly-review`) | Structure a PM's weekly review and planning session. | — |
+
+### `pm-strategy` — 6 skills · 1 eval-scored
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **Ambiguity Resolver** (`ambiguity-resolver`) | Structure vague opportunities and unclear briefs into actionable one-page problem statements. | — |
 | **Competitive Intelligence Monitor** (`competitive-intelligence-monitor`) | Monitor competitor signals and surface strategic implications for your roadmap. | ✅ 3.8/5 |
-| **Competitor Signal Tracker** (`competitor-signal-tracker`) | Analyse competitor moves and translate them into strategic implications for your product roadmap. | ✅ 5/5 |
-| **Executive Update** (`executive-update`) | Transform detailed product updates into concise executive briefings. | ✅ 4.8/5 |
-| **Stakeholder Influence Mapper** (`stakeholder-influence-mapper`) | Map stakeholders for a product decision and produce a tailored influence strategy with talking points. | ✅ 4.5/5 |
-| **Strategic Narrative Generator** (`strategic-narrative-generator`) | Generate the strategic story connecting a product roadmap to company goals in a form non-technical stakeholders can repeat. | ✅ 5/5 |
+| **Competitor Signal Tracker** (`competitor-signal-tracker`) | Analyse competitor moves and translate them into strategic implications for your product roadmap. | — |
+| **Executive Update** (`executive-update`) | Transform detailed product updates into concise executive briefings. | — |
+| **Stakeholder Influence Mapper** (`stakeholder-influence-mapper`) | Map stakeholders for a product decision and produce a tailored influence strategy with talking points. | — |
+| **Strategic Narrative Generator** (`strategic-narrative-generator`) | Generate the strategic story connecting a product roadmap to company goals in a form non-technical stakeholders can repeat. | — |
 
 ## 📣 Marketing & Growth (48 skills)
 
@@ -101,16 +101,16 @@
 | **Sales Page** (`sales-page`) | Write a long-form sales page that takes a cold reader to a purchase. | — |
 | **Value Proposition** (`value-proposition`) | Craft a sharp value proposition that says who it's for, the outcome, and why you over the alternative. | — |
 
-### `pm-creator` — 6 skills · 6 eval-scored
+### `pm-creator` — 6 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **Content Repurposer** (`content-repurposer`) | Turn one piece of content into a full multi-platform pack — X/Twitter thread, LinkedIn post, newsletter section, Instagram carousel, and a… | ✅ 5/5 |
-| **Creator Brand Kit** (`creator-brand-kit`) | Define a creator's brand foundation — niche, audience, positioning, content pillars, voice/tone, and bio — so every post is consistent and on-brand. | ✅ 5/5 |
-| **Creator Media Kit** (`creator-media-kit`) | Build a creator's sponsorship media kit and brand-deal outreach — the one-pager brands ask for, plus a pitch email and a rate card. | ✅ 5/5 |
-| **Hook Writer** (`hook-writer`) | Generate scroll-stopping hooks — the first line of a post, thread, video, or email that decides whether anyone keeps reading. | ✅ 5/5 |
-| **Newsletter Writer** (`newsletter-writer`) | Write a full creator newsletter issue — subject line, preview text, hook, body with a clear takeaway, and a CTA — in the writer's voice, for… | ✅ 4.8/5 |
-| **Short-Form Script** (`short-form-script`) | Write a short-form video script for TikTok, Instagram Reels, or YouTube Shorts — built on the hook→retention→payoff structure that drives watch-time. | ✅ 4.8/5 |
+| **Content Repurposer** (`content-repurposer`) | Turn one piece of content into a full multi-platform pack — X/Twitter thread, LinkedIn post, newsletter section, Instagram carousel, and a… | — |
+| **Creator Brand Kit** (`creator-brand-kit`) | Define a creator's brand foundation — niche, audience, positioning, content pillars, voice/tone, and bio — so every post is consistent and on-brand. | — |
+| **Creator Media Kit** (`creator-media-kit`) | Build a creator's sponsorship media kit and brand-deal outreach — the one-pager brands ask for, plus a pitch email and a rate card. | — |
+| **Hook Writer** (`hook-writer`) | Generate scroll-stopping hooks — the first line of a post, thread, video, or email that decides whether anyone keeps reading. | — |
+| **Newsletter Writer** (`newsletter-writer`) | Write a full creator newsletter issue — subject line, preview text, hook, body with a clear takeaway, and a CTA — in the writer's voice, for… | — |
+| **Short-Form Script** (`short-form-script`) | Write a short-form video script for TikTok, Instagram Reels, or YouTube Shorts — built on the hook→retention→payoff structure that drives watch-time. | — |
 
 ### `pm-growth` — 14 skills
 
@@ -131,18 +131,18 @@
 | **Retention Loop Design** (`retention-loop-design`) | Design retention and engagement loops that bring users back. | — |
 | **Schema Markup** (`schema-markup`) | Generate structured-data (Schema.org / JSON-LD) markup to win rich results in search. | — |
 
-### `pm-gtm` — 8 skills · 8 eval-scored
+### `pm-gtm` — 8 skills · 1 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **Competitor Teardown** (`competitor-teardown`) | Produce a structured competitive analysis for any product or market. | ✅ 4.5/5 |
-| **Content Calendar** (`content-calendar`) | Generate a structured content calendar for any brand, product, or creator. | ✅ 4.8/5 |
-| **Email Campaign** (`email-campaign`) | Write and sequence multi-email nurture or launch campaigns. | ✅ 5/5 |
+| **Competitor Teardown** (`competitor-teardown`) | Produce a structured competitive analysis for any product or market. | — |
+| **Content Calendar** (`content-calendar`) | Generate a structured content calendar for any brand, product, or creator. | — |
+| **Email Campaign** (`email-campaign`) | Write and sequence multi-email nurture or launch campaigns. | — |
 | **Go-To-Market** (`go-to-market`) | Create go-to-market assets for any product or feature. | ✅ 4.8/5 |
-| **Media Pitch** (`media-pitch`) | Write a media pitch or press outreach email for any story or announcement. | ✅ 4.8/5 |
-| **Product Positioning Doc** (`product-positioning-doc`) | Write a product positioning document and messaging framework. | ✅ 5/5 |
-| **SEO Content Brief** (`seo-content-brief`) | Create a structured SEO content brief for any target keyword or topic. | ✅ 5/5 |
-| **Social Media Strategy** (`social-media-strategy`) | Build a social media strategy for a brand, product, or creator. | ✅ 5/5 |
+| **Media Pitch** (`media-pitch`) | Write a media pitch or press outreach email for any story or announcement. | — |
+| **Product Positioning Doc** (`product-positioning-doc`) | Write a product positioning document and messaging framework. | — |
+| **SEO Content Brief** (`seo-content-brief`) | Create a structured SEO content brief for any target keyword or topic. | — |
+| **Social Media Strategy** (`social-media-strategy`) | Build a social media strategy for a brand, product, or creator. | — |
 
 ### `pm-pmm` — 8 skills
 
@@ -157,15 +157,15 @@
 | **Voice of Customer Program** (`voice-of-customer-program`) | Stand up a Voice of Customer (VoC) program that turns feedback into action. | — |
 | **Win/Loss Analysis** (`win-loss-analysis`) | Analyze why deals are won and lost and turn it into an action plan. | — |
 
-### `pm-social` — 5 skills · 5 eval-scored
+### `pm-social` — 5 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **Community Management Playbook** (`community-management-playbook`) | Build a community management playbook for a brand's social media channels. | ✅ 5/5 |
-| **Influencer Brief** (`influencer-brief`) | Create a structured brief for an influencer or creator partnership campaign. | ✅ 4.8/5 |
-| **Social Ad Campaign** (`social-ad-campaign`) | Plan and write a paid social advertising campaign. | ✅ 4.8/5 |
-| **Social Media Audit** (`social-media-audit`) | Audit an existing social media presence across all active platforms. | ✅ 5/5 |
-| **Viral Content Framework** (`viral-content-framework`) | Build a framework for creating shareable, high-reach social media content. | ✅ 4/5 |
+| **Community Management Playbook** (`community-management-playbook`) | Build a community management playbook for a brand's social media channels. | — |
+| **Influencer Brief** (`influencer-brief`) | Create a structured brief for an influencer or creator partnership campaign. | — |
+| **Social Ad Campaign** (`social-ad-campaign`) | Plan and write a paid social advertising campaign. | — |
+| **Social Media Audit** (`social-media-audit`) | Audit an existing social media presence across all active platforms. | — |
+| **Viral Content Framework** (`viral-content-framework`) | Build a framework for creating shareable, high-reach social media content. | — |
 
 ## 💻 Engineering & AI (81 skills)
 
@@ -209,55 +209,55 @@
 | **Metric Semantic Layer** (`metric-semantic-layer`) | Define a metric in a semantic layer so it means one thing everywhere. | — |
 | **SQL Optimizer** (`sql-optimizer`) | Diagnose a slow SQL query and produce a concrete optimization plan. | — |
 
-### `pm-engineering` — 45 skills · 42 eval-scored
+### `pm-engineering` — 45 skills · 6 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
 | **AI Code Review** (`ai-code-review`) | Review AI-authored code for its characteristic failure modes — plausible-but-wrong logic, hallucinated APIs, over-engineering, dead scaffolding… | — |
-| **API Docs Writer** (`api-docs-writer`) | Write clear, developer-facing API documentation. | ✅ 5/5 |
-| **API Versioning Strategy** (`api-versioning-strategy`) | Write an API versioning strategy document for a service or API platform. | ✅ 5/5 |
-| **Architecture Decision Record (ADR)** (`architecture-decision-record`) | Create an Architecture Decision Record (ADR) for any technical decision. | ✅ 5/5 |
-| **Capacity Planning** (`capacity-planning`) | Produce a capacity planning document for a service covering traffic forecasts, resource requirements, and scaling strategy. | ✅ 5/5 |
-| **Changelog Generator** (`changelog-generator`) | Convert a git log, commit list, or release notes into a polished, user-facing changelog. | ✅ 5/5 |
-| **CI/CD Playbook** (`cicd-playbook`) | Write a CI/CD pipeline playbook for a service or team. | ✅ 5/5 |
+| **API Docs Writer** (`api-docs-writer`) | Write clear, developer-facing API documentation. | — |
+| **API Versioning Strategy** (`api-versioning-strategy`) | Write an API versioning strategy document for a service or API platform. | — |
+| **Architecture Decision Record (ADR)** (`architecture-decision-record`) | Create an Architecture Decision Record (ADR) for any technical decision. | — |
+| **Capacity Planning** (`capacity-planning`) | Produce a capacity planning document for a service covering traffic forecasts, resource requirements, and scaling strategy. | — |
+| **Changelog Generator** (`changelog-generator`) | Convert a git log, commit list, or release notes into a polished, user-facing changelog. | — |
+| **CI/CD Playbook** (`cicd-playbook`) | Write a CI/CD pipeline playbook for a service or team. | — |
 | **Claude Superpowers** (`claude-superpowers`) | Activate a 4-stage coding discipline framework that forces Claude to plan before coding, isolate changes on a branch, write tests first, and… | — |
 | **Code Explainer** (`code-explainer`) | Explain what a piece of code does in plain English, at the depth the reader needs. | ✅ 5/5 |
-| **Code Review Checklist** (`code-review-checklist`) | Generate a tailored code review checklist for any pull request based on the language, type of change, and risk level. | ✅ 5/5 |
+| **Code Review Checklist** (`code-review-checklist`) | Generate a tailored code review checklist for any pull request based on the language, type of change, and risk level. | — |
 | **Context Mode** (`context-mode`) | Keep Claude Code sessions productive across resets with output filtering, session logging, and auto-resume. | — |
-| **Database Migration Plan** (`database-migration-plan`) | Write a safe, zero-downtime database migration plan for a schema change. | ✅ 5/5 |
-| **Database Schema Design** (`database-schema-design`) | Document or design a database schema with entity relationships, table definitions, constraints, indexes, and access patterns. | ✅ 4.3/5 |
-| **Debugging Log Analyser** (`debugging-log-analyser`) | Parse error logs, stack traces, and crash reports into a structured root cause diagnosis. | ✅ 5/5 |
-| **Dependency Audit** (`dependency-audit`) | Audits project dependencies for security vulnerabilities, license compliance issues, outdated packages, and transitive dependency risk. | ✅ 4.5/5 |
+| **Database Migration Plan** (`database-migration-plan`) | Write a safe, zero-downtime database migration plan for a schema change. | — |
+| **Database Schema Design** (`database-schema-design`) | Document or design a database schema with entity relationships, table definitions, constraints, indexes, and access patterns. | — |
+| **Debugging Log Analyser** (`debugging-log-analyser`) | Parse error logs, stack traces, and crash reports into a structured root cause diagnosis. | — |
+| **Dependency Audit** (`dependency-audit`) | Audits project dependencies for security vulnerabilities, license compliance issues, outdated packages, and transitive dependency risk. | — |
 | **Dependency Conflict Resolver** (`dependency-conflict-resolver`) | Resolve a dependency or version conflict (npm, pip, yarn, pnpm, Maven, Go modules) step by step. | ✅ 4.8/5 |
-| **Developer Onboarding Document** (`developer-onboarding-doc`) | Write a developer onboarding document for a service, codebase, or team. | ✅ 5/5 |
-| **Disaster Recovery Plan** (`disaster-recovery-plan`) | Write a disaster recovery plan for a service or system — covering RPO/RTO targets, failure scenario runbooks, backup and restore procedures, DR… | ✅ 4.3/5 |
-| **Engineering Hiring Rubric** (`engineering-hiring-rubric`) | Build an engineering hiring rubric and technical interview scorecard for evaluating software engineers at a specific level. | ✅ 5/5 |
-| **Engineering Weekly Report** (`engineering-weekly-report`) | Write a weekly engineering status report for a team, service, or initiative. | ✅ 5/5 |
+| **Developer Onboarding Document** (`developer-onboarding-doc`) | Write a developer onboarding document for a service, codebase, or team. | — |
+| **Disaster Recovery Plan** (`disaster-recovery-plan`) | Write a disaster recovery plan for a service or system — covering RPO/RTO targets, failure scenario runbooks, backup and restore procedures, DR… | — |
+| **Engineering Hiring Rubric** (`engineering-hiring-rubric`) | Build an engineering hiring rubric and technical interview scorecard for evaluating software engineers at a specific level. | — |
+| **Engineering Weekly Report** (`engineering-weekly-report`) | Write a weekly engineering status report for a team, service, or initiative. | — |
 | **Error Decoder** (`error-decoder`) | Decode an error message or stack trace into a plain-English cause, the exact fix, and how to prevent it. | ✅ 3.5/5 |
-| **Feature Flag Guide** (`feature-flag-guide`) | Write a feature flag management guide and lifecycle playbook for a service or team — covering flag taxonomy, creation checklist, rollout strategy… | ✅ 5/5 |
+| **Feature Flag Guide** (`feature-flag-guide`) | Write a feature flag management guide and lifecycle playbook for a service or team — covering flag taxonomy, creation checklist, rollout strategy… | — |
 | **Git Troubleshooter** (`git-troubleshooter`) | Diagnose a tangled git situation and give the exact, safe commands to fix it. | ✅ 4/5 |
 | **Incident Postmortem** (`incident-postmortem`) | Write a structured incident postmortem or post-incident review. | ✅ 4.8/5 |
-| **Infrastructure-as-Code Review** (`infra-as-code-review`) | Write an infrastructure-as-code review checklist and conduct a structured review of Terraform, CloudFormation, Pulumi, or Ansible code. | ✅ 4.8/5 |
-| **Load Testing Plan** (`load-testing-plan`) | Write a load and performance testing plan for a service. | ✅ 5/5 |
-| **Local Dev Setup** (`local-dev-setup`) | Write a local development environment setup guide for a service or project — covering prerequisites, repository setup, environment variables… | ✅ 4.5/5 |
-| **Microservices Decomposition** (`microservices-decomposition`) | Design a microservices decomposition for a monolith or new system, defining service boundaries, ownership, communication patterns, and migration plan. | ✅ 4.3/5 |
-| **Monitoring Setup Guide** (`monitoring-setup-guide`) | Write a monitoring setup guide for a service — defining what to measure, how to alert on it, and how to build the observability stack covering the… | ✅ 5/5 |
-| **On-Call Runbook** (`oncall-runbook`) | Write an on-call runbook for a service — covering alert definitions, escalation paths, common incident responses, and on-call handoff procedures. | ✅ 4.8/5 |
-| **Performance Budget** (`performance-budget`) | Define and document performance budgets for a web service or application. | ✅ 5/5 |
-| **PR Description Writer** (`pr-description-writer`) | Write a clear, structured pull request description from a git diff, branch summary, or commit list. | ✅ 4.8/5 |
+| **Infrastructure-as-Code Review** (`infra-as-code-review`) | Write an infrastructure-as-code review checklist and conduct a structured review of Terraform, CloudFormation, Pulumi, or Ansible code. | — |
+| **Load Testing Plan** (`load-testing-plan`) | Write a load and performance testing plan for a service. | — |
+| **Local Dev Setup** (`local-dev-setup`) | Write a local development environment setup guide for a service or project — covering prerequisites, repository setup, environment variables… | — |
+| **Microservices Decomposition** (`microservices-decomposition`) | Design a microservices decomposition for a monolith or new system, defining service boundaries, ownership, communication patterns, and migration plan. | — |
+| **Monitoring Setup Guide** (`monitoring-setup-guide`) | Write a monitoring setup guide for a service — defining what to measure, how to alert on it, and how to build the observability stack covering the… | — |
+| **On-Call Runbook** (`oncall-runbook`) | Write an on-call runbook for a service — covering alert definitions, escalation paths, common incident responses, and on-call handoff procedures. | — |
+| **Performance Budget** (`performance-budget`) | Define and document performance budgets for a web service or application. | — |
+| **PR Description Writer** (`pr-description-writer`) | Write a clear, structured pull request description from a git diff, branch summary, or commit list. | — |
 | **Regex Builder & Explainer** (`regex-builder`) | Build a regular expression from a plain-English description, or explain an existing one. | ✅ 4.5/5 |
-| **RFC Writer** (`rfc-writer`) | Write an engineering RFC (Request for Comments) for a technical decision, architectural change, or significant implementation approach. | ✅ 5/5 |
-| **Runbook Writer** (`runbook-writer`) | Write an operational runbook for a service, incident type, or deployment procedure. | ✅ 5/5 |
-| **Security Threat Model** (`security-threat-model`) | Write a STRIDE-based threat model for a service or feature. | ✅ 4.8/5 |
-| **Service Catalog Entry** (`service-catalog-entry`) | Write a service catalog entry for a microservice or internal platform service — covering service identity, purpose, architecture context, SLAs… | ✅ 4.8/5 |
-| **Skill Security Auditor** (`skill-security-auditor`) | Audit a Claude/Agent SKILL.md (or any AI skill / system prompt) for safety before installing or merging it. | ✅ 5/5 |
-| **SLO and Error Budget** (`slo-error-budget`) | Define Service Level Objectives (SLOs) and an error budget policy for a service. | ✅ 5/5 |
-| **Sprint Velocity Analysis** (`sprint-velocity-analysis`) | Analyze sprint velocity data and produce an engineering team health report covering delivery trends, capacity utilization, and improvement… | ✅ 5/5 |
-| **System Design Interview** (`system-design-interview`) | Structure a complete system design answer for interview questions or real architecture sessions. | ✅ 5/5 |
-| **Tech Radar** (`tech-radar`) | Build a technology radar for an engineering team, categorizing technologies into Adopt/Trial/Assess/Hold quadrants following the ThoughtWorks Tech… | ✅ 5/5 |
-| **Technical Debt Register** (`technical-debt-register`) | Document and prioritize a technical debt backlog with business impact, effort estimates, and resolution strategy. | ✅ 5/5 |
-| **Test Strategy Document** (`test-strategy-doc`) | Write a test strategy document from a feature spec, PRD, or system description. | ✅ 5/5 |
-| **Writing Great Skills** (`writing-great-skills`) | Author a high-quality Agent Skill (SKILL.md) that an AI reliably triggers and executes well — strong frontmatter, a sharp description with trigger… | ✅ 4.8/5 |
+| **RFC Writer** (`rfc-writer`) | Write an engineering RFC (Request for Comments) for a technical decision, architectural change, or significant implementation approach. | — |
+| **Runbook Writer** (`runbook-writer`) | Write an operational runbook for a service, incident type, or deployment procedure. | — |
+| **Security Threat Model** (`security-threat-model`) | Write a STRIDE-based threat model for a service or feature. | — |
+| **Service Catalog Entry** (`service-catalog-entry`) | Write a service catalog entry for a microservice or internal platform service — covering service identity, purpose, architecture context, SLAs… | — |
+| **Skill Security Auditor** (`skill-security-auditor`) | Audit a Claude/Agent SKILL.md (or any AI skill / system prompt) for safety before installing or merging it. | — |
+| **SLO and Error Budget** (`slo-error-budget`) | Define Service Level Objectives (SLOs) and an error budget policy for a service. | — |
+| **Sprint Velocity Analysis** (`sprint-velocity-analysis`) | Analyze sprint velocity data and produce an engineering team health report covering delivery trends, capacity utilization, and improvement… | — |
+| **System Design Interview** (`system-design-interview`) | Structure a complete system design answer for interview questions or real architecture sessions. | — |
+| **Tech Radar** (`tech-radar`) | Build a technology radar for an engineering team, categorizing technologies into Adopt/Trial/Assess/Hold quadrants following the ThoughtWorks Tech… | — |
+| **Technical Debt Register** (`technical-debt-register`) | Document and prioritize a technical debt backlog with business impact, effort estimates, and resolution strategy. | — |
+| **Test Strategy Document** (`test-strategy-doc`) | Write a test strategy document from a feature spec, PRD, or system description. | — |
+| **Writing Great Skills** (`writing-great-skills`) | Author a high-quality Agent Skill (SKILL.md) that an AI reliably triggers and executes well — strong frontmatter, a sharp description with trigger… | — |
 
 ### `pm-qa` — 6 skills
 
@@ -282,54 +282,54 @@
 
 ## 📊 Data & Analytics (11 skills)
 
-### `pm-analytics` — 3 skills · 3 eval-scored
+### `pm-analytics` — 3 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **Data Analysis Standard** (`data-analysis-standard`) | Structure a product data analysis, metric deep-dive, funnel analysis, or cohort study. | ✅ 5/5 |
-| **Product Health Analysis** (`product-health-analysis`) | Interpret product metrics against goals and surface actionable signals. | ✅ 5/5 |
-| **Retention Analysis** (`retention-analysis`) | Structure a retention analysis, churn investigation, or engagement deep-dive for any product team. | ✅ 5/5 |
+| **Data Analysis Standard** (`data-analysis-standard`) | Structure a product data analysis, metric deep-dive, funnel analysis, or cohort study. | — |
+| **Product Health Analysis** (`product-health-analysis`) | Interpret product metrics against goals and surface actionable signals. | — |
+| **Retention Analysis** (`retention-analysis`) | Structure a retention analysis, churn investigation, or engagement deep-dive for any product team. | — |
 
-### `pm-data` — 8 skills · 8 eval-scored
+### `pm-data` — 8 skills · 3 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **A/B Test Readout** (`ab-test-readout`) | Analyse a finished A/B test and write the readout — the result, whether it's statistically and practically significant, what it means, and the… | ✅ 4.8/5 |
-| **Cohort Analysis** (`cohort-analysis`) | Structure a cohort analysis for retention, LTV, or behavioural patterns. | ✅ 3.3/5 |
-| **Dashboard Brief** (`dashboard-brief`) | Convert a business question into a complete dashboard specification. | ✅ 5/5 |
-| **Data Pipeline Spec** (`data-pipeline-spec`) | Design an ETL/ELT data pipeline specification. | ✅ 5/5 |
-| **Data Quality Audit** (`data-quality-audit`) | Audit a dataset for the quality problems that silently break analysis — missingness, duplicates, outliers, type and range errors, consistency, and… | ✅ 5/5 |
-| **Metric Tree Builder** (`metric-tree-builder`) | Decompose a north-star metric into a driver tree — the inputs and sub-inputs that actually move it — so a team knows which levers to pull. | ✅ 5/5 |
+| **A/B Test Readout** (`ab-test-readout`) | Analyse a finished A/B test and write the readout — the result, whether it's statistically and practically significant, what it means, and the… | — |
+| **Cohort Analysis** (`cohort-analysis`) | Structure a cohort analysis for retention, LTV, or behavioural patterns. | ✅ 3.5/5 |
+| **Dashboard Brief** (`dashboard-brief`) | Convert a business question into a complete dashboard specification. | — |
+| **Data Pipeline Spec** (`data-pipeline-spec`) | Design an ETL/ELT data pipeline specification. | — |
+| **Data Quality Audit** (`data-quality-audit`) | Audit a dataset for the quality problems that silently break analysis — missingness, duplicates, outliers, type and range errors, consistency, and… | — |
+| **Metric Tree Builder** (`metric-tree-builder`) | Decompose a north-star metric into a driver tree — the inputs and sub-inputs that actually move it — so a team knows which levers to pull. | — |
 | **Metrics Framework** (`metrics-framework`) | Build a metrics framework for any product, team, or business. | ✅ 4.8/5 |
 | **SQL Query Explainer** (`sql-query-explainer`) | Explains, optimises, writes, and documents SQL queries. | ✅ 4.3/5 |
 
 ## 🎨 Design & Content (39 skills)
 
-### `pm-design` — 6 skills · 4 eval-scored
+### `pm-design` — 6 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **Accessibility Audit** (`accessibility-audit`) | Generate a WCAG 2.2 accessibility audit checklist and remediation suggestions for any UI or design. | ✅ 5/5 |
+| **Accessibility Audit** (`accessibility-audit`) | Generate a WCAG 2.2 accessibility audit checklist and remediation suggestions for any UI or design. | — |
 | **Brand Guidelines** (`brand-guidelines`) | Extract a brand's visual and verbal identity into an applicable guideline kit — tokens, voice rules, and do/don't pairs — then apply it… | — |
-| **Design Critique** (`design-critique`) | Give structured, constructive feedback on any design using UX frameworks. | ✅ 5/5 |
-| **Design System Audit** (`design-system-audit`) | Audit a design system for consistency, coverage, and quality. | ✅ 4.8/5 |
+| **Design Critique** (`design-critique`) | Give structured, constructive feedback on any design using UX frameworks. | — |
+| **Design System Audit** (`design-system-audit`) | Audit a design system for consistency, coverage, and quality. | — |
 | **Frontend Design** (`frontend-design`) | Produce frontend UI that actually looks designed — a working spacing/type system, deliberate color use, real states, and restraint — instead of… | — |
-| **UX Research Plan** (`ux-research-plan`) | Create a structured UX research plan for any product question or feature. | ✅ 5/5 |
+| **UX Research Plan** (`ux-research-plan`) | Create a structured UX research plan for any product question or feature. | — |
 
-### `pm-figma` — 10 skills · 10 eval-scored
+### `pm-figma` — 10 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **Figma Annotation Guide** (`figma-annotation-guide`) | Generate structured developer handoff annotations for a Figma screen or component. | ✅ 4.5/5 |
-| **Figma Component Audit** (`figma-component-audit`) | Audit a Figma component library for consistency, coverage gaps, and naming issues. | ✅ 5/5 |
-| **Figma Design Brief** (`figma-design-brief`) | Write a structured design brief for a Figma design task from a product requirement or feature request. | ✅ 5/5 |
-| **Figma Design Critique — PM Perspective** (`figma-design-critique-pm`) | Runs a PM-perspective design critique focused on product outcomes and user goals, not aesthetics. | ✅ 5/5 |
-| **Figma Design QA** (`figma-design-qa`) | Runs a pre-handoff QA checklist on a Figma design before it goes to engineering. | ✅ 4.8/5 |
-| **Figma Design Review** (`figma-design-review`) | Runs a structured PM design review against product requirements. | ✅ 5/5 |
-| **Figma Prototype Plan** (`figma-prototype-plan`) | Plan prototype interactions and flows for user testing in Figma. | ✅ 5/5 |
-| **Figma Spacing System** (`figma-spacing-system`) | Design a spacing and layout token system for a Figma design system. | ✅ 4.8/5 |
-| **Figma User Flow Planner** (`figma-user-flow-planner`) | Plan user flows and screen states for a Figma design before any designing starts. | ✅ 5/5 |
-| **Figma Variant Matrix** (`figma-variant-matrix`) | Define component variants and states systematically for Figma. | ✅ 5/5 |
+| **Figma Annotation Guide** (`figma-annotation-guide`) | Generate structured developer handoff annotations for a Figma screen or component. | — |
+| **Figma Component Audit** (`figma-component-audit`) | Audit a Figma component library for consistency, coverage gaps, and naming issues. | — |
+| **Figma Design Brief** (`figma-design-brief`) | Write a structured design brief for a Figma design task from a product requirement or feature request. | — |
+| **Figma Design Critique — PM Perspective** (`figma-design-critique-pm`) | Runs a PM-perspective design critique focused on product outcomes and user goals, not aesthetics. | — |
+| **Figma Design QA** (`figma-design-qa`) | Runs a pre-handoff QA checklist on a Figma design before it goes to engineering. | — |
+| **Figma Design Review** (`figma-design-review`) | Runs a structured PM design review against product requirements. | — |
+| **Figma Prototype Plan** (`figma-prototype-plan`) | Plan prototype interactions and flows for user testing in Figma. | — |
+| **Figma Spacing System** (`figma-spacing-system`) | Design a spacing and layout token system for a Figma design system. | — |
+| **Figma User Flow Planner** (`figma-user-flow-planner`) | Plan user flows and screen states for a Figma design before any designing starts. | — |
+| **Figma Variant Matrix** (`figma-variant-matrix`) | Define component variants and states systematically for Figma. | — |
 
 ### `pm-uxwriting` — 6 skills
 
@@ -358,29 +358,29 @@
 | **Sequence Diagram** (`sequence-diagram`) | Diagram an interaction as a sequence of messages between participants over time. | — |
 | **User Journey Map** (`user-journey-map`) | Map a user's journey through a product or experience, phase by phase, with their actions and how they feel. | — |
 
-### `pm-writers` — 6 skills · 3 eval-scored
+### `pm-writers` — 6 skills · 1 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
 | **AEO Optimizer** (`aeo-optimizer`) | Optimize an article for Answer Engine Optimization (AEO) so AI engines like ChatGPT, Perplexity, and Claude can extract, quote, and cite it. | ✅ 4.5/5 |
 | **Instagram Post Downloader** (`instagram-post-downloader`) | Download and save Instagram posts as high-resolution files. | — |
-| **Notes Humanizer** (`notes-humanizer`) | Strips AI writing patterns from text and rewrites it to sound genuinely human by removing statistical defaults and injecting the specific signals… | ✅ 5/5 |
+| **Notes Humanizer** (`notes-humanizer`) | Strips AI writing patterns from text and rewrites it to sound genuinely human by removing statistical defaults and injecting the specific signals… | — |
 | **Substack Notes Scraper** (`substack-notes-scraper`) | Scrapes a Substack Notes page and exports engagement data to a formatted .xlsx file. | — |
 | **Thumbnail Creator Skill (via Gemini)** (`thumbnail-creator`) | Generate article or newsletter thumbnail candidates using the Gemini API from inside Claude Code. | — |
-| **YouTube Script Writer** (`youtube-script-writer`) | Write engaging, high-retention YouTube video scripts with visual and audio cues. | ✅ 4/5 |
+| **YouTube Script Writer** (`youtube-script-writer`) | Write engaging, high-retention YouTube video scripts with visual and audio cues. | — |
 
 ## 🤝 Customers & Sales (24 skills)
 
-### `pm-cs` — 6 skills · 6 eval-scored
+### `pm-cs` — 6 skills · 2 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
 | **Churn Analysis** (`churn-analysis`) | Produce a structured churn analysis that separates avoidable from unavoidable churn. | ✅ 4.3/5 |
-| **Customer Escalation Brief** (`cs-escalation-brief`) | Write a structured escalation brief for an at-risk customer account. | ✅ 5/5 |
+| **Customer Escalation Brief** (`cs-escalation-brief`) | Write a structured escalation brief for an at-risk customer account. | — |
 | **Customer Health Scorecard** (`cs-health-scorecard`) | Build a customer health scorecard for a specific account. | ✅ 4.8/5 |
-| **Customer Success Plan** (`customer-success-plan`) | Build a joint customer success plan for a specific account. | ✅ 5/5 |
-| **QBR Deck** (`qbr-deck`) | Build a Quarterly Business Review (QBR) deck structure and narrative for a customer account. | ✅ 4.8/5 |
-| **Renewal Playbook** (`renewal-playbook`) | Build a structured renewal playbook for a customer account. | ✅ 5/5 |
+| **Customer Success Plan** (`customer-success-plan`) | Build a joint customer success plan for a specific account. | — |
+| **QBR Deck** (`qbr-deck`) | Build a Quarterly Business Review (QBR) deck structure and narrative for a customer account. | — |
+| **Renewal Playbook** (`renewal-playbook`) | Build a structured renewal playbook for a customer account. | — |
 
 ### `pm-recruiting` — 6 skills
 
@@ -393,16 +393,16 @@
 | **Recruiter Outreach** (`recruiter-outreach`) | Write personalized candidate outreach that gets replies. | — |
 | **Sourcing Strategy** (`sourcing-strategy`) | Build a talent sourcing strategy for a hard-to-fill role. | — |
 
-### `pm-sales` — 6 skills · 6 eval-scored
+### `pm-sales` — 6 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **Account Plan** (`account-plan`) | Build a structured account plan for any key customer or target account. | ✅ 5/5 |
-| **Discovery Call Prep** (`discovery-call-prep`) | Prepare a structured discovery call plan for any prospect. | ✅ 5/5 |
-| **Partnership Proposal** (`partnership-proposal`) | Write a B2B partnership proposal or business case. | ✅ 4.8/5 |
-| **Proposal Writer** (`proposal-writer`) | Write a structured sales proposal or commercial proposal for any deal. | ✅ 5/5 |
-| **Sales Battlecard** (`sales-battlecard`) | Create a competitive sales battlecard for any competitor. | ✅ 4.8/5 |
-| **Sales Forecasting Model** (`sales-forecasting-model`) | Build a structured sales forecast framework for any business or team. | ✅ 5/5 |
+| **Account Plan** (`account-plan`) | Build a structured account plan for any key customer or target account. | — |
+| **Discovery Call Prep** (`discovery-call-prep`) | Prepare a structured discovery call plan for any prospect. | — |
+| **Partnership Proposal** (`partnership-proposal`) | Write a B2B partnership proposal or business case. | — |
+| **Proposal Writer** (`proposal-writer`) | Write a structured sales proposal or commercial proposal for any deal. | — |
+| **Sales Battlecard** (`sales-battlecard`) | Create a competitive sales battlecard for any competitor. | — |
+| **Sales Forecasting Model** (`sales-forecasting-model`) | Build a structured sales forecast framework for any business or team. | — |
 
 ### `pm-support` — 6 skills
 
@@ -428,17 +428,17 @@
 | **Financial Statement Explainer** (`financial-statement-explainer`) | Explain a financial statement (P&L, balance sheet, or cash flow) in plain English. | — |
 | **Invoice Generator** (`invoice-generator`) | Create a professional, complete invoice for a client or customer. | — |
 
-### `pm-business` — 8 skills · 3 eval-scored
+### `pm-business` — 8 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **Board Deck Narrative** (`board-deck-narrative`) | Build the storyline and slide structure for a board presentation. | ✅ 4.8/5 |
+| **Board Deck Narrative** (`board-deck-narrative`) | Build the storyline and slide structure for a board presentation. | — |
 | **Board Minutes** (`board-minutes`) | Write formal board meeting minutes from an agenda, notes, transcript, or discussion summary. | — |
 | **Board Pre-Read** (`board-pre-read`) | Write a board pre-read that's sent before the meeting so the meeting is about decisions, not status. | — |
 | **Capital Allocation** (`capital-allocation`) | Allocate a finite budget or headcount across competing initiatives by return and strategic fit. | — |
 | **Decision Memo** (`decision-memo`) | Write a crisp decision memo that drives a clear decision, not a discussion. | — |
-| **Investor Update** (`investor-update`) | Write a structured monthly or quarterly investor update. | ✅ 5/5 |
-| **Job Application** (`job-application`) | Tailors a CV and cover letter to a specific job description. | ✅ 5/5 |
+| **Investor Update** (`investor-update`) | Write a structured monthly or quarterly investor update. | — |
+| **Job Application** (`job-application`) | Tailors a CV and cover letter to a specific job description. | — |
 | **Strategy Memo** (`strategy-memo`) | Write a strategy memo that commits to a bet and says what you won't do. | — |
 
 ### `pm-calculators` — 11 skills
@@ -457,37 +457,37 @@
 | **Tornado Sensitivity** (`tornado-sensitivity`) | Which assumption actually moves the answer — one-at-a-time sensitivity, ranked into a tornado. | — |
 | **Unit Economics** (`unit-economics`) | Model the unit economics of a business — CAC, LTV, payback, contribution margin — from real inputs. | — |
 
-### `pm-consulting` — 6 skills · 6 eval-scored
+### `pm-consulting` — 6 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **Case Study Write-up** (`case-study-writeup`) | Write a client case study that sells future work — challenge, approach, results. | ✅ 4.8/5 |
-| **Client Discovery** (`client-discovery`) | Run a consulting client discovery session — uncover the real problem, scope, and decision process. | ✅ 5/5 |
-| **Consulting Proposal** (`consulting-proposal`) | Write a consulting proposal that wins the engagement — outcomes over hours. | ✅ 4.8/5 |
-| **Engagement Retro** (`engagement-retro`) | Run a close-out retrospective on a client engagement — capture lessons, results, and the renewal/referral path. | ✅ 5/5 |
-| **Rate Card** (`rate-card`) | Build a consulting/freelance rate card and pricing structure — and the floor rate to not go broke. | ✅ 5/5 |
-| **Statement of Work** (`statement-of-work`) | Write a tight Statement of Work (SOW) that prevents scope creep and payment disputes. | ✅ 5/5 |
+| **Case Study Write-up** (`case-study-writeup`) | Write a client case study that sells future work — challenge, approach, results. | — |
+| **Client Discovery** (`client-discovery`) | Run a consulting client discovery session — uncover the real problem, scope, and decision process. | — |
+| **Consulting Proposal** (`consulting-proposal`) | Write a consulting proposal that wins the engagement — outcomes over hours. | — |
+| **Engagement Retro** (`engagement-retro`) | Run a close-out retrospective on a client engagement — capture lessons, results, and the renewal/referral path. | — |
+| **Rate Card** (`rate-card`) | Build a consulting/freelance rate card and pricing structure — and the floor rate to not go broke. | — |
+| **Statement of Work** (`statement-of-work`) | Write a tight Statement of Work (SOW) that prevents scope creep and payment disputes. | — |
 
-### `pm-finance` — 5 skills · 5 eval-scored
-
-| Skill | What it does | Eval |
-|---|---|---|
-| **Budget Variance Analysis** (`budget-variance-analysis`) | Produce a structured budget variance analysis from actual vs budget figures. | ✅ 5/5 |
-| **Financial Due Diligence** (`financial-due-diligence`) | Generate a financial due diligence checklist and analysis framework for any investment, acquisition, or partnership. | ✅ 5/5 |
-| **Financial Model Narrative** (`financial-model-narrative`) | Turn financial model outputs into a clear written narrative. | ✅ 4.8/5 |
-| **Investor Pitch Deck** (`investor-pitch-deck`) | Build the narrative and slide structure for an investor pitch deck. | ✅ 5/5 |
-| **Tax Planning Checklist** (`tax-planning-checklist`) | Generate a structured tax planning checklist and review framework for any individual or business context. | ✅ 5/5 |
-
-### `pm-founders` — 6 skills · 6 eval-scored
+### `pm-finance` — 5 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **Cap Table Explainer** (`cap-table-explainer`) | Explain a cap table, dilution, SAFEs, option pools, and round mechanics in plain English with the actual math. | ✅ 4.3/5 |
-| **Founder-Market Fit** (`founder-market-fit`) | Articulate founder-market fit — the why-you and why-now story investors and accelerators (YC-style) probe hardest. | ✅ 4.3/5 |
-| **Fundraising FAQ** (`fundraising-faq`) | Pressure-test a fundraise by anticipating the hard investor questions and arming the founder with crisp answers. | ✅ 4.8/5 |
-| **Investor Cold Email** (`investor-cold-email`) | Write a cold or warm-intro email to an investor that actually gets a reply — short, specific, traction-forward, with a clear ask. | ✅ 5/5 |
-| **Runway Planner** (`runway-planner`) | Turn burn and cash into a clear runway picture and a raise decision — months left, default-alive vs default-dead, and what to cut or change. | ✅ 5/5 |
-| **Startup Idea Validator** (`startup-idea-validator`) | Pressure-test a startup idea the way a sharp investor or co-founder would — problem, market, wedge, moat, why-now, and the fastest cheap way to… | ✅ 5/5 |
+| **Budget Variance Analysis** (`budget-variance-analysis`) | Produce a structured budget variance analysis from actual vs budget figures. | — |
+| **Financial Due Diligence** (`financial-due-diligence`) | Generate a financial due diligence checklist and analysis framework for any investment, acquisition, or partnership. | — |
+| **Financial Model Narrative** (`financial-model-narrative`) | Turn financial model outputs into a clear written narrative. | — |
+| **Investor Pitch Deck** (`investor-pitch-deck`) | Build the narrative and slide structure for an investor pitch deck. | — |
+| **Tax Planning Checklist** (`tax-planning-checklist`) | Generate a structured tax planning checklist and review framework for any individual or business context. | — |
+
+### `pm-founders` — 6 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **Cap Table Explainer** (`cap-table-explainer`) | Explain a cap table, dilution, SAFEs, option pools, and round mechanics in plain English with the actual math. | — |
+| **Founder-Market Fit** (`founder-market-fit`) | Articulate founder-market fit — the why-you and why-now story investors and accelerators (YC-style) probe hardest. | — |
+| **Fundraising FAQ** (`fundraising-faq`) | Pressure-test a fundraise by anticipating the hard investor questions and arming the founder with crisp answers. | — |
+| **Investor Cold Email** (`investor-cold-email`) | Write a cold or warm-intro email to an investor that actually gets a reply — short, specific, traction-forward, with a clear ask. | — |
+| **Runway Planner** (`runway-planner`) | Turn burn and cash into a clear runway picture and a raise decision — months left, default-alive vs default-dead, and what to cut or change. | — |
+| **Startup Idea Validator** (`startup-idea-validator`) | Pressure-test a startup idea the way a sharp investor or co-founder would — problem, market, wedge, moat, why-now, and the fastest cheap way to… | — |
 
 ### `pm-money` — 6 skills
 
@@ -500,22 +500,22 @@
 | **Net Worth Statement** (`net-worth-statement`) | Produce a personal net-worth statement — assets minus liabilities — and a way to track it. | — |
 | **Savings Goal Plan** (`savings-goal-plan`) | Turn a savings goal into a month-by-month funding plan. | — |
 
-### `pm-operations` — 12 skills · 7 eval-scored
+### `pm-operations` — 12 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
 | **Async Decision Memo** (`async-decision-memo`) | Run a decision asynchronously — the memo, the silent-read window, the comment protocol, and the deadline that makes it land without a meeting. | — |
 | **Email Triage** (`email-triage`) | Triage a Gmail inbox down to only what needs you. | — |
 | **Morning Intelligence** (`morning-intelligence`) | Interviews you across 15 questions to capture your role, topics, sources, exclusions, and format preferences, then writes a master prompt you can… | — |
-| **Process Documentation** (`process-documentation`) | Document any business process in a clear, structured format. | ✅ 5/5 |
-| **Project Status Report** (`project-status-report`) | Write a structured project status report for any project. | ✅ 5/5 |
-| **RACI Matrix** (`raci-matrix`) | Define a RACI matrix for a cross-functional project or process. | ✅ 5/5 |
+| **Process Documentation** (`process-documentation`) | Document any business process in a clear, structured format. | — |
+| **Project Status Report** (`project-status-report`) | Write a structured project status report for any project. | — |
+| **RACI Matrix** (`raci-matrix`) | Define a RACI matrix for a cross-functional project or process. | — |
 | **RFP Writer** (`rfp-writer`) | Write a clear Request for Proposal that gets comparable, high-quality vendor bids. | — |
-| **Risk Register** (`risk-register`) | Build and maintain a project or product risk register. | ✅ 5/5 |
-| **SOP Writer** (`sop-writer`) | Write a Standard Operating Procedure (SOP) for any operational task. | ✅ 4.8/5 |
+| **Risk Register** (`risk-register`) | Build and maintain a project or product risk register. | — |
+| **SOP Writer** (`sop-writer`) | Write a Standard Operating Procedure (SOP) for any operational task. | — |
 | **Vendor Contract Checklist** (`vendor-contract-checklist`) | Review a vendor/SaaS contract against a practical checklist before you sign. | — |
-| **Vendor Evaluation** (`vendor-evaluation`) | Create a structured vendor evaluation framework for any procurement decision. | ✅ 5/5 |
-| **Workshop Facilitation Guide** (`workshop-facilitation-guide`) | Design and facilitate any workshop, working session, or collaborative meeting. | ✅ 4.8/5 |
+| **Vendor Evaluation** (`vendor-evaluation`) | Create a structured vendor evaluation framework for any procurement decision. | — |
+| **Workshop Facilitation Guide** (`workshop-facilitation-guide`) | Design and facilitate any workshop, working session, or collaborative meeting. | — |
 
 ## ⚖️ Legal & Compliance (13 skills)
 
@@ -530,16 +530,16 @@
 | **SOC 2 Readiness** (`soc2-readiness`) | Assess SOC 2 readiness across the Trust Services Criteria and produce a gap remediation plan. | — |
 | **Vendor Security Review** (`vendor-security-review`) | Run a third-party / vendor security review and assign a risk tier with required controls. | — |
 
-### `pm-legal` — 7 skills · 7 eval-scored
+### `pm-legal` — 7 skills · 1 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **Clause Explainer** (`clause-explainer`) | Explain a contract clause in plain English — what it means, who it favours, the realistic risk, and what to negotiate. | ✅ 4.8/5 |
-| **Compliance Checklist** (`compliance-checklist`) | Generate a prioritised compliance checklist for GDPR, SOC 2, ISO 27001, FCA, HIPAA, or other frameworks with a gap analysis. | ✅ 5/5 |
-| **Contract Review** (`contract-review`) | Review and summarise any contract or legal agreement. | ✅ 4.8/5 |
-| **Demand Letter** (`demand-letter`) | Draft a firm, professional demand letter that states the facts, the legal/contractual basis, the specific demand, and a deadline. | ✅ 5/5 |
-| **Legal Brief** (`legal-brief`) | Draft a structured legal brief, case summary, or legal argument outline. | ✅ 4.5/5 |
-| **NDA Analyser** (`nda-analyser`) | Analyses a Non-Disclosure Agreement clause by clause and flags unusual terms, one-sided provisions, and negotiation points. | ✅ 4.5/5 |
+| **Clause Explainer** (`clause-explainer`) | Explain a contract clause in plain English — what it means, who it favours, the realistic risk, and what to negotiate. | — |
+| **Compliance Checklist** (`compliance-checklist`) | Generate a prioritised compliance checklist for GDPR, SOC 2, ISO 27001, FCA, HIPAA, or other frameworks with a gap analysis. | — |
+| **Contract Review** (`contract-review`) | Review and summarise any contract or legal agreement. | — |
+| **Demand Letter** (`demand-letter`) | Draft a firm, professional demand letter that states the facts, the legal/contractual basis, the specific demand, and a deadline. | — |
+| **Legal Brief** (`legal-brief`) | Draft a structured legal brief, case summary, or legal argument outline. | — |
+| **NDA Analyser** (`nda-analyser`) | Analyses a Non-Disclosure Agreement clause by clause and flags unusual terms, one-sided provisions, and negotiation points. | — |
 | **Privacy Policy Drafter** (`privacy-policy-drafter`) | Draft a clear, plain-language privacy policy tailored to what a product actually collects and does with data. | ✅ 4.8/5 |
 
 ## 🧑 You & Career (41 skills)
@@ -566,15 +566,15 @@
 | **Persuasion Brief** (`persuasion-brief`) | Build the case to win someone over to a decision, idea, or change. | — |
 | **Saying No** (`saying-no`) | Decline a request, push back on scope, or protect priorities without burning the relationship. | — |
 
-### `pm-hr` — 5 skills · 5 eval-scored
+### `pm-hr` — 5 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **Change Management Plan** (`change-management-plan`) | Create a structured change management plan for any organisational change. | ✅ 5/5 |
-| **Employee Engagement Survey** (`employee-engagement-survey`) | Design an employee engagement survey and analyse results. | ✅ 5/5 |
-| **Job Description Writer** (`job-description-writer`) | Write a clear, inclusive, and structured job description for any role. | ✅ 5/5 |
-| **Onboarding Plan** (`onboarding-plan`) | Create a structured 30/60/90-day onboarding plan for any new hire. | ✅ 4.8/5 |
-| **Redundancy Consultation** (`redundancy-consultation`) | Structure a redundancy consultation process and draft key communications (UK employment law focus). | ✅ 4.8/5 |
+| **Change Management Plan** (`change-management-plan`) | Create a structured change management plan for any organisational change. | — |
+| **Employee Engagement Survey** (`employee-engagement-survey`) | Design an employee engagement survey and analyse results. | — |
+| **Job Description Writer** (`job-description-writer`) | Write a clear, inclusive, and structured job description for any role. | — |
+| **Onboarding Plan** (`onboarding-plan`) | Create a structured 30/60/90-day onboarding plan for any new hire. | — |
+| **Redundancy Consultation** (`redundancy-consultation`) | Structure a redundancy consultation process and draft key communications (UK employment law focus). | — |
 
 ### `pm-jobsearch` — 5 skills
 
@@ -599,28 +599,28 @@
 | **Rental Application** (`rental-application`) | Write a standout rental application / cover letter to a landlord or letting agent. | — |
 | **Wedding Speech** (`wedding-speech`) | A best-man/maid-of-honour/parent wedding toast that actually lands — funny without roasting, moving without syrup, short enough that nobody checks… | — |
 
-### `pm-people` — 5 skills · 5 eval-scored
+### `pm-people` — 5 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **360-Degree Feedback Template** (`360-feedback-template`) | Design a 360-degree feedback survey or write a structured 360 feedback report. | ✅ 4.8/5 |
-| **Hiring Rubric** (`hiring-rubric`) | Generate a structured interview scorecard and interview guide for any role. | ✅ 5/5 |
-| **Performance Review** (`performance-review`) | Write structured, balanced performance reviews from bullet-point inputs. | ✅ 5/5 |
-| **Team Health Check** (`team-health-check`) | Runs a structured team health assessment across key dimensions. | ✅ 4.8/5 |
-| **Team Offsite Planner** (`team-offsite-planner`) | Plan a team offsite from goals to full agenda. | ✅ 4.5/5 |
+| **360-Degree Feedback Template** (`360-feedback-template`) | Design a 360-degree feedback survey or write a structured 360 feedback report. | — |
+| **Hiring Rubric** (`hiring-rubric`) | Generate a structured interview scorecard and interview guide for any role. | — |
+| **Performance Review** (`performance-review`) | Write structured, balanced performance reviews from bullet-point inputs. | — |
+| **Team Health Check** (`team-health-check`) | Runs a structured team health assessment across key dimensions. | — |
+| **Team Offsite Planner** (`team-offsite-planner`) | Plan a team offsite from goals to full agenda. | — |
 
-### `pm-personal` — 6 skills · 6 eval-scored
+### `pm-personal` — 6 skills · 1 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **Cover Letter** (`cover-letter`) | Write a specific, non-generic cover letter that connects your evidence to the role. | ✅ 5/5 |
-| **LinkedIn Profile** (`linkedin-profile`) | Optimise a LinkedIn profile to be found and to convert. | ✅ 4/5 |
-| **One-Pager** (`one-pager`) | Distil anything — a startup, product, project, or idea — into a single persuasive page. | ✅ 4.8/5 |
-| **Personal Bio** (`personal-bio`) | Write a professional bio in the three lengths you actually need. | ✅ 5/5 |
-| **Portfolio Page** (`portfolio-page`) | Structure a portfolio or case-study page that shows your work, not just lists it. | ✅ 5/5 |
+| **Cover Letter** (`cover-letter`) | Write a specific, non-generic cover letter that connects your evidence to the role. | — |
+| **LinkedIn Profile** (`linkedin-profile`) | Optimise a LinkedIn profile to be found and to convert. | — |
+| **One-Pager** (`one-pager`) | Distil anything — a startup, product, project, or idea — into a single persuasive page. | — |
+| **Personal Bio** (`personal-bio`) | Write a professional bio in the three lengths you actually need. | — |
+| **Portfolio Page** (`portfolio-page`) | Structure a portfolio or case-study page that shows your work, not just lists it. | — |
 | **Resume** (`resume`) | Write a sharp, achievement-led resume/CV that passes ATS and earns the interview. | ✅ 3.3/5 |
 
-## 🌍 Industries & Public Sector (105 skills)
+## 🌍 Industries & Public Sector (135 skills)
 
 ### `pm-agentnative` — 5 skills
 
@@ -661,6 +661,35 @@
 | **Outcome Tracker** (`outcome-tracker`) | Record the testable predictions inside a decision, then score them against reality later — so frameworks earn trust from outcomes, not vibes. | — |
 | **Schedule Recipe** (`schedule-recipe`) | Turn 'run this every Friday at 4pm' into a working, copy-paste schedule on the user's actual runner. | — |
 
+### `pm-banking` — 4 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **Credit Memo** (`credit-memo`) | Write a credit memo for a lending decision: borrower story, facility structure, repayment sources, financial-ratio spread with covenant headroom… | — |
+| **KYC Escalation** (`kyc-escalation`) | Write an internal KYC/AML escalation memo: a factual time-stamped trigger description, customer-profile vs activity mismatch analysis, red-flag… | — |
+| **Lending Risk Brief** (`lending-risk-brief`) | Write a portfolio-level lending risk brief: concentration analysis by sector, geography and single name, vintage performance, migration matrix… | — |
+| **Loan Covenant Review** (`loan-covenant-review`) | Run a quarterly loan covenant compliance review: covenant table with required vs actual vs headroom, trend and trajectory-to-breach analysis… | — |
+
+### `pm-climate` — 4 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **Carbon Accounting Check** (`carbon-accounting-check`) | Sanity-check a greenhouse gas inventory before it goes into a report or gets audited. | — |
+| **Climate Risk Assessment** (`climate-risk-assessment`) | Assess physical and transition climate risk for a site, product, or portfolio with scenario-based structure. | — |
+| **ESG Disclosure Draft** (`esg-disclosure-draft`) | Draft an honest, audit-ready ESG disclosure section in a CSRD/ESRS-flavored structure, adaptable to other frameworks. | — |
+| **Greenwashing Self-Audit** (`greenwashing-self-audit`) | Audit your own marketing and report claims for greenwashing risk before a regulator, journalist, or competitor does. | — |
+
+### `pm-construction` — 6 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **Bid / Tender Review** (`bid-tender-review`) | Analyse a construction bid or tender package for scope gaps, risk-shifting exclusions, unit-rate red flags, and front-loading in the schedule of… | — |
+| **Change Order Writer** (`change-order-writer`) | Draft a defensible construction change order with entitlement basis, scope delta, itemised pricing, and schedule impact. | — |
+| **Delay Claim Letter** (`delay-claim-letter`) | Draft a construction delay notice or delay claim letter with contract clause citation, cause classification, and critical-path impact narrative. | — |
+| **Punch List Builder** (`punch-list-builder`) | Turn walkthrough notes, photos, or voice-memo transcripts into a proper construction punch list with location, trade, and spec reference per item. | — |
+| **Site Safety Briefing** (`site-safety-briefing`) | Produce a toolbox talk or pre-task safety briefing from the day's planned construction work. | — |
+| **Subcontractor Scorecard** (`subcontractor-scorecard`) | Score a subcontractor's performance across schedule reliability, quality, safety, paperwork, and change-order behaviour with weighted anchors. | — |
+
 ### `pm-crisis` — 6 skills
 
 | Skill | What it does | Eval |
@@ -672,21 +701,21 @@
 | **Layoff Communication** (`layoff-communication`) | Plan and write the communications for a layoff or restructure with clarity and dignity. | — |
 | **PR Crisis Response** (`pr-crisis-response`) | Build a crisis communications plan to respond fast and credibly when something goes wrong. | — |
 
-### `pm-cross` — 11 skills · 7 eval-scored
+### `pm-cross` — 11 skills · 1 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
 | **Action Runner** (`action-runner`) | Turn a skill's recommendations into real, executed actions — open the tickets, file the issues, post the updates — safely: dry-run preview… | — |
 | **Brief Builder** (`brief-builder`) | Interview the user with sharp, one-at-a-time questions to turn a vague request into a tight, complete brief any other skill can run on. | — |
 | **Executive Summary** (`executive-summary`) | Write an executive summary for any document, report, or proposal. | ✅ 4.3/5 |
-| **Grant Proposal** (`grant-proposal`) | Write a structured grant proposal or funding application for any grant type. | ✅ 4.5/5 |
-| **Last 30 Days Research** (`last-30-days-research`) | Searches Reddit, X/Twitter, and the broader web for recent opinions, sentiment, and signal on any topic. | ✅ 3.3/5 |
+| **Grant Proposal** (`grant-proposal`) | Write a structured grant proposal or funding application for any grant type. | — |
+| **Last 30 Days Research** (`last-30-days-research`) | Searches Reddit, X/Twitter, and the broader web for recent opinions, sentiment, and signal on any topic. | — |
 | **NotebookLM Connector** (`notebooklm-connector`) | Automates NotebookLM from Claude Code using browser automation via the Claude Chrome extension — creating notebooks, adding sources, and… | — |
-| **Press Release** (`press-release`) | Write a professional press release for any announcement. | ✅ 4.5/5 |
+| **Press Release** (`press-release`) | Write a professional press release for any announcement. | — |
 | **Professional Brain** (`professional-brain`) | Maintain a durable, local markdown memory ('brain') of your product context, decisions, hypotheses, and stakeholders that other skills read from… | — |
-| **Red-Team Review** (`red-team-review`) | Stress-test a plan, strategy, PRD, or launch by simulating hostile expert personas who attack it from every angle. | ✅ 4.3/5 |
-| **Sycophancy Challenger** (`sycophancy-challenger`) | Flip Claude’s default from validation to adversarial critique. | ✅ 5/5 |
-| **Teaching Lesson Plan** (`teaching-lesson-plan`) | Design a structured lesson plan for any subject, audience, or format. | ✅ 5/5 |
+| **Red-Team Review** (`red-team-review`) | Stress-test a plan, strategy, PRD, or launch by simulating hostile expert personas who attack it from every angle. | — |
+| **Sycophancy Challenger** (`sycophancy-challenger`) | Flip Claude’s default from validation to adversarial critique. | — |
+| **Teaching Lesson Plan** (`teaching-lesson-plan`) | Design a structured lesson plan for any subject, audience, or format. | — |
 
 ### `pm-devrel` — 6 skills
 
@@ -718,16 +747,16 @@
 | **Return & Refund Policy** (`return-refund-policy`) | Write a clear, fair returns, refunds & exchanges policy for an online store. | — |
 | **Review Response** (`review-response`) | Write the right reply to a customer review — positive, negative, or mixed. | — |
 
-### `pm-education` — 6 skills · 6 eval-scored
+### `pm-education` — 6 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **IEP Goal Support** (`iep-goal-support`) | Draft SMART IEP goals, accommodations, and present-levels statements that are measurable and compliant in spirit. | ✅ 4.8/5 |
-| **Lesson Plan** (`lesson-plan`) | Build a complete, standards-aligned lesson plan with clear objectives, a timed activity sequence, differentiation, and assessment. | ✅ 5/5 |
-| **Parent Communication** (`parent-communication`) | Draft clear, warm, professional messages to parents or guardians — progress notes, concerns, positive news, behaviour issues, or meeting requests. | ✅ 4/5 |
-| **Quiz Generator** (`quiz-generator`) | Generate a quiz or test on any topic with a balanced mix of question types and difficulty, plus a complete answer key with explanations. | ✅ 5/5 |
-| **Rubric Builder** (`rubric-builder`) | Create a clear grading rubric with criteria and performance-level descriptors that make scoring fair, fast, and consistent. | ✅ 5/5 |
-| **Student Feedback** (`student-feedback`) | Write constructive, specific feedback on student work that motivates and tells the student exactly how to improve. | ✅ 5/5 |
+| **IEP Goal Support** (`iep-goal-support`) | Draft SMART IEP goals, accommodations, and present-levels statements that are measurable and compliant in spirit. | — |
+| **Lesson Plan** (`lesson-plan`) | Build a complete, standards-aligned lesson plan with clear objectives, a timed activity sequence, differentiation, and assessment. | — |
+| **Parent Communication** (`parent-communication`) | Draft clear, warm, professional messages to parents or guardians — progress notes, concerns, positive news, behaviour issues, or meeting requests. | — |
+| **Quiz Generator** (`quiz-generator`) | Generate a quiz or test on any topic with a balanced mix of question types and difficulty, plus a complete answer key with explanations. | — |
+| **Rubric Builder** (`rubric-builder`) | Create a clear grading rubric with criteria and performance-level descriptors that make scoring fair, fast, and consistent. | — |
+| **Student Feedback** (`student-feedback`) | Write constructive, specific feedback on student work that motivates and tells the student exactly how to improve. | — |
 
 ### `pm-gov` — 6 skills
 
@@ -740,6 +769,17 @@
 | **Regulatory Impact Analysis** (`regulatory-impact-analysis`) | Produce a regulatory impact analysis (RIA) weighing the costs, benefits, and alternatives of a proposed rule. | — |
 | **RFP Response** (`rfp-response`) | Write a compliant, competitive response to an RFP/RFQ/ITT (government or enterprise procurement). | — |
 
+### `pm-hardware` — 6 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **BOM Cost Review** (`bom-cost-review`) | Review a bill of materials for cost, risk, and supply exposure — cost rollup, top-10 cost drivers, single-source and EOL risk, MOQ vs forecast… | — |
+| **EVT/DVT/PVT Gate Review** (`evt-dvt-pvt-gate-review`) | Run an NPI phase-gate review for EVT, DVT, or PVT — exit criteria per phase, open-issue triage, yield readout, waiver discipline, and a go/no-go call. | — |
+| **Factory Acceptance Test** (`factory-acceptance-test`) | Write a factory acceptance test (FAT) plan or report — test coverage matrix against spec, AQL sampling plan, pass/fail criteria, golden-sample… | — |
+| **Hardware PRD** (`hardware-prd`) | Write a PRD for a physical hardware product — target cost (BOM and landed), industrial design constraints, regulatory certifications, reliability… | — |
+| **RMA Failure Analysis** (`rma-failure-analysis`) | Turn field returns into a structured failure-analysis report — RMA triage taxonomy (NTF vs real failures), Pareto by verified failure mode… | — |
+| **Tooling Risk Assessment** (`tooling-risk-assessment`) | Assess an injection-mold or production tooling decision before cutting steel — soft vs hard tooling tradeoff, tool life vs forecast, cavitation… | — |
+
 ### `pm-health` — 4 skills
 
 | Skill | What it does | Eval |
@@ -748,6 +788,15 @@
 | **Discharge Summary** (`discharge-summary`) | Turn a hospital stay into a complete, well-structured discharge summary. | — |
 | **Prior Authorization Letter** (`prior-authorization-letter`) | Write a persuasive prior-authorization / medical-necessity letter to an insurer. | — |
 | **SOAP Note** (`soap-note`) | Structure a clinical encounter into a clean SOAP note. | — |
+
+### `pm-insurance` — 4 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **Claims Triage** (`claims-triage`) | Triage an incoming insurance claim: check the coverage trigger against policy wording, band severity and complexity, screen for fraud indicators… | — |
+| **Coverage Gap Analysis** (`coverage-gap-analysis`) | Map an organisation's risks against its insurance policy portfolio to find what's uncovered, underinsured, or double-covered. | — |
+| **Policy Renewal Review** (`policy-renewal-review`) | Run a pre-renewal review of an insurance programme: scan coverage gaps against current operations, test limit adequacy against inflation and… | — |
+| **Underwriting Narrative** (`underwriting-narrative`) | Write the underwriting file narrative for a risk: the risk story, exposure quantification, loss-history read, mitigating and aggravating factors… | — |
 
 ### `pm-localization` — 6 skills
 
@@ -792,16 +841,27 @@
 | **Property Offer Letter** (`property-offer-letter`) | Write a buyer's offer cover letter to a seller to strengthen a real-estate bid. | — |
 | **Tenant Screening Guide** (`tenant-screening-guide`) | Design a fair, consistent tenant screening process for a rental. | — |
 
-### `pm-research` — 6 skills · 4 eval-scored
+### `pm-research` — 6 skills · 1 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
-| **Clinical Case Summary** (`clinical-case-summary`) | Write a structured clinical case summary or case presentation. | ✅ 5/5 |
+| **Clinical Case Summary** (`clinical-case-summary`) | Write a structured clinical case summary or case presentation. | — |
 | **Evidence Lock** (`evidence-lock`) | Write or rewrite a document in evidence-locked mode: no unsourced sentences — every substantive claim carries a footnote citing the exact passage… | — |
 | **Literature Review** (`literature-review`) | Structure and write a literature review for any research topic. | ✅ 4/5 |
-| **Patient Communication** (`patient-communication`) | Write clear, plain-English patient communications for any healthcare context. | ✅ 5/5 |
-| **Research Protocol** (`research-protocol`) | Write a structured research protocol or study design document. | ✅ 4.8/5 |
+| **Patient Communication** (`patient-communication`) | Write clear, plain-English patient communications for any healthcare context. | — |
+| **Research Protocol** (`research-protocol`) | Write a structured research protocol or study design document. | — |
 | **Synthetic User Research** (`synthetic-user-research`) | Use AI personas for early-stage research signal — with hard guardrails on what synthetic methods can and cannot validate. Use when asked to run… | — |
+
+### `pm-supplychain` — 6 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **Demand Forecast Review** (`demand-forecast-review`) | Interrogate a demand forecast before the business commits supply and inventory to it. | — |
+| **Inventory Policy** (`inventory-policy`) | Set inventory policy for an item class: segmentation, safety stock, and replenishment method. | — |
+| **Logistics Incident Report** (`logistics-incident-report`) | Write up a supply chain disruption — port delay, carrier failure, customs hold, or in-transit damage — as a decision-ready incident report. | — |
+| **RFP Scoring Matrix** (`rfp-scoring-matrix`) | Build a weighted RFP evaluation matrix and defensible award recommendation. | — |
+| **S&OP Meeting Prep** (`sop-meeting-prep`) | Prepare an S&OP cycle readout that surfaces the demand-supply gaps and forces the three decisions the meeting must make. | — |
+| **Supplier Scorecard** (`supplier-scorecard`) | Build a quarterly supplier performance scorecard with a weighted grade and a clear escalate/develop/exit call. | — |
 
 ### `pm-vision` — 4 skills
 
@@ -824,4 +884,4 @@
 
 ---
 
-_466 skills across 66 bundles · 208 eval-scored (45%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._
+_496 skills across 72 bundles · 28 eval-scored (6%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._
