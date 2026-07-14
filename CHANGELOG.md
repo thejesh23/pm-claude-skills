@@ -9,6 +9,28 @@ each new wave of skills bumps the **major** version, extensions and fixes bump
 
 ## [Unreleased]
 
+## [50.0.0] — the wow release: AI that reads your lease, argues back like opposing counsel, and shows you your exit waterfall — 2026-07-14
+
+### Added — 🔍 pm-decoders: AI reads the fine print for you (6 skills)
+- **[lease-decoder](skills/lease-decoder)**, **[medical-bill-decoder](skills/medical-bill-decoder)**, **[tos-decoder](skills/tos-decoder)**, **[loan-decoder](skills/loan-decoder)**, **[benefits-decoder](skills/benefits-decoder)**, **[hoa-decoder](skills/hoa-decoder)** — clause-by-clause plain English with 🔴🟡🟢 red flags ranked by how much they can hurt you, the questions to ask, and what's actually negotiable. Every artifact carries the not-legal-advice line; jurisdiction-dependent rules are flagged, never universalized.
+
+### Added — ⚔️ pm-simulators: the hostile reader you fear, on demand (5 skills)
+- **[opposing-counsel](skills/opposing-counsel)** drafts the demand letter the other side's lawyer would send · **[vc-partner-meeting](skills/vc-partner-meeting)** runs the Monday partner meeting after you leave the room · **[regulator-eyes](skills/regulator-eyes)** writes the consumer-protection inquiry letter · **[the-churning-customer](skills/the-churning-customer)** gives the exit interview they never gave you · **[acquirer-red-team](skills/acquirer-red-team)** chips your price with a mechanism per finding. Each produces the adversary's real artifact, then breaks character for a ranked-fixes debrief.
+
+### Added — 🧮 calculators wave 2: skills that do real math (4 skills)
+- **[exit-waterfall](skills/exit-waterfall)** — liquidation preferences, conversion equilibrium (brute-forced, not asserted), and the "your shares mean nothing below $X" sentence · **[offer-comparison](skills/offer-comparison)** — vesting curves, cliffs, crossover year · **[refinance-breakeven](skills/refinance-breakeven)** — the month a refi actually saves money, term-reset trap called out by the script itself · **[fire-number](skills/fire-number)** — a sensitivity grid instead of a false-precision retirement date. All deterministic, stdlib-only, byte-exact-pinned in the scripts smoke suite (88 assertions, was 76).
+
+### Added — ✨ four singles
+- **[receipts-audit](skills/receipts-audit)** — every factual claim in any document graded against its sources: evidenced / partial / unsupported / contradicted. The Institute's verifiability brand, as a skill.
+- **[personal-board-of-directors](skills/personal-board-of-directors)** — five advisors who must disagree, vote under a stated decision rule, and name the evidence that would flip each vote.
+- **[altitude-shifter](skills/altitude-shifter)** — one truth at four altitudes (board / engineers / customer / new hire) with a delta table making every reframe inspectable.
+- **[decision-forensics](skills/decision-forensics)** — reconstructs what a messy thread actually decided; "no decision was reached" is a valid finding.
+
+### Changed
+- **Dynamic skills badge** — the README count badge now reads the live number from skills.json; it can never rot again (it had said 466 for two waves).
+- **Drift guard widened** — six claim shapes now checked (badges, pills, "N-skill library", table cells); it caught 39 stale counts across this wave's growth.
+- **Library:** 496 → **515 skills, 74 bundles**; exports now 6,193 files × 12 platforms; handbook at 2,563 rules.
+
 ## [49.0.0] — the professions release: six industries nobody built AI for, and depth for the fifty that carry the library — 2026-07-14
 
 ### Added — six unserved professions (466 → 496 skills, 72 bundles)
@@ -712,7 +734,8 @@ Earlier releases (v1.0.0 – v5.0.0) predate this changelog. See the
 [article series](README.md#-the-article-series) for the full history of how the
 library grew from the first PM toolkit to 100+ skills.
 
-[Unreleased]: https://github.com/mohitagw15856/pm-claude-skills/compare/v49.0.0...HEAD
+[Unreleased]: https://github.com/mohitagw15856/pm-claude-skills/compare/v50.0.0...HEAD
+[50.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v49.0.0...v50.0.0
 [49.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v48.0.0...v49.0.0
 [48.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v47.0.0...v48.0.0
 [46.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v45.0.0...v46.0.0

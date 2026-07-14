@@ -47,12 +47,20 @@ const LIVING = [
 // 50 = production tier · 45 = pm-engineering · 28 = eval-scored (update when a
 // new eval run lands) · small numbers = bundle sizes in prose.
 const ALLOWED = new Set([skillCount, bundleCount, 50, 45, 28, 12, 30, 15, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]);
-const CLAIM = /\b(\d{2,4})\s+(?:professional\s+|open-source\s+|curated\s+)?(?:Agent\s+)?skills?\b/gi;
+// Several claim shapes; each regex's first capture group is the number.
+const CLAIMS = [
+  /\b(\d{2,4})\s+(?:(?:professional|open-source|curated|AI)\s+){0,2}(?:Agent\s+)?skills?\b/gi,
+  /\b(\d{2,4})-skill\b/gi,                       // "a 466-skill library"
+  /\*\*(\d{2,4})\*\*,? (?:across|skills)/gi,     // "| **466**, across …"
+  /<b>(\d{2,4})<\/b>\s*skills/gi,                // cheatsheet pill
+  /\ball (\d{2,4}) interactively\b/gi,           // "pick from all 466 interactively"
+  /\bskills-(\d{2,4})-[a-z]+\b/gi,               // static shields badge "skills-466-blue"
+];
 
 for (const f of LIVING) {
   if (!existsSync(join(root, f))) continue;
   const text = read(f);
-  for (const m of text.matchAll(CLAIM)) {
+  for (const m of CLAIMS.flatMap((re) => [...text.matchAll(re)])) {
     const n = +m[1];
     if (ALLOWED.has(n)) continue;
     // allow forward-looking milestones ("push to 600 skills")
