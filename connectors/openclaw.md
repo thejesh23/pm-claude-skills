@@ -28,8 +28,8 @@ npm i -g clawhub          # the registry CLI (separate from openclaw itself)
 clawhub login             # authenticates via GitHub
 
 # Start curated, not firehose: the skills suited to an always-on personal agent.
-cd exports/openclaw
-clawhub skill publish ./chief-of-staff  --slug chief-of-staff  --version 49.0.0 --dry-run
+# Note: give the CLI ABSOLUTE paths — it resolves relative ones against its own workdir.
+clawhub skill publish "$PWD/exports/openclaw/email-triage" --slug email-triage --version 49.0.0 --dry-run
 # …review the plan, drop --dry-run, repeat for the starter set below.
 
 # Or wholesale (it scans skill folders and publishes new/changed ones):
@@ -37,7 +37,7 @@ clawhub sync --dry-run    # review first — 496 uploads is a statement
 clawhub sync --all
 ```
 
-**Suggested starter set** (personal always-on agent fit): `chief-of-staff`, `email-triage`, `morning-intelligence`, `meeting-notes`, `brag-doc`, `stakeholder-update`, `executive-summary`, `competitor-signal-tracker`, `apology-letter`, `budget-builder`, plus the `pm-lifeadmin` and `pm-personal` bundles. Publish the rest once the starter set proves discovery works.
+**Suggested starter set** (personal always-on agent fit): `email-triage`, `morning-intelligence`, `meeting-notes`, `brag-doc`, `stakeholder-update`, `executive-summary`, `competitor-signal-tracker`, `apology-letter`, `budget-builder`, `last-30-days-research`, plus the `pm-lifeadmin` and `pm-personal` bundles. Publish the rest once the starter set proves discovery works.
 
 **House rule:** publish only from `exports/openclaw/` (the generated, dressed copies), and re-`sync` after each release so ClawHub never serves a stale body.
 
