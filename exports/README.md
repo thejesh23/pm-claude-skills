@@ -21,6 +21,7 @@ Currently exporting **496 skills** to:
 - **Roo Code — .roo/rules/ rule (.md)** → `exports/roo/`
 - **Kilo Code — .kilocode/rules/ rule (.md)** → `exports/kilocode/`
 - **Obsidian — vault skill note (AI-plugin prompt)** → `exports/obsidian/`
+- **OpenClaw — native SKILL.md with metadata block** → `exports/openclaw/`
 
 Adding a new platform is a few lines in the `PLATFORMS` registry of
 `scripts/build-exports.mjs` — no content is duplicated.

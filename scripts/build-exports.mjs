@@ -144,6 +144,53 @@ const PLATFORMS = {
       `     (e.g. {} in Copilot for Obsidian), or paste your input there manually. -->\n` +
       `Apply the skill above to the following input:\n\n{{selection}}\n`,
   },
+  openclaw: {
+    label: 'OpenClaw — native SKILL.md with metadata block',
+    dir: 'exports/openclaw',
+    file: 'SKILL.md',
+    groupByBundle: false,
+    // OpenClaw reads the same SKILL.md standard (skills without a metadata block
+    // are always eligible), so this export only *dresses* the skill: a top-level
+    // homepage (shown in the macOS Skills UI) and a metadata.openclaw block with
+    // a bundle emoji, so the library looks native rather than merely functional.
+    // The flat <skill>/SKILL.md layout is exactly what `clawhub sync` publishes.
+    // Helper scripts stay in the source repo — every skill is, per the standard,
+    // useful with SKILL.md alone.
+    render: ({ name, description, body, bundle }) =>
+      `---\n` +
+      `name: ${name}\n` +
+      `description: ${JSON.stringify(description)}\n` +
+      `homepage: https://mohitagw15856.github.io/pm-claude-skills/skill/${name}.html\n` +
+      `metadata:\n` +
+      `  {\n` +
+      `    "openclaw": { "emoji": ${JSON.stringify(BUNDLE_EMOJI[bundle] || '🧠')} }\n` +
+      `  }\n` +
+      `---\n\n` +
+      `${body.trim()}\n`,
+  },
+};
+
+// Bundle → emoji for the OpenClaw metadata block (macOS Skills UI). Unlisted
+// bundles fall back to 🧠. Purely cosmetic — never gates eligibility.
+const BUNDLE_EMOJI = {
+  'pm-construction': '🏗', 'pm-hardware': '🔧', 'pm-supplychain': '📦', 'pm-climate': '🌍',
+  'pm-insurance': '🛡', 'pm-banking': '🏦', 'pm-security': '🔐', 'pm-warroom': '⚔️',
+  'pm-engineering': '⚙️', 'pm-legal': '⚖️', 'pm-finance': '💰', 'pm-money': '💵',
+  'pm-hr': '🧑‍💼', 'pm-sales': '🤝', 'pm-gtm': '🚀', 'pm-pmm': '📣', 'pm-growth': '📈',
+  'pm-analytics': '📊', 'pm-data': '📊', 'pm-dataeng': '🛠', 'pm-design': '🎨',
+  'pm-figma': '🎨', 'pm-uxwriting': '✍️', 'pm-writers': '✍️', 'pm-copy': '✍️',
+  'pm-social': '📱', 'pm-creator': '🎬', 'pm-devrel': '🗣', 'pm-education': '🎓',
+  'pm-health': '🩺', 'pm-nonprofit': '💛', 'pm-realestate': '🏠', 'pm-ecommerce': '🛒',
+  'pm-support': '🎧', 'pm-cs': '🤗', 'pm-consulting': '💼', 'pm-founders': '🌱',
+  'pm-career': '🧭', 'pm-jobsearch': '🔎', 'pm-personal': '👤', 'pm-lifeadmin': '🗓',
+  'pm-crisis': '🚨', 'pm-compliance': '📋', 'pm-gov': '🏛', 'pm-research': '🔬',
+  'pm-ai': '🤖', 'pm-aiwork': '🤖', 'pm-agentnative': '🦾', 'pm-agentops': '🦾',
+  'pm-autopilot': '🛫', 'pm-calculators': '🧮', 'pm-accounting': '🧾', 'pm-recruiting': '🧲',
+  'pm-method': '📐', 'pm-vision': '👁', 'pm-craft': '🪚', 'pm-qa': '🧪', 'pm-visuals': '🖼',
+  'pm-localization': '🌐', 'pm-documents': '📄', 'pm-comms': '📨', 'pm-essentials': '⭐',
+  'pm-discovery': '🔍', 'pm-planning': '🗺', 'pm-delivery': '🚚', 'pm-strategy': '♟',
+  'pm-advanced': '🎛', 'pm-rituals': '🔁', 'pm-people': '👥', 'pm-business': '🏢',
+  'pm-operations': '🔩', 'pm-cross': '🔗',
 };
 
 // ── Helpers (shared shape with web/build-skills.mjs) ────────────────────────

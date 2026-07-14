@@ -68,6 +68,7 @@ connector:
 | **Lovable** | build skill-powered web apps; make its generator skill-aware | [`lovable.md`](lovable.md) |
 | **Obsidian** | skills as vault notes / AI-plugin prompts; the vault as project state | [`obsidian.md`](obsidian.md) |
 | **MCP pairings** 🆕 | skills that *act*: notes file themselves in Notion, updates post to Slack, plans build the sprint — approval-gated per SkillSpec §5 | [`mcp-pairings.md`](mcp-pairings.md) |
+| **OpenClaw** 🆕 | native `SKILL.md` + the dressed export (emoji, homepage), ClawHub publish runbook, and lint-what-you-installed | [`openclaw.md`](openclaw.md) |
 
 > **REST API** — `GET /v1/skills`, `/v1/skills/{name}` (`?format=md`), `/v1/search?q=`,
 > `/v1/workflows` on `https://pm-skills-mcp.pm-claude-skills.workers.dev`. Same catalogue as

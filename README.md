@@ -626,7 +626,7 @@ body as a system prompt — for those we ship ready-made [exports](#ready-to-use
 |---|---|---|
 | **Claude Code** (CLI / desktop / web / IDE) | Native. Install via the plugin marketplace; Claude loads a skill automatically when your request matches its description. | ✅ Yes |
 | **Hermes Agent** (Nous Research) | Native — same open `SKILL.md` standard. Run `python3 scripts/sync-hermes-skills.py` to install into `~/.hermes/skills/`; Hermes auto-discovers them. | ✅ Yes |
-| **OpenAI Codex · OpenClaw** | Native `SKILL.md`. One-line install (see [below](#one-line-install-for-coding-agents)) or `./scripts/install.sh --agent codex`. | ✅ Yes |
+| **OpenAI Codex · OpenClaw** | Native `SKILL.md`. One-line install (see [below](#one-line-install-for-coding-agents)) or `./scripts/install.sh --agent codex`. OpenClaw also gets a [dressed export + ClawHub guide](connectors/openclaw.md). | ✅ Yes |
 | **Cursor · Windsurf · Aider** | Generated rules (`.cursor/rules/`, `.windsurf/rules/`, `aider --read`). `npx pm-claude-skills add --agent cursor` (or windsurf / aider). | ⚙️ By description |
 | **Cline · Continue · Zed · Roo** | Generated rule files under [`exports/`](exports/) (`.clinerules/`, Continue rules, Zed `.rules`, `.roo/rules/`). | ⚙️ By description |
 | **MCP clients** (Claude Desktop, Cline, …) | Run the [MCP server](mcp/) — searches & pulls skills on demand via `npx -y pm-claude-skills-mcp`. Now also serves skills as MCP **prompts + resources**. | ✅ On demand |
