@@ -43,7 +43,9 @@ clawhub sync --all
 clawhub install @mohitagw15856/email-triage      # or: openclaw skills install @mohitagw15856/email-triage
 ```
 
-Next tranche (`pm-lifeadmin` + `pm-personal` bundles, then wider) once the starter set proves discovery works. Re-publish at each release so ClawHub never serves a stale body.
+**✅ Tranche 2 published 2026-07-14 (43 skills total live):** the full `pm-decoders` and `pm-simulators` bundles, calculators wave 2 (exit-waterfall, offer-comparison, refinance-breakeven, fire-number), the four v50 singles, and the `pm-lifeadmin` + `pm-personal` bundles — all at v50.0.0, self-contained packages (library-local sections stripped by the export).
+
+**Tranche 3 (the remaining ~470):** run `clawhub sync --dry-run` from `exports/openclaw/` after tranche 2 has a clean day of scans, then `clawhub sync --all`. Re-publish at each release so ClawHub never serves a stale body.
 
 **House rule:** publish only from `exports/openclaw/` (the generated, dressed copies), and re-`sync` after each release so ClawHub never serves a stale body.
 
