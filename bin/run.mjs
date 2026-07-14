@@ -6,6 +6,7 @@ import { readFileSync, existsSync, writeFileSync, readdirSync, statSync } from '
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { complete, parseSkill } from './lib/anthropic.mjs';
+import { parseInputs, promptInputs } from './lib/inputs.mjs';
 
 const PKG_ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const SKILLS_DIR = join(PKG_ROOT, 'skills');
@@ -63,13 +64,19 @@ No setup at all? Run any skill free in the browser: https://mohitagw15856.github
     input = readFileSync(inFile, 'utf8');
   }
   if (!input) input = await readStdin();
+  const { body } = parseSkill(readFileSync(file, 'utf8'));
+  if ((!input || !input.trim()) && process.stdin.isTTY) {
+    // No input but a human at the terminal: prompt field-by-field from the
+    // skill's own declared inputs (same parse the playground form uses).
+    const declared = parseInputs(body);
+    if (declared.length) input = await promptInputs(declared, skill);
+  }
   if (!input || !input.trim()) {
-    console.error('No input given. Provide --text "…", --input <file>, or pipe via stdin.');
+    console.error('No input given. Provide --text "…", --input <file>, pipe via stdin, or run in a terminal to be prompted field-by-field.');
     return 1;
   }
 
   const model = getArg(argv, 'model', 'claude-sonnet-4-6');
-  const { body } = parseSkill(readFileSync(file, 'utf8'));
   console.error(`▶ Running ${skill} with ${model}…`);
   const out = await complete({ apiKey, model, system: body + SUFFIX, messages: [{ role: 'user', content: input }], maxTokens: 8192 });
 
