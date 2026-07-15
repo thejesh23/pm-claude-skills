@@ -14,7 +14,10 @@ const pages = +arg('pages', 350);
 // allowance). Default: perfect-bound paperback with 0.125" bleed.
 const hardcover = process.argv.includes('--hardcover');
 const margin = hardcover ? 0.875 : 0.125;
-const spineIn = (pages * 0.002252 + (hardcover ? 0.293 : 0)).toFixed(4);
+// --spine overrides the formula — Lulu's checker states the exact spine it
+// wants per paper stock (e.g. 0.83" for 342pp on their current 60# white,
+// not the classic 0.002252/page): always prefer their stated number.
+const spineIn = (+arg('spine', 0) || pages * 0.002252 + (hardcover ? 0.293 : 0)).toFixed(4);
 const W = (margin + 6 + +spineIn + 6 + margin).toFixed(4);  // wrap/bleed+back+spine+front+wrap/bleed
 const H = (9 + 2 * margin).toFixed(4);
 const { skills } = JSON.parse(readFileSync(join(root, 'web', 'skills.json'), 'utf8'));
