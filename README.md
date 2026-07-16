@@ -9,15 +9,11 @@
 [![MCP](https://img.shields.io/badge/MCP-registry-0098FF?logo=modelcontextprotocol&logoColor=white)](https://github.com/mohitagw15856/pm-claude-skills#-use-it-anywhere--the-ai-ecosystem)
 [![Remote MCP](https://img.shields.io/badge/ChatGPT%20%C2%B7%20Claude.ai-connector-10A37F)](mcp-remote/)
 [![Smithery](https://smithery.ai/badge/mohit15856/pm-skills)](https://smithery.ai/servers/mohit15856/pm-skills)
+[![ClawHub](https://img.shields.io/badge/ClawHub-%40mohitagw15856-FF6B35?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZiI+PHBhdGggZD0iTTEyIDJhMTAgMTAgMCAxMDAgMjAgMTAgMTAgMCAwMDAtMjB6Ii8+PC9zdmc+)](https://clawhub.ai/mohitagw15856)
 [![Skills](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmohitagw15856.github.io%2Fpm-claude-skills%2Fskills.json&query=%24.count&label=skills&color=blue)](https://github.com/mohitagw15856/pm-claude-skills)
 [![Free runs served](https://img.shields.io/endpoint?url=https%3A%2F%2Fpm-skills-mcp.pm-claude-skills.workers.dev%2Ftry%2Fstats&cacheSeconds=300)](https://mohitagw15856.github.io/pm-claude-skills/)
 [![Sponsor](https://img.shields.io/badge/💛_sponsors_fund_the_free_runs-ea4aaa)](https://github.com/sponsors/mohitagw15856)
 
-> 🏛 **This project grew into [The Open Institute for Professional Judgment](https://mohitagw15856.github.io/pm-claude-skills/institute.html)** — the SkillSpec standard, the Operator's Exam, the SkillBench rankings, the ecosystem census, the global Season, and the [State of Professional AI](docs/reports/state-of-professional-ai-2026.md). Every instrument open, free, and verifiable. Also: run it inside your company with the [Org Edition](org/) (`docker compose up`).
-
-> **Big repo?** It's a monorepo on purpose — but you probably need one folder. **[REPO-MAP.md](REPO-MAP.md)** tells you which, and the skills-only clone is 10 seconds: `git clone --filter=blob:none --sparse <url> && git sparse-checkout set skills`
-
-> 💛 **The free runs are sponsor-funded.** Every sponsor dollar visibly raises the daily cap on the counter above — and sponsors get [naming rights, not influence](docs/SPONSORSHIP.md): your name in this README, your logo on the playground, or **a Boardroom bench carrying your company's name**. → [Become a sponsor](https://github.com/sponsors/mohitagw15856)
 [![eval](https://img.shields.io/badge/eval--scored-208%20%C2%B7%20avg%204.8%2F5-brightgreen)](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)
 [![Subagents](https://img.shields.io/badge/subagents-4-blueviolet)](agents/)
 [![Commands](https://img.shields.io/badge/slash%20commands-21-blueviolet)](commands/)
@@ -31,9 +27,15 @@
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 [![Sponsor](https://img.shields.io/badge/sponsor-❤️-ff69b4)](https://github.com/sponsors/mohitagw15856)
 
+> 🏛 **This project grew into [The Open Institute for Professional Judgment](https://mohitagw15856.github.io/pm-claude-skills/institute.html)** — the SkillSpec standard, the Operator's Exam, the SkillBench rankings, the ecosystem census, the global Season, and the [State of Professional AI](docs/reports/state-of-professional-ai-2026.md). Every instrument open, free, and verifiable. Also: run it inside your company with the [Org Edition](org/) (`docker compose up`).
+
+> **Big repo?** It's a monorepo on purpose — but you probably need one folder. **[REPO-MAP.md](REPO-MAP.md)** tells you which, and the skills-only clone is 10 seconds: `git clone --filter=blob:none --sparse <url> && git sparse-checkout set skills`
+
+> 💛 **The free runs are sponsor-funded.** Every sponsor dollar visibly raises the daily cap on the counter above — and sponsors get [naming rights, not influence](docs/SPONSORSHIP.md): your name in this README, your logo on the playground, or **a Boardroom bench carrying your company's name**. → [Become a sponsor](https://github.com/sponsors/mohitagw15856)
+
 <p align="center">
   <a href="https://mohitagw15856.github.io/pm-claude-skills/">
-    <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=24&pause=900&color=D97757&center=true&vCenter=true&width=720&lines=466+pro+AI+skills;PRDs%2C+roadmaps%2C+launches+%E2%80%94+done+right;Run+any+one+free+in+your+browser" alt="PM Skills" />
+    <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=24&pause=900&color=D97757&center=true&vCenter=true&width=720&lines=515+pro+AI+skills;PRDs%2C+roadmaps%2C+launches+%E2%80%94+done+right;Run+any+one+free+in+your+browser" alt="PM Skills" />
   </a>
 </p>
 
@@ -86,14 +88,14 @@
 
 A community-built library of professional skills for every field — product management, engineering, customer success, marketing, social media, writers, design, legal, finance, HR, sales, operations, research, and more. Each skill is a structured `SKILL.md` file that teaches an AI assistant how to produce professional-grade outputs for your workflows. Skills run natively in **Claude Code** and **Hermes Agent** (same open `SKILL.md` standard), and ship as ready-to-paste exports for **ChatGPT** and **Gemini** — see [Works With](#-works-with--cross-tool-compatibility).
 
-**🆕 v52.0.0 — the sensory & spatial release:** new ways in, out, and around the library — 🎙️ **[Voice Mode](https://mohitagw15856.github.io/pm-claude-skills/voice.html)** (talk to it; a living orb talks back), 📷 **[Live Capture](https://mohitagw15856.github.io/pm-claude-skills/capture.html)** (point a camera, get the artifact), 🎬 **[Video export](https://mohitagw15856.github.io/pm-claude-skills/video.html)** (any output → a shareable clip), ⚔️ **[The War Table](https://mohitagw15856.github.io/pm-claude-skills/wartable.html)** (watch two AIs negotiate live), 🎴 **[Holo Cards](https://mohitagw15856.github.io/pm-claude-skills/holo.html)**, 🛰️ **[Work OS](https://mohitagw15856.github.io/pm-claude-skills/workos.html)** (your open loops → a ranked battle plan), ⚙️ **[Prompt-to-App](https://mohitagw15856.github.io/pm-claude-skills/app.html)**, ⏳ **[The Time Machine](https://mohitagw15856.github.io/pm-claude-skills/timemachine.html)**, 🧑‍🤝‍🧑 **[Co-Canvas](https://mohitagw15856.github.io/pm-claude-skills/cocanvas.html)** (the AI joins your whiteboard), and 🌌 **[Spatial 3D](https://mohitagw15856.github.io/pm-claude-skills/spatial.html)** (fly through the whole library). **515 skills · 74 bundles.** → The full release history lives in the **[CHANGELOG](CHANGELOG.md)** · [all releases](https://github.com/mohitagw15856/pm-claude-skills/releases).
+**🆕 v53.0.0 — close the loop + go everywhere:** proof that the work *landed*, and the library everywhere you work — 📓 **[Outcome Ledger](https://mohitagw15856.github.io/pm-claude-skills/ledger.html)** (log what each artifact became; see per-skill landed-rate), 💰 **[Cost & Privacy meter](https://mohitagw15856.github.io/pm-claude-skills/cost.html)** (per-run cost + where your data went), ⚔️ **[Model Duel](https://mohitagw15856.github.io/pm-claude-skills/duel.html)** (same task, three models, pick a winner), 🔀 **[Skill Remix](https://mohitagw15856.github.io/pm-claude-skills/remix.html)**, 🔌 **[Skills API](https://mohitagw15856.github.io/pm-claude-skills/api.html)** (search/fetch/run over REST + OpenAPI), ♿ a site-wide **accessibility** pass, plus new reach: **[Slack app](integrations/slack-app/)**, **[Zapier](integrations/zapier/)/[Make](integrations/make/)**, **[voice assistants](integrations/voice-assistants/)** (Alexa/Google/Watch), **[write-back](integrations/writeback/)** to GitHub/Notion/Linear/Slack, a printable **[Operator's Journal](scripts/build-journal.mjs)** & **[tabletop game](scripts/build-tabletop.mjs)**, the **[SkillBench paper](docs/paper/skillbench.md)**, and the **[Agent Skill Interchange standard](docs/rfcs/0001-skill-interchange.md)**. **515 skills · 74 bundles.** → The full release history lives in the **[CHANGELOG](CHANGELOG.md)** · [all releases](https://github.com/mohitagw15856/pm-claude-skills/releases).
 
 ### ▶ See it in action — [try the live Skill Playground](https://mohitagw15856.github.io/pm-claude-skills/)
 
-<!-- Demo GIF generated by web/docs-assets/record-demo.mjs (Playwright). The streamed
-     output is a representative mock so no API key is needed; re-run with a live key
-     for a real call. Static fallback: web/docs-assets/playground.png -->
-[![Skill Playground demo — pick a skill, fill the form, run it with your own Claude key](web/docs-assets/playground-demo.gif)](https://mohitagw15856.github.io/pm-claude-skills/)
+<!-- Light-mode screenshot of the live skill runner (web/docs-assets/playground-light.png),
+     captured with Playwright at ?skill=executive-update. Re-shoot with /tmp/shoot-light.mjs
+     against the local server if the UI changes. -->
+[![Skill Playground — pick a skill, fill the form, run it free with your own key](web/docs-assets/playground-light.png)](https://mohitagw15856.github.io/pm-claude-skills/)
 
 <sub>👆 Pick any skill, fill a short form, and run it with your own key — no install required.</sub>
 
@@ -116,7 +118,7 @@ In Claude Code, [`/firm`](commands/firm.md) runs the same session natively — g
 
 ---
 
-## 🆕 New this release — the sensory & spatial wave
+## 🎙️ The sensory & spatial wave
 
 <table>
   <tr>
@@ -158,7 +160,7 @@ In Claude Code, [`/firm`](commands/firm.md) runs the same session natively — g
   <tr>
     <td width="50%">
       <a href="https://mohitagw15856.github.io/pm-claude-skills/"><img src="web/docs-assets/showcase/cmdbar.png" alt="The command bar — describe your task in plain words and get matched to the right skill instantly" /></a>
-      <b>🪄 <a href="https://mohitagw15856.github.io/pm-claude-skills/">The command bar</a></b> — don't browse 466 cards; just say it: <i>"a blameless postmortem for Friday's outage"</i> → the top three skills, instantly, locally, before you've even entered a key. Enter opens the best match.
+      <b>🪄 <a href="https://mohitagw15856.github.io/pm-claude-skills/">The command bar</a></b> — don't browse 515 cards; just say it: <i>"a blameless postmortem for Friday's outage"</i> → the top three skills, instantly, locally, before you've even entered a key. Enter opens the best match.
     </td>
     <td width="50%">
       <a href="https://mohitagw15856.github.io/pm-claude-skills/galaxy.html"><img src="web/docs-assets/showcase/galaxy.png" alt="Skill Galaxy — the library as a living star map with a guided sky tour" /></a>
