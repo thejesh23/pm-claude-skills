@@ -190,6 +190,30 @@ const PAGES = [
       await p.waitForTimeout(800);
       if (!(await p.locator('#hero').textContent()).includes('Season')) throw new Error('season hero missing');
     } },
+  { url: 'fineprint.html', async check(p) {
+      await p.waitForFunction(() => window.__fineprintReady === 6, null, { timeout: 15000 });
+      await p.fill('#doc', 'THIS LEASE AGREEMENT between Landlord and Tenant: monthly rent, security deposit, premises, sublet prohibited.');
+      await p.waitForTimeout(300);
+      const v = await p.textContent('#verdict');
+      if (!/Lease/.test(v)) throw new Error('lease auto-detect failed: ' + v);
+    } },
+  { url: 'semantic.html', async check(p) {
+      await p.waitForFunction(() => window.__semanticReady > 500, null, { timeout: 15000 });
+      await p.fill('#q', 'churn analysis');
+      await p.waitForTimeout(400);
+      if ((await p.locator('.hit').count()) < 1) throw new Error('keyword fallback returned no hits');
+    } },
+  { url: 'skillify.html', async check(p) {
+      await p.waitForFunction(() => window.__skillifyReady === true, null, { timeout: 15000 });
+    } },
+  { url: 'conformant.html', async check(p) {
+      await p.waitForFunction(() => window.__conformantReady >= 2, null, { timeout: 15000 });
+    } },
+  { url: 'casting.html', async check(p) {
+      await p.waitForFunction(() => window.__castingReady === true, null, { timeout: 15000 });
+      const t = await p.textContent('#title');
+      if (!/Season \d/.test(t)) throw new Error('season title missing: ' + t);
+    } },
   { url: 'atlas.html', settle: 2000, async check(p) {
       await p.waitForFunction(() => window.__atlasReady, null, { timeout: 20000 });
     } },
@@ -224,6 +248,11 @@ await ctx.route(/pm-skills-mcp.*workers\.dev/, (route) => {
   if (u.endsWith('/try') && route.request().method() === 'GET') return route.fulfill({ json: { enabled: false } });
   return route.fulfill({ status: 503, json: { error: 'blocked-in-ci' } });
 });
+// Badge images: stub with a tiny SVG — conformant.html embeds live-graded
+// shields; CI must not depend on shields.io or the worker.
+await ctx.route(/img\.shields\.io/, (route) =>
+  route.fulfill({ status: 200, contentType: 'image/svg+xml', body: '<svg xmlns="http://www.w3.org/2000/svg" width="80" height="20"/>' }));
+
 let failures = 0;
 for (const spec of PAGES) {
   const page = await ctx.newPage();

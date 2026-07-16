@@ -99,7 +99,7 @@ if(window.pmTrack) pmTrack('handbook/open');
   function play(h2,btn){
     stop(); playing=true; btnNow=btn; btn.textContent='⏹ Stop';
     // chunk on sentence-ish boundaries — long utterances stall some engines
-    queue=chapterText(h2).match(/[^.!?]+[.!?]+[])'"’”]*|.+$/g)||[];
+    queue=chapterText(h2).match(/[^.!?]+[.!?]+|[^.!?]+$/g)||[];
     let i=0;
     (function next(){
       if(!playing||i>=queue.length) return stop();

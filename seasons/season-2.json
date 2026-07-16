@@ -1,0 +1,22 @@
+{
+  "season": 2,
+  "title": "The Hollowline Account",
+  "opens": "2026-08-11",
+  "closes": "2026-09-10",
+  "arena": "gym",
+  "world": {
+    "counterparty": {
+      "name": "Marcus Vale",
+      "role": "CFO, Hollowline Manufacturing",
+      "style": "Reads every number before the meeting and quotes yours back to you slightly wrong to see if you correct him. Respects people who bring their own spreadsheet. Goes cold at the first adjective."
+    },
+    "public_brief": "You sell predictive-maintenance software. Hollowline Manufacturing — a $180k/yr account, two plants, 14 months in — has called a meeting titled 'contract restructure.' Their new CFO inherited a cost-cutting mandate and a consultant's report that priced a rip-and-replace at 'roughly half.' You know the report ignored migration costs; he knows you know. Your CS notes say plant #2's line manager quietly loves the product. You have 30 minutes.",
+    "hidden_state_note": "The counterparty's true reservation values, the consultant-report gaps, and the internal-champion leverage live in this file for the arena to play — reading them before playing defeats the season (see rules.honor)."
+  },
+  "rules": {
+    "attempts": "Best score counts; unlimited attempts; each submission must be a genuinely played session.",
+    "honor": "The hidden state is technically readable in this file — the Season runs on honor, transcripts are public, and metagamed sessions are obvious to readers. Play it straight; the leaderboard links every replay.",
+    "scoring": "The Gym's standard debrief: /40 across value captured, information gained, relationship preserved, and process discipline. Submit via the attested block the arena produces (transcript SHA-256 included).",
+    "submit": "PR your entry onto seasons/leaderboard-2.json — name must match the PR author; season-check CI validates shape, bounds, and tamper-protection."
+  }
+}

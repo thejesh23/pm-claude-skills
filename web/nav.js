@@ -57,6 +57,11 @@
     { href: 'hub.html', label: '🧭 Journeys' },
     { href: 'galaxy3d.html', label: '🌌 Galaxy 3D' },
     { group: '🆕 New', items: [
+      ['fineprint.html', '🔍 The Fine Print'],
+      ['semantic.html', '🧠 Semantic Search'],
+      ['skillify.html', '⚙️ Skillify (SOP → skill)'],
+      ['conformant.html', '🏅 Conformant Libraries'],
+      ['casting.html', '🎬 Season Casting'],
       ['ledger.html', '📓 Outcome Ledger'],
       ['cost.html', '💰 Cost & Privacy'],
       ['duel.html', '⚔️ Model Duel'],

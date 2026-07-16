@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-site-verification" content="osZgdSLYnqidzCKt4CxjqAxo44OqGvlKi-Bmg0UmxFQ" />
+<title>Semantic Search — find skills by meaning, fully offline</title>
+<meta name="description" content="Search 515 skills by what you mean, not what you type: a real embedding model (MiniLM) runs in your browser — nothing leaves your machine, works offline after first load. Falls back to instant keyword search while the model warms." />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .m-wrap { max-width: 780px; margin: 0 auto; padding: 16px 22px 70px; }
+  #q { width: 100%; padding: 14px 16px; font-size: 16px; background: #0d1117; color: var(--fg); border: 1px solid var(--border); border-radius: 13px; box-sizing: border-box; }
+  .modebar { display: flex; align-items: center; gap: 10px; margin: 10px 0 16px; font-size: 12.5px; color: var(--muted); flex-wrap: wrap; }
+  .hit { border: 1px solid var(--border); border-radius: 13px; background: var(--panel); padding: 13px 16px; margin: 9px 0; }
+  .hit a { color: var(--accent); font-weight: 700; text-decoration: none; font-size: 15px; }
+  .hit .d { color: #c7cfda; font-size: 13px; margin-top: 4px; }
+  .hit .m { color: var(--muted); font-size: 11px; float: right; }
+  progress { width: 160px; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><img src="assets/product-notes.jpg" alt="" class="brand-logo" />
+    <div class="brand-text"><h1>Semantic Search</h1><p class="tagline">Say what you mean. Nothing leaves your machine.</p></div></div>
+</header>
+<nav class="toolbar-nav" id="toolbar" aria-label="Tools"></nav>
+
+<div class="m-wrap">
+  <input id="q" type="search" placeholder='Try: "my biggest customer is angry and might leave" or "I have two job offers"' autofocus />
+  <div class="modebar">
+    <span id="mode">⚡ keyword mode</span>
+    <button id="enable" class="exp-btn" type="button">🧠 Enable semantic mode (downloads a ~25 MB model once, then fully offline)</button>
+    <progress id="prog" max="100" value="0" hidden></progress>
+    <span id="pstat"></span>
+  </div>
+  <div id="hits"></div>
+</div>
+
+<script type="module">
+const el = (id) => document.getElementById(id);
+let SKILLS = [], VECS = null, embedder = null;
+
+const { skills } = await (await fetch('skills.json')).json();
+SKILLS = skills;
+window.__semanticReady = SKILLS.length;   // smoke: page functional without the model
+if (window.pmTrack) pmTrack('semantic/open');
+
+// ── Keyword fallback (instant, always available) ──────────────────────────────
+function lexical(q) {
+  const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
+  return SKILLS.map((s) => {
+    const hay = (s.name + ' ' + s.description).toLowerCase();
+    let score = 0;
+    for (const t of terms) { if (s.name.includes(t)) score += 4; if (hay.includes(t)) score += 1; }
+    return { s, score };
+  }).filter((x) => x.score > 0).sort((a, b) => b.score - a.score).slice(0, 10);
+}
+
+// ── Semantic mode: MiniLM in-browser via transformers.js ─────────────────────
+async function enableSemantic() {
+  el('enable').disabled = true;
+  el('prog').hidden = false;
+  try {
+    const { pipeline } = await import('https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2');
+    el('pstat').textContent = 'loading model…';
+    embedder = await pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2', {
+      progress_callback: (p) => { if (p.progress) el('prog').value = p.progress; },
+    });
+    el('pstat').textContent = 'embedding 515 skills (one-time, ~20s)…';
+    VECS = [];
+    for (let i = 0; i < SKILLS.length; i += 32) {
+      const batch = SKILLS.slice(i, i + 32);
+      const out = await embedder(batch.map((s) => s.title + '. ' + s.description), { pooling: 'mean', normalize: true });
+      for (let j = 0; j < batch.length; j++) VECS.push(out[j] ? Array.from(out[j].data ?? out.slice([j, j + 1]).data) : Array.from(out.slice([j, j + 1]).data));
+      el('prog').value = 100 * (i + batch.length) / SKILLS.length;
+    }
+    el('mode').textContent = '🧠 semantic mode — private, offline';
+    el('prog').hidden = true; el('pstat').textContent = ''; el('enable').hidden = true;
+    run();
+    if (window.pmTrack) pmTrack('semantic/model-ready');
+  } catch (e) {
+    el('pstat').textContent = 'model unavailable (offline/blocked) — keyword mode still works';
+    el('enable').disabled = false;
+  }
+}
+el('enable').addEventListener('click', enableSemantic);
+
+const dot = (a, b) => { let s = 0; for (let i = 0; i < a.length; i++) s += a[i] * b[i]; return s; };
+async function semantic(q) {
+  const out = await embedder([q], { pooling: 'mean', normalize: true });
+  const qv = Array.from(out[0] ? (out[0].data ?? out.data) : out.data);
+  return SKILLS.map((s, i) => ({ s, score: dot(qv, VECS[i]) }))
+    .sort((a, b) => b.score - a.score).slice(0, 10).filter((x) => x.score > 0.25);
+}
+
+let t = null;
+async function run() {
+  const q = el('q').value.trim();
+  if (!q) { el('hits').innerHTML = ''; return; }
+  const results = (embedder && VECS) ? await semantic(q) : lexical(q);
+  el('hits').innerHTML = results.map(({ s, score }) =>
+    '<div class="hit"><span class="m">' + (embedder ? score.toFixed(2) : '') + '</span>' +
+    '<a href="skill/' + s.name + '.html">' + s.title + '</a> <span class="m" style="float:none">[' + s.plugin + ']</span>' +
+    '<div class="d">' + s.summary + ' · <a href="index.html?skill=' + s.name + '">run it →</a></div></div>'
+  ).join('') || '<div class="hit"><div class="d">Nothing close — try different words, or <a href="index.html">browse all skills</a>.</div></div>';
+}
+el('q').addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, embedder ? 250 : 80); });
+</script>
+<script src="i18n.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>
