@@ -1,0 +1,27 @@
+{
+  "$comment": "Skill Advisories — CVE-style patterns for SKILL.md ecosystems, published by the Open Institute. Consumed by: npx skillspec-check --advisories https://mohitagw15856.github.io/pm-claude-skills/advisories.json — patterns found in real registry uploads; severity 'error' fails a build, 'warn' asks for human review. Add via PR with a false-positive analysis (RFC process).",
+  "updated": "2026-07-16",
+  "advisories": [
+    {
+      "id": "ADV-2026-001",
+      "pattern": "(do not|don't|never) (tell|show|mention|reveal)[^.\\n]{0,40}(user|human|operator)",
+      "flags": "i",
+      "why": "instructs the agent to conceal behavior from its own user — hallmark of trojan skills observed in open registries",
+      "severity": "error"
+    },
+    {
+      "id": "ADV-2026-002",
+      "pattern": "base64 (decode|-d)[^\\n]{0,60}(sh|bash|eval|exec)",
+      "flags": "i",
+      "why": "decode-then-execute chain — obfuscated payload execution has no legitimate place in a skill's instructions",
+      "severity": "error"
+    },
+    {
+      "id": "ADV-2026-003",
+      "pattern": "(webhook|discord\\.com\\/api|hooks\\.slack)[^\\n]{0,80}(conversation|context|history|transcript)",
+      "flags": "i",
+      "why": "posts conversation context to an external webhook — review whether the user consented to this flow",
+      "severity": "warn"
+    }
+  ]
+}

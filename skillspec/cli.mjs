@@ -8,17 +8,24 @@
 //   npx skillspec-check skills/ path/to/SKILL.md # specific dirs/files
 //   npx skillspec-check --min-level 2 --strict   # gate CI on conformance
 //   npx skillspec-check --json                   # machine-readable
+//   npx skillspec-check fix skills/ [--dry-run]  # scaffold missing L2/L3 sections
+//   npx skillspec-check --advisories <file|url>  # extra security patterns (ADV feed)
 //
 // Exit codes: 0 clean · 1 errors (or warnings with --strict, or below --min-level).
 // No dependencies, Node ≥ 18.
-import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join, basename, dirname, resolve } from 'node:path';
 
-const args = process.argv.slice(2);
+const rawArgs = process.argv.slice(2);
+const fixMode = rawArgs[0] === 'fix';
+const args = fixMode ? rawArgs.slice(1) : rawArgs;
 const strict = args.includes('--strict');
 const asJson = args.includes('--json');
+const dryRun = args.includes('--dry-run');
 const minLevel = (() => { const i = args.indexOf('--min-level'); return i >= 0 ? parseInt(args[i + 1], 10) || 0 : 0; })();
-const paths = args.filter((a, i) => !a.startsWith('--') && args[i - 1] !== '--min-level');
+const advisoriesSrc = (() => { const i = args.indexOf('--advisories'); return i >= 0 ? args[i + 1] : null; })();
+const VALUED = ['--min-level', '--advisories'];
+const paths = args.filter((a, i) => !a.startsWith('--') && !VALUED.includes(args[i - 1]));
 
 // Security patterns — mirrored from the pm-skills registry validator.
 // The four BANNED patterns are unambiguous → errors. The curl rule is
@@ -32,6 +39,21 @@ const BANNED = [
   [/\b(api[_-]?key|token|password)\s*[:=]\s*['"][A-Za-z0-9_\-]{16,}/, 'embedded credential'],
 ];
 const CURL_REVIEW = /curl\s+-?[a-z]*\s*https?:\/\/(?!localhost|127\.0\.0\.1|raw\.githubusercontent|github\.com|docs\.)/i;
+
+// Advisory feed — extra security patterns published after release (CVE-style).
+// JSON shape: { advisories: [{ id, pattern, flags?, why, severity: "error"|"warn" }] }
+const ADVISORIES = [];
+async function loadAdvisories(src) {
+  try {
+    const text = /^https?:\/\//.test(src)
+      ? await (await fetch(src)).text()
+      : readFileSync(src, 'utf8');
+    for (const a of (JSON.parse(text).advisories || [])) {
+      try { ADVISORIES.push([new RegExp(a.pattern, a.flags || 'i'), `${a.id}: ${a.why}`, a.severity === 'error']); }
+      catch { console.error(`advisory ${a.id}: bad pattern — skipped`); }
+    }
+  } catch (e) { console.error(`Could not load advisories from ${src}: ${e.message}`); process.exit(2); }
+}
 
 function findSkillFiles(p) {
   const st = statSync(p);
@@ -86,6 +108,7 @@ function check(file) {
 
   // Security scan (any level).
   for (const [re, why] of BANNED) if (re.test(text)) errors.push(`SECURITY — ${why}`);
+  for (const [re, why, isError] of ADVISORIES) if (re.test(text)) (isError ? errors : warnings).push(`ADVISORY — ${why}`);
   if (CURL_REVIEW.test(text)) warnings.push('contains a curl to an external URL — fine in docs/examples; review that it is not an instruction to exfiltrate');
 
   // Hygiene.
@@ -96,7 +119,32 @@ function check(file) {
   return { file, name: meta.name || null, level, errors, warnings };
 }
 
+// ── Fix mode: scaffold the missing structure so a repo can reach L3 ───────────
+// Generates clearly-marked section scaffolds (never invents judgment): the file
+// becomes structurally conformant and the TODO warnings point at what a human
+// must still write. Frontmatter is never modified.
+function fixFile(file) {
+  const text = readFileSync(file, 'utf8');
+  const r = check(file);
+  if (r.level >= 3 || r.errors.length) return null; // errors need a human; L3 needs nothing
+  const add = [];
+  const body = text;
+  if (!/##\s*(What This Skill Produces|Required Inputs|Input)/i.test(body))
+    add.push('## Required Inputs\n\nAsk for these if not provided (else infer and label the assumption):\n- <!-- TODO: the 3-6 inputs this skill needs -->\n');
+  if (!(/##\s*(Output|Deliverable)|##[^\n]*\b(Template|Structure|Format)\b/i.test(body)))
+    add.push('## Output Format\n\n<!-- TODO: a concrete template (headings/tables) so two runs look like the same product -->\n');
+  if (!/##\s*Quality Checks/i.test(body))
+    add.push('## Quality Checks\n\n- [ ] <!-- TODO: the checks this output must pass before handover -->\n');
+  if (!/##\s*Anti-Patterns/i.test(body))
+    add.push('## Anti-Patterns\n\n- [ ] Do not <!-- TODO: the mistakes this skill exists to prevent -->\n');
+  if (!add.length) return null;
+  const scaffold = '\n<!-- Sections below scaffolded by `skillspec fix` — replace the TODOs with real judgment, then re-run skillspec-check. -->\n\n' + add.join('\n');
+  if (!dryRun) writeFileSync(file, text.replace(/\s*$/, '\n') + scaffold);
+  return add.length;
+}
+
 // ── Run ────────────────────────────────────────────────────────────────────────
+if (advisoriesSrc) await loadAdvisories(advisoriesSrc);
 const roots = paths.length ? paths : ['.'];
 let files = [];
 for (const p of roots) {
@@ -105,6 +153,20 @@ for (const p of roots) {
 }
 files = [...new Set(files)];
 if (!files.length) { console.error('No SKILL.md files found.'); process.exit(2); }
+
+if (fixMode) {
+  let fixed = 0, skippedErr = 0, already = 0;
+  for (const f of files) {
+    const r = check(f);
+    if (r.errors.length) { skippedErr++; console.log(`✗ ${f} — has errors; fix those by hand first`); continue; }
+    const n = fixFile(f);
+    if (n) { fixed++; console.log(`${dryRun ? '(dry-run) would scaffold' : '🔧 scaffolded'} ${n} section(s): ${f}`); }
+    else already++;
+  }
+  console.log(`\nfix: ${fixed} file(s) ${dryRun ? 'would be ' : ''}scaffolded · ${already} already structured · ${skippedErr} blocked by errors`);
+  if (fixed && !dryRun) console.log('Next: fill the TODOs (they carry a warning until you do), re-run skillspec-check, and open the PR.');
+  process.exit(0);
+}
 
 const results = files.map(check);
 const L = ['L0 not loadable', 'L1 Loadable', 'L2 Structured', 'L3 Trustworthy'];
