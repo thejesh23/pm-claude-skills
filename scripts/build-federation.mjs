@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const registry = JSON.parse(readFileSync(join(root, 'web', 'federation-registry.json'), 'utf8'));
 
+const getLocal = (p) => JSON.parse(readFileSync(join(root, p), 'utf8'));
 const get = async (url) => {
   const r = await fetch(url, { signal: AbortSignal.timeout(15000) });
   if (!r.ok) throw new Error(`http ${r.status}`);
@@ -20,9 +21,9 @@ const get = async (url) => {
 const members = [];
 for (const m of registry.members) {
   try {
-    const fed = await get(m.federation);
+    const fed = m.local ? getLocal(m.local) : await get(m.federation);
     if (fed.spec !== 'skill-federation/0.1') throw new Error(`unsupported spec ${fed.spec}`);
-    const idx = await get(fed.skills_index);
+    const idx = m.local_index ? getLocal(m.local_index) : await get(fed.skills_index);
     const skills = (idx.skills || []).map((s) => ({ name: s.name, description: (s.description || '').slice(0, 300) }));
     members.push({ repo: m.repo, name: fed.name, homepage: fed.repo, license: fed.license || '?', badge: fed.skillspec_badge || null, count: skills.length, skills, ok: true });
     console.log(`✓ ${m.repo} — ${skills.length} skills`);

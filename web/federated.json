@@ -2,12 +2,2078 @@
  "spec": "skill-federation/0.1",
  "built": "2026-07-16",
  "libraries": 1,
- "skills": 0,
+ "skills": 515,
  "members": [
   {
    "repo": "mohitagw15856/pm-claude-skills",
-   "ok": false,
-   "error": "http 404"
+   "name": "pm-claude-skills",
+   "homepage": "https://github.com/mohitagw15856/pm-claude-skills",
+   "license": "MIT",
+   "badge": "https://img.shields.io/endpoint?url=https%3A%2F%2Fpm-skills-mcp.pm-claude-skills.workers.dev%2Fbadge%3Frepo%3Dmohitagw15856%2Fpm-claude-skills",
+   "count": 515,
+   "skills": [
+    {
+     "name": "360-feedback-template",
+     "description": "Design a 360-degree feedback survey or write a structured 360 feedback report. Use when asked to build a 360 feedback process, write 360 feedback for a colleague, design a feedback survey, or produce a feedback report. Produces either a complete survey instrument with rating scales and open-ended qu"
+    },
+    {
+     "name": "ab-test-planner",
+     "description": "Design statistically rigorous A/B tests for product features, UI changes, onboarding flows, and pricing experiments. Use when asked to set up an experiment, design an A/B test, calculate sample size, or interpret test results. Produces a complete test plan with hypothesis, variant definitions, sampl"
+    },
+    {
+     "name": "ab-test-readout",
+     "description": "Analyse a finished A/B test and write the readout — the result, whether it's statistically and practically significant, what it means, and the ship/no-ship call. Use when asked to analyse experiment results, write an A/B test readout, interpret test data, or decide whether to ship a variant. Produce"
+    },
+    {
+     "name": "accessibility-audit",
+     "description": "Generate a WCAG 2.2 accessibility audit checklist and remediation suggestions for any UI or design. Use when asked to audit for accessibility, check WCAG compliance, review a design for a11y issues, or create an accessibility remediation plan. Produces a prioritised checklist with pass/fail assessme"
+    },
+    {
+     "name": "account-plan",
+     "description": "Build a structured account plan for any key customer or target account. Use when asked to create an account plan, key account strategy, strategic account review, or territory plan. Produces a complete account plan with relationship map, growth opportunities, risks, and 90-day action plan."
+    },
+    {
+     "name": "acquirer-red-team",
+     "description": "Simulate the acquirer's diligence team hunting for reasons to cut your price — their internal red-flags memo with a price-chip estimate per finding. Use when asked to red-team my company before a sale, how will an acquirer attack our valuation, pre-diligence audit, or what will DD find. Produces the"
+    },
+    {
+     "name": "action-runner",
+     "description": "Turn a skill's recommendations into real, executed actions — open the tickets, file the issues, post the updates — safely: dry-run preview, risk-classified, approval-gated, then recorded back to the brain. Use when asked to act on a plan, file tickets from a checklist, create issues from a PRD, exec"
+    },
+    {
+     "name": "ad-copy",
+     "description": "Write platform-native paid ad copy with multiple angles to test. Use when asked to write ad copy, Google/Facebook/LinkedIn/Instagram ads, PPC headlines, or paid social creative copy. Produces ready-to-ship variants per platform (headlines, primary text, descriptions, CTAs) across distinct angles, si"
+    },
+    {
+     "name": "aeo-optimizer",
+     "description": "Optimize an article for Answer Engine Optimization (AEO) so AI engines like ChatGPT, Perplexity, and Claude can extract, quote, and cite it. Use when asked to AEO-optimize, make content AI-readable, improve AI citation chances, or adapt an article for answer engines. Produces an AEO-optimised rewrit"
+    },
+    {
+     "name": "agent-design-review",
+     "description": "Review an LLM agent design and find where it will be unreliable, expensive, or unsafe. Use when asked to review an agent architecture, critique a multi-step/tool-using agent, debug an agent that loops or goes off-task, or harden an agent before launch. Produces a structured review — task fit, contro"
+    },
+    {
+     "name": "agent-era-pricing",
+     "description": "Redesign seat-based pricing for the agent era — when one human runs ten agents, per-seat models collapse. Use when agents are eroding seat counts, when asked to migrate to usage- or outcome-based pricing, to price an agent/API tier, or to defend revenue as customers automate their own usage. Produce"
+    },
+    {
+     "name": "agent-incident-postmortem",
+     "description": "Run a blameless postmortem for an incident caused by an AI agent or LLM feature — hallucinated facts shipped to users, runaway tool use, prompt injection, cost blowouts, or wrong actions taken autonomously. Use when asked to write up an AI incident, analyse why an agent did something wrong, or produ"
+    },
+    {
+     "name": "agent-observability-spec",
+     "description": "Specify the tracing, metrics, and alerting for an AI agent or LLM feature in production. Use when asked what to log for an LLM app, design agent tracing or spans, define quality and cost monitors, or answer 'how do we know if the agent is misbehaving?'. Produces an observability spec with a trace sc"
+    },
+    {
+     "name": "agent-readiness-audit",
+     "description": "Audit whether AI agents can actually use your product — docs, APIs, onboarding, errors, and discoverability, evaluated from a non-human user's perspective. Use when asked if a product is agent-ready, to audit a site or API for AI usability, to prepare for agentic traffic, or when agents keep failing"
+    },
+    {
+     "name": "agent-spec",
+     "description": "Specify an autonomous or tool-using AI agent before building it. Use when asked to design an AI agent, define an agent's tools and guardrails, scope what an agent is allowed to do, or write an agent spec/PRD. Produces an agent spec — goal & scope, tools with permissions, the control loop, guardrails"
+    },
+    {
+     "name": "ai-code-review",
+     "description": "Review AI-authored code for its characteristic failure modes — plausible-but-wrong logic, hallucinated APIs, over-engineering, dead scaffolding, and silent security shortcuts. Use when reviewing an AI-generated or heavily AI-assisted PR, when AI-written code keeps shipping subtle bugs, or when setti"
+    },
+    {
+     "name": "ai-content-audit",
+     "description": "Audit a content library, docs site, or blog for AI-generated filler that's eroding trust and search performance — and triage what to fix, rewrite, or delete. Use when asked to find slop in a content library, audit AI-written content quality, explain why content engagement or rankings dropped after s"
+    },
+    {
+     "name": "ai-ethics-review",
+     "description": "Conduct a structured ethical review of an AI or ML feature, model, or product. Use when preparing to deploy an AI system, assessing algorithmic risk, auditing a model for bias, or producing a responsible AI impact assessment. Produces a structured ethics review covering fairness, transparency, priva"
+    },
+    {
+     "name": "ai-eval-plan",
+     "description": "Design an evaluation plan for an LLM or AI feature before shipping it. Use when asked how to evaluate a prompt/model/agent, set up an eval harness, define quality metrics for an AI feature, or build a regression gate. Produces an eval plan — task definition, datasets, metrics & rubrics, baselines, a"
+    },
+    {
+     "name": "ai-feature-prd",
+     "description": "Write a PRD for an AI-powered feature, covering the things normal PRDs miss. Use when asked to spec an AI/LLM feature, write a PRD for a feature that uses a model, or plan an AI capability (assistant, summarizer, generator, classifier). Produces an AI feature PRD — problem & UX of uncertainty, model"
+    },
+    {
+     "name": "ai-product-canvas",
+     "description": "Structure AI and ML product decisions with the rigour of any product decision. Use when building AI-powered features, evaluating LLM integrations, designing AI products, or assessing AI readiness. Produces a complete AI product canvas covering problem definition, model approach, data requirements, e"
+    },
+    {
+     "name": "ai-roi-audit",
+     "description": "Audit whether the organisation's AI spend actually paid — measured against baselines, not vendor math or vibes. Use when a CFO asks what the AI tools returned, when renewing AI contracts, when consolidating overlapping AI subscriptions, or to build the measurement plan before the next spend. Produce"
+    },
+    {
+     "name": "ai-usage-policy",
+     "description": "Write an AI usage policy people can actually follow — approved tools, data rules, disclosure duties, and review obligations, in one page instead of legal fog. Use when asked for a company AI policy, acceptable-use rules for ChatGPT/Claude/Copilot at work, guidance on what data may go into AI tools, "
+    },
+    {
+     "name": "ai-assisted-performance-review",
+     "description": "Evaluate performance fairly when output is AI-assisted — what still measures the human, what now measures the tooling, and how to run the review conversation. Use when reviewing someone whose work is heavily AI-assisted, when output volume stopped meaning anything, when calibrating a team with uneve"
+    },
+    {
+     "name": "altitude-shifter",
+     "description": "Re-pitch one piece of content for four audiences — the board, the engineers, a customer, a new hire — with a delta table showing what changed between altitudes and why. Use when asked to rewrite this for execs, explain this to the team, make this customer-facing, or say this four ways. Produces the "
+    },
+    {
+     "name": "ambiguity-resolver",
+     "description": "Structure vague opportunities and unclear briefs into actionable one-page problem statements. Use when asked to clarify a vague brief, frame an undefined problem, make sense of an unclear opportunity, or when the user says 'we need to figure out what to do about X' or 'I've been asked to look into Y"
+    },
+    {
+     "name": "analyst-relations-brief",
+     "description": "Prepare for an industry analyst briefing (Gartner, Forrester, IDC and similar). Use when asked to prep an analyst briefing, write an AR briefing document, build talking points for an analyst call, or prepare a Magic Quadrant / Wave submission narrative. Produces a briefing kit — objective, company/p"
+    },
+    {
+     "name": "announcement-card",
+     "description": "Write a short, punchy announcement designed to be shared as an image or social card. Use when asked to announce a launch, milestone, feature, hire, funding, or win — something to post on LinkedIn/X/Slack. Produces a tight, visually-structured announcement (headline, one-liner, 2-3 proof points, CTA)"
+    },
+    {
+     "name": "api-docs-writer",
+     "description": "Write clear, developer-facing API documentation. Use when asked to document an API endpoint, write API reference docs, create a developer guide, or turn a raw spec/Postman collection into documentation. Produces endpoint documentation with descriptions, parameters, request/response examples, and err"
+    },
+    {
+     "name": "api-test-plan",
+     "description": "Plan tests for an API endpoint or service — functional, negative, and contract. Use when asked to test an API, write API test cases, plan REST/GraphQL endpoint testing, or validate an API contract. Produces an API test plan — per-endpoint cases (status codes, schema, auth, validation, errors), bound"
+    },
+    {
+     "name": "api-versioning-strategy",
+     "description": "Write an API versioning strategy document for a service or API platform. Use when asked to define versioning policy, plan API deprecation, classify breaking changes, or document version lifecycle. Produces a complete versioning strategy with breaking-change classification table, deprecation timeline"
+    },
+    {
+     "name": "apology-letter",
+     "description": "Write a sincere, effective apology to a customer, group, or the public. Use when asked to write an apology, say sorry to a customer or community, make amends after a mistake, or respond to a complaint with an apology. Produces a genuine apology — acknowledgement, taking responsibility, empathy for t"
+    },
+    {
+     "name": "architecture-decision-record",
+     "description": "Create an Architecture Decision Record (ADR) for any technical decision. Use when asked to document a technical decision, write an ADR, record an architecture choice, or capture why a technology or approach was selected. Produces a structured ADR with context, decision, consequences, and tradeoffs."
+    },
+    {
+     "name": "architecture-diagram",
+     "description": "Diagram a system or technical architecture — services, data stores, and how they connect. Use when asked to draw an architecture, show how components fit together, map a system/data flow, or visualize services and dependencies. Produces a ready-to-render Mermaid diagram with grouped subgraphs (rende"
+    },
+    {
+     "name": "assumption-bounty",
+     "description": "Extract every hidden assumption from a plan or document and put a price on each one — what it costs if wrong, what it costs to test. Use before committing to anything whose author says 'obviously' or whose spreadsheet has hardcoded cells: the bounty hunt makes the invisible load-bearing beliefs expl"
+    },
+    {
+     "name": "assumption-mapper",
+     "description": "Extract and risk-rate hidden assumptions in a product brief or PRD. Use when asked to review a product brief for assumptions, audit a PRD for risks, find hidden assumptions, validate product plans, or run an assumption analysis. Produces a prioritised assumption map with confidence and impact scores"
+    },
+    {
+     "name": "async-decision-memo",
+     "description": "Run a decision asynchronously — the memo, the silent-read window, the comment protocol, and the deadline that makes it land without a meeting. Use when asked to decide something async, replace a decision meeting with a document, run an Amazon-style written decision process, or when a decision keeps "
+    },
+    {
+     "name": "autopilot-charter",
+     "description": "Decide which of your recurring rituals to put on autopilot — and which to keep manual. Use when asked what to automate, how to set up recurring AI runs, which reports or briefings could run on a schedule, or to design an automation charter for a team. Produces a ritual inventory with automate/assist"
+    },
+    {
+     "name": "benefits-decoder",
+     "description": "Decode an employment benefits package into what it's actually worth and where the fine print bites. Use when someone asks 'is this offer good', 'decode my benefits package', 'what does my equity actually mean', or 'what should I ask HR before signing'. Produces a benefit-by-benefit decode with real "
+    },
+    {
+     "name": "bid-tender-review",
+     "description": "Analyse a construction bid or tender package for scope gaps, risk-shifting exclusions, unit-rate red flags, and front-loading in the schedule of values. Use when asked to review a bid, level bids, check a tender for gaps, compare sub quotes, or vet a schedule of values before award. Produces a struc"
+    },
+    {
+     "name": "board-deck-narrative",
+     "description": "Build the storyline and slide structure for a board presentation. Use when asked to create a board deck, board presentation narrative, board meeting slides, or quarterly board update. Produces a complete slide-by-slide structure with narrative beats, talking points, and slide content guidance."
+    },
+    {
+     "name": "board-minutes",
+     "description": "Write formal board meeting minutes from an agenda, notes, transcript, or discussion summary. Use when asked to draft board minutes, governance minutes, meeting minutes for a board, or a formal record of decisions and actions. Produces structured board minutes with attendees, agenda items, resolution"
+    },
+    {
+     "name": "board-pre-read",
+     "description": "Write a board pre-read that's sent before the meeting so the meeting is about decisions, not status. Use when asked to prepare a board pre-read, a board update/package, or pre-meeting materials for a board. Produces a board pre-read — a TL;DR, the metrics dashboard vs. plan, what's working / what's "
+    },
+    {
+     "name": "bom-cost-review",
+     "description": "Review a bill of materials for cost, risk, and supply exposure — cost rollup, top-10 cost drivers, single-source and EOL risk, MOQ vs forecast mismatch, cost-down candidates, and tariff/logistics sensitivity. Use when asked to review a BOM, find cost-down opportunities, check component sourcing risk"
+    },
+    {
+     "name": "bookkeeping-categorization",
+     "description": "Set up a chart of accounts and rules for categorizing transactions. Use when asked how to categorize expenses/transactions, set up a chart of accounts, organize bookkeeping, or sort bank transactions into the right buckets. Produces a practical chart of accounts for the business, categorization rule"
+    },
+    {
+     "name": "boolean-search-builder",
+     "description": "Build boolean and X-ray search strings to source candidates. Use when asked to build a boolean search, source candidates on LinkedIn/Google, write an X-ray search, or find people with specific skills. Produces ready-to-paste boolean strings (with synonyms, must-haves, and exclusions), X-ray variants"
+    },
+    {
+     "name": "brag-doc",
+     "description": "Keep a running brag document of your accomplishments so reviews and promo cases write themselves. Use when asked to start or update a brag doc, log a win, track accomplishments, or prep evidence for a review/promotion. Produces a structured, dated accomplishment log — impact-first entries with metri"
+    },
+    {
+     "name": "brainstorming",
+     "description": "Run a real brainstorm — divergent generation without judgment, then convergent selection with explicit criteria — instead of listing ten obvious ideas and calling it creativity. Use when asked to brainstorm, generate ideas or options, explore a solution space, or name something. Produces a genuinely"
+    },
+    {
+     "name": "brand-guidelines",
+     "description": "Extract a brand's visual and verbal identity into an applicable guideline kit — tokens, voice rules, and do/don't pairs — then apply it consistently to any artifact. Use when asked to apply brand guidelines to a document/deck/page, to extract a brand kit from existing materials or a website, to keep"
+    },
+    {
+     "name": "brand-impersonation-response",
+     "description": "Respond to a brand or executive impersonation incident — deepfaked executives, cloned support lines, fake apps, spoofed domains, or AI-generated scam content wearing your name. Use when a deepfake of a leader is circulating, customers report a fake version of your product or support channel, or to p"
+    },
+    {
+     "name": "brief-builder",
+     "description": "Interview the user with sharp, one-at-a-time questions to turn a vague request into a tight, complete brief any other skill can run on. Use when a request is fuzzy, under-specified, or 'help me think this through', or before running a skill that needs inputs the user hasn't given. Produces a structu"
+    },
+    {
+     "name": "briefing-note",
+     "description": "Write a one-page briefing note that gets a busy principal up to speed fast. Use when asked to brief a minister/executive/official, prepare a briefing note or read-ahead, or summarize an issue for a decision or meeting. Produces a tight, single-page note: purpose, background, key facts/considerations"
+    },
+    {
+     "name": "budget-builder",
+     "description": "Build a realistic personal monthly budget from someone's income and expenses. Use when asked to make a budget, plan monthly spending, allocate income, or get finances under control. Produces a categorized budget (a 50/30/20-style allocation tuned to their reality), a surplus/shortfall number, and co"
+    },
+    {
+     "name": "budget-variance-analysis",
+     "description": "Produce a structured budget variance analysis from actual vs budget figures. Use when asked to analyse budget variances, explain underspend or overspend, write a variance commentary, or investigate why actuals differ from plan. Produces a categorised variance table with root cause analysis and manag"
+    },
+    {
+     "name": "bug-diagnosis",
+     "description": "Diagnose a bug systematically instead of guessing — reproduce, isolate, form hypotheses, and test them to root cause. Use when debugging, chasing a defect, an intermittent failure, or 'why is this happening?'. Produces a structured diagnosis: a reliable repro, the narrowed-down location, ranked hypo"
+    },
+    {
+     "name": "bug-report",
+     "description": "Write a clear, reproducible bug report that gets fixed fast. Use when asked to write a bug report, file a defect, report an issue, or turn 'it's broken' into an actionable ticket. Produces a structured report — a precise title, steps to reproduce, expected vs. actual, environment, severity/priority,"
+    },
+    {
+     "name": "candidate-scorecard",
+     "description": "Turn interview notes into a structured candidate scorecard and hire recommendation. Use when asked to write an interview scorecard, a candidate evaluation, an interview debrief, or to summarize feedback into a hire/no-hire call. Produces a per-competency assessment with evidence and ratings, an over"
+    },
+    {
+     "name": "cap-table-explainer",
+     "description": "Explain a cap table, dilution, SAFEs, option pools, and round mechanics in plain English with the actual math. Use when asked to explain dilution, model a SAFE or priced round, size an option pool, understand a term sheet's economics, or figure out who owns what after a raise. Produces a worked owne"
+    },
+    {
+     "name": "capacity-planning",
+     "description": "Produce a capacity planning document for a service covering traffic forecasts, resource requirements, and scaling strategy. Use when asked to plan infrastructure capacity, forecast resource needs, model traffic growth, define scaling strategy, or produce a capacity review for a service. Produces a s"
+    },
+    {
+     "name": "capital-allocation",
+     "description": "Allocate a finite budget or headcount across competing initiatives by return and strategic fit. Use when asked to allocate budget, decide where to invest, build a funding/portfolio plan, or make trade-offs across initiatives under a cap. Produces a capital-allocation plan — initiatives scored by exp"
+    },
+    {
+     "name": "carbon-accounting-check",
+     "description": "Sanity-check a greenhouse gas inventory before it goes into a report or gets audited. Use when asked to review a carbon footprint, check a GHG inventory, validate scope 1/2/3 numbers, explain a year-over-year emissions change, or prepare emissions data for assurance. Produces a boundary review, data"
+    },
+    {
+     "name": "career-ladder-map",
+     "description": "Map where you are against the next level and build a concrete plan to close the gap. Use when asked to map a career ladder, find the gap to the next level, build a development/growth plan, or figure out what to work on to get promoted. Produces a level-gap map — current vs. target competencies side "
+    },
+    {
+     "name": "case-for-support",
+     "description": "Write a fundraising case for support that makes donors want to give. Use when asked to write a case for support, a fundraising case statement, a major-gift or campaign case, or the core argument for a donation appeal. Produces a persuasive case — the need, your solution and why you, the impact a gif"
+    },
+    {
+     "name": "case-study-writeup",
+     "description": "Write a client case study that sells future work — challenge, approach, results. Use when asked to write a case study, a client success story, a project write-up, or a portfolio case for consulting/agency work. Produces a results-led case study — the client & challenge, your approach, quantified out"
+    },
+    {
+     "name": "cash-flow-forecast",
+     "description": "Build a short-term (13-week) cash flow forecast to see if you can cover what's due. Use when asked to build a cash flow forecast, a 13-week cash flow, a cash projection, or to plan around a cash crunch. Produces a week-by-week forecast structure — opening cash, expected inflows, scheduled outflows, "
+    },
+    {
+     "name": "category-page-brief",
+     "description": "Plan an e-commerce category / collection page that ranks and merchandises well. Use when asked to design a category page, a PLP (product listing page), a collection page, or to improve category SEO and merchandising. Produces a brief — search intent & keywords, intro copy, merchandising/sort logic, "
+    },
+    {
+     "name": "change-management-plan",
+     "description": "Create a structured change management plan for any organisational change. Use when asked to write a change management plan, manage a change initiative, plan a system rollout, or lead an organisational transformation. Produces a plan covering stakeholder analysis, impact assessment, communication str"
+    },
+    {
+     "name": "change-order-writer",
+     "description": "Draft a defensible construction change order with entitlement basis, scope delta, itemised pricing, and schedule impact. Use when asked to write a change order, price extra work, draft a CO or COR/PCO, respond to a directive for changed work, or paper a field change. Produces a complete change order"
+    },
+    {
+     "name": "changelog-generator",
+     "description": "Convert a git log, commit list, or release notes into a polished, user-facing changelog. Use when writing release notes, generating a CHANGELOG.md entry, or documenting what changed in a version. Produces a structured changelog section with version header, categorised changes, and migration notes. F"
+    },
+    {
+     "name": "changelog-writer",
+     "description": "Turn a list of changes, commits, or PRs into clean release notes / a changelog entry. Use when asked to write release notes, a changelog, or a version announcement from raw changes. Produces a Keep-a-Changelog-style entry grouped by type (Added/Changed/Fixed/etc.), written for users — surfacing brea"
+    },
+    {
+     "name": "chart",
+     "description": "Turn numbers into a chart — bar, line, area, pie, or doughnut. Use when asked to chart or graph data, visualize metrics/trends/breakdowns, or show numbers as a picture instead of a table. Produces a ready-to-render chart spec (renders live in the playground and exports as PNG) plus a one-line read o"
+    },
+    {
+     "name": "chart-data-extractor",
+     "description": "Extract pixel-level data from an image of a chart or graph and produce a structured data table. Use when asked to extract data from a chart image, transcribe numbers from a graph, digitise a chart, or turn a screenshot of data into a table. Produces a structured table with extracted values, confiden"
+    },
+    {
+     "name": "churn-analysis",
+     "description": "Produce a structured churn analysis that separates avoidable from unavoidable churn. Use when investigating why customers are leaving, identifying at-risk segments, calculating net revenue retention, or building a retention intervention plan. Produces a churn report with rate calculations, categoris"
+    },
+    {
+     "name": "cicd-playbook",
+     "description": "Write a CI/CD pipeline playbook for a service or team. Use when asked to document a CI/CD pipeline, write a deployment process, define release gates, document build and test stages, or create a deployment guide. Produces a structured playbook covering pipeline stages, environment definitions, deploy"
+    },
+    {
+     "name": "claims-triage",
+     "description": "Triage an incoming insurance claim: check the coverage trigger against policy wording, band severity and complexity, screen for fraud indicators, set a first-pass reserve range, and route with an SLA. Use when asked to triage a claim, review a first notice of loss (FNOL), assess a new claim, decide "
+    },
+    {
+     "name": "claude-superpowers",
+     "description": "Activate a 4-stage coding discipline framework that forces Claude to plan before coding, isolate changes on a branch, write tests first, and self-review output twice before presenting it. Use when starting a complex coding task, when past Claude sessions produced broken first drafts, or when you wan"
+    },
+    {
+     "name": "clause-explainer",
+     "description": "Explain a contract clause in plain English — what it means, who it favours, the realistic risk, and what to negotiate. Use when asked what a clause means, to decode legal language, explain a term in a contract, or assess whether a provision is standard or aggressive. Produces a plain-language transl"
+    },
+    {
+     "name": "client-discovery",
+     "description": "Run a consulting client discovery session — uncover the real problem, scope, and decision process. Use when asked to prepare for a client discovery call, qualify a consulting lead, scope an engagement, or run a kickoff. Produces a discovery plan — the questions that surface the real problem (not the"
+    },
+    {
+     "name": "climate-risk-assessment",
+     "description": "Assess physical and transition climate risk for a site, product, or portfolio with scenario-based structure. Use when asked to run a climate risk assessment, evaluate physical or transition risk, prepare TCFD/ESRS-style climate risk analysis, or assess how climate scenarios affect an asset or busine"
+    },
+    {
+     "name": "clinical-case-summary",
+     "description": "Write a structured clinical case summary or case presentation. Use when asked to write a clinical case summary, case presentation, patient case report, or clinical handover. Produces a structured summary using SBAR or SOAP format. For educational and documentation purposes only — not a substitute fo"
+    },
+    {
+     "name": "clinical-trial-protocol",
+     "description": "Draft a clinical trial protocol synopsis with the elements regulators and IRBs expect. Use when asked to write a clinical trial protocol, a study protocol synopsis, a trial design, or to structure endpoints/eligibility/statistics for an interventional study. Produces a structured protocol synopsis —"
+    },
+    {
+     "name": "co-marketing",
+     "description": "Plan a co-marketing partnership — two brands reaching each other's audiences for mutual gain. Use when asked to plan a partnership, joint campaign, co-branded content/webinar, integration launch, or partner outreach. Produces the partner fit rationale, a fair value exchange, the joint campaign plan,"
+    },
+    {
+     "name": "code-explainer",
+     "description": "Explain what a piece of code does in plain English, at the depth the reader needs. Use when asked to explain code, walk through a function, understand an unfamiliar snippet, or onboard to a file. Produces a one-line summary, a step-by-step walkthrough, the non-obvious parts called out, and any bugs "
+    },
+    {
+     "name": "code-review-checklist",
+     "description": "Generate a tailored code review checklist for any pull request based on the language, type of change, and risk level. Use when asked to review code, check a PR, review a pull request, or generate a code review checklist. Produces a focused checklist with language-specific checks, risk-level-appropri"
+    },
+    {
+     "name": "code-review-guide",
+     "description": "Review a pull request or diff like a thoughtful senior engineer — prioritized, kind, and focused on what matters. Use when reviewing code, giving PR feedback, or asked to 'review this change'. Produces a structured review: a correctness/design pass, comments ranked by severity (blocking → nit), what"
+    },
+    {
+     "name": "code-simplification",
+     "description": "Simplify code that works — remove speculative abstraction, dead flexibility, and needless indirection while keeping behaviour identical and verified. Use after a feature lands ('now simplify it'), when AI-generated code arrives over-engineered, when a file has grown hard to follow, or as the cleanup"
+    },
+    {
+     "name": "cohort-analysis",
+     "description": "Structure a cohort analysis for retention, LTV, or behavioural patterns. Use when asked to run a cohort analysis, analyse retention by cohort, segment users by behaviour over time, or calculate lifetime value by acquisition period. Produces a complete cohort analysis framework with methodology, coho"
+    },
+    {
+     "name": "cohort-curve-model",
+     "description": "Fit a retention curve to observed cohort data and project LTV — computed, not estimated. Use when someone has real cohort retention numbers (month 0, 1, 2…) and asks what lifetime value, lifetime periods, or long-run retention they imply, or whether retention is flattening or leaking. Produces a fit"
+    },
+    {
+     "name": "cold-email",
+     "description": "Write a cold sales/B2B outreach email that earns a reply. Use when asked to write a cold email, a sales outreach email, a prospecting email, or a cold email sequence to a business prospect. Produces a short, personalised email — subject, a relevant opener, one clear value-led ask, and a low-friction"
+    },
+    {
+     "name": "collections-email",
+     "description": "Write a polite-but-firm payment-reminder / collections email sequence for overdue invoices. Use when asked to write a collections email, a payment reminder, a dunning sequence, or to chase an overdue invoice. Produces a staged sequence — gentle pre-due nudge through escalating overdue reminders to a"
+    },
+    {
+     "name": "community-management-playbook",
+     "description": "Build a community management playbook for a brand's social media channels. Use when asked to create guidelines for managing comments, DMs, and community interactions, define a moderation policy, or build response frameworks for social media community managers. Produces a complete playbook with respo"
+    },
+    {
+     "name": "company-brief",
+     "description": "Build a candidate's research brief on a company before an application or interview. Use when asked to research a company for a job, prep a company brief before an interview, or understand a prospective employer fast. Produces a one-page brief — what they do & how they make money, recent news & traje"
+    },
+    {
+     "name": "comparative-market-analysis",
+     "description": "Build a comparative market analysis (CMA) to price a property. Use when asked to do a CMA, a comparative market analysis, price a home, or estimate a property's value from comparables. Produces a structured CMA — the subject property, selected comparables with adjustments, an estimated value range, "
+    },
+    {
+     "name": "competitive-analysis",
+     "description": "Analyze competitors and create competitive landscape documentation with feature matrices, positioning maps, and strategic recommendations. Use when asked to analyze competitors, create competitive analysis, compare features with competitors, build a competitive landscape, track competitive positioni"
+    },
+    {
+     "name": "competitive-intelligence-monitor",
+     "description": "Monitor competitor signals and surface strategic implications for your roadmap. Use when asked to monitor competitors, track the competitive landscape, produce a competitive briefing, or understand what has changed in the market this week or month. Produces a structured intelligence brief with high/"
+    },
+    {
+     "name": "competitor-signal-tracker",
+     "description": "Analyse competitor moves and translate them into strategic implications for your product roadmap. Use when a competitor announces a new feature, pricing change, partnership, or strategic shift, or when producing a periodic competitive intelligence report. Produces a categorised signal analysis with "
+    },
+    {
+     "name": "competitor-teardown",
+     "description": "Produce a structured competitive analysis for any product or market. Use when asked for a competitor analysis, competitive teardown, market comparison, SWOT, or positioning map. Generates a structured teardown with positioning map, feature comparison, messaging gaps, and strategic recommendations. F"
+    },
+    {
+     "name": "complaint-letter",
+     "description": "Write a firm, effective complaint letter that gets a resolution. Use when asked to write a complaint letter, complain to a company about a product/service, escalate poor service, or demand a refund/replacement. Produces a structured complaint — the facts, the impact, the specific resolution you want"
+    },
+    {
+     "name": "compliance-checklist",
+     "description": "Generate a prioritised compliance checklist for GDPR, SOC 2, ISO 27001, FCA, HIPAA, or other frameworks with a gap analysis. Use when asked for a compliance checklist, gap analysis, readiness assessment, or audit preparation for any regulatory framework. Produces a structured checklist with prioriti"
+    },
+    {
+     "name": "conference-talk-proposal",
+     "description": "Write a conference talk proposal / CFP submission for a tech or developer conference. Use when asked to submit to a CFP, propose a talk, or write a session abstract. Produces a compelling title, abstract, audience takeaways, an outline, and the speaker pitch — tuned to what selection committees actu"
+    },
+    {
+     "name": "consulting-proposal",
+     "description": "Write a consulting proposal that wins the engagement — outcomes over hours. Use when asked to write a consulting proposal, a project proposal, a pitch for a client engagement, or to respond to an RFP. Produces a proposal — the client's problem in their words, your approach & deliverables, outcomes/v"
+    },
+    {
+     "name": "content-calendar",
+     "description": "Generate a structured content calendar for any brand, product, or creator. Use when asked for a content plan, editorial calendar, social media schedule, or weekly/monthly content strategy. Produces a calendar with topics, formats, channels, and copy hooks."
+    },
+    {
+     "name": "content-repurposer",
+     "description": "Turn one piece of content into a full multi-platform pack — X/Twitter thread, LinkedIn post, newsletter section, Instagram carousel, and a short-form video script — each rewritten natively for its platform, not copy-pasted. Use when asked to repurpose content, atomize a blog post or video, turn one "
+    },
+    {
+     "name": "content-style-guide",
+     "description": "Create a content style guide / voice & tone guide so everyone writes consistently. Use when asked to write a content style guide, a voice and tone guide, editorial guidelines, or UX-writing standards. Produces a usable guide — voice principles with do/don't examples, tone-by-context, mechanics (gram"
+    },
+    {
+     "name": "context-engineering-review",
+     "description": "Review what an LLM feature or agent actually puts in its context window — and find what's bloating, missing, or fighting itself. Use when asked to review a system prompt and context assembly, cut token usage without losing quality, debug an agent that ignores instructions, or audit how retrieval res"
+    },
+    {
+     "name": "context-mode",
+     "description": "Keep Claude Code sessions productive across resets with output filtering, session logging, and auto-resume. Use when starting a long or complex coding session, when previous sessions lost context mid-task, or when you need Claude to resume exactly where it left off after a reset. Produces a session."
+    },
+    {
+     "name": "contract-review",
+     "description": "Review and summarise any contract or legal agreement. Use when asked to review a contract, check an agreement, flag legal risks, or summarise key clauses. Produces a structured review with key terms, flagged clauses, risk rating, and plain English summary. Not a substitute for qualified legal advice"
+    },
+    {
+     "name": "contributor-guide",
+     "description": "Write a CONTRIBUTING guide that helps people contribute to an open-source project without friction. Use when asked to write a CONTRIBUTING.md, set up contribution guidelines, or make a repo welcoming to contributors. Produces a clear guide: how to set up, the contribution workflow, standards, PR exp"
+    },
+    {
+     "name": "conversion-rate-optimization",
+     "description": "Audit a landing page or funnel step and produce a prioritised CRO test plan. Use when asked to improve conversion rate, audit a landing/signup/checkout page, reduce funnel drop-off, or plan A/B tests for a page. Produces a CRO plan — a heuristic conversion audit, the diagnosed friction, prioritised "
+    },
+    {
+     "name": "cover-letter",
+     "description": "Write a specific, non-generic cover letter that connects your evidence to the role. Use when asked to write a cover letter, an application letter, or a note to accompany a resume. Produces a tight 3–4 paragraph letter — a real hook, two evidence paragraphs mapping your proof to the job's needs, and "
+    },
+    {
+     "name": "coverage-gap-analysis",
+     "description": "Map an organisation's risks against its insurance policy portfolio to find what's uncovered, underinsured, or double-covered. Use when asked to run a coverage gap analysis, review an insurance programme against a risk register, check what risks aren't insured, or audit a policy portfolio. Produces a"
+    },
+    {
+     "name": "creator-brand-kit",
+     "description": "Define a creator's brand foundation — niche, audience, positioning, content pillars, voice/tone, and bio — so every post is consistent and on-brand. Use when asked to define a creator brand, find a niche, set content pillars, write a voice guide, craft a bio, or build a brand kit for a personal bran"
+    },
+    {
+     "name": "creator-media-kit",
+     "description": "Build a creator's sponsorship media kit and brand-deal outreach — the one-pager brands ask for, plus a pitch email and a rate card. Use when asked to make a media kit, pitch a brand, land a sponsorship, write a brand-deal email, or set creator rates. Produces a structured media kit (audience, stats,"
+    },
+    {
+     "name": "credit-memo",
+     "description": "Write a credit memo for a lending decision: borrower story, facility structure, repayment sources, financial-ratio spread with covenant headroom, risk factors with mitigants, risk-rating rationale, and a recommendation. Use when asked to write a credit memo, credit application, credit paper, loan wr"
+    },
+    {
+     "name": "csat-nps-analysis",
+     "description": "Analyse CSAT / NPS / CES survey results and turn the score into actions. Use when asked to analyse NPS, CSAT, or CES data, compute an NPS score, interpret survey verbatims, or build a voice-of-customer readout. Produces a readout — the computed score, the trend & benchmark, themed analysis of the co"
+    },
+    {
+     "name": "customer-advisory-board",
+     "description": "Plan and run a customer advisory board (CAB). Use when asked to design a customer advisory board, plan a CAB meeting agenda, choose CAB members, or write CAB invitations and follow-ups. Produces a CAB program plan — objectives, member selection criteria, a meeting agenda, discussion guides, roles, l"
+    },
+    {
+     "name": "cs-escalation-brief",
+     "description": "Write a structured escalation brief for an at-risk customer account. Use when an account has escalated, when a customer is threatening churn, when a P1 customer issue needs executive attention, or when preparing an internal save play. Produces a crisp escalation brief with account context, timeline,"
+    },
+    {
+     "name": "cs-health-scorecard",
+     "description": "Build a customer health scorecard for a specific account. Use when asked to score account health, assess renewal risk, build a health dashboard, or evaluate an account's likelihood to renew or expand. Produces a structured health scorecard with a RAG status, dimension scores, key risks, and recommen"
+    },
+    {
+     "name": "customer-journey-map",
+     "description": "Build a customer journey map for a product, service, or experience. Use when asked to map a customer journey, create a user journey, document touchpoints and pain points, or design an experience map. Produces a complete journey map with stages, touchpoints, emotions, pain points, and prioritised opp"
+    },
+    {
+     "name": "customer-outage-notice",
+     "description": "Write clear customer-facing outage and service-disruption notifications. Use when asked to write an outage notice, a status-page update, a service-disruption email, a maintenance notice, or an incident update sequence. Produces status-page updates for each phase (investigating → identified → monitor"
+    },
+    {
+     "name": "customer-success-plan",
+     "description": "Build a joint customer success plan for a specific account. Use when asked to create a success plan, joint success plan, mutual action plan, or customer onboarding plan. Produces a structured success plan with business goals, milestones, success metrics, ownership, and a 90-180 day roadmap."
+    },
+    {
+     "name": "dashboard-brief",
+     "description": "Convert a business question into a complete dashboard specification. Use when asked to design a dashboard, create a dashboard spec or brief, plan a BI report, or define what charts and metrics a dashboard should include. Produces a structured spec with metrics, dimensions, chart types, filters, and "
+    },
+    {
+     "name": "data-analysis-standard",
+     "description": "Structure a product data analysis, metric deep-dive, funnel analysis, or cohort study. Use when asked to analyse product metrics, investigate a drop in conversion, explain a data change to stakeholders, or find the root cause of a metric movement. Produces a structured analysis with question, root c"
+    },
+    {
+     "name": "data-contract",
+     "description": "Define a data contract between a producer and consumers of a dataset/event/API. Use when asked to write a data contract, define a schema agreement, set data SLAs, or stop a producer from silently breaking downstream consumers. Produces a contract — schema with types & constraints, semantics, quality"
+    },
+    {
+     "name": "data-pipeline-spec",
+     "description": "Design an ETL/ELT data pipeline specification. Use when asked to design a data pipeline, spec an ETL or ELT process, document a data ingestion workflow, or plan a data integration. Produces a complete pipeline spec with sources, transforms, destinations, SLAs, error handling, and data quality rules."
+    },
+    {
+     "name": "data-quality-audit",
+     "description": "Audit a dataset for the quality problems that silently break analysis — missingness, duplicates, outliers, type and range errors, consistency, and freshness — and produce a prioritised fix list. Use when asked to assess data quality, audit a dataset, check data before analysis, or explain why number"
+    },
+    {
+     "name": "data-quality-checks",
+     "description": "Design the data quality checks for a table or pipeline across the standard dimensions. Use when asked to add data quality tests, define DQ checks, catch bad data before it hits dashboards, or set up monitoring for a dataset. Produces a checks plan across completeness, validity, uniqueness, freshness"
+    },
+    {
+     "name": "data-retention-policy",
+     "description": "Build a data retention and deletion schedule grounded in legal basis. Use when asked to create a data retention policy, set retention periods, plan data deletion/minimisation, or answer 'how long can we keep this data?'. Produces a retention schedule — data categories with their retention period, le"
+    },
+    {
+     "name": "database-migration-plan",
+     "description": "Write a safe, zero-downtime database migration plan for a schema change. Use when asked to plan a database migration, design a zero-downtime schema change, document an expand/contract migration, produce a rollback procedure for a database change, or coordinate a database schema update with a deploym"
+    },
+    {
+     "name": "database-schema-design",
+     "description": "Document or design a database schema with entity relationships, table definitions, constraints, indexes, and access patterns. Use when asked to design a database, document an existing schema, model entities and relationships, define table structures, plan an index strategy, or produce a data model f"
+    },
+    {
+     "name": "dataset-datasheet",
+     "description": "Document a dataset so others know what it is, how it was made, and when not to use it. Use when asked to write a datasheet for a dataset, document training/eval data, or assess whether a dataset is fit for a use. Produces a datasheet — motivation, composition, collection process, preprocessing, reco"
+    },
+    {
+     "name": "dbt-model-spec",
+     "description": "Spec a dbt model — its grain, sources, transformations, tests, and materialization. Use when asked to design a dbt model, plan a data transformation, write a staging/intermediate/mart model spec, or define dbt tests for a table. Produces a model spec — purpose & grain, lineage (sources → refs), the "
+    },
+    {
+     "name": "debt-payoff-plan",
+     "description": "Build a debt-payoff plan across multiple debts using the avalanche or snowball method. Use when asked to pay off debt, tackle credit cards/loans, or choose between avalanche and snowball. Produces an ordered payoff schedule, the total interest and time for each method, and a clear recommendation. Ed"
+    },
+    {
+     "name": "debugging-log-analyser",
+     "description": "Parse error logs, stack traces, and crash reports into a structured root cause diagnosis. Use when an application is throwing exceptions, crashing, or producing unexpected errors and you need to understand why and what to fix. Produces a structured diagnosis with error classification, stack trace wa"
+    },
+    {
+     "name": "decision-autopsy",
+     "description": "Judge a past decision by its PROCESS, not its outcome — because good decisions lose and bad decisions win, and teams that can't tell the difference learn the wrong lessons. Use when reviewing a big call after the fact (a bet that failed, a pass that haunts, a hire, a pivot) and the room is about to "
+    },
+    {
+     "name": "decision-forensics",
+     "description": "Reconstruct the decision actually made in a messy Slack, email, or meeting thread into a proper decision record — commitments named, silent assumptions surfaced, non-decisions called out. Use when asked what did we actually decide, turn this thread into a decision record, who committed to what, or r"
+    },
+    {
+     "name": "decision-memo",
+     "description": "Write a crisp decision memo that drives a clear decision, not a discussion. Use when asked to write a decision memo, a recommendation memo, a one/six-pager for a decision, or to get leadership to decide something. Produces a decision memo — the decision & recommendation up front, the context, option"
+    },
+    {
+     "name": "deck-autopsy",
+     "description": "Autopsy a slide deck from photos or screenshots of its slides — the narrative arc, the numbers, and what each slide is hiding. Use when given slide images (a competitor's pitch, a conference talk, your own deck before a big meeting) and asked what the deck argues, whether it holds up, or how to coun"
+    },
+    {
+     "name": "delay-claim-letter",
+     "description": "Draft a construction delay notice or delay claim letter with contract clause citation, cause classification, and critical-path impact narrative. Use when asked to write a delay notice, put the owner or GC on notice of delay, draft a time extension request, respond to weather or owner-caused delay, o"
+    },
+    {
+     "name": "delta-briefing",
+     "description": "Make a recurring brief report what changed since the last edition instead of restating everything. Use when a weekly or monthly report keeps repeating itself, when setting up a scheduled monitor or digest, or when asked to make a recurring update delta-aware. Produces a changes-first brief plus the "
+    },
+    {
+     "name": "demand-forecast-review",
+     "description": "Interrogate a demand forecast before the business commits supply and inventory to it. Use when asked to review a demand plan, challenge a forecast, check forecast accuracy, decompose baseline vs uplift, or find hockey sticks in the numbers. Produces a forecast credibility review with baseline/uplift"
+    },
+    {
+     "name": "demand-letter",
+     "description": "Draft a firm, professional demand letter that states the facts, the legal/contractual basis, the specific demand, and a deadline. Use when asked to write a demand letter, send a formal demand for payment, draft a cease-and-desist, or formally request resolution before legal action. Produces a struct"
+    },
+    {
+     "name": "dependency-audit",
+     "description": "Audits project dependencies for security vulnerabilities, license compliance issues, outdated packages, and transitive dependency risk. Use when asked to audit dependencies, review package security, check license compliance, assess dependency health, or produce a vulnerability report. Produces a vul"
+    },
+    {
+     "name": "dependency-conflict-resolver",
+     "description": "Resolve a dependency or version conflict (npm, pip, yarn, pnpm, Maven, Go modules) step by step. Use when an install fails with peer-dependency or version-conflict errors, packages won't co-exist, or a lockfile is fighting you. Produces the conflict explained, the resolution options ranked by safety"
+    },
+    {
+     "name": "design-critique",
+     "description": "Give structured, constructive feedback on any design using UX frameworks. Use when asked to critique a design, review a UI, give feedback on a Figma file or wireframe, assess a user flow, or evaluate a design against UX principles. Produces actionable critique applying Jobs-to-be-Done, Gestalt princ"
+    },
+    {
+     "name": "design-handoff-brief",
+     "description": "Transform feature briefs into structured design briefs that give designers the context they need before opening Figma. Use when asked to write a design brief, create a design handoff, brief a designer on a new feature, or translate a PRD into design requirements. Produces a brief with user goal, emo"
+    },
+    {
+     "name": "design-system-audit",
+     "description": "Audit a design system for consistency, coverage, and quality. Use when asked to audit a design system, review a component library, assess design token coverage, or evaluate the health of a shared design system. Produces a structured audit with a health score, component coverage gaps, token inconsist"
+    },
+    {
+     "name": "developer-onboarding-doc",
+     "description": "Write a developer onboarding document for a service, codebase, or team. Use when asked to write a developer guide, service README, onboarding doc for a new engineer, codebase orientation, or getting-started guide for a technical team. Produces a structured doc covering service overview, architecture"
+    },
+    {
+     "name": "devils-twin",
+     "description": "The strongest possible case AGAINST what you just wrote — argued to win, not to check a box. Use when a document is about to ship and everyone around it already agrees: the twin writes the opposition's best memo (not a critique of yours), so you meet the real counter-argument before your audience do"
+    },
+    {
+     "name": "difficult-conversation",
+     "description": "Prepare for and script a hard conversation — conflict, bad news, a boundary, an apology. Use when asked to prepare for a difficult conversation, address a conflict, deliver bad news, confront a colleague, or have a hard talk with a manager/report/peer. Produces a prep brief — the real goal, the othe"
+    },
+    {
+     "name": "disaster-recovery-plan",
+     "description": "Write a disaster recovery plan for a service or system — covering RPO/RTO targets, failure scenario runbooks, backup and restore procedures, DR testing cadence, and communication templates. Use when asked to write a DR plan, document failover procedures, create recovery runbooks, define RTO/RPO targ"
+    },
+    {
+     "name": "discharge-summary",
+     "description": "Turn a hospital stay into a complete, well-structured discharge summary. Use when asked to write a discharge summary, a hospital discharge note, or to document a patient's admission-to-discharge course for handoff. Produces a standard discharge summary — admission reason, hospital course, diagnoses,"
+    },
+    {
+     "name": "discovery-call-prep",
+     "description": "Prepare a structured discovery call plan for any prospect. Use when asked to prepare for a sales call, discovery call, prospect meeting, or first call with a potential customer. Produces a call brief with research, hypotheses, questions, and success criteria."
+    },
+    {
+     "name": "discovery-interview-guide",
+     "description": "Create a structured user discovery interview guide with screener questions, a discussion guide, and a synthesis framework. Use when planning user interviews, customer discovery sessions, Jobs-to-be-Done research, or problem validation. Produces a complete guide covering warm-up, problem exploration,"
+    },
+    {
+     "name": "dispute-letter",
+     "description": "Write a letter to dispute an incorrect charge, bill, or record. Use when asked to dispute a credit-card charge, contest a bill or invoice, challenge a credit-report error, or formally dispute a fee. Produces a clear dispute letter — what's being disputed, why it's wrong, the evidence, and the correc"
+    },
+    {
+     "name": "docs-quickstart",
+     "description": "Write a 'get started in 5 minutes' quickstart for a tool, library, or API. Use when asked to write a quickstart, getting-started guide, or onboarding docs for developers. Produces a copy-paste-friendly quickstart that takes a developer from zero to a first working result fast, with install, a minima"
+    },
+    {
+     "name": "donor-update",
+     "description": "Write a warm donor update or stewardship message that makes a supporter feel their gift mattered. Use when asked to write a donor update, a thank-you/stewardship email, a supporter newsletter, or a gift acknowledgement. Produces a donor-centred update — sincere thanks, the specific impact of their s"
+    },
+    {
+     "name": "email-campaign",
+     "description": "Write and sequence multi-email nurture or launch campaigns. Use when asked for an email sequence, drip campaign, onboarding emails, product launch emails, or nurture flow. Produces subject lines, preview text, full email body, and send-timing recommendations for each email in the sequence."
+    },
+    {
+     "name": "email-sequence",
+     "description": "Write a multi-email nurture/onboarding/launch sequence with a goal per email. Use when asked to write an email sequence, a welcome/onboarding series, a nurture drip, a launch sequence, or a re-engagement series. Produces the sequence map (trigger, timing, goal per email) plus the full copy for each "
+    },
+    {
+     "name": "email-triage",
+     "description": "Triage a Gmail inbox down to only what needs you. Use when asked to triage email, clear an inbox, find what needs a reply, or summarise recent mail. Produces a prioritised list of items needing action — replies, decisions, follow-ups — for a configurable window (default last 8 hours), filtering out "
+    },
+    {
+     "name": "employee-engagement-survey",
+     "description": "Design an employee engagement survey and analyse results. Use when asked to create an employee survey, engagement questionnaire, pulse survey, or eNPS survey. Also use when asked to analyse survey results. Produces a complete survey with questions, rating scales, and an analysis framework."
+    },
+    {
+     "name": "empty-state-writer",
+     "description": "Write empty-state content that turns a blank screen into a next step. Use when asked to write an empty state, a zero-data / first-run state, a no-results state, or onboarding placeholder content. Produces empty-state copy — a clear headline, a helpful line, and a primary action — for each type (firs"
+    },
+    {
+     "name": "engagement-retro",
+     "description": "Run a close-out retrospective on a client engagement — capture lessons, results, and the renewal/referral path. Use when asked to wrap up a client project, run an engagement retro, write a project close-out, or plan the follow-on. Produces a close-out — outcomes vs. goals, what worked / what didn't,"
+    },
+    {
+     "name": "engineering-hiring-rubric",
+     "description": "Build an engineering hiring rubric and technical interview scorecard for evaluating software engineers at a specific level. Use when asked to create an interview rubric, design a hiring process, build a technical scorecard, or standardize engineer evaluation. Produces a full interview scorecard, beh"
+    },
+    {
+     "name": "engineering-weekly-report",
+     "description": "Write a weekly engineering status report for a team, service, or initiative. Use when asked to write a team update, weekly engineering report, sprint status email, or standing team communication to stakeholders. Produces a concise, scannable weekly report covering shipping progress, metrics, decisio"
+    },
+    {
+     "name": "entity-relationship-diagram",
+     "description": "Turn a data model into an entity-relationship (ER) diagram. Use when asked to design a schema, model data, show how tables/entities relate, or diagram a database. Produces a ready-to-render Mermaid ER diagram (renders live, exportable as PNG/SVG) plus key attributes, cardinality, and design notes."
+    },
+    {
+     "name": "error-decoder",
+     "description": "Decode an error message or stack trace into a plain-English cause, the exact fix, and how to prevent it. Use when asked to explain an error, debug a stack trace, figure out why code is throwing, or make sense of a cryptic exception. Produces a structured diagnosis: what the error means, the most lik"
+    },
+    {
+     "name": "error-message-writer",
+     "description": "Write clear, helpful error messages that tell users what happened and how to fix it. Use when asked to write an error message, validation text, a failure/empty-error state, or to rewrite a cryptic system error. Produces human, blame-free error copy — what went wrong, why (if useful), and the next st"
+    },
+    {
+     "name": "escalation-tree",
+     "description": "Design a support/incident escalation tree — who handles what, when it escalates, and to whom. Use when asked to design an escalation path, an escalation matrix, support tiers, an on-call escalation policy, or to fix 'tickets bounce around / nothing gets escalated in time'. Produces an escalation tre"
+    },
+    {
+     "name": "esg-disclosure-draft",
+     "description": "Draft an honest, audit-ready ESG disclosure section in a CSRD/ESRS-flavored structure, adaptable to other frameworks. Use when asked to write a sustainability report section, draft an ESRS or CSRD disclosure, prepare an ESG section for an annual report, or turn raw sustainability data into disclosur"
+    },
+    {
+     "name": "eulogy-writer",
+     "description": "Help someone write a eulogy — the hardest writing most people ever do, at the worst possible time. Use when someone must speak at a funeral or memorial and doesn't know where to start, or has fragments and no shape. Produces a 3-5 minute eulogy built from their memories in their voice, plus a delive"
+    },
+    {
+     "name": "eval-rubric-designer",
+     "description": "Design a scoring rubric and LLM-as-judge prompt to evaluate the quality of an AI feature's output. Use when asked to create an eval rubric, define quality dimensions, build an LLM judge, or decide how to measure whether AI output is good. Produces a rubric with weighted dimensions and concrete 1–5 a"
+    },
+    {
+     "name": "evidence-lock",
+     "description": "Write or rewrite a document in evidence-locked mode: no unsourced sentences — every substantive claim carries a footnote citing the exact passage in the user's provided sources, and anything unsupportable is explicitly marked. Use when asked to make a document fully sourced, add citations from my do"
+    },
+    {
+     "name": "evt-dvt-pvt-gate-review",
+     "description": "Run an NPI phase-gate review for EVT, DVT, or PVT — exit criteria per phase, open-issue triage, yield readout, waiver discipline, and a go/no-go call. Use when asked to run a gate review, decide EVT exit or DVT entry, review build results, assess whether to proceed to the next build, or triage open "
+    },
+    {
+     "name": "excel-model",
+     "description": "Build a real, formula-driven Excel (.xlsx) model — not a static table. Use when asked to build an Excel model, a financial model, a budget/forecast spreadsheet, or any .xlsx with live formulas a user can edit. Produces an actual .xlsx file via a generated openpyxl script: an inputs/assumptions sheet"
+    },
+    {
+     "name": "executing-plans",
+     "description": "Execute a written plan with discipline — verify each step before advancing, surface deviations instead of improvising around them, and keep a visible execution log. Use when working through a plan (yours or another agent's), resuming multi-session work, or when execution keeps drifting from what was"
+    },
+    {
+     "name": "executive-presence",
+     "description": "Sharpen how you show up in high-stakes rooms — communicate with gravitas, concision, and confidence. Use when asked to improve executive presence, prepare to present to leadership, sound more senior, command a room, or get coaching before a big meeting. Produces specific guidance — how to open, stru"
+    },
+    {
+     "name": "executive-summary",
+     "description": "Write an executive summary for any document, report, or proposal. Use when asked to write an executive summary, management summary, briefing paper, or one-pager for senior stakeholders. Produces a structured summary that busy executives can read in under 3 minutes and act on."
+    },
+    {
+     "name": "executive-update",
+     "description": "Transform detailed product updates into concise executive briefings. Use when asked to write an executive update, leadership update, product update for the exec team, or a C-suite product briefing. Produces a structured 250-word briefing with headline, key metrics, progress, risks, decisions needed,"
+    },
+    {
+     "name": "exit-waterfall",
+     "description": "Compute who gets what at each exit price from a cap table — liquidation preferences, conversion points, and where the founders' share collapses. Use when asked to model an exit waterfall, what do I get if we sell for X, explain liquidation preferences on my cap table, or compare payouts across exit "
+    },
+    {
+     "name": "expense-audit",
+     "description": "Audit spending to find leaks — recurring subscriptions, creep, and cuttable costs — ranked by impact. Use when asked to cut expenses, review subscriptions, find where money is going, or free up cash. Produces a categorized spend breakdown, a ranked list of cuts with dollar amounts, and the annualize"
+    },
+    {
+     "name": "expense-policy",
+     "description": "Write a clear company expense & reimbursement policy. Use when asked to write an expense policy, a reimbursement policy, a travel & expense (T&E) policy, or spending guidelines. Produces a practical policy — what's covered, limits by category, the approval and submission process, timelines, and what"
+    },
+    {
+     "name": "experiment-designer",
+     "description": "Design statistically rigorous A/B tests and interpret experiment results. Use when asked to design an experiment, run an A/B test, calculate sample size, interpret test results, or assess whether an experiment was successful. Produces a complete experiment design with hypothesis, sample size, run ti"
+    },
+    {
+     "name": "experiment-readout",
+     "description": "Analyse a finished A/B test and write an honest results readout with real statistics. Use when asked to read out an A/B test, analyse experiment results, check if a result is statistically significant, or decide ship/no-ship from test data. Produces a readout — the computed lift, p-value & confidenc"
+    },
+    {
+     "name": "exploratory-test-charter",
+     "description": "Write session-based exploratory testing charters to find what scripted tests miss. Use when asked to plan exploratory testing, write a test charter, design a testing session, or do risk-based exploration of a feature. Produces focused charters — a mission, areas/risks to explore, tactics and oracles"
+    },
+    {
+     "name": "factory-acceptance-test",
+     "description": "Write a factory acceptance test (FAT) plan or report — test coverage matrix against spec, AQL sampling plan, pass/fail criteria, golden-sample handling, deviation log, and sign-off structure. Use when asked to write a FAT plan, define outgoing quality inspection, set AQL levels, prepare for a factor"
+    },
+    {
+     "name": "feature-flag-guide",
+     "description": "Write a feature flag management guide and lifecycle playbook for a service or team — covering flag taxonomy, creation checklist, rollout strategy, monitoring requirements, cleanup policy, and governance. Use when asked to document feature flag practices, create a flag rollout plan, write a feature f"
+    },
+    {
+     "name": "feature-prioritisation",
+     "description": "Apply prioritisation frameworks (RICE, MoSCoW, Kano, ICE, Opportunity Scoring) to rank features and backlog items. Use when asked to prioritise features, rank a backlog, decide what to build next, or evaluate tradeoffs between competing ideas. Produces a scored, ranked feature list with framework-sp"
+    },
+    {
+     "name": "feature-sunset-plan",
+     "description": "Plan the retirement of a product feature — the kill decision made honest, user migration, data handling, comms sequencing, and the code actually deleted. Use when deprecating or sunsetting a feature, killing an underused capability, retiring an AI feature that didn't land, or when a 'deprecated' fea"
+    },
+    {
+     "name": "figma-annotation-guide",
+     "description": "Generate structured developer handoff annotations for a Figma screen or component. Use when asked to write Figma annotations, create dev handoff notes, document a Figma design for developers, or write specs for a screen. Produces a complete annotation set covering interactions, states, spacing, acce"
+    },
+    {
+     "name": "figma-component-audit",
+     "description": "Audit a Figma component library for consistency, coverage gaps, and naming issues. Use when asked to audit components, review a design system, check component consistency, identify missing components, or assess Figma library health. Produces a structured audit report with issues prioritised by impac"
+    },
+    {
+     "name": "figma-design-brief",
+     "description": "Write a structured design brief for a Figma design task from a product requirement or feature request. Use when asked to write a design brief, create a design spec for Figma, turn a PRD into design requirements, or brief a designer on what to build in Figma. Produces a brief with goals, scope, user "
+    },
+    {
+     "name": "figma-design-critique-pm",
+     "description": "Runs a PM-perspective design critique focused on product outcomes and user goals, not aesthetics. Use when asked for a PM design critique, a product review of a Figma design, or feedback from a product perspective without needing to be a designer. Produces structured outcome-based feedback tied to u"
+    },
+    {
+     "name": "figma-design-qa",
+     "description": "Runs a pre-handoff QA checklist on a Figma design before it goes to engineering. Use when asked to QA a Figma design, do a pre-handoff check, or validate a Figma file is ready to build. Produces a structured QA report covering file hygiene, component usage, accessibility, and handoff readiness with "
+    },
+    {
+     "name": "figma-design-review",
+     "description": "Runs a structured PM design review against product requirements. Use when asked to review a Figma design, check a design against requirements, or assess whether a design meets the product spec. Produces a requirements coverage check, UX concerns, open questions, and an explicit approval status — app"
+    },
+    {
+     "name": "figma-prototype-plan",
+     "description": "Plan prototype interactions and flows for user testing in Figma. Use when asked to plan a Figma prototype, set up prototype interactions, define what to prototype for a user test, or prepare a Figma prototype for usability testing. Produces a prototype scope, interaction specification, test task scr"
+    },
+    {
+     "name": "figma-spacing-system",
+     "description": "Design a spacing and layout token system for a Figma design system. Use when asked to create a spacing system, define layout tokens, set up a grid system, build a spacing scale, or establish layout foundations for a Figma file. Produces a complete spacing scale, grid definition, component spacing co"
+    },
+    {
+     "name": "figma-user-flow-planner",
+     "description": "Plan user flows and screen states for a Figma design before any designing starts. Use when asked to plan a user flow, map out screens for a feature, define screen states, plan a Figma file structure, or work out what needs to be designed before opening Figma. Produces a complete flow map with all sc"
+    },
+    {
+     "name": "figma-variant-matrix",
+     "description": "Define component variants and states systematically for Figma. Use when asked to plan component variants, define states for a component, set up a Figma variant matrix, or work out what properties a component needs before building it. Produces a complete variant matrix with all properties, values, an"
+    },
+    {
+     "name": "financial-due-diligence",
+     "description": "Generate a financial due diligence checklist and analysis framework for any investment, acquisition, or partnership. Use when asked for a due diligence checklist, M&A financial review, investment analysis framework, or vendor financial assessment. Produces a document request list, key analytical que"
+    },
+    {
+     "name": "financial-model-narrative",
+     "description": "Turn financial model outputs into a clear written narrative. Use when asked to write a financial narrative, explain a financial model, summarise a P&L, or translate spreadsheet numbers into a board-ready story. Produces an executive narrative with key insights, drivers, and forward-looking commentar"
+    },
+    {
+     "name": "financial-statement-explainer",
+     "description": "Explain a financial statement (P&L, balance sheet, or cash flow) in plain English. Use when asked to explain a P&L / income statement, a balance sheet, a cash flow statement, or to make financials understandable to a non-finance reader. Produces a plain-language walkthrough — what each section means"
+    },
+    {
+     "name": "fine-appeal-letter",
+     "description": "Appeal a parking ticket, penalty charge, or administrative fine with the grounds that actually get appeals granted — not indignation. Use when someone got a ticket/fine/penalty notice and either has a legitimate case or wants an honest read on whether they do. Produces a short formal appeal letter b"
+    },
+    {
+     "name": "fire-number",
+     "description": "Compute a financial-independence (FIRE) target and years-to-reach with every assumption labeled as an assumption — plus a sensitivity table instead of a single false-precision answer. Use when asked what's my FIRE number, when can I retire early, how much do I need to be financially independent, or "
+    },
+    {
+     "name": "flowchart",
+     "description": "Turn a process, workflow, or decision logic into a clean flowchart. Use when asked to diagram a process, map a workflow, visualize steps/branches, or show 'how this works' as a chart. Produces a ready-to-render Mermaid flowchart (renders live in the playground, exportable as PNG/SVG) plus a short le"
+    },
+    {
+     "name": "foia-request",
+     "description": "Draft a public-records request (FOIA / FOI / state open-records) that's specific enough to get records and hard to deny. Use when asked to write a FOIA request, records request, or freedom-of-information request to a government body. Produces a properly-scoped request: the records sought, date range"
+    },
+    {
+     "name": "follow-up-sequence",
+     "description": "Write the follow-up messages that keep a candidate on the radar without being annoying. Use when asked to write a post-interview thank-you, a follow-up after no reply, a nudge on a stalled application, or a check-in sequence during a job search. Produces a timed sequence — what to send, when, and th"
+    },
+    {
+     "name": "founder-market-fit",
+     "description": "Articulate founder-market fit — the why-you and why-now story investors and accelerators (YC-style) probe hardest. Use when asked to write the founder story, answer 'why are you the right team', draft YC / accelerator application answers, or explain founder-market fit. Produces a sharp narrative con"
+    },
+    {
+     "name": "frontend-design",
+     "description": "Produce frontend UI that actually looks designed — a working spacing/type system, deliberate color use, real states, and restraint — instead of the generic AI-generated interface. Use when asked to build or restyle a UI, landing page, dashboard, or component, when output 'works but looks like a prot"
+    },
+    {
+     "name": "fundraising-faq",
+     "description": "Pressure-test a fundraise by anticipating the hard investor questions and arming the founder with crisp answers. Use when asked to prep for investor Q&A, anticipate due-diligence questions, handle pushback on a raise, or build a fundraising FAQ. Produces the toughest questions an investor will ask —"
+    },
+    {
+     "name": "gantt-roadmap",
+     "description": "Turn a plan or set of milestones into a timeline / Gantt chart. Use when asked to build a roadmap, schedule phases, show a project timeline, or visualize what happens when. Produces a ready-to-render Mermaid Gantt chart (renders live, exportable as PNG/SVG) — and, because it has real dates, the resu"
+    },
+    {
+     "name": "gdpr-compliance",
+     "description": "Assess GDPR compliance and build the core records (ROPA, lawful basis, DSAR, DPIA triggers). Use when asked to get GDPR-compliant, build a Record of Processing Activities, decide a lawful basis, handle data-subject requests, or check whether a DPIA is needed. Produces a GDPR assessment — a ROPA, law"
+    },
+    {
+     "name": "git-troubleshooter",
+     "description": "Diagnose a tangled git situation and give the exact, safe commands to fix it. Use when asked to undo a commit, recover lost work, fix a bad merge or rebase, resolve a detached HEAD, unstage files, or get out of a git mess. Produces the diagnosis, the precise commands to run in order, what each does,"
+    },
+    {
+     "name": "giving-feedback",
+     "description": "Turn a vague concern into specific, kind, actionable feedback. Use when asked to give feedback, write a feedback note, prepare to tell someone something hard about their work, or coach a report/peer. Produces ready-to-deliver feedback structured on situation–behaviour–impact, separating observation "
+    },
+    {
+     "name": "glossary-builder",
+     "description": "Build a translation/terminology glossary so a product's key terms render consistently everywhere. Use when asked to create a glossary, a termbase, a do-not-translate list, or to keep terminology consistent across translators/locales. Produces a glossary — each source term with its approved translati"
+    },
+    {
+     "name": "go-to-market",
+     "description": "Create go-to-market assets for any product or feature. Use when asked for a GTM plan, positioning statement, product launch plan, messaging pillars, use cases, or feature/benefit list. Produces a full GTM pack: positioning statement, messaging pillars, feature-to-benefit mapping, and role-specific u"
+    },
+    {
+     "name": "go-to-market-planner",
+     "description": "Build a go-to-market plan for any product launch, feature release, or new market entry. Use when planning a product launch, writing a GTM strategy, defining launch tiers, or coordinating cross-functional launch activities. Produces a tiered GTM plan with messaging, cross-functional activity tracker,"
+    },
+    {
+     "name": "grant-proposal",
+     "description": "Write a structured grant proposal or funding application for any grant type. Use when asked to write a grant proposal, funding application, research grant, charitable grant, or innovation fund application. Produces a complete proposal with project summary, rationale, methodology, impact, and budget "
+    },
+    {
+     "name": "greenwashing-self-audit",
+     "description": "Audit your own marketing and report claims for greenwashing risk before a regulator, journalist, or competitor does. Use when asked to review sustainability claims, check marketing copy for greenwash, audit environmental claims on a website or report, or pressure-test green messaging. Produces a cla"
+    },
+    {
+     "name": "growth-experiment-backlog",
+     "description": "Build and prioritise a growth experiment backlog. Use when asked to plan growth experiments, prioritise growth ideas, set up a test backlog, or run a growth process/sprint. Produces a prioritised backlog — each experiment as a hypothesis with the metric it moves, an ICE/PXL score, the minimum test d"
+    },
+    {
+     "name": "hardware-prd",
+     "description": "Write a PRD for a physical hardware product — target cost (BOM and landed), industrial design constraints, regulatory certifications, reliability targets, serviceability, packaging, and forecast assumptions. Use when asked to write a hardware PRD, spec a new device, define requirements for a physica"
+    },
+    {
+     "name": "headline-options",
+     "description": "Generate and pressure-test headline options across proven formulas. Use when asked for headlines, a title, a subject line, a hook, or to improve a weak headline for a page, post, email, or ad. Produces 10–15 headline options grouped by formula (benefit, how-to, number, question, curiosity, social pr"
+    },
+    {
+     "name": "help-center-article",
+     "description": "Write a help-center / knowledge-base article that actually resolves the issue and deflects tickets. Use when asked to write a help doc, KB article, FAQ entry, how-to, or support documentation. Produces a findable, skimmable article — task-based title, the answer up front, numbered steps, screenshots"
+    },
+    {
+     "name": "hipaa-safeguards",
+     "description": "Map HIPAA Security Rule safeguards and run a risk analysis for systems handling PHI. Use when asked to become HIPAA-compliant, assess HIPAA safeguards, prepare for handling PHI/ePHI, or scope a BAA. Produces a HIPAA assessment — the administrative/physical/technical safeguards with required-vs-addre"
+    },
+    {
+     "name": "hiring-rubric",
+     "description": "Generate a structured interview scorecard and interview guide for any role. Use when asked to create a hiring rubric, interview scorecard, structured interview guide, or assessment criteria for a job. Produces a scorecard with competencies, behavioural questions, and scoring guidance."
+    },
+    {
+     "name": "hoa-decoder",
+     "description": "Decode HOA covenants (CC&Rs) and the fee structure before you buy into them. Use when someone asks 'what do these HOA rules actually mean', 'decode these CC&Rs', 'is this HOA going to be a problem', or 'what should I check before buying in an HOA'. Produces a restriction decode ranked by lifestyle i"
+    },
+    {
+     "name": "hook-writer",
+     "description": "Generate scroll-stopping hooks — the first line of a post, thread, video, or email that decides whether anyone keeps reading. Use when asked to write a hook, an opener, a first line, a thread starter, a video cold-open, or to make something more clickable. Produces multiple distinct hook options acr"
+    },
+    {
+     "name": "human-in-the-loop-design",
+     "description": "Design the human approval surface for an agent system — which actions gate, how approvals batch without becoming rubber stamps, and what the audit trail must hold. Use when asked to add human oversight to an agent, design approval workflows for AI actions, decide what an agent may do autonomously, o"
+    },
+    {
+     "name": "i18n-readiness-review",
+     "description": "Review a product/codebase for internationalization readiness before you localize. Use when asked if a product is ready to localize, to review i18n readiness, find hard-coded strings/locale bugs, or prep for going multilingual. Produces a readiness audit — externalized strings, locale-aware formattin"
+    },
+    {
+     "name": "iep-goal-support",
+     "description": "Draft SMART IEP goals, accommodations, and present-levels statements that are measurable and compliant in spirit. Use when asked to write an IEP goal, draft special-education goals, list accommodations, or write a present-levels (PLAAFP) statement. Produces measurable annual goals with baselines, cr"
+    },
+    {
+     "name": "impact-report",
+     "description": "Write a compelling nonprofit impact or annual report that shows donors what their money achieved. Use when asked to write an impact report, an annual report, a grant outcomes report, or to report results to funders/donors. Produces a structured report — mission and year in brief, outcomes with real "
+    },
+    {
+     "name": "incident-postmortem",
+     "description": "Write a structured incident postmortem or post-incident review. Use when asked to write a postmortem, incident report, P1/P2 review, outage report, or RCA (root cause analysis). Produces a blameless postmortem with timeline, root cause, contributing factors, impact summary, and action items."
+    },
+    {
+     "name": "incident-public-statement",
+     "description": "Write a single clear, honest public statement about an incident. Use when asked to draft a public statement, a press statement, or an official response to a security breach, outage, data incident, recall, or public controversy. Produces a ready-to-publish statement — acknowledgement, what happened, "
+    },
+    {
+     "name": "incremental-implementation",
+     "description": "Build in small, individually-verified increments that each leave the system working — instead of big-bang changes that fail mysteriously at the end. Use when implementing multi-part features, refactoring anything load-bearing, making large mechanical changes, or when past work produced huge diffs th"
+    },
+    {
+     "name": "influencer-brief",
+     "description": "Create a structured brief for an influencer or creator partnership campaign. Use when asked to brief an influencer, plan a creator collaboration, set up a paid partnership, or define deliverables for a sponsored content campaign. Produces a complete campaign brief with objectives, deliverables, crea"
+    },
+    {
+     "name": "infra-as-code-review",
+     "description": "Write an infrastructure-as-code review checklist and conduct a structured review of Terraform, CloudFormation, Pulumi, or Ansible code. Use when asked to review IaC code, audit infrastructure configurations, check cloud security posture, or produce a reusable IaC review checklist. Produces a structu"
+    },
+    {
+     "name": "instagram-post-downloader",
+     "description": "Download and save Instagram posts as high-resolution files. Use when asked to download, save, or archive an Instagram post, reel thumbnail, or carousel. Produces saved high-res images in a named folder, with carousel slides stitched into a single PDF; supports batch downloading of multiple URLs at o"
+    },
+    {
+     "name": "insurance-claim",
+     "description": "Write a clear insurance claim letter or appeal that supports a payout. Use when asked to write an insurance claim, file a claim letter, document a loss for insurance, or appeal a denied claim. Produces a structured claim — policy and incident details, the documented loss, the amount claimed, and the"
+    },
+    {
+     "name": "interview-me",
+     "description": "Elicit the real requirements by interviewing the requester BEFORE building or writing anything — one question at a time, until the brief is buildable. Use when a request is vague ('make me a dashboard', 'write something for the board'), when past deliverables missed the mark, or when the user says '"
+    },
+    {
+     "name": "interview-prep",
+     "description": "Prepare for a specific interview at a specific company, not just 'an interview'. Use when asked to prep for an interview, prepare answers for a role, practice for a specific company's interview, or get ready for a behavioural/case/PM round. Produces a tailored prep pack — likely questions for this r"
+    },
+    {
+     "name": "interview-question-bank",
+     "description": "Build a structured, role-specific interview question bank with what good answers look like. Use when asked to create interview questions, an interview guide, a structured interview kit, or competency-based questions for a role. Produces questions mapped to the competencies that matter — behavioral ("
+    },
+    {
+     "name": "inventory-policy",
+     "description": "Set inventory policy for an item class: segmentation, safety stock, and replenishment method. Use when asked to set safety stock levels, segment items by ABC/XYZ, choose reorder points vs min-max, define stocking policy, or review excess and obsolete inventory. Produces a segmentation grid, per-segm"
+    },
+    {
+     "name": "investing-policy-statement",
+     "description": "Draft a personal investing policy statement (IPS) — the rules someone sets for their own investing. Use when asked to define an investment strategy, set a target asset allocation, or write rules to avoid panic-driven decisions. Produces a structured IPS: goals, risk tolerance, target allocation, con"
+    },
+    {
+     "name": "investor-cold-email",
+     "description": "Write a cold or warm-intro email to an investor that actually gets a reply — short, specific, traction-forward, with a clear ask. Use when asked to email an investor, write a fundraising outreach, request a warm intro, or craft a forwardable blurb. Produces a tight cold email, a forwardable intro bl"
+    },
+    {
+     "name": "investor-pitch-deck",
+     "description": "Build the narrative and slide structure for an investor pitch deck. Use when asked to create a pitch deck, investor presentation, fundraising deck, or startup pitch. Produces a slide-by-slide structure with narrative beats, key messages, and what each slide must prove to an investor."
+    },
+    {
+     "name": "investor-update",
+     "description": "Write a structured monthly or quarterly investor update. Use when asked to write an investor update, investor newsletter, board update, or startup progress report for investors. Produces a clear, credible update with highlights, metrics, challenges, and asks — in the format investors actually want t"
+    },
+    {
+     "name": "invoice-generator",
+     "description": "Create a professional, complete invoice for a client or customer. Use when asked to write an invoice, create a bill, draft a freelance/contractor invoice, or set up an invoice template. Produces a clear invoice — your and the client's details, a unique number, line items with quantities/rates, subto"
+    },
+    {
+     "name": "iso-27001-isms",
+     "description": "Scope an ISO 27001 ISMS and build the Statement of Applicability across Annex A controls. Use when asked to implement ISO 27001, scope an ISMS, build a Statement of Applicability (SoA), or prepare for ISO 27001 certification. Produces an ISMS plan — scope & context, risk-treatment approach, an Annex"
+    },
+    {
+     "name": "jd-decoder",
+     "description": "Decode a job description to find what they actually want beneath the buzzwords. Use when asked to analyse a job description, decode a JD, assess fit for a role, or figure out what a posting really means before applying. Produces a decode — the real must-haves vs. nice-to-haves, hidden priorities & c"
+    },
+    {
+     "name": "job-application",
+     "description": "Tailors a CV and cover letter to a specific job description. Use when asked to write a cover letter, tailor a CV or resume, optimise for ATS, match a job description, or prepare a job application. Produces an ATS-optimised tailored CV summary and a personalised cover letter aligned to the role's req"
+    },
+    {
+     "name": "job-description-writer",
+     "description": "Write a clear, inclusive, and structured job description for any role. Use when asked to write a job description, job posting, JD, or job advert. Produces a complete JD with role summary, responsibilities, requirements, and inclusive language review."
+    },
+    {
+     "name": "job-story-mapper",
+     "description": "Write Jobs-to-be-Done (JTBD) job stories and map customer jobs across functional, social, and emotional dimensions. Use when defining user needs, writing job stories, conducting JTBD research, or reframing features around customer outcomes. Produces a job story map with opportunity scoring, pain int"
+    },
+    {
+     "name": "kb-audit",
+     "description": "Audit a knowledge base / help center for coverage, accuracy, and findability. Use when asked to audit a help center, review KB health, find documentation gaps, reduce ticket volume with better docs, or prioritise what to write/fix. Produces an audit — a health scorecard, content gaps (driven by top "
+    },
+    {
+     "name": "kyc-escalation",
+     "description": "Write an internal KYC/AML escalation memo: a factual time-stamped trigger description, customer-profile vs activity mismatch analysis, red-flag taxonomy mapping, outstanding information, and a recommendation with rationale. Use when asked to escalate a KYC alert, document an AML concern, write up un"
+    },
+    {
+     "name": "landing-page-copy",
+     "description": "Write full landing-page copy that converts — section by section. Use when asked to write a landing page, homepage copy, a product page, or copy for a marketing site. Produces complete copy for every section (hero, problem, solution, social proof, features-as-benefits, objections/FAQ, final CTA) with"
+    },
+    {
+     "name": "last-30-days-research",
+     "description": "Searches Reddit, X/Twitter, and the broader web for recent opinions, sentiment, and signal on any topic. Use when you need to know what real people are saying about a tool, product, trend, or event in the past 30 days — cutting through SEO content to surface genuine community reaction. Produces a st"
+    },
+    {
+     "name": "launch-post",
+     "description": "Write a developer-audience launch post — Show HN, a Product Hunt blurb, a 'we shipped X' dev blog intro, or a launch tweet thread. Use when launching a tool, library, API, or open-source project to a technical audience. Produces a credible, hype-free post that leads with what it does and why it's di"
+    },
+    {
+     "name": "launch-readiness",
+     "description": "Assesses pre-launch readiness across every function and produces an explicit Go / Conditional Go / No-Go recommendation. Use when preparing for any product or feature launch, running a pre-launch review, or determining whether a release is safe to ship. Produces a function-by-function readiness stat"
+    },
+    {
+     "name": "launch-tiering-framework",
+     "description": "Tier a product launch (T1/T2/T3) and scope the right go-to-market effort. Use when asked to decide a launch tier, right-size launch activities, build a launch tiering framework, or plan channels and effort proportional to a launch's impact. Produces a tiering recommendation with the scoring rational"
+    },
+    {
+     "name": "layoff-communication",
+     "description": "Plan and write the communications for a layoff or restructure with clarity and dignity. Use when asked to communicate a layoff, write a RIF/redundancy announcement, prepare manager talking points for letting people go, or plan workforce-reduction comms. Produces a comms package — sequencing plan, th"
+    },
+    {
+     "name": "lease-decoder",
+     "description": "Decode a residential lease into plain English and rank the clauses that can hurt you. Use when someone asks 'what am I signing', 'decode my lease', 'is this rental agreement normal', or 'can my landlord really do this'. Produces a clause-by-clause decode table, ranked red flags, break-clause and dep"
+    },
+    {
+     "name": "legal-brief",
+     "description": "Draft a structured legal brief, case summary, or legal argument outline. Use when asked to write a legal brief, case note, legal memo, argument outline, or position paper. Produces a structured document using IRAC format (Issue, Rule, Application, Conclusion)."
+    },
+    {
+     "name": "lending-risk-brief",
+     "description": "Write a portfolio-level lending risk brief: concentration analysis by sector, geography and single name, vintage performance, migration matrix narrative, macro-sensitivity scenarios, top watch names, and actions. Use when asked to write a portfolio risk report, credit risk committee brief, loan book"
+    },
+    {
+     "name": "lesson-plan",
+     "description": "Build a complete, standards-aligned lesson plan with clear objectives, a timed activity sequence, differentiation, and assessment. Use when asked to write a lesson plan, plan a class or lesson, design a teaching session, or structure instruction for a topic. Produces a ready-to-teach plan with measu"
+    },
+    {
+     "name": "lifecycle-crm-plan",
+     "description": "Design lifecycle marketing / CRM journeys across the customer lifecycle. Use when asked to plan onboarding emails, lifecycle/CRM campaigns, drip sequences, re-engagement or winback flows, or a messaging calendar. Produces a lifecycle plan — stage map, the trigger/message/goal for each journey, chann"
+    },
+    {
+     "name": "linkedin-profile",
+     "description": "Optimise a LinkedIn profile to be found and to convert. Use when asked to write or improve a LinkedIn headline, About section, or profile, or to make a profile recruiter-friendly. Produces an optimised headline, a first-person About section with a hook and keywords, achievement-led experience bullet"
+    },
+    {
+     "name": "literature-review",
+     "description": "Structure and write a literature review for any research topic. Use when asked to write a literature review, systematic review summary, narrative review, or research background section. Produces a structured review with thematic organisation, critical analysis, and gap identification."
+    },
+    {
+     "name": "llm-cost-latency-budget",
+     "description": "Model the cost and latency of an LLM feature before it ships and surprises the bill. Use when asked to estimate LLM API costs, set a latency/token budget, decide which model tier to use, or bring down the cost of an AI feature. Produces a cost & latency budget — token math per request, monthly cost "
+    },
+    {
+     "name": "llm-guardrails-spec",
+     "description": "Specify the safety and reliability guardrails for an LLM feature before it ships. Use when asked to define LLM guardrails, add safety controls to an AI feature, prevent prompt injection or jailbreaks, or harden a chatbot/agent against misuse. Produces a guardrails spec — threats, input/output contro"
+    },
+    {
+     "name": "load-testing-plan",
+     "description": "Write a load and performance testing plan for a service. Use when asked to create a performance test plan, write load testing documentation, define stress or soak test scenarios, or set performance regression gates for CI. Produces a complete test plan document with scenario definitions, k6/Locust s"
+    },
+    {
+     "name": "loan-covenant-review",
+     "description": "Run a quarterly loan covenant compliance review: covenant table with required vs actual vs headroom, trend and trajectory-to-breach analysis, waiver and amendment options with pricing implications, early-warning indicators, and a watch-list recommendation. Use when asked to review covenant complianc"
+    },
+    {
+     "name": "loan-decoder",
+     "description": "Decode a personal, auto, or mortgage loan offer into what it really costs and where the traps are. Use when someone asks 'is this loan a good deal', 'decode my loan offer', 'what am I signing', or 'what will this mortgage actually cost me'. Produces a total-cost-of-loan number, APR vs advertised-rat"
+    },
+    {
+     "name": "local-dev-setup",
+     "description": "Write a local development environment setup guide for a service or project — covering prerequisites, repository setup, environment variables, local service dependencies, database seeding, running the service, running tests, common gotchas, IDE recommendations, and first-contribution checklist. Use w"
+    },
+    {
+     "name": "localization-brief",
+     "description": "Plan the localization of a product/content for a new market — beyond translating the words. Use when asked to localize a product, plan market entry localization, prepare a localization brief, or figure out what to adapt for a new region. Produces a brief — target locales, what to translate vs. adapt"
+    },
+    {
+     "name": "logistics-incident-report",
+     "description": "Write up a supply chain disruption — port delay, carrier failure, customs hold, or in-transit damage — as a decision-ready incident report. Use when asked to document a shipment delay, write up a logistics failure, report a customs hold, quantify a supply disruption, or draft the customer notice for"
+    },
+    {
+     "name": "managing-up",
+     "description": "Work more effectively with your manager — communicate, align, escalate, and get what you need. Use when asked how to manage up, work better with a boss, get buy-in from your manager, escalate without overstepping, or prepare to raise something with leadership. Produces a managing-up plan — what your"
+    },
+    {
+     "name": "marketing-funnel-plan",
+     "description": "Plan a full-funnel marketing strategy from awareness to retention. Use when asked to build a marketing funnel, map the customer journey to tactics, plan demand generation, or diagnose where a funnel leaks. Produces a funnel plan — stage definitions, the metric and conversion target per stage, channe"
+    },
+    {
+     "name": "marketing-psychology",
+     "description": "Apply behavioral-psychology principles to a marketing asset or decision — ethically. Use when asked to make copy/a page/an offer more persuasive, apply psychological triggers, reduce friction, or understand why something does/doesn't convert. Produces the relevant principles (social proof, scarcity,"
+    },
+    {
+     "name": "marketplace-listing-optimizer",
+     "description": "Audit and optimize a marketplace listing (Amazon, Etsy, eBay, Walmart) to rank and convert. Use when asked to optimize an Amazon/Etsy listing, improve marketplace SEO, fix a product listing that isn't selling, or write keyword-rich titles and bullets. Produces a prioritised optimization — title, bul"
+    },
+    {
+     "name": "mcp-server-spec",
+     "description": "Design an MCP server for a product — the tool surface, auth model, and safety boundaries that make it genuinely usable by AI agents. Use when asked to spec an MCP server, expose a product to agents, design tools for Claude or other MCP clients, or review why an existing MCP server performs badly. Pr"
+    },
+    {
+     "name": "media-pitch",
+     "description": "Write a media pitch or press outreach email for any story or announcement. Use when asked to write a media pitch, journalist outreach email, press pitch, or story angle for PR. Produces a concise pitch with a compelling news angle, journalist-specific hook, and clear call to action."
+    },
+    {
+     "name": "medical-bill-decoder",
+     "description": "Decode an itemized medical bill or EOB into plain English and find the charges worth disputing. Use when someone asks 'why is my medical bill so high', 'decode my hospital bill', 'what is this EOB saying', or 'can I negotiate this bill'. Produces a line-by-line decode, duplicate and unbundling flags"
+    },
+    {
+     "name": "meeting-notes",
+     "description": "Structure and format meeting notes following PM best practices. Use when asked to create meeting notes, format discussion notes, capture action items, or document decisions from any meeting type. Produces structured notes with decisions, action items (owner + deadline), open questions, and next step"
+    },
+    {
+     "name": "messaging-framework",
+     "description": "Build a messaging framework (message house) that the whole company can use consistently. Use when asked to create messaging, a value proposition, a message house, key messages, or to make marketing/sales/product say the same thing. Produces a messaging framework — audience & value proposition, the o"
+    },
+    {
+     "name": "metric-gaslighting-detector",
+     "description": "Find out how a dashboard, KPI report, or metrics slide is lying to you — before you repeat its story in a bigger room. Use when numbers feel too tidy, a narrative rests on one chart, or you inherited metrics you didn't define. Produces a deception audit: every metric graded for the eleven classic di"
+    },
+    {
+     "name": "metric-semantic-layer",
+     "description": "Define a metric in a semantic layer so it means one thing everywhere. Use when asked to define a metric, build a semantic layer / metrics layer entry, stop 'revenue means three things' problems, or write a metric definition for dbt MetricFlow / Cube / LookML. Produces a metric definition — exact for"
+    },
+    {
+     "name": "metric-tree-builder",
+     "description": "Decompose a north-star metric into a driver tree — the inputs and sub-inputs that actually move it — so a team knows which levers to pull. Use when asked to build a metric tree, break down a north-star metric, map metric drivers, or find the inputs behind an output metric. Produces a hierarchical tr"
+    },
+    {
+     "name": "metrics-framework",
+     "description": "Build a metrics framework for any product, team, or business. Use when asked for a metrics tree, KPI framework, North Star metric, AARRR funnel, HEART framework, or OKR metrics. Produces a structured metrics hierarchy from North Star down to leading indicators, with measurement guidance."
+    },
+    {
+     "name": "microcopy-writer",
+     "description": "Write the small UI text that guides users — buttons, labels, tooltips, CTAs, confirmations. Use when asked to write microcopy, button/CTA text, form labels, tooltips, helper text, or to make UI wording clearer. Produces specific, action-oriented microcopy with options and rationale, matched to the m"
+    },
+    {
+     "name": "microservices-decomposition",
+     "description": "Design a microservices decomposition for a monolith or new system, defining service boundaries, ownership, communication patterns, and migration plan. Use when asked to decompose a monolith, define service boundaries, design a microservices architecture, or plan a strangler-fig migration. Produces a"
+    },
+    {
+     "name": "mind-map",
+     "description": "Turn a topic, brainstorm, or document into a structured mind map. Use when asked to brainstorm around a theme, organize ideas, break a topic into branches, or summarize something as a mind map. Produces a ready-to-render Mermaid mindmap (renders live, exportable as PNG/SVG) plus a short note on the "
+    },
+    {
+     "name": "model-card",
+     "description": "Document a deployed ML/AI model so others can use it responsibly. Use when asked to write a model card, document a model's intended use and limitations, or prepare an AI model for review/launch. Produces a complete model card — intended use, training data, evaluation metrics across slices, limitatio"
+    },
+    {
+     "name": "model-migration-plan",
+     "description": "Plan the migration of an LLM feature from one model to another without breaking production. Use when a model is being deprecated, a newer model looks better or cheaper, or when asked how to upgrade models safely, run shadow traffic, or set rollback criteria for a model change. Produces a phased migr"
+    },
+    {
+     "name": "model-selection-advisor",
+     "description": "Choose the right LLM for a task by trading off quality, cost, latency, and constraints. Use when asked which model to use, whether to upgrade/downgrade a model, how to cut LLM costs without hurting quality, or to justify a model choice. Produces a recommendation with the decision criteria, a per-opt"
+    },
+    {
+     "name": "monitoring-setup-guide",
+     "description": "Write a monitoring setup guide for a service — defining what to measure, how to alert on it, and how to build the observability stack covering the four golden signals, business metrics, log strategy, distributed tracing, alerting rules, dashboard layout, and observability debt. Use when asked to set"
+    },
+    {
+     "name": "morning-intelligence",
+     "description": "Interviews you across 15 questions to capture your role, topics, sources, exclusions, and format preferences, then writes a master prompt you can paste into a scheduled task or Claude Code Routine. Use when you want to set up a personalised daily news brief, build a reusable morning news prompt, or "
+    },
+    {
+     "name": "multi-source-signal-synthesiser",
+     "description": "Synthesises user signals from multiple research sources into a unified, weighted insight brief. Use when you have data from interviews, support tickets, NPS verbatims, app reviews, or sales calls and need to reconcile contradictions, surface the underlying need behind requests, or answer 'what are u"
+    },
+    {
+     "name": "nda-analyser",
+     "description": "Analyses a Non-Disclosure Agreement clause by clause and flags unusual terms, one-sided provisions, and negotiation points. Use when reviewing an NDA, mutual NDA, confidentiality agreement, or non-disclosure deed before signing or countering. Produces a plain English verdict, clause-by-clause risk a"
+    },
+    {
+     "name": "net-worth-statement",
+     "description": "Produce a personal net-worth statement — assets minus liabilities — and a way to track it. Use when asked to calculate net worth, summarize finances, or set up net-worth tracking. Produces a categorized assets/liabilities statement, the net-worth figure, liquidity and debt ratios, and a tracking cad"
+    },
+    {
+     "name": "newsletter-writer",
+     "description": "Write a full creator newsletter issue — subject line, preview text, hook, body with a clear takeaway, and a CTA — in the writer's voice, for Substack, beehiiv, ConvertKit, or email. Use when asked to write a newsletter, an email issue, a Substack post, or to turn notes/a topic into a sendable newsle"
+    },
+    {
+     "name": "notebooklm-connector",
+     "description": "Automates NotebookLM from Claude Code using browser automation via the Claude Chrome extension — creating notebooks, adding sources, and triggering outputs without manual clicking. Use when you want to create a NotebookLM notebook, add URLs or documents as sources, or generate mindmaps, audio overvi"
+    },
+    {
+     "name": "notes-humanizer",
+     "description": "Strips AI writing patterns from text and rewrites it to sound genuinely human by removing statistical defaults and injecting the specific signals that human writers produce. Use when a draft reads as AI-generated, over-polished, or rhythmically uniform — including blog posts, emails, LinkedIn posts,"
+    },
+    {
+     "name": "offer-comparison",
+     "description": "Compare two or more job offers as total-comp curves over four years — vesting cliffs, bonuses, 401(k) match, and the crossover year computed, not vibed. Use when asked to compare job offers, which offer pays more over time, model my equity vesting, or is the startup offer actually worth it. Produces"
+    },
+    {
+     "name": "offer-letter",
+     "description": "Draft a job offer — the written offer letter and a verbal-offer script. Use when asked to write an offer letter, a job offer, an employment offer, or to prepare to extend/verbal an offer to a candidate. Produces a clear, warm offer letter (role, comp, start, key terms, contingencies, acceptance) plu"
+    },
+    {
+     "name": "okr-builder",
+     "description": "Create well-structured OKRs (Objectives and Key Results) for product teams, startups, and individuals. Use when asked to write OKRs, set quarterly goals, define key results, or review existing OKRs. Produces a complete OKR set with objectives, measurable key results, baselines, and a scoring guide."
+    },
+    {
+     "name": "oncall-runbook",
+     "description": "Write an on-call runbook for a service — covering alert definitions, escalation paths, common incident responses, and on-call handoff procedures. Use when asked to write an on-call guide, create alert runbooks, document escalation procedures, or prepare an on-call handoff document. Produces a struct"
+    },
+    {
+     "name": "onboarding-copy",
+     "description": "Write in-product onboarding copy that gets users to value fast. Use when asked to write onboarding copy, a welcome flow, product tour/tooltips, setup steps, or activation messaging. Produces the copy for an onboarding flow — welcome, the guided steps/tooltips toward the first win, progress and empty"
+    },
+    {
+     "name": "onboarding-plan",
+     "description": "Create a structured 30/60/90-day onboarding plan for any new hire. Use when asked to write an onboarding plan, new hire plan, 30-60-90 day plan, or first 90 days roadmap. Produces a week-by-week plan with milestones, meetings, learning goals, and success criteria."
+    },
+    {
+     "name": "one-on-one-prep",
+     "description": "Prepare for a 1:1 so it drives outcomes instead of becoming a status update. Use when asked to prep for a one-on-one, build a 1:1 agenda, prepare to talk to your manager (or a report), or raise something hard in a 1:1. Produces a focused 1:1 agenda — your top topics with the outcome you want for eac"
+    },
+    {
+     "name": "one-pager",
+     "description": "Distil anything — a startup, product, project, or idea — into a single persuasive page. Use when asked to make a one-pager, a one-page summary, a leave-behind, a startup/product one-sheet, or a tl;dr brief. Produces a structured single page — headline + tagline, the problem, the solution, why-now/pr"
+    },
+    {
+     "name": "open-house-plan",
+     "description": "Plan and promote an open house that draws buyers and generates leads. Use when asked to plan an open house, market an open house, or create an open-house checklist. Produces a plan — timing and promotion across channels, prep and staging checklist, a day-of run sheet, lead capture, and follow-up — s"
+    },
+    {
+     "name": "opposing-counsel",
+     "description": "Read a contract the way the counterparty's lawyer will — hunting for leverage, not fairness. Use when someone says 'read this like opposing counsel', 'how would the other side attack this agreement', 'find the weaknesses before they do', or before sending or signing any contract. Produces the demand"
+    },
+    {
+     "name": "org-chart",
+     "description": "Turn a team or reporting structure into a clean org chart. Use when asked to draw an org chart, show reporting lines, visualize team structure, or map who reports to whom. Produces a ready-to-render Mermaid org chart (renders live, exportable as PNG/SVG) plus headcount notes and any structural obser"
+    },
+    {
+     "name": "outcome-tracker",
+     "description": "Record the testable predictions inside a decision, then score them against reality later — so frameworks earn trust from outcomes, not vibes. Use when committing to a prioritisation, forecast, or plan (to log what it predicts), when asked to review what actually happened, or to compute how well-cali"
+    },
+    {
+     "name": "outreach-message",
+     "description": "Write cold outreach and networking messages that actually get replies. Use when asked to write a cold message to a recruiter/hiring manager, a LinkedIn connection note, a referral request, or a networking/coffee-chat ask during a job search. Produces short, specific, reply-worthy messages — tuned to"
+    },
+    {
+     "name": "paid-acquisition-plan",
+     "description": "Plan a paid acquisition / performance marketing program with unit economics that work. Use when asked to plan paid media, allocate an ad budget across channels, set CAC/LTV targets, or structure a creative-testing program. Produces a paid acquisition plan — economic guardrails (CAC/LTV/payback), cha"
+    },
+    {
+     "name": "parent-communication",
+     "description": "Draft clear, warm, professional messages to parents or guardians — progress notes, concerns, positive news, behaviour issues, or meeting requests. Use when asked to email a parent, write home about a student, raise a concern with a guardian, or share an update. Produces a ready-to-send message that "
+    },
+    {
+     "name": "partnership-proposal",
+     "description": "Write a B2B partnership proposal or business case. Use when asked to write a partnership proposal, draft a partnership brief, structure a co-marketing proposal, or create a business case for a strategic partnership. Produces a structured proposal with value proposition, partnership model, commercial"
+    },
+    {
+     "name": "patient-communication",
+     "description": "Write clear, plain-English patient communications for any healthcare context. Use when asked to write a patient letter, patient information leaflet, appointment letter, test-results letter, discharge summary for patients, or health education content. Produces an accessible patient communication at a"
+    },
+    {
+     "name": "paywall-optimization",
+     "description": "Design or optimize a paywall / upgrade screen to convert free users to paid without killing trust. Use when asked to improve a paywall, upgrade prompt, or free-to-paid conversion, or to decide what to gate. Produces the gating strategy (what's free vs. paid and why), the paywall placement and moment"
+    },
+    {
+     "name": "pentest-report",
+     "description": "Write a clear penetration-test report from findings of an authorized engagement. Use when documenting a pentest, security assessment, or authorized red-team engagement — turning findings into a report clients act on. Produces an executive summary, scope & methodology, findings with severity/evidence"
+    },
+    {
+     "name": "performance-budget",
+     "description": "Define and document performance budgets for a web service or application. Use when asked to set performance targets, define SLOs for latency or throughput, establish Core Web Vitals targets, create a performance baseline, or document performance regression policy. Produces a structured performance b"
+    },
+    {
+     "name": "performance-review",
+     "description": "Write structured, balanced performance reviews from bullet-point inputs. Use when asked to write a performance review, self-assessment, peer review, 360 feedback, or manager evaluation. Produces a complete, fair, professionally written review covering achievements, areas for growth, and development "
+    },
+    {
+     "name": "personal-bio",
+     "description": "Write a professional bio in the three lengths you actually need. Use when asked to write a bio, an 'about me', a speaker/author bio, or a short profile blurb. Produces three ready-to-use versions — a one-liner, a short (~50-word) bio, and a long (~150-word) bio — in a consistent third-person voice, "
+    },
+    {
+     "name": "personal-board-of-directors",
+     "description": "Five standing advisors — the Operator, the Skeptic, the CFO, the Coach, the Customer — debate your decision on paper and vote. Use when asked to help me decide, pressure-test this decision, what would smart advisors say, or convene my board. Produces five distinct advisor memos, a disagreement map, "
+    },
+    {
+     "name": "persuasion-brief",
+     "description": "Build the case to win someone over to a decision, idea, or change. Use when asked to persuade someone, build a case for an idea, get buy-in, win over a skeptic, or prepare to pitch a proposal internally. Produces a persuasion brief — the audience's current view and what moves them, the core argument"
+    },
+    {
+     "name": "pm-weekly-review",
+     "description": "Structure a PM's weekly review and planning session. Use when doing a weekly PM review, writing a weekly update, preparing for Monday planning, or reviewing sprint health. Produces a shareable weekly update covering metrics movement, shipping progress, blockers, insights, and next week's top 3 prior"
+    },
+    {
+     "name": "policy-memo",
+     "description": "Write a decision-ready policy memo that frames an issue and recommends an option. Use when asked to write a policy memo, options paper, decision memo for a principal/minister/executive, or brief a decision-maker on a policy choice. Produces a tight memo: the issue, background, options with trade-off"
+    },
+    {
+     "name": "policy-renewal-review",
+     "description": "Run a pre-renewal review of an insurance programme: scan coverage gaps against current operations, test limit adequacy against inflation and exposure growth, read the claims experience into pricing expectations, frame market alternatives, and arm the broker negotiation. Use when asked to prepare for"
+    },
+    {
+     "name": "portfolio-page",
+     "description": "Structure a portfolio or case-study page that shows your work, not just lists it. Use when asked to write a portfolio page, a project case study, a work showcase, or an 'is this person good?' proof page. Produces a portfolio structure — a positioning header, and per-project case studies (context → y"
+    },
+    {
+     "name": "pptx-slide-auditor",
+     "description": "Audit a PowerPoint presentation for layout issues, text overflow, visual hierarchy problems, and consistency gaps. Use when asked to review a slide deck, check a presentation before a meeting, audit slides for layout problems, or QA a deck before sharing. Produces a slide-by-slide report with issues"
+    },
+    {
+     "name": "pr-crisis-response",
+     "description": "Build a crisis communications plan to respond fast and credibly when something goes wrong. Use when asked to handle a PR crisis, draft a crisis comms plan, respond to a public backlash/scandal/incident, or prepare holding statements. Produces a crisis comms plan — situation assessment, stakeholder m"
+    },
+    {
+     "name": "pr-description",
+     "description": "Write a clear pull-request description that gets reviewed fast and merged with confidence. Use when opening a PR, summarizing a change for review, or asked to write a PR/merge-request description. Produces a structured PR: what changed and why, how it was tested, risk and rollout, and a focused revi"
+    },
+    {
+     "name": "pr-description-writer",
+     "description": "Write a clear, structured pull request description from a git diff, branch summary, or commit list. Use when asked to write a PR description, draft a pull request, or document code changes. Produces a description with summary, motivation, changes made, testing steps, and reviewer guidance."
+    },
+    {
+     "name": "prd-template",
+     "description": "Create a Product Requirements Document following proven PM template structure. Use when asked to write a PRD, product spec, feature specification, or requirements document for a new feature or product. Produces a complete PRD with problem statement, user stories, functional requirements, technical c"
+    },
+    {
+     "name": "premortem-assassin",
+     "description": "Kill the plan on paper before reality does it for money. Use when a plan, launch, migration, or strategy is about to be committed to and nobody has tried hard to murder it yet — the assassin attacks through twelve named failure vectors and writes the post-mortem of the failure that hasn't happened. "
+    },
+    {
+     "name": "press-release",
+     "description": "Write a professional press release for any announcement. Use when asked to write a press release, media announcement, news release, or press statement. Produces a structured press release with headline, dateline, body, boilerplate, and media contact — ready to send to journalists."
+    },
+    {
+     "name": "pricing-calculator",
+     "description": "Model pricing scenarios — tiers, margins, break-even, and the revenue impact of a price change. Use when asked to calculate pricing, model a price increase, find break-even volume, set tier prices to a margin target, or estimate the revenue effect of a pricing change. Produces a computed pricing mod"
+    },
+    {
+     "name": "pricing-page-copy",
+     "description": "Write pricing page copy that helps buyers self-select the right plan and convert. Use when asked to write or improve a pricing page, name and describe pricing tiers, write plan feature lists, pricing CTAs, or a pricing FAQ. Produces complete pricing page copy — a header, tier cards with names, price"
+    },
+    {
+     "name": "pricing-sensitivity-model",
+     "description": "Van Westendorp price sensitivity, computed from real survey answers — crossings found by interpolation, not read off a chart by eye. Use when someone has (or plans) the four-question pricing survey (too cheap / cheap / expensive / too expensive) and needs the optimal price point, the acceptable rang"
+    },
+    {
+     "name": "pricing-strategy",
+     "description": "Structure pricing strategy decisions, packaging options, and tier design for SaaS and digital products. Use when reviewing or setting pricing, designing pricing tiers, evaluating freemium vs paid, or preparing a pricing change. Produces a pricing strategy recommendation with model rationale, tier st"
+    },
+    {
+     "name": "prior-authorization-letter",
+     "description": "Write a persuasive prior-authorization / medical-necessity letter to an insurer. Use when asked to write a prior authorization letter, a letter of medical necessity, or to appeal a denied treatment/medication/procedure. Produces a structured letter — patient and request, clinical justification tied "
+    },
+    {
+     "name": "privacy-policy-drafter",
+     "description": "Draft a clear, plain-language privacy policy tailored to what a product actually collects and does with data. Use when asked to write a privacy policy, draft a data-protection notice, or create a GDPR/CCPA-aware privacy statement. Produces a structured policy covering data collected, purposes, legal"
+    },
+    {
+     "name": "process-documentation",
+     "description": "Document any business process in a clear, structured format. Use when asked to document a process, write a process guide, create a workflow document, or map out how something works. Produces a complete process document with steps, roles, inputs, outputs, and edge cases."
+    },
+    {
+     "name": "product-description",
+     "description": "Write a product description / listing that sells and ranks. Use when asked to write a product description, e-commerce listing copy, a product page, or to rewrite a flat product blurb. Produces benefit-led listing copy — a hook, scannable feature→benefit bullets, specs, an SEO-aware title and keyword"
+    },
+    {
+     "name": "product-health-analysis",
+     "description": "Interpret product metrics against goals and surface actionable signals. Use when asked to analyse product health, review key metrics, investigate a performance issue, produce a health report, or assess product-market fit signals. Produces a structured health report with RAG status, trend analysis, r"
+    },
+    {
+     "name": "product-launch-checklist",
+     "description": "Generate a comprehensive pre-launch, launch day, and post-launch checklist for any product release. Use when preparing for a product launch, feature release, or major update. Produces a role-assigned, tiered checklist covering engineering readiness, marketing and comms, support, and post-launch moni"
+    },
+    {
+     "name": "product-naming",
+     "description": "Generate and evaluate names for a product, feature, or release. Use when asked to name a product/feature/company, brainstorm naming options, or choose between name candidates. Produces a shortlist of names across naming strategies, each with rationale, plus an evaluation against clear criteria (clar"
+    },
+    {
+     "name": "product-positioning-doc",
+     "description": "Write a product positioning document and messaging framework. Use when asked to define product positioning, write a positioning statement, build a messaging framework, or create a messaging hierarchy. Produces a complete positioning doc with category definition, target customer, differentiation, pro"
+    },
+    {
+     "name": "professional-brain",
+     "description": "Maintain a durable, local markdown memory ('brain') of your product context, decisions, hypotheses, and stakeholders that other skills read from and write back to. Use when asked to set up a brain, ingest notes/artifacts into memory, recall what's known about a topic, log a decision with provenance,"
+    },
+    {
+     "name": "professional-translator",
+     "description": "Translate text professionally — preserving tone, register, and meaning, not word-for-word. Use when asked to translate a document, email, or content between languages, or to improve a literal/machine translation. Produces a natural, register-appropriate translation plus translator's notes on choices"
+    },
+    {
+     "name": "programmatic-seo",
+     "description": "Plan a programmatic SEO strategy — generate many ranking pages from a data set and a template. Use when asked about pSEO, scaling content with templates/data, building [X] for [Y] pages, or capturing long-tail search at scale. Produces the head-term + modifier model, the page template and data schem"
+    },
+    {
+     "name": "project-status-report",
+     "description": "Write a structured project status report for any project. Use when asked to write a project update, status report, RAG report, project dashboard narrative, or weekly project communication. Produces a clear status report with RAG ratings, milestone progress, risks, and decisions needed."
+    },
+    {
+     "name": "promotion-packet",
+     "description": "Build a promotion case that proves you're already operating at the next level. Use when asked to write a promo packet/case, prepare for a promotion committee, or make the case for a level-up or title change. Produces a promotion packet — the level-up thesis, evidence mapped to each next-level compet"
+    },
+    {
+     "name": "promotion-plan",
+     "description": "Plan a sale or promotion that drives revenue without wrecking margin. Use when asked to plan a promotion, a discount/sale campaign, a BFCM/holiday promo, or a product launch offer. Produces a promo plan — objective, the offer mechanic, margin math, audience & channels, timing, messaging, and how you"
+    },
+    {
+     "name": "prompt-optimizer",
+     "description": "Diagnose and rewrite an underperforming LLM prompt so it produces reliable, well-structured output. Use when asked to improve a prompt, fix a prompt that gives inconsistent or wrong results, reduce hallucination/refusals, or make output follow a format. Produces a rewritten prompt with a diagnosis o"
+    },
+    {
+     "name": "prompt-regression-suite",
+     "description": "Design a regression test suite that catches an LLM feature getting worse when the prompt, model, or context changes. Use when asked to stop prompt changes breaking production, set up golden tests or CI gates for an LLM feature, or test a model/prompt upgrade before shipping it. Produces a golden cas"
+    },
+    {
+     "name": "property-investment-analysis",
+     "description": "Analyze a rental / investment property's returns — cash flow, cap rate, cash-on-cash, ROI. Use when asked to analyze a rental property, evaluate a real-estate investment, run the numbers on an investment property, or compute cap rate / cash-on-cash. Produces an investment analysis — income and expen"
+    },
+    {
+     "name": "property-listing",
+     "description": "Write a compelling, accurate real-estate listing description. Use when asked to write a property listing, an MLS/Zillow description, a real-estate listing, or to make a property description more appealing. Produces a listing — a hook headline, a flowing description that sells the lifestyle and key f"
+    },
+    {
+     "name": "property-offer-letter",
+     "description": "Write a buyer's offer cover letter to a seller to strengthen a real-estate bid. Use when asked to write a real-estate offer letter, a buyer's 'love letter' to a seller, an offer cover note, or to make a home offer stand out. Produces a warm, genuine letter — who the buyers are, why they love the hom"
+    },
+    {
+     "name": "proposal-writer",
+     "description": "Write a structured sales proposal or commercial proposal for any deal. Use when asked to write a proposal, sales proposal, commercial proposal, statement of work, or quote document. Produces a complete proposal with problem statement, solution, investment, and next steps."
+    },
+    {
+     "name": "public-comment",
+     "description": "Draft a persuasive public comment on a proposed rule, regulation, or plan. Use when asked to comment on a rulemaking, respond to a consultation, submit feedback on a proposed regulation, or write a comment to an agency. Produces a structured comment: your position, specific evidence-based arguments "
+    },
+    {
+     "name": "punch-list-builder",
+     "description": "Turn walkthrough notes, photos, or voice-memo transcripts into a proper construction punch list with location, trade, and spec reference per item. Use when asked to build a punch list, clean up walkthrough notes, organise a deficiency list, prep for substantial completion, or track punch items to cl"
+    },
+    {
+     "name": "qa-release-signoff",
+     "description": "Produce a QA release sign-off / go-no-go readiness report. Use when asked for a release sign-off, a go/no-go QA report, release readiness, or a test summary before shipping. Produces a sign-off — what was tested and the results, open defects by severity, coverage and residual risk, the go/no-go reco"
+    },
+    {
+     "name": "qbr-deck",
+     "description": "Build a Quarterly Business Review (QBR) deck structure and narrative for a customer account. Use when asked to prepare a QBR, business review meeting, executive review, or quarterly check-in with a customer. Produces a slide-by-slide QBR structure with talking points, metrics review, value narrative"
+    },
+    {
+     "name": "quiz-generator",
+     "description": "Generate a quiz or test on any topic with a balanced mix of question types and difficulty, plus a complete answer key with explanations. Use when asked to create a quiz, write a test, make practice questions, or build an assessment. Produces well-formed questions aligned to learning objectives, tagg"
+    },
+    {
+     "name": "quote-card",
+     "description": "Pull the single most shareable quote out of a testimonial, review, interview, or long text and format it as a clean quote card. Use when asked to make a pull-quote, testimonial graphic, or 'quote card' for social/marketing. Produces a tightly-edited quote with attribution and 2-3 alternates, structu"
+    },
+    {
+     "name": "raci-matrix",
+     "description": "Define a RACI matrix for a cross-functional project or process. Use when asked to build a RACI, create a responsibility matrix, clarify ownership across teams, or document decision rights. Produces a complete RACI matrix with role definitions, decision mapping, and a process for resolving conflicts."
+    },
+    {
+     "name": "rag-architecture-review",
+     "description": "Review an existing Retrieval-Augmented Generation system and find why it underperforms. Use when asked to review or audit a RAG pipeline, diagnose wrong/ungrounded answers from a 'chat with your docs' feature, or improve an already-built knowledge assistant. Produces a staged review — ingestion, chu"
+    },
+    {
+     "name": "rag-design-doc",
+     "description": "Design a Retrieval-Augmented Generation system end to end. Use when asked to design a RAG pipeline, a 'chat with your docs' feature, a knowledge assistant, or to debug why a RAG system gives wrong/ungrounded answers. Produces a RAG design doc — ingestion & chunking, embeddings & index, retrieval & r"
+    },
+    {
+     "name": "rate-card",
+     "description": "Build a consulting/freelance rate card and pricing structure — and the floor rate to not go broke. Use when asked to set freelance/consulting rates, build a rate card, decide what to charge, package services, or move off hourly billing. Produces a rate card — your minimum viable rate (from real targ"
+    },
+    {
+     "name": "readme-writer",
+     "description": "Write a clear, well-structured README for a software project or open-source repo. Use when asked to write or improve a README, document a project, or make a repo approachable. Produces a complete README — one-line pitch, badges, quickstart, usage, install, contributing, license — that gets someone f"
+    },
+    {
+     "name": "receipts-audit",
+     "description": "Audit any document against its own sources — every factual claim extracted and graded as evidenced, partially evidenced, unsupported, or contradicted, with the exact source line that supports or fails it. Use when asked to fact-check a document against its sources, check whether a report's claims ar"
+    },
+    {
+     "name": "recruiter-outreach",
+     "description": "Write personalized candidate outreach that gets replies. Use when asked to write a recruiter InMail, a candidate outreach email, a sourcing message, or a follow-up sequence. Produces a short, personalized first message (hook tied to the candidate, the role's appeal, a low-friction ask) plus a 2–3 st"
+    },
+    {
+     "name": "red-team-review",
+     "description": "Stress-test a plan, strategy, PRD, or launch by simulating hostile expert personas who attack it from every angle. Use when asked to red-team, stress-test, pre-mortem, pressure-test, play devil's advocate, or find the blind spots in a plan before committing. Produces a per-persona critique, a ranked"
+    },
+    {
+     "name": "redundancy-consultation",
+     "description": "Structure a redundancy consultation process and draft key communications (UK employment law focus). Use when asked to plan a redundancy process, write a redundancy letter, structure a consultation, or manage a reduction in force. Produces a structured consultation plan and draft letters; always reco"
+    },
+    {
+     "name": "refactoring-plan",
+     "description": "Plan a safe, incremental refactor of messy code without changing behavior. Use when code needs restructuring, is hard to change, has grown tangled, or you want to clean it up before adding a feature. Produces a sequenced plan of small behavior-preserving steps, the safety net (tests/characterization"
+    },
+    {
+     "name": "reference-letter",
+     "description": "Write a credible, specific letter of recommendation or reference. Use when asked to write a reference letter, a letter of recommendation, a character reference, or to recommend someone for a job, school, or tenancy. Produces a structured reference — your relationship, specific evidence of their stre"
+    },
+    {
+     "name": "referral-program",
+     "description": "Design a referral program that drives real word-of-mouth growth. Use when asked to build a referral or refer-a-friend program, create an incentive/reward structure, or turn happy users into a growth channel. Produces the incentive design (who gets what, when), the mechanics and trigger moment, fraud"
+    },
+    {
+     "name": "referral-program-design",
+     "description": "Design a referral or viral-loop program that actually drives growth. Use when asked to design a referral program, build a viral/invite loop, set referral incentives, or improve word-of-mouth growth. Produces a referral design — the loop mechanics, incentive structure (who gets what, when), the viral"
+    },
+    {
+     "name": "refinance-breakeven",
+     "description": "Compute the month a refinance actually starts saving money — payment delta, breakeven month, and total interest on both paths including the term-reset trap. Use when asked should I refinance, when does a refi break even, compare my loan to a refi offer, or is this refinance worth the closing costs. "
+    },
+    {
+     "name": "regex-builder",
+     "description": "Build a regular expression from a plain-English description, or explain an existing one. Use when asked to write a regex, match/validate/extract a pattern, or understand what a regex does. Produces the regex, a token-by-token breakdown, passing and failing test cases, and notes on flavor/edge cases."
+    },
+    {
+     "name": "regression-test-plan",
+     "description": "Design and prioritize a regression test suite so changes don't break what worked. Use when asked to plan regression testing, build a regression suite, decide what to re-test after a change, or trim a bloated regression pack. Produces a risk-based regression plan — what to re-test and why, prioritise"
+    },
+    {
+     "name": "regulator-eyes",
+     "description": "Read your marketing claims, landing page, or ad copy the way a consumer-protection investigator would (FTC/ASA framing) and draft the inquiry letter they could send. Use when asked to check my marketing claims, read this like a regulator, audit my landing page for claim risk, or is this ad compliant"
+    },
+    {
+     "name": "regulatory-impact-analysis",
+     "description": "Produce a regulatory impact analysis (RIA) weighing the costs, benefits, and alternatives of a proposed rule. Use when asked to assess a regulation's impact, do a cost-benefit analysis of a policy, justify a rulemaking, or compare regulatory options. Produces a structured RIA: the problem and ration"
+    },
+    {
+     "name": "renewal-playbook",
+     "description": "Build a structured renewal playbook for a customer account. Use when asked to plan a renewal, structure a renewal negotiation, prepare for an expansion conversation, or build a renewal strategy for at-risk or healthy accounts. Produces a renewal brief with health assessment, negotiation strategy, ob"
+    },
+    {
+     "name": "rental-application",
+     "description": "Write a standout rental application / cover letter to a landlord or letting agent. Use when asked to write a rental application, a letter to a landlord, a renter cover letter, or to strengthen an application for a competitive rental. Produces a concise renter profile and cover letter — who you are, "
+    },
+    {
+     "name": "research-protocol",
+     "description": "Write a structured research protocol or study design document. Use when asked to write a research protocol, study protocol, research plan, methodology section, or research proposal. Produces a complete protocol with objectives, methodology, ethical considerations, and analysis plan."
+    },
+    {
+     "name": "resume",
+     "description": "Write a sharp, achievement-led resume/CV that passes ATS and earns the interview. Use when asked to write or rewrite a resume or CV, turn experience into a resume, or tailor a resume to a job. Produces a clean, single-column, ATS-friendly resume — summary, experience as quantified accomplishment bul"
+    },
+    {
+     "name": "retention-analysis",
+     "description": "Structure a retention analysis, churn investigation, or engagement deep-dive for any product team. Use when asked to analyse user retention, investigate churn, measure DAU/MAU, or build a retention improvement plan. Produces a retention snapshot with root cause hypotheses, aha-moment correlation, an"
+    },
+    {
+     "name": "retention-loop-design",
+     "description": "Design retention and engagement loops that bring users back. Use when asked to improve retention, design an engagement/habit loop, fix a leaky retention curve, or build a re-engagement system. Produces a retention design — the retention curve diagnosis, the core habit loop (trigger→action→reward→inv"
+    },
+    {
+     "name": "retro-analysis",
+     "description": "Analyses sprint delivery data and produces a structured retrospective brief. Use when asked to run a retrospective, analyse sprint data, prepare a retro brief, or turn sprint metrics into discussion prompts. Produces a data-grounded retrospective brief with completion stats, pattern analysis, Start/"
+    },
+    {
+     "name": "return-refund-policy",
+     "description": "Write a clear, fair returns, refunds & exchanges policy for an online store. Use when asked to write a return policy, refund/exchange policy, or store returns page. Produces a customer-friendly policy — window, conditions, process, refund method/timing, exceptions, and shipping — in plain language t"
+    },
+    {
+     "name": "review-response",
+     "description": "Write the right reply to a customer review — positive, negative, or mixed. Use when asked to respond to a review, reply to a bad/1-star review, handle online reviews, or write review-response templates. Produces tailored, on-brand responses that thank advocates, de-escalate and resolve complaints, a"
+    },
+    {
+     "name": "rfc-writer",
+     "description": "Write an engineering RFC (Request for Comments) for a technical decision, architectural change, or significant implementation approach. Use when asked to write an RFC, document a technical proposal, create a design doc, write an architecture decision for review, or produce a technical specification "
+    },
+    {
+     "name": "rfp-response",
+     "description": "Write a compliant, competitive response to an RFP/RFQ/ITT (government or enterprise procurement). Use when responding to a request for proposal, bidding on a tender, or answering a procurement questionnaire. Produces a compliance-matrix-driven response that answers every requirement, wins on evaluat"
+    },
+    {
+     "name": "rfp-scoring-matrix",
+     "description": "Build a weighted RFP evaluation matrix and defensible award recommendation. Use when asked to score RFP responses, compare vendor bids, build a supplier evaluation matrix, run a sourcing event scorecard, or decide which bidder to award. Produces a criteria tree with weights, scoring anchors, normali"
+    },
+    {
+     "name": "rfp-writer",
+     "description": "Write a clear Request for Proposal that gets comparable, high-quality vendor bids. Use when asked to write an RFP, a request for proposal/quote/tender, or to solicit and compare vendor proposals. Produces a complete RFP — background, scope of work, requirements, evaluation criteria with weights, sub"
+    },
+    {
+     "name": "rice-impact-matrix",
+     "description": "Scores features using both RICE and strategic alignment for nuanced prioritisation. Use when asked to prioritise features, build a priority matrix, combine quantitative scoring with strategic fit, or decide what to build next with multiple competing initiatives. Produces a scored priority matrix wit"
+    },
+    {
+     "name": "rice-prioritisation",
+     "description": "Scores and ranks product initiatives using the RICE framework. Use when asked to prioritise features, rank a backlog using RICE, score initiatives for quarterly planning, or apply an objective framework to a list of competing ideas. Produces a ranked RICE table with scores, quick wins and moonshot f"
+    },
+    {
+     "name": "risk-register",
+     "description": "Build and maintain a project or product risk register. Use when asked to create a risk register, identify project risks, build a risk matrix, or document risks and mitigations for a programme. Produces a complete risk register with likelihood/impact scoring, RAG status, ownership, and prioritised mi"
+    },
+    {
+     "name": "rma-failure-analysis",
+     "description": "Turn field returns into a structured failure-analysis report — RMA triage taxonomy (NTF vs real failures), Pareto by verified failure mode, 8D-style containment→root-cause→corrective-action structure, and cost-of-quality framing. Use when asked to analyse RMA data, investigate field returns, run fai"
+    },
+    {
+     "name": "roadmap-narrative",
+     "description": "Transform a prioritised initiative list into a compelling strategic roadmap narrative. Use when asked to write a roadmap narrative, explain the product roadmap to non-technical stakeholders, connect roadmap items to company goals, or produce an exec-shareable roadmap story. Produces a themed narrati"
+    },
+    {
+     "name": "roadmap-presentation",
+     "description": "Create structured roadmap presentations calibrated to any audience. Use when asked to build a product roadmap, present roadmap to leadership, create a roadmap slide, or communicate quarterly plans to execs, teams, or customers. Produces an audience-calibrated Now/Next/Later roadmap with strategic co"
+    },
+    {
+     "name": "roi-estimator",
+     "description": "Estimate the ROI, payback, and NPV of an investment, project, or purchase. Use when asked to calculate ROI, build a business case, justify a purchase/initiative, work out payback period, or compare options by return. Produces a computed ROI summary (net benefit, ROI %, payback, simple NPV) with the "
+    },
+    {
+     "name": "role-redesign-for-ai",
+     "description": "Redesign a job role that AI now does a large part of — deliberately, instead of quietly expecting the same headcount to absorb 140% output. Use when AI has changed what a role spends time on, when writing a revised role charter or job description post-AI, when a team asks 'what is my job now', or wh"
+    },
+    {
+     "name": "rubric-builder",
+     "description": "Create a clear grading rubric with criteria and performance-level descriptors that make scoring fair, fast, and consistent. Use when asked to build a rubric, create grading criteria, design an assessment scoring guide, or make grading more objective. Produces an analytic rubric table (criteria × per"
+    },
+    {
+     "name": "runbook-writer",
+     "description": "Write an operational runbook for a service, incident type, or deployment procedure. Use when asked to write a runbook, create an ops guide, document an operational procedure, or prepare an incident response playbook. Produces a runbook with overview, prerequisites, step-by-step procedures, rollback "
+    },
+    {
+     "name": "runway-calculator",
+     "description": "Calculate cash runway, burn, and the zero-cash date — and whether you're default alive or dead. Use when asked to work out runway, monthly burn, when the money runs out, or how much to raise/cut to reach a target. Produces a computed runway summary (net burn, months of runway, zero-cash date, defaul"
+    },
+    {
+     "name": "runway-monte-carlo",
+     "description": "Cash runway as a distribution, not a number — Monte Carlo simulated. Use when someone asks how long their cash lasts, when to start fundraising, or how burn/revenue volatility changes their runway; especially when the naive cash÷burn answer is driving a decision. Produces P10/P50/P90 runway, month-b"
+    },
+    {
+     "name": "runway-planner",
+     "description": "Turn burn and cash into a clear runway picture and a raise decision — months left, default-alive vs default-dead, and what to cut or change. Use when asked to calculate runway, model burn rate, decide when to raise, figure out if the company is default-alive, or plan a scenario with hiring/cuts. Pro"
+    },
+    {
+     "name": "sop-meeting-prep",
+     "description": "Prepare an S&OP cycle readout that surfaces the demand-supply gaps and forces the three decisions the meeting must make. Use when asked to prep an S&OP meeting, build the executive S&OP deck, summarize demand vs supply for the monthly cycle, or prepare a supply review readout. Produces a gap table, "
+    },
+    {
+     "name": "saas-metrics",
+     "description": "Compute the core SaaS metrics — MRR/ARR, growth, NRR/GRR, churn, quick ratio, magic number — from your numbers. Use when asked to calculate SaaS metrics, MRR/ARR, net revenue retention, the quick ratio, or to build a SaaS metrics snapshot for a board/investor update. Produces a computed metrics dash"
+    },
+    {
+     "name": "salary-negotiation",
+     "description": "Plan a compensation negotiation grounded in numbers and leverage, not nerves. Use when asked to negotiate salary, evaluate or counter a job offer, prepare for a comp conversation, or compare offers. Produces a negotiation plan — total-comp comparison across offers, your target/walk-away and BATNA, t"
+    },
+    {
+     "name": "sales-battlecard",
+     "description": "Create a competitive sales battlecard for any competitor. Use when asked to build a battlecard, competitive comparison, sales cheat sheet, or objection handling guide for a specific competitor. Produces a one-page battlecard with positioning, differentiators, objection responses, and landmines."
+    },
+    {
+     "name": "sales-demo-script",
+     "description": "Write a product demo script that tells a value story instead of a feature tour. Use when asked to write a sales demo script, structure a product demo, plan demo talk track and flow, or turn a feature list into a compelling demo. Produces a demo script — the setup and discovery hooks, a scene-by-scen"
+    },
+    {
+     "name": "sales-enablement-kit",
+     "description": "Build a sales enablement kit so reps can sell a product, feature, or launch confidently. Use when asked to create sales enablement materials, a rep-ready one-pager, talk tracks, objection handling, or a launch enablement package. Produces a complete kit — positioning summary, discovery questions, ta"
+    },
+    {
+     "name": "sales-forecasting-model",
+     "description": "Build a structured sales forecast framework for any business or team. Use when asked to build a sales forecast, create a revenue model, project pipeline, or build a bottom-up forecast. Produces a forecast methodology, pipeline model, scenario analysis, and assumption log."
+    },
+    {
+     "name": "sales-page",
+     "description": "Write a long-form sales page that takes a cold reader to a purchase. Use when asked to write a sales page, a long-form sales letter, a course/offer page, or direct-response copy that has to close on the page. Produces a full long-form structure — hook, problem agitation, the offer & mechanism, proof"
+    },
+    {
+     "name": "savings-goal-plan",
+     "description": "Turn a savings goal into a month-by-month funding plan. Use when asked to save for something (emergency fund, house deposit, trip, big purchase), or to figure out how much to set aside each month. Produces the required monthly contribution, a timeline, milestones, and trade-offs if the target date i"
+    },
+    {
+     "name": "saying-no",
+     "description": "Decline a request, push back on scope, or protect priorities without burning the relationship. Use when asked how to say no, turn down a request, push back on your boss/stakeholder, decline extra work, or protect the roadmap from a pet feature. Produces a graceful, firm response — the no, the honest"
+    },
+    {
+     "name": "schedule-monte-carlo",
+     "description": "Project completion as a distribution, not a date — Monte Carlo over the task graph. Use when a plan's finish date came from summing 'likely' estimates (it's wrong, mathematically), when leadership needs a commit date, or when you need to know which tasks actually control the timeline. Produces P10/P"
+    },
+    {
+     "name": "schedule-recipe",
+     "description": "Turn 'run this every Friday at 4pm' into a working, copy-paste schedule on the user's actual runner. Use when asked to schedule a recurring AI task, set up a routine or cron job for a skill, automate a weekly report, or wire a skill into n8n or GitHub Actions. Produces the exact setup for the chosen"
+    },
+    {
+     "name": "schema-markup",
+     "description": "Generate structured-data (Schema.org / JSON-LD) markup to win rich results in search. Use when asked about schema markup, structured data, rich snippets, JSON-LD, or making a page eligible for stars/FAQ/breadcrumb results. Produces valid JSON-LD for the right schema type, the rich-result it targets,"
+    },
+    {
+     "name": "screenshot-teardown",
+     "description": "Tear down a competitor's product from screenshots of its actual UI — onboarding, pricing page, core flows. Use when given screenshots of a rival's app or website and asked what they're doing, how their flow works, or what to learn/steal/avoid. Produces a UX-and-strategy teardown grounded in what is "
+    },
+    {
+     "name": "security-incident-response",
+     "description": "Run or document a security incident response — contain, eradicate, recover, and learn. Use when responding to a breach/compromise/security incident, writing an IR plan or runbook, or producing a post-incident report. Produces a phase-by-phase response (triage, contain, eradicate, recover, post-incid"
+    },
+    {
+     "name": "security-review",
+     "description": "Review a design, PR, or feature for security issues before it ships. Use when asked to do a security review, security-review a change/PR, or check a feature for vulnerabilities. Produces a structured review across the common risk areas (authn/authz, input handling, secrets, data exposure, dependenci"
+    },
+    {
+     "name": "security-threat-model",
+     "description": "Write a STRIDE-based threat model for a service or feature. Use when asked to produce a threat model, document security risks, identify attack vectors, assess a service's security posture, or prepare for a security design review. Produces a structured threat model covering assets, trust boundaries, "
+    },
+    {
+     "name": "self-review",
+     "description": "Write a performance self-review that's specific, evidenced, and balanced. Use when asked to write a self-review, self-assessment, or self-evaluation for a performance cycle. Produces a complete self-review — accomplishments mapped to impact and competencies, growth areas owned honestly, and a forwar"
+    },
+    {
+     "name": "seo-content-brief",
+     "description": "Create a structured SEO content brief for any target keyword or topic. Use when asked to write an SEO brief, content brief, keyword brief, or content strategy document. Produces a complete brief with target keyword, search intent, outline, competitor insights, internal links, and on-page SEO guidanc"
+    },
+    {
+     "name": "sequence-diagram",
+     "description": "Diagram an interaction as a sequence of messages between participants over time. Use when asked to show an API flow, request/response, auth handshake, integration, or 'what calls what in what order'. Produces a ready-to-render Mermaid sequence diagram (renders live, exportable as PNG/SVG) plus notes"
+    },
+    {
+     "name": "service-catalog-entry",
+     "description": "Write a service catalog entry for a microservice or internal platform service — covering service identity, purpose, architecture context, SLAs, API contract summary, data classification, dependencies, operational runbooks, and known limitations. Use when asked to document a service for an internal d"
+    },
+    {
+     "name": "session-handoff",
+     "description": "Write a handoff summary so another agent or person (or a fresh session) can pick up the work with full context. Use when ending a work session, hitting a context limit, switching agents, or pausing a task mid-flight. Produces a structured handoff: what the goal is, what's done, the current state, wh"
+    },
+    {
+     "name": "short-form-script",
+     "description": "Write a short-form video script for TikTok, Instagram Reels, or YouTube Shorts — built on the hook→retention→payoff structure that drives watch-time. Use when asked to script a Reel, TikTok, Short, or any 15–60s vertical video. Produces a timed script with a 0–3s hook, retention beats with on-screen"
+    },
+    {
+     "name": "site-safety-briefing",
+     "description": "Produce a toolbox talk or pre-task safety briefing from the day's planned construction work. Use when asked to write a toolbox talk, prepare a pre-task plan or JHA/JSA briefing, brief a crew on today's hazards, or plan safety for a specific task like a crane pick, excavation, or hot work. Produces a"
+    },
+    {
+     "name": "skill-fusion",
+     "description": "Fuse two skills from this library into one hybrid brief for a task that sits between them — the meta-skill. Use when a task straddles two skills (a PRD that's also a pitch; a postmortem that must double as a board update) and running them separately would produce two documents where one is needed. P"
+    },
+    {
+     "name": "skill-security-auditor",
+     "description": "Audit a Claude/Agent SKILL.md (or any AI skill / system prompt) for safety before installing or merging it. Use when asked to review a skill for security, check a prompt for injection, vet a community skill, or assess whether an instruction file is safe to run. Produces a risk-rated report of findin"
+    },
+    {
+     "name": "slide-deck",
+     "description": "Build a real, editable PowerPoint (.pptx) deck from an outline or brief. Use when asked to make a slide deck, a PowerPoint, a pitch/board/sales deck as an actual file, or to turn a doc/notes into slides. Produces an actual .pptx via a generated python-pptx script — a title slide, one idea per conten"
+    },
+    {
+     "name": "slo-error-budget",
+     "description": "Define Service Level Objectives (SLOs) and an error budget policy for a service. Use when asked to write SLOs, define SLIs, calculate an error budget, set reliability targets, or create an error budget policy. Produces a complete SLO document with SLI definitions, target calculation, error budget po"
+    },
+    {
+     "name": "soap-note",
+     "description": "Structure a clinical encounter into a clean SOAP note. Use when asked to write a SOAP note, document a patient encounter, turn visit notes into clinical documentation, or structure subjective/objective/assessment/plan. Produces a well-organised SOAP note — Subjective, Objective, Assessment (with dif"
+    },
+    {
+     "name": "soc2-readiness",
+     "description": "Assess SOC 2 readiness across the Trust Services Criteria and produce a gap remediation plan. Use when asked to prepare for a SOC 2 audit, run a SOC 2 readiness/gap assessment, scope controls, or get audit-ready. Produces a readiness report — scope & criteria, a control-by-control status, a weighted"
+    },
+    {
+     "name": "social-ad-campaign",
+     "description": "Plan and write a paid social advertising campaign. Use when asked to build a paid social campaign, create Meta/LinkedIn/TikTok/X ad copy, define a social ad strategy, or plan an advertising funnel across social platforms. Produces a complete campaign plan with audience targeting, ad set structure, c"
+    },
+    {
+     "name": "social-media-audit",
+     "description": "Audit an existing social media presence across all active platforms. Use when asked to review social media performance, analyse a brand's social presence, benchmark against competitors, or identify what's working and what isn't. Produces a scored audit with platform-by-platform analysis, content per"
+    },
+    {
+     "name": "social-media-strategy",
+     "description": "Build a social media strategy for a brand, product, or creator. Use when asked to create a social media strategy, define a social content strategy, plan content pillars, set social KPIs, or build a posting framework. Produces a complete strategy with audience definition, platform selection, content "
+    },
+    {
+     "name": "sop-writer",
+     "description": "Write a Standard Operating Procedure (SOP) for any operational task. Use when asked to write an SOP, standard operating procedure, work instruction, or operating manual. Produces a formal SOP with purpose, scope, procedure steps, quality checks, and version control."
+    },
+    {
+     "name": "sourcing-strategy",
+     "description": "Build a talent sourcing strategy for a hard-to-fill role. Use when asked to create a sourcing strategy, a candidate sourcing plan, a channel plan for hiring, or to figure out where to find candidates for a role. Produces a strategy — the ideal-candidate profile and where they are, prioritised sourci"
+    },
+    {
+     "name": "sprint-brief",
+     "description": "Generate a structured sprint brief from sprint data and goals. Use when asked to write a sprint brief, create a sprint summary, document sprint goals and scope, or produce a team-facing sprint overview. Produces a scannable brief with sprint goal, rationale, grouped work, critical path, risks, and d"
+    },
+    {
+     "name": "sprint-planning",
+     "description": "Structure and facilitate sprint planning sessions. Use when asked to plan a sprint, organise backlog items, assign story points, create sprint goals, or prepare sprint planning agendas. Produces a sprint goal, velocity-calibrated backlog, capacity plan, risk flags, and a structured sprint planning m"
+    },
+    {
+     "name": "sprint-velocity-analysis",
+     "description": "Analyze sprint velocity data and produce an engineering team health report covering delivery trends, capacity utilization, and improvement recommendations. Use when asked to analyze sprint velocity, review team delivery health, identify delivery risks, or produce a retrospective data analysis. Produ"
+    },
+    {
+     "name": "sql-optimizer",
+     "description": "Diagnose a slow SQL query and produce a concrete optimization plan. Use when asked to optimize SQL, speed up a slow query, reduce a query's cost/scan, fix a timeout, or review a query plan. Produces an analysis — the likely bottleneck, what the plan is doing wrong (full scans, bad joins, spills), th"
+    },
+    {
+     "name": "sql-query-explainer",
+     "description": "Explains, optimises, writes, and documents SQL queries. Use when asked to explain a SQL query, optimise slow SQL, translate SQL to plain English for non-technical stakeholders, write a query from a natural language description, or produce query documentation. Produces plain-English explanations, ann"
+    },
+    {
+     "name": "stakeholder-influence-mapper",
+     "description": "Map stakeholders for a product decision and produce a tailored influence strategy with talking points. Use when asked to get alignment, build consensus, get buy-in from engineering or finance or legal, navigate organisational resistance, or plan stakeholder conversations for a major initiative. Prod"
+    },
+    {
+     "name": "stakeholder-update",
+     "description": "Create concise executive stakeholder updates using the BLUF (Bottom Line Up Front) framework. Use when asked to write a status update, progress report, project communication, or executive briefing for leadership or stakeholders. Produces a BLUF-led update with status, key metrics, risks, upcoming mi"
+    },
+    {
+     "name": "startup-idea-validator",
+     "description": "Pressure-test a startup idea the way a sharp investor or co-founder would — problem, market, wedge, moat, why-now, and the fastest cheap way to test it. Use when asked to validate a startup idea, evaluate a business idea, stress-test a concept, or decide whether something is worth building. Produces"
+    },
+    {
+     "name": "statement-of-work",
+     "description": "Write a tight Statement of Work (SOW) that prevents scope creep and payment disputes. Use when asked to write a SOW, a scope of work, a project agreement, or to formalise what was agreed after a proposal. Produces an SOW — scope (and explicit exclusions), deliverables with acceptance criteria, timel"
+    },
+    {
+     "name": "strategic-narrative-generator",
+     "description": "Generate the strategic story connecting a product roadmap to company goals in a form non-technical stakeholders can repeat. Use when asked to explain the roadmap, present strategy to leadership or the board, write the why behind the roadmap, create a narrative for all-hands, or make the roadmap tell"
+    },
+    {
+     "name": "strategy-memo",
+     "description": "Write a strategy memo that commits to a bet and says what you won't do. Use when asked to write a strategy memo, articulate a strategy, make the case for a strategic direction, or align the team on where to focus. Produces a strategy memo — the strategic question, the diagnosis, the bet/approach, wh"
+    },
+    {
+     "name": "student-feedback",
+     "description": "Write constructive, specific feedback on student work that motivates and tells the student exactly how to improve. Use when asked to give feedback on a student's work, write grading comments, respond to an essay or assignment, or coach a learner. Produces feedback that names concrete strengths, prio"
+    },
+    {
+     "name": "style-fingerprint",
+     "description": "Study 3-5 documents the user actually shipped and distil a compact style card — so every skill writes in their voice, not the model's. Use when asked to learn my writing style, make outputs sound like me, build a voice profile, or when a user complains AI drafts don't sound like them. Produces a sty"
+    },
+    {
+     "name": "subagent-orchestration",
+     "description": "Decompose work across parallel subagents properly — task slicing that avoids collisions, briefs that stand alone, and result integration that catches contradictions. Use when work can genuinely parallelise (research fan-outs, multi-file changes, independent analyses), when deciding whether to delega"
+    },
+    {
+     "name": "subcontractor-scorecard",
+     "description": "Score a subcontractor's performance across schedule reliability, quality, safety, paperwork, and change-order behaviour with weighted anchors. Use when asked to evaluate a sub, build a subcontractor scorecard, decide whether to rebid or rehire a trade, review sub performance for prequalification, or"
+    },
+    {
+     "name": "substack-notes-scraper",
+     "description": "Scrapes a Substack Notes page and exports engagement data to a formatted .xlsx file. Use when asked to download, analyse, or export Substack Notes performance data including likes, comments, and restacks. Produces a formatted spreadsheet with conditional formatting, summary stats, and per-note engag"
+    },
+    {
+     "name": "subtitle-caption",
+     "description": "Write or translate subtitles/captions that respect reading speed and timing rules. Use when asked to write subtitles, captions, SRT/VTT content, or to translate subtitles for a video. Produces properly-formatted, readable subtitles — line-length and reading-speed compliant, well-segmented, with tran"
+    },
+    {
+     "name": "supplier-scorecard",
+     "description": "Build a quarterly supplier performance scorecard with a weighted grade and a clear escalate/develop/exit call. Use when asked to review supplier performance, prepare a quarterly business review for a vendor, score a supplier on OTIF and quality, or decide whether to escalate or exit a supplier. Prod"
+    },
+    {
+     "name": "support-macro",
+     "description": "Write reusable support macros / canned responses that sound human, not robotic. Use when asked to write a support macro, a canned response, a saved reply, or a template for a common customer ticket. Produces a macro — an empathetic opener, the clear answer/steps, placeholders for personalisation, an"
+    },
+    {
+     "name": "support-runbook",
+     "description": "Write a support runbook for handling a recurring issue type consistently. Use when asked to write a support runbook, a troubleshooting playbook for agents, a handling guide for a common issue, or a tier-1 response procedure. Produces a runbook — issue identification, triage/severity, step-by-step di"
+    },
+    {
+     "name": "support-staffing-model",
+     "description": "How many support agents does the queue actually need — Erlang C, computed, not 'tickets per agent' folklore. Use when staffing a support/CS team, defending headcount, or checking whether an SLA is mathematically possible with the current roster. Produces agent counts across load scenarios (with shri"
+    },
+    {
+     "name": "sycophancy-challenger",
+     "description": "Flip Claude’s default from validation to adversarial critique. Use when you are about to make a high-stakes decision, commit to a plan, or pitch something you have not stress-tested. Produces structured challenges, steelmanned counter-arguments, and the strongest case against your position — a genui"
+    },
+    {
+     "name": "synthetic-user-research",
+     "description": "Use AI personas for early-stage research signal — with hard guardrails on what synthetic methods can and cannot validate. Use when asked to run synthetic user testing, simulate user reactions with AI personas, pretest a survey or message before fielding it, or decide whether synthetic research is ap"
+    },
+    {
+     "name": "system-design-interview",
+     "description": "Structure a complete system design answer for interview questions or real architecture sessions. Use when asked to design a system, answer a system design interview question, or architect a solution at scale. Produces a structured answer covering requirements, capacity estimates, high-level design, "
+    },
+    {
+     "name": "tax-planning-checklist",
+     "description": "Generate a structured tax planning checklist and review framework for any individual or business context. Use when asked to review tax planning, prepare for year-end tax, check tax efficiency, or identify tax-saving opportunities. Produces a checklist of considerations, common reliefs, and a review "
+    },
+    {
+     "name": "tdd-workflow",
+     "description": "Drive a feature with a disciplined test-driven development loop — red, green, refactor. Use when implementing a feature or fixing a bug and you want tests to lead, or when asked to 'do this with TDD' / write the test first. Produces a step-by-step red-green-refactor plan: the failing test to write f"
+    },
+    {
+     "name": "teaching-lesson-plan",
+     "description": "Design a structured lesson plan for any subject, audience, or format. Use when asked to write a lesson plan, course outline, teaching session, workshop curriculum, or training module. Produces a complete lesson plan with learning objectives, activities, timing, assessment, and differentiation guidan"
+    },
+    {
+     "name": "team-health-check",
+     "description": "Runs a structured team health assessment across key dimensions. Use when asked to run a team health check, assess team morale, facilitate a retrospective on ways of working, or evaluate team dynamics. Produces a health assessment with RAG status per dimension, underlying signals, and prioritised imp"
+    },
+    {
+     "name": "team-offsite-planner",
+     "description": "Plan a team offsite from goals to full agenda. Use when asked to plan a team offsite, away day, team retreat, quarterly offsite, or team-building event. Produces a full agenda, session designs, facilitation notes, and logistics checklist."
+    },
+    {
+     "name": "tech-radar",
+     "description": "Build a technology radar for an engineering team, categorizing technologies into Adopt/Trial/Assess/Hold quadrants following the ThoughtWorks Tech Radar format. Use when asked to create a tech radar, evaluate the team's technology landscape, categorize tools and frameworks, or establish a technology"
+    },
+    {
+     "name": "technical-debt-register",
+     "description": "Document and prioritize a technical debt backlog with business impact, effort estimates, and resolution strategy. Use when asked to audit technical debt, create a debt register, prioritize tech debt for a quarter, document architectural shortcuts, or build a debt reduction roadmap. Produces a struct"
+    },
+    {
+     "name": "technical-spec-template",
+     "description": "Create structured technical specification documents that bridge product requirements and engineering implementation. Use when writing a tech spec, engineering spec, system design doc, or API specification. Produces a complete spec with problem statement, proposed solution, data model, API design, al"
+    },
+    {
+     "name": "tenant-screening-guide",
+     "description": "Design a fair, consistent tenant screening process for a rental. Use when asked how to screen tenants, set rental criteria, evaluate rental applicants, or build a tenant screening process. Produces a screening framework — written objective criteria, the application & checks, a consistent evaluation "
+    },
+    {
+     "name": "test-case-writer",
+     "description": "Turn a requirement or user story into clear, executable test cases. Use when asked to write test cases, test scenarios, a test suite for a feature, or to derive tests from acceptance criteria. Produces structured test cases — preconditions, steps, test data, expected results — across happy path, edg"
+    },
+    {
+     "name": "test-strategy-doc",
+     "description": "Write a test strategy document from a feature spec, PRD, or system description. Use when asked to create a test plan, write a test strategy, define QA approach, or plan testing for a feature or release. Produces a complete test strategy with scope, risk assessment, test types, coverage targets, and "
+    },
+    {
+     "name": "the-churning-customer",
+     "description": "Simulate the exact customer who will quietly cancel in month 4 — their internal monologue through the lifecycle and the honest exit interview they never gave you. Use when asked why do customers really churn, simulate a churning customer, roleplay the customer who cancels, or what does silent churn "
+    },
+    {
+     "name": "threat-model",
+     "description": "Threat-model a system or feature to find where it could be attacked, before you build it. Use when asked to threat-model, do a security design review, identify attack surface, or apply STRIDE to a design. Produces a structured threat model: assets, trust boundaries and data flows, threats enumerated"
+    },
+    {
+     "name": "thumbnail-creator",
+     "description": "Generate article or newsletter thumbnail candidates using the Gemini API from inside Claude Code. Claude reads article copy, proposes composition concepts, writes image generation prompts incorporating brand specs, calls Gemini to generate the images, evaluates the results via computer vision, and r"
+    },
+    {
+     "name": "tooling-risk-assessment",
+     "description": "Assess an injection-mold or production tooling decision before cutting steel — soft vs hard tooling tradeoff, tool life vs forecast, cavitation math, T1 sample timeline, cost of design changes after tooling, and kill criteria. Use when asked whether to kick off tooling, choose soft vs hard tools, si"
+    },
+    {
+     "name": "tornado-sensitivity",
+     "description": "Which assumption actually moves the answer — one-at-a-time sensitivity, ranked into a tornado. Use when a model's output is being argued about (LTV, ROI, forecast) and the room is debating drivers that don't matter, or before spending diligence effort: swing every driver low→high and see which one o"
+    },
+    {
+     "name": "tos-decoder",
+     "description": "Decode a terms of service or privacy policy into what you're actually agreeing to, ranked by real-world impact. Use when someone asks 'what am I agreeing to', 'decode this privacy policy', 'is this ToS bad', or 'should I click accept'. Produces a ranked findings table with a 'should I care?' verdict"
+    },
+    {
+     "name": "transcreation",
+     "description": "Transcreate marketing/brand copy for another language and culture — recreate the impact, not the words. Use when asked to adapt a tagline, ad, slogan, campaign, or brand message for a new market, or when a translation is 'correct but flat'. Produces a transcreated version that lands emotionally in-c"
+    },
+    {
+     "name": "underwriting-narrative",
+     "description": "Write the underwriting file narrative for a risk: the risk story, exposure quantification, loss-history read, mitigating and aggravating factors, terms and subjectivities rationale, appetite fit, and a refer-or-bind recommendation. Use when asked to write up an underwriting file, document why we're "
+    },
+    {
+     "name": "unit-economics",
+     "description": "Model the unit economics of a business — CAC, LTV, payback, contribution margin — from real inputs. Use when asked to calculate unit economics, work out LTV:CAC, find the payback period, or check whether a business model is viable per customer. Produces a computed unit-economics summary (LTV, CAC, r"
+    },
+    {
+     "name": "user-interview-synthesis",
+     "description": "Synthesises user interview transcripts into structured research findings. Use when asked to analyse interview notes, synthesise qualitative research, identify themes from interviews, or turn raw interview data into actionable product insights. Produces a themed synthesis with supporting quotes per t"
+    },
+    {
+     "name": "user-journey-map",
+     "description": "Map a user's journey through a product or experience, phase by phase, with their actions and how they feel. Use when asked to map a user/customer journey, show the experience end-to-end, or find friction and drop-off points. Produces a ready-to-render Mermaid journey diagram (renders live, exportabl"
+    },
+    {
+     "name": "user-research-synthesis",
+     "description": "Analyze and synthesize user research findings into structured, actionable insights. Use when given user research data, interview transcripts, survey results, or user feedback that needs to be analyzed and summarised. Produces a themed synthesis with prevalence data, supporting quotes, pain points an"
+    },
+    {
+     "name": "user-story-writer",
+     "description": "Write well-structured user stories with acceptance criteria and edge cases. Use when asked to write user stories, create tickets from a feature brief, convert a PRD into stories, or write acceptance criteria. Produces ready-to-estimate stories in the standard format with clear acceptance criteria, e"
+    },
+    {
+     "name": "ux-research-plan",
+     "description": "Create a structured UX research plan for any product question or feature. Use when asked to write a research plan, design a user study, create a discussion guide, write screener questions, or plan usability testing. Produces a full research plan with objectives, methodology, screener, discussion gui"
+    },
+    {
+     "name": "value-proposition",
+     "description": "Craft a sharp value proposition that says who it's for, the outcome, and why you over the alternative. Use when asked to write a value prop, a value proposition, a one-liner, or to clarify 'what do we even say we do?'. Produces a primary value-prop statement, a plain-language one-liner, 3 benefit-le"
+    },
+    {
+     "name": "vc-partner-meeting",
+     "description": "Simulate the VC partner meeting that discusses your pitch after you leave the room — four partner archetypes debate, then write the internal verdict memo. Use when asked how will VCs discuss my pitch, simulate the partner meeting, stress-test my fundraise, or what happens after the pitch. Produces t"
+    },
+    {
+     "name": "vendor-contract-checklist",
+     "description": "Review a vendor/SaaS contract against a practical checklist before you sign. Use when asked to review a vendor contract, check a SaaS/MSA/subscription agreement, flag risky terms, or prepare negotiation points before signing. Produces a structured review — key terms extracted, a risk-flagged checkli"
+    },
+    {
+     "name": "vendor-evaluation",
+     "description": "Create a structured vendor evaluation framework for any procurement decision. Use when asked to evaluate vendors, compare suppliers, run an RFP scoring process, or assess a software or service provider. Produces a weighted scorecard, evaluation criteria, and recommendation framework."
+    },
+    {
+     "name": "vendor-security-review",
+     "description": "Run a third-party / vendor security review and assign a risk tier with required controls. Use when asked to assess a vendor's security, run a third-party risk assessment, complete a security questionnaire about a vendor, or decide what due diligence a new tool needs. Produces a vendor risk assessmen"
+    },
+    {
+     "name": "verification-before-completion",
+     "description": "Verify work actually meets its brief BEFORE declaring it done — a structured self-review pass that catches the gaps, unmet requirements, and untested claims that 'looks finished' hides. Use before handing over any deliverable (document, code, analysis, plan), when past work kept coming back with 'yo"
+    },
+    {
+     "name": "viral-content-framework",
+     "description": "Build a framework for creating shareable, high-reach social media content. Use when asked to plan viral content, develop a shareable content strategy, create a hook writing system, or build a repeatable process for content that gets shared. Produces a platform-specific viral content framework with h"
+    },
+    {
+     "name": "voice-agent-design",
+     "description": "Design a voice AI agent for phone or in-app conversations — call flows, interruption handling, escalation to humans, and the metrics that catch a bad voice experience. Use when asked to design a voice agent, automate a phone line, spec an IVR replacement, or review why callers hate an existing voice"
+    },
+    {
+     "name": "voice-of-customer-program",
+     "description": "Stand up a Voice of Customer (VoC) program that turns feedback into action. Use when asked to build a VoC program, design a customer feedback loop, consolidate feedback sources, or set up a closed-loop feedback process. Produces a VoC program design — objectives, feedback sources and channels, a tax"
+    },
+    {
+     "name": "vuln-triage",
+     "description": "Triage a vulnerability or scanner finding — assess real severity, exploitability, and how urgently to fix. Use when asked to triage a CVE, prioritize scanner/pentest findings, assess a vuln's risk, or decide what to patch first. Produces a triage verdict: CVSS-informed severity adjusted for your con"
+    },
+    {
+     "name": "wedding-speech",
+     "description": "A best-man/maid-of-honour/parent wedding toast that actually lands — funny without roasting, moving without syrup, short enough that nobody checks their phone. Use when someone has to give a wedding speech and has either nothing or a dangerous first draft. Produces a 2-4 minute toast built on one go"
+    },
+    {
+     "name": "which-skill",
+     "description": "Route a fuzzy request to the right skill in this library. Use when the user is unsure which skill fits, asks 'which skill should I use for X', describes a task without naming a skill, or when a request could plausibly match several skills. Produces a best-fit recommendation with the inputs to gather"
+    },
+    {
+     "name": "whiteboard-to-spec",
+     "description": "Turn photos of a whiteboard, sticky-note wall, or napkin sketch into a structured spec the team can execute. Use when given whiteboard photos after a workshop, sketch images of a flow or architecture, or asked to 'write up what we drew'. Produces a structured write-up — decisions, flows, open questi"
+    },
+    {
+     "name": "win-loss-analysis",
+     "description": "Analyze why deals are won and lost and turn it into an action plan. Use when asked to run a win/loss analysis, review closed-won and closed-lost deals, understand why the team is losing to a competitor, or summarize sales feedback into patterns. Produces a structured win/loss report with themes, win"
+    },
+    {
+     "name": "docx-tracked-changes",
+     "description": "Produce properly-formatted tracked changes for a Word document. Use when asked to redline a document, suggest edits to a contract or document, create tracked changes for review, or mark up a document with proposed revisions. Produces a complete redline with insertions, deletions, and margin comments"
+    },
+    {
+     "name": "word-document",
+     "description": "Build a real, formatted Word (.docx) document — headings, styles, tables, TOC-ready. Use when asked to produce a Word doc, a .docx, a formatted report/contract/proposal/letter as an actual file (not markdown). Produces an actual .docx via a generated python-docx script with proper heading styles, bo"
+    },
+    {
+     "name": "workshop-facilitation-guide",
+     "description": "Design and facilitate any workshop, working session, or collaborative meeting. Use when asked to plan a workshop, design a facilitated session, run a ideation session, or create a workshop agenda. Produces a complete facilitation guide with session design, activity instructions, timing, and material"
+    },
+    {
+     "name": "writing-great-skills",
+     "description": "Author a high-quality Agent Skill (SKILL.md) that an AI reliably triggers and executes well — strong frontmatter, a sharp description with trigger phrases, a clear output contract, quality checks, and anti-patterns. Use when asked to write a skill, create a SKILL.md, improve a skill, review a skill "
+    },
+    {
+     "name": "writing-plans",
+     "description": "Write an executable work plan BEFORE starting a complex task — decomposed steps with verification points, risks pre-named, and explicit stop conditions — so execution becomes checking boxes instead of improvising. Use when a task will take many steps, when asked to plan before doing, when previous a"
+    },
+    {
+     "name": "youtube-script-writer",
+     "description": "Write engaging, high-retention YouTube video scripts with visual and audio cues. Use when asked to write a YouTube script, design a video outline, draft a video hook, or structure a video narrative. Produces a polished script with multiple hook options, step-by-step video body, and clear visual/audi"
+    }
+   ],
+   "ok": true
   }
  ]
 }

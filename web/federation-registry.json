@@ -1,6 +1,6 @@
 {
   "$comment": "The federation registry — libraries that publish a federation.json (skill-federation/0.1). Add yours by PR: one entry, alphabetical by repo. The crawler (scripts/build-federation.mjs) aggregates everyone's index into federated.json.",
   "members": [
-    { "repo": "mohitagw15856/pm-claude-skills", "federation": "https://mohitagw15856.github.io/pm-claude-skills/federation.json" }
+    { "repo": "mohitagw15856/pm-claude-skills", "federation": "https://mohitagw15856.github.io/pm-claude-skills/federation.json", "local": "web/federation.json", "local_index": "web/skills.json" }
   ]
 }
