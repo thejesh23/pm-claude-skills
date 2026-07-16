@@ -92,6 +92,8 @@ A community-built library of professional skills for every field — product man
 
 ### ▶ See it in action — [try the live Skill Playground](https://mohitagw15856.github.io/pm-claude-skills/)
 
+[![Deploy your own with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmohitagw15856%2Fpm-claude-skills) — the whole playground is static files in `web/`; one click gives you your own copy on your own domain.
+
 <!-- Light-mode screenshot of the live skill runner (web/docs-assets/playground-light.png),
      captured with Playwright at ?skill=executive-update. Re-shoot with /tmp/shoot-light.mjs
      against the local server if the UI changes. -->

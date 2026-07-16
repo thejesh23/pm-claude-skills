@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "outputDirectory": "web",
+  "buildCommand": null,
+  "headers": [
+    { "source": "/skills.json", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] },
+    { "source": "/advisories.json", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] },
+    { "source": "/federated.json", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] }
+  ]
+}

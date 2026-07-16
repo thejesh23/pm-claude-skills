@@ -53,85 +53,92 @@
   var NAV = [
     { href: 'index.html', label: '▶ Playground' },
     { href: 'daily.html', label: '🔥 Daily' },
-    { href: 'jobs.html', label: '💼 Job Search' },
-    { href: 'hub.html', label: '🧭 Journeys' },
     { href: 'galaxy3d.html', label: '🌌 Galaxy 3D' },
-    { group: '🆕 New', items: [
+    // Intent-based groups: what do you want to DO right now?
+    { group: '✍️ Create', items: [
       ['fineprint.html', '🔍 The Fine Print'],
-      ['semantic.html', '🧠 Semantic Search'],
       ['skillify.html', '⚙️ Skillify (SOP → skill)'],
-      ['conformant.html', '🏅 Conformant Libraries'],
-      ['casting.html', '🎬 Season Casting'],
-      ['ledger.html', '📓 Outcome Ledger'],
-      ['cost.html', '💰 Cost & Privacy'],
-      ['duel.html', '⚔️ Model Duel'],
       ['remix.html', '🔀 Skill Remix'],
-      ['path.html', '🧭 The Operator\'s Path'],
-      ['trends.html', '📈 Trends'],
-      ['api.html', '🔌 API'],
-      ['voice.html', '🎙️ Voice Mode'],
-      ['capture.html', '📷 Live Capture'],
-      ['video.html', '🎬 Video export'],
-      ['wartable.html', '⚔️ The War Table'],
-      ['holo.html', '🎴 Holo Cards'],
+      ['studio.html', '🏗️ Create a skill'],
       ['make.html', '🏭 Make it real'],
       ['meeting.html', '🗒️ Meeting → artifacts'],
       ['data.html', '📊 Bring your own data'],
       ['site.html', '🌐 Site builder'],
-      ['teardown.html', '🔨 Teardown Engine'],
-      ['deck.html', '🃏 Operator\'s Deck'],
-      ['firm-game.html', '🎮 Run the Firm (game)'],
-      ['compose.html', '🧭 Auto-Composer'],
-      ['live.html', '🎙️ Live Meeting'],
-      ['morningshow.html', '📻 Morning Show'],
-      ['consult.html', '💬 Consultant Mode'],
-      ['certified.html', '🎓 Operator\'s Exam'],
-      ['workos.html', '🛰️ Work OS'],
       ['app.html', '⚙️ Prompt-to-App'],
-      ['timemachine.html', '⏳ Time Machine'],
-      ['cocanvas.html', '🧑‍🤝‍🧑 Co-Canvas'],
-      ['spatial.html', '🌌 Spatial 3D'],
-    ] },
-    { group: 'Tools', items: [
-      ['firm.html', '🏢 The Firm'],
-      ['boardroom.html', '🏛️ Boardroom'],
-      ['stage.html', '🎬 The Stage'],
-      ['defend.html', '🛡️ Defend'],
-      ['gym.html', '🥊 The Gym'],
-      ['gauntlet.html', '🏆 Gauntlet'],
-      ['hiring.html', '🎤 The Panel'],
-      ['campaign.html', '🗺 Campaign'],
-      ['season.html', '🏆 The Season'],
-      ['charter.html', '🎓 Charter'],
-      ['tower.html', '🏗 Tower of Claims'],
-      ['reckoning.html', '⚖️ Reckoning'],
-      ['academy.html', '🎓 Academy'],
-      ['xray.html', '🩻 X-ray'],
+      ['compose.html', '🧭 Auto-Composer'],
+      ['video.html', '🎬 Video export'],
       ['agent.html', '✨ Auto-Agent'],
       ['canvas.html', '🧩 Workflow Canvas'],
+      ['workos.html', '🛰️ Work OS'],
+      ['consult.html', '💬 Consultant Mode'],
       ['ask.html', '❓ Ask'],
-      ['brain.html', '🧠 Brain'],
       ['grade.html', '📝 Grade your work'],
-      ['studio.html', '🏗️ Create a skill'],
+      ['xray.html', '🩻 X-ray'],
+      ['brain.html', '🧠 Brain'],
+      ['voice.html', '🎙️ Voice Mode'],
+      ['capture.html', '📷 Live Capture'],
+      ['cocanvas.html', '🧑‍🤝‍🧑 Co-Canvas'],
+      ['timemachine.html', '⏳ Time Machine'],
     ] },
-    { group: 'Explore', items: [
-      ['catalog.html', '📚 Catalog'],
+    { group: '⚔️ Compete', items: [
+      ['gym.html', '🥊 The Gym'],
+      ['season.html', '🏆 The Season'],
+      ['casting.html', '🎬 Season Casting'],
+      ['gauntlet.html', '🏆 Gauntlet'],
+      ['boardroom.html', '🏛️ Boardroom'],
+      ['firm.html', '🏢 The Firm'],
+      ['firm-game.html', '🎮 Run the Firm (game)'],
+      ['defend.html', '🛡️ Defend'],
+      ['stage.html', '🎬 The Stage'],
+      ['hiring.html', '🎤 The Panel'],
+      ['tower.html', '🏗 Tower of Claims'],
+      ['campaign.html', '🗺 Campaign'],
+      ['duel.html', '⚔️ Model Duel'],
+      ['wartable.html', '⚔️ The War Table'],
+      ['teardown.html', '🔨 Teardown Engine'],
+      ['live.html', '🎙️ Live Meeting'],
+    ] },
+    { group: '🎓 Learn', items: [
+      ['academy.html', '🎓 Academy'],
+      ['path.html', '🧭 The Operator\'s Path'],
+      ['certified.html', '🎓 Operator\'s Exam'],
+      ['charter.html', '🎓 Charter'],
+      ['hub.html', '🧭 Journeys'],
+      ['jobs.html', '💼 Job Search'],
+      ['learn.html', '🎓 Learn'],
+      ['guide.html', '📖 Guide'],
+      ['handbook.html', '📖 Handbook'],
       ['examples.html', '📄 Sample outputs'],
+      ['reckoning.html', '⚖️ Reckoning'],
+      ['ledger.html', '📓 Outcome Ledger'],
+      ['deck.html', '🃏 Operator\'s Deck'],
+      ['wrapped.html', '🎁 Wrapped'],
+      ['morningshow.html', '📻 Morning Show'],
+    ] },
+    { group: '🏛 Trust', items: [
+      ['institute.html', '🏛 The Institute'],
+      ['conformant.html', '🏅 Conformant Libraries'],
+      ['federation.html', '🌐 The Federation'],
+      ['credential.html', '🔏 Credentials'],
       ['leaderboard.html', '📊 Leaderboard'],
       ['coverage.html', '📈 Eval coverage'],
       ['benchmark.html', '🏆 Benchmark'],
       ['modelbench.html', '🤖 Model rankings'],
-      ['learn.html', '🎓 Learn'],
-      ['wrapped.html', '🎁 Wrapped'],
-      ['institute.html', '🏛 The Institute'],
-      ['handbook.html', '📖 Handbook'],
-      ['city.html', '🌃 Skill City'],
-      ['trophy.html', '🏆 Trophy Forge'],
-      ['galaxy.html', '🗺 Galaxy (2D)'],
+      ['authors.html', '📈 Author stats'],
       ['status.html', '📈 Vitals'],
+      ['cost.html', '💰 Cost & Privacy'],
+      ['trends.html', '📈 Trends'],
+    ] },
+    { group: '🗺 Explore', items: [
+      ['semantic.html', '🧠 Semantic Search'],
+      ['catalog.html', '📚 Catalog'],
       ['atlas.html', '🗺 The Atlas'],
-      ['morningshow.html', '📻 Morning Show'],
-      ['guide.html', '📖 Guide'],
+      ['galaxy.html', '🗺 Galaxy (2D)'],
+      ['city.html', '🌃 Skill City'],
+      ['spatial.html', '🌌 Spatial 3D'],
+      ['holo.html', '🎴 Holo Cards'],
+      ['trophy.html', '🏆 Trophy Forge'],
+      ['api.html', '🔌 API'],
       ['community.html', '💬 Community'],
       // External (GitHub doc): a 3rd truthy element renders it as a new-tab link.
       ['https://github.com/mohitagw15856/pm-claude-skills/blob/main/COMMUNITY-SKILLS.md', '🌐 Community Skills', true],
@@ -229,6 +236,56 @@
     });
     nav.appendChild(lt);
   }
+
+  // ── Pages palette: press "/" anywhere (or the 🔎 pill) to jump to any page.
+  // With 60+ pages, search beats memory — the palette flattens every NAV entry.
+  var ALL_PAGES = [];
+  NAV.forEach(function (e) {
+    if (e.href) ALL_PAGES.push([e.href, e.label]);
+    if (e.items) e.items.forEach(function (i) { if (!i[2]) ALL_PAGES.push([i[0], (e.group ? e.group.replace(/^\S+\s/, '') + ' · ' : '') + i[1]]); });
+  });
+  var pal = null;
+  function openPalette() {
+    if (pal) { pal.remove(); pal = null; return; }
+    pal = document.createElement('div');
+    pal.style.cssText = 'position:fixed;inset:0;background:rgba(5,7,12,.72);z-index:10000;display:flex;justify-content:center;align-items:flex-start;padding-top:12vh';
+    pal.innerHTML = '<div style="width:min(560px,92vw);background:#10131a;border:1px solid #2a3140;border-radius:14px;overflow:hidden">' +
+      '<input id="palQ" placeholder="Jump to any page…  (Esc closes)" style="width:100%;box-sizing:border-box;padding:14px 16px;font-size:15px;background:#0d1117;color:#e6edf3;border:0;border-bottom:1px solid #2a3140;outline:none" />' +
+      '<div id="palHits" style="max-height:50vh;overflow:auto"></div></div>';
+    document.body.appendChild(pal);
+    var q = pal.querySelector('#palQ'), hits = pal.querySelector('#palHits'), sel = 0, cur = [];
+    function draw() {
+      var v = q.value.toLowerCase();
+      cur = ALL_PAGES.filter(function (pg) { return !v || pg[1].toLowerCase().indexOf(v) >= 0 || pg[0].indexOf(v) >= 0; }).slice(0, 14);
+      sel = Math.min(sel, Math.max(0, cur.length - 1));
+      hits.innerHTML = cur.map(function (pg, i) {
+        return '<div data-h="' + pg[0] + '" style="padding:10px 16px;font-size:13.5px;cursor:pointer;color:' + (i === sel ? '#c9a227' : '#c7cfda') + ';background:' + (i === sel ? '#1a1f29' : 'transparent') + '">' + pg[1] + '</div>';
+      }).join('') || '<div style="padding:12px 16px;color:#8b949e;font-size:13px">no page matches</div>';
+      Array.prototype.forEach.call(hits.children, function (c) {
+        c.onclick = function () { if (c.dataset.h) location.href = c.dataset.h; };
+      });
+    }
+    q.addEventListener('input', function () { sel = 0; draw(); });
+    q.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { pal.remove(); pal = null; }
+      if (e.key === 'ArrowDown') { sel++; draw(); e.preventDefault(); }
+      if (e.key === 'ArrowUp') { sel = Math.max(0, sel - 1); draw(); e.preventDefault(); }
+      if (e.key === 'Enter' && cur[sel]) location.href = cur[sel][0];
+    });
+    pal.addEventListener('click', function (e) { if (e.target === pal) { pal.remove(); pal = null; } });
+    draw(); q.focus();
+    if (window.pmTrack) pmTrack('nav/palette');
+  }
+  var palBtn = document.createElement('button');
+  palBtn.type = 'button'; palBtn.className = 'tool'; palBtn.textContent = '🔎 /';
+  palBtn.title = 'Jump to any page (press / anywhere)';
+  palBtn.addEventListener('click', openPalette);
+  nav.appendChild(palBtn);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === '/' && !/(INPUT|TEXTAREA|SELECT)/.test(document.activeElement.tagName) && !e.metaKey && !e.ctrlKey) {
+      e.preventDefault(); openPalette();
+    }
+  });
 })();
 
 // ── PWA: manifest + offline service worker (registered from every page) ──────

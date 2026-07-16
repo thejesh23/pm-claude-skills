@@ -214,6 +214,23 @@ const PAGES = [
       const t = await p.textContent('#title');
       if (!/Season \d/.test(t)) throw new Error('season title missing: ' + t);
     } },
+  { url: 'federation.html', async check(p) {
+      await p.waitForFunction(() => window.__federationReady >= 1, null, { timeout: 15000 });
+      await p.fill('#q', 'churn');
+      await p.waitForTimeout(300);
+      if ((await p.locator('.hit').count()) < 1) throw new Error('federated search returned nothing');
+    } },
+  { url: 'credential.html', async check(p) {
+      await p.waitForFunction(() => window.__credentialReady === true, null, { timeout: 15000 });
+    } },
+  { url: 'authors.html', async check(p) {
+      await p.waitForFunction(() => window.__authorsReady > 500, null, { timeout: 15000 });
+    } },
+  { url: 'localdocs.html', async check(p) {
+      await p.waitForFunction(() => window.__localdocsReady === true, null, { timeout: 15000 });
+      // in a browser the cockpit gate must show, not the app
+      if (await p.locator('#app').isVisible()) throw new Error('cockpit-only UI leaked into the browser');
+    } },
   { url: 'atlas.html', settle: 2000, async check(p) {
       await p.waitForFunction(() => window.__atlasReady, null, { timeout: 20000 });
     } },

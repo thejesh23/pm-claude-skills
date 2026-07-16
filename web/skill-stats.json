@@ -1,0 +1,6 @@
+{
+ "built": null,
+ "note": "placeholder — populated by scripts/build-skill-stats.mjs once GOATCOUNTER_TOKEN is configured; counts only, never content",
+ "runs": {},
+ "picks": {}
+}

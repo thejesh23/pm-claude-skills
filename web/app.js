@@ -137,6 +137,8 @@ async function init() {
   el('runBtn').addEventListener('click', run);
   el('stopBtn').addEventListener('click', () => controller && controller.abort());
   el('copyBtn').addEventListener('click', () => navigator.clipboard.writeText(el('output').dataset.raw || ''));
+  if (el('slotGo')) el('slotGo').addEventListener('click', spinSlot);
+  if (el('coachToggle')) el('coachToggle').addEventListener('change', function () { COACH.on = this.checked; if (current) coachInit(current); if (window.pmTrack && this.checked) pmTrack('coach/on'); });
   el('exportFmt').addEventListener('change', onExport);
   el('historyBtn').addEventListener('click', toggleHistory);
   updateHistoryBtn();
@@ -1045,6 +1047,7 @@ function renderVisionAttach(s) {
 
 function selectSkill(s) {
   current = s;
+  try { COACH.on = !!(el('coachToggle') && el('coachToggle').checked); coachInit(s); } catch (_) {}
   renderVisionAttach(s);
   recordRecent(s.name);
   // Reset any remix from a previously-open skill (a shared remix link re-applies it after this).
@@ -1136,11 +1139,47 @@ function makeField(inp, i) {
 async function streamCompletion({ key, model, system, userMessage, node, signal, images }) {
   const acc = await PMProviders.stream({
     key, model, system, userMessage, signal, images,
-    onDelta: (a) => renderMarkdown(node, a, true),
+    onDelta: (a) => { renderMarkdown(node, a, true); coachTick(a); },
     onProgress: (r) => setStatus(`⬇ Loading the in-browser model (one-time download)… ${Math.round((r.progress || 0) * 100)}%`),
   });
   renderMarkdown(node, acc, false);
+  coachTick(acc, true);
   return acc;
+}
+
+// ── Explain-as-you-go coach: maps the streaming output onto the skill's own
+// Quality Checks in real time. Deliberately heuristic (keyword co-occurrence),
+// and labeled as such — it teaches what the skill demands, it does not grade.
+let COACH = { items: [], on: false, lastLen: 0 };
+function coachInit(skill) {
+  const box = document.getElementById('coachBox');
+  if (!box) return;
+  const body = skill.instructions || '';
+  const m = body.match(/##\s*Quality Checks[^\n]*\n([\s\S]*?)(?=\n##\s|$)/i);
+  const items = m ? [...m[1].matchAll(/^[-*]\s*(?:\[[ x]\]\s*)?(.+)$/gm)].map((x) => x[1].trim()).filter((t) => t.length > 8).slice(0, 10) : [];
+  COACH.items = items.map((t) => {
+    const words = t.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/)
+      .filter((w) => w.length > 4 && !['every', 'their', 'should', 'which', 'section', 'output', 'includes', 'include', 'without', 'against'].includes(w));
+    return { text: t, keys: [...new Set(words)].slice(0, 6), hit: false };
+  });
+  COACH.lastLen = 0;
+  box.hidden = !COACH.on || !COACH.items.length;
+  coachRender('');
+}
+function coachRender(acc) {
+  const box = document.getElementById('coachBox');
+  if (!box || box.hidden) return;
+  const low = acc.toLowerCase();
+  for (const it of COACH.items) if (!it.hit && it.keys.length && it.keys.filter((k) => low.includes(k)).length >= Math.min(2, it.keys.length)) it.hit = true;
+  const done = COACH.items.filter((i) => i.hit).length;
+  box.innerHTML = '<div style="font-size:11px;color:var(--muted);margin-bottom:6px">🎓 COACH — what this skill demands (heuristic guide, not a grade) · ' + done + '/' + COACH.items.length + '</div>' +
+    COACH.items.map((i) => '<div style="font-size:12px;padding:3px 0;color:' + (i.hit ? 'var(--accent)' : 'var(--muted)') + '">' + (i.hit ? '✓ ' : '○ ') + i.text.replace(/</g, '&lt;').slice(0, 110) + '</div>').join('');
+}
+function coachTick(acc, final) {
+  if (!COACH.on || !COACH.items.length) return;
+  if (!final && acc.length - COACH.lastLen < 400) return;   // throttle
+  COACH.lastLen = acc.length;
+  coachRender(acc);
 }
 
 // Translate the already-generated output into the language picked in the 🌐 selector —
@@ -1332,6 +1371,7 @@ ${current.instructions}${ctxBlock}`;
     out.dataset.raw = acc; // copy/download use the skill output, in either mode
     saveRun(acc);
     setStatus('Done.');
+    try { confettiBurst(); } catch (_) {}
     showFeedback();
   } catch (e) {
     if (e.name === 'AbortError') {
@@ -1557,4 +1597,59 @@ function parseApiError(text, status) {
 
 function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+
+// ── The slot machine: spin the whole library, land somewhere useful. Pure fun
+// with a discovery payoff — every spin surfaces a skill the visitor has never
+// seen, wearing its generative identity colors.
+let SLOT_SPINNING = false;
+function spinSlot() {
+  if (SLOT_SPINNING || !SKILLS.length) return;
+  SLOT_SPINNING = true;
+  const reel = el('slotReel');
+  reel.hidden = false;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const winner = SKILLS[Math.floor(Math.random() * SKILLS.length)];
+  if (window.pmTrack) pmTrack('slot/spin');
+  let hops = reduced ? 1 : 24, delay = 42;
+  (function hop() {
+    const s = hops > 1 ? SKILLS[Math.floor(Math.random() * SKILLS.length)] : winner;
+    const hue = skillIdentity(s).hue;
+    reel.innerHTML = '<span style="color:hsl(' + hue + ' 70% 65%)">' + (hops > 1 ? '🎰 ' : '✨ ') + s.title + '</span>';
+    if (--hops > 0) { delay = Math.min(220, delay * 1.14); return setTimeout(hop, delay); }
+    SLOT_SPINNING = false;
+    selectSkill(winner);
+    confettiBurst();
+    setTimeout(() => { reel.hidden = true; }, 2600);
+  })();
+}
+
+// ── Confetti: 60 particles, one second, zero libraries. Fires on run
+// completion and slot wins; sits out when the user prefers reduced motion.
+function confettiBurst() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const c = document.createElement('canvas');
+  c.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:9999';
+  c.width = innerWidth; c.height = innerHeight;
+  document.body.appendChild(c);
+  const x = c.getContext('2d');
+  const P = Array.from({ length: 60 }, () => ({
+    x: innerWidth / 2 + (Math.random() - .5) * 240, y: innerHeight * 0.35,
+    vx: (Math.random() - .5) * 9, vy: -4 - Math.random() * 7,
+    hue: Math.random() * 360, r: 3 + Math.random() * 4, rot: Math.random() * 6.28,
+  }));
+  let frames = 65;
+  (function tick() {
+    x.clearRect(0, 0, c.width, c.height);
+    for (const p of P) {
+      p.x += p.vx; p.y += p.vy; p.vy += 0.28; p.rot += 0.12;
+      x.save(); x.translate(p.x, p.y); x.rotate(p.rot);
+      x.fillStyle = 'hsl(' + p.hue + ' 85% 60%)';
+      x.fillRect(-p.r, -p.r / 2, p.r * 2, p.r);
+      x.restore();
+    }
+    if (--frames > 0) requestAnimationFrame(tick);
+    else c.remove();
+  })();
 }
