@@ -58,7 +58,8 @@ async function complete({ model, system, user, maxTokens = 4096 }) {
     const msgs = [];
     if (system) msgs.push({ role: 'system', content: system });
     msgs.push({ role: 'user', content: user });
-    const res = await fetch('https://api.openai.com/v1/chat/completions', {
+    const base = process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1';
+    const res = await fetch(base.replace(/\/$/, '') + '/chat/completions', {
       method: 'POST',
       headers: { 'content-type': 'application/json', authorization: 'Bearer ' + key },
       body: JSON.stringify({ model, max_tokens: maxTokens, messages: msgs }),

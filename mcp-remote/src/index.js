@@ -540,6 +540,29 @@ export default {
     if (url.pathname === '/signal') {
       return handleSignal(request, url, env);
     }
+    // ── Verifiable credentials: Ed25519-sign claim payloads (charter, exam,
+    // season results). Honest scope: a signature makes a credential
+    // tamper-evident and timestamped — it attests "these claims + this
+    // transcript hash were presented at this time", not that the run was
+    // proctored. Public key at /cred/pubkey; anyone verifies offline.
+    if (url.pathname === '/cred/pubkey' && (request.method === 'GET' || request.method === 'HEAD')) {
+      if (!env.SIGNING_JWK) return json({ error: 'signing not configured' }, 503);
+      const { d, ...pub } = JSON.parse(env.SIGNING_JWK);
+      return json({ kid: 'pm-skills-2026', alg: 'Ed25519', jwk: pub });
+    }
+    if (url.pathname === '/cred/sign' && request.method === 'POST') {
+      if (!env.SIGNING_JWK) return json({ error: 'signing not configured' }, 503);
+      let claims;
+      try { claims = await request.json(); } catch { return json({ error: 'bad json' }, 400); }
+      const body = JSON.stringify(claims);
+      if (body.length > 4096) return json({ error: 'claims too large' }, 413);
+      const payload = { v: 1, kid: 'pm-skills-2026', iat: new Date().toISOString(), claims };
+      const data = new TextEncoder().encode(JSON.stringify(payload));
+      const key = await crypto.subtle.importKey('jwk', JSON.parse(env.SIGNING_JWK), { name: 'Ed25519' }, false, ['sign']);
+      const sig = await crypto.subtle.sign('Ed25519', key, data);
+      const b64u = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+      return json({ credential: b64u(data) + '.' + b64u(sig) });
+    }
     if (url.pathname === '/badge' && (request.method === 'GET' || request.method === 'HEAD')) {
       const key = new Request(url.toString());
       const cache = caches.default;
