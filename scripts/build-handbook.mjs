@@ -146,6 +146,42 @@ for(const a of DATA.almanac){
 document.getElementById('toc').innerHTML=toc.join('');
 document.getElementById('body').innerHTML=out.join('');
 if(window.pmTrack) pmTrack('handbook/open');
+
+// ── Audiobook mode: any chapter, read aloud by the browser. Zero API. ────────
+(function(){
+  if(!('speechSynthesis' in window)) return;
+  let playing=false, queue=[], btnNow=null;
+  function stop(){ playing=false; speechSynthesis.cancel(); if(btnNow){btnNow.textContent='🔊 Listen'; btnNow=null;} }
+  function chapterText(h2){
+    const parts=[h2.textContent];
+    for(let n=h2.nextElementSibling; n && !(n.tagName==='H2'); n=n.nextElementSibling){
+      const t=(n.innerText||'').trim(); if(t) parts.push(t);
+      if(parts.join(' ').length>60000) break;
+    }
+    return parts.join('. ');
+  }
+  function play(h2,btn){
+    stop(); playing=true; btnNow=btn; btn.textContent='⏹ Stop';
+    // chunk on sentence-ish boundaries — long utterances stall some engines
+    queue=chapterText(h2).match(/[^.!?]+[.!?]+[\])'"’”]*|.+$/g)||[];
+    let i=0;
+    (function next(){
+      if(!playing||i>=queue.length) return stop();
+      const u=new SpeechSynthesisUtterance(queue[i++].slice(0,400));
+      u.rate=1.04; u.onend=next; u.onerror=next;
+      speechSynthesis.speak(u);
+    })();
+    if(window.pmTrack) pmTrack('handbook/listen');
+  }
+  document.querySelectorAll('h2.chapter').forEach(h2=>{
+    const b=document.createElement('button');
+    b.type='button'; b.textContent='🔊 Listen'; b.className='exp-btn'; b.style.cssText='margin-left:12px;font-size:12px;vertical-align:middle';
+    b.setAttribute('aria-label','Listen to this chapter');
+    b.onclick=()=>{ (btnNow===b&&playing) ? stop() : play(h2,b); };
+    h2.appendChild(b);
+  });
+  addEventListener('beforeunload',stop);
+})();
 </script>
 <script src="nav.js"></script>
 </body>
