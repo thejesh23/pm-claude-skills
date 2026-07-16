@@ -292,6 +292,16 @@ else if (cmd === 'migrate') {
   try { process.exit(await run(process.argv.slice(3))); }
   catch (e) { console.error(`Error: ${e.message}`); process.exit(1); }
 }
+else if (cmd === 'init-library') {
+  const { run } = await import('./init-library.mjs');
+  try { process.exit(await run(process.argv.slice(3))); }
+  catch (e) { console.error(`Error: ${e.message}`); process.exit(1); }
+}
+else if (cmd === 'skillpack') {
+  const { run } = await import('./skillpack.mjs');
+  try { process.exit(await run(process.argv.slice(3))); }
+  catch (e) { console.error(`Error: ${e.message}`); process.exit(1); }
+}
 else if (cmd === 'council') {
   const { run } = await import('./council.mjs');
   try { process.exit(await run(process.argv.slice(3))); }

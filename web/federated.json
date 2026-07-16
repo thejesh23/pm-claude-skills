@@ -1,0 +1,13 @@
+{
+ "spec": "skill-federation/0.1",
+ "built": "2026-07-16",
+ "libraries": 1,
+ "skills": 0,
+ "members": [
+  {
+   "repo": "mohitagw15856/pm-claude-skills",
+   "ok": false,
+   "error": "http 404"
+  }
+ ]
+}
