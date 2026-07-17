@@ -1,0 +1,26 @@
+# The Ledger — weekly self-writing digest + RSS. Free (no AI), commits its own
+# issue every Monday morning.
+name: The Ledger (weekly digest)
+on:
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: read
+jobs:
+  ledger:
+    runs-on: ubuntu-latest
+    env: { GH_TOKEN: '${{ github.token }}' }
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: node scripts/build-ledger.mjs
+      - run: |
+          git config user.name 'ledger-bot'
+          git config user.email 'actions@github.com'
+          git add newsletter web/feed.xml
+          git diff --cached --quiet || git commit -m "chore(ledger): weekly digest $(date -u +%G-w%V)"
+          git push

@@ -1,12 +1,40 @@
 {
   "$schema": "https://schema.tauri.app/config/2.0.0",
   "productName": "PM Skills",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "identifier": "io.github.mohitagw15856.pmskills",
-  "build": { "frontendDist": "../../web" },
-  "app": {
-    "windows": [{ "title": "PM Skills — the Cockpit", "width": 1280, "height": 860, "minWidth": 900, "minHeight": 600 }],
-    "security": { "csp": null }
+  "build": {
+    "frontendDist": "../../web"
   },
-  "bundle": { "active": true, "targets": "all", "icon": ["icons/icon.png", "icons/icon.ico"] }
+  "app": {
+    "windows": [
+      {
+        "title": "PM Skills — the Cockpit",
+        "width": 1280,
+        "height": 860,
+        "minWidth": 900,
+        "minHeight": 600
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/icon.png",
+      "icons/icon.ico"
+    ],
+    "createUpdaterArtifacts": true
+  },
+  "plugins": {
+    "updater": {
+      "endpoints": [
+        "https://github.com/mohitagw15856/pm-claude-skills/releases/latest/download/cockpit-latest.json"
+      ],
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDlBNDZEQjRERDY0MkJEREQKUldUZHZVTFdUZHRHbXYxbHRxNWlFaGlucUhnaWxWT1ZFSW1vSjQ2ZU56VjVOWEJLcmRUb0NsTlkK"
+    }
+  }
 }

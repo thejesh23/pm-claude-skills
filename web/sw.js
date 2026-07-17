@@ -27,3 +27,24 @@ self.addEventListener('fetch', (e) => {
     }).catch(() => caches.match(e.request).then((hit) => hit || caches.match('./index.html')))
   );
 });
+
+// ── Daily streak reminder (item: PWA retention). periodicSync fires ~daily on
+// installed PWAs (Chrome); we show one local notification. No server, no push
+// subscription, nothing leaves the device.
+self.addEventListener('periodicsync', function (e) {
+  if (e.tag !== 'daily-streak') return;
+  e.waitUntil(self.registration.showNotification('🔥 Today\'s challenge is up', {
+    body: 'One professional task a day — keep the streak, share the grid.',
+    icon: 'assets/icon-192.png',
+    tag: 'pm-daily',
+    data: { url: './daily.html' },
+  }));
+});
+self.addEventListener('notificationclick', function (e) {
+  e.notification.close();
+  var url = (e.notification.data && e.notification.data.url) || './daily.html';
+  e.waitUntil(clients.matchAll({ type: 'window' }).then(function (list) {
+    for (var i = 0; i < list.length; i++) if ('focus' in list[i]) { list[i].navigate(url); return list[i].focus(); }
+    return clients.openWindow(url);
+  }));
+});

@@ -292,6 +292,11 @@ else if (cmd === 'migrate') {
   try { process.exit(await run(process.argv.slice(3))); }
   catch (e) { console.error(`Error: ${e.message}`); process.exit(1); }
 }
+else if (cmd === 'import') {
+  const { run } = await import('./import.mjs');
+  try { process.exit(await run(process.argv.slice(3))); }
+  catch (e) { console.error(`Error: ${e.message}`); process.exit(1); }
+}
 else if (cmd === 'serve') {
   // Your company's skill library on your laptop in one command — the Org
   // Edition server (playground + /v1 API + private-skills overlay) without

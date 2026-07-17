@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+  <title>PM Skills — The Ledger</title>
+  <link>https://mohitagw15856.github.io/pm-claude-skills/</link>
+  <description>The weekly digest of the open professional-skills library — new skills, releases, the Season, and the ecosystem. Written by the repo itself.</description>
+  <language>en</language>
+  <item>
+    <title>The Ledger — week 29, 2026</title>
+    <link>https://github.com/mohitagw15856/pm-claude-skills/blob/main/newsletter/2026-w29.md</link>
+    <guid>https://mohitagw15856.github.io/pm-claude-skills/feed.xml#2026-w29.md</guid>
+    <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[> The week in the open library, written by the repo itself. 520 skills · [playground](https://mohitagw15856.github.io/pm-claude-skills/) · [subscribe](https://mohitagw15856.github.io/pm-claude-skills/feed.xml)
+
+## 🆕 54 new skills
+
+- **[Calendar Defrag](https://mohitagw15856.github.io/pm-claude-skills/skill/calendar-defrag.html)** — Defragment a work calendar through a tool-using agent — find the meeting debt, propose the consolidation, and (approval-gated) execute the moves.
+- **[Expense Filer](https://mohitagw15856.github.io/pm-claude-skills/skill/expense-filer.html)** — Turn a pile of receipts into a filed expense report through a tool-using agent — extraction, policy checks, and categorization done for you…
+- **[Form Filler Operator](https://mohitagw15856.github.io/pm-claude-skills/skill/form-filler-operator.html)** — Fill long web forms and applications through a computer-use agent — from a fact sheet you approve, field by field, with a full transcript and…
+- **[Inbox Zero Operator](https://mohitagw15856.github.io/pm-claude-skills/skill/inbox-zero-operator.html)** — Drive an email inbox to zero through a computer-use or tool-using agent — triage every message into act/delegate/defer/archive with drafts…
+- **[Subscription Auditor](https://mohitagw15856.github.io/pm-claude-skills/skill/subscription-auditor.html)** — Find the subscriptions you forgot you pay for — a tool-using agent audits statements and inboxes, prices the waste annually, and preps (never…
+- **[Acquirer Red Team](https://mohitagw15856.github.io/pm-claude-skills/skill/acquirer-red-team.html)** — Simulate the acquirer's diligence team hunting for reasons to cut your price — their internal red-flags memo with a price-chip estimate per finding.
+- **[Altitude Shifter](https://mohitagw15856.github.io/pm-claude-skills/skill/altitude-shifter.html)** — Re-pitch one piece of content for four audiences — the board, the engineers, a customer, a new hire — with a delta table showing what changed…
+- **[Benefits Decoder](https://mohitagw15856.github.io/pm-claude-skills/skill/benefits-decoder.html)** — Decode an employment benefits package into what it's actually worth and where the fine print bites.
+- **[Decision Forensics](https://mohitagw15856.github.io/pm-claude-skills/skill/decision-forensics.html)** — Reconstruct the decision actually made in a messy Slack, email, or meeting thread into a proper de]]></description>
+  </item>
+  <item>
+    <title>PM Skills Weekly — Issue 28</title>
+    <link>https://github.com/mohitagw15856/pm-claude-skills/blob/main/newsletter/2026-w28.md</link>
+    <guid>https://mohitagw15856.github.io/pm-claude-skills/feed.xml#2026-w28.md</guid>
+    <pubDate>Thu, 09 Jul 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[
+Your weekly minute on doing professional work with AI — one skill to master, a few to try, and the numbers.
+
+## 🌟 Skill of the week: Git Troubleshooter
+Diagnose a tangled git situation and give the exact, safe commands to fix it.
+**→ [Run it free](https://mohitagw15856.github.io/pm-claude-skills/?skill=git-troubleshooter)** · `git-troubleshooter` · ✅ 4/5
+
+## 🔥 Fresh picks
+- **[GDPR Compliance](https://mohitagw15856.github.io/pm-claude-skills/?skill=gdpr-compliance)** — Assess GDPR compliance and build the core records (ROPA, lawful basis, DSAR, DPIA triggers).
+- **[Headline Options](https://mohitagw15856.github.io/pm-claude-skills/?skill=headline-options)** — Generate and pressure-test headline options across proven formulas.
+- **[Impact Report](https://mohitagw15856.github.io/pm-claude-skills/?skill=impact-report)** — Write a compelling nonprofit impact or annual report that shows donors what their money achieved.
+
+## 📊 By the numbers
+**466** professional skills · **66** bundles · **28** eval-scored (avg 4.4/5).
+
+---
+
+### 🎙️ Show script (for TTS / the podcast)
+> Good morning — this is PM Skills Weekly, issue 28. This week's skill to master is **Git Troubleshooter**: diagnose a tangled git situation and give the exact, safe commands to fix it. If you only try one thing this week, make it that one. A few fresh picks worth a look: GDPR Compliance, Headline Options, Impact Report. The library now stands at 466 skills across 66 bundles, 28 of them eval-scored. Run any of them free in your browser — no signup. That's your minute. See you next week.
+
+---
+
+*Browse everything at [mohitagw15856.github.io/pm-claude-skills](https://mohitagw15856.github.io/pm-claude-skills) · [subscribe / archive](README.md) · open-source (MIT).*
+]]></description>
+  </item>
+</channel></rss>

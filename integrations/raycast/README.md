@@ -1,33 +1,11 @@
-# PM Skills — Raycast Extension
+# PM Skills for Raycast
 
-Search the [PM Skills](https://github.com/mohitagw15856/pm-claude-skills) library — professional Agent Skills (PRDs, launch plans, board minutes, postmortems, rubrics, contracts, and hundreds more) — straight from Raycast.
+Search all 520 skills from the command bar: copy any SKILL.md straight into whatever AI you're talking to, or jump into the free playground with the skill preselected.
 
-## What it does
-
-- **Search Skills** — fuzzy-search the whole library by name, description, or bundle.
-- For any skill:
-  - **Run in Playground** (`↵`) — opens it in the browser playground, ready to run.
-  - **Copy Run Command** (`⌘R`) — `npx pm-claude-skills run <skill> --text "…"`.
-  - **Copy Install Command** (`⌘I`) — `npx pm-claude-skills add --agent claude`.
-  - **Copy Skill Name / Playground Link.**
-
-The catalog is fetched live from the hosted playground, so it's always current — no bundled snapshot to keep in sync.
-
-## Develop locally
-
+## Develop / publish (owner)
 ```bash
-cd integrations/raycast
-npm install
-npm run dev        # opens the command in Raycast in development mode
+cd integrations/raycast && npm i
+npm run dev        # live in Raycast
+npm run publish    # submits to the Raycast Store (their review, ~days)
 ```
-
-## Publish to the Raycast Store
-
-```bash
-npm run build      # type-checks and bundles
-npm run publish    # opens a PR against raycastapp/extensions
-```
-
-> The `assets/extension-icon.png` shipped here is generated from the repo's `icon.svg`. Replace it with a 512×512 PNG if you want a different mark before publishing.
-
-MIT © Mohit Aggarwal
+Store submission requires the Raycast app + GitHub sign-in. Listing screenshots: the playground + a skill page.

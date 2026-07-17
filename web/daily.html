@@ -50,6 +50,7 @@
       <a class="btn btn-primary" id="runBtn" href="#">▶ Do it now — run in the playground</a>
       <button class="btn btn-ghost" id="doneBtn" type="button">✓ Mark done</button>
       <button class="btn btn-ghost" id="shareBtn" type="button">🔗 Share</button>
+      <button class="btn btn-ghost" id="remindBtn" type="button">🔔 Remind me daily</button>
     </div>
     <div class="msg" id="msg"></div>
   </div>
@@ -158,6 +159,27 @@
       function () { document.getElementById('msg').textContent = 'Copied — share your streak!'; },
       function () { document.getElementById('msg').textContent = text; }
     );
+  });
+
+  // Daily reminder: local notification via periodic background sync (installed
+  // PWAs on Chromium). Elsewhere we say so honestly instead of half-working.
+  document.getElementById('remindBtn').addEventListener('click', async function () {
+    var msg = document.getElementById('msg');
+    try {
+      var perm = await Notification.requestPermission();
+      if (perm !== 'granted') { msg.textContent = 'Notifications blocked — enable them in the browser for reminders.'; return; }
+      var reg = await navigator.serviceWorker.ready;
+      if ('periodicSync' in reg) {
+        var status = await navigator.permissions.query({ name: 'periodic-background-sync' });
+        if (status.state === 'granted') {
+          await reg.periodicSync.register('daily-streak', { minInterval: 20 * 60 * 60 * 1000 });
+          msg.textContent = '🔔 Daily reminder on (fires while the app is installed).';
+          if (window.pmTrack) pmTrack('daily/remind-on');
+          return;
+        }
+      }
+      msg.textContent = 'Reminders need the installed app (Add to Home Screen / Install) on Chrome or Edge — notification permission saved for when you do.';
+    } catch (e) { msg.textContent = 'Reminders unavailable here: ' + (e.message || e); }
   });
 
   render();

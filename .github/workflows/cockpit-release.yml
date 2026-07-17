@@ -22,6 +22,9 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         run: sudo apt-get update && sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
       - run: cd cockpit && npm install && npm run tauri build
+        env:
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
       - uses: actions/upload-artifact@v4
         with:
           name: cockpit-${{ matrix.os }}
@@ -29,6 +32,9 @@ jobs:
             cockpit/src-tauri/target/release/bundle/**/*.dmg
             cockpit/src-tauri/target/release/bundle/**/*.AppImage
             cockpit/src-tauri/target/release/bundle/**/*.msi
+            cockpit/src-tauri/target/release/bundle/**/*.sig
+            cockpit/src-tauri/target/release/bundle/**/*.tar.gz
+            cockpit/src-tauri/target/release/bundle/**/*.zip
           if-no-files-found: error
   release:
     needs: build
@@ -36,6 +42,30 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with: { path: dist, merge-multiple: true }
+      - name: Compose updater manifest (cockpit-latest.json)
+        run: |
+          node - <<'JS'
+          const fs = require('fs'), path = require('path');
+          const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) =>
+            e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]);
+          const files = walk('dist');
+          const version = '${{ github.ref_name }}'.replace(/^cockpit-v/, '');
+          const repo = '${{ github.repository }}';
+          const url = (f) => `https://github.com/${repo}/releases/download/${'${{ github.ref_name }}'}/` + encodeURIComponent(path.basename(f));
+          const sig = (f) => { const s = files.find((x) => x === f + '.sig'); return s ? fs.readFileSync(s, 'utf8') : null; };
+          const pick = (re) => files.find((f) => re.test(f) && !f.endsWith('.sig'));
+          const platforms = {};
+          const mac = pick(/aarch64.*\.app\.tar\.gz$|\.app\.tar\.gz$/);
+          if (mac && sig(mac)) platforms['darwin-aarch64'] = { url: url(mac), signature: sig(mac) };
+          const linux = pick(/\.AppImage$/);
+          if (linux && sig(linux)) platforms['linux-x86_64'] = { url: url(linux), signature: sig(linux) };
+          const win = pick(/\.msi$/);
+          if (win && sig(win)) platforms['windows-x86_64'] = { url: url(win), signature: sig(win) };
+          fs.writeFileSync('dist/cockpit-latest.json', JSON.stringify({
+            version, notes: 'PM Skills Cockpit ' + version, pub_date: new Date().toISOString(), platforms,
+          }, null, 2));
+          console.log('cockpit-latest.json:', Object.keys(platforms));
+          JS
       - uses: softprops/action-gh-release@v2
         with:
           files: dist/**/*

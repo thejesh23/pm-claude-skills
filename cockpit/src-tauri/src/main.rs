@@ -62,8 +62,24 @@ fn main() {
         Manager,
     };
     tauri::Builder::default()
+        .plugin(tauri_plugin_updater::Builder::new().build())
         .invoke_handler(tauri::generate_handler![read_local_folder, read_local_file])
         .setup(|app| {
+            // Auto-update: check on launch, install silently, apply on next
+            // restart. Failures are logged, never surfaced as blockers.
+            let handle = app.handle().clone();
+            tauri::async_runtime::spawn(async move {
+                use tauri_plugin_updater::UpdaterExt;
+                if let Ok(updater) = handle.updater() {
+                    match updater.check().await {
+                        Ok(Some(update)) => {
+                            let _ = update.download_and_install(|_, _| {}, || {}).await;
+                        }
+                        Ok(None) => {}
+                        Err(e) => eprintln!("updater check failed (non-fatal): {e}"),
+                    }
+                }
+            });
             let open = MenuItem::with_id(app, "open", "Open PM Skills", true, None::<&str>)?;
             let local = MenuItem::with_id(app, "local", "Local documents…", true, None::<&str>)?;
             let quit = MenuItem::with_id(app, "quit", "Quit", true, None::<&str>)?;
