@@ -107,6 +107,18 @@ const CASES = [
   { name: 'fire number (sensitivity grid)', script: 'skills/fire-number/scripts/fire_number.py',
     args: ['--savings', '120000', '--monthly', '3000', '--spend', '60000'],
     expect: /FIRE number: 1,500,000[\s\S]*years to reach at 5% real return: 19\.5[\s\S]*not modeled: sequence-of-returns risk/ },
+  { name: 'rent vs buy (breakeven year)', script: 'skills/rent-vs-buy/scripts/rent_vs_buy.py',
+    args: ['--price', '450000', '--rent', '2200'],
+    expect: /mortgage: 2,275\.44\/mo[\s\S]*12 {5}307,391 {7}303,507 {6}3,884[\s\S]*breakeven: year 12/ },
+  { name: 'car tco (ranked scenarios)', script: 'skills/car-tco/scripts/car_tco.py',
+    args: ['--new-price', '38000', '--used-price', '24000', '--lease-month', '420', '--keep-value', '9000'],
+    expect: /keep_current {6}45,487[\s\S]*buy_used {10}51,485[\s\S]*buy_new {11}56,882[\s\S]*lease_forever {5}75,540[\s\S]*cheapest on these assumptions: keep_current/ },
+  { name: 'freelance rate (utilization math)', script: 'skills/freelance-rate/scripts/freelance_rate.py',
+    args: ['--target', '90000'],
+    expect: /required revenue: 109,200[\s\S]*billable hours: {3}1,104[\s\S]*hourly: 99 {3}day rate: 791[\s\S]*honest rate is 2\.2x/ },
+  { name: 'raise vs jump (crossover)', script: 'skills/raise-vs-jump/scripts/raise_vs_jump.py',
+    args: ['--salary', '120000'],
+    expect: /10 {7}161,270 {7}209,641 {5}1,416,935 {5}1,627,538[\s\S]*cumulative crossover: year 3[\s\S]*salary gap at year 10: \+48,371/ },
 ];
 for (const c of CASES) {
   const r = spawnSync('python3', [join(root, c.script), ...c.args], { encoding: 'utf8', timeout: 30000 });
