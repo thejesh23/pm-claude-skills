@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-526 skills exported. Copy a `.mdc rule` into the tool to use it.
+551 skills exported. Copy a `.mdc rule` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -68,8 +68,11 @@
 | Cap Table Explainer | `pm-founders` | `pm-founders/cap-table-explainer/cap-table-explainer.mdc` |
 | Capacity Planning | `pm-engineering` | `pm-engineering/capacity-planning/capacity-planning.mdc` |
 | Capital Allocation | `pm-business` | `pm-business/capital-allocation/capital-allocation.mdc` |
+| Car Lease Decoder | `pm-decoders` | `pm-decoders/car-lease-decoder/car-lease-decoder.mdc` |
+| Car TCO | `pm-calculators` | `pm-calculators/car-tco/car-tco.mdc` |
 | Carbon Accounting Check | `pm-climate` | `pm-climate/carbon-accounting-check/carbon-accounting-check.mdc` |
 | Career Ladder Map | `pm-career` | `pm-career/career-ladder-map/career-ladder-map.mdc` |
+| Caregiver Coordination | `pm-lifeadmin` | `pm-lifeadmin/caregiver-coordination/caregiver-coordination.mdc` |
 | Case for Support | `pm-nonprofit` | `pm-nonprofit/case-for-support/case-for-support.mdc` |
 | Case Study Write-up | `pm-consulting` | `pm-consulting/case-study-writeup/case-study-writeup.mdc` |
 | Cash Flow Forecast | `pm-accounting` | `pm-accounting/cash-flow-forecast/cash-flow-forecast.mdc` |
@@ -89,6 +92,7 @@
 | Climate Risk Assessment | `pm-climate` | `pm-climate/climate-risk-assessment/climate-risk-assessment.mdc` |
 | Clinical Case Summary | `pm-research` | `pm-research/clinical-case-summary/clinical-case-summary.mdc` |
 | Clinical Trial Protocol | `pm-health` | `pm-health/clinical-trial-protocol/clinical-trial-protocol.mdc` |
+| Closing Disclosure Decoder | `pm-decoders` | `pm-decoders/closing-disclosure-decoder/closing-disclosure-decoder.mdc` |
 | Co-Marketing | `pm-growth` | `pm-growth/co-marketing/co-marketing.mdc` |
 | Code Explainer | `pm-engineering` | `pm-engineering/code-explainer/code-explainer.mdc` |
 | Code Review Checklist | `pm-engineering` | `pm-engineering/code-review-checklist/code-review-checklist.mdc` |
@@ -161,6 +165,7 @@
 | Disaster Recovery Plan | `pm-engineering` | `pm-engineering/disaster-recovery-plan/disaster-recovery-plan.mdc` |
 | Discharge Summary | `pm-health` | `pm-health/discharge-summary/discharge-summary.mdc` |
 | Discovery Call Prep | `pm-sales` | `pm-sales/discovery-call-prep/discovery-call-prep.mdc` |
+| Discovery Eyes | `pm-simulators` | `pm-simulators/discovery-eyes/discovery-eyes.mdc` |
 | Discovery Interview Guide | `pm-discovery` | `pm-discovery/discovery-interview-guide/discovery-interview-guide.mdc` |
 | Dispute Letter | `pm-lifeadmin` | `pm-lifeadmin/dispute-letter/dispute-letter.mdc` |
 | Docs Quickstart | `pm-devrel` | `pm-devrel/docs-quickstart/docs-quickstart.mdc` |
@@ -221,6 +226,7 @@
 | Follow-Up Sequence | `pm-jobsearch` | `pm-jobsearch/follow-up-sequence/follow-up-sequence.mdc` |
 | Form Filler Operator | `pm-operator` | `pm-operator/form-filler-operator/form-filler-operator.mdc` |
 | Founder-Market Fit | `pm-founders` | `pm-founders/founder-market-fit/founder-market-fit.mdc` |
+| Freelance Rate | `pm-calculators` | `pm-calculators/freelance-rate/freelance-rate.mdc` |
 | Frontend Design | `pm-design` | `pm-design/frontend-design/frontend-design.mdc` |
 | Fundraising FAQ | `pm-founders` | `pm-founders/fundraising-faq/fundraising-faq.mdc` |
 | Gantt / Roadmap | `pm-visuals` | `pm-visuals/gantt-roadmap/gantt-roadmap.mdc` |
@@ -250,6 +256,7 @@
 | Incremental Implementation | `pm-method` | `pm-method/incremental-implementation/incremental-implementation.mdc` |
 | Influencer Brief | `pm-social` | `pm-social/influencer-brief/influencer-brief.mdc` |
 | Infrastructure-as-Code Review | `pm-engineering` | `pm-engineering/infra-as-code-review/infra-as-code-review.mdc` |
+| Inspection Report Decoder | `pm-decoders` | `pm-decoders/inspection-report-decoder/inspection-report-decoder.mdc` |
 | Instagram Post Downloader | `pm-writers` | `pm-writers/instagram-post-downloader/instagram-post-downloader.mdc` |
 | Insurance Claim | `pm-lifeadmin` | `pm-lifeadmin/insurance-claim/insurance-claim.mdc` |
 | Interview Me | `pm-method` | `pm-method/interview-me/interview-me.mdc` |
@@ -270,10 +277,13 @@
 | KYC Escalation | `pm-banking` | `pm-banking/kyc-escalation/kyc-escalation.mdc` |
 | Landing Page Copy | `pm-copy` | `pm-copy/landing-page-copy/landing-page-copy.mdc` |
 | Last 30 Days Research | `pm-cross` | `pm-cross/last-30-days-research/last-30-days-research.mdc` |
+| Late Invoice Escalation | `pm-freelance` | `pm-freelance/late-invoice-escalation/late-invoice-escalation.mdc` |
 | Launch Post | `pm-devrel` | `pm-devrel/launch-post/launch-post.mdc` |
 | Launch Readiness | `pm-delivery` | `pm-delivery/launch-readiness/launch-readiness.mdc` |
 | Launch Tiering Framework | `pm-pmm` | `pm-pmm/launch-tiering-framework/launch-tiering-framework.mdc` |
+| Layoff Announcement | `pm-layoff` | `pm-layoff/layoff-announcement/layoff-announcement.mdc` |
 | Layoff Communication | `pm-crisis` | `pm-crisis/layoff-communication/layoff-communication.mdc` |
+| Layoff Financial Triage | `pm-layoff` | `pm-layoff/layoff-financial-triage/layoff-financial-triage.mdc` |
 | Lease Decoder | `pm-decoders` | `pm-decoders/lease-decoder/lease-decoder.mdc` |
 | Legal Brief | `pm-legal` | `pm-legal/legal-brief/legal-brief.mdc` |
 | Lending Risk Brief | `pm-banking` | `pm-banking/lending-risk-brief/lending-risk-brief.mdc` |
@@ -290,6 +300,7 @@
 | Local Dev Setup | `pm-engineering` | `pm-engineering/local-dev-setup/local-dev-setup.mdc` |
 | Localization Brief | `pm-localization` | `pm-localization/localization-brief/localization-brief.mdc` |
 | Logistics Incident Report | `pm-supplychain` | `pm-supplychain/logistics-incident-report/logistics-incident-report.mdc` |
+| Manager First 90 Days | `pm-people` | `pm-people/manager-first-90-days/manager-first-90-days.mdc` |
 | Managing Up | `pm-comms` | `pm-comms/managing-up/managing-up.mdc` |
 | Marketing Funnel Plan | `pm-growth` | `pm-growth/marketing-funnel-plan/marketing-funnel-plan.mdc` |
 | Marketing Psychology | `pm-growth` | `pm-growth/marketing-psychology/marketing-psychology.mdc` |
@@ -314,6 +325,7 @@
 | Multi-Source Signal Synthesiser | `pm-advanced` | `pm-advanced/multi-source-signal-synthesiser/multi-source-signal-synthesiser.mdc` |
 | NDA Analyser | `pm-legal` | `pm-legal/nda-analyser/nda-analyser.mdc` |
 | Net Worth Statement | `pm-money` | `pm-money/net-worth-statement/net-worth-statement.mdc` |
+| New Parent Logistics | `pm-lifeadmin` | `pm-lifeadmin/new-parent-logistics/new-parent-logistics.mdc` |
 | Newsletter Writer | `pm-creator` | `pm-creator/newsletter-writer/newsletter-writer.mdc` |
 | NotebookLM Connector | `pm-cross` | `pm-cross/notebooklm-connector/notebooklm-connector.mdc` |
 | Notes Humanizer | `pm-writers` | `pm-writers/notes-humanizer/notes-humanizer.mdc` |
@@ -334,6 +346,7 @@
 | Parent Communication | `pm-education` | `pm-education/parent-communication/parent-communication.mdc` |
 | Partnership Proposal | `pm-sales` | `pm-sales/partnership-proposal/partnership-proposal.mdc` |
 | Patient Communication | `pm-research` | `pm-research/patient-communication/patient-communication.mdc` |
+| Pay Stub Decoder | `pm-decoders` | `pm-decoders/pay-stub-decoder/pay-stub-decoder.mdc` |
 | Paywall Optimization | `pm-growth` | `pm-growth/paywall-optimization/paywall-optimization.mdc` |
 | Penetration Test Report | `pm-security` | `pm-security/pentest-report/pentest-report.mdc` |
 | Performance Budget | `pm-engineering` | `pm-engineering/performance-budget/performance-budget.mdc` |
@@ -341,6 +354,7 @@
 | Personal Bio | `pm-personal` | `pm-personal/personal-bio/personal-bio.mdc` |
 | Personal Board of Directors | `pm-personal` | `pm-personal/personal-board-of-directors/personal-board-of-directors.mdc` |
 | Persuasion Brief | `pm-comms` | `pm-comms/persuasion-brief/persuasion-brief.mdc` |
+| PIP Responder | `pm-career` | `pm-career/pip-responder/pip-responder.mdc` |
 | PM Weekly Review | `pm-rituals` | `pm-rituals/pm-weekly-review/pm-weekly-review.mdc` |
 | Policy Memo | `pm-gov` | `pm-gov/policy-memo/policy-memo.mdc` |
 | Policy Renewal Review | `pm-insurance` | `pm-insurance/policy-renewal-review/policy-renewal-review.mdc` |
@@ -356,6 +370,7 @@
 | Pricing Page Copy | `pm-pmm` | `pm-pmm/pricing-page-copy/pricing-page-copy.mdc` |
 | Pricing Sensitivity Model (Van Westendorp) | `pm-calculators` | `pm-calculators/pricing-sensitivity-model/pricing-sensitivity-model.mdc` |
 | Pricing Strategy | `pm-planning` | `pm-planning/pricing-strategy/pricing-strategy.mdc` |
+| Pricing Your Services | `pm-freelance` | `pm-freelance/pricing-your-services/pricing-your-services.mdc` |
 | Prior Authorization Letter | `pm-health` | `pm-health/prior-authorization-letter/prior-authorization-letter.mdc` |
 | Privacy Policy Drafter | `pm-legal` | `pm-legal/privacy-policy-drafter/privacy-policy-drafter.mdc` |
 | Process Documentation | `pm-operations` | `pm-operations/process-documentation/process-documentation.mdc` |
@@ -385,6 +400,7 @@
 | RACI Matrix | `pm-operations` | `pm-operations/raci-matrix/raci-matrix.mdc` |
 | RAG Architecture Review | `pm-ai` | `pm-ai/rag-architecture-review/rag-architecture-review.mdc` |
 | RAG Design Doc | `pm-ai` | `pm-ai/rag-design-doc/rag-design-doc.mdc` |
+| Raise vs Jump | `pm-calculators` | `pm-calculators/raise-vs-jump/raise-vs-jump.mdc` |
 | Rate Card | `pm-consulting` | `pm-consulting/rate-card/rate-card.mdc` |
 | README Writer | `pm-devrel` | `pm-devrel/readme-writer/readme-writer.mdc` |
 | Receipts Audit | `pm-method` | `pm-method/receipts-audit/receipts-audit.mdc` |
@@ -393,6 +409,7 @@
 | Redundancy Consultation | `pm-hr` | `pm-hr/redundancy-consultation/redundancy-consultation.mdc` |
 | Refactoring Plan | `pm-craft` | `pm-craft/refactoring-plan/refactoring-plan.mdc` |
 | Reference Letter | `pm-lifeadmin` | `pm-lifeadmin/reference-letter/reference-letter.mdc` |
+| Reference Request Kit | `pm-layoff` | `pm-layoff/reference-request-kit/reference-request-kit.mdc` |
 | Referral Program | `pm-growth` | `pm-growth/referral-program/referral-program.mdc` |
 | Referral Program Design | `pm-growth` | `pm-growth/referral-program-design/referral-program-design.mdc` |
 | Refinance Breakeven | `pm-calculators` | `pm-calculators/refinance-breakeven/refinance-breakeven.mdc` |
@@ -400,7 +417,9 @@
 | Regression Test Plan | `pm-qa` | `pm-qa/regression-test-plan/regression-test-plan.mdc` |
 | Regulator Eyes | `pm-simulators` | `pm-simulators/regulator-eyes/regulator-eyes.mdc` |
 | Regulatory Impact Analysis | `pm-gov` | `pm-gov/regulatory-impact-analysis/regulatory-impact-analysis.mdc` |
+| Relocation Planner | `pm-lifeadmin` | `pm-lifeadmin/relocation-planner/relocation-planner.mdc` |
 | Renewal Playbook | `pm-cs` | `pm-cs/renewal-playbook/renewal-playbook.mdc` |
+| Rent vs Buy | `pm-calculators` | `pm-calculators/rent-vs-buy/rent-vs-buy.mdc` |
 | Rental Application | `pm-lifeadmin` | `pm-lifeadmin/rental-application/rental-application.mdc` |
 | Research Protocol | `pm-research` | `pm-research/research-protocol/research-protocol.mdc` |
 | Resume | `pm-personal` | `pm-personal/resume/resume.mdc` |
@@ -438,6 +457,7 @@
 | Schedule Monte Carlo | `pm-calculators` | `pm-calculators/schedule-monte-carlo/schedule-monte-carlo.mdc` |
 | Schedule Recipe | `pm-autopilot` | `pm-autopilot/schedule-recipe/schedule-recipe.mdc` |
 | Schema Markup | `pm-growth` | `pm-growth/schema-markup/schema-markup.mdc` |
+| Scope Creep Response | `pm-freelance` | `pm-freelance/scope-creep-response/scope-creep-response.mdc` |
 | Screenshot Teardown | `pm-vision` | `pm-vision/screenshot-teardown/screenshot-teardown.mdc` |
 | Security Incident Response | `pm-security` | `pm-security/security-incident-response/security-incident-response.mdc` |
 | Security Review | `pm-security` | `pm-security/security-review/security-review.mdc` |
@@ -447,6 +467,7 @@
 | Sequence Diagram | `pm-visuals` | `pm-visuals/sequence-diagram/sequence-diagram.mdc` |
 | Service Catalog Entry | `pm-engineering` | `pm-engineering/service-catalog-entry/service-catalog-entry.mdc` |
 | Session Handoff | `pm-craft` | `pm-craft/session-handoff/session-handoff.mdc` |
+| Severance Agreement Decoder | `pm-layoff` | `pm-layoff/severance-agreement-decoder/severance-agreement-decoder.mdc` |
 | Short-Form Script | `pm-creator` | `pm-creator/short-form-script/short-form-script.mdc` |
 | Site Safety Briefing | `pm-construction` | `pm-construction/site-safety-briefing/site-safety-briefing.mdc` |
 | Skill Fusion | `pm-advanced` | `pm-advanced/skill-fusion/skill-fusion.mdc` |
@@ -500,9 +521,13 @@
 | Test Case Writer | `pm-qa` | `pm-qa/test-case-writer/test-case-writer.mdc` |
 | Test Strategy Document | `pm-engineering` | `pm-engineering/test-strategy-doc/test-strategy-doc.mdc` |
 | The Churning Customer | `pm-simulators` | `pm-simulators/the-churning-customer/the-churning-customer.mdc` |
+| The Journalist Call | `pm-simulators` | `pm-simulators/the-journalist-call/the-journalist-call.mdc` |
+| The Procurement Gauntlet | `pm-simulators` | `pm-simulators/the-procurement-gauntlet/the-procurement-gauntlet.mdc` |
+| The Promotion Committee | `pm-simulators` | `pm-simulators/the-promotion-committee/the-promotion-committee.mdc` |
 | Thesis Outline | `pm-students` | `pm-students/thesis-outline/thesis-outline.mdc` |
 | Threat Model | `pm-security` | `pm-security/threat-model/threat-model.mdc` |
 | Thumbnail Creator Skill (via Gemini) | `pm-writers` | `pm-writers/thumbnail-creator/thumbnail-creator.mdc` |
+| Timeshare Contract Decoder | `pm-decoders` | `pm-decoders/timeshare-contract-decoder/timeshare-contract-decoder.mdc` |
 | Tooling Risk Assessment | `pm-hardware` | `pm-hardware/tooling-risk-assessment/tooling-risk-assessment.mdc` |
 | Tornado Sensitivity | `pm-calculators` | `pm-calculators/tornado-sensitivity/tornado-sensitivity.mdc` |
 | ToS Decoder | `pm-decoders` | `pm-decoders/tos-decoder/tos-decoder.mdc` |

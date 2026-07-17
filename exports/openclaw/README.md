@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-526 skills exported. Copy a `SKILL.md` into the tool to use it.
+551 skills exported. Copy a `SKILL.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -68,8 +68,11 @@
 | Cap Table Explainer | `pm-founders` | `cap-table-explainer/SKILL.md` |
 | Capacity Planning | `pm-engineering` | `capacity-planning/SKILL.md` |
 | Capital Allocation | `pm-business` | `capital-allocation/SKILL.md` |
+| Car Lease Decoder | `pm-decoders` | `car-lease-decoder/SKILL.md` |
+| Car TCO | `pm-calculators` | `car-tco/SKILL.md` |
 | Carbon Accounting Check | `pm-climate` | `carbon-accounting-check/SKILL.md` |
 | Career Ladder Map | `pm-career` | `career-ladder-map/SKILL.md` |
+| Caregiver Coordination | `pm-lifeadmin` | `caregiver-coordination/SKILL.md` |
 | Case for Support | `pm-nonprofit` | `case-for-support/SKILL.md` |
 | Case Study Write-up | `pm-consulting` | `case-study-writeup/SKILL.md` |
 | Cash Flow Forecast | `pm-accounting` | `cash-flow-forecast/SKILL.md` |
@@ -89,6 +92,7 @@
 | Climate Risk Assessment | `pm-climate` | `climate-risk-assessment/SKILL.md` |
 | Clinical Case Summary | `pm-research` | `clinical-case-summary/SKILL.md` |
 | Clinical Trial Protocol | `pm-health` | `clinical-trial-protocol/SKILL.md` |
+| Closing Disclosure Decoder | `pm-decoders` | `closing-disclosure-decoder/SKILL.md` |
 | Co-Marketing | `pm-growth` | `co-marketing/SKILL.md` |
 | Code Explainer | `pm-engineering` | `code-explainer/SKILL.md` |
 | Code Review Checklist | `pm-engineering` | `code-review-checklist/SKILL.md` |
@@ -161,6 +165,7 @@
 | Disaster Recovery Plan | `pm-engineering` | `disaster-recovery-plan/SKILL.md` |
 | Discharge Summary | `pm-health` | `discharge-summary/SKILL.md` |
 | Discovery Call Prep | `pm-sales` | `discovery-call-prep/SKILL.md` |
+| Discovery Eyes | `pm-simulators` | `discovery-eyes/SKILL.md` |
 | Discovery Interview Guide | `pm-discovery` | `discovery-interview-guide/SKILL.md` |
 | Dispute Letter | `pm-lifeadmin` | `dispute-letter/SKILL.md` |
 | Docs Quickstart | `pm-devrel` | `docs-quickstart/SKILL.md` |
@@ -221,6 +226,7 @@
 | Follow-Up Sequence | `pm-jobsearch` | `follow-up-sequence/SKILL.md` |
 | Form Filler Operator | `pm-operator` | `form-filler-operator/SKILL.md` |
 | Founder-Market Fit | `pm-founders` | `founder-market-fit/SKILL.md` |
+| Freelance Rate | `pm-calculators` | `freelance-rate/SKILL.md` |
 | Frontend Design | `pm-design` | `frontend-design/SKILL.md` |
 | Fundraising FAQ | `pm-founders` | `fundraising-faq/SKILL.md` |
 | Gantt / Roadmap | `pm-visuals` | `gantt-roadmap/SKILL.md` |
@@ -250,6 +256,7 @@
 | Incremental Implementation | `pm-method` | `incremental-implementation/SKILL.md` |
 | Influencer Brief | `pm-social` | `influencer-brief/SKILL.md` |
 | Infrastructure-as-Code Review | `pm-engineering` | `infra-as-code-review/SKILL.md` |
+| Inspection Report Decoder | `pm-decoders` | `inspection-report-decoder/SKILL.md` |
 | Instagram Post Downloader | `pm-writers` | `instagram-post-downloader/SKILL.md` |
 | Insurance Claim | `pm-lifeadmin` | `insurance-claim/SKILL.md` |
 | Interview Me | `pm-method` | `interview-me/SKILL.md` |
@@ -270,10 +277,13 @@
 | KYC Escalation | `pm-banking` | `kyc-escalation/SKILL.md` |
 | Landing Page Copy | `pm-copy` | `landing-page-copy/SKILL.md` |
 | Last 30 Days Research | `pm-cross` | `last-30-days-research/SKILL.md` |
+| Late Invoice Escalation | `pm-freelance` | `late-invoice-escalation/SKILL.md` |
 | Launch Post | `pm-devrel` | `launch-post/SKILL.md` |
 | Launch Readiness | `pm-delivery` | `launch-readiness/SKILL.md` |
 | Launch Tiering Framework | `pm-pmm` | `launch-tiering-framework/SKILL.md` |
+| Layoff Announcement | `pm-layoff` | `layoff-announcement/SKILL.md` |
 | Layoff Communication | `pm-crisis` | `layoff-communication/SKILL.md` |
+| Layoff Financial Triage | `pm-layoff` | `layoff-financial-triage/SKILL.md` |
 | Lease Decoder | `pm-decoders` | `lease-decoder/SKILL.md` |
 | Legal Brief | `pm-legal` | `legal-brief/SKILL.md` |
 | Lending Risk Brief | `pm-banking` | `lending-risk-brief/SKILL.md` |
@@ -290,6 +300,7 @@
 | Local Dev Setup | `pm-engineering` | `local-dev-setup/SKILL.md` |
 | Localization Brief | `pm-localization` | `localization-brief/SKILL.md` |
 | Logistics Incident Report | `pm-supplychain` | `logistics-incident-report/SKILL.md` |
+| Manager First 90 Days | `pm-people` | `manager-first-90-days/SKILL.md` |
 | Managing Up | `pm-comms` | `managing-up/SKILL.md` |
 | Marketing Funnel Plan | `pm-growth` | `marketing-funnel-plan/SKILL.md` |
 | Marketing Psychology | `pm-growth` | `marketing-psychology/SKILL.md` |
@@ -314,6 +325,7 @@
 | Multi-Source Signal Synthesiser | `pm-advanced` | `multi-source-signal-synthesiser/SKILL.md` |
 | NDA Analyser | `pm-legal` | `nda-analyser/SKILL.md` |
 | Net Worth Statement | `pm-money` | `net-worth-statement/SKILL.md` |
+| New Parent Logistics | `pm-lifeadmin` | `new-parent-logistics/SKILL.md` |
 | Newsletter Writer | `pm-creator` | `newsletter-writer/SKILL.md` |
 | NotebookLM Connector | `pm-cross` | `notebooklm-connector/SKILL.md` |
 | Notes Humanizer | `pm-writers` | `notes-humanizer/SKILL.md` |
@@ -334,6 +346,7 @@
 | Parent Communication | `pm-education` | `parent-communication/SKILL.md` |
 | Partnership Proposal | `pm-sales` | `partnership-proposal/SKILL.md` |
 | Patient Communication | `pm-research` | `patient-communication/SKILL.md` |
+| Pay Stub Decoder | `pm-decoders` | `pay-stub-decoder/SKILL.md` |
 | Paywall Optimization | `pm-growth` | `paywall-optimization/SKILL.md` |
 | Penetration Test Report | `pm-security` | `pentest-report/SKILL.md` |
 | Performance Budget | `pm-engineering` | `performance-budget/SKILL.md` |
@@ -341,6 +354,7 @@
 | Personal Bio | `pm-personal` | `personal-bio/SKILL.md` |
 | Personal Board of Directors | `pm-personal` | `personal-board-of-directors/SKILL.md` |
 | Persuasion Brief | `pm-comms` | `persuasion-brief/SKILL.md` |
+| PIP Responder | `pm-career` | `pip-responder/SKILL.md` |
 | PM Weekly Review | `pm-rituals` | `pm-weekly-review/SKILL.md` |
 | Policy Memo | `pm-gov` | `policy-memo/SKILL.md` |
 | Policy Renewal Review | `pm-insurance` | `policy-renewal-review/SKILL.md` |
@@ -356,6 +370,7 @@
 | Pricing Page Copy | `pm-pmm` | `pricing-page-copy/SKILL.md` |
 | Pricing Sensitivity Model (Van Westendorp) | `pm-calculators` | `pricing-sensitivity-model/SKILL.md` |
 | Pricing Strategy | `pm-planning` | `pricing-strategy/SKILL.md` |
+| Pricing Your Services | `pm-freelance` | `pricing-your-services/SKILL.md` |
 | Prior Authorization Letter | `pm-health` | `prior-authorization-letter/SKILL.md` |
 | Privacy Policy Drafter | `pm-legal` | `privacy-policy-drafter/SKILL.md` |
 | Process Documentation | `pm-operations` | `process-documentation/SKILL.md` |
@@ -385,6 +400,7 @@
 | RACI Matrix | `pm-operations` | `raci-matrix/SKILL.md` |
 | RAG Architecture Review | `pm-ai` | `rag-architecture-review/SKILL.md` |
 | RAG Design Doc | `pm-ai` | `rag-design-doc/SKILL.md` |
+| Raise vs Jump | `pm-calculators` | `raise-vs-jump/SKILL.md` |
 | Rate Card | `pm-consulting` | `rate-card/SKILL.md` |
 | README Writer | `pm-devrel` | `readme-writer/SKILL.md` |
 | Receipts Audit | `pm-method` | `receipts-audit/SKILL.md` |
@@ -393,6 +409,7 @@
 | Redundancy Consultation | `pm-hr` | `redundancy-consultation/SKILL.md` |
 | Refactoring Plan | `pm-craft` | `refactoring-plan/SKILL.md` |
 | Reference Letter | `pm-lifeadmin` | `reference-letter/SKILL.md` |
+| Reference Request Kit | `pm-layoff` | `reference-request-kit/SKILL.md` |
 | Referral Program | `pm-growth` | `referral-program/SKILL.md` |
 | Referral Program Design | `pm-growth` | `referral-program-design/SKILL.md` |
 | Refinance Breakeven | `pm-calculators` | `refinance-breakeven/SKILL.md` |
@@ -400,7 +417,9 @@
 | Regression Test Plan | `pm-qa` | `regression-test-plan/SKILL.md` |
 | Regulator Eyes | `pm-simulators` | `regulator-eyes/SKILL.md` |
 | Regulatory Impact Analysis | `pm-gov` | `regulatory-impact-analysis/SKILL.md` |
+| Relocation Planner | `pm-lifeadmin` | `relocation-planner/SKILL.md` |
 | Renewal Playbook | `pm-cs` | `renewal-playbook/SKILL.md` |
+| Rent vs Buy | `pm-calculators` | `rent-vs-buy/SKILL.md` |
 | Rental Application | `pm-lifeadmin` | `rental-application/SKILL.md` |
 | Research Protocol | `pm-research` | `research-protocol/SKILL.md` |
 | Resume | `pm-personal` | `resume/SKILL.md` |
@@ -438,6 +457,7 @@
 | Schedule Monte Carlo | `pm-calculators` | `schedule-monte-carlo/SKILL.md` |
 | Schedule Recipe | `pm-autopilot` | `schedule-recipe/SKILL.md` |
 | Schema Markup | `pm-growth` | `schema-markup/SKILL.md` |
+| Scope Creep Response | `pm-freelance` | `scope-creep-response/SKILL.md` |
 | Screenshot Teardown | `pm-vision` | `screenshot-teardown/SKILL.md` |
 | Security Incident Response | `pm-security` | `security-incident-response/SKILL.md` |
 | Security Review | `pm-security` | `security-review/SKILL.md` |
@@ -447,6 +467,7 @@
 | Sequence Diagram | `pm-visuals` | `sequence-diagram/SKILL.md` |
 | Service Catalog Entry | `pm-engineering` | `service-catalog-entry/SKILL.md` |
 | Session Handoff | `pm-craft` | `session-handoff/SKILL.md` |
+| Severance Agreement Decoder | `pm-layoff` | `severance-agreement-decoder/SKILL.md` |
 | Short-Form Script | `pm-creator` | `short-form-script/SKILL.md` |
 | Site Safety Briefing | `pm-construction` | `site-safety-briefing/SKILL.md` |
 | Skill Fusion | `pm-advanced` | `skill-fusion/SKILL.md` |
@@ -500,9 +521,13 @@
 | Test Case Writer | `pm-qa` | `test-case-writer/SKILL.md` |
 | Test Strategy Document | `pm-engineering` | `test-strategy-doc/SKILL.md` |
 | The Churning Customer | `pm-simulators` | `the-churning-customer/SKILL.md` |
+| The Journalist Call | `pm-simulators` | `the-journalist-call/SKILL.md` |
+| The Procurement Gauntlet | `pm-simulators` | `the-procurement-gauntlet/SKILL.md` |
+| The Promotion Committee | `pm-simulators` | `the-promotion-committee/SKILL.md` |
 | Thesis Outline | `pm-students` | `thesis-outline/SKILL.md` |
 | Threat Model | `pm-security` | `threat-model/SKILL.md` |
 | Thumbnail Creator Skill (via Gemini) | `pm-writers` | `thumbnail-creator/SKILL.md` |
+| Timeshare Contract Decoder | `pm-decoders` | `timeshare-contract-decoder/SKILL.md` |
 | Tooling Risk Assessment | `pm-hardware` | `tooling-risk-assessment/SKILL.md` |
 | Tornado Sensitivity | `pm-calculators` | `tornado-sensitivity/SKILL.md` |
 | ToS Decoder | `pm-decoders` | `tos-decoder/SKILL.md` |

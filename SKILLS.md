@@ -1,4 +1,4 @@
-# 🗂️ All 526 Skills — full catalog
+# 🗂️ All 551 Skills — full catalog
 
 > The complete per-skill breakdown, grouped by domain. For an interactive, searchable version see the [**live catalog**](https://mohitagw15856.github.io/pm-claude-skills/catalog.html); to run any skill in your browser, use the [**Playground**](https://mohitagw15856.github.io/pm-claude-skills/). Back to the [README](README.md).
 >
@@ -415,7 +415,7 @@
 | **Support Macro** (`support-macro`) | Write reusable support macros / canned responses that sound human, not robotic. | — |
 | **Support Runbook** (`support-runbook`) | Write a support runbook for handling a recurring issue type consistently. | — |
 
-## 💰 Finance, Ops & Business (64 skills)
+## 💰 Finance, Ops & Business (68 skills)
 
 ### `pm-accounting` — 6 skills
 
@@ -441,17 +441,21 @@
 | **Job Application** (`job-application`) | Tailors a CV and cover letter to a specific job description. | — |
 | **Strategy Memo** (`strategy-memo`) | Write a strategy memo that commits to a bet and says what you won't do. | — |
 
-### `pm-calculators` — 15 skills
+### `pm-calculators` — 19 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
+| **Car TCO** (`car-tco`) | Compare the total cost of car ownership across buy-new, buy-used, lease, and keep-your-current-car — depreciation, insurance, maintenance ramp… | — |
 | **Cohort Curve Model** (`cohort-curve-model`) | Fit a retention curve to observed cohort data and project LTV — computed, not estimated. | — |
 | **Exit Waterfall** (`exit-waterfall`) | Compute who gets what at each exit price from a cap table — liquidation preferences, conversion points, and where the founders' share collapses. | — |
 | **FIRE Number** (`fire-number`) | Compute a financial-independence (FIRE) target and years-to-reach with every assumption labeled as an assumption — plus a sensitivity table… | — |
+| **Freelance Rate** (`freelance-rate`) | Derive a freelance day/hourly rate backwards from target income, honest billable utilization, overhead, and the self-employment tax premium — the… | — |
 | **Offer Comparison** (`offer-comparison`) | Compare two or more job offers as total-comp curves over four years — vesting cliffs, bonuses, 401(k) match, and the crossover year computed, not… | — |
 | **Pricing Calculator** (`pricing-calculator`) | Model pricing scenarios — tiers, margins, break-even, and the revenue impact of a price change. | — |
 | **Pricing Sensitivity Model (Van Westendorp)** (`pricing-sensitivity-model`) | Van Westendorp price sensitivity, computed from real survey answers — crossings found by interpolation, not read off a chart by eye. | — |
+| **Raise vs Jump** (`raise-vs-jump`) | Model staying for annual raises vs job-hopping for bigger bumps — cumulative earnings trajectories, the crossover year, and the costs the salary… | — |
 | **Refinance Breakeven** (`refinance-breakeven`) | Compute the month a refinance actually starts saving money — payment delta, breakeven month, and total interest on both paths including the… | — |
+| **Rent vs Buy** (`rent-vs-buy`) | Model rent-vs-buy honestly — year-by-year net position for both paths including the assumption everyone drops (the renter invests the difference)… | — |
 | **ROI Estimator** (`roi-estimator`) | Estimate the ROI, payback, and NPV of an investment, project, or purchase. | — |
 | **Runway Calculator** (`runway-calculator`) | Calculate cash runway, burn, and the zero-cash date — and whether you're default alive or dead. | — |
 | **Runway Monte Carlo** (`runway-monte-carlo`) | Cash runway as a distribution, not a number — Monte Carlo simulated. | — |
@@ -546,15 +550,16 @@
 | **NDA Analyser** (`nda-analyser`) | Analyses a Non-Disclosure Agreement clause by clause and flags unusual terms, one-sided provisions, and negotiation points. | — |
 | **Privacy Policy Drafter** (`privacy-policy-drafter`) | Draft a clear, plain-language privacy policy tailored to what a product actually collects and does with data. | ✅ 4.8/5 |
 
-## 🧑 You & Career (43 skills)
+## 🧑 You & Career (48 skills)
 
-### `pm-career` — 6 skills
+### `pm-career` — 7 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
 | **Brag Doc** (`brag-doc`) | Keep a running brag document of your accomplishments so reviews and promo cases write themselves. | — |
 | **Career Ladder Map** (`career-ladder-map`) | Map where you are against the next level and build a concrete plan to close the gap. | — |
 | **One-on-One Prep** (`one-on-one-prep`) | Prepare for a 1:1 so it drives outcomes instead of becoming a status update. | — |
+| **PIP Responder** (`pip-responder`) | Respond to a performance improvement plan strategically — decode what the PIP really is, decide fight-vs-land-softly with clear eyes, build the… | — |
 | **Promotion Packet** (`promotion-packet`) | Build a promotion case that proves you're already operating at the next level. | — |
 | **Salary Negotiation** (`salary-negotiation`) | Plan a compensation negotiation grounded in numbers and leverage, not nerves. | — |
 | **Self-Review** (`self-review`) | Write a performance self-review that's specific, evidenced, and balanced. | — |
@@ -591,25 +596,29 @@
 | **JD Decoder** (`jd-decoder`) | Decode a job description to find what they actually want beneath the buzzwords. | — |
 | **Outreach Message** (`outreach-message`) | Write cold outreach and networking messages that actually get replies. | — |
 
-### `pm-lifeadmin` — 8 skills
+### `pm-lifeadmin` — 11 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
+| **Caregiver Coordination** (`caregiver-coordination`) | Organize care for an aging or ill family member across multiple helpers — the shared care map, a fair rotation with backup rules, the information… | — |
 | **Complaint Letter** (`complaint-letter`) | Write a firm, effective complaint letter that gets a resolution. | — |
 | **Dispute Letter** (`dispute-letter`) | Write a letter to dispute an incorrect charge, bill, or record. | — |
 | **Eulogy Writer** (`eulogy-writer`) | Help someone write a eulogy — the hardest writing most people ever do, at the worst possible time. | — |
 | **Fine Appeal Letter** (`fine-appeal-letter`) | Appeal a parking ticket, penalty charge, or administrative fine with the grounds that actually get appeals granted — not indignation. | — |
 | **Insurance Claim** (`insurance-claim`) | Write a clear insurance claim letter or appeal that supports a payout. | — |
+| **New Parent Logistics** (`new-parent-logistics`) | Turn the pre-baby chaos into a staged logistics plan — leave paperwork, insurance deadlines, the hospital-bag/home-setup checklists, and the… | — |
 | **Reference Letter** (`reference-letter`) | Write a credible, specific letter of recommendation or reference. | — |
+| **Relocation Planner** (`relocation-planner`) | Plan a move — across town or across a border — as a dependency-ordered project: the lease/housing chain, address-change cascade, utilities… | — |
 | **Rental Application** (`rental-application`) | Write a standout rental application / cover letter to a landlord or letting agent. | — |
 | **Wedding Speech** (`wedding-speech`) | A best-man/maid-of-honour/parent wedding toast that actually lands — funny without roasting, moving without syrup, short enough that nobody checks… | — |
 
-### `pm-people` — 5 skills
+### `pm-people` — 6 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
 | **360-Degree Feedback Template** (`360-feedback-template`) | Design a 360-degree feedback survey or write a structured 360 feedback report. | — |
 | **Hiring Rubric** (`hiring-rubric`) | Generate a structured interview scorecard and interview guide for any role. | — |
+| **Manager First 90 Days** (`manager-first-90-days`) | Plan a new manager's first 90 days — first-time or new-to-team — as listen/decide/move phases: the 1:1 listening tour with real questions, the… | — |
 | **Performance Review** (`performance-review`) | Write structured, balanced performance reviews from bullet-point inputs. | — |
 | **Team Health Check** (`team-health-check`) | Runs a structured team health assessment across key dimensions. | — |
 | **Team Offsite Planner** (`team-offsite-planner`) | Plan a team offsite from goals to full agenda. | — |
@@ -626,7 +635,7 @@
 | **Portfolio Page** (`portfolio-page`) | Structure a portfolio or case-study page that shows your work, not just lists it. | — |
 | **Resume** (`resume`) | Write a sharp, achievement-led resume/CV that passes ATS and earns the interview. | ✅ 3.3/5 |
 
-## 🌍 Industries & Public Sector (159 skills)
+## 🌍 Industries & Public Sector (175 skills)
 
 ### `pm-agentnative` — 5 skills
 
@@ -723,15 +732,20 @@
 | **Sycophancy Challenger** (`sycophancy-challenger`) | Flip Claude’s default from validation to adversarial critique. | — |
 | **Teaching Lesson Plan** (`teaching-lesson-plan`) | Design a structured lesson plan for any subject, audience, or format. | — |
 
-### `pm-decoders` — 6 skills
+### `pm-decoders` — 11 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
 | **Benefits Decoder** (`benefits-decoder`) | Decode an employment benefits package into what it's actually worth and where the fine print bites. | — |
+| **Car Lease Decoder** (`car-lease-decoder`) | Decode a car lease offer — the money factor converted to APR, the cap-cost math, mileage and disposition traps, and what to negotiate. | — |
+| **Closing Disclosure Decoder** (`closing-disclosure-decoder`) | Decode a mortgage Closing Disclosure line by line — which fees are real, which are shoppable or junk, and what changed since the Loan Estimate. | — |
 | **HOA Decoder** (`hoa-decoder`) | Decode HOA covenants (CC&Rs) and the fee structure before you buy into them. | — |
+| **Inspection Report Decoder** (`inspection-report-decoder`) | Decode a home inspection report into what's cosmetic, what's expensive, and what kills deals — with repair-cost ranges and the negotiation list. | — |
 | **Lease Decoder** (`lease-decoder`) | Decode a residential lease into plain English and rank the clauses that can hurt you. | — |
 | **Loan Decoder** (`loan-decoder`) | Decode a personal, auto, or mortgage loan offer into what it really costs and where the traps are. | — |
 | **Medical Bill Decoder** (`medical-bill-decoder`) | Decode an itemized medical bill or EOB into plain English and find the charges worth disputing. | — |
+| **Pay Stub Decoder** (`pay-stub-decoder`) | Decode a pay stub line by line — every deduction explained, the gross-to-net story, and the errors worth catching. | — |
+| **Timeshare Contract Decoder** (`timeshare-contract-decoder`) | Decode a timeshare contract before signing — the lifetime cost math, the perpetuity and fee-escalation clauses, the rescission window, and the… | — |
 | **ToS Decoder** (`tos-decoder`) | Decode a terms of service or privacy policy into what you're actually agreeing to, ranked by real-world impact. | — |
 
 ### `pm-devrel` — 6 skills
@@ -775,6 +789,14 @@
 | **Rubric Builder** (`rubric-builder`) | Create a clear grading rubric with criteria and performance-level descriptors that make scoring fair, fast, and consistent. | — |
 | **Student Feedback** (`student-feedback`) | Write constructive, specific feedback on student work that motivates and tells the student exactly how to improve. | — |
 
+### `pm-freelance` — 3 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **Late Invoice Escalation** (`late-invoice-escalation`) | Collect overdue invoices with a graduated escalation ladder — friendly nudge to firm notice to work-stop to final demand, each with send-ready… | — |
+| **Pricing Your Services** (`pricing-your-services`) | Design a freelance/consulting pricing structure — hourly vs day-rate vs project vs retainer chosen per engagement type, anchored packages, and the… | — |
+| **Scope Creep Response** (`scope-creep-response`) | Handle scope creep on client work without torching the relationship — classify the ask against the agreement, respond with the… | — |
+
 ### `pm-gov` — 6 skills
 
 | Skill | What it does | Eval |
@@ -814,6 +836,15 @@
 | **Coverage Gap Analysis** (`coverage-gap-analysis`) | Map an organisation's risks against its insurance policy portfolio to find what's uncovered, underinsured, or double-covered. | — |
 | **Policy Renewal Review** (`policy-renewal-review`) | Run a pre-renewal review of an insurance programme: scan coverage gaps against current operations, test limit adequacy against inflation and… | — |
 | **Underwriting Narrative** (`underwriting-narrative`) | Write the underwriting file narrative for a risk: the risk story, exposure quantification, loss-history read, mitigating and aggravating factors… | — |
+
+### `pm-layoff` — 4 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **Layoff Announcement** (`layoff-announcement`) | Write the layoff communications a leader has to get right once — the all-hands script, the affected/unaffected messages, and the external note… | — |
+| **Layoff Financial Triage** (`layoff-financial-triage`) | The first-72-hours money plan after a layoff — runway computed, deadlines caught, bleeding stopped, in priority order. | — |
+| **Reference Request Kit** (`reference-request-kit`) | Secure strong references after a departure — who to ask, the ask messages, the briefing sheet that makes their reference specific, and the… | — |
+| **Severance Agreement Decoder** (`severance-agreement-decoder`) | Decode a severance agreement before you sign it — what you're giving up, what's negotiable, and the deadlines that decide your leverage. | — |
 
 ### `pm-localization` — 6 skills
 
@@ -881,14 +912,18 @@
 | **Research Protocol** (`research-protocol`) | Write a structured research protocol or study design document. | — |
 | **Synthetic User Research** (`synthetic-user-research`) | Use AI personas for early-stage research signal — with hard guardrails on what synthetic methods can and cannot validate. Use when asked to run… | — |
 
-### `pm-simulators` — 5 skills
+### `pm-simulators` — 9 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
 | **Acquirer Red Team** (`acquirer-red-team`) | Simulate the acquirer's diligence team hunting for reasons to cut your price — their internal red-flags memo with a price-chip estimate per finding. | — |
+| **Discovery Eyes** (`discovery-eyes`) | Read your team's messages the way opposing counsel would in litigation discovery — prevention training that makes communication hygiene visceral. | — |
 | **Opposing Counsel** (`opposing-counsel`) | Read a contract the way the counterparty's lawyer will — hunting for leverage, not fairness. | — |
 | **Regulator Eyes** (`regulator-eyes`) | Read your marketing claims, landing page, or ad copy the way a consumer-protection investigator would (FTC/ASA framing) and draft the inquiry… | — |
 | **The Churning Customer** (`the-churning-customer`) | Simulate the exact customer who will quietly cancel in month 4 — their internal monologue through the lifecycle and the honest exit interview they… | — |
+| **The Journalist Call** (`the-journalist-call`) | Simulate a hostile-but-fair journalist interview about your company or announcement — the questions you fear, live follow-ups on every dodge, then… | — |
+| **The Procurement Gauntlet** (`the-procurement-gauntlet`) | Simulate enterprise procurement and security review of your product before your first big deal meets it for real — the questionnaire, the gaps… | — |
+| **The Promotion Committee** (`the-promotion-committee`) | Simulate the calibration meeting that discusses your promotion after your manager leaves the room — the debate, the packet's holes, the verdict. | — |
 | **VC Partner Meeting** (`vc-partner-meeting`) | Simulate the VC partner meeting that discusses your pitch after you leave the room — four partner archetypes debate, then write the internal… | — |
 
 ### `pm-students` — 6 skills
@@ -934,4 +969,4 @@
 
 ---
 
-_526 skills across 76 bundles · 28 eval-scored (5%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._
+_551 skills across 78 bundles · 28 eval-scored (5%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._

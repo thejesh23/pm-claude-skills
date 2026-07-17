@@ -1161,6 +1161,44 @@
  {
   "type": "function",
   "function": {
+   "name": "car_lease_decoder",
+   "description": "Decode a car lease offer — the money factor converted to APR, the cap-cost math, mileage and disposition traps, and what to negotiate. Use when asked to decode my car lease, is this lease deal good, what's a money factor, or review this lease before I sign. Produces the real-numbers decode (money factor → APR, total lease cost), the trap list with dollar exposure, and the negotiation points dealers expect to concede.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "car_tco",
+   "description": "Compare the total cost of car ownership across buy-new, buy-used, lease, and keep-your-current-car — depreciation, insurance, maintenance ramp, and fuel over a real horizon, not just the monthly payment. Use when asked should I lease or buy a car, is it cheaper to keep my old car, what does this car really cost per month, or new vs used total cost. Produces the ranked scenario totals, per-month true cost, the assumption ledger, and the not-modeled list.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "carbon_accounting_check",
    "description": "Sanity-check a greenhouse gas inventory before it goes into a report or gets audited. Use when asked to review a carbon footprint, check a GHG inventory, validate scope 1/2/3 numbers, explain a year-over-year emissions change, or prepare emissions data for assurance. Produces a boundary review, data-quality assessment, emission-factor sensitivity list, YoY bridge, and a fix-before-publishing list.",
    "parameters": {
@@ -1182,6 +1220,25 @@
   "function": {
    "name": "career_ladder_map",
    "description": "Map where you are against the next level and build a concrete plan to close the gap. Use when asked to map a career ladder, find the gap to the next level, build a development/growth plan, or figure out what to work on to get promoted. Produces a level-gap map — current vs. target competencies side by side, the specific gaps, and a prioritised 1–2 quarter plan of evidence-generating projects to close them.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "caregiver_coordination",
+   "description": "Organize care for an aging or ill family member across multiple helpers — the shared care map, a fair rotation with backup rules, the information binder, and family-meeting agendas that prevent the one-sibling-does-everything spiral. Use when asked help me coordinate care for my mom, my siblings and I need to split caregiving, organize care for a sick family member, or set up a care schedule. Produces the care map of needs and coverage, the rotation schedule with escalation rules, the binder outline, and the family meeting agenda.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -1543,6 +1600,25 @@
   "function": {
    "name": "clinical_trial_protocol",
    "description": "Draft a clinical trial protocol synopsis with the elements regulators and IRBs expect. Use when asked to write a clinical trial protocol, a study protocol synopsis, a trial design, or to structure endpoints/eligibility/statistics for an interventional study. Produces a structured protocol synopsis — objectives, design, population with eligibility, interventions, endpoints, statistics, and safety/ethics — for expert review. (For non-clinical/UX research, use research-protocol.)",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "closing_disclosure_decoder",
+   "description": "Decode a mortgage Closing Disclosure line by line — which fees are real, which are shoppable or junk, and what changed since the Loan Estimate. Use when asked to decode my closing disclosure, review my closing costs, why did my costs go up, or which fees can I negotiate. Produces a section-by-section decode, the Loan-Estimate comparison with tolerance flags, the challenge list with scripts, and the cash-to-close verification.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -2928,6 +3004,25 @@
  {
   "type": "function",
   "function": {
+   "name": "discovery_eyes",
+   "description": "Read your team's messages the way opposing counsel would in litigation discovery — prevention training that makes communication hygiene visceral. Use when asked how would our Slack look in discovery, train my team on communication hygiene, review this thread like a plaintiff's lawyer, or what shouldn't we put in writing. Produces the highlighted-exhibit reading of sample messages, the patterns that create legal risk, and a debrief with the write-it-this-way rules — strictly for prevention, never for concealment.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "discovery_interview_guide",
    "description": "Create a structured user discovery interview guide with screener questions, a discussion guide, and a synthesis framework. Use when planning user interviews, customer discovery sessions, Jobs-to-be-Done research, or problem validation. Produces a complete guide covering warm-up, problem exploration, and a per-session synthesis template.",
    "parameters": {
@@ -4049,6 +4144,25 @@
  {
   "type": "function",
   "function": {
+   "name": "freelance_rate",
+   "description": "Derive a freelance day/hourly rate backwards from target income, honest billable utilization, overhead, and the self-employment tax premium — the arithmetic that proves a rate is not salary÷2000. Use when asked what should I charge as a freelancer, how do I set my consulting rate, why is my freelance rate so high, or convert my salary to a contract rate. Produces the required-revenue breakdown, billable-hours math, the hourly and day rate, and the multiplier vs the naive salary÷2000 number.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "frontend_design",
    "description": "Produce frontend UI that actually looks designed — a working spacing/type system, deliberate color use, real states, and restraint — instead of the generic AI-generated interface. Use when asked to build or restyle a UI, landing page, dashboard, or component, when output 'works but looks like a prototype', or to establish the visual system for a new app. Produces working HTML/CSS (or framework components) built on an explicit token system, with hover/focus/empty/loading states included. For critiquing an existing design use design-critique; for auditing a design system use design-system-audit.",
    "parameters": {
@@ -4600,6 +4714,25 @@
  {
   "type": "function",
   "function": {
+   "name": "inspection_report_decoder",
+   "description": "Decode a home inspection report into what's cosmetic, what's expensive, and what kills deals — with repair-cost ranges and the negotiation list. Use when asked to decode my inspection report, is this inspection bad, what should I ask the seller to fix, or should I walk after inspection. Produces a findings triage (walk-risk / negotiate / cosmetic), cost ranges per item, the ask-the-seller list, and the questions for your inspector before the objection deadline.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "instagram_post_downloader",
    "description": "Download and save Instagram posts as high-resolution files. Use when asked to download, save, or archive an Instagram post, reel thumbnail, or carousel. Produces saved high-res images in a named folder, with carousel slides stitched into a single PDF; supports batch downloading of multiple URLs at once.",
    "parameters": {
@@ -4980,6 +5113,25 @@
  {
   "type": "function",
   "function": {
+   "name": "late_invoice_escalation",
+   "description": "Collect overdue invoices with a graduated escalation ladder — friendly nudge to firm notice to work-stop to final demand, each with send-ready wording and timing, plus the prevention terms that stop the next one. Use when asked my client hasn't paid me, write a payment reminder email, invoice is 60 days overdue what do I do, or client is ghosting my invoices. Produces the situation read, the escalation ladder with dates and verbatim messages, the work-stop decision point, and the payment terms that prevent reruns.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "launch_post",
    "description": "Write a developer-audience launch post — Show HN, a Product Hunt blurb, a 'we shipped X' dev blog intro, or a launch tweet thread. Use when launching a tool, library, API, or open-source project to a technical audience. Produces a credible, hype-free post that leads with what it does and why it's different, plus title options and a comment-ready first reply.",
    "parameters": {
@@ -5037,8 +5189,46 @@
  {
   "type": "function",
   "function": {
+   "name": "layoff_announcement",
+   "description": "Write the layoff communications a leader has to get right once — the all-hands script, the affected/unaffected messages, and the external note, without corporate euphemism or legal risk. Use when asked to write a layoff announcement, communicate a RIF, tell the team about job cuts, or draft the difficult all-hands. Produces the full comms set: leader script, same-hour messages for affected and remaining staff, manager talking points, and the external statement — sequenced.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "layoff_communication",
    "description": "Plan and write the communications for a layoff or restructure with clarity and dignity. Use when asked to communicate a layoff, write a RIF/redundancy announcement, prepare manager talking points for letting people go, or plan workforce-reduction comms. Produces a comms package — sequencing plan, the all-hands/company message, the affected-employee message, a manager guide with talking points, a staying-team message, and an external/press holding line.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "layoff_financial_triage",
+   "description": "The first-72-hours money plan after a layoff — runway computed, deadlines caught, bleeding stopped, in priority order. Use when asked I just got laid off what do I do about money, build my layoff budget, how long can I last, or what needs to happen this week. Produces the runway number, the deadline list (healthcare, unemployment filing, equity exercise windows), the spending triage, and a one-week action checklist.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -5343,6 +5533,25 @@
   "function": {
    "name": "logistics_incident_report",
    "description": "Write up a supply chain disruption — port delay, carrier failure, customs hold, or in-transit damage — as a decision-ready incident report. Use when asked to document a shipment delay, write up a logistics failure, report a customs hold, quantify a supply disruption, or draft the customer notice for a late delivery. Produces an impact-quantified incident report with containment actions, root cause, prevention items, and a customer-communication draft.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "manager_first_90_days",
+   "description": "Plan a new manager's first 90 days — first-time or new-to-team — as listen/decide/move phases: the 1:1 listening tour with real questions, the early-judgment traps, the quick-wins filter, and the 30/60/90 artifacts. Use when asked I just became a manager what do I do, plan my first 90 days as a manager, taking over an existing team, or new manager 30-60-90 plan. Produces the phased plan, the listening-tour question set, the team assessment framework, and the day-one and week-6 artifacts.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -5816,6 +6025,25 @@
  {
   "type": "function",
   "function": {
+   "name": "new_parent_logistics",
+   "description": "Turn the pre-baby chaos into a staged logistics plan — leave paperwork, insurance deadlines, the hospital-bag/home-setup checklists, and the first-two-weeks operating plan with named owners. Use when asked help me prepare for a baby, what do I need to do before my due date, set up our parental leave plan, or newborn logistics checklist. Produces the countdown timeline by trimester-week, the deadline-driven paperwork list, and the week-1–2 operating plan both partners can run exhausted.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "newsletter_writer",
    "description": "Write a full creator newsletter issue — subject line, preview text, hook, body with a clear takeaway, and a CTA — in the writer's voice, for Substack, beehiiv, ConvertKit, or email. Use when asked to write a newsletter, an email issue, a Substack post, or to turn notes/a topic into a sendable newsletter. Produces a ready-to-send issue with subject-line options and a skimmable structure. Distinct from B2B drip/nurture sequences.",
    "parameters": {
@@ -6196,6 +6424,25 @@
  {
   "type": "function",
   "function": {
+   "name": "pay_stub_decoder",
+   "description": "Decode a pay stub line by line — every deduction explained, the gross-to-net story, and the errors worth catching. Use when asked to explain my pay stub, why is my paycheck smaller than expected, what are all these deductions, or check my paycheck for mistakes. Produces a line-by-line decode, the gross-to-net waterfall, the error checklist (withholding, benefits, overtime), and the fixes to raise with payroll.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "paywall_optimization",
    "description": "Design or optimize a paywall / upgrade screen to convert free users to paid without killing trust. Use when asked to improve a paywall, upgrade prompt, or free-to-paid conversion, or to decide what to gate. Produces the gating strategy (what's free vs. paid and why), the paywall placement and moment, the screen's copy and plan layout, and the metrics to watch — conversion that respects the user.",
    "parameters": {
@@ -6312,6 +6559,25 @@
   "function": {
    "name": "persuasion_brief",
    "description": "Build the case to win someone over to a decision, idea, or change. Use when asked to persuade someone, build a case for an idea, get buy-in, win over a skeptic, or prepare to pitch a proposal internally. Produces a persuasion brief — the audience's current view and what moves them, the core argument, the proof, objection handling, the emotional and logical appeals, and the ask.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "pip_responder",
+   "description": "Respond to a performance improvement plan strategically — decode what the PIP really is, decide fight-vs-land-softly with clear eyes, build the evidence file, and run the parallel job search the situation demands. Use when asked I was just put on a PIP what do I do, help me respond to a performance improvement plan, is my PIP survivable, or write my PIP check-in updates. Produces the honest read of the PIP, the two-track plan (perform + search), the documentation system, and templates for check-ins and the written response.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -6597,6 +6863,25 @@
   "function": {
    "name": "pricing_strategy",
    "description": "Structure pricing strategy decisions, packaging options, and tier design for SaaS and digital products. Use when reviewing or setting pricing, designing pricing tiers, evaluating freemium vs paid, or preparing a pricing change. Produces a pricing strategy recommendation with model rationale, tier structure, competitive positioning, and rollout plan.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "pricing_your_services",
+   "description": "Design a freelance/consulting pricing structure — hourly vs day-rate vs project vs retainer chosen per engagement type, anchored packages, and the rules for saying the number out loud without flinching. Use when asked how should I price my freelance services, hourly or fixed price, build my pricing packages, or a client asked my rate what do I say. Produces the pricing-model decision per engagement type, a three-tier package structure, the rate-conversation script, and the discount policy with its floor.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -7165,6 +7450,25 @@
  {
   "type": "function",
   "function": {
+   "name": "raise_vs_jump",
+   "description": "Model staying for annual raises vs job-hopping for bigger bumps — cumulative earnings trajectories, the crossover year, and the costs the salary math hides (vesting resets, promotion paths, search risk). Use when asked should I switch jobs for more money, is job hopping worth it, model my salary if I stay vs leave, or raise versus new offer. Produces the year-by-year salary and cumulative-earnings table, the crossover year, and the not-in-the-model checklist that usually decides it.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "rate_card",
    "description": "Build a consulting/freelance rate card and pricing structure — and the floor rate to not go broke. Use when asked to set freelance/consulting rates, build a rate card, decide what to charge, package services, or move off hourly billing. Produces a rate card — your minimum viable rate (from real targets), tiered packages, pricing models (hourly/day/project/retainer/value), and how to present and defend it.",
    "parameters": {
@@ -7317,6 +7621,25 @@
  {
   "type": "function",
   "function": {
+   "name": "reference_request_kit",
+   "description": "Secure strong references after a departure — who to ask, the ask messages, the briefing sheet that makes their reference specific, and the LinkedIn recommendation swap. Use when asked to help me get references, write a reference request, prep my referee, or ask my old manager for a recommendation. Produces the referee shortlist with rationale, tailored ask messages, a one-page referee briefing sheet, and the follow-up etiquette.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "referral_program",
    "description": "Design a referral program that drives real word-of-mouth growth. Use when asked to build a referral or refer-a-friend program, create an incentive/reward structure, or turn happy users into a growth channel. Produces the incentive design (who gets what, when), the mechanics and trigger moment, fraud guardrails, and the unit-economics check — a program that pays back, not one that just burns budget.",
    "parameters": {
@@ -7450,8 +7773,46 @@
  {
   "type": "function",
   "function": {
+   "name": "relocation_planner",
+   "description": "Plan a move — across town or across a border — as a dependency-ordered project: the lease/housing chain, address-change cascade, utilities cutover, movers, and the go-bag for the gap days. Use when asked help me plan my move, relocation checklist, I'm moving in six weeks what do I do, or moving to another country logistics. Produces the dependency-ordered timeline, the address-change cascade list, the cutover schedule for both homes, and the moving-day run sheet.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "renewal_playbook",
    "description": "Build a structured renewal playbook for a customer account. Use when asked to plan a renewal, structure a renewal negotiation, prepare for an expansion conversation, or build a renewal strategy for at-risk or healthy accounts. Produces a renewal brief with health assessment, negotiation strategy, objection responses, expansion levers, and a timeline.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "rent_vs_buy",
+   "description": "Model rent-vs-buy honestly — year-by-year net position for both paths including the assumption everyone drops (the renter invests the difference), with a breakeven horizon instead of a verdict. Use when asked should I rent or buy, does buying beat renting in my city, when does buying break even, or run the rent-vs-buy numbers. Produces the year-by-year comparison table, the breakeven year, the assumption list with defaults labeled, and the not-modeled list.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -8191,6 +8552,25 @@
  {
   "type": "function",
   "function": {
+   "name": "scope_creep_response",
+   "description": "Handle scope creep on client work without torching the relationship — classify the ask against the agreement, respond with the goodwill/change-order/renegotiate move that fits, and install the prevention language for next time. Use when asked my client keeps adding requests, is this scope creep, how do I say that's out of scope nicely, or write a change order email. Produces the classification of the ask, the graduated response with ready-to-send wording, and the contract language that prevents the rerun.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "screenshot_teardown",
    "description": "Tear down a competitor's product from screenshots of its actual UI — onboarding, pricing page, core flows. Use when given screenshots of a rival's app or website and asked what they're doing, how their flow works, or what to learn/steal/avoid. Produces a UX-and-strategy teardown grounded in what is visibly on screen, with an inferences-vs-observations split. Requires image input. For a market-level teardown without screenshots use competitor-teardown.",
    "parameters": {
@@ -8345,6 +8725,25 @@
   "function": {
    "name": "session_handoff",
    "description": "Write a handoff summary so another agent or person (or a fresh session) can pick up the work with full context. Use when ending a work session, hitting a context limit, switching agents, or pausing a task mid-flight. Produces a structured handoff: what the goal is, what's done, the current state, what's next, and the gotchas — so no context is lost across the boundary.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "severance_agreement_decoder",
+   "description": "Decode a severance agreement before you sign it — what you're giving up, what's negotiable, and the deadlines that decide your leverage. Use when asked to decode my severance, is this severance offer normal, review my separation agreement, or should I sign this release. Produces a clause-by-clause decode with ranked red flags, the money math (severance vs what you're releasing), the consideration-period clock, and the asks worth making.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -9350,6 +9749,63 @@
  {
   "type": "function",
   "function": {
+   "name": "the_journalist_call",
+   "description": "Simulate a hostile-but-fair journalist interview about your company or announcement — the questions you fear, live follow-ups on every dodge, then the story they'd file. Use when asked to media-train me, simulate a press interview, prep me for a journalist call, or how will this announcement be covered. Produces the interview transcript with your likely stumbles, the article they would write from it, and a debrief with bridge lines and the quotes to prepare.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "the_procurement_gauntlet",
+   "description": "Simulate enterprise procurement and security review of your product before your first big deal meets it for real — the questionnaire, the gaps, the deal-slowing findings. Use when asked to prep for enterprise procurement, simulate a security review, why do enterprise deals stall, or get ready for vendor assessment. Produces the reviewer's findings memo (security, legal, compliance, vendor-risk), the stall-risk ranking, and a debrief with the artifacts to prepare before the real gauntlet.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "the_promotion_committee",
+   "description": "Simulate the calibration meeting that discusses your promotion after your manager leaves the room — the debate, the packet's holes, the verdict. Use when asked will I get promoted, simulate the promo committee, stress-test my promotion packet, or why did my promo get rejected. Produces the committee transcript (four archetypes on YOUR packet), the internal verdict with the real reason, and a debrief separating fixable gaps from timing politics.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "thesis_outline",
    "description": "Build a defensible thesis or dissertation outline — argument-first structure, chapter by chapter, with the through-line visible. Use when asked to outline my thesis, structure my dissertation, plan my capstone, or organize my research into chapters. Produces a full outline: the one-sentence thesis, chapter map with each chapter's job and claim, evidence allocation, and the risk register of weak links an examiner would probe.",
    "parameters": {
@@ -9390,6 +9846,25 @@
   "function": {
    "name": "thumbnail_creator",
    "description": "Generate article or newsletter thumbnail candidates using the Gemini API from inside Claude Code. Claude reads article copy, proposes composition concepts, writes image generation prompts incorporating brand specs, calls Gemini to generate the images, evaluates the results via computer vision, and returns ranked candidates with rationale. Use when asked to create thumbnails, generate cover images, or produce visual candidates for an article or newsletter.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "timeshare_contract_decoder",
+   "description": "Decode a timeshare contract before signing — the lifetime cost math, the perpetuity and fee-escalation clauses, the rescission window, and the honest resale reality. Use when asked to review this timeshare, decode my timeshare contract, can I get out of a timeshare, or is this vacation ownership worth it. Produces the true-cost projection, the clause decode with the perpetuity traps flagged, the rescission-window computation, and — for existing owners — the legitimate exit paths vs the exit-scam checklist.",
    "parameters": {
     "type": "object",
     "properties": {
