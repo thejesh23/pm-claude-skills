@@ -9,6 +9,26 @@ each new wave of skills bumps the **major** version, extensions and fixes bump
 
 ## [Unreleased]
 
+## [55.0.0] — the fifteen-front release: students, the museum, and distribution everywhere — 2026-07-17
+
+### Added — 🎓 new audiences (520 → 526 skills, 76 bundles)
+- **[pm-students](plugins/pm-students)** — study-notes synthesis (retrieval-first), literature reviews that argue, thesis outlines an examiner respects, statement **coaching** (integrity structural: it will not ghostwrite), financial-aid appeals offices can act on, and exam plans that survive a bad Tuesday.
+- **🏛 [The Anti-Pattern Museum](https://mohitagw15856.github.io/pm-claude-skills/museum.html)** — 2,601 "do not" rules extracted from every skill: searchable, per-rule shareable, with a deterministic Exhibit of the Day.
+- **🎓 [Educators kit](docs/educators/README.md)** — three ready-to-grade AI-native assignments (brief-and-review, the Gym practical, the Anti-Pattern Hunt) with rubric alignment and honest integrity policy language.
+
+### Added — 📦 distribution everywhere
+- **🎯 Skill of the Day** — `/today.json` + an embeddable README badge, deterministic by UTC date.
+- **🧩 Store kits** — Chrome/Firefox/Edge extension zip + runbook, an Obsidian community plugin (working source + submission path), and a **ghcr container**: `docker run ghcr.io/mohitagw15856/pm-skills` publishes on every release tag.
+- **⚖️ [Comparison pages](https://mohitagw15856.github.io/pm-claude-skills/compare/vs-diy.html)** — vs prompt marketplaces, vs awesome-lists, vs DIY; each concedes where the alternative wins.
+
+### Added — 🎖 trust & proof
+- **[Agent Certification action](action/certify)** — the conformance suite as a CI step in anyone's agent repo; the trust triad completes (skills → SkillSpec, models → SkillBench, agents → this).
+- **📊 Model Day-One workflow** — manual-only benchmark run + published report for new model launches.
+- **📈 [Growth dashboard](https://mohitagw15856.github.io/pm-claude-skills/growth.html)** — public momentum, weekly-appended: 13k+ npm installs/month, 3k+ PyPI, live star history.
+
+### Added — ✨ conversion & polish
+- **First-visit tour** (five spotlights, once, skippable) · **freshness dates** on every skill page (git-derived, shallow-clone-safe after CI taught us a lesson) · **translation parity CI** (it caught its author's own compressed draft on run one) + a French seed · **FAQ JSON-LD + OG cards** on all 29 profession pages.
+
 ## [54.0.0] — the flywheel release: users who advertise you, surfaces you don't own, and a repo that writes its own newsletter — 2026-07-17
 
 ### Added — 🚀 growth engines (make the users the distribution)
@@ -837,7 +857,8 @@ Earlier releases (v1.0.0 – v5.0.0) predate this changelog. See the
 [article series](README.md#-the-article-series) for the full history of how the
 library grew from the first PM toolkit to 100+ skills.
 
-[Unreleased]: https://github.com/mohitagw15856/pm-claude-skills/compare/v54.0.0...HEAD
+[Unreleased]: https://github.com/mohitagw15856/pm-claude-skills/compare/v55.0.0...HEAD
+[55.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v54.0.0...v55.0.0
 [54.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v53.0.0...v54.0.0
 [50.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v49.0.0...v50.0.0
 [49.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v48.0.0...v49.0.0
