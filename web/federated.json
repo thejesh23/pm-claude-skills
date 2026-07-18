@@ -2,7 +2,7 @@
  "spec": "skill-federation/0.1",
  "built": "2026-07-18",
  "libraries": 1,
- "skills": 599,
+ "skills": 625,
  "members": [
   {
    "repo": "mohitagw15856/pm-claude-skills",
@@ -10,7 +10,7 @@
    "homepage": "https://github.com/mohitagw15856/pm-claude-skills",
    "license": "MIT",
    "badge": "https://img.shields.io/endpoint?url=https%3A%2F%2Fpm-skills-mcp.pm-claude-skills.workers.dev%2Fbadge%3Frepo%3Dmohitagw15856%2Fpm-claude-skills",
-   "count": 599,
+   "count": 625,
    "skills": [
     {
      "name": "360-feedback-template",
@@ -175,6 +175,10 @@
     {
      "name": "autopilot-charter",
      "description": "Decide which of your recurring rituals to put on autopilot — and which to keep manual. Use when asked what to automate, how to set up recurring AI runs, which reports or briefings could run on a schedule, or to design an automation charter for a team. Produces a ritual inventory with automate/assist"
+    },
+    {
+     "name": "beneficiary-audit",
+     "description": "Audit the beneficiary designations that quietly override wills — the account-by-account sweep, the life-event triggers that make them stale, and the coordination check against actual intentions. Use when asked check my beneficiaries, does my 401k go to my ex, do beneficiary forms beat a will, or wha"
     },
     {
      "name": "benefits-decoder",
@@ -413,6 +417,10 @@
      "description": "Support a teenager through college applications without taking them over — the parent's actual jobs (logistics, finances, emotional ballast), the ownership lines that keep the application theirs, and the scripts for the hard moments. Use when asked how do I help my kid with college apps, how involve"
     },
     {
+     "name": "college-cost",
+     "description": "Compute what a degree will actually cost — sticker minus real aid, inflated per year, split into cash and loans, with the loan's decade-long monthly tail made visible before enrollment instead of after. Use when asked what will college really cost, compare these two offers' real prices, how much loa"
+    },
+    {
      "name": "community-management-playbook",
      "description": "Build a community management playbook for a brand's social media channels. Use when asked to create guidelines for managing comments, DMs, and community interactions, define a moderation policy, or build response frameworks for social media community managers. Produces a complete playbook with respo"
     },
@@ -557,6 +565,10 @@
      "description": "Structure a product data analysis, metric deep-dive, funnel analysis, or cohort study. Use when asked to analyse product metrics, investigate a drop in conversion, explain a data change to stakeholders, or find the root cause of a metric movement. Produces a structured analysis with question, root c"
     },
     {
+     "name": "data-breach-response",
+     "description": "Respond to your data being breached — triage by what actually leaked, the freeze/rotate/monitor ladder in the right order, and the calibrated watchfulness that follows, without panic or paralysis. Use when someone asks my data was in a breach what do I do, I got a breach notification letter, my SSN/"
+    },
+    {
      "name": "data-contract",
      "description": "Define a data contract between a producer and consumers of a dataset/event/API. Use when asked to write a data contract, define a schema agreement, set data SLAs, or stop a producer from silently breaking downstream consumers. Produces a contract — schema with types & constraints, semantics, quality"
     },
@@ -615,6 +627,10 @@
     {
      "name": "decision-forensics",
      "description": "Reconstruct the decision actually made in a messy Slack, email, or meeting thread into a proper decision record — commitments named, silent assumptions surfaced, non-decisions called out. Use when asked what did we actually decide, turn this thread into a decision record, who committed to what, or r"
+    },
+    {
+     "name": "decision-journal",
+     "description": "Record decisions the way good judgment compounds — the reasoning, the alternatives, the probabilities, and what would change your mind, written down BEFORE the outcome arrives, then reviewed against reality. Use when asked help me think through this decision, start a decision journal, review my past"
     },
     {
      "name": "decision-memo",
@@ -677,6 +693,10 @@
      "description": "Prepare for and script a hard conversation — conflict, bad news, a boundary, an apology. Use when asked to prepare for a difficult conversation, address a conflict, deliver bad news, confront a colleague, or have a hard talk with a manager/report/peer. Produces a prep brief — the real goal, the othe"
     },
     {
+     "name": "digital-legacy-planner",
+     "description": "Plan what happens to your digital life — the account inventory, the access plan that doesn't violate terms or law, platform legacy settings, and the memorialize/delete/preserve decisions, written down while it's easy. Use when asked what happens to my accounts when I die, set up a digital legacy pla"
+    },
+    {
      "name": "disability-insurance-decoder",
      "description": "Decode a disability insurance policy or employer LTD plan — own-occupation vs any-occupation, the benefit math after offsets and taxes, and the definitions that decide whether it pays. Use when someone asks 'is my disability insurance any good', 'decode my LTD policy', 'what does own-occupation mean"
     },
@@ -723,6 +743,10 @@
     {
      "name": "earthquake-watch",
      "description": "Check recent earthquakes worldwide with zero API keys — USGS real-time GeoJSON feeds via curl, filtered by magnitude, region, and time window. Use when asked was there an earthquake just now, recent quakes near a place, any big earthquakes today, or monitor seismic activity somewhere. Produces the m"
+    },
+    {
+     "name": "elder-scam-briefing",
+     "description": "Protect aging parents from the scams that target them — the conversation that doesn't condescend, the family code word, the top patterns aimed at seniors, and the guardrails that help without taking over. Use when asked how do I talk to my parents about scams, my mom almost sent money to someone, se"
     },
     {
      "name": "email-campaign",
@@ -779,6 +803,10 @@
     {
      "name": "esg-disclosure-draft",
      "description": "Draft an honest, audit-ready ESG disclosure section in a CSRD/ESRS-flavored structure, adaptable to other frameworks. Use when asked to write a sustainability report section, draft an ESRS or CSRD disclosure, prepare an ESG section for an annual report, or turn raw sustainability data into disclosur"
+    },
+    {
+     "name": "estate-settlement-organizer",
+     "description": "Organize an executor's work — the settlement ladder from will-to-probate-to-distribution, the asset/debt inventory, the creditor and beneficiary communications, and the records that keep an executor protected. Use when asked I'm the executor what do I do, organize settling an estate, what's the prob"
     },
     {
      "name": "eulogy-writer",
@@ -937,6 +965,10 @@
      "description": "Compute a financial-independence (FIRE) target and years-to-reach with every assumption labeled as an assumption — plus a sensitivity table instead of a single false-precision answer. Use when asked what's my FIRE number, when can I retire early, how much do I need to be financially independent, or "
     },
     {
+     "name": "first-client-contract",
+     "description": "Put your first client agreement in writing — the eight clauses a simple service contract must have, in plain language a non-lawyer can use, with the blanks filled from your actual deal. Use when asked write my first client contract, what should a freelance agreement include, my client wants to start"
+    },
+    {
      "name": "flight-tracker",
      "description": "Track live aircraft positions with zero API keys — adsb.lol's open ADS-B network primary, OpenSky fallback, via curl: by callsign, registration, or area. Use when asked where is this flight right now, what planes are overhead, track a tail number, or is that flight in the air. Produces the live posi"
     },
@@ -983,6 +1015,10 @@
     {
      "name": "git-troubleshooter",
      "description": "Diagnose a tangled git situation and give the exact, safe commands to fix it. Use when asked to undo a commit, recover lost work, fix a bad merge or rebase, resolve a detached HEAD, unstage files, or get out of a git mess. Produces the diagnosis, the precise commands to run in order, what each does,"
+    },
+    {
+     "name": "github-repo-vitals",
+     "description": "Read a GitHub repository's vital signs with keyless curl — commit recency, release cadence, issue/PR responsiveness, and bus factor — interpreted into an is-this-project-alive verdict. Use when asked is this repo maintained, check this project before we build on it, how active is this library's deve"
     },
     {
      "name": "giving-feedback",
@@ -1151,6 +1187,10 @@
     {
      "name": "iso-27001-isms",
      "description": "Scope an ISO 27001 ISMS and build the Statement of Applicability across Annex A controls. Use when asked to implement ISO 27001, scope an ISMS, build a Statement of Applicability (SoA), or prepare for ISO 27001 certification. Produces an ISMS plan — scope & context, risk-treatment approach, an Annex"
+    },
+    {
+     "name": "iss-tracker",
+     "description": "Track the International Space Station live with keyless curl — where it is right now, what it's over, and when to look up, with the orbital math translated into human terms. Use when asked where is the ISS right now, is the space station overhead, when can I see the ISS tonight, or track the station"
     },
     {
      "name": "jd-decoder",
@@ -1457,6 +1497,10 @@
      "description": "Write cold outreach and networking messages that actually get replies. Use when asked to write a cold message to a recruiter/hiring manager, a LinkedIn connection note, a referral request, or a networking/coffee-chat ask during a job search. Produces short, specific, reply-worthy messages — tuned to"
     },
     {
+     "name": "package-health",
+     "description": "Check a package's health before you depend on it — npm and PyPI registry APIs via keyless curl: downloads, release recency, maintenance signals, and the dependency-decision read. Use when asked is this npm package maintained, check this PyPI library before we adopt it, compare these two packages, or"
+    },
+    {
      "name": "paid-acquisition-plan",
      "description": "Plan a paid acquisition / performance marketing program with unit economics that work. Use when asked to plan paid media, allocate an ad budget across channels, set CAC/LTV targets, or structure a creative-testing program. Produces a paid acquisition plan — economic guardrails (CAC/LTV/payback), cha"
     },
@@ -1679,6 +1723,10 @@
     {
      "name": "qbr-deck",
      "description": "Build a Quarterly Business Review (QBR) deck structure and narrative for a customer account. Use when asked to prepare a QBR, business review meeting, executive review, or quarterly check-in with a customer. Produces a slide-by-slide QBR structure with talking points, metrics review, value narrative"
+    },
+    {
+     "name": "quarterly-tax-rhythm",
+     "description": "Build the tax habit self-employment requires — the setaside percentage from day one, the quarterly calendar, the records that make filing boring, and the no-withholding mindset shift nobody explains. Use when asked how do taxes work for my side income, how much should I set aside, what are estimated"
     },
     {
      "name": "quiz-generator",
@@ -1937,6 +1985,10 @@
      "description": "Decline a request, push back on scope, or protect priorities without burning the relationship. Use when asked how to say no, turn down a request, push back on your boss/stakeholder, decline extra work, or protect the roadmap from a pet feature. Produces a graceful, firm response — the no, the honest"
     },
     {
+     "name": "scam-message-decoder",
+     "description": "Decode a suspicious message — text, email, call transcript, or DM — against the anatomy of known scam families, with a 🔴🟡🟢 read and the safe next move. Use when someone asks is this a scam, decode this suspicious text, my 'bank' just called me, this job offer seems off, or my parent got a weird m"
+    },
+    {
      "name": "schedule-monte-carlo",
      "description": "Project completion as a distribution, not a date — Monte Carlo over the task graph. Use when a plan's finish date came from summing 'likely' estimates (it's wrong, mathematically), when leadership needs a commit date, or when you need to know which tasks actually control the timeline. Produces P10/P"
     },
@@ -2005,6 +2057,10 @@
      "description": "Write a short-form video script for TikTok, Instagram Reels, or YouTube Shorts — built on the hook→retention→payoff structure that drives watch-time. Use when asked to script a Reel, TikTok, Short, or any 15–60s vertical video. Produces a timed script with a 0–3s hook, retention beats with on-screen"
     },
     {
+     "name": "side-business-setup",
+     "description": "Set up a side business in the right order — the do-first sequence (separate money, basic terms, simple records) vs. the feels-official-but-waits list (logos, LLCs-by-default, office chairs), with the structure question framed honestly and routed properly. Use when asked I'm starting a side business "
+    },
+    {
      "name": "site-check",
      "description": "Answer 'is this site down or is it just me' properly — curl status/timing diagnostics, DNS cross-check, and TLS certificate reads, assembled into a where-it's-broken diagnosis. Use when asked is this website down, why can't I reach this site, check if my site is up, or is the SSL certificate expired"
     },
@@ -2051,6 +2107,10 @@
     {
      "name": "social-media-strategy",
      "description": "Build a social media strategy for a brand, product, or creator. Use when asked to create a social media strategy, define a social content strategy, plan content pillars, set social KPIs, or build a posting framework. Produces a complete strategy with audience definition, platform selection, content "
+    },
+    {
+     "name": "solar-breakeven",
+     "description": "Model whether solar panels pay for themselves for your roof — net cost after incentives, bill offset with degradation, electricity inflation, the inverter replacement, and the breakeven year, plus the policy risk no calculator controls. Use when asked are solar panels worth it, when does solar break"
     },
     {
      "name": "sop-writer",
@@ -2105,6 +2165,10 @@
      "description": "Write a tight Statement of Work (SOW) that prevents scope creep and payment disputes. Use when asked to write a SOW, a scope of work, a project agreement, or to formalise what was agreed after a proposal. Produces an SOW — scope (and explicit exclusions), deliverables with acceptance criteria, timel"
     },
     {
+     "name": "stock-snapshot",
+     "description": "Fetch a stock quote snapshot with keyless curl — Yahoo Finance's public chart endpoint, read with the discipline unofficial market data demands: timestamped, delayed-flagged, and never advice. Use when asked what's this stock at, how did the market do today, get me a ticker's recent range, or pull b"
+    },
+    {
      "name": "strategic-narrative-generator",
      "description": "Generate the strategic story connecting a product roadmap to company goals in a form non-technical stakeholders can repeat. Use when asked to explain the roadmap, present strategy to leadership or the board, write the why behind the roadmap, create a narrative for all-hands, or make the roadmap tell"
     },
@@ -2115,6 +2179,10 @@
     {
      "name": "student-feedback",
      "description": "Write constructive, specific feedback on student work that motivates and tells the student exactly how to improve. Use when asked to give feedback on a student's work, write grading comments, respond to an essay or assignment, or coach a learner. Produces feedback that names concrete strengths, prio"
+    },
+    {
+     "name": "student-loan-strategy",
+     "description": "Decide what the extra money does about student loans — attack them, invest alongside them, or ride a forgiveness track — with the three paths simulated on your actual loans and the guaranteed-vs-assumed framing kept honest. Use when asked should I pay off my student loans faster, pay loans or invest"
     },
     {
      "name": "study-notes-synthesizer",
@@ -2131,6 +2199,10 @@
     {
      "name": "subcontractor-scorecard",
      "description": "Score a subcontractor's performance across schedule reliability, quality, safety, paperwork, and change-order behaviour with weighted anchors. Use when asked to evaluate a sub, build a subcontractor scorecard, decide whether to rebid or rehire a trade, review sub performance for prequalification, or"
+    },
+    {
+     "name": "subscription-audit",
+     "description": "Find and rank the recurring-payment leak — every subscription annualized, sorted by real yearly cost, with the keep/cancel/downgrade pass and the where-they-hide checklist. Use when asked audit my subscriptions, how much am I spending on subscriptions, help me cancel stuff, or what recurring charges"
     },
     {
      "name": "subscription-auditor",
@@ -2221,6 +2293,10 @@
      "description": "Write a test strategy document from a feature spec, PRD, or system description. Use when asked to create a test plan, write a test strategy, define QA approach, or plan testing for a feature or release. Produces a complete test strategy with scope, risk assessment, test types, coverage targets, and "
     },
     {
+     "name": "the-car-dealership",
+     "description": "Simulate the car-buying gauntlet before you walk in — the four-square worksheet, the payment-question trap, the trade-in shuffle, and the finance office's second sales floor, all run against your actual deal. Use when asked practice negotiating at a dealership, simulate the finance office, what tric"
+    },
+    {
      "name": "the-churning-customer",
      "description": "Simulate the exact customer who will quietly cancel in month 4 — their internal monologue through the lifecycle and the honest exit interview they never gave you. Use when asked why do customers really churn, simulate a churning customer, roleplay the customer who cancels, or what does silent churn "
     },
@@ -2229,8 +2305,16 @@
      "description": "Simulate the due-diligence call where an acquirer's or investor's analyst takes your metrics apart — the questions behind the spreadsheet, the moment a number wobbles, and a debrief on which answers create risk. Use when asked simulate due diligence on my startup, stress-test my metrics before the r"
     },
     {
+     "name": "the-insurance-adjuster",
+     "description": "Simulate the adjuster's settlement call after your accident or loss — the recorded-statement asks, the quick-settlement anchor, the friendly minimization — run against your actual claim, with a debrief on every answer that shrank it. Use when asked the adjuster wants a recorded statement, practice t"
+    },
+    {
      "name": "the-journalist-call",
      "description": "Simulate a hostile-but-fair journalist interview about your company or announcement — the questions you fear, live follow-ups on every dodge, then the story they'd file. Use when asked to media-train me, simulate a press interview, prep me for a journalist call, or how will this announcement be cove"
+    },
+    {
+     "name": "the-open-house",
+     "description": "Simulate the open house and the listing agent's read of you — the questions that profile your budget and urgency, the staging that hides what inspection finds, and the offer-pressure choreography, run before you fall in love with anything. Use when asked what is the listing agent thinking, practice "
     },
     {
      "name": "the-price-pushback",
@@ -2361,8 +2445,28 @@
      "description": "Get current weather and forecasts with zero API keys — wttr.in one-liners for humans, Open-Meteo JSON for data, with the exact curl commands and format codes. Use when asked what's the weather, will it rain today, forecast for a city, or get me weather data for a location. Produces the live conditio"
     },
     {
+     "name": "wedding-budget",
+     "description": "Build a wedding budget that survives to the wedding — allocation by real shares, the per-guest lever made explicit, the routinely-forgotten line items priced in from day one, and a contingency that isn't decorative. Use when asked make a wedding budget, how do people split X across a wedding, we hav"
+    },
+    {
+     "name": "wedding-logistics-planner",
+     "description": "Plan the wedding day as the operation it is — the minute-level run sheet, the vendor call sheet, the who-handles-problems roster, and the buffer discipline that keeps the couple out of logistics on the day. Use when asked make our wedding day timeline, day-of run sheet, who tells the vendors where t"
+    },
+    {
      "name": "wedding-speech",
      "description": "A best-man/maid-of-honour/parent wedding toast that actually lands — funny without roasting, moving without syrup, short enough that nobody checks their phone. Use when someone has to give a wedding speech and has either nothing or a dangerous first draft. Produces a 2-4 minute toast built on one go"
+    },
+    {
+     "name": "wedding-vendor-contract-decoder",
+     "description": "Decode a wedding vendor contract — venue, photographer, caterer, band — before signing: deposits and their refundability, cancellation and postponement terms, the substitute-performer and force-majeure clauses, and overtime math. Use when someone asks review this venue contract, is this photographer"
+    },
+    {
+     "name": "what-to-ask",
+     "description": "Get the five questions that matter before you sign, buy, or agree to anything — the front door to the decoder family, routed by situation. Use when asked what should I ask before signing this, I'm about to buy X what do I check, what questions for the landlord/dealer/contractor/HR, or what am I forg"
+    },
+    {
+     "name": "when-someone-dies",
+     "description": "The first two weeks after a death, organized — what genuinely needs doing now, what only feels urgent, who to notify in what order, and the documents everything else will require. Use when asked someone just died what do I do, checklist after a death, help me handle my parent's affairs, or what need"
     },
     {
      "name": "which-skill",

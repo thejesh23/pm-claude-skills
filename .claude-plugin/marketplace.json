@@ -9,6 +9,38 @@
   },
   "plugins": [
     {
+      "name": "pm-sidehustle",
+      "description": "Side-hustle setup done in the right order: the employer-conflict check, money hygiene, the first client contract's eight clauses, and the quarterly tax rhythm",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-sidehustle",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-wedding",
+      "description": "The wedding pack: a budget that survives to the wedding, vendor contracts decoded before signing, and the day-of logistics that keep the couple out of the production booth",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-wedding",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-scam-defense",
+      "description": "Scam defense: decode the suspicious message against known scam anatomies, respond to data breaches by what actually leaked, and protect aging parents with dignity intact",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-scam-defense",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-estate",
+      "description": "The estate pack: the first two weeks after a death, the executor's settlement ladder, the digital legacy plan, and the beneficiary audit that catches what wills can't override",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-estate",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
       "name": "pm-live",
       "description": "Live data, zero API keys: weather, air quality, currency, crypto, world clock, holidays, dictionary, Wikipedia, earthquakes, and Hacker News — all over plain curl with fallbacks and honest sourcing",
       "version": "1.0.0",

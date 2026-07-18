@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "pm-scam-defense",
+  "version": "1.0.0",
+  "description": "Scam defense: decode the suspicious message against known scam anatomies, respond to data breaches by what actually leaked, and protect aging parents with dignity intact",
+  "author": {
+    "name": "Mohit Aggarwal",
+    "email": "mohit15856@gmail.com"
+  },
+  "homepage": "https://github.com/mohitagw15856/pm-claude-skills",
+  "license": "MIT",
+  "keywords": [
+    "scam",
+    "phishing",
+    "fraud",
+    "breach",
+    "security"
+  ]
+}

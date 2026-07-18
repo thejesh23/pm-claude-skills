@@ -1,4 +1,4 @@
-# 🗂️ All 599 Skills — full catalog
+# 🗂️ All 625 Skills — full catalog
 
 > The complete per-skill breakdown, grouped by domain. For an interactive, searchable version see the [**live catalog**](https://mohitagw15856.github.io/pm-claude-skills/catalog.html); to run any skill in your browser, use the [**Playground**](https://mohitagw15856.github.io/pm-claude-skills/). Back to the [README](README.md).
 >
@@ -6,7 +6,7 @@
 
 **Jump to:** [🚀 Product](#product) · [📣 Marketing & Growth](#marketing-growth) · [💻 Engineering & AI](#engineering-ai) · [📊 Data & Analytics](#data-analytics) · [🎨 Design & Content](#design-content) · [🤝 Customers & Sales](#customers-sales) · [💰 Finance, Ops & Business](#finance-ops-business) · [⚖️ Legal & Compliance](#legal-compliance) · [🧑 You & Career](#you-career) · [🌍 Industries & Public Sector](#industries-public-sector)
 
-## 🚀 Product (44 skills)
+## 🚀 Product (45 skills)
 
 ### `pm-advanced` — 6 skills
 
@@ -44,11 +44,12 @@
 | **Job Story Mapper** (`job-story-mapper`) | Write Jobs-to-be-Done (JTBD) job stories and map customer jobs across functional, social, and emotional dimensions. | — |
 | **User Interview Synthesis** (`user-interview-synthesis`) | Synthesises user interview transcripts into structured research findings. | — |
 
-### `pm-essentials` — 8 skills · 3 eval-scored
+### `pm-essentials` — 9 skills · 3 eval-scored
 
 | Skill | What it does | Eval |
 |---|---|---|
 | **Competitive Analysis** (`competitive-analysis`) | Analyze competitors and create competitive landscape documentation with feature matrices, positioning maps, and strategic recommendations. | ✅ 4.3/5 |
+| **Decision Journal** (`decision-journal`) | Record decisions the way good judgment compounds — the reasoning, the alternatives, the probabilities, and what would change your mind, written… | — |
 | **Word Doc Tracked Changes** (`docx-tracked-changes`) | Produce properly-formatted tracked changes for a Word document. | — |
 | **Meeting Notes** (`meeting-notes`) | Structure and format meeting notes following PM best practices. | — |
 | **PRD Template** (`prd-template`) | Create a Product Requirements Document following proven PM template structure. | ✅ 4.8/5 |
@@ -416,7 +417,7 @@
 | **Support Macro** (`support-macro`) | Write reusable support macros / canned responses that sound human, not robotic. | — |
 | **Support Runbook** (`support-runbook`) | Write a support runbook for handling a recurring issue type consistently. | — |
 
-## 💰 Finance, Ops & Business (72 skills)
+## 💰 Finance, Ops & Business (76 skills)
 
 ### `pm-accounting` — 6 skills
 
@@ -442,12 +443,13 @@
 | **Job Application** (`job-application`) | Tailors a CV and cover letter to a specific job description. | — |
 | **Strategy Memo** (`strategy-memo`) | Write a strategy memo that commits to a bet and says what you won't do. | — |
 
-### `pm-calculators` — 23 skills
+### `pm-calculators` — 27 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
 | **Car TCO** (`car-tco`) | Compare the total cost of car ownership across buy-new, buy-used, lease, and keep-your-current-car — depreciation, insurance, maintenance ramp… | — |
 | **Cohort Curve Model** (`cohort-curve-model`) | Fit a retention curve to observed cohort data and project LTV — computed, not estimated. | — |
+| **College Cost** (`college-cost`) | Compute what a degree will actually cost — sticker minus real aid, inflated per year, split into cash and loans, with the loan's decade-long… | — |
 | **Daycare vs Stay-Home** (`daycare-vs-stay-home`) | Run the real math on a parent leaving work versus paying for childcare — the second income net of daycare, marginal taxes, and work costs, AND the… | — |
 | **Debt Payoff** (`debt-payoff`) | Build a debt payoff plan — avalanche vs snowball simulated month by month on your actual debts, the real payoff dates, and the… | — |
 | **Emergency Fund** (`emergency-fund`) | Size an emergency fund from essential spend and real risk factors — not a one-size 'six months' — with the funding timeline and where the money… | — |
@@ -466,6 +468,9 @@
 | **Runway Monte Carlo** (`runway-monte-carlo`) | Cash runway as a distribution, not a number — Monte Carlo simulated. | — |
 | **SaaS Metrics** (`saas-metrics`) | Compute the core SaaS metrics — MRR/ARR, growth, NRR/GRR, churn, quick ratio, magic number — from your numbers. | — |
 | **Schedule Monte Carlo** (`schedule-monte-carlo`) | Project completion as a distribution, not a date — Monte Carlo over the task graph. | — |
+| **Solar Breakeven** (`solar-breakeven`) | Model whether solar panels pay for themselves for your roof — net cost after incentives, bill offset with degradation, electricity inflation, the… | — |
+| **Student Loan Strategy** (`student-loan-strategy`) | Decide what the extra money does about student loans — attack them, invest alongside them, or ride a forgiveness track — with the three paths… | — |
+| **Subscription Audit** (`subscription-audit`) | Find and rank the recurring-payment leak — every subscription annualized, sorted by real yearly cost, with the keep/cancel/downgrade pass and the… | — |
 | **Support Staffing Model** (`support-staffing-model`) | How many support agents does the queue actually need — Erlang C, computed, not 'tickets per agent' folklore. | — |
 | **Tornado Sensitivity** (`tornado-sensitivity`) | Which assumption actually moves the answer — one-at-a-time sensitivity, ranked into a tornado. | — |
 | **Unit Economics** (`unit-economics`) | Model the unit economics of a business — CAC, LTV, payback, contribution margin — from real inputs. | — |
@@ -644,7 +649,7 @@
 | **Portfolio Page** (`portfolio-page`) | Structure a portfolio or case-study page that shows your work, not just lists it. | — |
 | **Resume** (`resume`) | Write a sharp, achievement-led resume/CV that passes ATS and earns the interview. | ✅ 3.3/5 |
 
-## 🌍 Industries & Public Sector (214 skills)
+## 🌍 Industries & Public Sector (235 skills)
 
 ### `pm-agentnative` — 5 skills
 
@@ -741,7 +746,7 @@
 | **Sycophancy Challenger** (`sycophancy-challenger`) | Flip Claude’s default from validation to adversarial critique. | — |
 | **Teaching Lesson Plan** (`teaching-lesson-plan`) | Design a structured lesson plan for any subject, audience, or format. | — |
 
-### `pm-decoders` — 19 skills
+### `pm-decoders` — 20 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
@@ -764,6 +769,7 @@
 | **Timeshare Contract Decoder** (`timeshare-contract-decoder`) | Decode a timeshare contract before signing — the lifetime cost math, the perpetuity and fee-escalation clauses, the rescission window, and the… | — |
 | **ToS Decoder** (`tos-decoder`) | Decode a terms of service or privacy policy into what you're actually agreeing to, ranked by real-world impact. | — |
 | **Vet Estimate Decoder** (`vet-estimate-decoder`) | Decode a veterinary treatment estimate — what each line is for, which items are core vs precautionary, and how to have the options conversation… | — |
+| **What To Ask** (`what-to-ask`) | Get the five questions that matter before you sign, buy, or agree to anything — the front door to the decoder family, routed by situation. | — |
 
 ### `pm-devrel` — 6 skills
 
@@ -805,6 +811,15 @@
 | **Quiz Generator** (`quiz-generator`) | Generate a quiz or test on any topic with a balanced mix of question types and difficulty, plus a complete answer key with explanations. | — |
 | **Rubric Builder** (`rubric-builder`) | Create a clear grading rubric with criteria and performance-level descriptors that make scoring fair, fast, and consistent. | — |
 | **Student Feedback** (`student-feedback`) | Write constructive, specific feedback on student work that motivates and tells the student exactly how to improve. | — |
+
+### `pm-estate` — 4 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **Beneficiary Audit** (`beneficiary-audit`) | Audit the beneficiary designations that quietly override wills — the account-by-account sweep, the life-event triggers that make them stale, and… | — |
+| **Digital Legacy Planner** (`digital-legacy-planner`) | Plan what happens to your digital life — the account inventory, the access plan that doesn't violate terms or law, platform legacy settings, and… | — |
+| **Estate Settlement Organizer** (`estate-settlement-organizer`) | Organize an executor's work — the settlement ladder from will-to-probate-to-distribution, the asset/debt inventory, the creditor and beneficiary… | — |
+| **When Someone Dies** (`when-someone-dies`) | The first two weeks after a death, organized — what genuinely needs doing now, what only feels urgent, who to notify in what order, and the… | — |
 
 ### `pm-freelance` — 3 skills
 
@@ -863,7 +878,7 @@
 | **Reference Request Kit** (`reference-request-kit`) | Secure strong references after a departure — who to ask, the ask messages, the briefing sheet that makes their reference specific, and the… | — |
 | **Severance Agreement Decoder** (`severance-agreement-decoder`) | Decode a severance agreement before you sign it — what you're giving up, what's negotiable, and the deadlines that decide your leverage. | — |
 
-### `pm-live` — 17 skills
+### `pm-live` — 21 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
@@ -874,12 +889,16 @@
 | **DNS Lookup** (`dns-lookup`) | Query DNS records and domain registration data with zero API keys — DNS-over-HTTPS via dns.google and domain registration via RDAP, through plain… | — |
 | **Earthquake Watch** (`earthquake-watch`) | Check recent earthquakes worldwide with zero API keys — USGS real-time GeoJSON feeds via curl, filtered by magnitude, region, and time window. | — |
 | **Flight Tracker** (`flight-tracker`) | Track live aircraft positions with zero API keys — adsb.lol's open ADS-B network primary, OpenSky fallback, via curl: by callsign, registration… | — |
+| **GitHub Repo Vitals** (`github-repo-vitals`) | Read a GitHub repository's vital signs with keyless curl — commit recency, release cadence, issue/PR responsiveness, and bus factor — interpreted… | — |
 | **HN Digest** (`hn-digest`) | Pull the current Hacker News front page, top comments, or a topic search with zero API keys — the official Firebase API and Algolia search via… | — |
 | **IP Lookup** (`ip-lookup`) | Look up IP addresses and your own public IP with zero API keys — geolocation, ISP/ASN, and hosting flags via ip-api.com and ipify through curl. | — |
+| **ISS Tracker** (`iss-tracker`) | Track the International Space Station live with keyless curl — where it is right now, what it's over, and when to look up, with the orbital math… | — |
+| **Package Health** (`package-health`) | Check a package's health before you depend on it — npm and PyPI registry APIs via keyless curl: downloads, release recency, maintenance signals… | — |
 | **Public Holidays** (`public-holidays`) | Look up public holidays for any country and year with zero API keys — the Nager.Date API via curl, with long-weekend detection and cross-country… | — |
 | **RSS Digest** (`rss-digest`) | Fetch and digest any RSS or Atom feed with zero API keys — curl plus disciplined parsing into a ranked, deduplicated briefing instead of a link dump. | — |
 | **Site Check** (`site-check`) | Answer 'is this site down or is it just me' properly — curl status/timing diagnostics, DNS cross-check, and TLS certificate reads, assembled into… | — |
 | **Sports Scores** (`sports-scores`) | Get live scores, schedules, and standings for major leagues with zero API keys — ESPN's public JSON endpoints via curl, covering NFL, NBA, MLB… | — |
+| **Stock Snapshot** (`stock-snapshot`) | Fetch a stock quote snapshot with keyless curl — Yahoo Finance's public chart endpoint, read with the discipline unofficial market data demands… | — |
 | **Sun and Moon** (`sun-and-moon`) | Get sunrise, sunset, golden hour, day length, and moon phase for any location with zero API keys — sunrise-sunset.org and Open-Meteo via curl… | — |
 | **Weather Now** (`weather-now`) | Get current weather and forecasts with zero API keys — wttr.in one-liners for humans, Open-Meteo JSON for data, with the exact curl commands and… | — |
 | **Wiki Summary** (`wiki-summary`) | Fetch Wikipedia's current summary of any topic with zero API keys — the REST summary endpoint via curl, for answers that need today's article… | — |
@@ -976,7 +995,23 @@
 | **Last Two Weeks Handoff** (`last-two-weeks-handoff`) | Turn your notice period into a handoff that makes you missed for the right reasons — the transition doc nobody has to call you about, the… | — |
 | **Resignation Letter** (`resignation-letter`) | Write a resignation letter that closes a chapter without burning it — short, warm, legally clean, and silent on everything that doesn't belong in… | — |
 
-### `pm-simulators` — 12 skills
+### `pm-scam-defense` — 3 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **Data Breach Response** (`data-breach-response`) | Respond to your data being breached — triage by what actually leaked, the freeze/rotate/monitor ladder in the right order, and the calibrated… | — |
+| **Elder Scam Briefing** (`elder-scam-briefing`) | Protect aging parents from the scams that target them — the conversation that doesn't condescend, the family code word, the top patterns aimed at… | — |
+| **Scam Message Decoder** (`scam-message-decoder`) | Decode a suspicious message — text, email, call transcript, or DM — against the anatomy of known scam families, with a 🔴🟡🟢 read and the safe… | — |
+
+### `pm-sidehustle` — 3 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **First Client Contract** (`first-client-contract`) | Put your first client agreement in writing — the eight clauses a simple service contract must have, in plain language a non-lawyer can use, with… | — |
+| **Quarterly Tax Rhythm** (`quarterly-tax-rhythm`) | Build the tax habit self-employment requires — the setaside percentage from day one, the quarterly calendar, the records that make filing boring… | — |
+| **Side Business Setup** (`side-business-setup`) | Set up a side business in the right order — the do-first sequence (separate money, basic terms, simple records) vs. | — |
+
+### `pm-simulators` — 15 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
@@ -984,9 +1019,12 @@
 | **Discovery Eyes** (`discovery-eyes`) | Read your team's messages the way opposing counsel would in litigation discovery — prevention training that makes communication hygiene visceral. | — |
 | **Opposing Counsel** (`opposing-counsel`) | Read a contract the way the counterparty's lawyer will — hunting for leverage, not fairness. | — |
 | **Regulator Eyes** (`regulator-eyes`) | Read your marketing claims, landing page, or ad copy the way a consumer-protection investigator would (FTC/ASA framing) and draft the inquiry… | — |
+| **The Car Dealership** (`the-car-dealership`) | Simulate the car-buying gauntlet before you walk in — the four-square worksheet, the payment-question trap, the trade-in shuffle, and the finance… | — |
 | **The Churning Customer** (`the-churning-customer`) | Simulate the exact customer who will quietly cancel in month 4 — their internal monologue through the lifecycle and the honest exit interview they… | — |
 | **The Due Diligence Call** (`the-due-diligence-call`) | Simulate the due-diligence call where an acquirer's or investor's analyst takes your metrics apart — the questions behind the spreadsheet, the… | — |
+| **The Insurance Adjuster** (`the-insurance-adjuster`) | Simulate the adjuster's settlement call after your accident or loss — the recorded-statement asks, the quick-settlement anchor, the friendly… | — |
 | **The Journalist Call** (`the-journalist-call`) | Simulate a hostile-but-fair journalist interview about your company or announcement — the questions you fear, live follow-ups on every dodge, then… | — |
+| **The Open House** (`the-open-house`) | Simulate the open house and the listing agent's read of you — the questions that profile your budget and urgency, the staging that hides what… | — |
 | **The Price Pushback** (`the-price-pushback`) | Simulate the client who grinds on your price — the budget theater, the competitor quote, the scope squeeze — against your actual offer, with a… | — |
 | **The Procurement Gauntlet** (`the-procurement-gauntlet`) | Simulate enterprise procurement and security review of your product before your first big deal meets it for real — the questionnaire, the gaps… | — |
 | **The Promotion Committee** (`the-promotion-committee`) | Simulate the calibration meeting that discusses your promotion after your manager leaves the room — the debate, the packet's holes, the verdict. | — |
@@ -1035,6 +1073,14 @@
 | **Metric Gaslighting Detector** (`metric-gaslighting-detector`) | Find out how a dashboard, KPI report, or metrics slide is lying to you — before you repeat its story in a bigger room. | — |
 | **Premortem Assassin** (`premortem-assassin`) | Kill the plan on paper before reality does it for money. | — |
 
+### `pm-wedding` — 3 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **Wedding Budget** (`wedding-budget`) | Build a wedding budget that survives to the wedding — allocation by real shares, the per-guest lever made explicit, the routinely-forgotten line… | — |
+| **Wedding Logistics Planner** (`wedding-logistics-planner`) | Plan the wedding day as the operation it is — the minute-level run sheet, the vendor call sheet, the who-handles-problems roster, and the buffer… | — |
+| **Wedding Vendor Contract Decoder** (`wedding-vendor-contract-decoder`) | Decode a wedding vendor contract — venue, photographer, caterer, band — before signing: deposits and their refundability, cancellation and… | — |
+
 ---
 
-_599 skills across 82 bundles · 28 eval-scored (5%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._
+_625 skills across 86 bundles · 28 eval-scored (4%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._

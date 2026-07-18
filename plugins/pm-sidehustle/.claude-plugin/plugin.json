@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "pm-sidehustle",
+  "version": "1.0.0",
+  "description": "Side-hustle setup done in the right order: the employer-conflict check, money hygiene, the first client contract's eight clauses, and the quarterly tax rhythm",
+  "author": {
+    "name": "Mohit Aggarwal",
+    "email": "mohit15856@gmail.com"
+  },
+  "homepage": "https://github.com/mohitagw15856/pm-claude-skills",
+  "license": "MIT",
+  "keywords": [
+    "side-hustle",
+    "freelance",
+    "contract",
+    "taxes",
+    "small-business"
+  ]
+}
