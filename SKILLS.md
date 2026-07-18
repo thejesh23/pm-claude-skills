@@ -1,4 +1,4 @@
-# 🗂️ All 625 Skills — full catalog
+# 🗂️ All 626 Skills — full catalog
 
 > The complete per-skill breakdown, grouped by domain. For an interactive, searchable version see the [**live catalog**](https://mohitagw15856.github.io/pm-claude-skills/catalog.html); to run any skill in your browser, use the [**Playground**](https://mohitagw15856.github.io/pm-claude-skills/). Back to the [README](README.md).
 >
@@ -649,7 +649,13 @@
 | **Portfolio Page** (`portfolio-page`) | Structure a portfolio or case-study page that shows your work, not just lists it. | — |
 | **Resume** (`resume`) | Write a sharp, achievement-led resume/CV that passes ATS and earns the interview. | ✅ 3.3/5 |
 
-## 🌍 Industries & Public Sector (235 skills)
+## 🌍 Industries & Public Sector (236 skills)
+
+### `other` — 1 skill
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **ScienceScapes Journey Builder** (`sciencescapes-journey`) | Design and scaffold a new interactive visual journey (or a new stop) for the ScienceScapes open-source science education site. | — |
 
 ### `pm-agentnative` — 5 skills
 
@@ -1083,4 +1089,4 @@
 
 ---
 
-_625 skills across 86 bundles · 28 eval-scored (4%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._
+_626 skills across 87 bundles · 28 eval-scored (4%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._
