@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-591 skills exported. Copy a `.mdc rule` into the tool to use it.
+599 skills exported. Copy a `.mdc rule` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -180,6 +180,7 @@
 | Discovery Eyes | `pm-simulators` | `pm-simulators/discovery-eyes/discovery-eyes.mdc` |
 | Discovery Interview Guide | `pm-discovery` | `pm-discovery/discovery-interview-guide/discovery-interview-guide.mdc` |
 | Dispute Letter | `pm-lifeadmin` | `pm-lifeadmin/dispute-letter/dispute-letter.mdc` |
+| DNS Lookup | `pm-live` | `pm-live/dns-lookup/dns-lookup.mdc` |
 | Docs Quickstart | `pm-devrel` | `pm-devrel/docs-quickstart/docs-quickstart.mdc` |
 | Doctor Visit Prep | `pm-lifeadmin` | `pm-lifeadmin/doctor-visit-prep/doctor-visit-prep.mdc` |
 | Word Doc Tracked Changes | `pm-essentials` | `pm-essentials/docx-tracked-changes/docx-tracked-changes.mdc` |
@@ -238,6 +239,7 @@
 | Financial Statement Explainer | `pm-accounting` | `pm-accounting/financial-statement-explainer/financial-statement-explainer.mdc` |
 | Fine Appeal Letter | `pm-lifeadmin` | `pm-lifeadmin/fine-appeal-letter/fine-appeal-letter.mdc` |
 | FIRE Number | `pm-calculators` | `pm-calculators/fire-number/fire-number.mdc` |
+| Flight Tracker | `pm-live` | `pm-live/flight-tracker/flight-tracker.mdc` |
 | Flowchart | `pm-visuals` | `pm-visuals/flowchart/flowchart.mdc` |
 | FOIA / Public-Records Request | `pm-gov` | `pm-gov/foia-request/foia-request.mdc` |
 | Follow-Up Sequence | `pm-jobsearch` | `pm-jobsearch/follow-up-sequence/follow-up-sequence.mdc` |
@@ -289,6 +291,7 @@
 | Investor Pitch Deck | `pm-finance` | `pm-finance/investor-pitch-deck/investor-pitch-deck.mdc` |
 | Investor Update | `pm-business` | `pm-business/investor-update/investor-update.mdc` |
 | Invoice Generator | `pm-accounting` | `pm-accounting/invoice-generator/invoice-generator.mdc` |
+| IP Lookup | `pm-live` | `pm-live/ip-lookup/ip-lookup.mdc` |
 | ISO 27001 ISMS | `pm-compliance` | `pm-compliance/iso-27001-isms/iso-27001-isms.mdc` |
 | JD Decoder | `pm-jobsearch` | `pm-jobsearch/jd-decoder/jd-decoder.mdc` |
 | Job Application | `pm-business` | `pm-business/job-application/job-application.mdc` |
@@ -470,6 +473,7 @@
 | Roadmap Presentation | `pm-planning` | `pm-planning/roadmap-presentation/roadmap-presentation.mdc` |
 | ROI Estimator | `pm-calculators` | `pm-calculators/roi-estimator/roi-estimator.mdc` |
 | Role Redesign For AI | `pm-aiwork` | `pm-aiwork/role-redesign-for-ai/role-redesign-for-ai.mdc` |
+| RSS Digest | `pm-live` | `pm-live/rss-digest/rss-digest.mdc` |
 | Rubric Builder | `pm-education` | `pm-education/rubric-builder/rubric-builder.mdc` |
 | Runbook Writer | `pm-engineering` | `pm-engineering/runbook-writer/runbook-writer.mdc` |
 | Runway Calculator | `pm-calculators` | `pm-calculators/runway-calculator/runway-calculator.mdc` |
@@ -501,9 +505,11 @@
 | Session Handoff | `pm-craft` | `pm-craft/session-handoff/session-handoff.mdc` |
 | Severance Agreement Decoder | `pm-layoff` | `pm-layoff/severance-agreement-decoder/severance-agreement-decoder.mdc` |
 | Short-Form Script | `pm-creator` | `pm-creator/short-form-script/short-form-script.mdc` |
+| Site Check | `pm-live` | `pm-live/site-check/site-check.mdc` |
 | Site Safety Briefing | `pm-construction` | `pm-construction/site-safety-briefing/site-safety-briefing.mdc` |
 | Skill Fusion | `pm-advanced` | `pm-advanced/skill-fusion/skill-fusion.mdc` |
 | Skill Security Auditor | `pm-engineering` | `pm-engineering/skill-security-auditor/skill-security-auditor.mdc` |
+| Skill Vetting | `pm-security` | `pm-security/skill-vetting/skill-vetting.mdc` |
 | Slide Deck | `pm-documents` | `pm-documents/slide-deck/slide-deck.mdc` |
 | SLO and Error Budget | `pm-engineering` | `pm-engineering/slo-error-budget/slo-error-budget.mdc` |
 | SOAP Note | `pm-health` | `pm-health/soap-note/soap-note.mdc` |
@@ -514,6 +520,7 @@
 | S&OP Meeting Prep | `pm-supplychain` | `pm-supplychain/sop-meeting-prep/sop-meeting-prep.mdc` |
 | SOP Writer | `pm-operations` | `pm-operations/sop-writer/sop-writer.mdc` |
 | Sourcing Strategy | `pm-recruiting` | `pm-recruiting/sourcing-strategy/sourcing-strategy.mdc` |
+| Sports Scores | `pm-live` | `pm-live/sports-scores/sports-scores.mdc` |
 | Sprint Brief | `pm-delivery` | `pm-delivery/sprint-brief/sprint-brief.mdc` |
 | Sprint Planning | `pm-delivery` | `pm-delivery/sprint-planning/sprint-planning.mdc` |
 | Sprint Velocity Analysis | `pm-engineering` | `pm-engineering/sprint-velocity-analysis/sprint-velocity-analysis.mdc` |
@@ -534,6 +541,7 @@
 | Subscription Auditor | `pm-operator` | `pm-operator/subscription-auditor/subscription-auditor.mdc` |
 | Substack Notes Scraper | `pm-writers` | `pm-writers/substack-notes-scraper/substack-notes-scraper.mdc` |
 | Subtitle & Caption | `pm-localization` | `pm-localization/subtitle-caption/subtitle-caption.mdc` |
+| Sun and Moon | `pm-live` | `pm-live/sun-and-moon/sun-and-moon.mdc` |
 | Supplier Scorecard | `pm-supplychain` | `pm-supplychain/supplier-scorecard/supplier-scorecard.mdc` |
 | Support Macro | `pm-support` | `pm-support/support-macro/support-macro.mdc` |
 | Support Runbook | `pm-support` | `pm-support/support-runbook/support-runbook.mdc` |

@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-591 skills exported. Copy a `SKILL.md` into the tool to use it.
+599 skills exported. Copy a `SKILL.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -180,6 +180,7 @@
 | Discovery Eyes | `pm-simulators` | `discovery-eyes/SKILL.md` |
 | Discovery Interview Guide | `pm-discovery` | `discovery-interview-guide/SKILL.md` |
 | Dispute Letter | `pm-lifeadmin` | `dispute-letter/SKILL.md` |
+| DNS Lookup | `pm-live` | `dns-lookup/SKILL.md` |
 | Docs Quickstart | `pm-devrel` | `docs-quickstart/SKILL.md` |
 | Doctor Visit Prep | `pm-lifeadmin` | `doctor-visit-prep/SKILL.md` |
 | Word Doc Tracked Changes | `pm-essentials` | `docx-tracked-changes/SKILL.md` |
@@ -238,6 +239,7 @@
 | Financial Statement Explainer | `pm-accounting` | `financial-statement-explainer/SKILL.md` |
 | Fine Appeal Letter | `pm-lifeadmin` | `fine-appeal-letter/SKILL.md` |
 | FIRE Number | `pm-calculators` | `fire-number/SKILL.md` |
+| Flight Tracker | `pm-live` | `flight-tracker/SKILL.md` |
 | Flowchart | `pm-visuals` | `flowchart/SKILL.md` |
 | FOIA / Public-Records Request | `pm-gov` | `foia-request/SKILL.md` |
 | Follow-Up Sequence | `pm-jobsearch` | `follow-up-sequence/SKILL.md` |
@@ -289,6 +291,7 @@
 | Investor Pitch Deck | `pm-finance` | `investor-pitch-deck/SKILL.md` |
 | Investor Update | `pm-business` | `investor-update/SKILL.md` |
 | Invoice Generator | `pm-accounting` | `invoice-generator/SKILL.md` |
+| IP Lookup | `pm-live` | `ip-lookup/SKILL.md` |
 | ISO 27001 ISMS | `pm-compliance` | `iso-27001-isms/SKILL.md` |
 | JD Decoder | `pm-jobsearch` | `jd-decoder/SKILL.md` |
 | Job Application | `pm-business` | `job-application/SKILL.md` |
@@ -470,6 +473,7 @@
 | Roadmap Presentation | `pm-planning` | `roadmap-presentation/SKILL.md` |
 | ROI Estimator | `pm-calculators` | `roi-estimator/SKILL.md` |
 | Role Redesign For AI | `pm-aiwork` | `role-redesign-for-ai/SKILL.md` |
+| RSS Digest | `pm-live` | `rss-digest/SKILL.md` |
 | Rubric Builder | `pm-education` | `rubric-builder/SKILL.md` |
 | Runbook Writer | `pm-engineering` | `runbook-writer/SKILL.md` |
 | Runway Calculator | `pm-calculators` | `runway-calculator/SKILL.md` |
@@ -501,9 +505,11 @@
 | Session Handoff | `pm-craft` | `session-handoff/SKILL.md` |
 | Severance Agreement Decoder | `pm-layoff` | `severance-agreement-decoder/SKILL.md` |
 | Short-Form Script | `pm-creator` | `short-form-script/SKILL.md` |
+| Site Check | `pm-live` | `site-check/SKILL.md` |
 | Site Safety Briefing | `pm-construction` | `site-safety-briefing/SKILL.md` |
 | Skill Fusion | `pm-advanced` | `skill-fusion/SKILL.md` |
 | Skill Security Auditor | `pm-engineering` | `skill-security-auditor/SKILL.md` |
+| Skill Vetting | `pm-security` | `skill-vetting/SKILL.md` |
 | Slide Deck | `pm-documents` | `slide-deck/SKILL.md` |
 | SLO and Error Budget | `pm-engineering` | `slo-error-budget/SKILL.md` |
 | SOAP Note | `pm-health` | `soap-note/SKILL.md` |
@@ -514,6 +520,7 @@
 | S&OP Meeting Prep | `pm-supplychain` | `sop-meeting-prep/SKILL.md` |
 | SOP Writer | `pm-operations` | `sop-writer/SKILL.md` |
 | Sourcing Strategy | `pm-recruiting` | `sourcing-strategy/SKILL.md` |
+| Sports Scores | `pm-live` | `sports-scores/SKILL.md` |
 | Sprint Brief | `pm-delivery` | `sprint-brief/SKILL.md` |
 | Sprint Planning | `pm-delivery` | `sprint-planning/SKILL.md` |
 | Sprint Velocity Analysis | `pm-engineering` | `sprint-velocity-analysis/SKILL.md` |
@@ -534,6 +541,7 @@
 | Subscription Auditor | `pm-operator` | `subscription-auditor/SKILL.md` |
 | Substack Notes Scraper | `pm-writers` | `substack-notes-scraper/SKILL.md` |
 | Subtitle & Caption | `pm-localization` | `subtitle-caption/SKILL.md` |
+| Sun and Moon | `pm-live` | `sun-and-moon/SKILL.md` |
 | Supplier Scorecard | `pm-supplychain` | `supplier-scorecard/SKILL.md` |
 | Support Macro | `pm-support` | `support-macro/SKILL.md` |
 | Support Runbook | `pm-support` | `support-runbook/SKILL.md` |

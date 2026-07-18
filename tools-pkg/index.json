@@ -1038,6 +1038,12 @@
   "description": "Write a letter to dispute an incorrect charge, bill, or record. Use when asked to dispute a credit-card charge, contest a bill or invoice, challenge a credit-report error, or formally dispute a fee. Produces a clear dispute letter — what's being disputed, why it's wrong, the evidence, and the correction requested — in the firm, paper-trail tone these situations need."
  },
  {
+  "name": "dns_lookup",
+  "skill": "dns-lookup",
+  "bundle": "pm-live",
+  "description": "Query DNS records and domain registration data with zero API keys — DNS-over-HTTPS via dns.google and domain registration via RDAP, through plain curl. Use when asked what does this domain resolve to, check the MX or TXT records, who registered this domain, when does it expire, or has DNS propagated. Produces the records decoded (SPF/DKIM/DMARC read, not just dumped), the registration facts from RDAP, and the rerunnable commands."
+ },
+ {
   "name": "docs_quickstart",
   "skill": "docs-quickstart",
   "bundle": "pm-devrel",
@@ -1380,6 +1386,12 @@
   "description": "Compute a financial-independence (FIRE) target and years-to-reach with every assumption labeled as an assumption — plus a sensitivity table instead of a single false-precision answer. Use when asked what's my FIRE number, when can I retire early, how much do I need to be financially independent, or model my savings trajectory. Produces the FIRE number, years-to-target at stated assumptions, a return × withdrawal-rate sensitivity grid, and the honest list of what the model ignores."
  },
  {
+  "name": "flight_tracker",
+  "skill": "flight-tracker",
+  "bundle": "pm-live",
+  "description": "Track live aircraft positions with zero API keys — adsb.lol's open ADS-B network primary, OpenSky fallback, via curl: by callsign, registration, or area. Use when asked where is this flight right now, what planes are overhead, track a tail number, or is that flight in the air. Produces the live position with altitude, speed, and heading interpreted, the overhead list for a location, and the rerunnable command — with the positions-not-schedules boundary stated honestly."
+ },
+ {
   "name": "flowchart",
   "skill": "flowchart",
   "bundle": "pm-visuals",
@@ -1684,6 +1696,12 @@
   "skill": "invoice-generator",
   "bundle": "pm-accounting",
   "description": "Create a professional, complete invoice for a client or customer. Use when asked to write an invoice, create a bill, draft a freelance/contractor invoice, or set up an invoice template. Produces a clear invoice — your and the client's details, a unique number, line items with quantities/rates, subtotal/tax/total, payment terms and methods, and due date — ready to send and easy to pay. Not tax/legal advice."
+ },
+ {
+  "name": "ip_lookup",
+  "skill": "ip-lookup",
+  "bundle": "pm-live",
+  "description": "Look up IP addresses and your own public IP with zero API keys — geolocation, ISP/ASN, and hosting flags via ip-api.com and ipify through curl. Use when asked what's my public IP, where is this IP from, whose network is this address, or is this IP a VPN/datacenter. Produces the lookup with ISP, ASN, and location fields interpreted honestly (city-level accuracy caveats included), and the rerunnable command."
  },
  {
   "name": "iso_27001_isms",
@@ -2772,6 +2790,12 @@
   "description": "Redesign a job role that AI now does a large part of — deliberately, instead of quietly expecting the same headcount to absorb 140% output. Use when AI has changed what a role spends time on, when writing a revised role charter or job description post-AI, when a team asks 'what is my job now', or when planning capacity after AI adoption. Produces a role redesign: the task inventory before/after, the redefined core of the role, new expectations and metrics, and the growth-path implications. For hiring rubrics use hiring-rubric; for org-wide skills planning use ai-upskilling or career-ladder-map."
  },
  {
+  "name": "rss_digest",
+  "skill": "rss-digest",
+  "bundle": "pm-live",
+  "description": "Fetch and digest any RSS or Atom feed with zero API keys — curl plus disciplined parsing into a ranked, deduplicated briefing instead of a link dump. Use when asked summarize this feed, what's new on this blog, digest these RSS feeds, or build me a morning briefing from these sources. Produces the digest with dates and one-line what-it-is summaries, cross-feed dedup, and the rerunnable commands per feed."
+ },
+ {
   "name": "rubric_builder",
   "skill": "rubric-builder",
   "bundle": "pm-education",
@@ -2964,6 +2988,12 @@
   "description": "Write a short-form video script for TikTok, Instagram Reels, or YouTube Shorts — built on the hook→retention→payoff structure that drives watch-time. Use when asked to script a Reel, TikTok, Short, or any 15–60s vertical video. Produces a timed script with a 0–3s hook, retention beats with on-screen text and B-roll cues, a payoff, and a CTA — plus a caption and on-screen-text list. Distinct from long-form YouTube scripting."
  },
  {
+  "name": "site_check",
+  "skill": "site-check",
+  "bundle": "pm-live",
+  "description": "Answer 'is this site down or is it just me' properly — curl status/timing diagnostics, DNS cross-check, and TLS certificate reads, assembled into a where-it's-broken diagnosis. Use when asked is this website down, why can't I reach this site, check if my site is up, or is the SSL certificate expired. Produces the layered diagnosis (DNS → TLS → HTTP → content), response timing, cert expiry, and the rerunnable commands."
+ },
+ {
   "name": "site_safety_briefing",
   "skill": "site-safety-briefing",
   "bundle": "pm-construction",
@@ -2980,6 +3010,12 @@
   "skill": "skill-security-auditor",
   "bundle": "pm-engineering",
   "description": "Audit a Claude/Agent SKILL.md (or any AI skill / system prompt) for safety before installing or merging it. Use when asked to review a skill for security, check a prompt for injection, vet a community skill, or assess whether an instruction file is safe to run. Produces a risk-rated report of findings (prompt injection, data exfiltration, code execution, secrets, hidden text) with severity, evidence, and a clear install / don't-install recommendation."
+ },
+ {
+  "name": "skill_vetting",
+  "skill": "skill-vetting",
+  "bundle": "pm-security",
+  "description": "Vet an agent skill before installing it — read the SKILL.md and any scripts for the red-flag patterns (credential access, obfuscation, exfiltration, prompt injection), audit its blast radius, and produce a risk-tiered verdict. Use when asked is this skill safe to install, vet this SKILL.md, review this skill from a marketplace, or check what this skill can do to my machine. Produces the risk classification with quoted evidence, the permission-surface audit, the red-flag checklist results, and an install/sandbox/reject recommendation."
  },
  {
   "name": "slide_deck",
@@ -3034,6 +3070,12 @@
   "skill": "sourcing-strategy",
   "bundle": "pm-recruiting",
   "description": "Build a talent sourcing strategy for a hard-to-fill role. Use when asked to create a sourcing strategy, a candidate sourcing plan, a channel plan for hiring, or to figure out where to find candidates for a role. Produces a strategy — the ideal-candidate profile and where they are, prioritised sourcing channels, outreach approach, a pipeline target with funnel math, and a weekly plan — so sourcing is deliberate, not just posting and praying."
+ },
+ {
+  "name": "sports_scores",
+  "skill": "sports-scores",
+  "bundle": "pm-live",
+  "description": "Get live scores, schedules, and standings for major leagues with zero API keys — ESPN's public JSON endpoints via curl, covering NFL, NBA, MLB, NHL, and world football. Use when asked what's the score, did my team win, today's games, or league standings right now. Produces the scores with game state (live/final/scheduled), the asked-team answer first, and the rerunnable command — with the unofficial-API caveat stated."
  },
  {
   "name": "sprint_brief",
@@ -3154,6 +3196,12 @@
   "skill": "subtitle-caption",
   "bundle": "pm-localization",
   "description": "Write or translate subtitles/captions that respect reading speed and timing rules. Use when asked to write subtitles, captions, SRT/VTT content, or to translate subtitles for a video. Produces properly-formatted, readable subtitles — line-length and reading-speed compliant, well-segmented, with translation that fits the time available, plus SDH/caption guidance where relevant."
+ },
+ {
+  "name": "sun_and_moon",
+  "skill": "sun-and-moon",
+  "bundle": "pm-live",
+  "description": "Get sunrise, sunset, golden hour, day length, and moon phase for any location with zero API keys — sunrise-sunset.org and Open-Meteo via curl, times converted to local. Use when asked when is sunset today, golden hour for a photo shoot, how long is the day, what's the moon phase tonight, or sun times for a date and place. Produces the sun/moon times in the user's local zone (the UTC trap handled), the photography windows, and the rerunnable command."
  },
  {
   "name": "supplier_scorecard",

@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-591 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
+599 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -180,6 +180,7 @@
 | Discovery Eyes | `pm-simulators` | `pm-simulators/discovery-eyes/GEM_INSTRUCTIONS.md` |
 | Discovery Interview Guide | `pm-discovery` | `pm-discovery/discovery-interview-guide/GEM_INSTRUCTIONS.md` |
 | Dispute Letter | `pm-lifeadmin` | `pm-lifeadmin/dispute-letter/GEM_INSTRUCTIONS.md` |
+| DNS Lookup | `pm-live` | `pm-live/dns-lookup/GEM_INSTRUCTIONS.md` |
 | Docs Quickstart | `pm-devrel` | `pm-devrel/docs-quickstart/GEM_INSTRUCTIONS.md` |
 | Doctor Visit Prep | `pm-lifeadmin` | `pm-lifeadmin/doctor-visit-prep/GEM_INSTRUCTIONS.md` |
 | Word Doc Tracked Changes | `pm-essentials` | `pm-essentials/docx-tracked-changes/GEM_INSTRUCTIONS.md` |
@@ -238,6 +239,7 @@
 | Financial Statement Explainer | `pm-accounting` | `pm-accounting/financial-statement-explainer/GEM_INSTRUCTIONS.md` |
 | Fine Appeal Letter | `pm-lifeadmin` | `pm-lifeadmin/fine-appeal-letter/GEM_INSTRUCTIONS.md` |
 | FIRE Number | `pm-calculators` | `pm-calculators/fire-number/GEM_INSTRUCTIONS.md` |
+| Flight Tracker | `pm-live` | `pm-live/flight-tracker/GEM_INSTRUCTIONS.md` |
 | Flowchart | `pm-visuals` | `pm-visuals/flowchart/GEM_INSTRUCTIONS.md` |
 | FOIA / Public-Records Request | `pm-gov` | `pm-gov/foia-request/GEM_INSTRUCTIONS.md` |
 | Follow-Up Sequence | `pm-jobsearch` | `pm-jobsearch/follow-up-sequence/GEM_INSTRUCTIONS.md` |
@@ -289,6 +291,7 @@
 | Investor Pitch Deck | `pm-finance` | `pm-finance/investor-pitch-deck/GEM_INSTRUCTIONS.md` |
 | Investor Update | `pm-business` | `pm-business/investor-update/GEM_INSTRUCTIONS.md` |
 | Invoice Generator | `pm-accounting` | `pm-accounting/invoice-generator/GEM_INSTRUCTIONS.md` |
+| IP Lookup | `pm-live` | `pm-live/ip-lookup/GEM_INSTRUCTIONS.md` |
 | ISO 27001 ISMS | `pm-compliance` | `pm-compliance/iso-27001-isms/GEM_INSTRUCTIONS.md` |
 | JD Decoder | `pm-jobsearch` | `pm-jobsearch/jd-decoder/GEM_INSTRUCTIONS.md` |
 | Job Application | `pm-business` | `pm-business/job-application/GEM_INSTRUCTIONS.md` |
@@ -470,6 +473,7 @@
 | Roadmap Presentation | `pm-planning` | `pm-planning/roadmap-presentation/GEM_INSTRUCTIONS.md` |
 | ROI Estimator | `pm-calculators` | `pm-calculators/roi-estimator/GEM_INSTRUCTIONS.md` |
 | Role Redesign For AI | `pm-aiwork` | `pm-aiwork/role-redesign-for-ai/GEM_INSTRUCTIONS.md` |
+| RSS Digest | `pm-live` | `pm-live/rss-digest/GEM_INSTRUCTIONS.md` |
 | Rubric Builder | `pm-education` | `pm-education/rubric-builder/GEM_INSTRUCTIONS.md` |
 | Runbook Writer | `pm-engineering` | `pm-engineering/runbook-writer/GEM_INSTRUCTIONS.md` |
 | Runway Calculator | `pm-calculators` | `pm-calculators/runway-calculator/GEM_INSTRUCTIONS.md` |
@@ -501,9 +505,11 @@
 | Session Handoff | `pm-craft` | `pm-craft/session-handoff/GEM_INSTRUCTIONS.md` |
 | Severance Agreement Decoder | `pm-layoff` | `pm-layoff/severance-agreement-decoder/GEM_INSTRUCTIONS.md` |
 | Short-Form Script | `pm-creator` | `pm-creator/short-form-script/GEM_INSTRUCTIONS.md` |
+| Site Check | `pm-live` | `pm-live/site-check/GEM_INSTRUCTIONS.md` |
 | Site Safety Briefing | `pm-construction` | `pm-construction/site-safety-briefing/GEM_INSTRUCTIONS.md` |
 | Skill Fusion | `pm-advanced` | `pm-advanced/skill-fusion/GEM_INSTRUCTIONS.md` |
 | Skill Security Auditor | `pm-engineering` | `pm-engineering/skill-security-auditor/GEM_INSTRUCTIONS.md` |
+| Skill Vetting | `pm-security` | `pm-security/skill-vetting/GEM_INSTRUCTIONS.md` |
 | Slide Deck | `pm-documents` | `pm-documents/slide-deck/GEM_INSTRUCTIONS.md` |
 | SLO and Error Budget | `pm-engineering` | `pm-engineering/slo-error-budget/GEM_INSTRUCTIONS.md` |
 | SOAP Note | `pm-health` | `pm-health/soap-note/GEM_INSTRUCTIONS.md` |
@@ -514,6 +520,7 @@
 | S&OP Meeting Prep | `pm-supplychain` | `pm-supplychain/sop-meeting-prep/GEM_INSTRUCTIONS.md` |
 | SOP Writer | `pm-operations` | `pm-operations/sop-writer/GEM_INSTRUCTIONS.md` |
 | Sourcing Strategy | `pm-recruiting` | `pm-recruiting/sourcing-strategy/GEM_INSTRUCTIONS.md` |
+| Sports Scores | `pm-live` | `pm-live/sports-scores/GEM_INSTRUCTIONS.md` |
 | Sprint Brief | `pm-delivery` | `pm-delivery/sprint-brief/GEM_INSTRUCTIONS.md` |
 | Sprint Planning | `pm-delivery` | `pm-delivery/sprint-planning/GEM_INSTRUCTIONS.md` |
 | Sprint Velocity Analysis | `pm-engineering` | `pm-engineering/sprint-velocity-analysis/GEM_INSTRUCTIONS.md` |
@@ -534,6 +541,7 @@
 | Subscription Auditor | `pm-operator` | `pm-operator/subscription-auditor/GEM_INSTRUCTIONS.md` |
 | Substack Notes Scraper | `pm-writers` | `pm-writers/substack-notes-scraper/GEM_INSTRUCTIONS.md` |
 | Subtitle & Caption | `pm-localization` | `pm-localization/subtitle-caption/GEM_INSTRUCTIONS.md` |
+| Sun and Moon | `pm-live` | `pm-live/sun-and-moon/GEM_INSTRUCTIONS.md` |
 | Supplier Scorecard | `pm-supplychain` | `pm-supplychain/supplier-scorecard/GEM_INSTRUCTIONS.md` |
 | Support Macro | `pm-support` | `pm-support/support-macro/GEM_INSTRUCTIONS.md` |
 | Support Runbook | `pm-support` | `pm-support/support-runbook/GEM_INSTRUCTIONS.md` |

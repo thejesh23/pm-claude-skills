@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-591 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
+599 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -180,6 +180,7 @@
 | Discovery Eyes | `pm-simulators` | `pm-simulators/discovery-eyes/SYSTEM_PROMPT.md` |
 | Discovery Interview Guide | `pm-discovery` | `pm-discovery/discovery-interview-guide/SYSTEM_PROMPT.md` |
 | Dispute Letter | `pm-lifeadmin` | `pm-lifeadmin/dispute-letter/SYSTEM_PROMPT.md` |
+| DNS Lookup | `pm-live` | `pm-live/dns-lookup/SYSTEM_PROMPT.md` |
 | Docs Quickstart | `pm-devrel` | `pm-devrel/docs-quickstart/SYSTEM_PROMPT.md` |
 | Doctor Visit Prep | `pm-lifeadmin` | `pm-lifeadmin/doctor-visit-prep/SYSTEM_PROMPT.md` |
 | Word Doc Tracked Changes | `pm-essentials` | `pm-essentials/docx-tracked-changes/SYSTEM_PROMPT.md` |
@@ -238,6 +239,7 @@
 | Financial Statement Explainer | `pm-accounting` | `pm-accounting/financial-statement-explainer/SYSTEM_PROMPT.md` |
 | Fine Appeal Letter | `pm-lifeadmin` | `pm-lifeadmin/fine-appeal-letter/SYSTEM_PROMPT.md` |
 | FIRE Number | `pm-calculators` | `pm-calculators/fire-number/SYSTEM_PROMPT.md` |
+| Flight Tracker | `pm-live` | `pm-live/flight-tracker/SYSTEM_PROMPT.md` |
 | Flowchart | `pm-visuals` | `pm-visuals/flowchart/SYSTEM_PROMPT.md` |
 | FOIA / Public-Records Request | `pm-gov` | `pm-gov/foia-request/SYSTEM_PROMPT.md` |
 | Follow-Up Sequence | `pm-jobsearch` | `pm-jobsearch/follow-up-sequence/SYSTEM_PROMPT.md` |
@@ -289,6 +291,7 @@
 | Investor Pitch Deck | `pm-finance` | `pm-finance/investor-pitch-deck/SYSTEM_PROMPT.md` |
 | Investor Update | `pm-business` | `pm-business/investor-update/SYSTEM_PROMPT.md` |
 | Invoice Generator | `pm-accounting` | `pm-accounting/invoice-generator/SYSTEM_PROMPT.md` |
+| IP Lookup | `pm-live` | `pm-live/ip-lookup/SYSTEM_PROMPT.md` |
 | ISO 27001 ISMS | `pm-compliance` | `pm-compliance/iso-27001-isms/SYSTEM_PROMPT.md` |
 | JD Decoder | `pm-jobsearch` | `pm-jobsearch/jd-decoder/SYSTEM_PROMPT.md` |
 | Job Application | `pm-business` | `pm-business/job-application/SYSTEM_PROMPT.md` |
@@ -470,6 +473,7 @@
 | Roadmap Presentation | `pm-planning` | `pm-planning/roadmap-presentation/SYSTEM_PROMPT.md` |
 | ROI Estimator | `pm-calculators` | `pm-calculators/roi-estimator/SYSTEM_PROMPT.md` |
 | Role Redesign For AI | `pm-aiwork` | `pm-aiwork/role-redesign-for-ai/SYSTEM_PROMPT.md` |
+| RSS Digest | `pm-live` | `pm-live/rss-digest/SYSTEM_PROMPT.md` |
 | Rubric Builder | `pm-education` | `pm-education/rubric-builder/SYSTEM_PROMPT.md` |
 | Runbook Writer | `pm-engineering` | `pm-engineering/runbook-writer/SYSTEM_PROMPT.md` |
 | Runway Calculator | `pm-calculators` | `pm-calculators/runway-calculator/SYSTEM_PROMPT.md` |
@@ -501,9 +505,11 @@
 | Session Handoff | `pm-craft` | `pm-craft/session-handoff/SYSTEM_PROMPT.md` |
 | Severance Agreement Decoder | `pm-layoff` | `pm-layoff/severance-agreement-decoder/SYSTEM_PROMPT.md` |
 | Short-Form Script | `pm-creator` | `pm-creator/short-form-script/SYSTEM_PROMPT.md` |
+| Site Check | `pm-live` | `pm-live/site-check/SYSTEM_PROMPT.md` |
 | Site Safety Briefing | `pm-construction` | `pm-construction/site-safety-briefing/SYSTEM_PROMPT.md` |
 | Skill Fusion | `pm-advanced` | `pm-advanced/skill-fusion/SYSTEM_PROMPT.md` |
 | Skill Security Auditor | `pm-engineering` | `pm-engineering/skill-security-auditor/SYSTEM_PROMPT.md` |
+| Skill Vetting | `pm-security` | `pm-security/skill-vetting/SYSTEM_PROMPT.md` |
 | Slide Deck | `pm-documents` | `pm-documents/slide-deck/SYSTEM_PROMPT.md` |
 | SLO and Error Budget | `pm-engineering` | `pm-engineering/slo-error-budget/SYSTEM_PROMPT.md` |
 | SOAP Note | `pm-health` | `pm-health/soap-note/SYSTEM_PROMPT.md` |
@@ -514,6 +520,7 @@
 | S&OP Meeting Prep | `pm-supplychain` | `pm-supplychain/sop-meeting-prep/SYSTEM_PROMPT.md` |
 | SOP Writer | `pm-operations` | `pm-operations/sop-writer/SYSTEM_PROMPT.md` |
 | Sourcing Strategy | `pm-recruiting` | `pm-recruiting/sourcing-strategy/SYSTEM_PROMPT.md` |
+| Sports Scores | `pm-live` | `pm-live/sports-scores/SYSTEM_PROMPT.md` |
 | Sprint Brief | `pm-delivery` | `pm-delivery/sprint-brief/SYSTEM_PROMPT.md` |
 | Sprint Planning | `pm-delivery` | `pm-delivery/sprint-planning/SYSTEM_PROMPT.md` |
 | Sprint Velocity Analysis | `pm-engineering` | `pm-engineering/sprint-velocity-analysis/SYSTEM_PROMPT.md` |
@@ -534,6 +541,7 @@
 | Subscription Auditor | `pm-operator` | `pm-operator/subscription-auditor/SYSTEM_PROMPT.md` |
 | Substack Notes Scraper | `pm-writers` | `pm-writers/substack-notes-scraper/SYSTEM_PROMPT.md` |
 | Subtitle & Caption | `pm-localization` | `pm-localization/subtitle-caption/SYSTEM_PROMPT.md` |
+| Sun and Moon | `pm-live` | `pm-live/sun-and-moon/SYSTEM_PROMPT.md` |
 | Supplier Scorecard | `pm-supplychain` | `pm-supplychain/supplier-scorecard/SYSTEM_PROMPT.md` |
 | Support Macro | `pm-support` | `pm-support/support-macro/SYSTEM_PROMPT.md` |
 | Support Runbook | `pm-support` | `pm-support/support-runbook/SYSTEM_PROMPT.md` |

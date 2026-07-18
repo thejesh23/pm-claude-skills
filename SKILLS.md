@@ -1,4 +1,4 @@
-# 🗂️ All 591 Skills — full catalog
+# 🗂️ All 599 Skills — full catalog
 
 > The complete per-skill breakdown, grouped by domain. For an interactive, searchable version see the [**live catalog**](https://mohitagw15856.github.io/pm-claude-skills/catalog.html); to run any skill in your browser, use the [**Playground**](https://mohitagw15856.github.io/pm-claude-skills/). Back to the [README](README.md).
 >
@@ -167,7 +167,7 @@
 | **Social Media Audit** (`social-media-audit`) | Audit an existing social media presence across all active platforms. | — |
 | **Viral Content Framework** (`viral-content-framework`) | Build a framework for creating shareable, high-reach social media content. | — |
 
-## 💻 Engineering & AI (81 skills)
+## 💻 Engineering & AI (82 skills)
 
 ### `pm-ai` — 13 skills
 
@@ -270,13 +270,14 @@
 | **Regression Test Plan** (`regression-test-plan`) | Design and prioritize a regression test suite so changes don't break what worked. | — |
 | **Test Case Writer** (`test-case-writer`) | Turn a requirement or user story into clear, executable test cases. | — |
 
-### `pm-security` — 5 skills
+### `pm-security` — 6 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
 | **Penetration Test Report** (`pentest-report`) | Write a clear penetration-test report from findings of an authorized engagement. | — |
 | **Security Incident Response** (`security-incident-response`) | Run or document a security incident response — contain, eradicate, recover, and learn. | — |
 | **Security Review** (`security-review`) | Review a design, PR, or feature for security issues before it ships. | — |
+| **Skill Vetting** (`skill-vetting`) | Vet an agent skill before installing it — read the SKILL.md and any scripts for the red-flag patterns (credential access, obfuscation… | — |
 | **Threat Model** (`threat-model`) | Threat-model a system or feature to find where it could be attacked, before you build it. | — |
 | **Vulnerability Triage** (`vuln-triage`) | Triage a vulnerability or scanner finding — assess real severity, exploitability, and how urgently to fix. | — |
 
@@ -643,7 +644,7 @@
 | **Portfolio Page** (`portfolio-page`) | Structure a portfolio or case-study page that shows your work, not just lists it. | — |
 | **Resume** (`resume`) | Write a sharp, achievement-led resume/CV that passes ATS and earns the interview. | ✅ 3.3/5 |
 
-## 🌍 Industries & Public Sector (207 skills)
+## 🌍 Industries & Public Sector (214 skills)
 
 ### `pm-agentnative` — 5 skills
 
@@ -862,7 +863,7 @@
 | **Reference Request Kit** (`reference-request-kit`) | Secure strong references after a departure — who to ask, the ask messages, the briefing sheet that makes their reference specific, and the… | — |
 | **Severance Agreement Decoder** (`severance-agreement-decoder`) | Decode a severance agreement before you sign it — what you're giving up, what's negotiable, and the deadlines that decide your leverage. | — |
 
-### `pm-live` — 10 skills
+### `pm-live` — 17 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
@@ -870,9 +871,16 @@
 | **Crypto Prices** (`crypto-prices`) | Fetch live cryptocurrency prices with zero API keys — CoinGecko's public endpoints primary, Coinbase spot fallback, via plain curl. | — |
 | **Currency Rates** (`currency-rates`) | Convert currencies and fetch live exchange rates with zero API keys — Frankfurter (ECB rates) primary, open.er-api.com fallback, via plain curl. | — |
 | **Dictionary Lookup** (`dictionary-lookup`) | Look up word definitions, pronunciation, etymology and synonyms with zero API keys — the Free Dictionary API via curl, with honest handling of… | — |
+| **DNS Lookup** (`dns-lookup`) | Query DNS records and domain registration data with zero API keys — DNS-over-HTTPS via dns.google and domain registration via RDAP, through plain… | — |
 | **Earthquake Watch** (`earthquake-watch`) | Check recent earthquakes worldwide with zero API keys — USGS real-time GeoJSON feeds via curl, filtered by magnitude, region, and time window. | — |
+| **Flight Tracker** (`flight-tracker`) | Track live aircraft positions with zero API keys — adsb.lol's open ADS-B network primary, OpenSky fallback, via curl: by callsign, registration… | — |
 | **HN Digest** (`hn-digest`) | Pull the current Hacker News front page, top comments, or a topic search with zero API keys — the official Firebase API and Algolia search via… | — |
+| **IP Lookup** (`ip-lookup`) | Look up IP addresses and your own public IP with zero API keys — geolocation, ISP/ASN, and hosting flags via ip-api.com and ipify through curl. | — |
 | **Public Holidays** (`public-holidays`) | Look up public holidays for any country and year with zero API keys — the Nager.Date API via curl, with long-weekend detection and cross-country… | — |
+| **RSS Digest** (`rss-digest`) | Fetch and digest any RSS or Atom feed with zero API keys — curl plus disciplined parsing into a ranked, deduplicated briefing instead of a link dump. | — |
+| **Site Check** (`site-check`) | Answer 'is this site down or is it just me' properly — curl status/timing diagnostics, DNS cross-check, and TLS certificate reads, assembled into… | — |
+| **Sports Scores** (`sports-scores`) | Get live scores, schedules, and standings for major leagues with zero API keys — ESPN's public JSON endpoints via curl, covering NFL, NBA, MLB… | — |
+| **Sun and Moon** (`sun-and-moon`) | Get sunrise, sunset, golden hour, day length, and moon phase for any location with zero API keys — sunrise-sunset.org and Open-Meteo via curl… | — |
 | **Weather Now** (`weather-now`) | Get current weather and forecasts with zero API keys — wttr.in one-liners for humans, Open-Meteo JSON for data, with the exact curl commands and… | — |
 | **Wiki Summary** (`wiki-summary`) | Fetch Wikipedia's current summary of any topic with zero API keys — the REST summary endpoint via curl, for answers that need today's article… | — |
 | **World Clock** (`world-clock`) | Get the current time anywhere and convert between time zones with zero API keys — timeapi.io via curl (worldtimeapi fallback), plus the DST-safe… | — |
@@ -1029,4 +1037,4 @@
 
 ---
 
-_591 skills across 82 bundles · 28 eval-scored (5%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._
+_599 skills across 82 bundles · 28 eval-scored (5%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._

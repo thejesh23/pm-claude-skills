@@ -39,14 +39,15 @@ for (const f of ['package.json', 'server.json']) {
 // Any "<number> skills"-ish claim in these files must use the current number
 // (small tolerance for subset claims like "50 production skills").
 const LIVING = [
-  'README.md', 'CHEATSHEET.md', 'PERSONAS.md', 'CONTRIBUTING.md',
+  'README.md', 'CHEATSHEET.md', 'PERSONAS.md', 'CONTRIBUTING.md', 'docs/SHOWCASE.md',
   'docs/FOUNDATION.md', 'docs/print/README.md', 'training/README.md', 'training/MODEL_CARD.md',
   ...readdirSync(join(root, 'web')).filter((n) => n.endsWith('.html')).map((n) => `web/${n}`),
 ];
 // Legitimate non-total numbers that may precede the word "skills":
 // 50 = production tier · 45 = pm-engineering · 28 = eval-scored (update when a
 // new eval run lands) · small numbers = bundle sizes in prose.
-const ALLOWED = new Set([skillCount, bundleCount, 50, 45, 28, 12, 30, 15, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]);
+// 17 = the pm-live keyless live-data family
+const ALLOWED = new Set([skillCount, bundleCount, 50, 45, 28, 17, 12, 30, 15, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]);
 // Several claim shapes; each regex's first capture group is the number.
 const CLAIMS = [
   /\b(\d{2,4})\s+(?:(?:professional|open-source|curated|AI)\s+){0,2}(?:Agent\s+)?skills?\b/gi,

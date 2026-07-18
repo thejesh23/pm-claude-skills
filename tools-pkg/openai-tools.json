@@ -3289,6 +3289,25 @@
  {
   "type": "function",
   "function": {
+   "name": "dns_lookup",
+   "description": "Query DNS records and domain registration data with zero API keys — DNS-over-HTTPS via dns.google and domain registration via RDAP, through plain curl. Use when asked what does this domain resolve to, check the MX or TXT records, who registered this domain, when does it expire, or has DNS propagated. Produces the records decoded (SPF/DKIM/DMARC read, not just dumped), the registration facts from RDAP, and the rerunnable commands.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "docs_quickstart",
    "description": "Write a 'get started in 5 minutes' quickstart for a tool, library, or API. Use when asked to write a quickstart, getting-started guide, or onboarding docs for developers. Produces a copy-paste-friendly quickstart that takes a developer from zero to a first working result fast, with install, a minimal working example, and clear next steps.",
    "parameters": {
@@ -4372,6 +4391,25 @@
  {
   "type": "function",
   "function": {
+   "name": "flight_tracker",
+   "description": "Track live aircraft positions with zero API keys — adsb.lol's open ADS-B network primary, OpenSky fallback, via curl: by callsign, registration, or area. Use when asked where is this flight right now, what planes are overhead, track a tail number, or is that flight in the air. Produces the live position with altitude, speed, and heading interpreted, the overhead list for a location, and the rerunnable command — with the positions-not-schedules boundary stated honestly.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "flowchart",
    "description": "Turn a process, workflow, or decision logic into a clean flowchart. Use when asked to diagram a process, map a workflow, visualize steps/branches, or show 'how this works' as a chart. Produces a ready-to-render Mermaid flowchart (renders live in the playground, exportable as PNG/SVG) plus a short legend and the assumptions made.",
    "parameters": {
@@ -5324,6 +5362,25 @@
   "function": {
    "name": "invoice_generator",
    "description": "Create a professional, complete invoice for a client or customer. Use when asked to write an invoice, create a bill, draft a freelance/contractor invoice, or set up an invoice template. Produces a clear invoice — your and the client's details, a unique number, line items with quantities/rates, subtotal/tax/total, payment terms and methods, and due date — ready to send and easy to pay. Not tax/legal advice.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "ip_lookup",
+   "description": "Look up IP addresses and your own public IP with zero API keys — geolocation, ISP/ASN, and hosting flags via ip-api.com and ipify through curl. Use when asked what's my public IP, where is this IP from, whose network is this address, or is this IP a VPN/datacenter. Produces the lookup with ISP, ASN, and location fields interpreted honestly (city-level accuracy caveats included), and the rerunnable command.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -8780,6 +8837,25 @@
  {
   "type": "function",
   "function": {
+   "name": "rss_digest",
+   "description": "Fetch and digest any RSS or Atom feed with zero API keys — curl plus disciplined parsing into a ranked, deduplicated briefing instead of a link dump. Use when asked summarize this feed, what's new on this blog, digest these RSS feeds, or build me a morning briefing from these sources. Produces the digest with dates and one-line what-it-is summaries, cross-feed dedup, and the rerunnable commands per feed.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "rubric_builder",
    "description": "Create a clear grading rubric with criteria and performance-level descriptors that make scoring fair, fast, and consistent. Use when asked to build a rubric, create grading criteria, design an assessment scoring guide, or make grading more objective. Produces an analytic rubric table (criteria × performance levels) with concrete, observable descriptors and a points scheme — plus a short version students can self-check against.",
    "parameters": {
@@ -9388,6 +9464,25 @@
  {
   "type": "function",
   "function": {
+   "name": "site_check",
+   "description": "Answer 'is this site down or is it just me' properly — curl status/timing diagnostics, DNS cross-check, and TLS certificate reads, assembled into a where-it's-broken diagnosis. Use when asked is this website down, why can't I reach this site, check if my site is up, or is the SSL certificate expired. Produces the layered diagnosis (DNS → TLS → HTTP → content), response timing, cert expiry, and the rerunnable commands.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "site_safety_briefing",
    "description": "Produce a toolbox talk or pre-task safety briefing from the day's planned construction work. Use when asked to write a toolbox talk, prepare a pre-task plan or JHA/JSA briefing, brief a crew on today's hazards, or plan safety for a specific task like a crane pick, excavation, or hot work. Produces a crew-ready briefing with task-specific hazards, controls ordered by the hierarchy of controls, required permits, and explicit stop-work triggers.",
    "parameters": {
@@ -9428,6 +9523,25 @@
   "function": {
    "name": "skill_security_auditor",
    "description": "Audit a Claude/Agent SKILL.md (or any AI skill / system prompt) for safety before installing or merging it. Use when asked to review a skill for security, check a prompt for injection, vet a community skill, or assess whether an instruction file is safe to run. Produces a risk-rated report of findings (prompt injection, data exfiltration, code execution, secrets, hidden text) with severity, evidence, and a clear install / don't-install recommendation.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "skill_vetting",
+   "description": "Vet an agent skill before installing it — read the SKILL.md and any scripts for the red-flag patterns (credential access, obfuscation, exfiltration, prompt injection), audit its blast radius, and produce a risk-tiered verdict. Use when asked is this skill safe to install, vet this SKILL.md, review this skill from a marketplace, or check what this skill can do to my machine. Produces the risk classification with quoted evidence, the permission-surface audit, the red-flag checklist results, and an install/sandbox/reject recommendation.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -9599,6 +9713,25 @@
   "function": {
    "name": "sourcing_strategy",
    "description": "Build a talent sourcing strategy for a hard-to-fill role. Use when asked to create a sourcing strategy, a candidate sourcing plan, a channel plan for hiring, or to figure out where to find candidates for a role. Produces a strategy — the ideal-candidate profile and where they are, prioritised sourcing channels, outreach approach, a pipeline target with funnel math, and a weekly plan — so sourcing is deliberate, not just posting and praying.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "sports_scores",
+   "description": "Get live scores, schedules, and standings for major leagues with zero API keys — ESPN's public JSON endpoints via curl, covering NFL, NBA, MLB, NHL, and world football. Use when asked what's the score, did my team win, today's games, or league standings right now. Produces the scores with game state (live/final/scheduled), the asked-team answer first, and the rerunnable command — with the unofficial-API caveat stated.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -9979,6 +10112,25 @@
   "function": {
    "name": "subtitle_caption",
    "description": "Write or translate subtitles/captions that respect reading speed and timing rules. Use when asked to write subtitles, captions, SRT/VTT content, or to translate subtitles for a video. Produces properly-formatted, readable subtitles — line-length and reading-speed compliant, well-segmented, with translation that fits the time available, plus SDH/caption guidance where relevant.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "sun_and_moon",
+   "description": "Get sunrise, sunset, golden hour, day length, and moon phase for any location with zero API keys — sunrise-sunset.org and Open-Meteo via curl, times converted to local. Use when asked when is sunset today, golden hour for a photo shoot, how long is the day, what's the moon phase tonight, or sun times for a date and place. Produces the sun/moon times in the user's local zone (the UTC trap handled), the photography windows, and the rerunnable command.",
    "parameters": {
     "type": "object",
     "properties": {
