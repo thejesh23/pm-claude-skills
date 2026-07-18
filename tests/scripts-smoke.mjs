@@ -119,6 +119,18 @@ const CASES = [
   { name: 'raise vs jump (crossover)', script: 'skills/raise-vs-jump/scripts/raise_vs_jump.py',
     args: ['--salary', '120000'],
     expect: /10 {7}161,270 {7}209,641 {5}1,416,935 {5}1,627,538[\s\S]*cumulative crossover: year 3[\s\S]*salary gap at year 10: \+48,371/ },
+  { name: 'debt payoff (avalanche vs snowball)', script: 'skills/debt-payoff/scripts/debt_payoff.py',
+    args: ['--debt', 'visa:9000:24.9:180', '--debt', 'loan:3000:6:60', '--extra', '200'],
+    expect: /avalanche[\s\S]*debt-free in 39 months \(3\.2 yrs\) · interest paid: 3,903\.03[\s\S]*snowball[\s\S]*46 months \(3\.8 yrs\) · interest paid: 5,929\.00[\s\S]*avalanche saves 2,025\.97/ },
+  { name: 'emergency fund (risk adders)', script: 'skills/emergency-fund/scripts/emergency_fund.py',
+    args: ['--essentials', '3400', '--saved', '4000', '--monthly-save', '500', '--single-income', '--variable-income'],
+    expect: /target: 6 months of essentials = 20,400[\s\S]*single income \(\+1\), variable income \(\+2\)[\s\S]*1\.2 months covered · gap: 16,400[\s\S]*full in 32\.8 months/ },
+  { name: 'ev vs gas (crossover year)', script: 'skills/ev-vs-gas/scripts/ev_vs_gas.py',
+    args: ['--ev-price', '42000', '--gas-price', '33000', '--incentive', '7500'],
+    expect: /gap \+1,500[\s\S]*EV saves 767[\s\S]*1 {10}35,695 {11}35,212 {8}-483[\s\S]*2 {10}36,891 {11}37,425 {9}534[\s\S]*crossover: year 2/ },
+  { name: 'daycare vs stay-home (net + trajectory)', script: 'skills/daycare-vs-stay-home/scripts/daycare_vs_stay_home.py',
+    args: ['--income', '62000', '--daycare', '1600'],
+    expect: /= 26,160 net\/year \(13\.08\/hr effective\)[\s\S]*forgoes 329,166 gross[\s\S]*~64,687 vs 71,875 never-left/ },
 ];
 for (const c of CASES) {
   const r = spawnSync('python3', [join(root, c.script), ...c.args], { encoding: 'utf8', timeout: 30000 });
