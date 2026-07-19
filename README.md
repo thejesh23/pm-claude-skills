@@ -73,6 +73,23 @@ description: "Decode a residential lease into plain English and rank the
 
 That's the whole trick: it's markdown. Your agent reads it and gains the judgment; you can read it too, audit it, edit it, or [write your own](SKILL-AUTHORING-STANDARD.md). No lock-in, no runtime, no telemetry.
 
+## 💸 Cut your token bill
+
+The **[pm-tokens](plugins/pm-tokens)** bundle optimizes every stage of your agent's token journey — no API keys, stdlib Python, nothing leaves your machine. Five habits, typically **30–60% off a session's token flow**:
+
+```bash
+# 1. Map the repo instead of reading it (~3% of the cost of reading everything)
+python3 skills/repo-map/scripts/repo_map.py .
+
+# 2. Crush bulk before it enters context (98% smaller on uniform JSON; errors always survive)
+python3 skills/context-crusher/scripts/context_crush.py --mode json --file response.json
+
+# 3. Measure what anything costs — at YOUR prices, times YOUR call volume
+python3 skills/token-cost/scripts/token_cost.py --file CLAUDE.md --price-in 3 --calls 200
+```
+
+Plus the judgment skills: [token-diet](skills/token-diet/SKILL.md) (output costs 3–5× input — diet it where safe), [context-budget](skills/context-budget/SKILL.md) (cache-aware layout: stable first, volatile last), and [session-handoff](skills/session-handoff/SKILL.md) (resume at ~5% of transcript size). **The full how-to: [docs/SAVE-TOKENS.md](docs/SAVE-TOKENS.md).**
+
 ## ✅ Quality, not just quantity
 
 - **Every skill passes the [SkillSpec](SKILLSPEC.md) L3 gate** — structure, framework, quality checks, anti-patterns — enforced in CI on every commit
