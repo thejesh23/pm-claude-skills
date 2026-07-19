@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-625 skills exported. Copy a `.md rule` into the tool to use it.
+630 skills exported. Copy a `.md rule` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -123,6 +123,8 @@
 | Content Calendar | `pm-gtm` | `pm-gtm/content-calendar/content-calendar.md` |
 | Content Repurposer | `pm-creator` | `pm-creator/content-repurposer/content-repurposer.md` |
 | Content Style Guide | `pm-uxwriting` | `pm-uxwriting/content-style-guide/content-style-guide.md` |
+| Context Budget | `pm-tokens` | `pm-tokens/context-budget/context-budget.md` |
+| Context Crusher | `pm-tokens` | `pm-tokens/context-crusher/context-crusher.md` |
 | Context Engineering Review | `pm-agentops` | `pm-agentops/context-engineering-review/context-engineering-review.md` |
 | Context Mode | `pm-engineering` | `pm-engineering/context-mode/context-mode.md` |
 | Contract Review | `pm-legal` | `pm-legal/contract-review/contract-review.md` |
@@ -465,6 +467,7 @@
 | Rent vs Buy | `pm-calculators` | `pm-calculators/rent-vs-buy/rent-vs-buy.md` |
 | Rental Application | `pm-lifeadmin` | `pm-lifeadmin/rental-application/rental-application.md` |
 | Repair Request Escalation | `pm-renters` | `pm-renters/repair-request-escalation/repair-request-escalation.md` |
+| Repo Map | `pm-tokens` | `pm-tokens/repo-map/repo-map.md` |
 | Research Protocol | `pm-research` | `pm-research/research-protocol/research-protocol.md` |
 | Resignation Letter | `pm-resignation` | `pm-resignation/resignation-letter/resignation-letter.md` |
 | Resume | `pm-personal` | `pm-personal/resume/resume.md` |
@@ -515,7 +518,7 @@
 | SEO Content Brief | `pm-gtm` | `pm-gtm/seo-content-brief/seo-content-brief.md` |
 | Sequence Diagram | `pm-visuals` | `pm-visuals/sequence-diagram/sequence-diagram.md` |
 | Service Catalog Entry | `pm-engineering` | `pm-engineering/service-catalog-entry/service-catalog-entry.md` |
-| Session Handoff | `pm-craft` | `pm-craft/session-handoff/session-handoff.md` |
+| Session Handoff | `pm-tokens` | `pm-tokens/session-handoff/session-handoff.md` |
 | Severance Agreement Decoder | `pm-layoff` | `pm-layoff/severance-agreement-decoder/severance-agreement-decoder.md` |
 | Short-Form Script | `pm-creator` | `pm-creator/short-form-script/short-form-script.md` |
 | Side Business Setup | `pm-sidehustle` | `pm-sidehustle/side-business-setup/side-business-setup.md` |
@@ -593,6 +596,8 @@
 | Threat Model | `pm-security` | `pm-security/threat-model/threat-model.md` |
 | Thumbnail Creator Skill (via Gemini) | `pm-writers` | `pm-writers/thumbnail-creator/thumbnail-creator.md` |
 | Timeshare Contract Decoder | `pm-decoders` | `pm-decoders/timeshare-contract-decoder/timeshare-contract-decoder.md` |
+| Token Cost | `pm-tokens` | `pm-tokens/token-cost/token-cost.md` |
+| Token Diet | `pm-tokens` | `pm-tokens/token-diet/token-diet.md` |
 | Tooling Risk Assessment | `pm-hardware` | `pm-hardware/tooling-risk-assessment/tooling-risk-assessment.md` |
 | Tornado Sensitivity | `pm-calculators` | `pm-calculators/tornado-sensitivity/tornado-sensitivity.md` |
 | ToS Decoder | `pm-decoders` | `pm-decoders/tos-decoder/tos-decoder.md` |

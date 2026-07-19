@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-625 skills exported. Copy a `SKILL.md` into the tool to use it.
+630 skills exported. Copy a `SKILL.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -123,6 +123,8 @@
 | Content Calendar | `pm-gtm` | `content-calendar/SKILL.md` |
 | Content Repurposer | `pm-creator` | `content-repurposer/SKILL.md` |
 | Content Style Guide | `pm-uxwriting` | `content-style-guide/SKILL.md` |
+| Context Budget | `pm-tokens` | `context-budget/SKILL.md` |
+| Context Crusher | `pm-tokens` | `context-crusher/SKILL.md` |
 | Context Engineering Review | `pm-agentops` | `context-engineering-review/SKILL.md` |
 | Context Mode | `pm-engineering` | `context-mode/SKILL.md` |
 | Contract Review | `pm-legal` | `contract-review/SKILL.md` |
@@ -465,6 +467,7 @@
 | Rent vs Buy | `pm-calculators` | `rent-vs-buy/SKILL.md` |
 | Rental Application | `pm-lifeadmin` | `rental-application/SKILL.md` |
 | Repair Request Escalation | `pm-renters` | `repair-request-escalation/SKILL.md` |
+| Repo Map | `pm-tokens` | `repo-map/SKILL.md` |
 | Research Protocol | `pm-research` | `research-protocol/SKILL.md` |
 | Resignation Letter | `pm-resignation` | `resignation-letter/SKILL.md` |
 | Resume | `pm-personal` | `resume/SKILL.md` |
@@ -515,7 +518,7 @@
 | SEO Content Brief | `pm-gtm` | `seo-content-brief/SKILL.md` |
 | Sequence Diagram | `pm-visuals` | `sequence-diagram/SKILL.md` |
 | Service Catalog Entry | `pm-engineering` | `service-catalog-entry/SKILL.md` |
-| Session Handoff | `pm-craft` | `session-handoff/SKILL.md` |
+| Session Handoff | `pm-tokens` | `session-handoff/SKILL.md` |
 | Severance Agreement Decoder | `pm-layoff` | `severance-agreement-decoder/SKILL.md` |
 | Short-Form Script | `pm-creator` | `short-form-script/SKILL.md` |
 | Side Business Setup | `pm-sidehustle` | `side-business-setup/SKILL.md` |
@@ -593,6 +596,8 @@
 | Threat Model | `pm-security` | `threat-model/SKILL.md` |
 | Thumbnail Creator Skill (via Gemini) | `pm-writers` | `thumbnail-creator/SKILL.md` |
 | Timeshare Contract Decoder | `pm-decoders` | `timeshare-contract-decoder/SKILL.md` |
+| Token Cost | `pm-tokens` | `token-cost/SKILL.md` |
+| Token Diet | `pm-tokens` | `token-diet/SKILL.md` |
 | Tooling Risk Assessment | `pm-hardware` | `tooling-risk-assessment/SKILL.md` |
 | Tornado Sensitivity | `pm-calculators` | `tornado-sensitivity/SKILL.md` |
 | ToS Decoder | `pm-decoders` | `tos-decoder/SKILL.md` |

@@ -2206,6 +2206,44 @@
  {
   "type": "function",
   "function": {
+   "name": "context_budget",
+   "description": "Plan a session's context window like the budget it is — what loads up front, what gets linked instead, what stays fetch-on-demand, and how to keep the stable prefix cache-friendly so repeated turns cost cents instead of dollars. Use when asked my agent keeps blowing its context, plan what to load into the session, why is every turn so expensive, or design the context for this workflow. Produces the load/link/fetch allocation, the cache-aware prefix layout, the per-turn cost shape, and the eviction rules for when the window fills anyway.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "context_crusher",
+   "description": "Compress tool outputs, logs, and JSON before they enter the context window — structural compression via a deterministic stdlib script (schema + samples + stats instead of 300 raw rows), no API, no summarization loss. Use when asked shrink this tool output, my context is full of JSON, compress these logs before analysis, or stop wasting tokens on raw data. Produces the crushed artifact with its token math shown, the crush-or-keep decision rules, and the fetch-the-original escape hatch.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "context_engineering_review",
    "description": "Review what an LLM feature or agent actually puts in its context window — and find what's bloating, missing, or fighting itself. Use when asked to review a system prompt and context assembly, cut token usage without losing quality, debug an agent that ignores instructions, or audit how retrieval results, history, and tool definitions are packed into the window. Produces a context inventory with a keep/cut/restructure verdict per component, ordering and caching fixes, and a token budget. For wording-level prompt tuning use prompt-optimizer.",
    "parameters": {
@@ -8685,6 +8723,25 @@
  {
   "type": "function",
   "function": {
+   "name": "repo_map",
+   "description": "Navigate a codebase by map instead of reading files wholesale — a deterministic stdlib script that emits the tree with line counts and top-level symbols, plus the read-the-map-first discipline that cuts exploration tokens by an order of magnitude. Use when asked explore this repo efficiently, stop re-reading the whole codebase, make a map of this project, or which files should the agent actually open. Produces the compact map with its token math (map vs. everything), the navigation discipline, and the open-only-what-matches rule.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "research_protocol",
    "description": "Write a structured research protocol or study design document. Use when asked to write a research protocol, study protocol, research plan, methodology section, or research proposal. Produces a complete protocol with objectives, methodology, ethical considerations, and analysis plan.",
    "parameters": {
@@ -11100,6 +11157,44 @@
   "function": {
    "name": "timeshare_contract_decoder",
    "description": "Decode a timeshare contract before signing — the lifetime cost math, the perpetuity and fee-escalation clauses, the rescission window, and the honest resale reality. Use when asked to review this timeshare, decode my timeshare contract, can I get out of a timeshare, or is this vacation ownership worth it. Produces the true-cost projection, the clause decode with the perpetuity traps flagged, the rescission-window computation, and — for existing owners — the legitimate exit paths vs the exit-scam checklist.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "token_cost",
+   "description": "Measure before optimizing — estimate token counts locally with stated heuristics, price them at your model's rates, and quantify before/after savings, because token optimization without measurement is vibes. Use when asked how many tokens is this, what does this context cost per call, is this optimization worth it, or compare these two versions' cost. Produces the estimate with both heuristics shown, the cost math at your prices across your call volume, and the before/after comparison that decides whether an optimization earned its complexity.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "token_diet",
+   "description": "Cut LLM output tokens 40–70% by stripping grammatical scaffolding while preserving every fact — telegraphic output modes, when they pay (pipelines, long sessions) and when they don't (single shots, human-facing prose), with the mode lines to switch on demand. Use when asked make the model respond tersely, cut output token costs, caveman mode, or compress agent-to-agent messages. Produces the diet-mode instruction block ready to paste, the three compression levels with examples, the economics of when each pays, and the never-diet list.",
    "parameters": {
     "type": "object",
     "properties": {

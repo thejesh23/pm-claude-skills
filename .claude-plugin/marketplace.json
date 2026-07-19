@@ -9,6 +9,14 @@
   },
   "plugins": [
     {
+      "name": "pm-tokens",
+      "description": "Token optimization for every stage of the agent journey: crush tool outputs before they enter context, navigate code by map instead of reading files, diet the output register, budget the window cache-aware, measure everything, and hand off sessions at 5% of transcript size",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-tokens",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
       "name": "pm-sidehustle",
       "description": "Side-hustle setup done in the right order: the employer-conflict check, money hygiene, the first client contract's eight clauses, and the quarterly tax rhythm",
       "version": "1.0.0",

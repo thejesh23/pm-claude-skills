@@ -696,6 +696,18 @@
   "description": "Create a content style guide / voice & tone guide so everyone writes consistently. Use when asked to write a content style guide, a voice and tone guide, editorial guidelines, or UX-writing standards. Produces a usable guide — voice principles with do/don't examples, tone-by-context, mechanics (grammar, capitalisation, formatting), terminology/word list, and accessibility/inclusivity rules — that a team can actually apply."
  },
  {
+  "name": "context_budget",
+  "skill": "context-budget",
+  "bundle": "pm-tokens",
+  "description": "Plan a session's context window like the budget it is — what loads up front, what gets linked instead, what stays fetch-on-demand, and how to keep the stable prefix cache-friendly so repeated turns cost cents instead of dollars. Use when asked my agent keeps blowing its context, plan what to load into the session, why is every turn so expensive, or design the context for this workflow. Produces the load/link/fetch allocation, the cache-aware prefix layout, the per-turn cost shape, and the eviction rules for when the window fills anyway."
+ },
+ {
+  "name": "context_crusher",
+  "skill": "context-crusher",
+  "bundle": "pm-tokens",
+  "description": "Compress tool outputs, logs, and JSON before they enter the context window — structural compression via a deterministic stdlib script (schema + samples + stats instead of 300 raw rows), no API, no summarization loss. Use when asked shrink this tool output, my context is full of JSON, compress these logs before analysis, or stop wasting tokens on raw data. Produces the crushed artifact with its token math shown, the crush-or-keep decision rules, and the fetch-the-original escape hatch."
+ },
+ {
   "name": "context_engineering_review",
   "skill": "context-engineering-review",
   "bundle": "pm-agentops",
@@ -2742,6 +2754,12 @@
   "description": "Get a landlord to actually fix things — the repair request that creates a record, the escalation ladder from reminder to habitability leverage, and the jurisdiction-flagged map of tenant remedies with their prerequisites. Use when asked my landlord won't fix anything, write a repair request, how long can they ignore a broken heater, or what are my options if repairs never happen. Produces the documented request, the severity triage, the escalation ladder with letters, and the remedies decode with the do-not-DIY warnings."
  },
  {
+  "name": "repo_map",
+  "skill": "repo-map",
+  "bundle": "pm-tokens",
+  "description": "Navigate a codebase by map instead of reading files wholesale — a deterministic stdlib script that emits the tree with line counts and top-level symbols, plus the read-the-map-first discipline that cuts exploration tokens by an order of magnitude. Use when asked explore this repo efficiently, stop re-reading the whole codebase, make a map of this project, or which files should the agent actually open. Produces the compact map with its token math (map vs. everything), the navigation discipline, and the open-only-what-matches rule."
+ },
+ {
   "name": "research_protocol",
   "skill": "research-protocol",
   "bundle": "pm-research",
@@ -3050,7 +3068,7 @@
  {
   "name": "session_handoff",
   "skill": "session-handoff",
-  "bundle": "pm-craft",
+  "bundle": "pm-tokens",
   "description": "Write a handoff summary so another agent or person (or a fresh session) can pick up the work with full context. Use when ending a work session, hitting a context limit, switching agents, or pausing a task mid-flight. Produces a structured handoff: what the goal is, what's done, the current state, what's next, and the gotchas — so no context is lost across the boundary."
  },
  {
@@ -3508,6 +3526,18 @@
   "skill": "timeshare-contract-decoder",
   "bundle": "pm-decoders",
   "description": "Decode a timeshare contract before signing — the lifetime cost math, the perpetuity and fee-escalation clauses, the rescission window, and the honest resale reality. Use when asked to review this timeshare, decode my timeshare contract, can I get out of a timeshare, or is this vacation ownership worth it. Produces the true-cost projection, the clause decode with the perpetuity traps flagged, the rescission-window computation, and — for existing owners — the legitimate exit paths vs the exit-scam checklist."
+ },
+ {
+  "name": "token_cost",
+  "skill": "token-cost",
+  "bundle": "pm-tokens",
+  "description": "Measure before optimizing — estimate token counts locally with stated heuristics, price them at your model's rates, and quantify before/after savings, because token optimization without measurement is vibes. Use when asked how many tokens is this, what does this context cost per call, is this optimization worth it, or compare these two versions' cost. Produces the estimate with both heuristics shown, the cost math at your prices across your call volume, and the before/after comparison that decides whether an optimization earned its complexity."
+ },
+ {
+  "name": "token_diet",
+  "skill": "token-diet",
+  "bundle": "pm-tokens",
+  "description": "Cut LLM output tokens 40–70% by stripping grammatical scaffolding while preserving every fact — telegraphic output modes, when they pay (pipelines, long sessions) and when they don't (single shots, human-facing prose), with the mode lines to switch on demand. Use when asked make the model respond tersely, cut output token costs, caveman mode, or compress agent-to-agent messages. Produces the diet-mode instruction block ready to paste, the three compression levels with examples, the economics of when each pays, and the never-diet list."
  },
  {
   "name": "tooling_risk_assessment",

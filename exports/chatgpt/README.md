@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-625 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
+630 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -123,6 +123,8 @@
 | Content Calendar | `pm-gtm` | `pm-gtm/content-calendar/SYSTEM_PROMPT.md` |
 | Content Repurposer | `pm-creator` | `pm-creator/content-repurposer/SYSTEM_PROMPT.md` |
 | Content Style Guide | `pm-uxwriting` | `pm-uxwriting/content-style-guide/SYSTEM_PROMPT.md` |
+| Context Budget | `pm-tokens` | `pm-tokens/context-budget/SYSTEM_PROMPT.md` |
+| Context Crusher | `pm-tokens` | `pm-tokens/context-crusher/SYSTEM_PROMPT.md` |
 | Context Engineering Review | `pm-agentops` | `pm-agentops/context-engineering-review/SYSTEM_PROMPT.md` |
 | Context Mode | `pm-engineering` | `pm-engineering/context-mode/SYSTEM_PROMPT.md` |
 | Contract Review | `pm-legal` | `pm-legal/contract-review/SYSTEM_PROMPT.md` |
@@ -465,6 +467,7 @@
 | Rent vs Buy | `pm-calculators` | `pm-calculators/rent-vs-buy/SYSTEM_PROMPT.md` |
 | Rental Application | `pm-lifeadmin` | `pm-lifeadmin/rental-application/SYSTEM_PROMPT.md` |
 | Repair Request Escalation | `pm-renters` | `pm-renters/repair-request-escalation/SYSTEM_PROMPT.md` |
+| Repo Map | `pm-tokens` | `pm-tokens/repo-map/SYSTEM_PROMPT.md` |
 | Research Protocol | `pm-research` | `pm-research/research-protocol/SYSTEM_PROMPT.md` |
 | Resignation Letter | `pm-resignation` | `pm-resignation/resignation-letter/SYSTEM_PROMPT.md` |
 | Resume | `pm-personal` | `pm-personal/resume/SYSTEM_PROMPT.md` |
@@ -515,7 +518,7 @@
 | SEO Content Brief | `pm-gtm` | `pm-gtm/seo-content-brief/SYSTEM_PROMPT.md` |
 | Sequence Diagram | `pm-visuals` | `pm-visuals/sequence-diagram/SYSTEM_PROMPT.md` |
 | Service Catalog Entry | `pm-engineering` | `pm-engineering/service-catalog-entry/SYSTEM_PROMPT.md` |
-| Session Handoff | `pm-craft` | `pm-craft/session-handoff/SYSTEM_PROMPT.md` |
+| Session Handoff | `pm-tokens` | `pm-tokens/session-handoff/SYSTEM_PROMPT.md` |
 | Severance Agreement Decoder | `pm-layoff` | `pm-layoff/severance-agreement-decoder/SYSTEM_PROMPT.md` |
 | Short-Form Script | `pm-creator` | `pm-creator/short-form-script/SYSTEM_PROMPT.md` |
 | Side Business Setup | `pm-sidehustle` | `pm-sidehustle/side-business-setup/SYSTEM_PROMPT.md` |
@@ -593,6 +596,8 @@
 | Threat Model | `pm-security` | `pm-security/threat-model/SYSTEM_PROMPT.md` |
 | Thumbnail Creator Skill (via Gemini) | `pm-writers` | `pm-writers/thumbnail-creator/SYSTEM_PROMPT.md` |
 | Timeshare Contract Decoder | `pm-decoders` | `pm-decoders/timeshare-contract-decoder/SYSTEM_PROMPT.md` |
+| Token Cost | `pm-tokens` | `pm-tokens/token-cost/SYSTEM_PROMPT.md` |
+| Token Diet | `pm-tokens` | `pm-tokens/token-diet/SYSTEM_PROMPT.md` |
 | Tooling Risk Assessment | `pm-hardware` | `pm-hardware/tooling-risk-assessment/SYSTEM_PROMPT.md` |
 | Tornado Sensitivity | `pm-calculators` | `pm-calculators/tornado-sensitivity/SYSTEM_PROMPT.md` |
 | ToS Decoder | `pm-decoders` | `pm-decoders/tos-decoder/SYSTEM_PROMPT.md` |

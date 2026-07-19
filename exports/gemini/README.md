@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-625 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
+630 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -123,6 +123,8 @@
 | Content Calendar | `pm-gtm` | `pm-gtm/content-calendar/GEM_INSTRUCTIONS.md` |
 | Content Repurposer | `pm-creator` | `pm-creator/content-repurposer/GEM_INSTRUCTIONS.md` |
 | Content Style Guide | `pm-uxwriting` | `pm-uxwriting/content-style-guide/GEM_INSTRUCTIONS.md` |
+| Context Budget | `pm-tokens` | `pm-tokens/context-budget/GEM_INSTRUCTIONS.md` |
+| Context Crusher | `pm-tokens` | `pm-tokens/context-crusher/GEM_INSTRUCTIONS.md` |
 | Context Engineering Review | `pm-agentops` | `pm-agentops/context-engineering-review/GEM_INSTRUCTIONS.md` |
 | Context Mode | `pm-engineering` | `pm-engineering/context-mode/GEM_INSTRUCTIONS.md` |
 | Contract Review | `pm-legal` | `pm-legal/contract-review/GEM_INSTRUCTIONS.md` |
@@ -465,6 +467,7 @@
 | Rent vs Buy | `pm-calculators` | `pm-calculators/rent-vs-buy/GEM_INSTRUCTIONS.md` |
 | Rental Application | `pm-lifeadmin` | `pm-lifeadmin/rental-application/GEM_INSTRUCTIONS.md` |
 | Repair Request Escalation | `pm-renters` | `pm-renters/repair-request-escalation/GEM_INSTRUCTIONS.md` |
+| Repo Map | `pm-tokens` | `pm-tokens/repo-map/GEM_INSTRUCTIONS.md` |
 | Research Protocol | `pm-research` | `pm-research/research-protocol/GEM_INSTRUCTIONS.md` |
 | Resignation Letter | `pm-resignation` | `pm-resignation/resignation-letter/GEM_INSTRUCTIONS.md` |
 | Resume | `pm-personal` | `pm-personal/resume/GEM_INSTRUCTIONS.md` |
@@ -515,7 +518,7 @@
 | SEO Content Brief | `pm-gtm` | `pm-gtm/seo-content-brief/GEM_INSTRUCTIONS.md` |
 | Sequence Diagram | `pm-visuals` | `pm-visuals/sequence-diagram/GEM_INSTRUCTIONS.md` |
 | Service Catalog Entry | `pm-engineering` | `pm-engineering/service-catalog-entry/GEM_INSTRUCTIONS.md` |
-| Session Handoff | `pm-craft` | `pm-craft/session-handoff/GEM_INSTRUCTIONS.md` |
+| Session Handoff | `pm-tokens` | `pm-tokens/session-handoff/GEM_INSTRUCTIONS.md` |
 | Severance Agreement Decoder | `pm-layoff` | `pm-layoff/severance-agreement-decoder/GEM_INSTRUCTIONS.md` |
 | Short-Form Script | `pm-creator` | `pm-creator/short-form-script/GEM_INSTRUCTIONS.md` |
 | Side Business Setup | `pm-sidehustle` | `pm-sidehustle/side-business-setup/GEM_INSTRUCTIONS.md` |
@@ -593,6 +596,8 @@
 | Threat Model | `pm-security` | `pm-security/threat-model/GEM_INSTRUCTIONS.md` |
 | Thumbnail Creator Skill (via Gemini) | `pm-writers` | `pm-writers/thumbnail-creator/GEM_INSTRUCTIONS.md` |
 | Timeshare Contract Decoder | `pm-decoders` | `pm-decoders/timeshare-contract-decoder/GEM_INSTRUCTIONS.md` |
+| Token Cost | `pm-tokens` | `pm-tokens/token-cost/GEM_INSTRUCTIONS.md` |
+| Token Diet | `pm-tokens` | `pm-tokens/token-diet/GEM_INSTRUCTIONS.md` |
 | Tooling Risk Assessment | `pm-hardware` | `pm-hardware/tooling-risk-assessment/GEM_INSTRUCTIONS.md` |
 | Tornado Sensitivity | `pm-calculators` | `pm-calculators/tornado-sensitivity/GEM_INSTRUCTIONS.md` |
 | ToS Decoder | `pm-decoders` | `pm-decoders/tos-decoder/GEM_INSTRUCTIONS.md` |

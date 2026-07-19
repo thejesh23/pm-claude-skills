@@ -1,8 +1,8 @@
 {
  "spec": "skill-federation/0.1",
- "built": "2026-07-18",
+ "built": "2026-07-19",
  "libraries": 1,
- "skills": 625,
+ "skills": 630,
  "members": [
   {
    "repo": "mohitagw15856/pm-claude-skills",
@@ -10,7 +10,7 @@
    "homepage": "https://github.com/mohitagw15856/pm-claude-skills",
    "license": "MIT",
    "badge": "https://img.shields.io/endpoint?url=https%3A%2F%2Fpm-skills-mcp.pm-claude-skills.workers.dev%2Fbadge%3Frepo%3Dmohitagw15856%2Fpm-claude-skills",
-   "count": 625,
+   "count": 630,
    "skills": [
     {
      "name": "360-feedback-template",
@@ -475,6 +475,14 @@
     {
      "name": "content-style-guide",
      "description": "Create a content style guide / voice & tone guide so everyone writes consistently. Use when asked to write a content style guide, a voice and tone guide, editorial guidelines, or UX-writing standards. Produces a usable guide — voice principles with do/don't examples, tone-by-context, mechanics (gram"
+    },
+    {
+     "name": "context-budget",
+     "description": "Plan a session's context window like the budget it is — what loads up front, what gets linked instead, what stays fetch-on-demand, and how to keep the stable prefix cache-friendly so repeated turns cost cents instead of dollars. Use when asked my agent keeps blowing its context, plan what to load in"
+    },
+    {
+     "name": "context-crusher",
+     "description": "Compress tool outputs, logs, and JSON before they enter the context window — structural compression via a deterministic stdlib script (schema + samples + stats instead of 300 raw rows), no API, no summarization loss. Use when asked shrink this tool output, my context is full of JSON, compress these "
     },
     {
      "name": "context-engineering-review",
@@ -1841,6 +1849,10 @@
      "description": "Get a landlord to actually fix things — the repair request that creates a record, the escalation ladder from reminder to habitability leverage, and the jurisdiction-flagged map of tenant remedies with their prerequisites. Use when asked my landlord won't fix anything, write a repair request, how lon"
     },
     {
+     "name": "repo-map",
+     "description": "Navigate a codebase by map instead of reading files wholesale — a deterministic stdlib script that emits the tree with line counts and top-level symbols, plus the read-the-map-first discipline that cuts exploration tokens by an order of magnitude. Use when asked explore this repo efficiently, stop r"
+    },
+    {
      "name": "research-protocol",
      "description": "Write a structured research protocol or study design document. Use when asked to write a research protocol, study protocol, research plan, methodology section, or research proposal. Produces a complete protocol with objectives, methodology, ethical considerations, and analysis plan."
     },
@@ -2351,6 +2363,14 @@
     {
      "name": "timeshare-contract-decoder",
      "description": "Decode a timeshare contract before signing — the lifetime cost math, the perpetuity and fee-escalation clauses, the rescission window, and the honest resale reality. Use when asked to review this timeshare, decode my timeshare contract, can I get out of a timeshare, or is this vacation ownership wor"
+    },
+    {
+     "name": "token-cost",
+     "description": "Measure before optimizing — estimate token counts locally with stated heuristics, price them at your model's rates, and quantify before/after savings, because token optimization without measurement is vibes. Use when asked how many tokens is this, what does this context cost per call, is this optimi"
+    },
+    {
+     "name": "token-diet",
+     "description": "Cut LLM output tokens 40–70% by stripping grammatical scaffolding while preserving every fact — telegraphic output modes, when they pay (pipelines, long sessions) and when they don't (single shots, human-facing prose), with the mode lines to switch on demand. Use when asked make the model respond te"
     },
     {
      "name": "tooling-risk-assessment",

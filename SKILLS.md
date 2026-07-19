@@ -1,4 +1,4 @@
-# 🗂️ All 625 Skills — full catalog
+# 🗂️ All 630 Skills — full catalog
 
 > The complete per-skill breakdown, grouped by domain. For an interactive, searchable version see the [**live catalog**](https://mohitagw15856.github.io/pm-claude-skills/catalog.html); to run any skill in your browser, use the [**Playground**](https://mohitagw15856.github.io/pm-claude-skills/). Back to the [README](README.md).
 >
@@ -168,7 +168,7 @@
 | **Social Media Audit** (`social-media-audit`) | Audit an existing social media presence across all active platforms. | — |
 | **Viral Content Framework** (`viral-content-framework`) | Build a framework for creating shareable, high-reach social media content. | — |
 
-## 💻 Engineering & AI (82 skills)
+## 💻 Engineering & AI (81 skills)
 
 ### `pm-ai` — 13 skills
 
@@ -188,7 +188,7 @@
 | **RAG Architecture Review** (`rag-architecture-review`) | Review an existing Retrieval-Augmented Generation system and find why it underperforms. | — |
 | **RAG Design Doc** (`rag-design-doc`) | Design a Retrieval-Augmented Generation system end to end. | — |
 
-### `pm-craft` — 6 skills
+### `pm-craft` — 5 skills
 
 | Skill | What it does | Eval |
 |---|---|---|
@@ -196,7 +196,6 @@
 | **Code Review Guide** (`code-review-guide`) | Review a pull request or diff like a thoughtful senior engineer — prioritized, kind, and focused on what matters. | — |
 | **PR Description** (`pr-description`) | Write a clear pull-request description that gets reviewed fast and merged with confidence. | — |
 | **Refactoring Plan** (`refactoring-plan`) | Plan a safe, incremental refactor of messy code without changing behavior. | — |
-| **Session Handoff** (`session-handoff`) | Write a handoff summary so another agent or person (or a fresh session) can pick up the work with full context. | — |
 | **TDD Workflow** (`tdd-workflow`) | Drive a feature with a disciplined test-driven development loop — red, green, refactor. | — |
 
 ### `pm-dataeng` — 6 skills
@@ -649,7 +648,7 @@
 | **Portfolio Page** (`portfolio-page`) | Structure a portfolio or case-study page that shows your work, not just lists it. | — |
 | **Resume** (`resume`) | Write a sharp, achievement-led resume/CV that passes ATS and earns the interview. | ✅ 3.3/5 |
 
-## 🌍 Industries & Public Sector (235 skills)
+## 🌍 Industries & Public Sector (241 skills)
 
 ### `pm-agentnative` — 5 skills
 
@@ -1054,6 +1053,17 @@
 | **S&OP Meeting Prep** (`sop-meeting-prep`) | Prepare an S&OP cycle readout that surfaces the demand-supply gaps and forces the three decisions the meeting must make. | — |
 | **Supplier Scorecard** (`supplier-scorecard`) | Build a quarterly supplier performance scorecard with a weighted grade and a clear escalate/develop/exit call. | — |
 
+### `pm-tokens` — 6 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **Context Budget** (`context-budget`) | Plan a session's context window like the budget it is — what loads up front, what gets linked instead, what stays fetch-on-demand, and how to keep… | — |
+| **Context Crusher** (`context-crusher`) | Compress tool outputs, logs, and JSON before they enter the context window — structural compression via a deterministic stdlib script (schema +… | — |
+| **Repo Map** (`repo-map`) | Navigate a codebase by map instead of reading files wholesale — a deterministic stdlib script that emits the tree with line counts and top-level… | — |
+| **Session Handoff** (`session-handoff`) | Write a handoff summary so another agent or person (or a fresh session) can pick up the work with full context. | — |
+| **Token Cost** (`token-cost`) | Measure before optimizing — estimate token counts locally with stated heuristics, price them at your model's rates, and quantify before/after… | — |
+| **Token Diet** (`token-diet`) | Cut LLM output tokens 40–70% by stripping grammatical scaffolding while preserving every fact — telegraphic output modes, when they pay… | — |
+
 ### `pm-vision` — 4 skills
 
 | Skill | What it does | Eval |
@@ -1083,4 +1093,4 @@
 
 ---
 
-_625 skills across 86 bundles · 28 eval-scored (4%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._
+_630 skills across 87 bundles · 28 eval-scored (4%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._
