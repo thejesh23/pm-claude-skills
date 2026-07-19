@@ -1,4 +1,4 @@
-# 🗂️ All 630 Skills — full catalog
+# 🗂️ All 730 Skills — full catalog
 
 > The complete per-skill breakdown, grouped by domain. For an interactive, searchable version see the [**live catalog**](https://mohitagw15856.github.io/pm-claude-skills/catalog.html); to run any skill in your browser, use the [**Playground**](https://mohitagw15856.github.io/pm-claude-skills/). Back to the [README](README.md).
 >
@@ -648,7 +648,7 @@
 | **Portfolio Page** (`portfolio-page`) | Structure a portfolio or case-study page that shows your work, not just lists it. | — |
 | **Resume** (`resume`) | Write a sharp, achievement-led resume/CV that passes ATS and earns the interview. | ✅ 3.3/5 |
 
-## 🌍 Industries & Public Sector (241 skills)
+## 🌍 Industries & Public Sector (341 skills)
 
 ### `pm-agentnative` — 5 skills
 
@@ -717,6 +717,111 @@
 | **Punch List Builder** (`punch-list-builder`) | Turn walkthrough notes, photos, or voice-memo transcripts into a proper construction punch list with location, trade, and spec reference per item. | — |
 | **Site Safety Briefing** (`site-safety-briefing`) | Produce a toolbox talk or pre-task safety briefing from the day's planned construction work. | — |
 | **Subcontractor Scorecard** (`subcontractor-scorecard`) | Score a subcontractor's performance across schedule reliability, quality, safety, paperwork, and change-order behaviour with weighted anchors. | — |
+
+### `pm-cowork` — 100 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **Agenda Or Cancel** (`agenda-or-cancel`) | Enforce the simplest meeting rule that works — no agenda, no meeting — with the three-line agenda format (purpose, decisions sought, pre-reads)… | — |
+| **All Hands Deck** (`all-hands-deck`) | Build an all-hands that lands with everyone from intern to VP — the mixed-altitude structure (the story for all, the numbers for some), the… | — |
+| **Archive Strategy** (`archive-strategy`) | Design the archive layer that keeps current workspaces lean without losing history — what moves, when, to where, findable-by-search, with the… | — |
+| **Async Instead** (`async-instead`) | Convert a meeting into async work that actually decides — the doc-plus-deadline format that replaces the room, the comment-window rules, the… | — |
+| **Async Update Format** (`async-update-format`) | Write status updates people actually read — the traffic-light-plus-narrative format (state first, story second), the blockers-are-asks rule, and… | — |
+| **Brief From Pile** (`brief-from-pile`) | Turn a folder of accumulated documents into one decision-ready brief — the skim-map pass over the pile, the extraction against the brief's actual… | — |
+| **Budget Tracker Design** (`budget-tracker-design`) | Design a budget-vs-actuals tracker that stays alive past February — the category grain that matches real statements, the variance view that… | — |
+| **Changelog For Humans** (`changelog-for-humans`) | Write changelogs and release notes readers actually benefit from — changes translated to so-whats, grouped by reader impact (breaking first, gifts… | — |
+| **Channel Hygiene** (`channel-hygiene`) | Fix a team's chat sprawl — the channel map with one purpose per channel, the naming scheme that makes purpose findable, the archive pass for the… | — |
+| **Chart Choice** (`chart-choice`) | Pick the chart the data and the point actually need — the question-to-chart mapping (comparison, trend, composition, distribution, relationship)… | — |
+| **Citation Hygiene** (`citation-hygiene`) | Keep citations honest in business documents — every load-bearing claim sourced, links that actually contain the claim, the as-of dates that keep… | — |
+| **Collaboration Contract** (`collaboration-contract`) | Start a cross-team project with the collaboration contract that prevents the classic collisions — who decides what, how work flows between teams… | — |
+| **Company Event Ops** (`company-event-ops`) | Run a company event — the launch party, the customer day, the team celebration — as the operation it is: the goal that shapes every choice, the… | — |
+| **Competitive Scan Lite** (`competitive-scan-lite`) | Run a fast, honest competitive scan — the dimension table built from public evidence (sites, docs, pricing pages, changelogs, reviews), the… | — |
+| **Context Switch Budget** (`context-switch-budget`) | Treat context switches as the budget line they are — the switch census (how fragmented the week really is), the batching moves that consolidate… | — |
+| **Contract Renewal Tracker** (`contract-renewal-tracker`) | Never get auto-renewed into another year again — the contract inventory with the dates that matter (notice deadlines, not renewal dates), the… | — |
+| **Data Cleaning Pass** (`data-cleaning-pass`) | Clean a messy dataset methodically — the profiling pass that finds what's actually wrong (dupes, format drift, phantom spaces, mixed types), the… | — |
+| **Data Slide Design** (`data-slide-design`) | Design slides where the data makes the argument — the takeaway-titled chart, the one-chart-per-slide rule, the annotation layer that guides the… | — |
+| **Decision Log Setup** (`decision-log-setup`) | Set up the team decision log that ends relitigation — the one-line-per-decision format (what, why, who, when, reopening rule), the capture moments… | — |
+| **Decision Meeting Format** (`decision-meeting-format`) | Run meetings that actually decide — the pre-read-then-decide format, the options-on-the-table rule, the decider named before debate starts, and… | — |
+| **Deck Narrative Arc** (`deck-narrative-arc`) | Give a deck a spine the room can follow — the situation-complication-resolution arc, the tension that makes the recommendation feel necessary, the… | — |
+| **Deck Outline First** (`deck-outline-first`) | Outline a deck as headline sentences before opening the slide tool — each slide a claim that reads as an argument top to bottom, the… | — |
+| **Deck Review Rubric** (`deck-review-rubric`) | Review a deck against a rubric instead of taste — the five dimensions (argument, evidence, density, arc, honesty), the severity-sorted feedback… | — |
+| **Deep Work Blocking** (`deep-work-blocking`) | Protect focus time that actually survives the week — the block placement matched to real energy hours, the defense rules (what moves a block, what… | — |
+| **Delegation Brief** (`delegation-brief`) | Delegate so the work comes back right the first time — the brief that transfers outcome, context, and constraints (not just the task), the… | — |
+| **Demo Script** (`demo-script`) | Script a product demo that lands — the audience's-workflow storyline (their day, not your feature list), the golden path rehearsed with fallbacks… | — |
+| **Desk Research Sprint** (`desk-research-sprint`) | Run a timeboxed desk-research sprint that ends with an answer instead of forty tabs — the question decomposition, the source plan by question… | — |
+| **Desktop Zero** (`desktop-zero`) | Clear the desktop that's become a hundred-icon guilt mosaic — the fast triage that empties it today, the honest read of what the desktop was being… | — |
+| **Doc Versioning Discipline** (`doc-versioning-discipline`) | Keep living documents trustworthy over time — the status header (draft/active/superseded) that tells readers what they're holding, the… | — |
+| **Document Retention Map** (`document-retention-map`) | Decide what documents to keep, for how long, and where — the personal/small-biz retention map by category (tax, legal, medical, warranties… | — |
+| **Double Opt-In Intro** (`double-opt-in-intro`) | Make introductions that respect both sides — the double-opt-in flow (ask each party privately before connecting them), the forwardable blurb that… | — |
+| **Downloads Triage** (`downloads-triage`) | Empty the Downloads folder that's become a junk drawer — the four-bucket pass (file, delete, action, quarantine), the age-based bulk rules that… | — |
+| **Email To Tasks** (`email-to-tasks`) | Convert an email (or a whole thread) into real tasks — the actual asks extracted from the prose, each with owner, deadline, and the done-test, so… | — |
+| **Email Triage System** (`email-triage-system`) | Turn an overflowing inbox into a four-verb system — archive, reply-now, task, or park — with the two-minute rule enforced and a daily cadence that… | — |
+| **Energy Scheduling** (`energy-scheduling`) | Schedule work by energy, not just time — the week of self-observation that maps your real peaks and troughs, the work-to-energy matching (hard… | — |
+| **Escalation Email** (`escalation-email`) | Escalate an issue up the chain without burning the person you're escalating past — the facts-first structure, the tried-already section that earns… | — |
+| **Evidence Grading** (`evidence-grading`) | Grade the evidence behind a claim before betting on it — the hierarchy for business evidence (experiments > usage data > surveys > interviews >… | — |
+| **Exec Vs Working Deck** (`exec-vs-working-deck`) | Stop presenting the working deck to executives — the two-deck split (answer-first exec cut vs. | — |
+| **Expense Discipline** (`expense-discipline`) | Submit expenses that sail through approval — the capture-at-spend habit, the policy-fluency that prevents rejections (thresholds, receipt rules… | — |
+| **Expense Sheet Design** (`expense-sheet-design`) | Design an expense-tracking sheet that survives real receipts — the capture-at-spend habit, the category set that matches reimbursement or tax… | — |
+| **Expert Interview Prep** (`expert-interview-prep`) | Get the most from an hour with an expert — the do-your-homework floor (never ask what's googleable), the question arc from calibration to the… | — |
+| **FAQ Builder** (`faq-builder`) | Build an FAQ from the questions people actually ask — mined from tickets, chats, and repeated explanations, answered once and well, organized by… | — |
+| **Filename Convention** (`filename-convention`) | Set a filename convention that sorts, searches, and survives — date-first ISO format, the descriptor grammar, version suffixes that end the… | — |
+| **Folder Structure Designer** (`folder-structure-designer`) | Design a folder structure people actually file into — shallow, purpose-first, with a home for everything and an inbox for the undecided, sized to… | — |
+| **Follow-Up Chaser** (`follow-up-chaser`) | Chase unanswered emails without being annoying — the escalating-gently sequence with timing rules, the re-ask that makes replying easy, and the… | — |
+| **Formula Detangler** (`formula-detangler`) | Untangle the spreadsheet formula nobody dares touch — decompose the seven-function nest into named readable steps, explain what it actually does (vs. | — |
+| **Handbook Page** (`handbook-page`) | Write the handbook page that ends the repeated explanation — the answer-shaped structure (task-first, context second), the ownership and freshness… | — |
+| **House Style Enforcer** (`house-style-enforcer`) | Apply a team's writing style consistently — extract the house style from exemplar documents into a checkable rule card, run the conformance pass… | — |
+| **Inbox Unsubscribe Purge** (`inbox-unsubscribe-purge`) | Cut inbox volume at the source — the unsubscribe purge that classifies recurring senders into kill/digest/keep, executes safely (real unsubscribes vs. | — |
+| **Interview Synthesis** (`interview-synthesis`) | Turn a pile of interview notes into findings that survive scrutiny — the code-then-theme pass, the counting discipline (how many actually said… | — |
+| **Knowledge Gardening** (`knowledge-gardening`) | Keep a team knowledge base alive — the gardener role and its weekly half-hour, the rot signals (stale pages, orphans, duplicates) and their fixes… | — |
+| **KPI Tracker Design** (`kpi-tracker-design`) | Design a KPI tracker that drives decisions instead of decorating them — the few-metrics discipline (5–9, each with an owner and a so-what)… | — |
+| **Meeting Cost Meter** (`meeting-cost-meter`) | Price meetings in money and focus — the attendee-hours × loaded-rate math, the recurring multiplier that turns a weekly 30-minutes into a real… | — |
+| **Meeting Prep Pack** (`meeting-prep-pack`) | Arrive at a meeting armed in fifteen minutes — the prep pack: what this meeting decides, your position with its reasons, the other attendees'… | — |
+| **Meeting Room Etiquette** (`meeting-room-etiquette`) | Set the shared-space norms that end the small daily frictions — meeting room booking discipline (the ghost-booking cure), hybrid-call room… | — |
+| **Migration Day Runbook** (`migration-day-runbook`) | Move a team's files to a new platform without losing work or a week — the pre-migration freeze, the verified copy, the permissions remap, the… | — |
+| **Newsletter Digest Brief** (`newsletter-digest-brief`) | Turn a pile of newsletters and subscriptions into one skimmable brief — the items that matter to YOUR interests extracted with sources, the noise… | — |
+| **Office Hours Design** (`office-hours-design`) | Replace ad-hoc interruptions with office hours that actually get used — the slot design (cadence, length, format), the routing rules that tell… | — |
+| **Office Move Runbook** (`office-move-runbook`) | Run an office move or reconfiguration without losing a week of work — the dependency-ordered plan (internet lead times rule everything), the… | — |
+| **Offsite Planner** (`offsite-planner`) | Plan a team offsite that earns its cost — the purpose split (connection vs. | — |
+| **Onboarding Buddy Plan** (`onboarding-buddy-plan`) | Design the buddy system that makes new-hire onboarding human — the buddy's actual job (context and safety, not training), the 30-day touchpoint… | — |
+| **Out Of Office Designer** (`out-of-office-designer`) | Design an out-of-office that actually protects the time off — the auto-reply that routes instead of apologizes, the coverage map behind it, and… | — |
+| **Outline Before Prose** (`outline-before-prose`) | Outline documents before drafting them — the argument skeleton that gets alignment cheaply, the one-line-per-section discipline, and the… | — |
+| **Personal WIP Limits** (`personal-wip-limits`) | Cap your work-in-progress so things finish — the personal WIP limit (3 active outcomes, defended), the finish-before-start rule with its… | — |
+| **Photo Library Rescue** (`photo-library-rescue`) | Rescue a photo library drowning in duplicates, screenshots, and 40,000 unsorted items — the triage order that shrinks first (screenshots, bursts… | — |
+| **Pitch Vs Teach** (`pitch-vs-teach`) | Know which talk you're giving — the pitch (drive one decision) vs. | — |
+| **Pivot Analysis Planner** (`pivot-analysis-planner`) | Plan pivot-table analysis that answers the actual question — the question-to-layout mapping (rows, values, filters chosen on purpose), the… | — |
+| **Plain Language Rewrite** (`plain-language-rewrite`) | Rewrite jargon-dense text into plain language without losing precision — the translation pass that keeps every fact and qualifier, the jargon… | — |
+| **Policy Drafter** (`policy-drafter`) | Draft an internal policy people can actually follow — the rule stated plainly with its reason, the bright lines separated from the judgment zones… | — |
+| **Presenter Notes** (`presenter-notes`) | Write presenter notes that actually help mid-talk — cue-grain phrases instead of scripts, the transitions and numbers that deserve verbatim… | — |
+| **Proposal Skeleton** (`proposal-skeleton`) | Structure an internal proposal that gets a decision — the problem-cost-options-recommendation-ask spine, the objection pre-handling that shortens… | — |
+| **Purchase Justification** (`purchase-justification`) | Write the purchase request that gets approved — the cost-of-not-buying framing, the ROI math at the approver's altitude, the… | — |
+| **Recurring Meeting Pruner** (`recurring-meeting-pruner`) | Prune your own recurring-meeting load — the personal calendar audit (your role in each, honestly), the four exit moves (leave, delegate, downgrade… | — |
+| **Reply In Their Tone** (`reply-in-their-tone`) | Draft email replies that match the sender's register — formality, length, directness, and emoji-tolerance read from their message, so the reply… | — |
+| **Research Repo Setup** (`research-repo-setup`) | Set up a research repository the team actually reuses — the atomic-insight format (finding + evidence + source + date), the tagging that makes old… | — |
+| **Review Comments Resolver** (`review-comments-resolver`) | Resolve a document's forty review comments systematically — triage by type (accept, push back, conflict, out-of-scope), batch the mechanical… | — |
+| **Saying No Kindly** (`saying-no-kindly`) | Decline requests without damaging relationships or your standing — the fast-clear-warm formula, the alternative-attached no, the no-to-the-boss… | — |
+| **Shared Drive Cleanup** (`shared-drive-cleanup`) | Clean up a shared drive nobody owns — the ownership-first move, the top-down audit that finds the 80% (stale projects, duplicates, ex-employee… | — |
+| **Shutdown Ritual** (`shutdown-ritual`) | End the workday on purpose — the ten-minute shutdown that closes open loops, stages tomorrow's start, and gives the brain permission to actually… | — |
+| **Slide Density Rules** (`slide-density-rules`) | Fix slides that are documents in landscape mode — the one-point-per-slide rule, the projection-vs-reading fork that decides density, the text diet… | — |
+| **Source Triangulation** (`source-triangulation`) | Verify a claim before repeating it — the independent-sources test (three citations of one press release is one source), the provenance trace to… | — |
+| **Spreadsheet Audit** (`spreadsheet-audit`) | Audit a spreadsheet before trusting it — the error hunt (hardcoded overrides, broken ranges, silent unit mixes), the fragility map (what breaks… | — |
+| **Spreadsheet Handover** (`spreadsheet-handover`) | Hand over a spreadsheet so it survives its author leaving — the README tab that decodes the sheet's logic, the update runbook with sources and… | — |
+| **Spreadsheet Or Database** (`spreadsheet-or-database`) | Decide honestly when a spreadsheet should become a database or app — the five outgrowth signals (concurrent editing, relational strain, permission… | — |
+| **Standing Meeting Audit** (`standing-meeting-audit`) | Audit the recurring meetings a team has accreted — each standing slot tested against its original purpose, current attendance reality, and… | — |
+| **Status Report Pipeline** (`status-report-pipeline`) | Build the pipeline that turns team updates into the rollup report without the Friday scramble — the collection format that aggregates cleanly, the… | — |
+| **Survey Design Basics** (`survey-design-basics`) | Design a survey that measures instead of leads — neutral question wording, answer scales that don't smuggle conclusions, the length that respects… | — |
+| **Task Triage Matrix** (`task-triage-matrix`) | Triage an overwhelming task list into what actually gets done — the urgent/important sort applied honestly (with the two corrections the classic… | — |
+| **Team Budget Tracker** (`team-budget-tracker`) | Track a team's budget so surprises die young — the commitment-based view (spent + committed + planned, not just invoiced), the category grain that… | — |
+| **Template Designer** (`template-designer`) | Turn a document the team keeps rewriting into a template that actually helps — extract the recurring skeleton, mark what varies with real… | — |
+| **Thread To Decision** (`thread-to-decision`) | Land a sprawling chat thread on an actual decision — the summarize-and-fork move (positions restated, the question isolated), the… | — |
+| **Tool Procurement Eval** (`tool-procurement-eval`) | Evaluate a new tool before it joins the stack — the problem-first framing (tools answer needs, not demos), the trial designed with success… | — |
+| **Travel Brief** (`travel-brief`) | Turn a business trip into a one-page brief that runs itself — the itinerary with buffers and failure modes, the meeting logistics pre-solved… | — |
+| **Unblock Protocol** (`unblock-protocol`) | Get unstuck on purpose — the stuck-type diagnosis (don't-know-how, can't-decide, waiting, avoiding, too-big), the matched unblock move for each… | — |
+| **Vendor Breakup Email** (`vendor-breakup-email`) | End a vendor, freelancer, or service relationship cleanly — the notice email that cites the contract, the transition asks that protect your data… | — |
+| **Vendor Comparison Matrix** (`vendor-comparison-matrix`) | Compare vendors on a matrix that decides instead of decorates — the criteria weighted before the demos (so the shiny demo can't rewrite them), the… | — |
+| **Version Chaos Untangler** (`version-chaos-untangler`) | Untangle a document that exists in six copies across email, drives, and desktops — establish the canonical version defensibly, merge the divergent… | — |
+| **Weekly Review Ritual** (`weekly-review-ritual`) | Install the weekly review that keeps work from managing you — the 30-minute Friday ritual: close the week's loops, sweep the capture points… | — |
+| **Working Agreements** (`working-agreements`) | Write a team's working agreements — the small set of explicit norms (communication, meetings, decisions, conflict) that replace the assumptions… | — |
+| **Workshop Designer** (`workshop-designer`) | Design working sessions that produce artifacts, not vibes — the outcome-backwards agenda, the activity formats that beat open discussion (silent… | — |
 
 ### `pm-crisis` — 6 skills
 
@@ -1093,4 +1198,4 @@
 
 ---
 
-_630 skills across 87 bundles · 28 eval-scored (4%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._
+_730 skills across 88 bundles · 28 eval-scored (4%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._

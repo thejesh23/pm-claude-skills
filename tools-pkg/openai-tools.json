@@ -192,6 +192,25 @@
  {
   "type": "function",
   "function": {
+   "name": "agenda_or_cancel",
+   "description": "Enforce the simplest meeting rule that works — no agenda, no meeting — with the three-line agenda format (purpose, decisions sought, pre-reads), the 24-hour rule, and the graceful cancel scripts. Use when asked write an agenda for this meeting, should this meeting happen, our meetings have no agendas, or cancel this meeting politely. Produces the three-line agenda, the happen-or-cancel verdict, the cancel/convert scripts, and the team norm rollout.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "agent_design_review",
    "description": "Review an LLM agent design and find where it will be unreliable, expensive, or unsafe. Use when asked to review an agent architecture, critique a multi-step/tool-using agent, debug an agent that loops or goes off-task, or harden an agent before launch. Produces a structured review — task fit, control flow, tools, memory/context, failure handling, cost, and safety — with prioritised findings and fixes.",
    "parameters": {
@@ -496,6 +515,25 @@
  {
   "type": "function",
   "function": {
+   "name": "all_hands_deck",
+   "description": "Build an all-hands that lands with everyone from intern to VP — the mixed-altitude structure (the story for all, the numbers for some), the wins-with-names section done right, the hard-news slide handled straight, and the Q&A design that gets real questions. Use when asked build the all-hands deck, make the monthly town hall not boring, how do we share the numbers with everyone, or announce this change at all-hands. Produces the segment structure, the altitude-mixed content rules, the hard-news handling, and the Q&A mechanics.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "altitude_shifter",
    "description": "Re-pitch one piece of content for four audiences — the board, the engineers, a customer, a new hire — with a delta table showing what changed between altitudes and why. Use when asked to rewrite this for execs, explain this to the team, make this customer-facing, or say this four ways. Produces the four versions plus the delta table of what was cut, added, and reframed per altitude.",
    "parameters": {
@@ -686,6 +724,25 @@
  {
   "type": "function",
   "function": {
+   "name": "archive_strategy",
+   "description": "Design the archive layer that keeps current workspaces lean without losing history — what moves, when, to where, findable-by-search, with the project-close ritual that makes archiving automatic instead of aspirational. Use when asked set up an archiving system, our workspace is drowning in old projects, when should things get archived, or make history findable without cluttering today. Produces the archive triggers, the destination structure, the findability rules, and the close-out ritual.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "assumption_bounty",
    "description": "Extract every hidden assumption from a plan or document and put a price on each one — what it costs if wrong, what it costs to test. Use before committing to anything whose author says 'obviously' or whose spreadsheet has hardcoded cells: the bounty hunt makes the invisible load-bearing beliefs explicit and tells you which three to test this week. Produces the assumption ledger (priced and ranked), the cheapest test for each dangerous one, and the document's honest confidence statement.",
    "parameters": {
@@ -726,6 +783,44 @@
   "function": {
    "name": "async_decision_memo",
    "description": "Run a decision asynchronously — the memo, the silent-read window, the comment protocol, and the deadline that makes it land without a meeting. Use when asked to decide something async, replace a decision meeting with a document, run an Amazon-style written decision process, or when a decision keeps stalling in comment threads. Produces the decision memo plus the process wrapper: reader roles, response windows, comment-resolution rules, and the tie-breaker. For the document structure alone use decision-memo; this skill runs the process around it.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "async_instead",
+   "description": "Convert a meeting into async work that actually decides — the doc-plus-deadline format that replaces the room, the comment-window rules, the decision-closure step that async usually fumbles, and the honest test for what still needs synchronous. Use when asked can this meeting be async, replace our status meeting with a doc, run this decision without a call, or async isn't working for us. Produces the conversion design, the async artifact format, the closure protocol, and the still-needs-a-room list.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "async_update_format",
+   "description": "Write status updates people actually read — the traffic-light-plus-narrative format (state first, story second), the blockers-are-asks rule, and the skimmable structure that respects a reader with thirty seconds. Use when asked write my weekly update, format our team's status posts, nobody reads my updates, or what goes in a good async check-in. Produces the update format with a filled example, the blockers-as-asks discipline, and the reader-time contract.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -1047,6 +1142,25 @@
  {
   "type": "function",
   "function": {
+   "name": "brief_from_pile",
+   "description": "Turn a folder of accumulated documents into one decision-ready brief — the skim-map pass over the pile, the extraction against the brief's actual questions, the conflict reconciliation when documents disagree, and the provenance trail back to sources. Use when asked read all this and tell me what matters, synthesize this folder for the new lead, turn these 20 docs into a brief, or what does all this material actually say. Produces the pile map, the question-driven extraction, the reconciled brief with per-claim sources, and the didn't-read honesty ledger.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "briefing_note",
    "description": "Write a one-page briefing note that gets a busy principal up to speed fast. Use when asked to brief a minister/executive/official, prepare a briefing note or read-ahead, or summarize an issue for a decision or meeting. Produces a tight, single-page note: purpose, background, key facts/considerations, and a recommendation or the decision sought — scannable in two minutes.",
    "parameters": {
@@ -1068,6 +1182,25 @@
   "function": {
    "name": "budget_builder",
    "description": "Build a realistic personal monthly budget from someone's income and expenses. Use when asked to make a budget, plan monthly spending, allocate income, or get finances under control. Produces a categorized budget (a 50/30/20-style allocation tuned to their reality), a surplus/shortfall number, and concrete next moves. Educational, not regulated financial advice.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "budget_tracker_design",
+   "description": "Design a budget-vs-actuals tracker that stays alive past February — the category grain that matches real statements, the variance view that answers 'are we okay', the update ritual small enough to survive, and the honest handling of irregular expenses. Use when asked build me a budget spreadsheet, track team spend against budget, why do we always blow the budget invisibly, or design a household/project budget tracker. Produces the tracker structure, the variance logic, the irregulars ledger, and the monthly fifteen-minute ritual.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -1446,6 +1579,25 @@
  {
   "type": "function",
   "function": {
+   "name": "changelog_for_humans",
+   "description": "Write changelogs and release notes readers actually benefit from — changes translated to so-whats, grouped by reader impact (breaking first, gifts second, plumbing last), with the upgrade path stated and the marketing kept honest. Use when asked write the release notes, turn this commit list into a changelog, announce this update to users, or why does nobody read our changelogs. Produces the impact-grouped changelog, the so-what translations, the breaking-changes block with migration steps, and the two-audience split when needed.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "changelog_generator",
    "description": "Convert a git log, commit list, or release notes into a polished, user-facing changelog. Use when writing release notes, generating a CHANGELOG.md entry, or documenting what changed in a version. Produces a structured changelog section with version header, categorised changes, and migration notes. For an already-curated change list use changelog-writer instead.",
    "parameters": {
@@ -1484,8 +1636,46 @@
  {
   "type": "function",
   "function": {
+   "name": "channel_hygiene",
+   "description": "Fix a team's chat sprawl — the channel map with one purpose per channel, the naming scheme that makes purpose findable, the archive pass for the dead and duplicated, and the posting norms (threads, @-discipline, urgency signals) that keep signal findable. Use when asked clean up our Slack/Teams, we have 90 channels and nothing is findable, set channel norms, or where should things get posted. Produces the channel audit and map, the naming scheme, the norms card, and the archive pass.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "chart",
    "description": "Turn numbers into a chart — bar, line, area, pie, or doughnut. Use when asked to chart or graph data, visualize metrics/trends/breakdowns, or show numbers as a picture instead of a table. Produces a ready-to-render chart spec (renders live in the playground and exports as PNG) plus a one-line read of what the chart shows.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "chart_choice",
+   "description": "Pick the chart the data and the point actually need — the question-to-chart mapping (comparison, trend, composition, distribution, relationship), the honesty rules (axes, baselines, dual-axis traps), and the one-chart-one-point discipline. Use when asked what chart should I use, make this data visual, why does this chart feel misleading, or fix this graph for the deck. Produces the chart verdict with its reasoning, the honesty checklist applied, and the labeling that lets the chart travel without its author.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -1543,6 +1733,25 @@
   "function": {
    "name": "cicd_playbook",
    "description": "Write a CI/CD pipeline playbook for a service or team. Use when asked to document a CI/CD pipeline, write a deployment process, define release gates, document build and test stages, or create a deployment guide. Produces a structured playbook covering pipeline stages, environment definitions, deployment gates, rollback procedures, and on-call responsibilities.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "citation_hygiene",
+   "description": "Keep citations honest in business documents — every load-bearing claim sourced, links that actually contain the claim, the as-of dates that keep numbers honest, and the internal-vs-external sourcing rules for decks and memos. Use when asked check the sourcing in this deck, add citations to this doc, our slide says 'studies show' — which studies, or set citation norms for the team. Produces the claim-by-claim audit, the fixes (source found, claim softened, or cut), the citation format for the venue, and the team norm card.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -1883,6 +2092,25 @@
  {
   "type": "function",
   "function": {
+   "name": "collaboration_contract",
+   "description": "Start a cross-team project with the collaboration contract that prevents the classic collisions — who decides what, how work flows between teams, the communication channels and cadence, and what done means — agreed before the first collision instead of during it. Use when asked kick off this cross-team project right, our two teams keep colliding, define how we'll work with the other team, or set up the partnership before we start. Produces the one-page contract: decision rights, interfaces, cadence, and the done-definition.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "collections_email",
    "description": "Write a polite-but-firm payment-reminder / collections email sequence for overdue invoices. Use when asked to write a collections email, a payment reminder, a dunning sequence, or to chase an overdue invoice. Produces a staged sequence — gentle pre-due nudge through escalating overdue reminders to a final notice — that stays professional, keeps the relationship intact, and makes paying easy. Not legal advice.",
    "parameters": {
@@ -1978,6 +2206,25 @@
  {
   "type": "function",
   "function": {
+   "name": "company_event_ops",
+   "description": "Run a company event — the launch party, the customer day, the team celebration — as the operation it is: the goal that shapes every choice, the budget with its forgotten lines, the vendor and venue coordination, the run-of-show with owners, and the day-of roles that keep hosts hosting. Use when asked plan the company event, organize our customer day/holiday party/launch event, what am I forgetting for this event, or be the run-of-show for Thursday. Produces the goal-shaped plan, the budget with the forgotten lines, the run-of-show, and the day-of role card.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "comparative_market_analysis",
    "description": "Build a comparative market analysis (CMA) to price a property. Use when asked to do a CMA, a comparative market analysis, price a home, or estimate a property's value from comparables. Produces a structured CMA — the subject property, selected comparables with adjustments, an estimated value range, market context, and a pricing recommendation with rationale — for a real-estate professional to review. Not a formal appraisal.",
    "parameters": {
@@ -2018,6 +2265,25 @@
   "function": {
    "name": "competitive_intelligence_monitor",
    "description": "Monitor competitor signals and surface strategic implications for your roadmap. Use when asked to monitor competitors, track the competitive landscape, produce a competitive briefing, or understand what has changed in the market this week or month. Produces a structured intelligence brief with high/medium/low priority signals, roadmap implications, and a strategic landscape summary. For a single competitor announcement use competitor-signal-tracker; for a one-off deep dive use competitor-teardown.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "competitive_scan_lite",
+   "description": "Run a fast, honest competitive scan — the dimension table built from public evidence (sites, docs, pricing pages, changelogs, reviews), the claims-vs-observed discipline, and the so-what synthesis that ends in moves, not a landscape mural. Use when asked what are competitors doing, quick scan of these three rivals, how does our pricing/feature set compare, or prep the competitive slide honestly. Produces the evidence-based comparison table, the marketing-vs-reality flags, the so-what synthesis, and the staleness date.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -2265,6 +2531,44 @@
   "function": {
    "name": "context_mode",
    "description": "Keep Claude Code sessions productive across resets with output filtering, session logging, and auto-resume. Use when starting a long or complex coding session, when previous sessions lost context mid-task, or when you need Claude to resume exactly where it left off after a reset. Produces a session.log at the project root, filtered command output that preserves context, and automatic resume of in-progress tasks after any reset.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "context_switch_budget",
+   "description": "Treat context switches as the budget line they are — the switch census (how fragmented the week really is), the batching moves that consolidate scattered same-kind work, the calendar defrag that turns Swiss cheese into slabs, and the switch-cost line for saying no. Use when asked my day is fragmented to death, count my context switches, batch my meetings and reviews, or defend against calendar Swiss cheese. Produces the fragmentation census, the batching plan, the defrag moves, and the protective phrases.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "contract_renewal_tracker",
+   "description": "Never get auto-renewed into another year again — the contract inventory with the dates that matter (notice deadlines, not renewal dates), the calendar system with decision-time buffers, and the renewal-decision ritual that renegotiates instead of rubber-stamping. Use when asked track our contracts and renewals, we got auto-renewed again, when do we have to decide on this vendor, or set up renewal management. Produces the inventory with notice-deadline math, the alert system, the renewal-decision checklist, and the negotiation-window playbook.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -2681,6 +2985,25 @@
  {
   "type": "function",
   "function": {
+   "name": "data_cleaning_pass",
+   "description": "Clean a messy dataset methodically — the profiling pass that finds what's actually wrong (dupes, format drift, phantom spaces, mixed types), the fix order that doesn't corrupt while correcting, and the log that makes the cleaning defensible. Use when asked clean this export, why is my pivot double-counting, these names don't match between sheets, or prep this data for analysis. Produces the profile of what's wrong, the ordered cleaning plan, the join-key repairs, and the cleaning log.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "data_contract",
    "description": "Define a data contract between a producer and consumers of a dataset/event/API. Use when asked to write a data contract, define a schema agreement, set data SLAs, or stop a producer from silently breaking downstream consumers. Produces a contract — schema with types & constraints, semantics, quality SLAs (freshness/completeness/validity), ownership, versioning & breaking-change policy, and a change process.",
    "parameters": {
@@ -2759,6 +3082,25 @@
   "function": {
    "name": "data_retention_policy",
    "description": "Build a data retention and deletion schedule grounded in legal basis. Use when asked to create a data retention policy, set retention periods, plan data deletion/minimisation, or answer 'how long can we keep this data?'. Produces a retention schedule — data categories with their retention period, legal/business basis, deletion trigger and method, plus flags for data kept with no basis or no defined period.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "data_slide_design",
+   "description": "Design slides where the data makes the argument — the takeaway-titled chart, the one-chart-per-slide rule, the annotation layer that guides the eye to the point, and the honesty pass on projected data. Use when asked make this data slide land, my chart slide confuses people, how do I present these numbers, or the audience missed the point of my graph. Produces the redesigned slide: takeaway title, the chart stripped and annotated, the eye-path check, and the honesty audit.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -2985,6 +3327,44 @@
  {
   "type": "function",
   "function": {
+   "name": "decision_log_setup",
+   "description": "Set up the team decision log that ends relitigation — the one-line-per-decision format (what, why, who, when, reopening rule), the capture moments wired into existing rituals, and the lookup habit that makes it pay. Use when asked set up a decision log, we keep re-deciding the same things, where do decisions get recorded, or new people keep asking why we do X. Produces the log format, the capture wiring, the reopening rule, and the retrieval habits.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "decision_meeting_format",
+   "description": "Run meetings that actually decide — the pre-read-then-decide format, the options-on-the-table rule, the decider named before debate starts, and the recorded-or-it-didn't-happen close. Use when asked run this decision meeting, we discuss forever and never decide, structure the meeting where we pick the vendor/plan/design, or why do our decisions get relitigated. Produces the meeting design: pre-read, the in-room sequence, the decision rule, and the recording that makes it stick.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "decision_memo",
    "description": "Write a crisp decision memo that drives a clear decision, not a discussion. Use when asked to write a decision memo, a recommendation memo, a one/six-pager for a decision, or to get leadership to decide something. Produces a decision memo — the decision & recommendation up front, the context, options with trade-offs, what you'd need to believe, risks, and the explicit ask with a deadline.",
    "parameters": {
@@ -3023,8 +3403,103 @@
  {
   "type": "function",
   "function": {
+   "name": "deck_narrative_arc",
+   "description": "Give a deck a spine the room can follow — the situation-complication-resolution arc, the tension that makes the recommendation feel necessary, the transitions that carry the thread between slides, and the arc-check that catches sag. Use when asked make this deck flow, my presentation feels like disconnected slides, structure the story of this pitch/readout, or the room got lost in the middle. Produces the arc mapping, the tension line, the transition script, and the sag diagnosis.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "deck_outline_first",
+   "description": "Outline a deck as headline sentences before opening the slide tool — each slide a claim that reads as an argument top to bottom, the audience-and-ask header, and the skim test that catches broken decks while they're still bullet points. Use when asked start this presentation, structure my deck, why does my deck feel like a data tour, or get sign-off before I build slides. Produces the headline outline, the per-slide evidence notes, the skim test result, and the build rules.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "deck_review_rubric",
+   "description": "Review a deck against a rubric instead of taste — the five dimensions (argument, evidence, density, arc, honesty), the severity-sorted feedback that separates broken from suboptimal, and the review conversation that improves the deck without rewriting it in the reviewer's voice. Use when asked review my deck, give feedback on this presentation, is this ready for the board, or our deck reviews are just font opinions. Produces the rubric scores with evidence, the severity-sorted feedback, the two-fixes-that-matter-most call, and the reviewer discipline notes.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "deep_work_blocking",
+   "description": "Protect focus time that actually survives the week — the block placement matched to real energy hours, the defense rules (what moves a block, what never), the entry ritual that beats the blank-stare start, and the honest sizing that stops 8-hour fantasy blocks. Use when asked block focus time that keeps getting eaten, when should I schedule deep work, my calendar has no room to think, or I block time and then waste it. Produces the block design, the defense tiers, the entry ritual, and the meeting-culture negotiation.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "delay_claim_letter",
    "description": "Draft a construction delay notice or delay claim letter with contract clause citation, cause classification, and critical-path impact narrative. Use when asked to write a delay notice, put the owner or GC on notice of delay, draft a time extension request, respond to weather or owner-caused delay, or paper a delay for a claim. Produces a notice/claim letter with the excusable-compensable classification, critical-path impact narrative, quantum placeholder, reservation of rights, and a records-preservation list.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "delegation_brief",
+   "description": "Delegate so the work comes back right the first time — the brief that transfers outcome, context, and constraints (not just the task), the autonomy level stated explicitly, and the check-in design that catches drift without hovering. Use when asked hand this off properly, my delegations come back wrong, write a brief for this task I'm giving away, or how much detail do I give. Produces the delegation brief with the outcome and guardrails, the autonomy level, the check-in points, and the questions-welcome contract.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -3082,6 +3557,25 @@
   "function": {
    "name": "demand_letter",
    "description": "Draft a firm, professional demand letter that states the facts, the legal/contractual basis, the specific demand, and a deadline. Use when asked to write a demand letter, send a formal demand for payment, draft a cease-and-desist, or formally request resolution before legal action. Produces a structured, factual letter with a clear ask and consequences — assertive but not threatening or defamatory. Not legal advice; have counsel review before sending.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "demo_script",
+   "description": "Script a product demo that lands — the audience's-workflow storyline (their day, not your feature list), the golden path rehearsed with fallbacks, the wow moment placed early, and the demo-death contingencies (the backup video, the reset state, the narration bridge). Use when asked script our product demo, demo this to a customer/exec, our demos meander through features, or the demo broke live last time. Produces the demo storyline, the click-path script with fallbacks, the wow placement, and the contingency kit.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -3177,6 +3671,44 @@
   "function": {
    "name": "design_system_audit",
    "description": "Audit a design system for consistency, coverage, and quality. Use when asked to audit a design system, review a component library, assess design token coverage, or evaluate the health of a shared design system. Produces a structured audit with a health score, component coverage gaps, token inconsistencies, accessibility issues, and a prioritised remediation roadmap.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "desk_research_sprint",
+   "description": "Run a timeboxed desk-research sprint that ends with an answer instead of forty tabs — the question decomposition, the source plan by question type, the capture discipline that prevents re-reading, and the stop rule that beats completionism. Use when asked research this market/tool/topic by Friday, I have two hours to get smart on X, structure my desk research, or I keep researching and never concluding. Produces the decomposed questions, the source plan, the capture format, and the timeboxed synthesis with confidence labels.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "desktop_zero",
+   "description": "Clear the desktop that's become a hundred-icon guilt mosaic — the fast triage that empties it today, the honest read of what the desktop was being used for (it's a to-do list wearing icons), and the replacement systems that keep it clear. Use when asked clean up my desktop, my desktop has 200 files on it, why does my desktop keep filling up, or set up a clean-desktop habit. Produces the today-pass, the function-replacement mapping, and the two-minute weekly habit.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -3441,6 +3973,25 @@
  {
   "type": "function",
   "function": {
+   "name": "doc_versioning_discipline",
+   "description": "Keep living documents trustworthy over time — the status header (draft/active/superseded) that tells readers what they're holding, the change-log-for-decisions inside the doc, the supersession chain that kills zombie versions, and the review-date heartbeat. Use when asked which version of this doc is current, our wiki is full of stale pages, set up doc lifecycle rules, or people keep following the old process doc. Produces the status-header standard, the in-doc change log, the supersession protocol, and the staleness heartbeat.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "docs_quickstart",
    "description": "Write a 'get started in 5 minutes' quickstart for a tool, library, or API. Use when asked to write a quickstart, getting-started guide, or onboarding docs for developers. Produces a copy-paste-friendly quickstart that takes a developer from zero to a first working result fast, with install, a minimal working example, and clear next steps.",
    "parameters": {
@@ -3479,8 +4030,65 @@
  {
   "type": "function",
   "function": {
+   "name": "document_retention_map",
+   "description": "Decide what documents to keep, for how long, and where — the personal/small-biz retention map by category (tax, legal, medical, warranties, employment), jurisdiction-flagged periods, and the destruction discipline for what's past its date. Use when asked how long do I keep tax documents, can I shred this, set up a document retention system, or what papers does my small business need to keep. Produces the category map with keep-periods (flagged verify-locally), the keep-forever list, the digitize rules, and the annual purge ritual.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "donor_update",
    "description": "Write a warm donor update or stewardship message that makes a supporter feel their gift mattered. Use when asked to write a donor update, a thank-you/stewardship email, a supporter newsletter, or a gift acknowledgement. Produces a donor-centred update — sincere thanks, the specific impact of their support, a brief story, and a light, optional next step — that strengthens the relationship and sets up the next gift.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "double_opt_in_intro",
+   "description": "Make introductions that respect both sides — the double-opt-in flow (ask each party privately before connecting them), the forwardable blurb that makes saying yes easy, and the connecting email that sets both up to succeed. Use when asked introduce me to someone, can you connect us, write an intro email, or someone asked me for an intro. Produces the opt-in asks for both sides, the forwardable blurb, the intro email itself, and the graceful decline path.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "downloads_triage",
+   "description": "Empty the Downloads folder that's become a junk drawer — the four-bucket pass (file, delete, action, quarantine), the age-based bulk rules that make 2,000 items tractable, and the tiny habit that keeps it empty. Use when asked clean up my downloads folder, 2000 files in downloads help, what's safe to delete here, or stop my downloads from piling up. Produces the bucket pass with bulk rules, the safe-delete classes, the keeper-filing routes, and the weekly sweep habit.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -3574,8 +4182,46 @@
  {
   "type": "function",
   "function": {
+   "name": "email_to_tasks",
+   "description": "Convert an email (or a whole thread) into real tasks — the actual asks extracted from the prose, each with owner, deadline, and the done-test, so nothing lives in the inbox as its own reminder. Use when asked what am I actually being asked to do here, turn this thread into a task list, extract the action items from this email, or I keep re-reading this thread. Produces the ask extraction with quoted sources, the task list in owner-verb-deadline form, and the reply that confirms the commitments.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "email_triage",
    "description": "Triage a Gmail inbox down to only what needs you. Use when asked to triage email, clear an inbox, find what needs a reply, or summarise recent mail. Produces a prioritised list of items needing action — replies, decisions, follow-ups — for a configurable window (default last 8 hours), filtering out receipts, notifications, and newsletters.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "email_triage_system",
+   "description": "Turn an overflowing inbox into a four-verb system — archive, reply-now, task, or park — with the two-minute rule enforced and a daily cadence that survives busy weeks. Use when asked help me get to inbox zero, my email is out of control, build me an email triage system, or process this backlog. Produces the triage pass on the actual inbox, the four-verb rules, the folder/label minimal set, and the daily cadence.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -3633,6 +4279,25 @@
   "function": {
    "name": "empty_state_writer",
    "description": "Write empty-state content that turns a blank screen into a next step. Use when asked to write an empty state, a zero-data / first-run state, a no-results state, or onboarding placeholder content. Produces empty-state copy — a clear headline, a helpful line, and a primary action — for each type (first-use, user-cleared, no-results, error/permission), so a blank screen guides instead of confuses.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "energy_scheduling",
+   "description": "Schedule work by energy, not just time — the week of self-observation that maps your real peaks and troughs, the work-to-energy matching (hard creative work on peaks, admin on slopes, meetings on shoulders), and the calendar rebuild that honors the map. Use when asked when should I do my hardest work, I waste my best hours on email, map my energy levels, or why is 3pm always useless. Produces the observation protocol, the personal energy map, the work-type matching, and the rebuilt week.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -3764,6 +4429,25 @@
  {
   "type": "function",
   "function": {
+   "name": "escalation_email",
+   "description": "Escalate an issue up the chain without burning the person you're escalating past — the facts-first structure, the tried-already section that earns the escalation, and the specific ask that makes action easy. Use when asked I need to escalate this, write an email to my boss's boss, this vendor issue needs to go up, or how do I go over someone's head professionally. Produces the escalation email with its evidence spine, the pre-escalation courtesy step, and the relationship-preserving framing.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "escalation_tree",
    "description": "Design a support/incident escalation tree — who handles what, when it escalates, and to whom. Use when asked to design an escalation path, an escalation matrix, support tiers, an on-call escalation policy, or to fix 'tickets bounce around / nothing gets escalated in time'. Produces an escalation tree — tiers & ownership, severity definitions, time-based triggers, routing rules, contacts/roles, and the customer-communication cadence per level.",
    "parameters": {
@@ -3878,6 +4562,25 @@
  {
   "type": "function",
   "function": {
+   "name": "evidence_grading",
+   "description": "Grade the evidence behind a claim before betting on it — the hierarchy for business evidence (experiments > usage data > surveys > interviews > anecdotes > opinion), the fit-for-decision test, and the mixed-evidence verdicts that real questions produce. Use when asked how strong is our evidence for this, grade what we know before the decision, is this enough to bet on, or we have three anecdotes and a survey — now what. Produces the evidence inventory with grades, the sufficiency verdict against the decision's stakes, and the cheapest-upgrade path.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "evidence_lock",
    "description": "Write or rewrite a document in evidence-locked mode: no unsourced sentences — every substantive claim carries a footnote citing the exact passage in the user's provided sources, and anything unsupportable is explicitly marked. Use when asked to make a document fully sourced, add citations from my docs, ground a draft in the attached material, or produce something for audiences that will check (legal, board, regulators, enterprise buyers). Produces the document with numbered citations, a source map quoting each cited passage, and an unsupported-claims register.",
    "parameters": {
@@ -3937,6 +4640,25 @@
   "function": {
    "name": "excel_model",
    "description": "Build a real, formula-driven Excel (.xlsx) model — not a static table. Use when asked to build an Excel model, a financial model, a budget/forecast spreadsheet, or any .xlsx with live formulas a user can edit. Produces an actual .xlsx file via a generated openpyxl script: an inputs/assumptions sheet, calculation sheets with real cell formulas, and formatting — so changing an input recalculates the model. Requires a code-execution environment (Claude Code, the API code tool, or Claude.ai).",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "exec_vs_working_deck",
+   "description": "Stop presenting the working deck to executives — the two-deck split (answer-first exec cut vs. exploration-rich working deck), the compression rules from 40 slides to 8, and the appendix strategy that keeps the depth one click away. Use when asked turn this analysis into an exec version, my leadership readout went badly, how do I compress 40 slides to 10 minutes, or what do execs actually want in a deck. Produces the exec cut with the answer-first order, the compression map (what survived, where the rest went), and the Q&A appendix plan.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -4087,6 +4809,25 @@
  {
   "type": "function",
   "function": {
+   "name": "expense_discipline",
+   "description": "Submit expenses that sail through approval — the capture-at-spend habit, the policy-fluency that prevents rejections (thresholds, receipt rules, the pre-approval traps), the report assembled in minutes, and the approver-side rules for reviewing fairly and fast. Use when asked my expense reports are always late or rejected, set up my expense workflow, what does the policy actually require, or review expenses as a manager without being a receipt cop. Produces the capture habit, the policy crib, the submission routine, and the approver's rubric.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "expense_filer",
    "description": "Turn a pile of receipts into a filed expense report through a tool-using agent — extraction, policy checks, and categorization done for you; submission gated on your approval. Use when asked to file my expenses, process these receipts, build my expense report, or expense this trip. Produces the itemized report with policy flags and an approval-gated filing plan.",
    "parameters": {
@@ -4108,6 +4849,25 @@
   "function": {
    "name": "expense_policy",
    "description": "Write a clear company expense & reimbursement policy. Use when asked to write an expense policy, a reimbursement policy, a travel & expense (T&E) policy, or spending guidelines. Produces a practical policy — what's covered, limits by category, the approval and submission process, timelines, and what's not reimbursable — that's fair, easy to follow, and reduces finance back-and-forth. Not tax/legal advice.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "expense_sheet_design",
+   "description": "Design an expense-tracking sheet that survives real receipts — the capture-at-spend habit, the category set that matches reimbursement or tax rules, the receipt-link discipline, and the month-end close that takes minutes because the work happened at spend-time. Use when asked track my business expenses, build an expense sheet for the team, get ready for reimbursement/tax season, or my shoebox of receipts needs a system. Produces the sheet structure, the capture ritual, the category mapping to the real downstream rules, and the month-end close.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -4163,6 +4923,25 @@
  {
   "type": "function",
   "function": {
+   "name": "expert_interview_prep",
+   "description": "Get the most from an hour with an expert — the do-your-homework floor (never ask what's googleable), the question arc from calibration to the frontier, the follow-up discipline that goes deep instead of wide, and the capture that survives the call. Use when asked prep me for the expert call, what should I ask this advisor/analyst/practitioner, we get an hour with X, or our expert calls are pleasant but shallow. Produces the homework brief, the question arc, the follow-up toolkit, and the capture plan.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "exploratory_test_charter",
    "description": "Write session-based exploratory testing charters to find what scripted tests miss. Use when asked to plan exploratory testing, write a test charter, design a testing session, or do risk-based exploration of a feature. Produces focused charters — a mission, areas/risks to explore, tactics and oracles, and timeboxed sessions — so exploration is purposeful and accountable, not random clicking.",
    "parameters": {
@@ -4184,6 +4963,25 @@
   "function": {
    "name": "factory_acceptance_test",
    "description": "Write a factory acceptance test (FAT) plan or report — test coverage matrix against spec, AQL sampling plan, pass/fail criteria, golden-sample handling, deviation log, and sign-off structure. Use when asked to write a FAT plan, define outgoing quality inspection, set AQL levels, prepare for a factory acceptance or pre-shipment inspection, or document FAT results. Produces a complete FAT plan or report with sampling tables, defect classification, and a sign-off block.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "faq_builder",
+   "description": "Build an FAQ from the questions people actually ask — mined from tickets, chats, and repeated explanations, answered once and well, organized by the asker's words, and maintained by a capture loop instead of annual archaeology. Use when asked create an FAQ for this product/process/team, I answer the same questions weekly, turn our support threads into docs, or why does nobody find our answers. Produces the mined question list with frequencies, the answers in ask-language, the structure, and the capture loop.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -4448,6 +5246,25 @@
  {
   "type": "function",
   "function": {
+   "name": "filename_convention",
+   "description": "Set a filename convention that sorts, searches, and survives — date-first ISO format, the descriptor grammar, version suffixes that end the FINAL-final2 era, and the rollout that gets a team actually using it. Use when asked set up file naming rules, our filenames are chaos, what should we call our files, or fix the v2-final-FINAL problem. Produces the convention with its grammar, examples for the team's real file types, the version rule, and the one-line cheat sheet.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "financial_aid_appeal",
    "description": "Write a financial-aid appeal or scholarship request letter that aid offices act on — factual, documented, and specific about the ask. Use when asked to appeal my financial aid, write a scholarship letter, ask for more aid after circumstances changed, or respond to an aid decision. Produces the appeal letter with the changed-circumstance case documented, the specific dollar ask, the evidence list to attach, and the follow-up plan.",
    "parameters": {
@@ -4638,6 +5455,44 @@
  {
   "type": "function",
   "function": {
+   "name": "folder_structure_designer",
+   "description": "Design a folder structure people actually file into — shallow, purpose-first, with a home for everything and an inbox for the undecided, sized to the team that must maintain it. Use when asked organize our shared drive, design a folder structure for the project, where should things live, or our files are chaos. Produces the structure with its placement rules, the depth and naming constraints, the _inbox convention, and the migration-lite plan for the existing mess.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "follow_up_chaser",
+   "description": "Chase unanswered emails without being annoying — the escalating-gently sequence with timing rules, the re-ask that makes replying easy, and the close-the-loop discipline that ends zombie threads. Use when asked they haven't replied what do I send, write a follow-up that isn't pushy, how long do I wait before chasing, or manage my waiting-on list. Produces the follow-up sequence with dates, drafts per rung, and the give-up-gracefully exit.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "follow_up_sequence",
    "description": "Write the follow-up messages that keep a candidate on the radar without being annoying. Use when asked to write a post-interview thank-you, a follow-up after no reply, a nudge on a stalled application, or a check-in sequence during a job search. Produces a timed sequence — what to send, when, and the exact wording — that adds value or shows interest at each step rather than just 'checking in'.",
    "parameters": {
@@ -4659,6 +5514,25 @@
   "function": {
    "name": "form_filler_operator",
    "description": "Fill long web forms and applications through a computer-use agent — from a fact sheet you approve, field by field, with a full transcript and nothing submitted without your word. Use when asked to fill this application for me, complete this government/vendor/insurance form, or do this registration. Produces the fact-to-field mapping, the filled form held at review, and a field-level transcript.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "formula_detangler",
+   "description": "Untangle the spreadsheet formula nobody dares touch — decompose the seven-function nest into named readable steps, explain what it actually does (vs. what it's believed to do), and rebuild it maintainably with helper columns and modern functions. Use when asked what does this formula do, this IFERROR-VLOOKUP monster broke, make this formula maintainable, or nobody understands the sheet the analyst left. Produces the plain-language decode, the step decomposition into helper columns, the believed-vs-actual gaps, and the rebuilt version.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -4961,6 +5835,25 @@
  {
   "type": "function",
   "function": {
+   "name": "handbook_page",
+   "description": "Write the handbook page that ends the repeated explanation — the answer-shaped structure (task-first, context second), the ownership and freshness header, and the write-once-point-forever discipline that turns tribal knowledge into infrastructure. Use when asked document how we do X, write the wiki page for this process, I explain this every month, or make this knowledge survive me. Produces the page with task-first structure, the header block, the worked example, and the pointer habit.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "hardware_prd",
    "description": "Write a PRD for a physical hardware product — target cost (BOM and landed), industrial design constraints, regulatory certifications, reliability targets, serviceability, packaging, and forecast assumptions. Use when asked to write a hardware PRD, spec a new device, define requirements for a physical product, or kick off an NPI program. Produces a complete hardware PRD with a cost stack, cert matrix, reliability spec, and EVT/DVT/PVT milestone targets.",
    "parameters": {
@@ -5132,6 +6025,25 @@
  {
   "type": "function",
   "function": {
+   "name": "house_style_enforcer",
+   "description": "Apply a team's writing style consistently — extract the house style from exemplar documents into a checkable rule card, run the conformance pass on new drafts, and fix violations without flattening the author's voice. Use when asked make this match our style, why do our docs all sound different, build a style guide from our best docs, or check this draft against house style. Produces the extracted rule card, the conformance pass with per-fix reasons, and the voice-preservation line.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "human_in_the_loop_design",
    "description": "Design the human approval surface for an agent system — which actions gate, how approvals batch without becoming rubber stamps, and what the audit trail must hold. Use when asked to add human oversight to an agent, design approval workflows for AI actions, decide what an agent may do autonomously, or fix approval fatigue in an existing loop. Produces an action-tier policy, approval UX spec, escalation rules, and audit-trail requirements. For specifying the whole agent use agent-spec; for the per-skill execution gates see the Execution-block pattern in SKILLSPEC §5.",
    "parameters": {
@@ -5210,6 +6122,25 @@
   "function": {
    "name": "impact_report",
    "description": "Write a compelling nonprofit impact or annual report that shows donors what their money achieved. Use when asked to write an impact report, an annual report, a grant outcomes report, or to report results to funders/donors. Produces a structured report — mission and year in brief, outcomes with real numbers and a beneficiary story, financials at a glance, and a forward ask — that builds trust and renews giving.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "inbox_unsubscribe_purge",
+   "description": "Cut inbox volume at the source — the unsubscribe purge that classifies recurring senders into kill/digest/keep, executes safely (real unsubscribes vs. spam-report vs. never-click), and installs the filters that catch the rest. Use when asked my inbox is all newsletters, mass unsubscribe safely, cut my email volume, or set up filters for the noise. Produces the sender census, the kill/digest/keep sort, the safe-unsubscribe rules, and the filter set.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -5457,6 +6388,25 @@
   "function": {
    "name": "interview_question_bank",
    "description": "Build a structured, role-specific interview question bank with what good answers look like. Use when asked to create interview questions, an interview guide, a structured interview kit, or competency-based questions for a role. Produces questions mapped to the competencies that matter — behavioral (STAR), role/technical, and values — each with what a strong vs. weak answer shows and follow-up probes, for fair, consistent interviews.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "interview_synthesis",
+   "description": "Turn a pile of interview notes into findings that survive scrutiny — the code-then-theme pass, the counting discipline (how many actually said it), the quote selection that illustrates instead of cherry-picks, and the confidence lines a small sample earns. Use when asked synthesize these user/customer/exit interviews, what did we actually learn from the calls, turn 12 transcripts into insights, or are these themes real. Produces the coded themes with counts, the divergences preserved, the illustrative quotes, and the claims sized to the sample.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -5723,6 +6673,44 @@
   "function": {
    "name": "kb_audit",
    "description": "Audit a knowledge base / help center for coverage, accuracy, and findability. Use when asked to audit a help center, review KB health, find documentation gaps, reduce ticket volume with better docs, or prioritise what to write/fix. Produces an audit — a health scorecard, content gaps (driven by top ticket drivers), stale/duplicate/low-findability articles, and a prioritised fix-and-create backlog.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "knowledge_gardening",
+   "description": "Keep a team knowledge base alive — the gardener role and its weekly half-hour, the rot signals (stale pages, orphans, duplicates) and their fixes, the capture funnels that feed the garden, and the pruning that keeps search useful. Use when asked our wiki is a graveyard, who maintains the knowledge base, set up knowledge management that lasts, or people can't find anything anymore. Produces the gardener rotation, the weekly tending routine, the rot triage, and the capture funnels.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "kpi_tracker_design",
+   "description": "Design a KPI tracker that drives decisions instead of decorating them — the few-metrics discipline (5–9, each with an owner and a so-what), targets with honest baselines, the trend-first layout, and the review ritual where the tracker actually gets used. Use when asked set up KPI tracking for the team, build a metrics dashboard in sheets, which numbers should we track, or our dashboard exists but nobody acts on it. Produces the metric selection with kill-list, the tracker structure, the target-setting notes, and the review ritual.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -6424,8 +7412,65 @@
  {
   "type": "function",
   "function": {
+   "name": "meeting_cost_meter",
+   "description": "Price meetings in money and focus — the attendee-hours × loaded-rate math, the recurring multiplier that turns a weekly 30-minutes into a real annual number, and the cost-vs-outcome read that decides what the price buys. Use when asked what does this meeting cost, price our meeting culture, is this recurring meeting worth it, or make the case for fewer attendees. Produces the cost computation with stated assumptions, the recurring annualization, the cost-per-outcome read, and the reduction levers ranked.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "meeting_notes",
    "description": "Structure and format meeting notes following PM best practices. Use when asked to create meeting notes, format discussion notes, capture action items, or document decisions from any meeting type. Produces structured notes with decisions, action items (owner + deadline), open questions, and next steps.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "meeting_prep_pack",
+   "description": "Arrive at a meeting armed in fifteen minutes — the prep pack: what this meeting decides, your position with its reasons, the other attendees' likely stances, the questions to ask, and the outcome you're steering toward. Use when asked prep me for this meeting, what should I know before this call, I have 15 minutes before a big meeting, or help me not wing it. Produces the one-page prep pack with position, stances, questions, and the walk-away-with list.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "meeting_room_etiquette",
+   "description": "Set the shared-space norms that end the small daily frictions — meeting room booking discipline (the ghost-booking cure), hybrid-call room behavior, the shared kitchen/space contracts, and the enforcement that works without a hall monitor. Use when asked set office space norms, rooms are always booked but empty, hybrid meetings are terrible for remote people, or write the office etiquette guide. Produces the norms card by space type, the ghost-booking fix, the hybrid-room checklist, and the no-hall-monitor enforcement design.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -6559,6 +7604,25 @@
   "function": {
    "name": "microservices_decomposition",
    "description": "Design a microservices decomposition for a monolith or new system, defining service boundaries, ownership, communication patterns, and migration plan. Use when asked to decompose a monolith, define service boundaries, design a microservices architecture, or plan a strangler-fig migration. Produces a bounded context map, service inventory table, communication pattern decisions, data ownership matrix, migration roadmap, and risk register.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "migration_day_runbook",
+   "description": "Move a team's files to a new platform without losing work or a week — the pre-migration freeze, the verified copy, the permissions remap, the cutover announcement, and the old-system read-only afterlife. Use when asked we're moving from Dropbox to Drive, migrate our files to SharePoint, plan the file migration day, or how do we switch platforms safely. Produces the migration runbook: freeze window, copy-and-verify steps, permissions mapping, the cutover comms, and the rollback line.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -6785,6 +7849,25 @@
  {
   "type": "function",
   "function": {
+   "name": "newsletter_digest_brief",
+   "description": "Turn a pile of newsletters and subscriptions into one skimmable brief — the items that matter to YOUR interests extracted with sources, the noise dropped with a count, on a cadence that replaces daily trickle-reading. Use when asked digest my newsletters, summarize what my subscriptions said this week, what did I miss that I actually care about, or make my reading pile useful. Produces the interest-filtered brief with per-item sources, the dropped-with-reasons ledger, and the cadence that makes trickle-reading obsolete.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "newsletter_writer",
    "description": "Write a full creator newsletter issue — subject line, preview text, hook, body with a clear takeaway, and a CTA — in the writer's voice, for Substack, beehiiv, ConvertKit, or email. Use when asked to write a newsletter, an email issue, a Substack post, or to turn notes/a topic into a sendable newsletter. Produces a ready-to-send issue with subject-line options and a skimmable structure. Distinct from B2B drip/nurture sequences.",
    "parameters": {
@@ -6880,6 +7963,63 @@
  {
   "type": "function",
   "function": {
+   "name": "office_hours_design",
+   "description": "Replace ad-hoc interruptions with office hours that actually get used — the slot design (cadence, length, format), the routing rules that tell people what goes there vs. what shouldn't wait, and the empty-hours and overflow failure modes handled in advance. Use when asked set up office hours, I'm interrupted constantly but want to stay accessible, my office hours sit empty, or design expert time for the team. Produces the slot design, the routing card, the facilitation format, and the tuning rules.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "office_move_runbook",
+   "description": "Run an office move or reconfiguration without losing a week of work — the dependency-ordered plan (internet lead times rule everything), the workstream owners, the comms that keep the team functional through the chaos, and the day-one-that-works checklist. Use when asked plan our office move, we're moving floors/buildings in six weeks, who owns what in the move, or make day one at the new office not a disaster. Produces the workstream map with owners, the dependency timeline, the team comms plan, and the day-one readiness gate.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "offsite_planner",
+   "description": "Plan a team offsite that earns its cost — the purpose split (connection vs. decisions vs. planning, weighted on purpose), the agenda that alternates work and air, the logistics runbook, and the follow-through that makes Monday different from before. Use when asked plan our team offsite, design two days for the team, make this offsite not a waste, or what do we actually do at the offsite. Produces the purpose weighting, the day designs, the logistics checklist, and the commitments-capture that survives re-entry.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "okr_builder",
    "description": "Create well-structured OKRs (Objectives and Key Results) for product teams, startups, and individuals. Use when asked to write OKRs, set quarterly goals, define key results, or review existing OKRs. Produces a complete OKR set with objectives, measurable key results, baselines, and a scoring guide.",
    "parameters": {
@@ -6901,6 +8041,25 @@
   "function": {
    "name": "oncall_runbook",
    "description": "Write an on-call runbook for a service — covering alert definitions, escalation paths, common incident responses, and on-call handoff procedures. Use when asked to write an on-call guide, create alert runbooks, document escalation procedures, or prepare an on-call handoff document. Produces a structured on-call runbook with per-alert response procedures, escalation matrix, diagnostic commands, and handoff template.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "onboarding_buddy_plan",
+   "description": "Design the buddy system that makes new-hire onboarding human — the buddy's actual job (context and safety, not training), the 30-day touchpoint plan, the ask-me-anything contract, and the buddy selection that avoids the two classic miscasts. Use when asked set up an onboarding buddy program, I'm buddying the new hire what do I do, our onboarding is docs with no humans, or the new person is drowning quietly. Produces the buddy role definition, the touchpoint schedule, the first-week script, and the escalation line.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -7051,8 +8210,46 @@
  {
   "type": "function",
   "function": {
+   "name": "out_of_office_designer",
+   "description": "Design an out-of-office that actually protects the time off — the auto-reply that routes instead of apologizes, the coverage map behind it, and the pre-departure handoff that prevents the beach laptop. Use when asked write my out of office message, going on vacation what do I set up, cover my work while I'm out, or I always come back to chaos. Produces the OOO message with routing, the coverage assignments confirmed, the pre-departure checklist, and the re-entry buffer plan.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "outcome_tracker",
    "description": "Record the testable predictions inside a decision, then score them against reality later — so frameworks earn trust from outcomes, not vibes. Use when committing to a prioritisation, forecast, or plan (to log what it predicts), when asked to review what actually happened, or to compute how well-calibrated past RICE scores, forecasts, or bets have been. Produces a prediction record at decision time, and a calibration report with per-framework hit rates at review time.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "outline_before_prose",
+   "description": "Outline documents before drafting them — the argument skeleton that gets alignment cheaply, the one-line-per-section discipline, and the review-the-outline step that saves rewriting the prose. Use when asked help me start this document, outline before I write, why do my docs get rewritten from scratch in review, or get sign-off before drafting. Produces the outline with each section's claim (not topic), the reader-and-decision header, the outline review step, and the expansion rules.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -7336,8 +8533,46 @@
  {
   "type": "function",
   "function": {
+   "name": "personal_wip_limits",
+   "description": "Cap your work-in-progress so things finish — the personal WIP limit (3 active outcomes, defended), the finish-before-start rule with its exceptions named, the parking lot for the overflow, and the throughput evidence that converts the skeptic. Use when asked I have twelve things half-done, why does nothing ever finish, set a WIP limit for my work, or I start everything and complete nothing. Produces the active-list cap, the parking protocol, the start-gate, and the two-week throughput experiment.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "persuasion_brief",
    "description": "Build the case to win someone over to a decision, idea, or change. Use when asked to persuade someone, build a case for an idea, get buy-in, win over a skeptic, or prepare to pitch a proposal internally. Produces a persuasion brief — the audience's current view and what moves them, the core argument, the proof, objection handling, the emotional and logical appeals, and the ask.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "photo_library_rescue",
+   "description": "Rescue a photo library drowning in duplicates, screenshots, and 40,000 unsorted items — the triage order that shrinks first (screenshots, bursts, dupes), the album-vs-search philosophy that ends over-organizing, and the backup rule that comes before any deleting. Use when asked organize my photo library, 40k photos help, delete duplicate photos safely, or set up a photo system that lasts. Produces the backup-first step, the shrink passes in order, the light organizing layer, and the monthly habit.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -7374,8 +8609,84 @@
  {
   "type": "function",
   "function": {
+   "name": "pitch_vs_teach",
+   "description": "Know which talk you're giving — the pitch (drive one decision) vs. the teach (build understanding) — because mixing their structures fails both, and most bad presentations are one wearing the other's clothes. Use when asked is this a pitch or a training, my informative deck didn't land the ask, my pitch felt like a lecture, or structure this talk for the right job. Produces the mode diagnosis, the structural implications, the mixed-mandate split, and the mode-check on an existing deck.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "pivot_analysis_planner",
+   "description": "Plan pivot-table analysis that answers the actual question — the question-to-layout mapping (rows, values, filters chosen on purpose), the data-shape check that pivots require, and the drill-down path from summary to so-what. Use when asked analyze this data with a pivot, what's driving the total, break this down by category and month, or my pivot shows nonsense. Produces the question decomposition, the pivot layout(s) with reasons, the data-shape fixes needed first, and the reading guide.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "plain_language_rewrite",
+   "description": "Rewrite jargon-dense text into plain language without losing precision — the translation pass that keeps every fact and qualifier, the jargon triage (terms to replace, terms to keep-and-define), and the reading-level honesty for the actual audience. Use when asked make this readable, translate this for non-experts, de-jargon this announcement, or rewrite this so my parents/customers/new hires understand it. Produces the rewrite with a fidelity check, the jargon ledger, and the kept-terms glossary line.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "pm_weekly_review",
    "description": "Structure a PM's weekly review and planning session. Use when doing a weekly PM review, writing a weekly update, preparing for Monday planning, or reviewing sprint health. Produces a shareable weekly update covering metrics movement, shipping progress, blockers, insights, and next week's top 3 priorities.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "policy_drafter",
+   "description": "Draft an internal policy people can actually follow — the rule stated plainly with its reason, the bright lines separated from the judgment zones, the edge cases resolved by principle, and the enforcement reality stated honestly. Use when asked write our expense/remote-work/AI-use/security policy, turn this incident into a policy, our policy doc is unreadable, or people keep asking what's allowed. Produces the policy with rules-plus-reasons, the bright-line/judgment split, the worked edge cases, and the honest enforcement section.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -7566,6 +8877,25 @@
   "function": {
    "name": "prescription_cost_navigator",
    "description": "Work down the cost of a prescription systematically — the generic and therapeutic-alternative conversation, discount programs vs insurance math, pharmacy price variance, and manufacturer/assistance programs, in the order that saves the most first. Use when asked my prescription is too expensive, how do I save on my meds, is there a cheaper version of this drug, or I can't afford my medication. Produces the cost-reduction ladder for the specific prescription, the scripts for pharmacist and prescriber conversations, and the never-do list (skipping doses is not a savings plan).",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "presenter_notes",
+   "description": "Write presenter notes that actually help mid-talk — cue-grain phrases instead of scripts, the transitions and numbers that deserve verbatim capture, the timing marks that keep the talk on schedule, and the Q&A crib built in. Use when asked write my speaker notes, I either script everything or wing it, what goes in the notes pane, or I keep running over time. Produces the notes at cue grain, the verbatim-worthy lines, the timing marks, and the Q&A crib.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -8058,6 +9388,25 @@
  {
   "type": "function",
   "function": {
+   "name": "proposal_skeleton",
+   "description": "Structure an internal proposal that gets a decision — the problem-cost-options-recommendation-ask spine, the objection pre-handling that shortens the meeting, and the reversibility framing that makes yes easier. Use when asked write a proposal for the new tool or process or hire, how do I pitch this internally, structure my case for the change, or my proposals keep dying in review. Produces the proposal skeleton filled from the actual case, the objections table, the decision-sized ask, and the one-page discipline.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "proposal_writer",
    "description": "Write a structured sales proposal or commercial proposal for any deal. Use when asked to write a proposal, sales proposal, commercial proposal, statement of work, or quote document. Produces a complete proposal with problem statement, solution, investment, and next steps.",
    "parameters": {
@@ -8117,6 +9466,25 @@
   "function": {
    "name": "punch_list_builder",
    "description": "Turn walkthrough notes, photos, or voice-memo transcripts into a proper construction punch list with location, trade, and spec reference per item. Use when asked to build a punch list, clean up walkthrough notes, organise a deficiency list, prep for substantial completion, or track punch items to closeout. Produces a numbered punch list grouped by location with severity tiers, responsible subcontractor, back-charge candidates, and closeout/retainage linkage.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "purchase_justification",
+   "description": "Write the purchase request that gets approved — the cost-of-not-buying framing, the ROI math at the approver's altitude, the alternatives-considered section that preempts the obvious pushback, and the right-sized ask for the approval tier. Use when asked justify this tool/hire/equipment purchase, write the budget request, my requests keep getting deferred, or make the business case for this spend. Produces the justification memo: the problem priced, the ROI shown, alternatives dispatched, and the ask sized to its approval path.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -8364,6 +9732,25 @@
   "function": {
    "name": "recruiter_outreach",
    "description": "Write personalized candidate outreach that gets replies. Use when asked to write a recruiter InMail, a candidate outreach email, a sourcing message, or a follow-up sequence. Produces a short, personalized first message (hook tied to the candidate, the role's appeal, a low-friction ask) plus a 2–3 step follow-up sequence — honest and candidate-respectful, not spammy.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "recurring_meeting_pruner",
+   "description": "Prune your own recurring-meeting load — the personal calendar audit (your role in each, honestly), the four exit moves (leave, delegate, downgrade to notes, halve), and the graceful exit scripts that don't burn standing. Use when asked get me out of some of these meetings, my calendar is 80% recurring, which meetings can I stop attending, or leave a meeting politely. Produces the personal audit with role verdicts, the exit move per meeting, the scripts, and the calendar-shape after.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -8723,6 +10110,25 @@
  {
   "type": "function",
   "function": {
+   "name": "reply_in_their_tone",
+   "description": "Draft email replies that match the sender's register — formality, length, directness, and emoji-tolerance read from their message, so the reply lands as native instead of off-key. Use when asked reply to this email, draft a response that doesn't sound stiff, match their tone, or answer this without sounding like a robot. Produces the tone read of the incoming message, the reply drafted in that register, and the adjustment knobs.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "repo_map",
    "description": "Navigate a codebase by map instead of reading files wholesale — a deterministic stdlib script that emits the tree with line counts and top-level symbols, plus the read-the-map-first discipline that cuts exploration tokens by an order of magnitude. Use when asked explore this repo efficiently, stop re-reading the whole codebase, make a map of this project, or which files should the agent actually open. Produces the compact map with its token math (map vs. everything), the navigation discipline, and the open-only-what-matches rule.",
    "parameters": {
@@ -8744,6 +10150,25 @@
   "function": {
    "name": "research_protocol",
    "description": "Write a structured research protocol or study design document. Use when asked to write a research protocol, study protocol, research plan, methodology section, or research proposal. Produces a complete protocol with objectives, methodology, ethical considerations, and analysis plan.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "research_repo_setup",
+   "description": "Set up a research repository the team actually reuses — the atomic-insight format (finding + evidence + source + date), the tagging that makes old research findable by new questions, and the check-the-repo-first norm that stops re-researching. Use when asked set up a research repository, we keep re-learning the same things, where do our user insights live, or make past research findable. Produces the repo structure, the insight-entry format, the intake funnel from studies, and the reuse norms.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -8858,6 +10283,25 @@
   "function": {
    "name": "return_refund_policy",
    "description": "Write a clear, fair returns, refunds & exchanges policy for an online store. Use when asked to write a return policy, refund/exchange policy, or store returns page. Produces a customer-friendly policy — window, conditions, process, refund method/timing, exceptions, and shipping — in plain language that reduces support tickets and builds trust. Not legal advice.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "review_comments_resolver",
+   "description": "Resolve a document's forty review comments systematically — triage by type (accept, push back, conflict, out-of-scope), batch the mechanical fixes, draft the disagreement replies, and reconcile reviewers who contradict each other. Use when asked work through these review comments, two reviewers want opposite things, close out the feedback on this doc, or which comments do I actually have to take. Produces the comment triage, the batched fixes, the push-back replies, the conflict reconciliations, and the closure sweep.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -9426,6 +10870,25 @@
  {
   "type": "function",
   "function": {
+   "name": "saying_no_kindly",
+   "description": "Decline requests without damaging relationships or your standing — the fast-clear-warm formula, the alternative-attached no, the no-to-the-boss version (tradeoffs, not refusal), and the scripts for the asks that recur. Use when asked how do I say no to this, decline this project politely, I say yes to everything and drown, or push back on my manager's request. Produces the decline scripts by relationship, the tradeoff framing for upward nos, the alternative menu, and the yes-audit that finds what to stop.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "scam_message_decoder",
    "description": "Decode a suspicious message — text, email, call transcript, or DM — against the anatomy of known scam families, with a 🔴🟡🟢 read and the safe next move. Use when someone asks is this a scam, decode this suspicious text, my 'bank' just called me, this job offer seems off, or my parent got a weird message. Produces the verdict with the specific scam-family match, the tells quoted from the message itself, the safe-verification path (never the message's own links or numbers), and the if-you-already-clicked triage.",
    "parameters": {
@@ -9749,8 +11212,46 @@
  {
   "type": "function",
   "function": {
+   "name": "shared_drive_cleanup",
+   "description": "Clean up a shared drive nobody owns — the ownership-first move, the top-down audit that finds the 80% (stale projects, duplicates, ex-employee folders), the archive-don't-delete discipline for shared property, and the norms that prevent regrowth. Use when asked our shared drive is a disaster, clean up the team drive, who owns all these folders, or people are scared to delete anything. Produces the audit map, the archive plan with the fear-killing rule, the ownership assignments, and the going-forward norms.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "short_form_script",
    "description": "Write a short-form video script for TikTok, Instagram Reels, or YouTube Shorts — built on the hook→retention→payoff structure that drives watch-time. Use when asked to script a Reel, TikTok, Short, or any 15–60s vertical video. Produces a timed script with a 0–3s hook, retention beats with on-screen text and B-roll cues, a payoff, and a CTA — plus a caption and on-screen-text list. Distinct from long-form YouTube scripting.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "shutdown_ritual",
+   "description": "End the workday on purpose — the ten-minute shutdown that closes open loops, stages tomorrow's start, and gives the brain permission to actually stop (the incomplete-task hum has an off switch, and it's written). Use when asked I can't stop thinking about work at night, build an end-of-day routine, my evenings are ruined by open loops, or how do I stop checking one more time. Produces the shutdown checklist, the tomorrow-staging step, the closing phrase, and the after-hours boundary rules.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -9884,6 +11385,25 @@
   "function": {
    "name": "slide_deck",
    "description": "Build a real, editable PowerPoint (.pptx) deck from an outline or brief. Use when asked to make a slide deck, a PowerPoint, a pitch/board/sales deck as an actual file, or to turn a doc/notes into slides. Produces an actual .pptx via a generated python-pptx script — a title slide, one idea per content slide with a clear headline and concise bullets, and consistent styling. Requires a code-execution environment (Claude Code, the API code tool, or Claude.ai).",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "slide_density_rules",
+   "description": "Fix slides that are documents in landscape mode — the one-point-per-slide rule, the projection-vs-reading fork that decides density, the text diet (headlines and evidence, prose to notes), and the glance test. Use when asked my slides are too busy, how much text per slide, fix this wall-of-bullets deck, or make this readable from the back of the room. Produces the density diagnosis, the per-slide fixes (split, strip, or move-to-notes), the projection/document fork decision, and the glance-test results.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -10053,6 +11573,25 @@
  {
   "type": "function",
   "function": {
+   "name": "source_triangulation",
+   "description": "Verify a claim before repeating it — the independent-sources test (three citations of one press release is one source), the provenance trace to the original, and the confidence grading that separates established from echoed. Use when asked is this claim actually true, verify this stat before the deck, everyone cites this number where's it from, or how solid is this source. Produces the provenance trace, the independence assessment, the confidence grade with its reasoning, and the repeat-it-as phrasing.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "sourcing_strategy",
    "description": "Build a talent sourcing strategy for a hard-to-fill role. Use when asked to create a sourcing strategy, a candidate sourcing plan, a channel plan for hiring, or to figure out where to find candidates for a role. Produces a strategy — the ideal-candidate profile and where they are, prioritised sourcing channels, outreach approach, a pipeline target with funnel math, and a weekly plan — so sourcing is deliberate, not just posting and praying.",
    "parameters": {
@@ -10074,6 +11613,63 @@
   "function": {
    "name": "sports_scores",
    "description": "Get live scores, schedules, and standings for major leagues with zero API keys — ESPN's public JSON endpoints via curl, covering NFL, NBA, MLB, NHL, and world football. Use when asked what's the score, did my team win, today's games, or league standings right now. Produces the scores with game state (live/final/scheduled), the asked-team answer first, and the rerunnable command — with the unofficial-API caveat stated.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "spreadsheet_audit",
+   "description": "Audit a spreadsheet before trusting it — the error hunt (hardcoded overrides, broken ranges, silent unit mixes), the fragility map (what breaks when rows are added), and the load-bearing-formula review that catches the mistake before the meeting does. Use when asked check this spreadsheet before we present it, why don't these numbers add up, audit this model someone left behind, or is this sheet safe to build on. Produces the findings ranked by damage, the fragility map, the verified-vs-suspect ledger, and the fix list.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "spreadsheet_handover",
+   "description": "Hand over a spreadsheet so it survives its author leaving — the README tab that decodes the sheet's logic, the update runbook with sources and cadence, the fragility warnings, and the walkthrough that transfers the judgment. Use when asked document this spreadsheet before I leave, hand over the model to the team, make this sheet survivable without me, or we inherited a workbook nobody understands. Produces the README tab content, the update runbook, the known-fragilities list, and the handover walkthrough agenda.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "spreadsheet_or_database",
+   "description": "Decide honestly when a spreadsheet should become a database or app — the five outgrowth signals (concurrent editing, relational strain, permission needs, scale, process-in-comments), what staying costs vs what migrating costs, and the incremental escape paths. Use when asked should this be a database, our spreadsheet is breaking, is it time to move off sheets, or what should replace this monster workbook. Produces the signal assessment on the actual workbook, the stay-vs-move verdict with costs both ways, and the migration path sized to the team.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -10224,6 +11820,25 @@
  {
   "type": "function",
   "function": {
+   "name": "standing_meeting_audit",
+   "description": "Audit the recurring meetings a team has accreted — each standing slot tested against its original purpose, current attendance reality, and outcomes, with keep/shrink/merge/kill verdicts and the two-week cancellation experiment that settles arguments. Use when asked audit our recurring meetings, our calendar is all standing syncs, which meetings should die, or reset the team's meeting load. Produces the inventory with per-meeting verdicts, the experiment protocol, the merge map, and the re-accretion guard.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "startup_idea_validator",
    "description": "Pressure-test a startup idea the way a sharp investor or co-founder would — problem, market, wedge, moat, why-now, and the fastest cheap way to test it. Use when asked to validate a startup idea, evaluate a business idea, stress-test a concept, or decide whether something is worth building. Produces an honest assessment with the strongest case, the killer risks, and the next experiment to run — not cheerleading.",
    "parameters": {
@@ -10264,6 +11879,25 @@
   "function": {
    "name": "statement_of_work",
    "description": "Write a tight Statement of Work (SOW) that prevents scope creep and payment disputes. Use when asked to write a SOW, a scope of work, a project agreement, or to formalise what was agreed after a proposal. Produces an SOW — scope (and explicit exclusions), deliverables with acceptance criteria, timeline & milestones, payment schedule, assumptions, change-control, and terms. The contract layer after the proposal sells.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "status_report_pipeline",
+   "description": "Build the pipeline that turns team updates into the rollup report without the Friday scramble — the collection format that aggregates cleanly, the altitude translation (team detail → leadership signal), and the automation-lite assembly that takes minutes. Use when asked I compile status from five teams every week, streamline our reporting chain, my Friday is spent chasing updates, or make the rollup write itself. Produces the collection design, the translation rules, the assembly routine, and the chase-elimination mechanics.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -10623,6 +12257,25 @@
  {
   "type": "function",
   "function": {
+   "name": "survey_design_basics",
+   "description": "Design a survey that measures instead of leads — neutral question wording, answer scales that don't smuggle conclusions, the length that respects completion rates, and the analysis plan written before launch. Use when asked write our customer/employee survey, check these questions for bias, why are our survey results useless, or design the questionnaire for this decision. Produces the question set with bias fixes, the scale choices, the pilot step, and the pre-launch analysis plan.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "sycophancy_challenger",
    "description": "Flip Claude’s default from validation to adversarial critique. Use when you are about to make a high-stakes decision, commit to a plan, or pitch something you have not stress-tested. Produces structured challenges, steelmanned counter-arguments, and the strongest case against your position — a genuine thinking partner, not a mirror.",
    "parameters": {
@@ -10680,6 +12333,25 @@
  {
   "type": "function",
   "function": {
+   "name": "task_triage_matrix",
+   "description": "Triage an overwhelming task list into what actually gets done — the urgent/important sort applied honestly (with the two corrections the classic matrix needs), the do/schedule/delegate/drop verbs, and the list hygiene that keeps triage from becoming a weekly archaeology dig. Use when asked my task list is overwhelming, triage my todos, everything feels urgent, or what should I actually work on. Produces the sorted list with verbs, the urgency audit (what's fake-urgent), the drop list with permission, and the intake rule.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "tax_planning_checklist",
    "description": "Generate a structured tax planning checklist and review framework for any individual or business context. Use when asked to review tax planning, prepare for year-end tax, check tax efficiency, or identify tax-saving opportunities. Produces a checklist of considerations, common reliefs, and a review framework. Not a substitute for qualified tax advice.",
    "parameters": {
@@ -10720,6 +12392,25 @@
   "function": {
    "name": "teaching_lesson_plan",
    "description": "Design a structured lesson plan for any subject, audience, or format. Use when asked to write a lesson plan, course outline, teaching session, workshop curriculum, or training module. Produces a complete lesson plan with learning objectives, activities, timing, assessment, and differentiation guidance.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "team_budget_tracker",
+   "description": "Track a team's budget so surprises die young — the commitment-based view (spent + committed + planned, not just invoiced), the category grain that matches how the team actually spends, the monthly close with its one-sentence read, and the forecast honesty for the year-end question. Use when asked track my team's budget, are we going to blow the budget, why did finance's number surprise us, or set up budget visibility for the team. Produces the three-lane tracker (spent/committed/planned), the monthly close ritual, the variance signals, and the year-end forecast method.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -10815,6 +12506,25 @@
   "function": {
    "name": "technical_spec_template",
    "description": "Create structured technical specification documents that bridge product requirements and engineering implementation. Use when writing a tech spec, engineering spec, system design doc, or API specification. Produces a complete spec with problem statement, proposed solution, data model, API design, alternatives considered, security considerations, testing plan, and rollout strategy.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "template_designer",
+   "description": "Turn a document the team keeps rewriting into a template that actually helps — extract the recurring skeleton, mark what varies with real placeholder prompts, keep it lighter than the ceremony it replaces, and pilot it before decreeing it. Use when asked make a template from this doc, we write this same thing every week, standardize our status updates or briefs, or why does nobody use our templates. Produces the extracted template with prompting placeholders, the keep-it-light rules, the example-filled twin, and the adoption path.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -11117,6 +12827,25 @@
  {
   "type": "function",
   "function": {
+   "name": "thread_to_decision",
+   "description": "Land a sprawling chat thread on an actual decision — the summarize-and-fork move (positions restated, the question isolated), the decider-and-deadline injection, and the recorded close that ends the forty-message orbit. Use when asked this thread is going in circles, get a decision out of this discussion, summarize where we landed, or why do our threads never conclude. Produces the thread summary with positions attributed, the isolated decision question, the closure message, and the decision record.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "threat_model",
    "description": "Threat-model a system or feature to find where it could be attacked, before you build it. Use when asked to threat-model, do a security design review, identify attack surface, or apply STRIDE to a design. Produces a structured threat model: assets, trust boundaries and data flows, threats enumerated by category (STRIDE), and prioritized mitigations. Defensive security for systems you own or are authorized to assess.",
    "parameters": {
@@ -11212,6 +12941,25 @@
  {
   "type": "function",
   "function": {
+   "name": "tool_procurement_eval",
+   "description": "Evaluate a new tool before it joins the stack — the problem-first framing (tools answer needs, not demos), the trial designed with success criteria upfront, the stack-fit check (integration, overlap, the tool-sprawl tax), and the security/data review sized to the stakes. Use when asked should we buy this tool, evaluate this software for the team, we have three tools that do this already, or run a proper trial before committing. Produces the need statement, the trial design with pre-set criteria, the stack-fit audit, and the adopt/decline verdict with its reasoning.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "tooling_risk_assessment",
    "description": "Assess an injection-mold or production tooling decision before cutting steel — soft vs hard tooling tradeoff, tool life vs forecast, cavitation math, T1 sample timeline, cost of design changes after tooling, and kill criteria. Use when asked whether to kick off tooling, choose soft vs hard tools, size cavities, review a tooling quote, or assess the risk of tooling before the design is frozen. Produces a tooling risk assessment with capacity math, a decision recommendation, and explicit kill criteria.",
    "parameters": {
@@ -11271,6 +13019,44 @@
   "function": {
    "name": "transcreation",
    "description": "Transcreate marketing/brand copy for another language and culture — recreate the impact, not the words. Use when asked to adapt a tagline, ad, slogan, campaign, or brand message for a new market, or when a translation is 'correct but flat'. Produces a transcreated version that lands emotionally in-culture, with the strategic rationale, 2-3 options, and notes on what was changed and why.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "travel_brief",
+   "description": "Turn a business trip into a one-page brief that runs itself — the itinerary with buffers and failure modes, the meeting logistics pre-solved (addresses, contacts, backup numbers), the packing-and-prep list by trip type, and the expense capture set up before departure. Use when asked prep my business trip, build the travel brief, I always forget something when traveling, or organize this three-city week. Produces the one-page brief: timeline with buffers, the per-meeting logistics, the contingency card, and the expense setup.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "unblock_protocol",
+   "description": "Get unstuck on purpose — the stuck-type diagnosis (don't-know-how, can't-decide, waiting, avoiding, too-big), the matched unblock move for each, and the timebox that stops noble struggling before it eats the day. Use when asked I'm stuck on this and don't know why, I keep avoiding this task, how long should I struggle before asking, or unblock my stalled project. Produces the stuck diagnosis, the matched move, the ask-for-help script that preserves standing, and the stuck-log pattern read.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -11459,6 +13245,44 @@
  {
   "type": "function",
   "function": {
+   "name": "vendor_breakup_email",
+   "description": "End a vendor, freelancer, or service relationship cleanly — the notice email that cites the contract, the transition asks that protect your data and continuity, and the door-open close that costs nothing. Use when asked write a cancellation email to our vendor, we're not renewing how do I tell them, end this contractor relationship professionally, or switch providers without drama. Produces the notice-period check, the breakup email with transition terms, the retention-offer response plan, and the offboarding checklist.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "vendor_comparison_matrix",
+   "description": "Compare vendors on a matrix that decides instead of decorates — the criteria weighted before the demos (so the shiny demo can't rewrite them), the evidence-based scoring with the marketing-vs-verified flags, the total-cost row that includes switching, and the reference-check questions that get honest answers. Use when asked compare these vendors/tools, build the selection matrix, the demo wowed us now what, or make this procurement decision defensible. Produces the weighted matrix, the scoring evidence rules, the TCO row, and the reference-call script.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "vendor_contract_checklist",
    "description": "Review a vendor/SaaS contract against a practical checklist before you sign. Use when asked to review a vendor contract, check a SaaS/MSA/subscription agreement, flag risky terms, or prepare negotiation points before signing. Produces a structured review — key terms extracted, a risk-flagged checklist (commercial, legal, security, exit), questions to ask, and prioritised negotiation points. Not legal advice.",
    "parameters": {
@@ -11518,6 +13342,25 @@
   "function": {
    "name": "verification_before_completion",
    "description": "Verify work actually meets its brief BEFORE declaring it done — a structured self-review pass that catches the gaps, unmet requirements, and untested claims that 'looks finished' hides. Use before handing over any deliverable (document, code, analysis, plan), when past work kept coming back with 'you missed…', or as the standing final step of any multi-step task. Produces the verified deliverable plus a short verification record: what was checked, what was found and fixed, what remains open.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "version_chaos_untangler",
+   "description": "Untangle a document that exists in six copies across email, drives, and desktops — establish the canonical version defensibly, merge the divergent edits, and install the single-source rule that prevents the rematch. Use when asked which version is the real one, merge these document copies, we've been editing different files, or stop the version chaos on this doc. Produces the version census with the canonical verdict, the divergence merge plan, the announce-and-redirect step, and the single-source going-forward rules.",
    "parameters": {
     "type": "object",
     "properties": {
@@ -11725,6 +13568,25 @@
  {
   "type": "function",
   "function": {
+   "name": "weekly_review_ritual",
+   "description": "Install the weekly review that keeps work from managing you — the 30-minute Friday ritual: close the week's loops, sweep the capture points, choose next week's big three before the calendar chooses for you, and the two questions that compound. Use when asked set up a weekly review, my weeks just happen to me, GTD-style review but lighter, or I keep dropping threads between weeks. Produces the ritual's fixed agenda, the sweep checklist, the big-three selection, and the survival rules for busy weeks.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
    "name": "what_to_ask",
    "description": "Get the five questions that matter before you sign, buy, or agree to anything — the front door to the decoder family, routed by situation. Use when asked what should I ask before signing this, I'm about to buy X what do I check, what questions for the landlord/dealer/contractor/HR, or what am I forgetting. Produces the five highest-leverage questions for the specific situation with why each matters and what a bad answer sounds like, plus the pointer to the full decoder when one exists.",
    "parameters": {
@@ -11860,6 +13722,44 @@
   "function": {
    "name": "word_document",
    "description": "Build a real, formatted Word (.docx) document — headings, styles, tables, TOC-ready. Use when asked to produce a Word doc, a .docx, a formatted report/contract/proposal/letter as an actual file (not markdown). Produces an actual .docx via a generated python-docx script with proper heading styles, body text, tables, and page structure. Requires a code-execution environment (Claude Code, the API code tool, or Claude.ai).",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "working_agreements",
+   "description": "Write a team's working agreements — the small set of explicit norms (communication, meetings, decisions, conflict) that replace the assumptions people were silently violating, built from the team's actual frictions and revisited on a cadence. Use when asked create team working agreements, set norms for our new team, we keep clashing over how we work, or onboard people into how this team operates. Produces the friction-derived agreement set, the specific-behavior phrasing, the disagreement protocol, and the review cadence.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "input": {
+      "type": "string",
+      "description": "The user's raw input for this skill — notes, brief, data, or task."
+     }
+    },
+    "required": [
+     "input"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "workshop_designer",
+   "description": "Design working sessions that produce artifacts, not vibes — the outcome-backwards agenda, the activity formats that beat open discussion (silent writing, dot voting, structured rounds), the energy arc, and the output-capture that survives the room. Use when asked design a workshop for X, plan our planning session, facilitate a half-day working session, or our workshops are fun but nothing comes out. Produces the workshop design: the artifact goal, the activity sequence with timings, the facilitation notes, and the capture plan.",
    "parameters": {
     "type": "object",
     "properties": {

@@ -9,6 +9,14 @@
   },
   "plugins": [
     {
+      "name": "pm-cowork",
+      "description": "100 cowork skills for the AI-coworker era: inbox and email ops, files and folders, spreadsheets, documents, meetings, team collaboration, research, presentations, personal work ops, and office admin — the office knowledge work an AI coworker actually does",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-cowork",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
       "name": "pm-tokens",
       "description": "Token optimization for every stage of the agent journey: crush tool outputs before they enter context, navigate code by map instead of reading files, diet the output register, budget the window cache-aware, measure everything, and hand off sessions at 5% of transcript size",
       "version": "1.0.0",

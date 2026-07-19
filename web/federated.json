@@ -2,7 +2,7 @@
  "spec": "skill-federation/0.1",
  "built": "2026-07-19",
  "libraries": 1,
- "skills": 630,
+ "skills": 730,
  "members": [
   {
    "repo": "mohitagw15856/pm-claude-skills",
@@ -10,7 +10,7 @@
    "homepage": "https://github.com/mohitagw15856/pm-claude-skills",
    "license": "MIT",
    "badge": "https://img.shields.io/endpoint?url=https%3A%2F%2Fpm-skills-mcp.pm-claude-skills.workers.dev%2Fbadge%3Frepo%3Dmohitagw15856%2Fpm-claude-skills",
-   "count": 630,
+   "count": 730,
    "skills": [
     {
      "name": "360-feedback-template",
@@ -51,6 +51,10 @@
     {
      "name": "aeo-optimizer",
      "description": "Optimize an article for Answer Engine Optimization (AEO) so AI engines like ChatGPT, Perplexity, and Claude can extract, quote, and cite it. Use when asked to AEO-optimize, make content AI-readable, improve AI citation chances, or adapt an article for answer engines. Produces an AEO-optimised rewrit"
+    },
+    {
+     "name": "agenda-or-cancel",
+     "description": "Enforce the simplest meeting rule that works — no agenda, no meeting — with the three-line agenda format (purpose, decisions sought, pre-reads), the 24-hour rule, and the graceful cancel scripts. Use when asked write an agenda for this meeting, should this meeting happen, our meetings have no agenda"
     },
     {
      "name": "agent-design-review",
@@ -117,6 +121,10 @@
      "description": "Check live air quality anywhere with zero API keys — Open-Meteo's air-quality API via curl, decoded from raw PM2.5 and AQI numbers into what they mean for going outside. Use when asked what's the air quality, is it safe to run outside, AQI in my city, or pollution levels right now. Produces the curr"
     },
     {
+     "name": "all-hands-deck",
+     "description": "Build an all-hands that lands with everyone from intern to VP — the mixed-altitude structure (the story for all, the numbers for some), the wins-with-names section done right, the hard-news slide handled straight, and the Q&A design that gets real questions. Use when asked build the all-hands deck, "
+    },
+    {
      "name": "altitude-shifter",
      "description": "Re-pitch one piece of content for four audiences — the board, the engineers, a customer, a new hire — with a delta table showing what changed between altitudes and why. Use when asked to rewrite this for execs, explain this to the team, make this customer-facing, or say this four ways. Produces the "
     },
@@ -157,6 +165,10 @@
      "description": "Diagram a system or technical architecture — services, data stores, and how they connect. Use when asked to draw an architecture, show how components fit together, map a system/data flow, or visualize services and dependencies. Produces a ready-to-render Mermaid diagram with grouped subgraphs (rende"
     },
     {
+     "name": "archive-strategy",
+     "description": "Design the archive layer that keeps current workspaces lean without losing history — what moves, when, to where, findable-by-search, with the project-close ritual that makes archiving automatic instead of aspirational. Use when asked set up an archiving system, our workspace is drowning in old proje"
+    },
+    {
      "name": "assumption-bounty",
      "description": "Extract every hidden assumption from a plan or document and put a price on each one — what it costs if wrong, what it costs to test. Use before committing to anything whose author says 'obviously' or whose spreadsheet has hardcoded cells: the bounty hunt makes the invisible load-bearing beliefs expl"
     },
@@ -167,6 +179,14 @@
     {
      "name": "async-decision-memo",
      "description": "Run a decision asynchronously — the memo, the silent-read window, the comment protocol, and the deadline that makes it land without a meeting. Use when asked to decide something async, replace a decision meeting with a document, run an Amazon-style written decision process, or when a decision keeps "
+    },
+    {
+     "name": "async-instead",
+     "description": "Convert a meeting into async work that actually decides — the doc-plus-deadline format that replaces the room, the comment-window rules, the decision-closure step that async usually fumbles, and the honest test for what still needs synchronous. Use when asked can this meeting be async, replace our s"
+    },
+    {
+     "name": "async-update-format",
+     "description": "Write status updates people actually read — the traffic-light-plus-narrative format (state first, story second), the blockers-are-asks rule, and the skimmable structure that respects a reader with thirty seconds. Use when asked write my weekly update, format our team's status posts, nobody reads my "
     },
     {
      "name": "auto-repair-estimate-decoder",
@@ -233,12 +253,20 @@
      "description": "Interview the user with sharp, one-at-a-time questions to turn a vague request into a tight, complete brief any other skill can run on. Use when a request is fuzzy, under-specified, or 'help me think this through', or before running a skill that needs inputs the user hasn't given. Produces a structu"
     },
     {
+     "name": "brief-from-pile",
+     "description": "Turn a folder of accumulated documents into one decision-ready brief — the skim-map pass over the pile, the extraction against the brief's actual questions, the conflict reconciliation when documents disagree, and the provenance trail back to sources. Use when asked read all this and tell me what ma"
+    },
+    {
      "name": "briefing-note",
      "description": "Write a one-page briefing note that gets a busy principal up to speed fast. Use when asked to brief a minister/executive/official, prepare a briefing note or read-ahead, or summarize an issue for a decision or meeting. Produces a tight, single-page note: purpose, background, key facts/considerations"
     },
     {
      "name": "budget-builder",
      "description": "Build a realistic personal monthly budget from someone's income and expenses. Use when asked to make a budget, plan monthly spending, allocate income, or get finances under control. Produces a categorized budget (a 50/30/20-style allocation tuned to their reality), a surplus/shortfall number, and co"
+    },
+    {
+     "name": "budget-tracker-design",
+     "description": "Design a budget-vs-actuals tracker that stays alive past February — the category grain that matches real statements, the variance view that answers 'are we okay', the update ritual small enough to survive, and the honest handling of irregular expenses. Use when asked build me a budget spreadsheet, t"
     },
     {
      "name": "budget-variance-analysis",
@@ -317,6 +345,10 @@
      "description": "Draft a defensible construction change order with entitlement basis, scope delta, itemised pricing, and schedule impact. Use when asked to write a change order, price extra work, draft a CO or COR/PCO, respond to a directive for changed work, or paper a field change. Produces a complete change order"
     },
     {
+     "name": "changelog-for-humans",
+     "description": "Write changelogs and release notes readers actually benefit from — changes translated to so-whats, grouped by reader impact (breaking first, gifts second, plumbing last), with the upgrade path stated and the marketing kept honest. Use when asked write the release notes, turn this commit list into a "
+    },
+    {
      "name": "changelog-generator",
      "description": "Convert a git log, commit list, or release notes into a polished, user-facing changelog. Use when writing release notes, generating a CHANGELOG.md entry, or documenting what changed in a version. Produces a structured changelog section with version header, categorised changes, and migration notes. F"
     },
@@ -325,8 +357,16 @@
      "description": "Turn a list of changes, commits, or PRs into clean release notes / a changelog entry. Use when asked to write release notes, a changelog, or a version announcement from raw changes. Produces a Keep-a-Changelog-style entry grouped by type (Added/Changed/Fixed/etc.), written for users — surfacing brea"
     },
     {
+     "name": "channel-hygiene",
+     "description": "Fix a team's chat sprawl — the channel map with one purpose per channel, the naming scheme that makes purpose findable, the archive pass for the dead and duplicated, and the posting norms (threads, @-discipline, urgency signals) that keep signal findable. Use when asked clean up our Slack/Teams, we "
+    },
+    {
      "name": "chart",
      "description": "Turn numbers into a chart — bar, line, area, pie, or doughnut. Use when asked to chart or graph data, visualize metrics/trends/breakdowns, or show numbers as a picture instead of a table. Produces a ready-to-render chart spec (renders live in the playground and exports as PNG) plus a one-line read o"
+    },
+    {
+     "name": "chart-choice",
+     "description": "Pick the chart the data and the point actually need — the question-to-chart mapping (comparison, trend, composition, distribution, relationship), the honesty rules (axes, baselines, dual-axis traps), and the one-chart-one-point discipline. Use when asked what chart should I use, make this data visua"
     },
     {
      "name": "chart-data-extractor",
@@ -339,6 +379,10 @@
     {
      "name": "cicd-playbook",
      "description": "Write a CI/CD pipeline playbook for a service or team. Use when asked to document a CI/CD pipeline, write a deployment process, define release gates, document build and test stages, or create a deployment guide. Produces a structured playbook covering pipeline stages, environment definitions, deploy"
+    },
+    {
+     "name": "citation-hygiene",
+     "description": "Keep citations honest in business documents — every load-bearing claim sourced, links that actually contain the claim, the as-of dates that keep numbers honest, and the internal-vs-external sourcing rules for decks and memos. Use when asked check the sourcing in this deck, add citations to this doc,"
     },
     {
      "name": "claim-denial-decoder",
@@ -409,6 +453,10 @@
      "description": "Write a cold sales/B2B outreach email that earns a reply. Use when asked to write a cold email, a sales outreach email, a prospecting email, or a cold email sequence to a business prospect. Produces a short, personalised email — subject, a relevant opener, one clear value-led ask, and a low-friction"
     },
     {
+     "name": "collaboration-contract",
+     "description": "Start a cross-team project with the collaboration contract that prevents the classic collisions — who decides what, how work flows between teams, the communication channels and cadence, and what done means — agreed before the first collision instead of during it. Use when asked kick off this cross-t"
+    },
+    {
      "name": "collections-email",
      "description": "Write a polite-but-firm payment-reminder / collections email sequence for overdue invoices. Use when asked to write a collections email, a payment reminder, a dunning sequence, or to chase an overdue invoice. Produces a staged sequence — gentle pre-due nudge through escalating overdue reminders to a"
     },
@@ -429,6 +477,10 @@
      "description": "Build a candidate's research brief on a company before an application or interview. Use when asked to research a company for a job, prep a company brief before an interview, or understand a prospective employer fast. Produces a one-page brief — what they do & how they make money, recent news & traje"
     },
     {
+     "name": "company-event-ops",
+     "description": "Run a company event — the launch party, the customer day, the team celebration — as the operation it is: the goal that shapes every choice, the budget with its forgotten lines, the vendor and venue coordination, the run-of-show with owners, and the day-of roles that keep hosts hosting. Use when aske"
+    },
+    {
      "name": "comparative-market-analysis",
      "description": "Build a comparative market analysis (CMA) to price a property. Use when asked to do a CMA, a comparative market analysis, price a home, or estimate a property's value from comparables. Produces a structured CMA — the subject property, selected comparables with adjustments, an estimated value range, "
     },
@@ -439,6 +491,10 @@
     {
      "name": "competitive-intelligence-monitor",
      "description": "Monitor competitor signals and surface strategic implications for your roadmap. Use when asked to monitor competitors, track the competitive landscape, produce a competitive briefing, or understand what has changed in the market this week or month. Produces a structured intelligence brief with high/"
+    },
+    {
+     "name": "competitive-scan-lite",
+     "description": "Run a fast, honest competitive scan — the dimension table built from public evidence (sites, docs, pricing pages, changelogs, reviews), the claims-vs-observed discipline, and the so-what synthesis that ends in moves, not a landscape mural. Use when asked what are competitors doing, quick scan of the"
     },
     {
      "name": "competitor-signal-tracker",
@@ -491,6 +547,14 @@
     {
      "name": "context-mode",
      "description": "Keep Claude Code sessions productive across resets with output filtering, session logging, and auto-resume. Use when starting a long or complex coding session, when previous sessions lost context mid-task, or when you need Claude to resume exactly where it left off after a reset. Produces a session."
+    },
+    {
+     "name": "context-switch-budget",
+     "description": "Treat context switches as the budget line they are — the switch census (how fragmented the week really is), the batching moves that consolidate scattered same-kind work, the calendar defrag that turns Swiss cheese into slabs, and the switch-cost line for saying no. Use when asked my day is fragmente"
+    },
+    {
+     "name": "contract-renewal-tracker",
+     "description": "Never get auto-renewed into another year again — the contract inventory with the dates that matter (notice deadlines, not renewal dates), the calendar system with decision-time buffers, and the renewal-decision ritual that renegotiates instead of rubber-stamping. Use when asked track our contracts a"
     },
     {
      "name": "contract-review",
@@ -577,6 +641,10 @@
      "description": "Respond to your data being breached — triage by what actually leaked, the freeze/rotate/monitor ladder in the right order, and the calibrated watchfulness that follows, without panic or paralysis. Use when someone asks my data was in a breach what do I do, I got a breach notification letter, my SSN/"
     },
     {
+     "name": "data-cleaning-pass",
+     "description": "Clean a messy dataset methodically — the profiling pass that finds what's actually wrong (dupes, format drift, phantom spaces, mixed types), the fix order that doesn't corrupt while correcting, and the log that makes the cleaning defensible. Use when asked clean this export, why is my pivot double-c"
+    },
+    {
      "name": "data-contract",
      "description": "Define a data contract between a producer and consumers of a dataset/event/API. Use when asked to write a data contract, define a schema agreement, set data SLAs, or stop a producer from silently breaking downstream consumers. Produces a contract — schema with types & constraints, semantics, quality"
     },
@@ -595,6 +663,10 @@
     {
      "name": "data-retention-policy",
      "description": "Build a data retention and deletion schedule grounded in legal basis. Use when asked to create a data retention policy, set retention periods, plan data deletion/minimisation, or answer 'how long can we keep this data?'. Produces a retention schedule — data categories with their retention period, le"
+    },
+    {
+     "name": "data-slide-design",
+     "description": "Design slides where the data makes the argument — the takeaway-titled chart, the one-chart-per-slide rule, the annotation layer that guides the eye to the point, and the honesty pass on projected data. Use when asked make this data slide land, my chart slide confuses people, how do I present these n"
     },
     {
      "name": "database-migration-plan",
@@ -641,6 +713,14 @@
      "description": "Record decisions the way good judgment compounds — the reasoning, the alternatives, the probabilities, and what would change your mind, written down BEFORE the outcome arrives, then reviewed against reality. Use when asked help me think through this decision, start a decision journal, review my past"
     },
     {
+     "name": "decision-log-setup",
+     "description": "Set up the team decision log that ends relitigation — the one-line-per-decision format (what, why, who, when, reopening rule), the capture moments wired into existing rituals, and the lookup habit that makes it pay. Use when asked set up a decision log, we keep re-deciding the same things, where do "
+    },
+    {
+     "name": "decision-meeting-format",
+     "description": "Run meetings that actually decide — the pre-read-then-decide format, the options-on-the-table rule, the decider named before debate starts, and the recorded-or-it-didn't-happen close. Use when asked run this decision meeting, we discuss forever and never decide, structure the meeting where we pick t"
+    },
+    {
      "name": "decision-memo",
      "description": "Write a crisp decision memo that drives a clear decision, not a discussion. Use when asked to write a decision memo, a recommendation memo, a one/six-pager for a decision, or to get leadership to decide something. Produces a decision memo — the decision & recommendation up front, the context, option"
     },
@@ -649,8 +729,28 @@
      "description": "Autopsy a slide deck from photos or screenshots of its slides — the narrative arc, the numbers, and what each slide is hiding. Use when given slide images (a competitor's pitch, a conference talk, your own deck before a big meeting) and asked what the deck argues, whether it holds up, or how to coun"
     },
     {
+     "name": "deck-narrative-arc",
+     "description": "Give a deck a spine the room can follow — the situation-complication-resolution arc, the tension that makes the recommendation feel necessary, the transitions that carry the thread between slides, and the arc-check that catches sag. Use when asked make this deck flow, my presentation feels like disc"
+    },
+    {
+     "name": "deck-outline-first",
+     "description": "Outline a deck as headline sentences before opening the slide tool — each slide a claim that reads as an argument top to bottom, the audience-and-ask header, and the skim test that catches broken decks while they're still bullet points. Use when asked start this presentation, structure my deck, why "
+    },
+    {
+     "name": "deck-review-rubric",
+     "description": "Review a deck against a rubric instead of taste — the five dimensions (argument, evidence, density, arc, honesty), the severity-sorted feedback that separates broken from suboptimal, and the review conversation that improves the deck without rewriting it in the reviewer's voice. Use when asked revie"
+    },
+    {
+     "name": "deep-work-blocking",
+     "description": "Protect focus time that actually survives the week — the block placement matched to real energy hours, the defense rules (what moves a block, what never), the entry ritual that beats the blank-stare start, and the honest sizing that stops 8-hour fantasy blocks. Use when asked block focus time that k"
+    },
+    {
      "name": "delay-claim-letter",
      "description": "Draft a construction delay notice or delay claim letter with contract clause citation, cause classification, and critical-path impact narrative. Use when asked to write a delay notice, put the owner or GC on notice of delay, draft a time extension request, respond to weather or owner-caused delay, o"
+    },
+    {
+     "name": "delegation-brief",
+     "description": "Delegate so the work comes back right the first time — the brief that transfers outcome, context, and constraints (not just the task), the autonomy level stated explicitly, and the check-in design that catches drift without hovering. Use when asked hand this off properly, my delegations come back wr"
     },
     {
      "name": "delta-briefing",
@@ -663,6 +763,10 @@
     {
      "name": "demand-letter",
      "description": "Draft a firm, professional demand letter that states the facts, the legal/contractual basis, the specific demand, and a deadline. Use when asked to write a demand letter, send a formal demand for payment, draft a cease-and-desist, or formally request resolution before legal action. Produces a struct"
+    },
+    {
+     "name": "demo-script",
+     "description": "Script a product demo that lands — the audience's-workflow storyline (their day, not your feature list), the golden path rehearsed with fallbacks, the wow moment placed early, and the demo-death contingencies (the backup video, the reset state, the narration bridge). Use when asked script our produc"
     },
     {
      "name": "dependency-audit",
@@ -683,6 +787,14 @@
     {
      "name": "design-system-audit",
      "description": "Audit a design system for consistency, coverage, and quality. Use when asked to audit a design system, review a component library, assess design token coverage, or evaluate the health of a shared design system. Produces a structured audit with a health score, component coverage gaps, token inconsist"
+    },
+    {
+     "name": "desk-research-sprint",
+     "description": "Run a timeboxed desk-research sprint that ends with an answer instead of forty tabs — the question decomposition, the source plan by question type, the capture discipline that prevents re-reading, and the stop rule that beats completionism. Use when asked research this market/tool/topic by Friday, I"
+    },
+    {
+     "name": "desktop-zero",
+     "description": "Clear the desktop that's become a hundred-icon guilt mosaic — the fast triage that empties it today, the honest read of what the desktop was being used for (it's a to-do list wearing icons), and the replacement systems that keep it clear. Use when asked clean up my desktop, my desktop has 200 files "
     },
     {
      "name": "developer-onboarding-doc",
@@ -737,6 +849,10 @@
      "description": "Query DNS records and domain registration data with zero API keys — DNS-over-HTTPS via dns.google and domain registration via RDAP, through plain curl. Use when asked what does this domain resolve to, check the MX or TXT records, who registered this domain, when does it expire, or has DNS propagated"
     },
     {
+     "name": "doc-versioning-discipline",
+     "description": "Keep living documents trustworthy over time — the status header (draft/active/superseded) that tells readers what they're holding, the change-log-for-decisions inside the doc, the supersession chain that kills zombie versions, and the review-date heartbeat. Use when asked which version of this doc i"
+    },
+    {
      "name": "docs-quickstart",
      "description": "Write a 'get started in 5 minutes' quickstart for a tool, library, or API. Use when asked to write a quickstart, getting-started guide, or onboarding docs for developers. Produces a copy-paste-friendly quickstart that takes a developer from zero to a first working result fast, with install, a minima"
     },
@@ -745,8 +861,20 @@
      "description": "Prepare for a doctor's appointment so the 12 minutes actually get used — the symptom timeline in the format clinicians think in, the prioritized question list, and the advocacy scripts for being heard. Use when asked help me prepare for my doctor appointment, what should I tell my doctor, organize m"
     },
     {
+     "name": "document-retention-map",
+     "description": "Decide what documents to keep, for how long, and where — the personal/small-biz retention map by category (tax, legal, medical, warranties, employment), jurisdiction-flagged periods, and the destruction discipline for what's past its date. Use when asked how long do I keep tax documents, can I shred"
+    },
+    {
      "name": "donor-update",
      "description": "Write a warm donor update or stewardship message that makes a supporter feel their gift mattered. Use when asked to write a donor update, a thank-you/stewardship email, a supporter newsletter, or a gift acknowledgement. Produces a donor-centred update — sincere thanks, the specific impact of their s"
+    },
+    {
+     "name": "double-opt-in-intro",
+     "description": "Make introductions that respect both sides — the double-opt-in flow (ask each party privately before connecting them), the forwardable blurb that makes saying yes easy, and the connecting email that sets both up to succeed. Use when asked introduce me to someone, can you connect us, write an intro e"
+    },
+    {
+     "name": "downloads-triage",
+     "description": "Empty the Downloads folder that's become a junk drawer — the four-bucket pass (file, delete, action, quarantine), the age-based bulk rules that make 2,000 items tractable, and the tiny habit that keeps it empty. Use when asked clean up my downloads folder, 2000 files in downloads help, what's safe t"
     },
     {
      "name": "earthquake-watch",
@@ -765,8 +893,16 @@
      "description": "Write a multi-email nurture/onboarding/launch sequence with a goal per email. Use when asked to write an email sequence, a welcome/onboarding series, a nurture drip, a launch sequence, or a re-engagement series. Produces the sequence map (trigger, timing, goal per email) plus the full copy for each "
     },
     {
+     "name": "email-to-tasks",
+     "description": "Convert an email (or a whole thread) into real tasks — the actual asks extracted from the prose, each with owner, deadline, and the done-test, so nothing lives in the inbox as its own reminder. Use when asked what am I actually being asked to do here, turn this thread into a task list, extract the a"
+    },
+    {
      "name": "email-triage",
      "description": "Triage a Gmail inbox down to only what needs you. Use when asked to triage email, clear an inbox, find what needs a reply, or summarise recent mail. Produces a prioritised list of items needing action — replies, decisions, follow-ups — for a configurable window (default last 8 hours), filtering out "
+    },
+    {
+     "name": "email-triage-system",
+     "description": "Turn an overflowing inbox into a four-verb system — archive, reply-now, task, or park — with the two-minute rule enforced and a daily cadence that survives busy weeks. Use when asked help me get to inbox zero, my email is out of control, build me an email triage system, or process this backlog. Prod"
     },
     {
      "name": "emergency-fund",
@@ -779,6 +915,10 @@
     {
      "name": "empty-state-writer",
      "description": "Write empty-state content that turns a blank screen into a next step. Use when asked to write an empty state, a zero-data / first-run state, a no-results state, or onboarding placeholder content. Produces empty-state copy — a clear headline, a helpful line, and a primary action — for each type (firs"
+    },
+    {
+     "name": "energy-scheduling",
+     "description": "Schedule work by energy, not just time — the week of self-observation that maps your real peaks and troughs, the work-to-energy matching (hard creative work on peaks, admin on slopes, meetings on shoulders), and the calendar rebuild that honors the map. Use when asked when should I do my hardest wor"
     },
     {
      "name": "engagement-retro",
@@ -805,6 +945,10 @@
      "description": "Write clear, helpful error messages that tell users what happened and how to fix it. Use when asked to write an error message, validation text, a failure/empty-error state, or to rewrite a cryptic system error. Produces human, blame-free error copy — what went wrong, why (if useful), and the next st"
     },
     {
+     "name": "escalation-email",
+     "description": "Escalate an issue up the chain without burning the person you're escalating past — the facts-first structure, the tried-already section that earns the escalation, and the specific ask that makes action easy. Use when asked I need to escalate this, write an email to my boss's boss, this vendor issue "
+    },
+    {
      "name": "escalation-tree",
      "description": "Design a support/incident escalation tree — who handles what, when it escalates, and to whom. Use when asked to design an escalation path, an escalation matrix, support tiers, an on-call escalation policy, or to fix 'tickets bounce around / nothing gets escalated in time'. Produces an escalation tre"
     },
@@ -829,6 +973,10 @@
      "description": "Design a scoring rubric and LLM-as-judge prompt to evaluate the quality of an AI feature's output. Use when asked to create an eval rubric, define quality dimensions, build an LLM judge, or decide how to measure whether AI output is good. Produces a rubric with weighted dimensions and concrete 1–5 a"
     },
     {
+     "name": "evidence-grading",
+     "description": "Grade the evidence behind a claim before betting on it — the hierarchy for business evidence (experiments > usage data > surveys > interviews > anecdotes > opinion), the fit-for-decision test, and the mixed-evidence verdicts that real questions produce. Use when asked how strong is our evidence for "
+    },
+    {
      "name": "evidence-lock",
      "description": "Write or rewrite a document in evidence-locked mode: no unsourced sentences — every substantive claim carries a footnote citing the exact passage in the user's provided sources, and anything unsupportable is explicitly marked. Use when asked to make a document fully sourced, add citations from my do"
     },
@@ -843,6 +991,10 @@
     {
      "name": "excel-model",
      "description": "Build a real, formula-driven Excel (.xlsx) model — not a static table. Use when asked to build an Excel model, a financial model, a budget/forecast spreadsheet, or any .xlsx with live formulas a user can edit. Produces an actual .xlsx file via a generated openpyxl script: an inputs/assumptions sheet"
+    },
+    {
+     "name": "exec-vs-working-deck",
+     "description": "Stop presenting the working deck to executives — the two-deck split (answer-first exec cut vs. exploration-rich working deck), the compression rules from 40 slides to 8, and the appendix strategy that keeps the depth one click away. Use when asked turn this analysis into an exec version, my leadersh"
     },
     {
      "name": "executing-plans",
@@ -873,12 +1025,20 @@
      "description": "Audit spending to find leaks — recurring subscriptions, creep, and cuttable costs — ranked by impact. Use when asked to cut expenses, review subscriptions, find where money is going, or free up cash. Produces a categorized spend breakdown, a ranked list of cuts with dollar amounts, and the annualize"
     },
     {
+     "name": "expense-discipline",
+     "description": "Submit expenses that sail through approval — the capture-at-spend habit, the policy-fluency that prevents rejections (thresholds, receipt rules, the pre-approval traps), the report assembled in minutes, and the approver-side rules for reviewing fairly and fast. Use when asked my expense reports are "
+    },
+    {
      "name": "expense-filer",
      "description": "Turn a pile of receipts into a filed expense report through a tool-using agent — extraction, policy checks, and categorization done for you; submission gated on your approval. Use when asked to file my expenses, process these receipts, build my expense report, or expense this trip. Produces the item"
     },
     {
      "name": "expense-policy",
      "description": "Write a clear company expense & reimbursement policy. Use when asked to write an expense policy, a reimbursement policy, a travel & expense (T&E) policy, or spending guidelines. Produces a practical policy — what's covered, limits by category, the approval and submission process, timelines, and what"
+    },
+    {
+     "name": "expense-sheet-design",
+     "description": "Design an expense-tracking sheet that survives real receipts — the capture-at-spend habit, the category set that matches reimbursement or tax rules, the receipt-link discipline, and the month-end close that takes minutes because the work happened at spend-time. Use when asked track my business expen"
     },
     {
      "name": "experiment-designer",
@@ -889,12 +1049,20 @@
      "description": "Analyse a finished A/B test and write an honest results readout with real statistics. Use when asked to read out an A/B test, analyse experiment results, check if a result is statistically significant, or decide ship/no-ship from test data. Produces a readout — the computed lift, p-value & confidenc"
     },
     {
+     "name": "expert-interview-prep",
+     "description": "Get the most from an hour with an expert — the do-your-homework floor (never ask what's googleable), the question arc from calibration to the frontier, the follow-up discipline that goes deep instead of wide, and the capture that survives the call. Use when asked prep me for the expert call, what sh"
+    },
+    {
      "name": "exploratory-test-charter",
      "description": "Write session-based exploratory testing charters to find what scripted tests miss. Use when asked to plan exploratory testing, write a test charter, design a testing session, or do risk-based exploration of a feature. Produces focused charters — a mission, areas/risks to explore, tactics and oracles"
     },
     {
      "name": "factory-acceptance-test",
      "description": "Write a factory acceptance test (FAT) plan or report — test coverage matrix against spec, AQL sampling plan, pass/fail criteria, golden-sample handling, deviation log, and sign-off structure. Use when asked to write a FAT plan, define outgoing quality inspection, set AQL levels, prepare for a factor"
+    },
+    {
+     "name": "faq-builder",
+     "description": "Build an FAQ from the questions people actually ask — mined from tickets, chats, and repeated explanations, answered once and well, organized by the asker's words, and maintained by a capture loop instead of annual archaeology. Use when asked create an FAQ for this product/process/team, I answer the"
     },
     {
      "name": "feature-flag-guide",
@@ -949,6 +1117,10 @@
      "description": "Define component variants and states systematically for Figma. Use when asked to plan component variants, define states for a component, set up a Figma variant matrix, or work out what properties a component needs before building it. Produces a complete variant matrix with all properties, values, an"
     },
     {
+     "name": "filename-convention",
+     "description": "Set a filename convention that sorts, searches, and survives — date-first ISO format, the descriptor grammar, version suffixes that end the FINAL-final2 era, and the rollout that gets a team actually using it. Use when asked set up file naming rules, our filenames are chaos, what should we call our "
+    },
+    {
      "name": "financial-aid-appeal",
      "description": "Write a financial-aid appeal or scholarship request letter that aid offices act on — factual, documented, and specific about the ask. Use when asked to appeal my financial aid, write a scholarship letter, ask for more aid after circumstances changed, or respond to an aid decision. Produces the appea"
     },
@@ -989,12 +1161,24 @@
      "description": "Draft a public-records request (FOIA / FOI / state open-records) that's specific enough to get records and hard to deny. Use when asked to write a FOIA request, records request, or freedom-of-information request to a government body. Produces a properly-scoped request: the records sought, date range"
     },
     {
+     "name": "folder-structure-designer",
+     "description": "Design a folder structure people actually file into — shallow, purpose-first, with a home for everything and an inbox for the undecided, sized to the team that must maintain it. Use when asked organize our shared drive, design a folder structure for the project, where should things live, or our file"
+    },
+    {
+     "name": "follow-up-chaser",
+     "description": "Chase unanswered emails without being annoying — the escalating-gently sequence with timing rules, the re-ask that makes replying easy, and the close-the-loop discipline that ends zombie threads. Use when asked they haven't replied what do I send, write a follow-up that isn't pushy, how long do I wa"
+    },
+    {
      "name": "follow-up-sequence",
      "description": "Write the follow-up messages that keep a candidate on the radar without being annoying. Use when asked to write a post-interview thank-you, a follow-up after no reply, a nudge on a stalled application, or a check-in sequence during a job search. Produces a timed sequence — what to send, when, and th"
     },
     {
      "name": "form-filler-operator",
      "description": "Fill long web forms and applications through a computer-use agent — from a fact sheet you approve, field by field, with a full transcript and nothing submitted without your word. Use when asked to fill this application for me, complete this government/vendor/insurance form, or do this registration. "
+    },
+    {
+     "name": "formula-detangler",
+     "description": "Untangle the spreadsheet formula nobody dares touch — decompose the seven-function nest into named readable steps, explain what it actually does (vs. what it's believed to do), and rebuild it maintainably with helper columns and modern functions. Use when asked what does this formula do, this IFERRO"
     },
     {
      "name": "founder-market-fit",
@@ -1057,6 +1241,10 @@
      "description": "Build and prioritise a growth experiment backlog. Use when asked to plan growth experiments, prioritise growth ideas, set up a test backlog, or run a growth process/sprint. Produces a prioritised backlog — each experiment as a hypothesis with the metric it moves, an ICE/PXL score, the minimum test d"
     },
     {
+     "name": "handbook-page",
+     "description": "Write the handbook page that ends the repeated explanation — the answer-shaped structure (task-first, context second), the ownership and freshness header, and the write-once-point-forever discipline that turns tribal knowledge into infrastructure. Use when asked document how we do X, write the wiki "
+    },
+    {
      "name": "hardware-prd",
      "description": "Write a PRD for a physical hardware product — target cost (BOM and landed), industrial design constraints, regulatory certifications, reliability targets, serviceability, packaging, and forecast assumptions. Use when asked to write a hardware PRD, spec a new device, define requirements for a physica"
     },
@@ -1093,6 +1281,10 @@
      "description": "Generate scroll-stopping hooks — the first line of a post, thread, video, or email that decides whether anyone keeps reading. Use when asked to write a hook, an opener, a first line, a thread starter, a video cold-open, or to make something more clickable. Produces multiple distinct hook options acr"
     },
     {
+     "name": "house-style-enforcer",
+     "description": "Apply a team's writing style consistently — extract the house style from exemplar documents into a checkable rule card, run the conformance pass on new drafts, and fix violations without flattening the author's voice. Use when asked make this match our style, why do our docs all sound different, bui"
+    },
+    {
      "name": "human-in-the-loop-design",
      "description": "Design the human approval surface for an agent system — which actions gate, how approvals batch without becoming rubber stamps, and what the audit trail must hold. Use when asked to add human oversight to an agent, design approval workflows for AI actions, decide what an agent may do autonomously, o"
     },
@@ -1111,6 +1303,10 @@
     {
      "name": "impact-report",
      "description": "Write a compelling nonprofit impact or annual report that shows donors what their money achieved. Use when asked to write an impact report, an annual report, a grant outcomes report, or to report results to funders/donors. Produces a structured report — mission and year in brief, outcomes with real "
+    },
+    {
+     "name": "inbox-unsubscribe-purge",
+     "description": "Cut inbox volume at the source — the unsubscribe purge that classifies recurring senders into kill/digest/keep, executes safely (real unsubscribes vs. spam-report vs. never-click), and installs the filters that catch the rest. Use when asked my inbox is all newsletters, mass unsubscribe safely, cut "
     },
     {
      "name": "inbox-zero-operator",
@@ -1163,6 +1359,10 @@
     {
      "name": "interview-question-bank",
      "description": "Build a structured, role-specific interview question bank with what good answers look like. Use when asked to create interview questions, an interview guide, a structured interview kit, or competency-based questions for a role. Produces questions mapped to the competencies that matter — behavioral ("
+    },
+    {
+     "name": "interview-synthesis",
+     "description": "Turn a pile of interview notes into findings that survive scrutiny — the code-then-theme pass, the counting discipline (how many actually said it), the quote selection that illustrates instead of cherry-picks, and the confidence lines a small sample earns. Use when asked synthesize these user/custom"
     },
     {
      "name": "inventory-policy",
@@ -1219,6 +1419,14 @@
     {
      "name": "kb-audit",
      "description": "Audit a knowledge base / help center for coverage, accuracy, and findability. Use when asked to audit a help center, review KB health, find documentation gaps, reduce ticket volume with better docs, or prioritise what to write/fix. Produces an audit — a health scorecard, content gaps (driven by top "
+    },
+    {
+     "name": "knowledge-gardening",
+     "description": "Keep a team knowledge base alive — the gardener role and its weekly half-hour, the rot signals (stale pages, orphans, duplicates) and their fixes, the capture funnels that feed the garden, and the pruning that keeps search useful. Use when asked our wiki is a graveyard, who maintains the knowledge b"
+    },
+    {
+     "name": "kpi-tracker-design",
+     "description": "Design a KPI tracker that drives decisions instead of decorating them — the few-metrics discipline (5–9, each with an owner and a so-what), targets with honest baselines, the trend-first layout, and the review ritual where the tracker actually gets used. Use when asked set up KPI tracking for the te"
     },
     {
      "name": "kyc-escalation",
@@ -1365,8 +1573,20 @@
      "description": "Request your medical records and actually get them — what to ask for, the request letter that can't be shuffled aside, the timelines and fee rules to cite (jurisdiction-flagged), and the escalation path for stonewalls. Use when asked how do I get my medical records, write a records request, my docto"
     },
     {
+     "name": "meeting-cost-meter",
+     "description": "Price meetings in money and focus — the attendee-hours × loaded-rate math, the recurring multiplier that turns a weekly 30-minutes into a real annual number, and the cost-vs-outcome read that decides what the price buys. Use when asked what does this meeting cost, price our meeting culture, is this "
+    },
+    {
      "name": "meeting-notes",
      "description": "Structure and format meeting notes following PM best practices. Use when asked to create meeting notes, format discussion notes, capture action items, or document decisions from any meeting type. Produces structured notes with decisions, action items (owner + deadline), open questions, and next step"
+    },
+    {
+     "name": "meeting-prep-pack",
+     "description": "Arrive at a meeting armed in fifteen minutes — the prep pack: what this meeting decides, your position with its reasons, the other attendees' likely stances, the questions to ask, and the outcome you're steering toward. Use when asked prep me for this meeting, what should I know before this call, I "
+    },
+    {
+     "name": "meeting-room-etiquette",
+     "description": "Set the shared-space norms that end the small daily frictions — meeting room booking discipline (the ghost-booking cure), hybrid-call room behavior, the shared kitchen/space contracts, and the enforcement that works without a hall monitor. Use when asked set office space norms, rooms are always book"
     },
     {
      "name": "messaging-framework",
@@ -1395,6 +1615,10 @@
     {
      "name": "microservices-decomposition",
      "description": "Design a microservices decomposition for a monolith or new system, defining service boundaries, ownership, communication patterns, and migration plan. Use when asked to decompose a monolith, define service boundaries, design a microservices architecture, or plan a strangler-fig migration. Produces a"
+    },
+    {
+     "name": "migration-day-runbook",
+     "description": "Move a team's files to a new platform without losing work or a week — the pre-migration freeze, the verified copy, the permissions remap, the cutover announcement, and the old-system read-only afterlife. Use when asked we're moving from Dropbox to Drive, migrate our files to SharePoint, plan the fil"
     },
     {
      "name": "mind-map",
@@ -1441,6 +1665,10 @@
      "description": "Turn the pre-baby chaos into a staged logistics plan — leave paperwork, insurance deadlines, the hospital-bag/home-setup checklists, and the first-two-weeks operating plan with named owners. Use when asked help me prepare for a baby, what do I need to do before my due date, set up our parental leave"
     },
     {
+     "name": "newsletter-digest-brief",
+     "description": "Turn a pile of newsletters and subscriptions into one skimmable brief — the items that matter to YOUR interests extracted with sources, the noise dropped with a count, on a cadence that replaces daily trickle-reading. Use when asked digest my newsletters, summarize what my subscriptions said this we"
+    },
+    {
      "name": "newsletter-writer",
      "description": "Write a full creator newsletter issue — subject line, preview text, hook, body with a clear takeaway, and a CTA — in the writer's voice, for Substack, beehiiv, ConvertKit, or email. Use when asked to write a newsletter, an email issue, a Substack post, or to turn notes/a topic into a sendable newsle"
     },
@@ -1461,12 +1689,28 @@
      "description": "Draft a job offer — the written offer letter and a verbal-offer script. Use when asked to write an offer letter, a job offer, an employment offer, or to prepare to extend/verbal an offer to a candidate. Produces a clear, warm offer letter (role, comp, start, key terms, contingencies, acceptance) plu"
     },
     {
+     "name": "office-hours-design",
+     "description": "Replace ad-hoc interruptions with office hours that actually get used — the slot design (cadence, length, format), the routing rules that tell people what goes there vs. what shouldn't wait, and the empty-hours and overflow failure modes handled in advance. Use when asked set up office hours, I'm in"
+    },
+    {
+     "name": "office-move-runbook",
+     "description": "Run an office move or reconfiguration without losing a week of work — the dependency-ordered plan (internet lead times rule everything), the workstream owners, the comms that keep the team functional through the chaos, and the day-one-that-works checklist. Use when asked plan our office move, we're "
+    },
+    {
+     "name": "offsite-planner",
+     "description": "Plan a team offsite that earns its cost — the purpose split (connection vs. decisions vs. planning, weighted on purpose), the agenda that alternates work and air, the logistics runbook, and the follow-through that makes Monday different from before. Use when asked plan our team offsite, design two d"
+    },
+    {
      "name": "okr-builder",
      "description": "Create well-structured OKRs (Objectives and Key Results) for product teams, startups, and individuals. Use when asked to write OKRs, set quarterly goals, define key results, or review existing OKRs. Produces a complete OKR set with objectives, measurable key results, baselines, and a scoring guide."
     },
     {
      "name": "oncall-runbook",
      "description": "Write an on-call runbook for a service — covering alert definitions, escalation paths, common incident responses, and on-call handoff procedures. Use when asked to write an on-call guide, create alert runbooks, document escalation procedures, or prepare an on-call handoff document. Produces a struct"
+    },
+    {
+     "name": "onboarding-buddy-plan",
+     "description": "Design the buddy system that makes new-hire onboarding human — the buddy's actual job (context and safety, not training), the 30-day touchpoint plan, the ask-me-anything contract, and the buddy selection that avoids the two classic miscasts. Use when asked set up an onboarding buddy program, I'm bud"
     },
     {
      "name": "onboarding-copy",
@@ -1497,8 +1741,16 @@
      "description": "Turn a team or reporting structure into a clean org chart. Use when asked to draw an org chart, show reporting lines, visualize team structure, or map who reports to whom. Produces a ready-to-render Mermaid org chart (renders live, exportable as PNG/SVG) plus headcount notes and any structural obser"
     },
     {
+     "name": "out-of-office-designer",
+     "description": "Design an out-of-office that actually protects the time off — the auto-reply that routes instead of apologizes, the coverage map behind it, and the pre-departure handoff that prevents the beach laptop. Use when asked write my out of office message, going on vacation what do I set up, cover my work w"
+    },
+    {
      "name": "outcome-tracker",
      "description": "Record the testable predictions inside a decision, then score them against reality later — so frameworks earn trust from outcomes, not vibes. Use when committing to a prioritisation, forecast, or plan (to log what it predicts), when asked to review what actually happened, or to compute how well-cali"
+    },
+    {
+     "name": "outline-before-prose",
+     "description": "Outline documents before drafting them — the argument skeleton that gets alignment cheaply, the one-line-per-section discipline, and the review-the-outline step that saves rewriting the prose. Use when asked help me start this document, outline before I write, why do my docs get rewritten from scrat"
     },
     {
      "name": "outreach-message",
@@ -1557,16 +1809,40 @@
      "description": "Five standing advisors — the Operator, the Skeptic, the CFO, the Coach, the Customer — debate your decision on paper and vote. Use when asked to help me decide, pressure-test this decision, what would smart advisors say, or convene my board. Produces five distinct advisor memos, a disagreement map, "
     },
     {
+     "name": "personal-wip-limits",
+     "description": "Cap your work-in-progress so things finish — the personal WIP limit (3 active outcomes, defended), the finish-before-start rule with its exceptions named, the parking lot for the overflow, and the throughput evidence that converts the skeptic. Use when asked I have twelve things half-done, why does "
+    },
+    {
      "name": "persuasion-brief",
      "description": "Build the case to win someone over to a decision, idea, or change. Use when asked to persuade someone, build a case for an idea, get buy-in, win over a skeptic, or prepare to pitch a proposal internally. Produces a persuasion brief — the audience's current view and what moves them, the core argument"
+    },
+    {
+     "name": "photo-library-rescue",
+     "description": "Rescue a photo library drowning in duplicates, screenshots, and 40,000 unsorted items — the triage order that shrinks first (screenshots, bursts, dupes), the album-vs-search philosophy that ends over-organizing, and the backup rule that comes before any deleting. Use when asked organize my photo lib"
     },
     {
      "name": "pip-responder",
      "description": "Respond to a performance improvement plan strategically — decode what the PIP really is, decide fight-vs-land-softly with clear eyes, build the evidence file, and run the parallel job search the situation demands. Use when asked I was just put on a PIP what do I do, help me respond to a performance "
     },
     {
+     "name": "pitch-vs-teach",
+     "description": "Know which talk you're giving — the pitch (drive one decision) vs. the teach (build understanding) — because mixing their structures fails both, and most bad presentations are one wearing the other's clothes. Use when asked is this a pitch or a training, my informative deck didn't land the ask, my p"
+    },
+    {
+     "name": "pivot-analysis-planner",
+     "description": "Plan pivot-table analysis that answers the actual question — the question-to-layout mapping (rows, values, filters chosen on purpose), the data-shape check that pivots require, and the drill-down path from summary to so-what. Use when asked analyze this data with a pivot, what's driving the total, b"
+    },
+    {
+     "name": "plain-language-rewrite",
+     "description": "Rewrite jargon-dense text into plain language without losing precision — the translation pass that keeps every fact and qualifier, the jargon triage (terms to replace, terms to keep-and-define), and the reading-level honesty for the actual audience. Use when asked make this readable, translate this "
+    },
+    {
      "name": "pm-weekly-review",
      "description": "Structure a PM's weekly review and planning session. Use when doing a weekly PM review, writing a weekly update, preparing for Monday planning, or reviewing sprint health. Produces a shareable weekly update covering metrics movement, shipping progress, blockers, insights, and next week's top 3 prior"
+    },
+    {
+     "name": "policy-drafter",
+     "description": "Draft an internal policy people can actually follow — the rule stated plainly with its reason, the bright lines separated from the judgment zones, the edge cases resolved by principle, and the enforcement reality stated honestly. Use when asked write our expense/remote-work/AI-use/security policy, t"
     },
     {
      "name": "policy-memo",
@@ -1607,6 +1883,10 @@
     {
      "name": "prescription-cost-navigator",
      "description": "Work down the cost of a prescription systematically — the generic and therapeutic-alternative conversation, discount programs vs insurance math, pharmacy price variance, and manufacturer/assistance programs, in the order that saves the most first. Use when asked my prescription is too expensive, how"
+    },
+    {
+     "name": "presenter-notes",
+     "description": "Write presenter notes that actually help mid-talk — cue-grain phrases instead of scripts, the transitions and numbers that deserve verbatim capture, the timing marks that keep the talk on schedule, and the Q&A crib built in. Use when asked write my speaker notes, I either script everything or wing i"
     },
     {
      "name": "press-release",
@@ -1709,6 +1989,10 @@
      "description": "Write a buyer's offer cover letter to a seller to strengthen a real-estate bid. Use when asked to write a real-estate offer letter, a buyer's 'love letter' to a seller, an offer cover note, or to make a home offer stand out. Produces a warm, genuine letter — who the buyers are, why they love the hom"
     },
     {
+     "name": "proposal-skeleton",
+     "description": "Structure an internal proposal that gets a decision — the problem-cost-options-recommendation-ask spine, the objection pre-handling that shortens the meeting, and the reversibility framing that makes yes easier. Use when asked write a proposal for the new tool or process or hire, how do I pitch this"
+    },
+    {
      "name": "proposal-writer",
      "description": "Write a structured sales proposal or commercial proposal for any deal. Use when asked to write a proposal, sales proposal, commercial proposal, statement of work, or quote document. Produces a complete proposal with problem statement, solution, investment, and next steps."
     },
@@ -1723,6 +2007,10 @@
     {
      "name": "punch-list-builder",
      "description": "Turn walkthrough notes, photos, or voice-memo transcripts into a proper construction punch list with location, trade, and spec reference per item. Use when asked to build a punch list, clean up walkthrough notes, organise a deficiency list, prep for substantial completion, or track punch items to cl"
+    },
+    {
+     "name": "purchase-justification",
+     "description": "Write the purchase request that gets approved — the cost-of-not-buying framing, the ROI math at the approver's altitude, the alternatives-considered section that preempts the obvious pushback, and the right-sized ask for the approval tier. Use when asked justify this tool/hire/equipment purchase, wr"
     },
     {
      "name": "qa-release-signoff",
@@ -1775,6 +2063,10 @@
     {
      "name": "recruiter-outreach",
      "description": "Write personalized candidate outreach that gets replies. Use when asked to write a recruiter InMail, a candidate outreach email, a sourcing message, or a follow-up sequence. Produces a short, personalized first message (hook tied to the candidate, the role's appeal, a low-friction ask) plus a 2–3 st"
+    },
+    {
+     "name": "recurring-meeting-pruner",
+     "description": "Prune your own recurring-meeting load — the personal calendar audit (your role in each, honestly), the four exit moves (leave, delegate, downgrade to notes, halve), and the graceful exit scripts that don't burn standing. Use when asked get me out of some of these meetings, my calendar is 80% recurri"
     },
     {
      "name": "red-team-review",
@@ -1849,12 +2141,20 @@
      "description": "Get a landlord to actually fix things — the repair request that creates a record, the escalation ladder from reminder to habitability leverage, and the jurisdiction-flagged map of tenant remedies with their prerequisites. Use when asked my landlord won't fix anything, write a repair request, how lon"
     },
     {
+     "name": "reply-in-their-tone",
+     "description": "Draft email replies that match the sender's register — formality, length, directness, and emoji-tolerance read from their message, so the reply lands as native instead of off-key. Use when asked reply to this email, draft a response that doesn't sound stiff, match their tone, or answer this without "
+    },
+    {
      "name": "repo-map",
      "description": "Navigate a codebase by map instead of reading files wholesale — a deterministic stdlib script that emits the tree with line counts and top-level symbols, plus the read-the-map-first discipline that cuts exploration tokens by an order of magnitude. Use when asked explore this repo efficiently, stop r"
     },
     {
      "name": "research-protocol",
      "description": "Write a structured research protocol or study design document. Use when asked to write a research protocol, study protocol, research plan, methodology section, or research proposal. Produces a complete protocol with objectives, methodology, ethical considerations, and analysis plan."
+    },
+    {
+     "name": "research-repo-setup",
+     "description": "Set up a research repository the team actually reuses — the atomic-insight format (finding + evidence + source + date), the tagging that makes old research findable by new questions, and the check-the-repo-first norm that stops re-researching. Use when asked set up a research repository, we keep re-"
     },
     {
      "name": "resignation-letter",
@@ -1879,6 +2179,10 @@
     {
      "name": "return-refund-policy",
      "description": "Write a clear, fair returns, refunds & exchanges policy for an online store. Use when asked to write a return policy, refund/exchange policy, or store returns page. Produces a customer-friendly policy — window, conditions, process, refund method/timing, exceptions, and shipping — in plain language t"
+    },
+    {
+     "name": "review-comments-resolver",
+     "description": "Resolve a document's forty review comments systematically — triage by type (accept, push back, conflict, out-of-scope), batch the mechanical fixes, draft the disagreement replies, and reconcile reviewers who contradict each other. Use when asked work through these review comments, two reviewers want"
     },
     {
      "name": "review-response",
@@ -1997,6 +2301,10 @@
      "description": "Decline a request, push back on scope, or protect priorities without burning the relationship. Use when asked how to say no, turn down a request, push back on your boss/stakeholder, decline extra work, or protect the roadmap from a pet feature. Produces a graceful, firm response — the no, the honest"
     },
     {
+     "name": "saying-no-kindly",
+     "description": "Decline requests without damaging relationships or your standing — the fast-clear-warm formula, the alternative-attached no, the no-to-the-boss version (tradeoffs, not refusal), and the scripts for the asks that recur. Use when asked how do I say no to this, decline this project politely, I say yes "
+    },
+    {
      "name": "scam-message-decoder",
      "description": "Decode a suspicious message — text, email, call transcript, or DM — against the anatomy of known scam families, with a 🔴🟡🟢 read and the safe next move. Use when someone asks is this a scam, decode this suspicious text, my 'bank' just called me, this job offer seems off, or my parent got a weird m"
     },
@@ -2065,8 +2373,16 @@
      "description": "Decode a severance agreement before you sign it — what you're giving up, what's negotiable, and the deadlines that decide your leverage. Use when asked to decode my severance, is this severance offer normal, review my separation agreement, or should I sign this release. Produces a clause-by-clause d"
     },
     {
+     "name": "shared-drive-cleanup",
+     "description": "Clean up a shared drive nobody owns — the ownership-first move, the top-down audit that finds the 80% (stale projects, duplicates, ex-employee folders), the archive-don't-delete discipline for shared property, and the norms that prevent regrowth. Use when asked our shared drive is a disaster, clean "
+    },
+    {
      "name": "short-form-script",
      "description": "Write a short-form video script for TikTok, Instagram Reels, or YouTube Shorts — built on the hook→retention→payoff structure that drives watch-time. Use when asked to script a Reel, TikTok, Short, or any 15–60s vertical video. Produces a timed script with a 0–3s hook, retention beats with on-screen"
+    },
+    {
+     "name": "shutdown-ritual",
+     "description": "End the workday on purpose — the ten-minute shutdown that closes open loops, stages tomorrow's start, and gives the brain permission to actually stop (the incomplete-task hum has an off switch, and it's written). Use when asked I can't stop thinking about work at night, build an end-of-day routine, "
     },
     {
      "name": "side-business-setup",
@@ -2095,6 +2411,10 @@
     {
      "name": "slide-deck",
      "description": "Build a real, editable PowerPoint (.pptx) deck from an outline or brief. Use when asked to make a slide deck, a PowerPoint, a pitch/board/sales deck as an actual file, or to turn a doc/notes into slides. Produces an actual .pptx via a generated python-pptx script — a title slide, one idea per conten"
+    },
+    {
+     "name": "slide-density-rules",
+     "description": "Fix slides that are documents in landscape mode — the one-point-per-slide rule, the projection-vs-reading fork that decides density, the text diet (headlines and evidence, prose to notes), and the glance test. Use when asked my slides are too busy, how much text per slide, fix this wall-of-bullets d"
     },
     {
      "name": "slo-error-budget",
@@ -2129,12 +2449,28 @@
      "description": "Write a Standard Operating Procedure (SOP) for any operational task. Use when asked to write an SOP, standard operating procedure, work instruction, or operating manual. Produces a formal SOP with purpose, scope, procedure steps, quality checks, and version control."
     },
     {
+     "name": "source-triangulation",
+     "description": "Verify a claim before repeating it — the independent-sources test (three citations of one press release is one source), the provenance trace to the original, and the confidence grading that separates established from echoed. Use when asked is this claim actually true, verify this stat before the dec"
+    },
+    {
      "name": "sourcing-strategy",
      "description": "Build a talent sourcing strategy for a hard-to-fill role. Use when asked to create a sourcing strategy, a candidate sourcing plan, a channel plan for hiring, or to figure out where to find candidates for a role. Produces a strategy — the ideal-candidate profile and where they are, prioritised sourci"
     },
     {
      "name": "sports-scores",
      "description": "Get live scores, schedules, and standings for major leagues with zero API keys — ESPN's public JSON endpoints via curl, covering NFL, NBA, MLB, NHL, and world football. Use when asked what's the score, did my team win, today's games, or league standings right now. Produces the scores with game state"
+    },
+    {
+     "name": "spreadsheet-audit",
+     "description": "Audit a spreadsheet before trusting it — the error hunt (hardcoded overrides, broken ranges, silent unit mixes), the fragility map (what breaks when rows are added), and the load-bearing-formula review that catches the mistake before the meeting does. Use when asked check this spreadsheet before we "
+    },
+    {
+     "name": "spreadsheet-handover",
+     "description": "Hand over a spreadsheet so it survives its author leaving — the README tab that decodes the sheet's logic, the update runbook with sources and cadence, the fragility warnings, and the walkthrough that transfers the judgment. Use when asked document this spreadsheet before I leave, hand over the mode"
+    },
+    {
+     "name": "spreadsheet-or-database",
+     "description": "Decide honestly when a spreadsheet should become a database or app — the five outgrowth signals (concurrent editing, relational strain, permission needs, scale, process-in-comments), what staying costs vs what migrating costs, and the incremental escape paths. Use when asked should this be a databas"
     },
     {
      "name": "sprint-brief",
@@ -2165,6 +2501,10 @@
      "description": "Create concise executive stakeholder updates using the BLUF (Bottom Line Up Front) framework. Use when asked to write a status update, progress report, project communication, or executive briefing for leadership or stakeholders. Produces a BLUF-led update with status, key metrics, risks, upcoming mi"
     },
     {
+     "name": "standing-meeting-audit",
+     "description": "Audit the recurring meetings a team has accreted — each standing slot tested against its original purpose, current attendance reality, and outcomes, with keep/shrink/merge/kill verdicts and the two-week cancellation experiment that settles arguments. Use when asked audit our recurring meetings, our "
+    },
+    {
      "name": "startup-idea-validator",
      "description": "Pressure-test a startup idea the way a sharp investor or co-founder would — problem, market, wedge, moat, why-now, and the fastest cheap way to test it. Use when asked to validate a startup idea, evaluate a business idea, stress-test a concept, or decide whether something is worth building. Produces"
     },
@@ -2175,6 +2515,10 @@
     {
      "name": "statement-of-work",
      "description": "Write a tight Statement of Work (SOW) that prevents scope creep and payment disputes. Use when asked to write a SOW, a scope of work, a project agreement, or to formalise what was agreed after a proposal. Produces an SOW — scope (and explicit exclusions), deliverables with acceptance criteria, timel"
+    },
+    {
+     "name": "status-report-pipeline",
+     "description": "Build the pipeline that turns team updates into the rollup report without the Friday scramble — the collection format that aggregates cleanly, the altitude translation (team detail → leadership signal), and the automation-lite assembly that takes minutes. Use when asked I compile status from five te"
     },
     {
      "name": "stock-snapshot",
@@ -2249,6 +2593,10 @@
      "description": "How many support agents does the queue actually need — Erlang C, computed, not 'tickets per agent' folklore. Use when staffing a support/CS team, defending headcount, or checking whether an SLA is mathematically possible with the current roster. Produces agent counts across load scenarios (with shri"
     },
     {
+     "name": "survey-design-basics",
+     "description": "Design a survey that measures instead of leads — neutral question wording, answer scales that don't smuggle conclusions, the length that respects completion rates, and the analysis plan written before launch. Use when asked write our customer/employee survey, check these questions for bias, why are "
+    },
+    {
      "name": "sycophancy-challenger",
      "description": "Flip Claude’s default from validation to adversarial critique. Use when you are about to make a high-stakes decision, commit to a plan, or pitch something you have not stress-tested. Produces structured challenges, steelmanned counter-arguments, and the strongest case against your position — a genui"
     },
@@ -2261,6 +2609,10 @@
      "description": "Structure a complete system design answer for interview questions or real architecture sessions. Use when asked to design a system, answer a system design interview question, or architect a solution at scale. Produces a structured answer covering requirements, capacity estimates, high-level design, "
     },
     {
+     "name": "task-triage-matrix",
+     "description": "Triage an overwhelming task list into what actually gets done — the urgent/important sort applied honestly (with the two corrections the classic matrix needs), the do/schedule/delegate/drop verbs, and the list hygiene that keeps triage from becoming a weekly archaeology dig. Use when asked my task l"
+    },
+    {
      "name": "tax-planning-checklist",
      "description": "Generate a structured tax planning checklist and review framework for any individual or business context. Use when asked to review tax planning, prepare for year-end tax, check tax efficiency, or identify tax-saving opportunities. Produces a checklist of considerations, common reliefs, and a review "
     },
@@ -2271,6 +2623,10 @@
     {
      "name": "teaching-lesson-plan",
      "description": "Design a structured lesson plan for any subject, audience, or format. Use when asked to write a lesson plan, course outline, teaching session, workshop curriculum, or training module. Produces a complete lesson plan with learning objectives, activities, timing, assessment, and differentiation guidan"
+    },
+    {
+     "name": "team-budget-tracker",
+     "description": "Track a team's budget so surprises die young — the commitment-based view (spent + committed + planned, not just invoiced), the category grain that matches how the team actually spends, the monthly close with its one-sentence read, and the forecast honesty for the year-end question. Use when asked tr"
     },
     {
      "name": "team-health-check",
@@ -2291,6 +2647,10 @@
     {
      "name": "technical-spec-template",
      "description": "Create structured technical specification documents that bridge product requirements and engineering implementation. Use when writing a tech spec, engineering spec, system design doc, or API specification. Produces a complete spec with problem statement, proposed solution, data model, API design, al"
+    },
+    {
+     "name": "template-designer",
+     "description": "Turn a document the team keeps rewriting into a template that actually helps — extract the recurring skeleton, mark what varies with real placeholder prompts, keep it lighter than the ceremony it replaces, and pilot it before decreeing it. Use when asked make a template from this doc, we write this "
     },
     {
      "name": "tenant-screening-guide",
@@ -2353,6 +2713,10 @@
      "description": "Build a defensible thesis or dissertation outline — argument-first structure, chapter by chapter, with the through-line visible. Use when asked to outline my thesis, structure my dissertation, plan my capstone, or organize my research into chapters. Produces a full outline: the one-sentence thesis, "
     },
     {
+     "name": "thread-to-decision",
+     "description": "Land a sprawling chat thread on an actual decision — the summarize-and-fork move (positions restated, the question isolated), the decider-and-deadline injection, and the recorded close that ends the forty-message orbit. Use when asked this thread is going in circles, get a decision out of this discu"
+    },
+    {
      "name": "threat-model",
      "description": "Threat-model a system or feature to find where it could be attacked, before you build it. Use when asked to threat-model, do a security design review, identify attack surface, or apply STRIDE to a design. Produces a structured threat model: assets, trust boundaries and data flows, threats enumerated"
     },
@@ -2373,6 +2737,10 @@
      "description": "Cut LLM output tokens 40–70% by stripping grammatical scaffolding while preserving every fact — telegraphic output modes, when they pay (pipelines, long sessions) and when they don't (single shots, human-facing prose), with the mode lines to switch on demand. Use when asked make the model respond te"
     },
     {
+     "name": "tool-procurement-eval",
+     "description": "Evaluate a new tool before it joins the stack — the problem-first framing (tools answer needs, not demos), the trial designed with success criteria upfront, the stack-fit check (integration, overlap, the tool-sprawl tax), and the security/data review sized to the stakes. Use when asked should we buy"
+    },
+    {
      "name": "tooling-risk-assessment",
      "description": "Assess an injection-mold or production tooling decision before cutting steel — soft vs hard tooling tradeoff, tool life vs forecast, cavitation math, T1 sample timeline, cost of design changes after tooling, and kill criteria. Use when asked whether to kick off tooling, choose soft vs hard tools, si"
     },
@@ -2387,6 +2755,14 @@
     {
      "name": "transcreation",
      "description": "Transcreate marketing/brand copy for another language and culture — recreate the impact, not the words. Use when asked to adapt a tagline, ad, slogan, campaign, or brand message for a new market, or when a translation is 'correct but flat'. Produces a transcreated version that lands emotionally in-c"
+    },
+    {
+     "name": "travel-brief",
+     "description": "Turn a business trip into a one-page brief that runs itself — the itinerary with buffers and failure modes, the meeting logistics pre-solved (addresses, contacts, backup numbers), the packing-and-prep list by trip type, and the expense capture set up before departure. Use when asked prep my business"
+    },
+    {
+     "name": "unblock-protocol",
+     "description": "Get unstuck on purpose — the stuck-type diagnosis (don't-know-how, can't-decide, waiting, avoiding, too-big), the matched unblock move for each, and the timebox that stops noble struggling before it eats the day. Use when asked I'm stuck on this and don't know why, I keep avoiding this task, how lon"
     },
     {
      "name": "underwriting-narrative",
@@ -2425,6 +2801,14 @@
      "description": "Simulate the VC partner meeting that discusses your pitch after you leave the room — four partner archetypes debate, then write the internal verdict memo. Use when asked how will VCs discuss my pitch, simulate the partner meeting, stress-test my fundraise, or what happens after the pitch. Produces t"
     },
     {
+     "name": "vendor-breakup-email",
+     "description": "End a vendor, freelancer, or service relationship cleanly — the notice email that cites the contract, the transition asks that protect your data and continuity, and the door-open close that costs nothing. Use when asked write a cancellation email to our vendor, we're not renewing how do I tell them,"
+    },
+    {
+     "name": "vendor-comparison-matrix",
+     "description": "Compare vendors on a matrix that decides instead of decorates — the criteria weighted before the demos (so the shiny demo can't rewrite them), the evidence-based scoring with the marketing-vs-verified flags, the total-cost row that includes switching, and the reference-check questions that get hones"
+    },
+    {
      "name": "vendor-contract-checklist",
      "description": "Review a vendor/SaaS contract against a practical checklist before you sign. Use when asked to review a vendor contract, check a SaaS/MSA/subscription agreement, flag risky terms, or prepare negotiation points before signing. Produces a structured review — key terms extracted, a risk-flagged checkli"
     },
@@ -2439,6 +2823,10 @@
     {
      "name": "verification-before-completion",
      "description": "Verify work actually meets its brief BEFORE declaring it done — a structured self-review pass that catches the gaps, unmet requirements, and untested claims that 'looks finished' hides. Use before handing over any deliverable (document, code, analysis, plan), when past work kept coming back with 'yo"
+    },
+    {
+     "name": "version-chaos-untangler",
+     "description": "Untangle a document that exists in six copies across email, drives, and desktops — establish the canonical version defensibly, merge the divergent edits, and install the single-source rule that prevents the rematch. Use when asked which version is the real one, merge these document copies, we've bee"
     },
     {
      "name": "vet-estimate-decoder",
@@ -2481,6 +2869,10 @@
      "description": "Decode a wedding vendor contract — venue, photographer, caterer, band — before signing: deposits and their refundability, cancellation and postponement terms, the substitute-performer and force-majeure clauses, and overtime math. Use when someone asks review this venue contract, is this photographer"
     },
     {
+     "name": "weekly-review-ritual",
+     "description": "Install the weekly review that keeps work from managing you — the 30-minute Friday ritual: close the week's loops, sweep the capture points, choose next week's big three before the calendar chooses for you, and the two questions that compound. Use when asked set up a weekly review, my weeks just hap"
+    },
+    {
      "name": "what-to-ask",
      "description": "Get the five questions that matter before you sign, buy, or agree to anything — the front door to the decoder family, routed by situation. Use when asked what should I ask before signing this, I'm about to buy X what do I check, what questions for the landlord/dealer/contractor/HR, or what am I forg"
     },
@@ -2511,6 +2903,14 @@
     {
      "name": "word-document",
      "description": "Build a real, formatted Word (.docx) document — headings, styles, tables, TOC-ready. Use when asked to produce a Word doc, a .docx, a formatted report/contract/proposal/letter as an actual file (not markdown). Produces an actual .docx via a generated python-docx script with proper heading styles, bo"
+    },
+    {
+     "name": "working-agreements",
+     "description": "Write a team's working agreements — the small set of explicit norms (communication, meetings, decisions, conflict) that replace the assumptions people were silently violating, built from the team's actual frictions and revisited on a cadence. Use when asked create team working agreements, set norms "
+    },
+    {
+     "name": "workshop-designer",
+     "description": "Design working sessions that produce artifacts, not vibes — the outcome-backwards agenda, the activity formats that beat open discussion (silent writing, dot voting, structured rounds), the energy arc, and the output-capture that survives the room. Use when asked design a workshop for X, plan our pl"
     },
     {
      "name": "workshop-facilitation-guide",
