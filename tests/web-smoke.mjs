@@ -68,6 +68,18 @@ const PAGES = [
       });
       if (!ok) throw new Error('PMArtifacts renderer failed');
     } },
+  { url: 'tokens.html', async check(p) {
+      // the sample session must produce a breakdown with computed crusher savings
+      await p.click('#sampleBtn'); await p.waitForTimeout(200);
+      const rows = await p.locator('#tbody tr').count();
+      if (rows < 5) throw new Error('sample produced ' + rows + ' rows');
+      const rec = await p.locator('#tbody').textContent();
+      if (!/context-crusher/.test(rec) || !/−\d+%/.test(rec)) throw new Error('no computed crusher recommendation');
+      const verdict = await p.locator('#verdict').textContent();
+      if (!/per 1,000 turns/.test(verdict || '')) throw new Error('verdict missing');
+      // cache-leak warning: sample includes a volatile piece above stable ones
+      if (!(await p.locator('.cachewarn').count())) throw new Error('cache warning missing');
+    } },
   { url: 'boardroom.html', async check(p) {
       await p.fill('#doc', 'x'.repeat(120));
       await p.click('#runBtn'); await p.waitForTimeout(300);

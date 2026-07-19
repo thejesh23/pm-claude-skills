@@ -65,4 +65,6 @@ The `--calls` flag is the whole insight: a 40% saving on something sent once is 
 
 A coding session that (1) starts with a map instead of exploratory reads, (2) crushes two big tool outputs, (3) runs level-2 output, and (4) keeps `CLAUDE.md` stable for the cache typically cuts **30–60% of the session's token flow** — with zero information loss on the input side, because everything crushed is structural (computed, not paraphrased) and reversible (the originals stay fetchable).
 
+*Visualize your own usage: the [Token Dashboard](https://mohitagw15856.github.io/pm-claude-skills/tokens.html) runs this whole playbook in your browser — paste your context pieces, get the breakdown and computed savings.*
+
 *The whole bundle: [plugins/pm-tokens](../plugins/pm-tokens) — six skills, three stdlib scripts, deterministic, byte-exact-tested, MIT.*

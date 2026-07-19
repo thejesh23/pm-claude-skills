@@ -88,7 +88,7 @@ python3 skills/context-crusher/scripts/context_crush.py --mode json --file respo
 python3 skills/token-cost/scripts/token_cost.py --file CLAUDE.md --price-in 3 --calls 200
 ```
 
-Plus the judgment skills: [token-diet](skills/token-diet/SKILL.md) (output costs 3–5× input — diet it where safe), [context-budget](skills/context-budget/SKILL.md) (cache-aware layout: stable first, volatile last), and [session-handoff](skills/session-handoff/SKILL.md) (resume at ~5% of transcript size). **The full how-to: [docs/SAVE-TOKENS.md](docs/SAVE-TOKENS.md).**
+Plus the judgment skills: [token-diet](skills/token-diet/SKILL.md) (output costs 3–5× input — diet it where safe), [context-budget](skills/context-budget/SKILL.md) (cache-aware layout: stable first, volatile last), and [session-handoff](skills/session-handoff/SKILL.md) (resume at ~5% of transcript size). **See your own breakdown in the [🪙 Token Dashboard](https://mohitagw15856.github.io/pm-claude-skills/tokens.html)** — paste what rides in your context, get computed per-piece savings, all in-browser. The full how-to: **[docs/SAVE-TOKENS.md](docs/SAVE-TOKENS.md)**.
 
 ## ✅ Quality, not just quantity
 

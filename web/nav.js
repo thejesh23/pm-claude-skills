@@ -128,6 +128,7 @@
       ['status.html', '📈 Vitals'],
       ['growth.html', '📈 Growth'],
       ['cost.html', '💰 Cost & Privacy'],
+      ['tokens.html', '🪙 Token Dashboard'],
       ['trends.html', '📈 Trends'],
     ] },
     { group: '🗺 Explore', items: [
