@@ -9,6 +9,28 @@ each new wave of skills bumps the **major** version, extensions and fixes bump
 
 ## [Unreleased]
 
+## [59.0.0] — the cowork century: 100 skills for the AI-coworker era — 2026-07-19
+
+The library's biggest single bundle and biggest single jump (630 → **730 skills, 88 bundles**): **[pm-cowork](plugins/pm-cowork)** — the office knowledge work an AI coworker actually does, in ten families of ten.
+
+### Added — 🤝 [pm-cowork](plugins/pm-cowork): ten families, 100 skills, all L3 first-pass
+- **📧 Inbox & email ops** — the triage system (four verbs, two-minute rule), tone-matched replies, the follow-up chaser (shrink the ask, default on silence), the unsubscribe purge (with the never-click-spam-links safety line), email→tasks extraction, the OOO that routes instead of apologizes, the escalation email (facts-first, courtesy heads-up), double-opt-in intros, the vendor breakup (calendar outranks prose), and the newsletter digest.
+- **📁 Files & folders** — folder structures people actually file into (three levels, `_inbox`, placement rules), the filename convention that bans "final", downloads triage by bulk rules, the photo-library rescue (backup verified before any deletion), the retention map (jurisdiction-flagged), shared-drive cleanup (archive-don't-delete kills the fear), the version-chaos untangler, archive strategy, desktop zero (the desktop is three systems in the wrong place), and the migration-day runbook (freeze, verify by counts, old system read-only).
+- **📊 Spreadsheets** — the audit (hardcode hunt, range edges, the verified/suspect ledger), data cleaning in non-masking order, pivot planning backwards from the question, budget trackers that survive February, the sheet-or-database verdict (five signals, costs both ways), chart choice by the point's grammar, the formula detangler (parallel-run before switchover), the handover that outlives its author, KPI trackers with kill-lists, and expense sheets at the downstream's categories.
+- **📄 Documents & writing ops** — outline-before-prose (claims, not topics), the review-comments resolver (triage, batch, push back, reconcile), the house-style enforcer (extracted from exemplars, voice preserved), template design (prompting placeholders, filled twins), the proposal skeleton (price the status quo), policy drafting (rules with reasons, enforcement honesty), FAQ building (mined, not imagined), changelogs for humans, doc versioning discipline, and the plain-language rewrite (fidelity-checked).
+- **📅 Meetings & calendar** — agenda-or-cancel, the meeting cost meter (loaded rates × the recurring multiplier), the standing-meeting audit (the two-week cancellation experiment), async-instead (with the closure step async usually fumbles), the prep pack (the real decision, the room map), the decision-meeting format (decider named before debate), workshop design (silent-first, artifacts not vibes), offsite planning (purpose-weighted, two endings), office-hours design, and the personal meeting pruner.
+- **🤝 Team collaboration & async** — the update format (state first, blockers as asks), channel hygiene, thread-to-decision landings, working agreements (friction-derived, observable), handbook pages (answer-shaped), knowledge gardening (the rotating gardener's weekly half-hour), onboarding buddy plans (context and safety, not training), the decision log (with the rejected-alternative clause), the status-report pipeline (the chase eliminated by visible defaults), and the collaboration contract for cross-team seams.
+- **🔬 Research & synthesis** — source triangulation (three citations of one press release is one source), desk-research sprints (good-enough bars, stop rules), interview synthesis (code, count, keep the dissenters), survey design (the analysis plan before launch), citation hygiene ("studies show" banned without the study), the research repo (atomic insights, not deck graveyards), expert-interview prep (homework to the public frontier), evidence grading (existence ≠ prevalence), brief-from-pile, and the competitive scan (claimed/observed/user-reported flags).
+- **🎤 Presentations** — deck-outline-first (headline claims, the skim test), slide density rules (the projected/reading fork), exec-vs-working decks (answer at slide 2), data-slide design (the title does the interpreting), the narrative arc (situation-complication-resolution), presenter notes (cues, not scripts), demo scripts (wow by minute three, the contingency kit), the all-hands deck (hard news early and straight), the deck-review rubric (severity-sorted, two fixes), and pitch-vs-teach.
+- **⚡ Personal work ops** — the weekly review (the keystone ritual), task triage (urgency audited, four verbs), deep-work blocking (defense tiers, entry rituals), the context-switch budget (the census that shocks), delegation briefs (outcome + context + stated autonomy), saying no kindly (tradeoff boards upward), personal WIP limits (three active, the parking lot), the shutdown ritual, the unblock protocol (five stuck-types, matched moves), and energy scheduling (observe before believing).
+- **🏢 Office admin & ops** — travel briefs (buffers price failure modes), expense discipline (the policy crib + the approver's rubric), vendor comparison matrices (criteria before demos), purchase justification (price the status quo first), the office-move runbook (the internet circuit orders first), company-event ops (hosts host, runners run), the contract-renewal tracker (act-by dates, not renewal dates), tool procurement (the overlap audit that kills half of requests), team budget tracking (spent/committed/planned lanes), and meeting-room etiquette (structure enforces, no hall monitors).
+
+### Changed
+- README: the 🤝 Cowork (100) family row + the **"Make the most of the cowork skills"** section — describe-your-mess adoption, the pain→skill entry table, and the three compounding habits.
+
+### Craft notes
+- Heavy deliberate cross-linking — the hundred form a web (email→tasks feeds task triage; the meeting audit feeds async-instead; delegation briefs carry the handoff discipline). Three name collisions with existing skills caught pre-write (sop-writer, runbook-writer, glossary-builder) and resolved. 100/100 L3 on first validation.
+
 ## [58.0.0] — the frugal stack: token optimization for every stage of the agent journey — 2026-07-19
 
 Inspired by what's winning in the ecosystem (Caveman's output register, Headroom's context layer, Graphify's map-not-files navigation) — rebuilt as one coherent, keyless, zero-dependency family. 630 skills, 87 bundles.
@@ -965,6 +987,7 @@ Earlier releases (v1.0.0 – v5.0.0) predate this changelog. See the
 library grew from the first PM toolkit to 100+ skills.
 
 [Unreleased]: https://github.com/mohitagw15856/pm-claude-skills/compare/v55.0.0...HEAD
+[59.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v58.0.0...v59.0.0
 [58.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v57.0.0...v58.0.0
 [57.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v56.0.0...v57.0.0
 [56.0.0]: https://github.com/mohitagw15856/pm-claude-skills/compare/v55.0.0...v56.0.0

@@ -91,6 +91,22 @@ python3 skills/token-cost/scripts/token_cost.py --file CLAUDE.md --price-in 3 --
 
 Plus the judgment skills: [token-diet](skills/token-diet/SKILL.md) (output costs 3–5× input — diet it where safe), [context-budget](skills/context-budget/SKILL.md) (cache-aware layout: stable first, volatile last), and [session-handoff](skills/session-handoff/SKILL.md) (resume at ~5% of transcript size). **See your own breakdown in the [🪙 Token Dashboard](https://mohitagw15856.github.io/pm-claude-skills/tokens.html)** — paste what rides in your context, get computed per-piece savings, all in-browser. The full how-to: **[docs/SAVE-TOKENS.md](docs/SAVE-TOKENS.md)**.
 
+## 🤝 Make the most of the cowork skills
+
+The **[pm-cowork](plugins/pm-cowork)** bundle is 100 skills for the office work an AI coworker actually does. Install it (`/plugin install pm-cowork@pm-skills`), then — the whole trick — **describe your mess, don't name the skill**: say *"my inbox is 4,000 deep"*, *"nobody reads my status updates"*, *"this spreadsheet came from someone who left"* — the right skill activates on the ask.
+
+**Start where it hurts:**
+
+| Your pain | Say this | The skill that answers |
+|---|---|---|
+| Drowning in email | "triage my inbox and cut the volume at the source" | [email-triage-system](skills/email-triage-system/SKILL.md) → [inbox-unsubscribe-purge](skills/inbox-unsubscribe-purge/SKILL.md) |
+| Calendar is all meetings | "audit my recurring meetings and price them" | [standing-meeting-audit](skills/standing-meeting-audit/SKILL.md) + [meeting-cost-meter](skills/meeting-cost-meter/SKILL.md) |
+| Inherited a scary spreadsheet | "audit this sheet before we trust it" | [spreadsheet-audit](skills/spreadsheet-audit/SKILL.md) → [formula-detangler](skills/formula-detangler/SKILL.md) |
+| Docs get rewritten in review | "outline first, get sign-off, then draft" | [outline-before-prose](skills/outline-before-prose/SKILL.md) |
+| Weeks just happen to you | "set up my weekly review" | [weekly-review-ritual](skills/weekly-review-ritual/SKILL.md) — the hub the others plug into |
+
+**Three habits that compound:** (1) **The weekly review is the keystone** — it feeds [task-triage-matrix](skills/task-triage-matrix/SKILL.md), [deep-work-blocking](skills/deep-work-blocking/SKILL.md), and [personal-wip-limits](skills/personal-wip-limits/SKILL.md) automatically. (2) **The skills chain on purpose** — email-to-tasks feeds the task triage; the meeting audit feeds async-instead; delegation-brief hands off what the triage says to shed — follow the links inside each skill. (3) **Teams adopt one norm at a time** — start with [agenda-or-cancel](skills/agenda-or-cancel/SKILL.md) or [working-agreements](skills/working-agreements/SKILL.md), let it stick, then add the next; the ten-norms-on-Monday rollout is how none of them survive.
+
 ## ✅ Quality, not just quantity
 
 - **Every skill passes the [SkillSpec](SKILLSPEC.md) L3 gate** — structure, framework, quality checks, anti-patterns — enforced in CI on every commit
@@ -118,7 +134,7 @@ The whole library on one poster — start path, standout features, and install o
 
 ## 🆕 Latest
 
-**v58.0.0 — the frugal stack:** **[pm-tokens](plugins/pm-tokens)** — token optimization for every stage of the agent journey: crush tool outputs before they enter context ([context-crusher](skills/context-crusher/SKILL.md), 98% smaller on uniform JSON), navigate code by map instead of reading files ([repo-map](skills/repo-map/SKILL.md), ~3% of the cost), diet the output register, budget the window cache-aware, measure everything — all keyless, stdlib, deterministic, byte-exact-tested. *Earlier — v57, the 600 crossing:* the decision-journal (#600), the Estate/Scam-Defense/Wedding/Side-hustle packs, the buying-gauntlet simulators, and what-to-ask. Full history: **[CHANGELOG](CHANGELOG.md)** · [releases](https://github.com/mohitagw15856/pm-claude-skills/releases)
+**v59.0.0 — the cowork century:** **[pm-cowork](plugins/pm-cowork)** — 100 skills for the AI-coworker era, in ten families: inbox & email ops, files & folders, spreadsheets, documents, meetings, team collaboration, research, presentations, personal work ops, and office admin — the library's biggest bundle and biggest jump (630 → 730). *Earlier — v58, the frugal stack:* [pm-tokens](plugins/pm-tokens), token optimization for every stage of the agent journey. Full history: **[CHANGELOG](CHANGELOG.md)** · [releases](https://github.com/mohitagw15856/pm-claude-skills/releases)
 
 ## 🤝 Contributing
 
