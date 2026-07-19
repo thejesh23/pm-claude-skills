@@ -113,7 +113,17 @@ function search(opts) {
       .filter((s) => s.score >= 0)
       .sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
   }
-  const limit = opts.limit ? Math.max(1, parseInt(opts.limit, 10) || 0) : (opts.json ? items.length : 25);
+  let limit;
+  if (opts.limit != null) {
+    const parsed = Number(opts.limit);
+    if (!Number.isInteger(parsed) || parsed < 1) {
+      console.error(`Error: --limit must be a positive integer (got "${opts.limit}").`);
+      process.exit(2);
+    }
+    limit = parsed;
+  } else {
+    limit = opts.json ? items.length : 25;
+  }
   const shown = items.slice(0, limit);
 
   if (opts.json) {
