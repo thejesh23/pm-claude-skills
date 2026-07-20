@@ -5,6 +5,25 @@
   <description>The weekly digest of the open professional-skills library — new skills, releases, the Season, and the ecosystem. Written by the repo itself.</description>
   <language>en</language>
   <item>
+    <title>The Ledger — week 30, 2026</title>
+    <link>https://github.com/mohitagw15856/pm-claude-skills/blob/main/newsletter/2026-w30.md</link>
+    <guid>https://mohitagw15856.github.io/pm-claude-skills/feed.xml#2026-w30.md</guid>
+    <pubDate>Thu, 23 Jul 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[> The week in the open library, written by the repo itself. 630 skills · [playground](https://mohitagw15856.github.io/pm-claude-skills/) · [subscribe](https://mohitagw15856.github.io/pm-claude-skills/feed.xml)
+
+## 🆕 164 new skills
+
+- **[Context Budget](https://mohitagw15856.github.io/pm-claude-skills/skill/context-budget.html)** — Plan a session's context window like the budget it is — what loads up front, what gets linked instead, what stays fetch-on-demand, and how to keep…
+- **[Context Crusher](https://mohitagw15856.github.io/pm-claude-skills/skill/context-crusher.html)** — Compress tool outputs, logs, and JSON before they enter the context window — structural compression via a deterministic stdlib script (schema +…
+- **[Repo Map](https://mohitagw15856.github.io/pm-claude-skills/skill/repo-map.html)** — Navigate a codebase by map instead of reading files wholesale — a deterministic stdlib script that emits the tree with line counts and top-level…
+- **[Token Cost](https://mohitagw15856.github.io/pm-claude-skills/skill/token-cost.html)** — Measure before optimizing — estimate token counts locally with stated heuristics, price them at your model's rates, and quantify before/after…
+- **[Token Diet](https://mohitagw15856.github.io/pm-claude-skills/skill/token-diet.html)** — Cut LLM output tokens 40–70% by stripping grammatical scaffolding while preserving every fact — telegraphic output modes, when they pay…
+- **[First Client Contract](https://mohitagw15856.github.io/pm-claude-skills/skill/first-client-contract.html)** — Put your first client agreement in writing — the eight clauses a simple service contract must have, in plain language a non-lawyer can use, with…
+- **[Quarterly Tax Rhythm](https://mohitagw15856.github.io/pm-claude-skills/skill/quarterly-tax-rhythm.html)** — Build the tax habit self-employment requires — the setaside percentage from day one, the quarterly calendar, the records that make filing boring…
+- **[Side Business Setup](https://mohitagw15856.github.io/pm-claude-skills/skill/side-business-setup.html)** — Set up a side business in the right order — the do-first sequence (separate money, basic terms, simple records) vs.
+- **[GitHub Repo Vitals](https://mohitagw15856.github.io/pm-claude-skills/skill/github-repo-vitals.html)** — Read a GitHub repository's vital signs with keyless curl — commit recency, release cadence, issue/PR responsivene]]></description>
+  </item>
+  <item>
     <title>The Ledger — week 29, 2026</title>
     <link>https://github.com/mohitagw15856/pm-claude-skills/blob/main/newsletter/2026-w29.md</link>
     <guid>https://mohitagw15856.github.io/pm-claude-skills/feed.xml#2026-w29.md</guid>
