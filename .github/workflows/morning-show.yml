@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   publish:
@@ -25,13 +26,19 @@ jobs:
       - name: Compose this week's issue
         run: node scripts/build-morning-show.mjs
 
-      - name: Commit the issue
-        run: |
-          git config user.name  "morning-show-bot"
-          git config user.email "morning-show-bot@users.noreply.github.com"
-          git add newsletter/
-          git diff --cached --quiet || git commit -m "newsletter: weekly issue $(date -u +%F)"
-          git push
+      # Direct pushes to main are blocked by branch protection, so open a PR
+      # (matching trending/skill-of-the-week). No-op when newsletter/ is unchanged.
+      - name: Open a PR with this week's issue
+        uses: peter-evans/create-pull-request@v7
+        with:
+          add-paths: newsletter/
+          branch: newsletter-weekly
+          delete-branch: true
+          commit-message: "newsletter: weekly issue"
+          title: "newsletter: this week's issue"
+          body: |
+            Auto-composed by the **Morning Show** workflow from the skill catalog (deterministic, no API cost).
+            Merging this publishes the week's newsletter issue under `newsletter/`.
 
       # Optional next steps (left as comments): pipe newsletter/*latest*.md into
       # Buttondown/Mailchimp for email, or a TTS action for the podcast audio.
