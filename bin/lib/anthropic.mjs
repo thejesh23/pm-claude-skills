@@ -68,10 +68,13 @@ export async function complete({ apiKey, model = 'claude-sonnet-4-6', system, me
 
 /** Parse "name: value" YAML-ish frontmatter + body from a SKILL.md string. */
 export function parseSkill(text) {
-  const m = text.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+  // Tolerate CRLF so SKILL.md files authored on Windows parse correctly —
+  // otherwise `run` and `chain` fall through to `text.trim()` and send the raw
+  // '---' frontmatter to the model as part of the system prompt.
+  const m = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
   const meta = {};
   if (m) {
-    for (const line of m[1].split('\n')) {
+    for (const line of m[1].split(/\r?\n/)) {
       const kv = line.match(/^(\w[\w-]*):\s*(.*)$/);
       if (kv) {
         let v = kv[2].trim();
