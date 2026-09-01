@@ -1,6 +1,6 @@
-# Library gaps — 2026-07-13
+# Library gaps — 2026-09-01
 
-The [self-growing pipeline](../scripts/mine-gaps.mjs) measured **10** real-world requests against the **466** skills in the catalog. It found **4** genuinely uncovered and **6** already served.
+The [self-growing pipeline](../scripts/mine-gaps.mjs) measured **10** real-world requests against the **630** skills in the catalog. It found **4** genuinely uncovered and **6** already served.
 
 _Method: lexical (Jaccard token overlap) against each skill's name, title, and description — honest but shallow, so treat this as a shortlist for human judgement, not a verdict._
 
