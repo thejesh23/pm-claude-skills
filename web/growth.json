@@ -50,13 +50,19 @@
    "npm_month": 9327,
    "stars": 1326,
    "forks": 232
+  },
+  {
+   "date": "2026-09-07",
+   "npm_month": 10565,
+   "stars": 1340,
+   "forks": 234
   }
  ],
  "latest": {
-  "date": "2026-08-31",
-  "npm_month": 9327,
-  "stars": 1326,
-  "forks": 232
+  "date": "2026-09-07",
+  "npm_month": 10565,
+  "stars": 1340,
+  "forks": 234
  },
- "updated": "2026-08-31"
+ "updated": "2026-09-07"
 }
