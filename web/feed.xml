@@ -5,6 +5,23 @@
   <description>The weekly digest of the open professional-skills library — new skills, releases, the Season, and the ecosystem. Written by the repo itself.</description>
   <language>en</language>
   <item>
+    <title>The Ledger — week 48, 2026</title>
+    <link>https://github.com/mohitagw15856/pm-claude-skills/blob/main/newsletter/2026-w48.md</link>
+    <guid>https://mohitagw15856.github.io/pm-claude-skills/feed.xml#2026-w48.md</guid>
+    <pubDate>Thu, 26 Nov 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[> The week in the open library, written by the repo itself. 630 skills · [playground](https://mohitagw15856.github.io/pm-claude-skills/) · [subscribe](https://mohitagw15856.github.io/pm-claude-skills/feed.xml)
+
+## 🏆 Season 1 — The Meridian Renewal
+
+The board is still empty — first entry takes the lead by definition. Closes 2026-08-10. [Play it](https://mohitagw15856.github.io/pm-claude-skills/casting.html).
+
+## The week in one number
+
+**1 commits.** Daily challenge, streaks and the share grid: [play today's](https://mohitagw15856.github.io/pm-claude-skills/daily.html).
+
+]]></description>
+  </item>
+  <item>
     <title>The Ledger — week 47, 2026</title>
     <link>https://github.com/mohitagw15856/pm-claude-skills/blob/main/newsletter/2026-w47.md</link>
     <guid>https://mohitagw15856.github.io/pm-claude-skills/feed.xml#2026-w47.md</guid>
@@ -22,20 +39,33 @@ The board is still empty — first entry takes the lead by definition. Closes 20
 ]]></description>
   </item>
   <item>
-    <title>The Ledger — week 46, 2026</title>
+    <title>PM Skills Weekly — Issue 46</title>
     <link>https://github.com/mohitagw15856/pm-claude-skills/blob/main/newsletter/2026-w46.md</link>
     <guid>https://mohitagw15856.github.io/pm-claude-skills/feed.xml#2026-w46.md</guid>
     <pubDate>Thu, 12 Nov 2026 00:00:00 GMT</pubDate>
-    <description><![CDATA[> The week in the open library, written by the repo itself. 630 skills · [playground](https://mohitagw15856.github.io/pm-claude-skills/) · [subscribe](https://mohitagw15856.github.io/pm-claude-skills/feed.xml)
+    <description><![CDATA[
+Your weekly minute on doing professional work with AI — one skill to master, a few to try, and the numbers.
 
-## 🏆 Season 1 — The Meridian Renewal
+## 🌟 Skill of the week: Metrics Framework
+Build a metrics framework for any product, team, or business.
+**→ [Run it free](https://mohitagw15856.github.io/pm-claude-skills/?skill=metrics-framework)** · `metrics-framework` · ✅ 4.8/5
 
-The board is still empty — first entry takes the lead by definition. Closes 2026-08-10. [Play it](https://mohitagw15856.github.io/pm-claude-skills/casting.html).
+## 🔥 Fresh picks
+- **[LinkedIn Profile](https://mohitagw15856.github.io/pm-claude-skills/?skill=linkedin-profile)** — Optimise a LinkedIn profile to be found and to convert.
+- **[Local Dev Setup](https://mohitagw15856.github.io/pm-claude-skills/?skill=local-dev-setup)** — Write a local development environment setup guide for a service or project — covering prerequisites, repository setup, environment variables…
+- **[MCP Server Spec](https://mohitagw15856.github.io/pm-claude-skills/?skill=mcp-server-spec)** — Design an MCP server for a product — the tool surface, auth model, and safety boundaries that make it genuinely usable by AI agents.
 
-## The week in one number
+## 📊 By the numbers
+**630** professional skills · **87** bundles · **28** eval-scored (avg 4.4/5).
 
-**1 commits.** Daily challenge, streaks and the share grid: [play today's](https://mohitagw15856.github.io/pm-claude-skills/daily.html).
+---
 
+### 🎙️ Show script (for TTS / the podcast)
+> Good morning — this is PM Skills Weekly, issue 46. This week's skill to master is **Metrics Framework**: build a metrics framework for any product, team, or business. If you only try one thing this week, make it that one. A few fresh picks worth a look: LinkedIn Profile, Local Dev Setup, MCP Server Spec. The library now stands at 630 skills across 87 bundles, 28 of them eval-scored. Run any of them free in your browser — no signup. That's your minute. See you next week.
+
+---
+
+*Browse everything at [mohitagw15856.github.io/pm-claude-skills](https://mohitagw15856.github.io/pm-claude-skills) · [subscribe / archive](README.md) · open-source (MIT).*
 ]]></description>
   </item>
   <item>
